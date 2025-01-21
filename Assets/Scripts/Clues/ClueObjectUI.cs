@@ -22,6 +22,7 @@ public class ClueObjectUI : MonoBehaviour,
     {
         transform.parent = ClueBoardManager.Instance.HoldingPinTransform;
         transform.localPosition = Vector3.zero;
+        transform.localScale = Vector3.one;
         ClueBoardManager.Instance.AddToBin(this);
         _mouseDown = false;
     }
