@@ -293,7 +293,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &151348259
@@ -359,7 +359,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c575798f67dbf4e9fd2fd23e7b50cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _clueObjectUI: {fileID: 8188667945372745454, guid: 910c41b5dcf88a545a285e6342e02ac7, type: 3}
+  clueObjectUI: {fileID: 8188667945372745454, guid: 910c41b5dcf88a545a285e6342e02ac7, type: 3}
+  disappearOnClick: 1
 --- !u!212 &236256187
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1422,7 +1423,7 @@ Transform:
   m_GameObject: {fileID: 956921677}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2467084, y: 1.01938, z: -10.5}
+  m_LocalPosition: {x: 0.23238277, y: 1.01931, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2040,6 +2041,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9837c5c46ec005142833f9bd6eb8846e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _menuTransform: {fileID: 0}
+  _animator: {fileID: 0}
 --- !u!1001 &1413927716002165591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2252,8 +2255,8 @@ MonoBehaviour:
   _board: {fileID: 1360545615}
   _boardTransform: {fileID: 3038079090400891755}
   _holdingPinTransform: {fileID: 5600123003134368661}
-  _maskBoardTransform: {fileID: 43535835}
   _boardBin: {fileID: 928296323998215833}
+  _toggleButton: {fileID: 0}
   _zoomSpeed: 0.05
   _zoomOutLimit: 0.328
   _zoomInLimit: 1.25

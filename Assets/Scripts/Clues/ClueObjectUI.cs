@@ -1,82 +1,83 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ClueObjectUI : MonoBehaviour, 
-    IDragHandler, IBeginDragHandler, IEndDragHandler,
-    IScrollHandler, IPointerDownHandler, IPointerUpHandler
+namespace Clues
 {
-    [SerializeField]
-    private static readonly float _sizeMin = .25f;
-    [SerializeField]
-    private static readonly float _sizeMax = 1.5f;
-
-    private Vector2 _offset;
-    private bool _mouseDown;
-
-    
-
-    // Start is called before the first frame update
-    void Start()
+    public class ClueObjectUI : MonoBehaviour, 
+        IDragHandler, IBeginDragHandler, IEndDragHandler,
+        IScrollHandler, IPointerDownHandler, IPointerUpHandler
     {
-        transform.parent = ClueBoardManager.Instance.HoldingPinTransform;
-        transform.localPosition = Vector3.zero;
-        ClueBoardManager.Instance.AddToBin(this);
-        _mouseDown = false;
-    }
+        private Vector2 _offset;
+        private bool _mouseDown;
 
-    void StartDelay()
-    {
-        ClueBoardManager.Instance.AddToBin(this);
-    }
+        public GameObject _sprite;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        private static readonly float _sizeMin = .5f;
+        private static readonly float _sizeMax = 2.5f;
+        Vector3 _scaleChange;
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        transform.position = eventData.position + _offset;
-    }
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        Vector2 mousePos = eventData.pressPosition;
-        Vector2 uiPos = transform.position;
-        _offset = uiPos - mousePos;
-
-        transform.parent = ClueBoardManager.Instance.BoardTransform;
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        _offset = Vector2.zero;
-    }
-
-    public void OnScroll(PointerEventData eventData)
-    {
-        // TODO
-        // Get resizing working for clueobjects
-        if (_mouseDown)
+        // Start is called before the first frame update
+        private void Start()
         {
-            Debug.Log("Yippee!");
+            transform.parent = ClueBoardManager.Instance.HoldingPinTransform;
+            transform.localPosition = Vector3.zero;
+            transform.localScale = Vector3.one;
+            ClueBoardManager.Instance.AddToBin(this);
+            _mouseDown = false;
+            _scaleChange = new Vector3(0.2f, 0.2f, 0.2f);
         }
-        else
+
+        // TODO: Never used. remove?
+        private void StartDelay()
         {
-            ClueBoardManager.Instance.OnScroll(eventData);
+            ClueBoardManager.Instance.AddToBin(this);
         }
-    }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        _mouseDown = true;
-    }
+        public void OnDrag(PointerEventData eventData)
+        {
+            transform.position = eventData.position + _offset;
+        }
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        _mouseDown = false;
+        public void OnBeginDrag(PointerEventData eventData)
+        {
+            Vector2 mousePos = eventData.pressPosition;
+            Vector2 uiPos = transform.position;
+            _offset = uiPos - mousePos;
+
+            transform.parent = ClueBoardManager.Instance.BoardTransform;
+        }
+
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            _offset = Vector2.zero;
+        }
+
+        public void OnScroll(PointerEventData eventData)
+        {
+            if (_mouseDown)
+            {
+                // Increases and decreases size of sprite
+                var w = Input.mouseScrollDelta.y;
+                if (w > 0 && _sizeMax > _sprite.transform.localScale.x) {
+                    _sprite.transform.localScale += _scaleChange;
+                } else if (w < 0 && _sizeMin < _sprite.transform.localScale.x) {
+                    _sprite.transform.localScale -= _scaleChange;
+                }
+            }
+            else
+            {
+                ClueBoardManager.Instance.OnScroll(eventData);
+            }
+        }
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            _mouseDown = true;
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            _mouseDown = false;
+        }
     }
 }
