@@ -25,6 +25,10 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     private ClueBoardBin _boardBin;
     [SerializeField]
     private GameObject _toggleButton;
+    [SerializeField]
+    private GameObject _stickyNotesButton;
+    [SerializeField]
+    private StickyNote _stickyNote;
 
     [Header("Input")]
     [SerializeField]
