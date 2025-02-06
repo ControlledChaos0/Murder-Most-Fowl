@@ -3,21 +3,19 @@ using UnityEngine;
 public class StickyNoteManager : MonoBehaviour
 {
     [SerializeField] private GameObject stickyNote;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    
+    private Vector3 _spawnPosition;
+    private Transform _parent;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
     }
-
+    
     public void createStickyNote()
     {
-        stickyNote = Instantiate(stickyNote, this.transform);
+        _spawnPosition = ClueBoardManager.Instance.BoardTransform.transform.position;
+        _parent = ClueBoardManager.Instance.BoardTransform;
+        Instantiate(stickyNote, _spawnPosition, Quaternion.identity, _parent);
         Debug.Log("noted!");
     }
 }

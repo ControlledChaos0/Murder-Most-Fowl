@@ -206,6 +206,18 @@ public class InputController : Singleton<InputController>
         ToggleClueBoard?.Invoke();
     }
 
+    public void DisableClueBoardInput()
+    {
+        Debug.Log("DisableClueBoardInput");
+        _clueBoardAction.Disable();
+    }
+
+    public void EnableClueBoardInput()
+    {
+        Debug.Log("EnableClueBoardInput");
+        _clueBoardAction.Enable();
+    }
+    
     //private void OnCloseClueBoard(InputAction.CallbackContext context) {
     //    ToggleClueBoard?.Invoke(false);
     //}
