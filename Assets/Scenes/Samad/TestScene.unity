@@ -794,7 +794,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00013330606}
+  m_AnchoredPosition: {x: 0, y: 0.07678722}
   m_SizeDelta: {x: 0, y: 450}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &294416142
@@ -1177,7 +1177,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1967296716}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999965
+  m_Size: 0.96589017
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1805,7 +1805,6 @@ GameObject:
   - component: {fileID: 1024252643}
   - component: {fileID: 1024252639}
   - component: {fileID: 1024252642}
-  - component: {fileID: 1024252641}
   m_Layer: 5
   m_Name: StickyNoteButton
   m_TagString: Untagged
@@ -1876,9 +1875,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1024252641}
-        m_TargetAssemblyTypeName: StickyNoteManager, Assembly-CSharp
-        m_MethodName: createStickyNote
+      - m_Target: {fileID: 2900343774266289514}
+        m_TargetAssemblyTypeName: ClueBoardManager, Assembly-CSharp
+        m_MethodName: ToggleStickyNote
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1901,19 +1900,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stickyNote: {fileID: 0}
---- !u!114 &1024252641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024252637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7be78a16f03eb549a388fa71ca40c10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stickyNote: {fileID: 1086468133419905555, guid: f34aa1fbf944b9545b40618a2aadd3a5, type: 3}
+  _spawnPosition: {x: 0, y: 0, z: 0}
+  _parent: {fileID: 0}
+  spawnable: 0
 --- !u!222 &1024252642
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3192,8 +3181,7 @@ MonoBehaviour:
   _holdingPinTransform: {fileID: 294416141}
   _boardBin: {fileID: 928296323998215833}
   _toggleButton: {fileID: 8016938415691785318}
-  _stickyNotesButton: {fileID: 0}
-  _stickyNote: {fileID: 0}
+  _stickyNote: {fileID: 1086468133419905555, guid: f34aa1fbf944b9545b40618a2aadd3a5, type: 3}
   _zoomSpeed: 0.05
   _zoomOutLimit: 0.328
   _zoomInLimit: 1.25

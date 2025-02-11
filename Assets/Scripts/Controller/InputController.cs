@@ -37,6 +37,7 @@ public class InputController : Singleton<InputController>
     //private InputAction _moveAction;
     private InputAction _clueBoardAction;
     //private InputAction _scrollClueBoardAction;
+    private InputAction _stickyNoteAction;
 
     //private Vector2 _mouseDelta;
     //private Vector2 _screenPosition;
@@ -46,6 +47,8 @@ public class InputController : Singleton<InputController>
 
     private float _clickTime;
     private float _rightClickTime;
+
+    private bool _toggleEnabled = true;
     //private bool _moveCamera;
     //private bool _panCamera;
 
@@ -64,6 +67,9 @@ public class InputController : Singleton<InputController>
     //public event Action<Vector2> MouseMove;
 
     public event Action ToggleClueBoard;
+    public event Action ToggleStickyNote;
+
+    public event Action CreateStickyNote;
     //public event Action<float> OnScrollCB;
 
     private void Awake()
@@ -105,6 +111,7 @@ public class InputController : Singleton<InputController>
         _mainControls = inputActions.FindActionMap("MainControls");
 
         _clueBoardAction = _mainControls.FindAction("ClueBoard");
+        _stickyNoteAction = _mainControls.FindAction("StickyNoteToggle");
     }
 
     private void SetUIControls()
@@ -119,6 +126,12 @@ public class InputController : Singleton<InputController>
     private void InitializeMainControls()
     {
         _clueBoardAction.performed += OnToggleClueBoard;
+        _stickyNoteAction.performed += OnToggleStickyNote;
+    }
+
+    private void OnToggleStickyNote(InputAction.CallbackContext obj)
+    {
+        ToggleStickyNote?.Invoke();
     }
 
     private void InitializeUIControls()
@@ -205,18 +218,26 @@ public class InputController : Singleton<InputController>
     {
         ToggleClueBoard?.Invoke();
     }
+    
 
     public void DisableClueBoardInput()
     {
         Debug.Log("DisableClueBoardInput");
+        Debug.Log(_toggleEnabled);
+        _toggleEnabled = false;
+        Debug.Log(_toggleEnabled);
         _clueBoardAction.Disable();
     }
 
     public void EnableClueBoardInput()
     {
-        Debug.Log("EnableClueBoardInput");
+        Debug.Log("EnabledClueBoardInput");
+        _toggleEnabled = true;
+        Debug.Log(_toggleEnabled);
         _clueBoardAction.Enable();
     }
+    
+    
     
     //private void OnCloseClueBoard(InputAction.CallbackContext context) {
     //    ToggleClueBoard?.Invoke(false);
