@@ -57,6 +57,7 @@ namespace Clues
         {
             if (_mouseDown)
             {
+                Debug.Log("Scrollin!");
                 // Increases and decreases size of sprite
                 var w = Input.mouseScrollDelta.y;
                 if (w > 0 && _sizeMax > _sprite.transform.localScale.x) {
