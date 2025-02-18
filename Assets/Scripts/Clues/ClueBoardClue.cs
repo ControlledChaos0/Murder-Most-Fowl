@@ -10,6 +10,9 @@ public partial class ClueBoardClue
     [IgnoreMember]
     public string ClueID => m_clueID;
 
+    [IgnoreMember]
+    public Clue Clue => ClueManager.GetClueFromID(m_clueID);
+
     [Key(1), SerializeField]
     private float m_x;
     [Key(2), SerializeField]
