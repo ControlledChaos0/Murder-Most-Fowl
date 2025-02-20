@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: New State Asset
+  m_EditorClassIdentifier: Assembly-CSharp::StateAsset
+  m_state:
+    SaveID: 0
+    SaveCreated:
+      _dateTime: 1/1/0001 12:00:00 AM
+    LastSaved:
+      _dateTime: 1/1/0001 12:00:00 AM
+    TimePlayedSeconds: 0
+    GooseIntroduced: 0
+    NoticedSandwich: 0
+    HasHandkerchief: 0
+    InspectHandkerchief: 0
+    ClueBoardClues: []
+    ClueBoardNotes: []
+    NewClueBin: []
+    ArchivedClueBin: []
