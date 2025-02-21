@@ -639,7 +639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3231515563247730419, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00016091713
+      value: 0.00011586263
       objectReference: {fileID: 0}
     - target: {fileID: 3691073673336351334, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_Name
@@ -1665,36 +1665,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1974456565 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3550219144273042960, guid: 6abb264982467054ba4fe940958d0824, type: 3}
-  m_PrefabInstance: {fileID: 3655355697318771831}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1974456570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1974456565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ba087fe9885d63458b571231250790a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1974456571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1974456565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10f0777399ec04ef6957da2ae823eb8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textLanguageCode: en-US
 --- !u!1 &1981908946
 GameObject:
   m_ObjectHideFlags: 3
@@ -2114,14 +2084,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue System MMF
       objectReference: {fileID: 0}
-    - target: {fileID: 5891085521661955111, guid: 6abb264982467054ba4fe940958d0824, type: 3}
-      propertyPath: lineProvider
-      value: 
-      objectReference: {fileID: 1974456571}
-    - target: {fileID: 5891085521661955111, guid: 6abb264982467054ba4fe940958d0824, type: 3}
-      propertyPath: _variableStorage
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8240260913637626648, guid: 6abb264982467054ba4fe940958d0824, type: 3}
       propertyPath: m_Color.a
       value: 0.627451
@@ -2237,13 +2199,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3550219144273042960, guid: 6abb264982467054ba4fe940958d0824, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1974456570}
-    - targetCorrespondingSourceObject: {fileID: 3550219144273042960, guid: 6abb264982467054ba4fe940958d0824, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1974456571}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6abb264982467054ba4fe940958d0824, type: 3}
 --- !u!114 &4809494468229426553
 MonoBehaviour:

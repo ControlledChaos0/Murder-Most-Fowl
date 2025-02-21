@@ -7,8 +7,13 @@ public partial class ClueBoardClue
 {
     [Key(0), SerializeField]
     private string m_clueID;
+
     [IgnoreMember]
-    public string ClueID => m_clueID;
+    public string ClueID
+    {
+        get { return m_clueID; }
+        set { m_clueID = value;}
+    } 
 
     [IgnoreMember]
     public Clue Clue => ClueManager.GetClueFromID(m_clueID);
@@ -31,8 +36,13 @@ public partial class ClueBoardClue
 
     [Key(3), SerializeField]
     private float m_scale;
+
     [IgnoreMember]
-    public float Scale => m_scale;
+    public float Scale
+    {
+        get { return m_scale; }
+        set { m_scale = value; }
+    }
 
     [Key(4), SerializeReference]
     private List<ClueBoardClue> m_connectedClues;

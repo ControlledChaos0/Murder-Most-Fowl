@@ -228,7 +228,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
         _boardTransform.anchoredPosition = newAnchorPos;
     }
 
-    public void InstantiateClue(Clue clue)
+    public void InstantiateClue(string clue)
     {
         GameObject clueObject = Instantiate(_objectUI);
         ClueObjectUI clueUI = clueObject.GetComponent<ClueObjectUI>();
@@ -238,6 +238,11 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     public void AddToBin(ClueObjectUI clueObjectUI)
     {
         _boardBin.AddToBin(clueObjectUI);
+    }
+
+    public void RemoveFromBin(ClueObjectUI clueObjectUI)
+    {
+        _boardBin.RemoveFromBin(clueObjectUI);
     }
 
     public void OnDrag(PointerEventData eventData)

@@ -799,6 +799,7 @@ MonoBehaviour:
   _holdingPinTransform: {fileID: 3231515563247730419}
   stringRenderers: {fileID: 5087082572307897812}
   clues: {fileID: 7444594276753553566}
+  _objectUI: {fileID: 8188667945372745454, guid: 910c41b5dcf88a545a285e6342e02ac7, type: 3}
   _boardBin: {fileID: 6211609096015849091}
   _toggleButton: {fileID: 1112443637991054846}
   _zoomSpeed: 0.05

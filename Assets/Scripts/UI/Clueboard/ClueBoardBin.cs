@@ -40,7 +40,7 @@ public class ClueBoardBin : MonoBehaviour,
 
         clueObject.gameObject.transform.position = eventData.position;
         //RectTransform boardTransform = ClueBoardManager.Instance.BoardTransform;
-        clueObject.gameObject.transform.parent = ClueBoardManager.Instance.BoardTransform;
+        clueObject.gameObject.transform.parent = ClueBoardManager.Instance.Clues;
         clueObject.gameObject.transform.localScale = Vector3.one;
         eventData.pressPosition = eventData.position;
         _draggedClue = clueObject;
@@ -54,12 +54,25 @@ public class ClueBoardBin : MonoBehaviour,
     public void OnEndDrag(PointerEventData eventData)
     {
         _draggedClue?.OnEndDrag(eventData);
+        RemoveFromBin(_draggedClue);
         _draggedClue = null;
     }
 
     public void AddToBin(ClueObjectUI clueObject)
     {
         _clueList.Add(clueObject);
+        GameManager.StateManager.ActiveState.NewClueBin.Add(clueObject.Clue.ClueID);
+    }
+
+    public void RemoveFromBin(ClueObjectUI clueObject)
+    {
+        if (!clueObject)
+        {
+            return;
+        }
+
+        _clueList.Remove(clueObject);
+        GameManager.StateManager.ActiveState.NewClueBin.Remove(clueObject.Clue.ClueID);
     }
 
     public void OnPointerClick(PointerEventData eventData)

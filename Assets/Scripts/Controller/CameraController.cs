@@ -70,14 +70,14 @@ public class CameraController : Singleton<CameraController>
     private void Awake()
     {
         InitializeSingleton();
-        _cinemachineBrain = mainCamera.GetComponent<CinemachineBrain>();
         //SeparateCameraObject();
+        _cinemachineBrain = mainCamera.GetComponent<CinemachineBrain>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        SetCamera();
+        
     }
 
     private void LateUpdate()
@@ -110,7 +110,7 @@ public class CameraController : Singleton<CameraController>
 
     private void SetCamera()
     {
-        _cinemachineCam = _cinemachineBrain.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>();
+        //_cinemachineCam = _cinemachineBrain.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>();
 
         //_distanceFromInitial = _cinemachineCam.m_Lens.OrthographicSize;
         //distanceFrom = _distanceFromInitial;
