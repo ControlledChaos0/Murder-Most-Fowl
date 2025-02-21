@@ -10,10 +10,4 @@ public class ClueManager : MonoBehaviour
     {
         return GameManager.ClueManager.ClueDatabase.Clues[clueID];
     }
-
-    private void Start()
-    {
-        Clue c = GetClueFromID("Example Clue");
-        Debug.Log(c.Description);
-    }
 }
