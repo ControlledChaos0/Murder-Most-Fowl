@@ -8,10 +8,12 @@ namespace Clues
         IDragHandler, IBeginDragHandler, IEndDragHandler,
         IScrollHandler, IPointerDownHandler, IPointerUpHandler
     {
+        [SerializeField] private SpriteRenderer _spriteRenderer;
+
+        private Clue _clue;
+
         private Vector2 _offset;
         private bool _mouseDown;
-
-        public GameObject _sprite;
 
         private static readonly float _sizeMin = .5f;
         private static readonly float _sizeMax = 2.5f;
@@ -28,10 +30,10 @@ namespace Clues
             _scaleChange = new Vector3(0.2f, 0.2f, 0.2f);
         }
 
-        // TODO: Never used. remove?
-        private void StartDelay()
+        public void AddClue(Clue clue)
         {
-            ClueBoardManager.Instance.AddToBin(this);
+            _clue = clue;
+            _spriteRenderer.sprite = clue.Icon;
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -57,12 +59,13 @@ namespace Clues
         {
             if (_mouseDown)
             {
+                GameObject sprite = _spriteRenderer.gameObject;
                 // Increases and decreases size of sprite
                 var w = Input.mouseScrollDelta.y;
-                if (w > 0 && _sizeMax > _sprite.transform.localScale.x) {
-                    _sprite.transform.localScale += _scaleChange;
-                } else if (w < 0 && _sizeMin < _sprite.transform.localScale.x) {
-                    _sprite.transform.localScale -= _scaleChange;
+                if (w > 0 && _sizeMax > sprite.transform.localScale.x) {
+                    sprite.transform.localScale += _scaleChange;
+                } else if (w < 0 && _sizeMin < sprite.transform.localScale.x) {
+                    sprite.transform.localScale -= _scaleChange;
                 }
             }
             else

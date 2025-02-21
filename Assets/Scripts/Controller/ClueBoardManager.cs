@@ -27,6 +27,10 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     [SerializeField] private RectTransform clues;
     public RectTransform Clues => clues;
 
+    [Header("Clue UI")]
+    [SerializeField]
+    private GameObject _objectUI;
+
     [Header("Sub-objects")]
     [SerializeField]
     private ClueBoardBin _boardBin;
@@ -222,6 +226,13 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
         }
 
         _boardTransform.anchoredPosition = newAnchorPos;
+    }
+
+    public void InstantiateClue(Clue clue)
+    {
+        GameObject clueObject = Instantiate(_objectUI);
+        ClueObjectUI clueUI = clueObject.GetComponent<ClueObjectUI>();
+        clueUI.AddClue(clue);
     }
 
     public void AddToBin(ClueObjectUI clueObjectUI)
