@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEditor;
 using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "New Clue Database", menuName = "Scriptable Objects/Clue Database")]
@@ -9,9 +10,11 @@ public class ClueDatabase : ScriptableObject, ISerializationCallbackReceiver
 
     public Dictionary<string, Clue> Clues { get; private set; } = new();
 
-    public void OnAfterDeserialize()
+    private void OnValidate()
     {
         if (Clues == null) Clues = new();
+        Clues.Clear();
+
         foreach (Clue c in m_clues)
         {
             if (c == null) continue;
@@ -23,9 +26,5 @@ public class ClueDatabase : ScriptableObject, ISerializationCallbackReceiver
 
             Clues.Add(c.ClueID, c);
         }
-    }
-
-    public void OnBeforeSerialize() {
-        Clues.Clear();
     }
 }
