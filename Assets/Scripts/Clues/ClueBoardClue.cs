@@ -2,7 +2,7 @@ using UnityEngine;
 using MessagePack;
 using System.Collections.Generic;
 
-[MessagePackObject, System.Serializable]
+[MessagePackObject(AllowPrivate = true), System.Serializable]
 public partial class ClueBoardClue
 {
     [Key(0), SerializeField]

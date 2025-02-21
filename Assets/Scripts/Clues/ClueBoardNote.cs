@@ -1,7 +1,7 @@
 using UnityEngine;
 using MessagePack;
 
-[MessagePackObject, System.Serializable]
+[MessagePackObject(AllowPrivate = true), System.Serializable]
 public partial class ClueBoardNote
 {
     [Key(0), SerializeField]
