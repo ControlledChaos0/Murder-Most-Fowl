@@ -23,6 +23,12 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     [SerializeField]
     private RectTransform _holdingPinTransform;
 
+    [SerializeField] private RectTransform stringRenderers;
+    public RectTransform StringRenderers => stringRenderers;
+    
+    [SerializeField] private RectTransform clues;
+    public RectTransform Clues => clues;
+
     [Header("Sub-objects")]
     [SerializeField]
     private ClueBoardBin _boardBin;
@@ -168,7 +174,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
         pivot.x *= 1.0f / _boardTransform.sizeDelta.x;
         pivot.y *= 1.0f / _boardTransform.sizeDelta.y;
 
-        Debug.Log(offset);
+        // Debug.Log(offset);
 
         Vector3 tempScale = _boardTransform.localScale + (Vector3.one * zoom);
         if (tempScale.x > _zoomOutLimit && tempScale.x < _zoomInLimit)
