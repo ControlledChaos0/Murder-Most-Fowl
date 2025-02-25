@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4f6cddbb4a692034c81e1340b8094ac5
+guid: 72ca34e4829d8479888043daa424751b
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Background_Stool_With_Lighting_0: 2189080482238286712
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

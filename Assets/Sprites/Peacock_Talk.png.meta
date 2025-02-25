@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 40c6f30d86c133e4091b31a128789ed1
+guid: c38547abe180c4346b1fd9c6f3bccb87
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Peacock_Talk_0: 4755754824569435639
+      Peacock_Talk_1: -8148110860521826752
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

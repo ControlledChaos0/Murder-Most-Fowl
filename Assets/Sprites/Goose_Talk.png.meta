@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eeb60520e26d38d45b536470cd12647a
+guid: 0854bea7f4791443ab057907b0ee6bf0
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Goose_Talk_0: -7577487481039880905
+      Goose_Talk_1: -297960721680833364
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 title: Start
 tags:
 ---
-<<declare $gooseIntroduced = false>>
-<<declare $noticedSandwich = false>>
-<<declare $hasHandkerchief = false>>
-<<declare $inspectHandkerchief = false>>
+<<declare $GooseIntroduced = false>>
+<<declare $NoticedSandwich = false>>
+<<declare $HasHandkerchief = false>>
+<<declare $InspectHandkerchief = false>>
 
 <<ChangeLeftCharacter Nancy>>
 <<ChangeRightCharacter>>
@@ -17,7 +17,7 @@ title: Goose
 ---
 <<ChangeRightCharacter Goose>>
 
-<<if $gooseIntroduced is false>>
+<<if $GooseIntroduced is false>>
 	<<jump GooseIntroduction>>
 <<else>>
 	<<jump GooseIrritated>>
@@ -26,7 +26,7 @@ title: Goose
 
 title: GooseIntroduction
 ---
-<<set $gooseIntroduced to true>>
+<<set $GooseIntroduced to true>>
 Nancy: Hello Mr. Gander.
 Chase: Hello Nancy.
 ===
@@ -44,7 +44,7 @@ title: GooseSuspicion
 	Nancy: Mr. Gander, did you eat my sandwich?
 	Chase: There is nothing so foul as eating someone else's lunch. I demand you take back that accusation.
 	Nancy: I'll find proof. It's around here somewhere.
--> Present Evidence <<if $inspectHandkerchief>>
+-> Present Evidence <<if $InspectHandkerchief>>
 	-> Present Handkerchief
 		<<jump GooseAccusation>>
 ===
@@ -67,11 +67,11 @@ Chase: It was delicious and I'd do it again.
 title: MissingSandwich
 ---
 <<ChangeRightCharacter>>
-<<if $noticedSandwich is false>>
+<<if $NoticedSandwich is false>>
 	Nancy: My sandwich!
 	Nancy: My peanut butter and jelly sandwich!
 	Nancy: Who would do such a thing?
-	<<set $noticedSandwich to true>>
+	<<set $NoticedSandwich to true>>
 	<<set_node Goose GooseSuspicion>>
 <<else>>
 	Nancy: My sandwich...
@@ -81,11 +81,11 @@ title: MissingSandwich
 title: FoundHandkerchief
 ---
 <<ChangeRightCharacter>>
-<<set $hasHandkerchief to true>>
+<<set $HasHandkerchief to true>>
 Nancy: Aha!
 Nancy: A handkerchief!
 	-> Inspect
-		<<set $inspectHandkerchief to true>>
+		<<set $InspectHandkerchief to true>>
 		Nancy: There are jelly stains on the handkerchief! The perpetrator must have used this!
 		Nancy: And the initials: CGW.
 		Nancy: Those seem very familiar...
