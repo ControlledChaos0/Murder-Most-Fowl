@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 5c9c2bb8f4a074b97ad2cf36117d371d
+guid: e0e7955b9f2289d41b2996162bc559d0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3880543035982174509
-    second: ComboDown_0
+      213: 8151639283640272914
+    second: Wallpaper_Bottom (1)_0
+  - first:
+      213: 4611023750635146744
+    second: Wallpaper_Bottom (1)_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ComboDown_0
+      name: Wallpaper_Bottom (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 288
-        height: 226
+        width: 1800
+        height: 1800
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d29555bc4557ad530800000000000000
-      internalID: 3880543035982174509
+      spriteID: 2188f7e3db0702170800000000000000
+      internalID: 8151639283640272914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wallpaper_Bottom (1)_1
+      rect:
+        serializedVersion: 2
+        x: 1402
+        y: 965
+        width: 37
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fd4f73cba5adff30800000000000000
+      internalID: 4611023750635146744
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b278b95e19e897a4ab3e72600ec784f0
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ComboDown_0: 3880543035982174509
+      Wallpaper_Bottom (1)_0: 8151639283640272914
+      Wallpaper_Bottom (1)_1: 4611023750635146744
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

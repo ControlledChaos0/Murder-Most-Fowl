@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5c9c2bb8f4a074b97ad2cf36117d371d
+guid: cadac08b5827ae24f84e652867738a8e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3880543035982174509
-    second: ComboDown_0
+      213: -4353158750614275260
+    second: Wallpaper_Top_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ComboDown_0
+      name: Wallpaper_Top_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 288
-        height: 226
+        width: 1800
+        height: 1800
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d29555bc4557ad530800000000000000
-      internalID: 3880543035982174509
+      spriteID: 44bb0ca2e297693c0800000000000000
+      internalID: -4353158750614275260
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ee973a6c8c336b34aa3292004a8b9a3f
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ComboDown_0: 3880543035982174509
+      Wallpaper_Top_0: -4353158750614275260
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
