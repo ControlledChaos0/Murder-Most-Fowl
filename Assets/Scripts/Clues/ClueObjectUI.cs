@@ -108,6 +108,7 @@ namespace Clues
 
             _onBoard = true;
             ClueBoardManager.Instance.RemoveFromBin(this);
+            ClueInventoryManager.Instance.UpdateClue(_saveClue);
         }
     }
 }
