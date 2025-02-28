@@ -7,22 +7,22 @@ public class ClueBoardBin : MonoBehaviour,
     IDragHandler, IBeginDragHandler, IEndDragHandler,
     IPointerClickHandler
 {
-    [SerializeField] private RectTransform _menuTransform;
-    [SerializeField] private Animator _animator;
+    [SerializeField] protected RectTransform _menuTransform;
+    [SerializeField] protected Animator _animator;
 
-    private List<ClueObjectUI> _clueList;
+    protected List<ClueObjectUI> _clueList;
 
-    private ClueObjectUI _draggedClue;
-    private bool _showMenu;
+    protected ClueObjectUI _draggedClue;
+    protected bool _showMenu;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected void Start()
     {
         _clueList = new List<ClueObjectUI>();
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         
     }
@@ -61,7 +61,6 @@ public class ClueBoardBin : MonoBehaviour,
     public void AddToBin(ClueObjectUI clueObject)
     {
         _clueList.Add(clueObject);
-        GameManager.StateManager.ActiveState.NewClueBin.Add(clueObject.Clue.ClueID);
     }
 
     public void RemoveFromBin(ClueObjectUI clueObject)
@@ -72,7 +71,6 @@ public class ClueBoardBin : MonoBehaviour,
         }
 
         _clueList.Remove(clueObject);
-        GameManager.StateManager.ActiveState.NewClueBin.Remove(clueObject.Clue.ClueID);
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -86,7 +84,7 @@ public class ClueBoardBin : MonoBehaviour,
         _menuTransform.anchoredPosition = Vector2.zero;
     }
 
-    private void ToggleBin()
+    protected void ToggleBin()
     {
         if (_showMenu)
         {
@@ -98,13 +96,13 @@ public class ClueBoardBin : MonoBehaviour,
         }
     }
 
-    private void OpenBin()
+    protected void OpenBin()
     {
         _showMenu = true;
         _animator.Play("Reveal");
     }
 
-    private void CloseBin()
+    protected void CloseBin()
     {
         _showMenu = false;
         _animator.Play("Hide");

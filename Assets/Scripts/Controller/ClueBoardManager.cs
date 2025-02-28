@@ -33,7 +33,9 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
 
     [Header("Sub-objects")]
     [SerializeField]
-    private ClueBoardBin _boardBin;
+    private NewBin _newBin;
+    [SerializeField]
+    private ArchiveBin _archiveBin;
     [SerializeField]
     private GameObject _toggleButton;
 
@@ -118,7 +120,8 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
 
     private void OpenClueBoard()
     {
-        _boardBin.InitBin();
+        _newBin.InitBin();
+        _archiveBin.InitBin();
         _activated = true;
         _animator.Play("Reveal");
     }
@@ -237,12 +240,12 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
 
     public void AddToBin(ClueObjectUI clueObjectUI)
     {
-        _boardBin.AddToBin(clueObjectUI);
+        _newBin.AddToBin(clueObjectUI);
     }
 
     public void RemoveFromBin(ClueObjectUI clueObjectUI)
     {
-        _boardBin.RemoveFromBin(clueObjectUI);
+        _newBin.RemoveFromBin(clueObjectUI);
     }
 
     public void OnDrag(PointerEventData eventData)
