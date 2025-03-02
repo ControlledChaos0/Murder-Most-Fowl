@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607a79191ecb4144da315beee2405368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_startScene: TestScene
+  m_startScene: TestScene Emilee
 --- !u!114 &1772704875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,8 +211,10 @@ MonoBehaviour:
     LastSaved:
       _dateTime: 1/1/0001 12:00:00 AM
     TimePlayedSeconds: 0
-    TestTag: 1
-    TestString: Hello!
+    GooseIntroduced: 0
+    NoticedSandwich: 0
+    HasHandkerchief: 0
+    InspectHandkerchief: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
