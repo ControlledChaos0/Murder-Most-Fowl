@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -58,12 +59,15 @@ namespace Clues
             Vector2 uiPos = transform.position;
             _offset = uiPos - mousePos;
 
-            transform.parent = ClueBoardManager.Instance.Clues;
+            transform.parent = ClueBoardManager.Instance.Front;
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
             _offset = Vector2.zero;
+            List<RaycastResult> results = new List<RaycastResult>();
+            ClueBoardManager.Instance.GraphicRaycast.Raycast(eventData, results);
+            Debug.Log("Pdsfjkla");
             OnPlacedClueboard();
         }
 

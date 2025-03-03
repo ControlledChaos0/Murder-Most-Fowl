@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using Clues;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.UI;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class ClueBoardManager : Singleton<ClueBoardManager>,
@@ -26,6 +26,8 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     
     [SerializeField] private RectTransform clues;
     public RectTransform Clues => clues;
+    [SerializeField] private RectTransform _front;
+    public RectTransform Front => _front;
 
     [Header("Clue UI")]
     [SerializeField]
@@ -46,6 +48,8 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     [SerializeField] private float _zoomOutLimit = 0.328f;
     [SerializeField] private float _zoomInLimit = 1.25f;
 
+    private GraphicRaycaster _graphicRaycaster;
+    public GraphicRaycaster GraphicRaycast => _graphicRaycaster;
     private Animator _animator;
     private ClueObjectUI _selectedObj;
 
@@ -81,6 +85,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     void Start()
     {
         _canvas = GetComponent<Canvas>();
+        _graphicRaycaster = GetComponent<GraphicRaycaster>();
 
         InputController.Instance.ToggleClueBoard += ToggleClueBoard;
 

@@ -22,12 +22,12 @@ public class ClueInventoryManager : Singleton<ClueInventoryManager>
 
     public void UpdateClue(ClueBoardClue cbClue)
     {
-        ClueBoardClue prev_cbClue = GameManager.StateManager.ActiveState.ClueBoardClues.Find(
-            delegate(ClueBoardClue clue)
-            {
-                return clue.ClueID == cbClue.ClueID;
-            });
-        prev_cbClue.Position = cbClue.Position;
-        prev_cbClue.Scale = cbClue.Scale;
+        //ClueBoardClue prev_cbClue = GameManager.StateManager.ActiveState.ClueBoardClues.Find(
+        //    delegate(ClueBoardClue clue)
+        //    {
+        //        return clue.ClueID == cbClue.ClueID;
+        //    });
+        //prev_cbClue.Position = cbClue.Position;
+        //prev_cbClue.Scale = cbClue.Scale;
     }
 }
