@@ -1,7 +1,8 @@
 using System;
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Clues
 {
@@ -9,35 +10,49 @@ namespace Clues
         IDragHandler, IBeginDragHandler, IEndDragHandler,
         IScrollHandler, IPointerDownHandler, IPointerUpHandler
     {
+        [SerializeField] private Image _image;
+        public Image Image => _image;
+
+        private Clue _clue;
+        private ClueBoardClue _saveClue;
+
+        private bool _onBoard;
+        private bool _inBin;
+        private ClueBoardBin _currentBin;
+
         private Vector2 _offset;
         private Vector3 _worldOffset;
         private bool _mouseDown;
         private bool _scaling;
-
-        public GameObject _sprite;
 
         private static readonly float _sizeMin = .5f;
         private static readonly float _sizeMax = 3.0f;
         private Vector3 _initialScale;
         private Vector3 _scaleChange;
 
+        public Clue Clue
+        {
+            get => _clue;
+            private set => _clue = value;
+        }
+
         // Start is called before the first frame update
         private void Start()
         {
-            transform.parent = ClueBoardManager.Instance.HoldingPinTransform;
-            transform.localPosition = Vector3.zero;
-            transform.localScale = Vector3.one;
-            ClueBoardManager.Instance.AddToBin(this);
+            _currentBin = ClueBoardManager.Instance.NewBin;
+            OnPlacedBin(_currentBin.gameObject);
             _mouseDown = false;
             _scaleChange = new Vector3(0.2f, 0.2f, 0.2f);
+
+            _onBoard = false;
             _scaling = false;
             _initialScale = Vector3.one;
         }
 
-        // TODO: Never used. remove?
-        private void StartDelay()
+        public void AddClue(string clue)
         {
-            ClueBoardManager.Instance.AddToBin(this);
+            _clue = ClueManager.GetClueFromID(clue);
+            _image.sprite = _clue.Icon;
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -79,6 +94,7 @@ namespace Clues
             Vector2 uiPos = transform.position;
             _offset = uiPos - mousePos;
 
+            transform.parent = ClueBoardManager.Instance.Front;
             Vector3 mousePosWorld = Camera.main.WorldToScreenPoint(new Vector3(mousePos.x, mousePos.y, 0));
             Vector3 uiPosWorld = Camera.main.WorldToScreenPoint(new Vector3(uiPos.x, uiPos.y, 0));
             _worldOffset = uiPosWorld - mousePosWorld;
@@ -102,6 +118,27 @@ namespace Clues
         public void OnEndDrag(PointerEventData eventData)
         {
             _offset = Vector2.zero;
+            List<RaycastResult> results = new List<RaycastResult>();
+            ClueBoardManager.Instance.GraphicRaycast.Raycast(eventData, results);
+            bool placed = false;
+            foreach(RaycastResult result in results)
+            {
+                if (placed)
+                {
+                    break;
+                }
+                switch (result.gameObject.tag)
+                {
+                    case ("Bin"):
+                        OnPlacedBin(result.gameObject);
+                        placed = true;
+                        break;
+                    case ("Board"):
+                        OnPlacedClueboard();
+                        placed = true;
+                        break;
+                }
+            }
             _scaling = false;
         }
 
@@ -109,12 +146,13 @@ namespace Clues
         {
             if (_mouseDown)
             {
+                GameObject image = _image.gameObject;
                 // Increases and decreases size of sprite
                 var w = Input.mouseScrollDelta.y;
-                if (w > 0 && _sizeMax > _sprite.transform.localScale.x) {
-                    _sprite.transform.localScale += _scaleChange;
-                } else if (w < 0 && _sizeMin < _sprite.transform.localScale.x) {
-                    _sprite.transform.localScale -= _scaleChange;
+                if (w > 0 && _sizeMax > image.transform.localScale.x) {
+                    image.transform.localScale += _scaleChange;
+                } else if (w < 0 && _sizeMin < image.transform.localScale.x) {
+                    image.transform.localScale -= _scaleChange;
                 }
             }
             else
@@ -131,6 +169,47 @@ namespace Clues
         public void OnPointerUp(PointerEventData eventData)
         {
             _mouseDown = false;
+        }
+
+        public void OnPlacedClueboard()
+        {
+            transform.parent = ClueBoardManager.Instance.Clues;
+            if (_saveClue == null)
+            {
+                _saveClue = new ClueBoardClue();
+                _saveClue.ClueID = Clue.ClueID;
+            }
+            _saveClue.Position = transform.localPosition;
+            _saveClue.Scale = _image.transform.localScale.x;
+
+            _onBoard = true;
+            if (_inBin)
+            {
+                _currentBin.RemoveFromBin(this);
+                _inBin = false;
+                ClueInventoryManager.Instance.AddClueBoardClue(_saveClue);
+            }
+            else
+            {
+                ClueInventoryManager.Instance.UpdateClueBoardClue(_saveClue);
+            }
+        }
+
+        public void OnPlacedBin(GameObject binGO)
+        {
+            //Clue
+            if (_onBoard)
+            {
+                ClueInventoryManager.Instance.DeleteClueBoardClue(_saveClue);
+                _onBoard = false;
+            } else if (_inBin)
+            {
+                _currentBin.RemoveFromBin(this);
+            }
+
+            binGO.TryGetComponent(out _currentBin);
+            _currentBin.AddToBin(this);
+            _inBin = true;
         }
     }
 }

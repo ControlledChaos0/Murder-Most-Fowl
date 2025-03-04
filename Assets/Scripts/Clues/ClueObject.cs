@@ -8,8 +8,8 @@ namespace Clues
         IPointerEnterHandler, IPointerExitHandler,
         IPointerClickHandler
     {
-        [SerializeField] private GameObject clueObjectUI;
-        [SerializeField] private bool disappearOnClick = true;
+        [SerializeField] private string _clueID;
+        [SerializeField] private bool _disappearOnClick = true;
 
         private SpriteRenderer _spriteRenderer;
         private bool _found;
@@ -58,9 +58,9 @@ namespace Clues
             Debug.Log("Click the clue!");
             if (!_found)
             {
-                Instantiate(clueObjectUI);
+                ClueBoardManager.Instance.InstantiateClue(_clueID);
             }
-            if (disappearOnClick)
+            if (_disappearOnClick)
             {
                 Collect();
             }

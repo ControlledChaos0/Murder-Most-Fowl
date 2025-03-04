@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Luke/Luke Test Scene.unity
     guid: a275db4c87df7af4d87e6a32b564f2b3
   - enabled: 1
+    path: Assets/Scenes/Jade/TestSceneJade.unity
+    guid: b6899592aed0b3e4f8038d801421a5e8
+  - enabled: 1
     path: Assets/Scenes/Emilee/TestScene Emilee.unity
     guid: 39c78e029a8671b41a95c0617576255f
   m_configObjects: {}

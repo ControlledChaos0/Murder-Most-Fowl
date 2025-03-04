@@ -206,6 +206,13 @@ public class InputController : Singleton<InputController>
         ToggleClueBoard?.Invoke();
     }
 
+    public PointerEventData GetPointerEventData()
+    {
+        Vector2 screenPos = _pointAction.ReadValue<Vector2>();
+        PointerEventData eventData = CameraController.Instance.Raycast(screenPos);
+        return eventData;
+    }
+
     //private void OnCloseClueBoard(InputAction.CallbackContext context) {
     //    ToggleClueBoard?.Invoke(false);
     //}
