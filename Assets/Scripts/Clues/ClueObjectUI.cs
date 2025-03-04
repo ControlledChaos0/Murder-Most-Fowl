@@ -21,11 +21,14 @@ namespace Clues
         private ClueBoardBin _currentBin;
 
         private Vector2 _offset;
+        private Vector3 _worldOffset;
         private bool _mouseDown;
+        private bool _scaling;
 
         private static readonly float _sizeMin = .5f;
-        private static readonly float _sizeMax = 2.5f;
-        Vector3 _scaleChange;
+        private static readonly float _sizeMax = 3.0f;
+        private Vector3 _initialScale;
+        private Vector3 _scaleChange;
 
         public Clue Clue
         {
@@ -42,6 +45,8 @@ namespace Clues
             _scaleChange = new Vector3(0.2f, 0.2f, 0.2f);
 
             _onBoard = false;
+            _scaling = false;
+            _initialScale = Vector3.one;
         }
 
         public void AddClue(string clue)
@@ -52,7 +57,35 @@ namespace Clues
 
         public void OnDrag(PointerEventData eventData)
         {
-            transform.position = eventData.position + _offset;
+            if (_scaling == true){
+                Vector3 mousePosWorld = Camera.main.WorldToScreenPoint(new Vector3(eventData.position.x, eventData.position.y, 0));
+                Vector3 uiPosWorld = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y, 0));
+                Vector3 newOffset = uiPosWorld - mousePosWorld;
+                
+                var change = newOffset.magnitude/_worldOffset.magnitude;
+                if ((_sizeMax > _sprite.transform.localScale.x) && (newOffset.magnitude > _worldOffset.magnitude)) {
+                    // Scale up
+                    if (_initialScale.x * change > _sizeMax){
+                        // reach maximum size
+                        _sprite.transform.localScale = new Vector3(_sizeMax, _sizeMax, 1);
+                    } else {
+                        _sprite.transform.localScale = _initialScale * change; 
+                    }
+                } else if (_sizeMin < _sprite.transform.localScale.x && newOffset.magnitude < _worldOffset.magnitude){
+                    // Scale Down
+                    if (_initialScale.x * change < _sizeMin){
+                        // reach minimum size
+                        _sprite.transform.localScale = new Vector3(_sizeMin, _sizeMin, 1);
+
+                    } else {
+                        _sprite.transform.localScale = _initialScale * change; 
+                    }
+                    
+                }
+                
+            } else {
+                transform.position = eventData.position + _offset;
+            }
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -62,6 +95,24 @@ namespace Clues
             _offset = uiPos - mousePos;
 
             transform.parent = ClueBoardManager.Instance.Front;
+            Vector3 mousePosWorld = Camera.main.WorldToScreenPoint(new Vector3(mousePos.x, mousePos.y, 0));
+            Vector3 uiPosWorld = Camera.main.WorldToScreenPoint(new Vector3(uiPos.x, uiPos.y, 0));
+            _worldOffset = uiPosWorld - mousePosWorld;
+
+            transform.parent = ClueBoardManager.Instance.Clues;
+
+            var renderer = _sprite.GetComponent<RectTransform>();
+            var width = renderer.rect.width * _sprite.transform.localScale.x;
+            var height = renderer.rect.height * _sprite.transform.localScale.y;
+            var margin = 5;
+
+            if (_offset.x > (width/2 - margin) * 0.6f || _offset.y > (height/2 - margin) * 0.6f || _offset.x < (-width/2 + margin) * 0.6f || _offset.y < (-height/2 + margin) * 0.6f) {
+                _scaling = true;
+                _initialScale = _sprite.transform.localScale;
+            } else {
+                _scaling = false;
+            }
+            
         }
 
         public void OnEndDrag(PointerEventData eventData)
@@ -88,6 +139,7 @@ namespace Clues
                         break;
                 }
             }
+            _scaling = false;
         }
 
         public void OnScroll(PointerEventData eventData)
