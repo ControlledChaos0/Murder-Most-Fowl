@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c575798f67dbf4e9fd2fd23e7b50cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _clue: {fileID: 0}
+  _clueID: 
   _disappearOnClick: 1
 --- !u!212 &236256187
 SpriteRenderer:
@@ -557,6 +557,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 427029477822732481, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427029477822732481, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600398623592735818, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600398623592735818, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600398623592735818, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3220183017203778704, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -639,7 +659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3231515563247730419, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00011586263
+      value: -0.00004204748
       objectReference: {fileID: 0}
     - target: {fileID: 3691073673336351334, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_Name
@@ -664,6 +684,10 @@ PrefabInstance:
     - target: {fileID: 4358073387675039137, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073712475295230537, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000043057124
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1346,7 +1370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c575798f67dbf4e9fd2fd23e7b50cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _clue: {fileID: 0}
+  _clueID: 
   _disappearOnClick: 1
 --- !u!114 &1037350119
 MonoBehaviour:
@@ -1961,11 +1985,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6603576285487912526, guid: a69422f5e4997c046b1bb83c0a2e7ab2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.119813
+      value: -8.115057
       objectReference: {fileID: 0}
     - target: {fileID: 6603576285487912526, guid: a69422f5e4997c046b1bb83c0a2e7ab2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.88895
+      value: 1.88894
       objectReference: {fileID: 0}
     - target: {fileID: 6603576285487912526, guid: a69422f5e4997c046b1bb83c0a2e7ab2, type: 3}
       propertyPath: m_LocalPosition.z
