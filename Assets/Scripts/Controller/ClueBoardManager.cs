@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using Clues;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.UI;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class ClueBoardManager : Singleton<ClueBoardManager>,
@@ -14,22 +14,35 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     [Header("Transforms")]
     [SerializeField]
     private Canvas _canvas;
+    public Canvas ClueBoardCanvas => _canvas;
     [SerializeField] 
     private GameObject _board;
     [SerializeField]
     private RectTransform _boardTransform;
+    public RectTransform BoardTransform => _boardTransform;
     [SerializeField]
     private RectTransform _holdingPinTransform;
+    public RectTransform HoldingPinTransform => _holdingPinTransform;
 
     [SerializeField] private RectTransform stringRenderers;
     public RectTransform StringRenderers => stringRenderers;
     
     [SerializeField] private RectTransform clues;
     public RectTransform Clues => clues;
+    [SerializeField] private RectTransform _front;
+    public RectTransform Front => _front;
+
+    [Header("Clue UI")]
+    [SerializeField]
+    private GameObject _objectUI;
 
     [Header("Sub-objects")]
     [SerializeField]
-    private ClueBoardBin _boardBin;
+    private NewBin _newBin;
+    public NewBin NewBin => _newBin;
+    [SerializeField]
+    private ArchiveBin _archiveBin;
+    public ArchiveBin ArchiveBin => _archiveBin;
     [SerializeField]
     private GameObject _toggleButton;
 
@@ -40,6 +53,8 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     [SerializeField] private float _zoomOutLimit = 0.328f;
     [SerializeField] private float _zoomInLimit = 1.25f;
 
+    private GraphicRaycaster _graphicRaycaster;
+    public GraphicRaycaster GraphicRaycast => _graphicRaycaster;
     private Animator _animator;
     private ClueObjectUI _selectedObj;
 
@@ -52,18 +67,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
 
     private readonly Vector2 DEFAULT_PIVOT = new(0.5f, 0.5f);
 
-    public Canvas ClueBoardCanvas
-    {
-        get => _canvas;
-    }
-    public RectTransform BoardTransform
-    {
-        get => _boardTransform;
-    }
-    public RectTransform HoldingPinTransform
-    {
-        get => _holdingPinTransform;
-    }
+    
 
 
     private void Awake() {
@@ -75,6 +79,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     void Start()
     {
         _canvas = GetComponent<Canvas>();
+        _graphicRaycaster = GetComponent<GraphicRaycaster>();
 
         InputController.Instance.ToggleClueBoard += ToggleClueBoard;
 
@@ -114,7 +119,8 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
 
     private void OpenClueBoard()
     {
-        _boardBin.InitBin();
+        _newBin.InitBin();
+        _archiveBin.InitBin();
         _activated = true;
         _animator.Play("Reveal");
     }
@@ -224,9 +230,11 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
         _boardTransform.anchoredPosition = newAnchorPos;
     }
 
-    public void AddToBin(ClueObjectUI clueObjectUI)
+    public void InstantiateClue(string clue)
     {
-        _boardBin.AddToBin(clueObjectUI);
+        GameObject clueObject = Instantiate(_objectUI);
+        ClueObjectUI clueUI = clueObject.GetComponent<ClueObjectUI>();
+        clueUI.AddClue(clue);
     }
 
     public void OnDrag(PointerEventData eventData)

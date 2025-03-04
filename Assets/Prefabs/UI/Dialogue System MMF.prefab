@@ -266,8 +266,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1729708675622223507}
   - component: {fileID: 5891085521661955111}
-  - component: {fileID: 5029668030898863456}
   - component: {fileID: 2630036577497976393}
+  - component: {fileID: 2644401551768669220}
+  - component: {fileID: 7174233878361706342}
   m_Layer: 0
   m_Name: Dialogue System MMF
   m_TagString: Untagged
@@ -304,14 +305,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yarnProject: {fileID: 7545569452688597077, guid: 01421dfa94d7b554ebe81e0b203eeb72, type: 3}
-  _variableStorage: {fileID: 5029668030898863456}
+  _variableStorage: {fileID: 2644401551768669220}
   dialogueViews:
   - {fileID: 8770889015719287582}
   - {fileID: 2462930784290947739}
   startNode: Start
   startAutomatically: 1
   runSelectedOptionAsLine: 0
-  lineProvider: {fileID: 0}
+  lineProvider: {fileID: 7174233878361706342}
   verboseLogging: 1
   onNodeStart:
     m_PersistentCalls:
@@ -352,20 +353,6 @@ MonoBehaviour:
   onCommand:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5029668030898863456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3550219144273042960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610c541718d694070a21327d1ae62e75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showDebug: 0
-  debugTextView: {fileID: 0}
 --- !u!114 &2630036577497976393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +374,31 @@ MonoBehaviour:
     sprite: {fileID: -199876445757598851, guid: 30f736b8374cc3447b5791447c5aae10, type: 3}
   - name: Nancy
     sprite: {fileID: -1788626132936788117, guid: 1a31de99fa89e4f438db8fb8d7af808a, type: 3}
+--- !u!114 &2644401551768669220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3550219144273042960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba087fe9885d63458b571231250790a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7174233878361706342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3550219144273042960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f0777399ec04ef6957da2ae823eb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textLanguageCode: en-US
 --- !u!1 &8727645868148735028
 GameObject:
   m_ObjectHideFlags: 0

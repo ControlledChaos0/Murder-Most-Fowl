@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 1772704875}
   - component: {fileID: 1772704874}
   - component: {fileID: 1772704876}
+  - component: {fileID: 1772704877}
   - component: {fileID: 1772704873}
   m_Layer: 0
   m_Name: Game Manager
@@ -215,6 +216,26 @@ MonoBehaviour:
     NoticedSandwich: 0
     HasHandkerchief: 0
     InspectHandkerchief: 0
+    ClueBoardClues: []
+    ClueBoardNotes: []
+    NewClueBin: []
+    ArchivedClueBin: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &1772704877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772704871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a0eba39e0e4234d92047203ca14cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_clueDatabase: {fileID: 11400000, guid: a24f39508c134c1498985c44200f745c, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

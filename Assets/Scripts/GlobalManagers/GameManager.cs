@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(SceneManager), typeof(StateManager))]
 public class GameManager : MonoBehaviour
@@ -12,6 +13,9 @@ public class GameManager : MonoBehaviour
     public static StateManager StateManager => Instance.m_stateManager;
     public static State State => StateManager.ActiveState;
 
+    private ClueManager m_clueManager;
+    public static ClueManager ClueManager => Instance.m_clueManager;
+
 
     private void Awake()
     {
@@ -20,5 +24,6 @@ public class GameManager : MonoBehaviour
 
         m_sceneManager = GetComponent<SceneManager>();
         m_stateManager = GetComponent<StateManager>();
+        m_clueManager = GetComponent<ClueManager>();
     }
 }
