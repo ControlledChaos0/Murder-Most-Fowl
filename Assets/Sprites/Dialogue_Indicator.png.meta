@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 1a1d143e1b8ff402894c394d875b287c
+guid: a442749dafc687948971eee693454077
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1976063245373077020
-    second: Chandelier_0
-  - first:
-      213: -4748549010482785610
-    second: Chandelier_1
-  - first:
-      213: 1532017102122886430
-    second: Chandelier_2
-  - first:
-      213: -5375149405959807729
-    second: Chandelier_3
-  - first:
-      213: 712402770443981072
-    second: Chandelier_4
+      213: -3949105159876895921
+    second: Dialogue_Indicator_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chandelier_2
+      name: Dialogue_Indicator_0
       rect:
         serializedVersion: 2
-        x: 59
-        y: 92
-        width: 2435
-        height: 3063
+        x: 17
+        y: 29
+        width: 586
+        height: 458
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e15abd9ff61d24510800000000000000
-      internalID: 1532017102122886430
+      spriteID: f4b10e4c7c5f139c0800000000000000
+      internalID: -3949105159876895921
       vertices: []
       indices: 
       edges: []
@@ -137,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 774528fcb8b4cae479fed9c06933a76c
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -146,12 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Chandelier_0: 1976063245373077020
-      Chandelier_1: -4748549010482785610
-      Chandelier_2: 1532017102122886430
-      Chandelier_3: -5375149405959807729
-      Chandelier_4: 712402770443981072
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

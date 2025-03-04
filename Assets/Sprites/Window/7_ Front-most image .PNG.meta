@@ -1,22 +1,109 @@
 fileFormatVersion: 2
-guid: 1a1d143e1b8ff402894c394d875b287c
+guid: 2a0cfdce0446bec4cbc291cbb55354c9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1976063245373077020
-    second: Chandelier_0
+      213: -7706422849588477549
+    second: 7_ Front-most image _0
   - first:
-      213: -4748549010482785610
-    second: Chandelier_1
+      213: 4216201324936706948
+    second: 7_ Front-most image _1
   - first:
-      213: 1532017102122886430
-    second: Chandelier_2
+      213: 6094717505404307504
+    second: 7_ Front-most image _2
   - first:
-      213: -5375149405959807729
-    second: Chandelier_3
+      213: -7092739894012374988
+    second: 7_ Front-most image _3
   - first:
-      213: 712402770443981072
-    second: Chandelier_4
+      213: 7452229716417800928
+    second: 7_ Front-most image _4
+  - first:
+      213: -1174172030031050583
+    second: 7_ Front-most image _5
+  - first:
+      213: -8130249651328494327
+    second: 7_ Front-most image _6
+  - first:
+      213: 2816281680539033393
+    second: 7_ Front-most image _7
+  - first:
+      213: -4937678687996378553
+    second: 7_ Front-most image _8
+  - first:
+      213: -8379027573513509368
+    second: 7_ Front-most image _9
+  - first:
+      213: 6454831213474540765
+    second: 7_ Front-most image _10
+  - first:
+      213: 1327818465818295689
+    second: 7_ Front-most image _11
+  - first:
+      213: 891329786554818795
+    second: 7_ Front-most image _12
+  - first:
+      213: -8624650460916592926
+    second: 7_ Front-most image _13
+  - first:
+      213: 2358718987924867952
+    second: 7_ Front-most image _14
+  - first:
+      213: -1965967082915311886
+    second: 7_ Front-most image _15
+  - first:
+      213: 1299807322873000129
+    second: 7_ Front-most image _16
+  - first:
+      213: -5120599052154077242
+    second: 7_ Front-most image _17
+  - first:
+      213: -4399556025032716439
+    second: 7_ Front-most image _18
+  - first:
+      213: 3179858327284281139
+    second: 7_ Front-most image _19
+  - first:
+      213: 5948623934802016274
+    second: 7_ Front-most image _20
+  - first:
+      213: -2745683119961255701
+    second: 7_ Front-most image _21
+  - first:
+      213: 5678682195450109805
+    second: 7_ Front-most image _22
+  - first:
+      213: 9129715402191996627
+    second: 7_ Front-most image _23
+  - first:
+      213: 6623472715050690898
+    second: 7_ Front-most image _24
+  - first:
+      213: 3680341825626370059
+    second: 7_ Front-most image _25
+  - first:
+      213: 4845065389479076173
+    second: 7_ Front-most image _26
+  - first:
+      213: -5547856854593670152
+    second: 7_ Front-most image _27
+  - first:
+      213: -4087543550273954605
+    second: 7_ Front-most image _28
+  - first:
+      213: -5387048089050790539
+    second: 7_ Front-most image _29
+  - first:
+      213: 862088748826708339
+    second: 7_ Front-most image _30
+  - first:
+      213: -8224879657855688099
+    second: 7_ Front-most image _31
+  - first:
+      213: -4082856367041305593
+    second: 7_ Front-most image _32
+  - first:
+      213: 3173225411073516617
+    second: 7_ Front-most image _33
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,13 +199,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chandelier_2
+      name: 7_ Front-most image _33
       rect:
         serializedVersion: 2
-        x: 59
-        y: 92
-        width: 2435
-        height: 3063
+        x: 430
+        y: 1688
+        width: 4044
+        height: 359
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +214,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e15abd9ff61d24510800000000000000
-      internalID: 1532017102122886430
+      spriteID: 944a74be2bf890c20800000000000000
+      internalID: 3173225411073516617
       vertices: []
       indices: 
       edges: []
@@ -137,7 +224,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 774528fcb8b4cae479fed9c06933a76c
+    spriteID: dfe0302db33345f448a2699b34d028f2
     internalID: 0
     vertices: []
     indices: 
@@ -147,11 +234,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Chandelier_0: 1976063245373077020
-      Chandelier_1: -4748549010482785610
-      Chandelier_2: 1532017102122886430
-      Chandelier_3: -5375149405959807729
-      Chandelier_4: 712402770443981072
+      7_ Front-most image _5: 1505879062
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
