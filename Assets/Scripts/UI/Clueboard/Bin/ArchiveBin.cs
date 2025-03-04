@@ -15,13 +15,13 @@ public class ArchiveBin : ClueBoardBin
         base.Update();
     }
 
-    public new void AddToBin(ClueObjectUI clueObject)
+    public override void AddToBin(ClueObjectUI clueObject)
     {
         base.AddToBin(clueObject);
         GameManager.StateManager.ActiveState.ArchivedClueBin.Add(clueObject.Clue.ClueID);
     }
 
-    public new void RemoveFromBin(ClueObjectUI clueObject)
+    public override void RemoveFromBin(ClueObjectUI clueObject)
     {
         base.RemoveFromBin(clueObject);
         GameManager.StateManager.ActiveState.ArchivedClueBin.Remove(clueObject.Clue.ClueID);

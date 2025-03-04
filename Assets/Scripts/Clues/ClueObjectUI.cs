@@ -11,10 +11,14 @@ namespace Clues
         IScrollHandler, IPointerDownHandler, IPointerUpHandler
     {
         [SerializeField] private Image _image;
+        public Image Image => _image;
 
         private Clue _clue;
         private ClueBoardClue _saveClue;
+
         private bool _onBoard;
+        private bool _inBin;
+        private ClueBoardBin _currentBin;
 
         private Vector2 _offset;
         private bool _mouseDown;
@@ -32,10 +36,8 @@ namespace Clues
         // Start is called before the first frame update
         private void Start()
         {
-            transform.parent = ClueBoardManager.Instance.HoldingPinTransform;
-            transform.localPosition = Vector3.zero;
-            transform.localScale = Vector3.one;
-            ClueBoardManager.Instance.AddToBin(this);
+            _currentBin = ClueBoardManager.Instance.NewBin;
+            OnPlacedBin(_currentBin.gameObject);
             _mouseDown = false;
             _scaleChange = new Vector3(0.2f, 0.2f, 0.2f);
 
@@ -67,8 +69,25 @@ namespace Clues
             _offset = Vector2.zero;
             List<RaycastResult> results = new List<RaycastResult>();
             ClueBoardManager.Instance.GraphicRaycast.Raycast(eventData, results);
-            Debug.Log("Pdsfjkla");
-            OnPlacedClueboard();
+            bool placed = false;
+            foreach(RaycastResult result in results)
+            {
+                if (placed)
+                {
+                    break;
+                }
+                switch (result.gameObject.tag)
+                {
+                    case ("Bin"):
+                        OnPlacedBin(result.gameObject);
+                        placed = true;
+                        break;
+                    case ("Board"):
+                        OnPlacedClueboard();
+                        placed = true;
+                        break;
+                }
+            }
         }
 
         public void OnScroll(PointerEventData eventData)
@@ -102,17 +121,43 @@ namespace Clues
 
         public void OnPlacedClueboard()
         {
+            transform.parent = ClueBoardManager.Instance.Clues;
             if (_saveClue == null)
             {
                 _saveClue = new ClueBoardClue();
+                _saveClue.ClueID = Clue.ClueID;
             }
-            _saveClue.ClueID = Clue.ClueID;
             _saveClue.Position = transform.localPosition;
-            _saveClue.Scale = transform.localScale.x;
+            _saveClue.Scale = _image.transform.localScale.x;
 
             _onBoard = true;
-            ClueBoardManager.Instance.RemoveFromBin(this);
-            ClueInventoryManager.Instance.UpdateClue(_saveClue);
+            if (_inBin)
+            {
+                _currentBin.RemoveFromBin(this);
+                _inBin = false;
+                ClueInventoryManager.Instance.AddClueBoardClue(_saveClue);
+            }
+            else
+            {
+                ClueInventoryManager.Instance.UpdateClueBoardClue(_saveClue);
+            }
+        }
+
+        public void OnPlacedBin(GameObject binGO)
+        {
+            //Clue
+            if (_onBoard)
+            {
+                ClueInventoryManager.Instance.DeleteClueBoardClue(_saveClue);
+                _onBoard = false;
+            } else if (_inBin)
+            {
+                _currentBin.RemoveFromBin(this);
+            }
+
+            binGO.TryGetComponent(out _currentBin);
+            _currentBin.AddToBin(this);
+            _inBin = true;
         }
     }
 }

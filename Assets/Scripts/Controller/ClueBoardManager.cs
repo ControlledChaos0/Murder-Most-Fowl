@@ -14,12 +14,15 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     [Header("Transforms")]
     [SerializeField]
     private Canvas _canvas;
+    public Canvas ClueBoardCanvas => _canvas;
     [SerializeField] 
     private GameObject _board;
     [SerializeField]
     private RectTransform _boardTransform;
+    public RectTransform BoardTransform => _boardTransform;
     [SerializeField]
     private RectTransform _holdingPinTransform;
+    public RectTransform HoldingPinTransform => _holdingPinTransform;
 
     [SerializeField] private RectTransform stringRenderers;
     public RectTransform StringRenderers => stringRenderers;
@@ -36,8 +39,10 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     [Header("Sub-objects")]
     [SerializeField]
     private NewBin _newBin;
+    public NewBin NewBin => _newBin;
     [SerializeField]
     private ArchiveBin _archiveBin;
+    public ArchiveBin ArchiveBin => _archiveBin;
     [SerializeField]
     private GameObject _toggleButton;
 
@@ -62,18 +67,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
 
     private readonly Vector2 DEFAULT_PIVOT = new(0.5f, 0.5f);
 
-    public Canvas ClueBoardCanvas
-    {
-        get => _canvas;
-    }
-    public RectTransform BoardTransform
-    {
-        get => _boardTransform;
-    }
-    public RectTransform HoldingPinTransform
-    {
-        get => _holdingPinTransform;
-    }
+    
 
 
     private void Awake() {
@@ -241,16 +235,6 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
         GameObject clueObject = Instantiate(_objectUI);
         ClueObjectUI clueUI = clueObject.GetComponent<ClueObjectUI>();
         clueUI.AddClue(clue);
-    }
-
-    public void AddToBin(ClueObjectUI clueObjectUI)
-    {
-        _newBin.AddToBin(clueObjectUI);
-    }
-
-    public void RemoveFromBin(ClueObjectUI clueObjectUI)
-    {
-        _newBin.RemoveFromBin(clueObjectUI);
     }
 
     public void OnDrag(PointerEventData eventData)

@@ -8,6 +8,7 @@ public class ClueBoardBin : MonoBehaviour,
     IPointerClickHandler
 {
     [SerializeField] protected RectTransform _menuTransform;
+    [SerializeField] protected RectTransform _storageTransform;
     [SerializeField] protected Animator _animator;
 
     protected List<ClueObjectUI> _clueList;
@@ -39,8 +40,6 @@ public class ClueBoardBin : MonoBehaviour,
         _clueList.RemoveAt(0);
 
         clueObject.gameObject.transform.position = eventData.position;
-        //RectTransform boardTransform = ClueBoardManager.Instance.BoardTransform;
-        clueObject.gameObject.transform.parent = ClueBoardManager.Instance.Clues;
         clueObject.gameObject.transform.localScale = Vector3.one;
         eventData.pressPosition = eventData.position;
         _draggedClue = clueObject;
@@ -53,17 +52,20 @@ public class ClueBoardBin : MonoBehaviour,
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        _draggedClue?.OnEndDrag(eventData);
         RemoveFromBin(_draggedClue);
+        _draggedClue?.OnEndDrag(eventData);
         _draggedClue = null;
     }
 
-    public void AddToBin(ClueObjectUI clueObject)
+    public virtual void AddToBin(ClueObjectUI clueObject)
     {
         _clueList.Add(clueObject);
+        clueObject.transform.parent = _storageTransform;
+        clueObject.transform.localPosition = Vector3.zero;
+        clueObject.Image.transform.localScale = Vector3.one;
     }
 
-    public void RemoveFromBin(ClueObjectUI clueObject)
+    public virtual void RemoveFromBin(ClueObjectUI clueObject)
     {
         if (!clueObject)
         {
