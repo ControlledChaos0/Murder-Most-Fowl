@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
+using UnityEngine.Rendering;
 
 public class InputController : Singleton<InputController>
 {
@@ -26,10 +27,12 @@ public class InputController : Singleton<InputController>
     private InputActionMap _mainControls;
     //private InputActionMap _clueBoardControls;
     private InputActionMap _uiControls;
+    private InputActionMap _ui2Controls;
 
     private InputAction _pointAction;
     private InputAction _clickAction;
     private InputAction _rightClickAction;
+    private InputAction _pauseAction;
 
     private InputAction _scrollAction;
     //private InputAction _cancelAction;
@@ -60,6 +63,7 @@ public class InputController : Singleton<InputController>
     public event Action RightClick;
     public event Action RightHold;
     public event Action RightCancel;
+    public event Action Pause;
     //public event Action<Vector2> Hover;
     //public event Action<Vector2> MouseMove;
 
@@ -72,9 +76,6 @@ public class InputController : Singleton<InputController>
 
         SetControls();
         InitializeControls();
-
-        //Overall Controls
-        _mainControls.Enable();
     }
     //// Start is called before the first frame update
     void Start()
@@ -89,6 +90,11 @@ public class InputController : Singleton<InputController>
         
     }
 
+    void OnDestroy()
+    {
+        DeinitializeControls();
+    }
+
     private void SetControls()
     {
         SetUIControls();
@@ -99,6 +105,12 @@ public class InputController : Singleton<InputController>
     {
         InitializeUIControls();
         InitializeMainControls();
+    }
+
+    private void DeinitializeControls()
+    {
+        DeinitializeMainControls();
+        DeinitializeUIControls();
     }
 
     private void SetMainControls() {
@@ -114,17 +126,41 @@ public class InputController : Singleton<InputController>
         _rightClickAction = _uiControls.FindAction("RightClick");
         _clickAction = _uiControls.FindAction("Click");
         _pointAction = _uiControls.FindAction("Point");
+        _pauseAction = _uiControls.FindAction("Pause");
     }
 
     private void InitializeMainControls()
     {
         _clueBoardAction.performed += OnToggleClueBoard;
+
+        _mainControls.Enable();
     }
 
     private void InitializeUIControls()
     {
         _rightClickAction.performed += OnRightClickPerformed;
         _clickAction.performed += OnClickPerformed;
+
+        _pauseAction.performed += OnPausePerformed;
+
+        _uiControls.Enable();
+    }
+
+    private void DeinitializeMainControls()
+    {
+        _clueBoardAction.performed -= OnToggleClueBoard;
+
+        _mainControls.Disable();
+    }
+
+    private void DeinitializeUIControls()
+    {
+        _rightClickAction.performed -= OnRightClickPerformed;
+        _clickAction.performed -= OnClickPerformed;
+
+        _pauseAction.performed -= OnPausePerformed;
+
+        _uiControls.Disable();
     }
 
     //private void OnEnable() {
@@ -205,12 +241,9 @@ public class InputController : Singleton<InputController>
     {
         ToggleClueBoard?.Invoke();
     }
-
-    public PointerEventData GetPointerEventData()
+    private void OnPausePerformed(InputAction.CallbackContext context)
     {
-        Vector2 screenPos = _pointAction.ReadValue<Vector2>();
-        PointerEventData eventData = CameraController.Instance.Raycast(screenPos);
-        return eventData;
+        Pause?.Invoke();
     }
 
     //private void OnCloseClueBoard(InputAction.CallbackContext context) {

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Penguin_Overworld_0: -6547067986984631874
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

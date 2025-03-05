@@ -63,22 +63,22 @@ namespace Clues
                 Vector3 newOffset = uiPosWorld - mousePosWorld;
                 
                 var change = newOffset.magnitude/_worldOffset.magnitude;
-                if ((_sizeMax > _sprite.transform.localScale.x) && (newOffset.magnitude > _worldOffset.magnitude)) {
+                if ((_sizeMax > _image.transform.localScale.x) && (newOffset.magnitude > _worldOffset.magnitude)) {
                     // Scale up
                     if (_initialScale.x * change > _sizeMax){
                         // reach maximum size
-                        _sprite.transform.localScale = new Vector3(_sizeMax, _sizeMax, 1);
+                        _image.transform.localScale = new Vector3(_sizeMax, _sizeMax, 1);
                     } else {
-                        _sprite.transform.localScale = _initialScale * change; 
+                        _image.transform.localScale = _initialScale * change; 
                     }
-                } else if (_sizeMin < _sprite.transform.localScale.x && newOffset.magnitude < _worldOffset.magnitude){
+                } else if (_sizeMin < _image.transform.localScale.x && newOffset.magnitude < _worldOffset.magnitude){
                     // Scale Down
                     if (_initialScale.x * change < _sizeMin){
                         // reach minimum size
-                        _sprite.transform.localScale = new Vector3(_sizeMin, _sizeMin, 1);
+                        _image.transform.localScale = new Vector3(_sizeMin, _sizeMin, 1);
 
                     } else {
-                        _sprite.transform.localScale = _initialScale * change; 
+                        _image.transform.localScale = _initialScale * change; 
                     }
                     
                 }
@@ -101,14 +101,14 @@ namespace Clues
 
             transform.parent = ClueBoardManager.Instance.Clues;
 
-            var renderer = _sprite.GetComponent<RectTransform>();
-            var width = renderer.rect.width * _sprite.transform.localScale.x;
-            var height = renderer.rect.height * _sprite.transform.localScale.y;
+            var renderer = _image.GetComponent<RectTransform>();
+            var width = renderer.rect.width * _image.transform.localScale.x;
+            var height = renderer.rect.height * _image.transform.localScale.y;
             var margin = 5;
 
             if (_offset.x > (width/2 - margin) * 0.6f || _offset.y > (height/2 - margin) * 0.6f || _offset.x < (-width/2 + margin) * 0.6f || _offset.y < (-height/2 + margin) * 0.6f) {
                 _scaling = true;
-                _initialScale = _sprite.transform.localScale;
+                _initialScale = _image.transform.localScale;
             } else {
                 _scaling = false;
             }

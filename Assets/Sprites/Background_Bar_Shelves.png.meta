@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Background_Bar_Shelves_0: 3002876643269097345
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -10,10 +10,24 @@ namespace UI
         
         public GameObject pauseMenuUI;
 
+        void Start()
+        {
+            InputController.Instance.Pause += OnPause;
+            GameIsPaused = false;
+        }
+
         // Update is called once per frame
         private void Update()
         {
-            if (!Input.GetKeyDown(KeyCode.Escape)) return;
+        }
+
+        void OnDestroy()
+        {
+            InputController.Instance.Pause -= OnPause;
+        }
+
+        public void OnPause()
+        {
             if (GameIsPaused)
             {
                 Resume();
@@ -31,7 +45,7 @@ namespace UI
             GameIsPaused = true;
         }
 
-        public void Resume()
+        private void Resume()
         {
             pauseMenuUI.SetActive(false);
             Time.timeScale = 1f;
@@ -41,12 +55,12 @@ namespace UI
         public void LoadMainMenu()
         {
             Time.timeScale = 1f;
-            SceneManager.LoadScene(mainMenuSceneName);
+            GameManager.SceneManager.LoadSceneAndSwap(mainMenuSceneName);
         }
 
         public void QuitGame()
         {
-            Application.Quit();
+            GameManager.SceneManager.QuitApplication();
         }
     }
 }
