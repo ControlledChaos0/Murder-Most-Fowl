@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Clues;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.UI;
-using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class ClueBoardManager : Singleton<ClueBoardManager>,
@@ -16,27 +16,18 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     [Header("Transforms")]
     [SerializeField]
     private Canvas _canvas;
-    public Canvas ClueBoardCanvas => _canvas;
     [SerializeField] 
     private GameObject _board;
     [SerializeField]
     private RectTransform _boardTransform;
-    public RectTransform BoardTransform => _boardTransform;
     [SerializeField]
     private RectTransform _holdingPinTransform;
-    public RectTransform HoldingPinTransform => _holdingPinTransform;
 
     [SerializeField] private RectTransform stringRenderers;
     public RectTransform StringRenderers => stringRenderers;
     
     [SerializeField] private RectTransform clues;
     public RectTransform Clues => clues;
-    [SerializeField] private RectTransform _front;
-    public RectTransform Front => _front;
-
-    [Header("Clue UI")]
-    [SerializeField]
-    private GameObject _objectUI;
 
     [Header("Sub-objects")]
     [SerializeField]
@@ -57,8 +48,6 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     [SerializeField] private float _zoomOutLimit = 0.328f;
     [SerializeField] private float _zoomInLimit = 1.25f;
 
-    private GraphicRaycaster _graphicRaycaster;
-    public GraphicRaycaster GraphicRaycast => _graphicRaycaster;
     private Animator _animator;
     private ClueObjectUI _selectedObj;
 
@@ -84,7 +73,6 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     void Start()
     {
         _canvas = GetComponent<Canvas>();
-        _graphicRaycaster = GetComponent<GraphicRaycaster>();
 
         InputController.Instance.ToggleClueBoard += ToggleClueBoard;
         InputController.Instance.ToggleStickyNote += ToggleStickyNote;
