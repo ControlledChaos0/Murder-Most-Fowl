@@ -15,7 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Luke/Luke Test Scene.unity
     guid: a275db4c87df7af4d87e6a32b564f2b3
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/Scenes/Emilee/TestScene Emilee.unity
     guid: 39c78e029a8671b41a95c0617576255f
+=======
+    path: Assets/Scenes/Samad/TestScene.unity
+    guid: a8366ad338cd77d4b860b032d7da987d
+  - enabled: 1
+    path: Assets/Scenes/Samad/TestCombinations.unity
+    guid: f544678a231a4574ca84ed2e93f672ef
+>>>>>>> Stashed changes
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
