@@ -2,11 +2,18 @@ using System.Collections.Generic;
 using Clues;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ClueBoardBin : MonoBehaviour,
     IDragHandler, IBeginDragHandler, IEndDragHandler,
     IPointerClickHandler
 {
+    [Header("Bin Sprites")]
+    [SerializeField] protected Image _image;
+    [SerializeField] protected Sprite _spriteClose;
+    [SerializeField] protected Sprite _spriteOpen;
+
+    [Header("Bin Transforms")]
     [SerializeField] protected RectTransform _menuTransform;
     [SerializeField] protected RectTransform _storageTransform;
     [SerializeField] protected Animator _animator;
@@ -20,6 +27,7 @@ public class ClueBoardBin : MonoBehaviour,
     protected void Start()
     {
         _clueList = new List<ClueObjectUI>();
+        _image.sprite = _spriteClose;
     }
 
     // Update is called once per frame
@@ -102,11 +110,13 @@ public class ClueBoardBin : MonoBehaviour,
     {
         _showMenu = true;
         _animator.Play("Reveal");
+        _image.sprite = _spriteOpen;
     }
 
     protected void CloseBin()
     {
         _showMenu = false;
         _animator.Play("Hide");
+        _image.sprite = _spriteClose;
     }
 }
