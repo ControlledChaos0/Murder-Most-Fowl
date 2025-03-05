@@ -19,7 +19,9 @@ public class SceneManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // TODO
+        // Remove when doing actual things
+        if (Input.GetKeyDown(KeyCode.End))
         {
             QuitApplication();
         }

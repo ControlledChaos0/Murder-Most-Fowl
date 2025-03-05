@@ -6,24 +6,28 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/_preload.unity
+    path: Assets/Scenes/_Main Scenes/_preload.unity
     guid: 7bdbd4876d270134bb24427f3b526d60
-  - enabled: 0
-    path: Assets/Scenes/TestScene.unity
-    guid: 824d33574ff40c949939853c4843d158
+  - enabled: 1
+    path: Assets/Scenes/_Main Scenes/Main Menu.unity
+    guid: 4bc8a5516f94fa4428aa26371ce87a4f
+  - enabled: 1
+    path: Assets/Scenes/_Main Scenes/TrainCarMain.unity
+    guid: b03bd3aadeea7fd458ed0edd20f17544
+  - enabled: 1
+    path: Assets/Scenes/Sophia/Train_Car.unity
+    guid: f5e3a4e23ddab584eadd1c2445e46a66
   - enabled: 0
     path: Assets/Scenes/Luke/Luke Test Scene.unity
     guid: a275db4c87df7af4d87e6a32b564f2b3
   - enabled: 1
-<<<<<<< Updated upstream
+    path: Assets/Scenes/Jade/TestSceneOG.unity
+    guid: 824d33574ff40c949939853c4843d158
+  - enabled: 1
+    path: Assets/Scenes/Jade/TestSceneJade.unity
+    guid: b6899592aed0b3e4f8038d801421a5e8
+  - enabled: 1
     path: Assets/Scenes/Emilee/TestScene Emilee.unity
     guid: 39c78e029a8671b41a95c0617576255f
-=======
-    path: Assets/Scenes/Samad/TestScene.unity
-    guid: a8366ad338cd77d4b860b032d7da987d
-  - enabled: 1
-    path: Assets/Scenes/Samad/TestCombinations.unity
-    guid: f544678a231a4574ca84ed2e93f672ef
->>>>>>> Stashed changes
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
