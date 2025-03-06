@@ -34,11 +34,18 @@ public class StateManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        NewState();
+    }
+
     public void NewState()
     {
         m_activeState = new();
         m_activeState.SaveID = AssignSaveID();
         m_activeState.SaveCreated = DateTime.Now;
+
+        m_activeState = GameManager.CharacterManager.InitCharacterState(m_activeState);
     }
 
     private uint AssignSaveID()

@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     private ClueManager m_clueManager;
     public static ClueManager ClueManager => Instance.m_clueManager;
+    private CharacterManager m_characterManager;
+    public static CharacterManager CharacterManager => Instance.m_characterManager;
 
 
     private void Awake()
@@ -25,5 +27,6 @@ public class GameManager : MonoBehaviour
         m_sceneManager = GetComponent<SceneManager>();
         m_stateManager = GetComponent<StateManager>();
         m_clueManager = GetComponent<ClueManager>();
+        m_characterManager = GetComponent<CharacterManager>();
     }
 }

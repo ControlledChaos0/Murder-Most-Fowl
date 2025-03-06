@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "New Clue Database", menuName = "Scriptable Objects/Clue Database")]
+[CreateAssetMenu(fileName = "New Clue Database", menuName = "Scriptable Objects/Clues/Clue Database")]
 public class ClueDatabase : ScriptableObject
 {
     [SerializeField]

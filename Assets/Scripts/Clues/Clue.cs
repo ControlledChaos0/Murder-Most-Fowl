@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using System.IO;
 
-[CreateAssetMenu(fileName = "New Clue", menuName = "Scriptable Objects/Clue")]
+[CreateAssetMenu(fileName = "New Clue", menuName = "Scriptable Objects/Clues/Clue")]
 public class Clue : ScriptableObject
 {
     [SerializeField]
