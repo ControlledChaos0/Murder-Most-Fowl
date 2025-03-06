@@ -192,13 +192,13 @@ public class InputController : Singleton<InputController>
     }
     private void OnClickDown()
     {
-        Debug.Log("OnClickDown");
+        //Debug.Log("OnClickDown");
         _clickDown = true;
         _clickTime = Time.time;
     }
     private void OnClickUp()
     {
-        Debug.Log("OnClickUp");
+        //Debug.Log("OnClickUp");
         _clickDown = false;
         if (Time.time - _clickTime >= _pressTime)
         {
@@ -207,7 +207,7 @@ public class InputController : Singleton<InputController>
             //Probably should sit in Update or somewhere else
             return;
         }
-        Debug.Log("Just a click!!!");
+        //Debug.Log("Just a click!!!");
         Vector2 screenPos = _pointAction.ReadValue<Vector2>();
         PointerEventData eventData = CameraController.Instance.Raycast(screenPos);
         if (eventData != null)

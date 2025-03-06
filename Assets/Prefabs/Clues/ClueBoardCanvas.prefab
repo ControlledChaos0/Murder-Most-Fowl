@@ -481,7 +481,7 @@ MonoBehaviour:
   _archiveBin: {fileID: 185974061825089914}
   _toggleButton: {fileID: 1112443637991054846}
   _zoomSpeed: 0.05
-  _zoomOutLimit: 0.328
+  _zoomOutLimit: 0.41
   _zoomInLimit: 1.25
 --- !u!222 &4322557396592794000
 CanvasRenderer:

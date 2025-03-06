@@ -42,6 +42,9 @@ public class PlayerController : MonoBehaviour
                 m_IsMoving = false;
             }
         }
+
+        Debug.DrawLine(new Vector2(m_NewPos.x - .05f, m_NewPos.y - .05f), new Vector2(m_NewPos.x + .05f, m_NewPos.y + .05f));
+        Debug.DrawLine(new Vector2(m_NewPos.x + .05f, m_NewPos.y - .05f), new Vector2(m_NewPos.x - .05f, m_NewPos.y + .05f));
     }
 
     public void OnClick(PointerEventData eventData)
@@ -54,6 +57,7 @@ public class PlayerController : MonoBehaviour
     {
         m_OldPos = transform.position;
         m_NewPos = ScreenManager.Instance.GetClosestFloorLocation(ray);
+        Debug.Log(m_NewPos);
 
         if (m_OldPos.x > m_NewPos.x) {
             _characterSprite.flipX = true;
