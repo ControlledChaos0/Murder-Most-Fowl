@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Background_Shelf_door_Closed_0: 2872701774685260051
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

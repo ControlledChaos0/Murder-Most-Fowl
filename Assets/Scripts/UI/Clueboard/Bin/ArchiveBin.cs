@@ -23,6 +23,10 @@ public class ArchiveBin : ClueBoardBin
 
     public override void RemoveFromBin(ClueObjectUI clueObject)
     {
+        if (!clueObject)
+        {
+            return;
+        }
         base.RemoveFromBin(clueObject);
         GameManager.StateManager.ActiveState.ArchivedClueBin.Remove(clueObject.Clue.ClueID);
     }

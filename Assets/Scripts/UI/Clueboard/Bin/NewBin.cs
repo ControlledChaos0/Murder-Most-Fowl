@@ -23,6 +23,10 @@ public class NewBin : ClueBoardBin
 
     public override void RemoveFromBin(ClueObjectUI clueObject)
     {
+        if (!clueObject)
+        {
+            return;
+        }
         base.RemoveFromBin(clueObject);
         GameManager.StateManager.ActiveState.NewClueBin.Remove(clueObject.Clue.ClueID);
     }
