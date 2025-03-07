@@ -20,11 +20,8 @@ public class State
     public bool InspectHandkerchief = false;
 
     [Header("Characters")] 
-
-    public CharacterState GooseState;
-    public CharacterState PenguinState;
-    public CharacterState CrowState;
-    public CharacterState PeacockState;
+    
+    public List<CharacterState> CharacterStates;
 
     [Header("Inventory")]
     public List<ClueBoardClue> ClueBoardClues;

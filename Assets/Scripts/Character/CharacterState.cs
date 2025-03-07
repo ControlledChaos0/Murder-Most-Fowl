@@ -5,8 +5,17 @@ using System.Collections.Generic;
 [MessagePackObject(AllowPrivate = true), System.Serializable]
 public partial class CharacterState
 {
-
     [Key(0), SerializeField]
+    private string m_charID;
+
+    [IgnoreMember]
+    public string CharacterID
+    {
+        get { return m_charID; }
+        set { m_charID = value; }
+    }
+
+    [Key(1), SerializeField]
     private string m_name;
 
     [IgnoreMember]
@@ -16,7 +25,7 @@ public partial class CharacterState
         set { m_name = value; }
     }
 
-    [Key(1), SerializeField]
+    [Key(2), SerializeField]
     private string m_currNode;
 
     [IgnoreMember]
@@ -26,7 +35,7 @@ public partial class CharacterState
         set { m_currNode = value; }
     }
 
-    [Key(2), SerializeField]
+    [Key(3), SerializeField]
     private string m_currDismissal;
 
     [IgnoreMember]

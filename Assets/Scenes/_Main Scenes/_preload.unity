@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607a79191ecb4144da315beee2405368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_startScene: TestScene Emilee
+  m_startScene: TrainCarMain
 --- !u!114 &1772704875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,26 +217,7 @@ MonoBehaviour:
     NoticedSandwich: 0
     HasHandkerchief: 0
     InspectHandkerchief: 0
-    GooseState:
-      m_x: 0
-      m_y: 0
-      m_scale: 0
-      m_connectedClues: []
-    PenguinState:
-      m_x: 0
-      m_y: 0
-      m_scale: 0
-      m_connectedClues: []
-    CrowState:
-      m_x: 0
-      m_y: 0
-      m_scale: 0
-      m_connectedClues: []
-    PeacockState:
-      m_x: 0
-      m_y: 0
-      m_scale: 0
-      m_connectedClues: []
+    CharacterStates: []
     ClueBoardClues: []
     ClueBoardNotes: []
     NewClueBin: []

@@ -5,15 +5,25 @@ using Yarn.Unity;
 public class CharacterOverworld : MonoBehaviour,
     IPointerClickHandler
 {
-    [SerializeField] private string yarnNode;
+    [SerializeField] private string characterID;
+    [SerializeField] private string yarnNode => GetCurrentNode();
     public void OnPointerClick(PointerEventData eventData)
     {
-        DialogueHelper.Instance.DialogueRunner.StartDialogue(yarnNode);
+        string currNode = GetCurrentNode();
+        if (currNode == "")
+        {
+            return;
+        }
+        DialogueHelper.Instance.DialogueRunner.StartDialogue(currNode);
     }
 
-    [YarnCommand("set_node")]
-    public void SetNode(string node)
+    public string GetCurrentNode()
     {
-        yarnNode = node;
+        return CharacterManager.GetCharacterStateFromID(characterID).CurrentNode;
+    }
+
+    public string GetCurrentDismissal()
+    {
+        return CharacterManager.GetCharacterStateFromID(characterID).CurrentDismissal;
     }
 }

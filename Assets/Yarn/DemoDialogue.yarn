@@ -1,14 +1,14 @@
 title: Start
-tags:
+tags: lc:Owl rc:Goose
 ---
 <<declare $GooseIntroduced = false>>
 <<declare $NoticedSandwich = false>>
 <<declare $HasHandkerchief = false>>
 <<declare $InspectHandkerchief = false>>
 
-<<ChangeLeftCharacter Nancy>>
+<<ChangeLeftCharacter Owl>>
 <<ChangeRightCharacter>>
-Nancy: It's only noon and it's already been a long day. 
+Nancy: It's only noon and it's already been a long day. #lc:Owl
 Nancy: *sigh*
 Nancy: I'm just excited that it's my lunch break.
 ===
@@ -72,7 +72,6 @@ title: MissingSandwich
 	Nancy: My peanut butter and jelly sandwich!
 	Nancy: Who would do such a thing?
 	<<set $NoticedSandwich to true>>
-	<<set_node Goose GooseSuspicion>>
 <<else>>
 	Nancy: My sandwich...
 <<endif>>
