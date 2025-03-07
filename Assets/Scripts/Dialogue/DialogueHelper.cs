@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 using Yarn.Unity;
+using Object = System.Object;
 
 public class DialogueHelper : Singleton<DialogueHelper>
 {
@@ -12,15 +15,23 @@ public class DialogueHelper : Singleton<DialogueHelper>
         public string name;
         public Sprite sprite;
     }
+    [Serializable]
+    public struct NameSpriteMatch
+    {
+        public string spriteName;
+        public string name;
+    }
 
     [Header("Yarn Components")] 
     [SerializeField] private DialogueRunner _dialogueRunner;
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject _background;
+    [SerializeField] private TextMeshProUGUI _characterNameText;
     [SerializeField] private Image _leftCharacter;
     [SerializeField] private Image _rightCharacter;
     [SerializeField] private List<SpriteItem> _spriteList;
+    [SerializeField] private List<NameSpriteMatch> _nameList;
 
     public DialogueRunner DialogueRunner
     {
@@ -29,7 +40,12 @@ public class DialogueHelper : Singleton<DialogueHelper>
 
     private static Image _left;
     private static Image _right;
+    private static string _leftName;
+    private static string _rightName;
     private static List<SpriteItem> _sprites;
+    private static bool lockPortrait = false;
+
+    private Dictionary<string, string> _nameDict = new();
 
     void Awake()
     {
@@ -43,6 +59,12 @@ public class DialogueHelper : Singleton<DialogueHelper>
     void Start()
     {
         _dialogueRunner.onNodeStart.AddListener(StartNode);
+        //TMPro_EventManager.TEXT_CHANGED_EVENT.Add(NamePortraitUpdater);
+
+        foreach (NameSpriteMatch match in _nameList)
+        {
+            _nameDict[match.name] = match.spriteName;
+        }
     }
 
     // Update is called once per frame
@@ -70,12 +92,14 @@ public class DialogueHelper : Singleton<DialogueHelper>
             return;
         }
 
+        lockPortrait = false;
+
         var tagIEnum = _dialogueRunner.Dialogue.GetTagsForNode(node);
 
         List<string> tags = new(tagIEnum);
         foreach (string tag in tags)
         {
-            Debug.Log(tag);
+            MetadataParser(tag);
         }
     }
 
@@ -85,7 +109,15 @@ public class DialogueHelper : Singleton<DialogueHelper>
     [YarnCommand("ChangeLeftCharacter")]
     public static void ChangeLeft(string name = null)
     {
-        if (name == null)
+        if (lockPortrait)
+        {
+            return;
+        }
+        if (_leftName == name)
+        {
+            return;
+        }
+        if (string.IsNullOrEmpty(name))
         {
             _left.gameObject.SetActive(false);
             return;
@@ -102,7 +134,17 @@ public class DialogueHelper : Singleton<DialogueHelper>
     [YarnCommand("ChangeRightCharacter")]
     public static void ChangeRight(string name = null)
     {
-        if (name == null)
+        if (lockPortrait)
+        {
+            return;
+        }
+        //if (_rightName == name)
+        //{
+        //    return;
+        //}
+
+        _rightName = name;
+        if (string.IsNullOrEmpty(name))
         {
             _right.gameObject.SetActive(false);
             return;
@@ -125,14 +167,62 @@ public class DialogueHelper : Singleton<DialogueHelper>
 
     public void UpdateDialogueUI(LocalizedLine localLine)
     {
-        if (localLine.Metadata == null)
+        string[] nameParts = localLine.RawText.Split(':');
+        if (!string.IsNullOrEmpty(nameParts[0]))
         {
+            NamePortraitUpdater(nameParts[0]);
+        }
+
+        if (localLine.Metadata != null)
+        {
+            List<string> meta = new(localLine.Metadata);
+            foreach (string s in meta)
+            {
+                MetadataParser(s);
+            }
+        }
+    }
+
+    private void MetadataParser(string tag)
+    {
+        string[] tagParts = tag.Split(':');
+        if (tagParts[0] == "lockPortrait")
+        {
+            lockPortrait = true;
+        }
+        if (tagParts[0] == "c")
+        {
+            ChangeCharacters(tagParts[1], tagParts[2]);
             return;
         }
-        List<string> meta = new(localLine.Metadata);
-        foreach (string s in meta)
+        if (tagParts[0] == "lc")
         {
-            Debug.Log(s);
+            ChangeLeft(tagParts[1]);
+            return;
+        }
+        if (tagParts[0] == "rc")
+        {
+            ChangeRight(tagParts[1]);
+            return;
+        }
+    }
+
+    private void NamePortraitUpdater(string name)
+    {
+        _nameDict.TryGetValue(name, out string spriteName);
+        if (string.IsNullOrEmpty(spriteName))
+        {
+            Debug.LogError("Name is not in the dictionary. Check spelling.");
+            return;
+        }
+
+        if (spriteName == "Owl")
+        {
+            ChangeLeft(spriteName);
+        }
+        else
+        {
+            ChangeRight(spriteName);
         }
     }
 }

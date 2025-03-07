@@ -1,16 +1,17 @@
 title: Start
-tags: lc:Owl rc:Goose
+tags: lc:Owl rc:
 ---
 <<declare $GooseIntroduced = false>>
 <<declare $NoticedSandwich = false>>
 <<declare $HasHandkerchief = false>>
 <<declare $InspectHandkerchief = false>>
 
-<<ChangeLeftCharacter Owl>>
-<<ChangeRightCharacter>>
-Nancy: It's only noon and it's already been a long day. #lc:Owl
-Nancy: *sigh*
-Nancy: I'm just excited that it's my lunch break.
+Athena: It's only noon and it's already been a long day.
+Athena: *sigh*
+Melissa: Hi I'm randomly here.
+Chase: I am as well
+Athena: Get out #rc:
+Athena: I'm just excited that it's my lunch break.
 ===
 
 title: Goose
@@ -27,23 +28,23 @@ title: Goose
 title: GooseIntroduction
 ---
 <<set $GooseIntroduced to true>>
-Nancy: Hello Mr. Gander.
-Chase: Hello Nancy.
+Athena: Hello Mr. Gander.
+Chase: Hello Athena.
 ===
 
 title: GooseIrritated
 ---
 Chase: Get on with it already.
-Nancy: Ok ok...
+Athena: Ok ok...
 ===
 
 title: GooseSuspicion
 ---
 <<ChangeRightCharacter Goose>>
 -> Talk
-	Nancy: Mr. Gander, did you eat my sandwich?
+	Athena: Mr. Gander, did you eat my sandwich?
 	Chase: There is nothing so foul as eating someone else's lunch. I demand you take back that accusation.
-	Nancy: I'll find proof. It's around here somewhere.
+	Athena: I'll find proof. It's around here somewhere.
 -> Present Evidence <<if $InspectHandkerchief>>
 	-> Present Handkerchief
 		<<jump GooseAccusation>>
@@ -51,16 +52,16 @@ title: GooseSuspicion
 
 title: GooseAccusation
 ---
-Nancy: Tell me Chase, have you ever seen this Handkerchief before?
+Athena: Tell me Chase, have you ever seen this Handkerchief before?
 Chase: Never. It looks far too dirty for one I would own.
-Nancy: Dirtied by a jelly stain, in fact.
-Nancy: I also noticed some initials in the corner… CGW… Does that not fit your name? 
+Athena: Dirtied by a jelly stain, in fact.
+Athena: I also noticed some initials in the corner… CGW… Does that not fit your name? 
 Chase: Could be anyone.
-Nancy: Chase - Gander - Wilde. Quite the coincidence isn't it?
+Athena: Chase - Gander - Wilde. Quite the coincidence isn't it?
 Chase: If it was mine, what of it?
-Nancy: Chase Wilde Gander, did you eat my sandwich?
+Athena: Chase Wilde Gander, did you eat my sandwich?
 Chase: …
-Nancy: What do you have to say for yourself?
+Athena: What do you have to say for yourself?
 Chase: It was delicious and I'd do it again.
 ===
 
@@ -68,12 +69,12 @@ title: MissingSandwich
 ---
 <<ChangeRightCharacter>>
 <<if $NoticedSandwich is false>>
-	Nancy: My sandwich!
-	Nancy: My peanut butter and jelly sandwich!
-	Nancy: Who would do such a thing?
+	Athena: My sandwich!
+	Athena: My peanut butter and jelly sandwich!
+	Athena: Who would do such a thing?
 	<<set $NoticedSandwich to true>>
 <<else>>
-	Nancy: My sandwich...
+	Athena: My sandwich...
 <<endif>>
 ===
 
@@ -81,13 +82,13 @@ title: FoundHandkerchief
 ---
 <<ChangeRightCharacter>>
 <<set $HasHandkerchief to true>>
-Nancy: Aha!
-Nancy: A handkerchief!
+Athena: Aha!
+Athena: A handkerchief!
 	-> Inspect
 		<<set $InspectHandkerchief to true>>
-		Nancy: There are jelly stains on the handkerchief! The perpetrator must have used this!
-		Nancy: And the initials: CGW.
-		Nancy: Those seem very familiar...
+		Athena: There are jelly stains on the handkerchief! The perpetrator must have used this!
+		Athena: And the initials: CGW.
+		Athena: Those seem very familiar...
 ===
 
 title: Crow

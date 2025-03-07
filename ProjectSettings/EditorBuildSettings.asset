@@ -32,5 +32,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: bd76065897d3e53459107fc5f762ad86
+  - enabled: 1
+    path: Assets/Scenes/Jade/TrainCarMainJade.unity
+    guid: d4ecb1fded7045d4a978325056ef45cd
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
