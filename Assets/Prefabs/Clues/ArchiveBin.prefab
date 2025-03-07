@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 5630826081347243884}
   m_Layer: 5
   m_Name: BinImage
-  m_TagString: Untagged
+  m_TagString: Bin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 2279895916134452452}
   m_Layer: 5
   m_Name: ArchiveBinMenu
-  m_TagString: Untagged
+  m_TagString: Bin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -796,6 +796,7 @@ MonoBehaviour:
   _menuTransform: {fileID: 3366243849510674984}
   _storageTransform: {fileID: 3779653236731726684}
   _animator: {fileID: 2279895916134452452}
+  _clueList: []
 --- !u!210 &264376465696610782
 SortingGroup:
   m_ObjectHideFlags: 0

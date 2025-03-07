@@ -57,8 +57,6 @@ public class ClueBoardBin : MonoBehaviour,
     public void OnDrag(PointerEventData eventData)
     {
         _draggedClue?.OnDrag(eventData);
-        Debug.Log(_draggedClue.Clue.Name);
-        Debug.Log(_draggedClue.Clue.ClueID);
     }
     public void OnEndDrag(PointerEventData eventData)
     {
@@ -101,10 +99,6 @@ public class ClueBoardBin : MonoBehaviour,
         if (_showMenu)
         {
             CloseBin();
-            Debug.Log(_clueList.ToArray());
-            Debug.Log(_clueList[0].Clue.ClueID);
-            Debug.Log(_clueList[1].Clue.ClueID);
-            Debug.Log(_clueList.Count);
         }
         else
         {

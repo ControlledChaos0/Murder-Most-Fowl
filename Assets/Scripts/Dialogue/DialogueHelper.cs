@@ -65,7 +65,14 @@ public class DialogueHelper : Singleton<DialogueHelper>
 
     public void StartNode(string node)
     {
-        List<string> tags = new(_dialogueRunner.Dialogue.GetTagsForNode(node));
+        if (node == null)
+        {
+            return;
+        }
+
+        var tagIEnum = _dialogueRunner.Dialogue.GetTagsForNode(node);
+
+        List<string> tags = new(tagIEnum);
         foreach (string tag in tags)
         {
             Debug.Log(tag);

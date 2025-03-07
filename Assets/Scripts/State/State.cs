@@ -24,10 +24,10 @@ public class State
     public List<CharacterState> CharacterStates;
 
     [Header("Inventory")]
-    public List<ClueBoardClue> ClueBoardClues;
-    public List<ClueBoardNote> ClueBoardNotes;
-    public List<string> NewClueBin;
-    public List<string> ArchivedClueBin;
+    public List<ClueBoardClue> ClueBoardClues = new();
+    public List<ClueBoardNote> ClueBoardNotes = new();
+    public List<string> NewClueBin = new();
+    public List<string> ArchivedClueBin = new();
     
 }
 

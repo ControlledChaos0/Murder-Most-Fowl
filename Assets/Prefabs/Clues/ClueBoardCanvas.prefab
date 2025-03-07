@@ -366,6 +366,7 @@ GameObject:
   - component: {fileID: 8086200824588255666}
   - component: {fileID: 8694127646552016082}
   - component: {fileID: 4322557396592794000}
+  - component: {fileID: 7396460774313441492}
   m_Layer: 5
   m_Name: ClueBoardCanvas
   m_TagString: Untagged
@@ -480,6 +481,7 @@ MonoBehaviour:
   _newBin: {fileID: 9065590084351918740}
   _archiveBin: {fileID: 185974061825089914}
   _toggleButton: {fileID: 1112443637991054846}
+  _stickyNote: {fileID: 0}
   _zoomSpeed: 0.05
   _zoomOutLimit: 0.41
   _zoomInLimit: 1.25
@@ -491,6 +493,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3691073673336351334}
   m_CullTransparentMesh: 1
+--- !u!114 &7396460774313441492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3691073673336351334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfcd325ef2da44c4c896ce01a324118f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4274682758450351025
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ namespace Clues
     {
         [SerializeField] private Image _image;
         public Image Image => _image;
+        public GameObject _menu;
 
         private Clue _clue;
         private ClueBoardClue _saveClue;
@@ -22,8 +23,10 @@ namespace Clues
         private ClueBoardBin _currentBin;
 
         private Vector2 _offset;
+        private Vector2 _menuOffset;
         private Vector3 _worldOffset;
         private bool _mouseDown;
+        private bool _dragging;
         private bool _scaling;
 
         private static readonly float _sizeMin = .5f;
@@ -110,8 +113,6 @@ namespace Clues
             Vector2 menuPos = _menu.transform.position;
             Vector2 cornerPos = image.transform.Find("Corner").transform.position;
             _menuOffset = cornerPos - menuPos;
-
-            transform.parent = ClueBoardManager.Instance.Clues;
 
             var renderer = _image.GetComponent<RectTransform>();
             var width = renderer.rect.width * _image.transform.localScale.x;
@@ -229,7 +230,7 @@ namespace Clues
                 _currentBin.RemoveFromBin(this);
             }
 
-            binGO.TryGetComponent(out _currentBin);
+            _currentBin = binGO.GetComponentInParent<ClueBoardBin>();
             _currentBin.AddToBin(this);
             _inBin = true;
         }

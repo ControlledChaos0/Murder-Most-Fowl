@@ -6582,6 +6582,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 427029477822732481, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2600398623592735818, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6676,7 +6680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3231515563247730419, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000006766197
+      value: 0.00006823382
       objectReference: {fileID: 0}
     - target: {fileID: 3691073673336351334, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_Name
@@ -6688,6 +6692,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3731425453812182387, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731425453812182387, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4358073387675039137, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
@@ -6704,7 +6712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5073712475295230537, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000006766197
+      value: 0.000053061245
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9550,14 +9558,6 @@ SceneRoots:
   - {fileID: 1630072245}
   - {fileID: 752875357}
   - {fileID: 3655355697318771831}
-  - {fileID: 1096486370}
-  - {fileID: 564587694}
-  - {fileID: 2114454395}
-  - {fileID: 573916531}
-  - {fileID: 699318000}
-  - {fileID: 972135487}
-  - {fileID: 153887559}
-  - {fileID: 1223813812}
   - {fileID: 465512004}
   - {fileID: 476115466}
   - {fileID: 1647255479}
