@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: c9a0eba39e0e4234d92047203ca14cc4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_clueDatabase: {fileID: 11400000, guid: a24f39508c134c1498985c44200f745c, type: 2}
+  - m_clueCombinationsDatabase: {fileID: 11400000, guid: f7f6d8ae6d782664db65c5965a20085d, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

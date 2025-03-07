@@ -408,6 +408,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "StickyNoteToggle",
+                    "type": "Button",
+                    "id": "943f3817-315e-4bc3-a68c-b0697c375a92",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -474,6 +483,17 @@
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Clueboard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "565a29a4-58a5-499d-8b09-ce8716dd6d43",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StickyNoteToggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 4641317513951688157}
   - component: {fileID: 8292939447136841375}
   m_Layer: 5
-  m_Name: TestClueUI
+  m_Name: Example Clue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

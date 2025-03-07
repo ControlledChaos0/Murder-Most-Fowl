@@ -18,7 +18,7 @@ public class ClueBoardBin : MonoBehaviour,
     [SerializeField] protected RectTransform _storageTransform;
     [SerializeField] protected Animator _animator;
 
-    protected List<ClueObjectUI> _clueList;
+    [SerializeField] protected internal List<ClueObjectUI> _clueList;
 
     protected ClueObjectUI _draggedClue;
     protected bool _showMenu;
@@ -57,6 +57,8 @@ public class ClueBoardBin : MonoBehaviour,
     public void OnDrag(PointerEventData eventData)
     {
         _draggedClue?.OnDrag(eventData);
+        Debug.Log(_draggedClue.Clue.Name);
+        Debug.Log(_draggedClue.Clue.ClueID);
     }
     public void OnEndDrag(PointerEventData eventData)
     {
@@ -99,6 +101,10 @@ public class ClueBoardBin : MonoBehaviour,
         if (_showMenu)
         {
             CloseBin();
+            Debug.Log(_clueList.ToArray());
+            Debug.Log(_clueList[0].Clue.ClueID);
+            Debug.Log(_clueList[1].Clue.ClueID);
+            Debug.Log(_clueList.Count);
         }
         else
         {

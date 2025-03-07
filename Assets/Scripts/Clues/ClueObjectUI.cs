@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+
 namespace Clues
 {
     public class ClueObjectUI : MonoBehaviour, 
@@ -12,7 +13,6 @@ namespace Clues
     {
         [SerializeField] private Image _image;
         public Image Image => _image;
-        public GameObject _menu;
 
         private Clue _clue;
         private ClueBoardClue _saveClue;
@@ -22,10 +22,8 @@ namespace Clues
         private ClueBoardBin _currentBin;
 
         private Vector2 _offset;
-        private Vector2 _menuOffset;
         private Vector3 _worldOffset;
         private bool _mouseDown;
-        private bool _dragging;
         private bool _scaling;
 
         private static readonly float _sizeMin = .5f;
@@ -61,6 +59,8 @@ namespace Clues
 
         public void OnDrag(PointerEventData eventData)
         {
+            Debug.Log(this.Clue.ClueID);
+            Debug.Log(this.Clue.Name);
             if (_scaling == true){
                 Vector3 mousePosWorld = Camera.main.WorldToScreenPoint(new Vector3(eventData.position.x, eventData.position.y, 0));
                 Vector3 uiPosWorld = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y, 0));
