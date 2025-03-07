@@ -1,5 +1,7 @@
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using System.IO;
 
 [CreateAssetMenu(fileName = "New Character", menuName = "Scriptable Objects/Characters/Character")]
@@ -23,6 +25,8 @@ public class Character : ScriptableObject
 
     private void OnValidate()
     {
+#if UNITY_EDITOR
         m_characterID = Path.GetFileNameWithoutExtension(AssetDatabase.GetAssetPath(this));
+#endif
     }
 }

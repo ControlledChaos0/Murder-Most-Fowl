@@ -23,7 +23,10 @@ public class State
     
     public List<CharacterState> CharacterStates;
 
-    [Header("Inventory")]
+    [Header("Inventory")] 
+    public List<string> DiscoveredClues = new();
+
+    [Header("Clueboard Inventory")]
     public List<ClueBoardClue> ClueBoardClues = new();
     public List<ClueBoardNote> ClueBoardNotes = new();
     public List<string> NewClueBin = new();

@@ -1,5 +1,7 @@
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using System.IO;
 
 [CreateAssetMenu(fileName = "New Clue", menuName = "Scriptable Objects/Clues/Clue")]
@@ -27,6 +29,8 @@ public class Clue : ScriptableObject
 
     private void OnValidate()
     {
+#if UNITY_EDITOR
         m_clueID = Path.GetFileNameWithoutExtension(AssetDatabase.GetAssetPath(this));
+#endif
     }
 }
