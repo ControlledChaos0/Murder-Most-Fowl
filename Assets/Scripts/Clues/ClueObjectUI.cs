@@ -117,7 +117,7 @@ namespace Clues
             var height = renderer.rect.height * _image.transform.localScale.y;
             var margin = 5;
 
-            if (_offset.x > (width/2 - margin) * 0.6f || _offset.y > (height/2 - margin) * 0.6f || _offset.x < (-width/2 + margin) * 0.6f || _offset.y < (-height/2 + margin) * 0.6f) {
+            if (!_inBin && (_offset.x > (width/2 - margin) * 0.6f || _offset.y > (height/2 - margin) * 0.6f || _offset.x < (-width/2 + margin) * 0.6f || _offset.y < (-height/2 + margin) * 0.6f)) {
                 _scaling = true;
                 _initialScale = _image.transform.localScale;
             } else {

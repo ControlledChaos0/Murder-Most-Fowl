@@ -16,3 +16,6 @@ MonoBehaviour:
   m_name: Morgana Noir
   m_startingNode: 
   m_startingDismissal: 
+  m_clueResponses:
+  - clueID: Example Clue
+    nodeResponse: GooseAccusation

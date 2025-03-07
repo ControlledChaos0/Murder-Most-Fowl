@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_characterID: Goose
   m_name: Chase Wilde Gander
-  m_startingNode: 
+  m_startingNode: GooseIntroduction
+  m_startingIdle: GooseIdle
   m_startingDismissal: 
+  m_clueResponses:
+  - clueID: Example Clue
+    nodeResponse: GooseAccusation

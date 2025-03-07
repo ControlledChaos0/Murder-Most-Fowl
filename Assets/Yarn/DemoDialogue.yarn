@@ -27,7 +27,6 @@ title: Goose
 
 title: GooseIntroduction
 ---
-<<set $GooseIntroduced to true>>
 Athena: Hello Mr. Gander.
 Chase: Hello Athena.
 ===

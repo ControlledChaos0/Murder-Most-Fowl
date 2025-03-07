@@ -18,7 +18,22 @@ public class CharacterManager : MonoBehaviour
             cState.CharacterID = c.CharacterID;
             cState.Name = c.Name;
             cState.CurrentNode = c.StartingNode;
+            cState.VisitedCurrNode = false;
+            cState.CurrentIdle = c.StartingIdle;
             cState.CurrentDismissal = c.StartingDismissal;
+            cState.CharacterClues = new();
+
+            foreach (Character.ClueResponse clueResponse in c.ClueResponses)
+            {
+                CharacterClue cClue = new CharacterClue()
+                {
+                    ClueID = clueResponse.clueID,
+                    NodeResponse = clueResponse.nodeResponse,
+                    ShownClue = false,
+                };
+
+                cState.CharacterClues.Add(cClue);
+            }
 
             charStates.Add(cState);
         }

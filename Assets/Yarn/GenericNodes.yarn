@@ -1,11 +1,26 @@
-﻿title: ResetPortraitsNode
+﻿title: IdleNode
 tags:
+position: 252,384
 ---
-<<ChangeCharacters Owl>>
+-> Present
+    <<PresentEvidence>>
+-> Leave
 ===
 
-title: IdleNode
-tags:
+title: CrowIdle
+tags: #c:Owl:Crow
+position: 14,116
 ---
--> Leave
+<<set $ConvoChar = "Crow">>
+Morgana: ...
+<<jump IdleNode>>
+===
+
+title: GooseIdle
+tags: #c:Owl:Goose
+position: 127,-82
+---
+<<set $ConvoChar = "Goose">>
+Chase: What do you want?
+<<jump IdleNode>>
 ===

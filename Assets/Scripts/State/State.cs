@@ -19,8 +19,8 @@ public class State
     public bool HasHandkerchief = false;
     public bool InspectHandkerchief = false;
 
-    [Header("Characters")] 
-    
+    [Header("Characters")]
+    public string ConvoChar = "";
     public List<CharacterState> CharacterStates;
 
     [Header("Inventory")] 

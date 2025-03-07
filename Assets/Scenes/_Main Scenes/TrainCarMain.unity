@@ -869,7 +869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eece3cf3c1697d345855abb444913b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterID: 
+  characterID: Penguin
 --- !u!4 &95785180
 Transform:
   m_ObjectHideFlags: 0
@@ -1018,7 +1018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eece3cf3c1697d345855abb444913b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterID: 
+  characterID: Goose
 --- !u!1 &153887557
 GameObject:
   m_ObjectHideFlags: 0
@@ -3682,11 +3682,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2238696594621326301, guid: 6f5014a5efe13af4881abf9cec211ca1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 28.599976
+      value: 28.600098
       objectReference: {fileID: 0}
     - target: {fileID: 2238696594621326301, guid: 6f5014a5efe13af4881abf9cec211ca1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25.299988
+      value: -25.300049
       objectReference: {fileID: 0}
     - target: {fileID: 5092495082324831966, guid: 6f5014a5efe13af4881abf9cec211ca1, type: 3}
       propertyPath: m_fontSize
@@ -6680,7 +6680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3231515563247730419, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00006823382
+      value: 0.0001273204
       objectReference: {fileID: 0}
     - target: {fileID: 3691073673336351334, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_Name
@@ -6712,7 +6712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5073712475295230537, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000053061245
+      value: 0.00013288214
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7275,7 +7275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eece3cf3c1697d345855abb444913b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterID: 
+  characterID: Crow
 --- !u!4 &1756452966
 Transform:
   m_ObjectHideFlags: 0
@@ -9400,14 +9400,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
-      propertyPath: _spriteList.Array.data[3].name
-      value: Crow
-      objectReference: {fileID: 0}
-    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
-      propertyPath: _spriteList.Array.data[3].sprite
-      value: 
-      objectReference: {fileID: 287759248693289744, guid: 056c6f42f254c5a40849c0f835038ecd, type: 3}
     - target: {fileID: 3550219144273042960, guid: 6abb264982467054ba4fe940958d0824, type: 3}
       propertyPath: m_Name
       value: Dialogue System MMF

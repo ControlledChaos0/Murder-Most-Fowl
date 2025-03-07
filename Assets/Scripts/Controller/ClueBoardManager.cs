@@ -9,6 +9,7 @@ using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Yarn.Unity;
 
 public class ClueBoardManager : Singleton<ClueBoardManager>,
     IScrollHandler, IDragHandler, IPointerDownHandler
@@ -263,6 +264,10 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     {
         _spawnable = !_spawnable;
     }
-    
 
+    [YarnCommand("PresentEvidence")]
+    public static void PresentEvidence()
+    {
+        Instance.OpenClueBoard();
+    }
 }

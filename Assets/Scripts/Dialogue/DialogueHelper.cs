@@ -27,7 +27,6 @@ public class DialogueHelper : Singleton<DialogueHelper>
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject _background;
-    [SerializeField] private TextMeshProUGUI _characterNameText;
     [SerializeField] private Image _leftCharacter;
     [SerializeField] private Image _rightCharacter;
     [SerializeField] private List<SpriteItem> _spriteList;
@@ -117,6 +116,8 @@ public class DialogueHelper : Singleton<DialogueHelper>
         {
             return;
         }
+
+        _leftName = name;
         if (string.IsNullOrEmpty(name))
         {
             _left.gameObject.SetActive(false);
@@ -138,10 +139,10 @@ public class DialogueHelper : Singleton<DialogueHelper>
         {
             return;
         }
-        //if (_rightName == name)
-        //{
-        //    return;
-        //}
+        if (_rightName == name)
+        {
+            return;
+        }
 
         _rightName = name;
         if (string.IsNullOrEmpty(name))
@@ -209,6 +210,10 @@ public class DialogueHelper : Singleton<DialogueHelper>
 
     private void NamePortraitUpdater(string name)
     {
+        if (string.IsNullOrEmpty(name))
+        {
+            return;
+        }
         _nameDict.TryGetValue(name, out string spriteName);
         if (string.IsNullOrEmpty(spriteName))
         {

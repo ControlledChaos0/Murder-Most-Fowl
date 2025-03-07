@@ -218,6 +218,7 @@ MonoBehaviour:
     HasHandkerchief: 0
     InspectHandkerchief: 0
     CharacterStates: []
+    DiscoveredClues: []
     ClueBoardClues: []
     ClueBoardNotes: []
     NewClueBin: []

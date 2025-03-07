@@ -19,11 +19,33 @@ public class CharacterOverworld : MonoBehaviour,
 
     public string GetCurrentNode()
     {
-        return CharacterManager.GetCharacterStateFromID(characterID).CurrentNode;
+        CharacterState cState = CharacterManager.GetCharacterStateFromID(characterID);
+        if (cState.VisitedCurrNode)
+        {
+            return cState.CurrentIdle;
+        }
+
+        cState.VisitedCurrNode = true;
+        return cState.CurrentNode;
     }
 
     public string GetCurrentDismissal()
     {
         return CharacterManager.GetCharacterStateFromID(characterID).CurrentDismissal;
+    }
+
+    public string GetClueResponse(string clueID)
+    {
+        if (CharacterManager.GetCharacterStateFromID(characterID).CharClueDict.TryGetValue(clueID, out CharacterClue cClue))
+        {
+            if (cClue.ShownClue)
+            {
+                return GetCurrentDismissal();
+            }
+            cClue.ShownClue = true;
+            return cClue.NodeResponse;
+        }
+
+        return GetCurrentDismissal();
     }
 }
