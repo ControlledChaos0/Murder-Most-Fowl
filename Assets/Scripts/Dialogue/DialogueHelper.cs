@@ -118,6 +118,10 @@ public class DialogueHelper : Singleton<DialogueHelper>
 
     public void UpdateDialogueUI(LocalizedLine localLine)
     {
-
+        List<string> meta = new(localLine.Metadata);
+        foreach (string s in meta)
+        {
+            Debug.Log(s);
+        }
     }
 }
