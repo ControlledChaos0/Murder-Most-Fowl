@@ -19,6 +19,10 @@ public class State
     public bool HasHandkerchief = false;
     public bool InspectHandkerchief = false;
 
+    [Header("Characters")] 
+    
+    public List<CharacterState> CharacterStates;
+
     [Header("Inventory")]
     public List<ClueBoardClue> ClueBoardClues;
     public List<ClueBoardNote> ClueBoardNotes;

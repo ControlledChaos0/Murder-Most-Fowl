@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 1772704874}
   - component: {fileID: 1772704876}
   - component: {fileID: 1772704877}
+  - component: {fileID: 1772704878}
   - component: {fileID: 1772704873}
   m_Layer: 0
   m_Name: Game Manager
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607a79191ecb4144da315beee2405368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_startScene: TestCombinations
+  m_startScene: TrainCarMain
 --- !u!114 &1772704875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +217,7 @@ MonoBehaviour:
     NoticedSandwich: 0
     HasHandkerchief: 0
     InspectHandkerchief: 0
+    CharacterStates: []
     ClueBoardClues: []
     ClueBoardNotes: []
     NewClueBin: []
@@ -236,6 +238,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_clueDatabase: {fileID: 11400000, guid: a24f39508c134c1498985c44200f745c, type: 2}
+--- !u!114 &1772704878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772704871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4233300a86c0c8e458446515a8637525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_characterDatabase: {fileID: 11400000, guid: 6466f8c3504592f4dac77bfc7254e09f, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

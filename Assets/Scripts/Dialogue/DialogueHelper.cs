@@ -42,7 +42,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        _dialogueRunner.onNodeStart.AddListener(StartNode);
     }
 
     // Update is called once per frame
@@ -61,6 +61,15 @@ public class DialogueHelper : Singleton<DialogueHelper>
     {
         ClueBoardManager.Instance.UnlockToggle();
         _background.SetActive(false);
+    }
+
+    public void StartNode(string node)
+    {
+        List<string> tags = new(_dialogueRunner.Dialogue.GetTagsForNode(node));
+        foreach (string tag in tags)
+        {
+            Debug.Log(tag);
+        }
     }
 
     // TODO
@@ -98,5 +107,25 @@ public class DialogueHelper : Singleton<DialogueHelper>
         // TODO
         // Add Error Handling
         _right.sprite = spriteItem.sprite;
+    }
+
+    [YarnCommand("ChangeCharacters")]
+    public static void ChangeCharacters(string left_name = null, string right_name = null)
+    {
+        ChangeLeft(left_name);
+        ChangeRight(right_name);
+    }
+
+    public void UpdateDialogueUI(LocalizedLine localLine)
+    {
+        if (localLine.Metadata == null)
+        {
+            return;
+        }
+        List<string> meta = new(localLine.Metadata);
+        foreach (string s in meta)
+        {
+            Debug.Log(s);
+        }
     }
 }
