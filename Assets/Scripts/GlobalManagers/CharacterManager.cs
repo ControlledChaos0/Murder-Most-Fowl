@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using Yarn.Unity;
 
 public class CharacterManager : MonoBehaviour
@@ -41,7 +42,7 @@ public class CharacterManager : MonoBehaviour
         return charStates;
     }
 
-    public static CharacterState GetCharacterStateFromID(string charID)
+    public CharacterState GetCharacterStateFromID(string charID)
     {
         CharacterState cState = GameManager.State.CharacterStates.Find(state => state.CharacterID == charID);
         if (cState == null)
@@ -52,10 +53,53 @@ public class CharacterManager : MonoBehaviour
         return cState;
     }
 
+    public string GetClueResponse(string clueID)
+    {
+        string charID = GameManager.State.ConvoChar;
+        return GetClueResponse(charID, clueID);
+    }
+
+    public string GetClueResponse(string characterID, string clueID)
+    {
+        if (GetCharacterStateFromID(characterID).CharClueDict.TryGetValue(clueID, out CharacterClue cClue))
+        {
+            if (cClue.ShownClue)
+            {
+                return GetCurrentDismissal(characterID);
+            }
+            cClue.ShownClue = true;
+            return cClue.NodeResponse;
+        }
+
+        return GetCurrentDismissal(characterID);
+    }
+
+    public string GetCurrentNode(string characterID)
+    {
+        CharacterState cState = GetCharacterStateFromID(characterID);
+        if (cState.VisitedCurrNode)
+        {
+            return cState.CurrentIdle;
+        }
+
+        cState.VisitedCurrNode = true;
+        return cState.CurrentNode;
+    }
+
+    public string GetCurrentDismissal(string characterID)
+    {
+        return GetCharacterStateFromID(characterID).CurrentDismissal;
+    }
+
     [YarnCommand("set_character_node")]
     public static void SetCurrentNode(string charID, string currNode = "")
     {
-        CharacterState cState = GetCharacterStateFromID(charID);
+        CharacterState cState = GameManager.CharacterManager.GetCharacterStateFromID(charID);
         cState.CurrentNode = currNode;
+    }
+
+    public void ClearConvoChar()
+    {
+        GameManager.State.ConvoChar = "";
     }
 }

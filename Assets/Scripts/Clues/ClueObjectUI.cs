@@ -232,5 +232,11 @@ namespace Clues
             _currentBin.AddToBin(this);
             _inBin = true;
         }
+
+        public void PresentEvidence()
+        {
+            _menu.SetActive(false);
+            ClueBoardManager.Instance.PresentEvidence(Clue);
+        }
     }
 }

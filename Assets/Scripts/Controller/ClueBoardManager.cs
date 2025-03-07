@@ -69,11 +69,12 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     private bool _toggleLock;
     private bool _activated;
     private bool _scrollEnabled;
+    private bool _canPresent;
 
     private readonly Vector2 DEFAULT_PIVOT = new(0.5f, 0.5f);
     private bool _spawnable;
 
-    
+    public bool CanPresent => _canPresent;
 
 
     private void Awake() {
@@ -94,6 +95,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
 
         _activated = false;
         _scrollEnabled = true;
+        _canPresent = false;
 
         _selectedObj = null;
         _animator = _board.GetComponent<Animator>();
@@ -135,6 +137,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     private void CloseClueBoard()
     {
         _activated = false;
+        _canPresent = false;
         _animator.Play("Hide");
     }
 
@@ -266,8 +269,24 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     }
 
     [YarnCommand("PresentEvidence")]
-    public static void PresentEvidence()
+    public static void InitPresentEvidence()
     {
         Instance.OpenClueBoard();
+        Instance._canPresent = true;
+    }
+
+    public void PresentEvidence(Clue clue)
+    {
+        if (!_canPresent)
+        {
+            return;
+        }
+
+        CloseClueBoard();
+        string node = GameManager.CharacterManager.GetClueResponse(clue.ClueID);
+        if (!string.IsNullOrEmpty(node))
+        {
+            DialogueHelper.Instance.DialogueRunner.StartDialogue(node);
+        }
     }
 }
