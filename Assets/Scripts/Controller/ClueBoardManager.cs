@@ -87,7 +87,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
         _graphicRaycaster = GetComponent<GraphicRaycaster>();
 
         InputController.Instance.ToggleClueBoard += ToggleClueBoard;
-        InputController.Instance.ToggleStickyNote += ToggleStickyNote;
+        // InputController.Instance.ToggleStickyNote += ToggleStickyNote;
 
         _boardCenter = _boardTransform.parent.position;
 
@@ -252,7 +252,6 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     // Sticky note function
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("TRUEEEEE");
         if (!_spawnable) return;
         var spawnPosition = new Vector3(eventData.position.x, eventData.position.y, 0);
         var parent = ClueBoardManager.Instance.BoardTransform;

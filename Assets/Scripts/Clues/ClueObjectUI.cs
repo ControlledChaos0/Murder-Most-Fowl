@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+
 namespace Clues
 {
     public class ClueObjectUI : MonoBehaviour, 
@@ -57,6 +58,8 @@ namespace Clues
 
         public void OnDrag(PointerEventData eventData)
         {
+            Debug.Log(this.Clue.ClueID);
+            Debug.Log(this.Clue.Name);
             if (_scaling == true){
                 Vector3 mousePosWorld = Camera.main.WorldToScreenPoint(new Vector3(eventData.position.x, eventData.position.y, 0));
                 Vector3 uiPosWorld = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y, 0));
