@@ -47,6 +47,7 @@ namespace Clues
 
             _onBoard = false;
             _scaling = false;
+            _dragging = false;
             _initialScale = Vector3.one;
         }
 
@@ -85,7 +86,10 @@ namespace Clues
                     }
                     
                 }
-                
+
+                GameObject image = _image.gameObject;
+                Vector2 cornerPos = image.transform.Find("Corner").transform.position;
+                _menu.transform.position = cornerPos - _menuOffset;
             } else {
                 transform.position = eventData.position + _offset;
             }
@@ -102,6 +106,11 @@ namespace Clues
             Vector3 uiPosWorld = Camera.main.WorldToScreenPoint(new Vector3(uiPos.x, uiPos.y, 0));
             _worldOffset = uiPosWorld - mousePosWorld;
 
+            GameObject image = _image.gameObject;
+            Vector2 menuPos = _menu.transform.position;
+            Vector2 cornerPos = image.transform.Find("Corner").transform.position;
+            _menuOffset = cornerPos - menuPos;
+
             transform.parent = ClueBoardManager.Instance.Clues;
 
             var renderer = _image.GetComponent<RectTransform>();
@@ -115,6 +124,8 @@ namespace Clues
             } else {
                 _scaling = false;
             }
+
+            _dragging = true;
             
         }
 
@@ -157,6 +168,9 @@ namespace Clues
                 } else if (w < 0 && _sizeMin < image.transform.localScale.x) {
                     image.transform.localScale -= _scaleChange;
                 }
+                
+                Vector2 cornerPos = image.transform.Find("Corner").transform.position;
+                _menu.transform.position = cornerPos - _menuOffset;
             }
             else
             {
@@ -171,6 +185,11 @@ namespace Clues
 
         public void OnPointerUp(PointerEventData eventData)
         {
+            if (!_dragging) {
+                bool isActive = _menu.activeSelf;
+                _menu.SetActive(!isActive);
+            }
+            _dragging = false;
             _mouseDown = false;
         }
 
