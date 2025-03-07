@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using Clues;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,7 +11,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class ClueBoardManager : Singleton<ClueBoardManager>,
-    IScrollHandler, IDragHandler
+    IScrollHandler, IDragHandler, IPointerDownHandler
 {
     [Header("Transforms")]
     [SerializeField]
@@ -45,7 +47,9 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     public ArchiveBin ArchiveBin => _archiveBin;
     [SerializeField]
     private GameObject _toggleButton;
-
+    [SerializeField]
+    private GameObject _stickyNote;
+    
     [Header("Input")]
     [SerializeField]
     private float _zoomSpeed = 0.05f;
@@ -66,6 +70,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     private bool _scrollEnabled;
 
     private readonly Vector2 DEFAULT_PIVOT = new(0.5f, 0.5f);
+    private bool _spawnable;
 
     
 
@@ -82,6 +87,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
         _graphicRaycaster = GetComponent<GraphicRaycaster>();
 
         InputController.Instance.ToggleClueBoard += ToggleClueBoard;
+        // InputController.Instance.ToggleStickyNote += ToggleStickyNote;
 
         _boardCenter = _boardTransform.parent.position;
 
@@ -242,4 +248,21 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
         _boardTransform.anchoredPosition += eventData.delta;
         ClampBoard();
     }
+
+    // Sticky note function
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (!_spawnable) return;
+        var spawnPosition = new Vector3(eventData.position.x, eventData.position.y, 0);
+        var parent = ClueBoardManager.Instance.BoardTransform;
+        Instantiate(_stickyNote, spawnPosition, Quaternion.identity, parent);
+        _spawnable = false;
+    }
+
+    public void ToggleStickyNote()
+    {
+        _spawnable = !_spawnable;
+    }
+    
+
 }
