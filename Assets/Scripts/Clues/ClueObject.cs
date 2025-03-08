@@ -9,6 +9,7 @@ namespace Clues
         IPointerClickHandler
     {
         [SerializeField] private string _clueID;
+        [SerializeField] private string _node;
         [SerializeField] private bool _disappearOnClick = true;
 
         private SpriteRenderer _spriteRenderer;
@@ -58,7 +59,9 @@ namespace Clues
             Debug.Log("Click the clue!");
             if (!_found)
             {
+                _found = true;
                 ClueBoardManager.Instance.InstantiateClue(_clueID);
+                DialogueHelper.Instance.DialogueRunner.StartDialogue(_node);
             }
             if (_disappearOnClick)
             {

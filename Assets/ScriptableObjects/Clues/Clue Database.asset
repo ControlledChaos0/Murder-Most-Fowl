@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Clue Database
   m_EditorClassIdentifier: 
   m_clues:
-  - {fileID: 11400000, guid: 4a1cf1ab969ce504690c601a61061052, type: 2}
-  - {fileID: 11400000, guid: fab53fbf8575ca24b968f3cda6dea6f9, type: 2}
-  - {fileID: 11400000, guid: dbc7ac27f0e6ae74d94e2bf444a502b6, type: 2}
+  - {fileID: 11400000, guid: c35fbc96545ebfe41bb7945beb2ac2b7, type: 2}
+  - {fileID: 11400000, guid: d0644522f4f0d544c85dce3737930b2e, type: 2}
+  - {fileID: 11400000, guid: 83ad151a7afd2a748b8bcf3fe7252454, type: 2}
+  - {fileID: 11400000, guid: 9f7e7e1d700ef5248a5dc42f9a25499f, type: 2}

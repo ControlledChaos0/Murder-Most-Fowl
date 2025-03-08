@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7778454fdf392494f96035e4c1f8d9ad, type: 3}
-  m_Name: Peacock
+  m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
+  m_Name: Stool
   m_EditorClassIdentifier: 
-  m_characterID: Peacock
-  m_name: Melissa Peacock
-  m_startingNode: PeacockIntroduction
-  m_startingIdle: PeacockConversation
-  m_startingDismissal: PeacockDismissal
-  m_clueResponses: []
+  m_clueID: Stool
+  m_name: Short Stool
+  m_clarificationInfo: 
+  m_description: 
+  m_icon: {fileID: -5197547882860782317, guid: 7b78d0aa5449a3d49bbacf30b8d3cdac, type: 3}

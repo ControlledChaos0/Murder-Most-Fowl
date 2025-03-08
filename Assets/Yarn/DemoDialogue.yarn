@@ -1,4 +1,4 @@
-title: Start
+title: StartOld
 tags: lc:Owl rc:
 ---
 <<declare $GooseIntroduced = false>>
@@ -25,7 +25,7 @@ title: Goose
 <<endif>>
 ===
 
-title: GooseIntroduction
+title: GooseIntroductionOld
 ---
 Athena: Hello Mr. Gander.
 Chase: Hello Athena.
@@ -90,7 +90,7 @@ Athena: A handkerchief!
 		Athena: Those seem very familiar...
 ===
 
-title: Crow
+title: CrowOld
 ---
 <<ChangeRightCharacter Crow>>
 Crow: ...

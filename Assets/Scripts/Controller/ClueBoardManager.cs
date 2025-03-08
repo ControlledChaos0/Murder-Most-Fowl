@@ -71,6 +71,10 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     private bool _scrollEnabled;
     private bool _canPresent;
 
+    private string _correctEvidence;
+    private string _incorrectNode;
+
+
     private readonly Vector2 DEFAULT_PIVOT = new(0.5f, 0.5f);
     private bool _spawnable;
 
@@ -240,11 +244,19 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
         _boardTransform.anchoredPosition = newAnchorPos;
     }
 
-    public void InstantiateClue(string clue)
+    [YarnCommand("CreateClue")]
+    public void InstantiateClue(string clueID)
     {
+        if (GameManager.State.DiscoveredClues.Contains(clueID))
+        {
+            return;
+        }
+
+        GameManager.State.DiscoveredClues.Add(clueID);
         GameObject clueObject = Instantiate(_objectUI);
         ClueObjectUI clueUI = clueObject.GetComponent<ClueObjectUI>();
-        clueUI.AddClue(clue);
+
+        clueUI.AddClue(clueID);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -269,8 +281,18 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     }
 
     [YarnCommand("PresentEvidence")]
-    public static void InitPresentEvidence()
+    public static void InitPresentEvidence(string clueID = "", string incorrectNode = "")
     {
+        if (!string.IsNullOrEmpty(clueID))
+        {
+            Instance._correctEvidence = clueID;
+            Instance._incorrectNode = incorrectNode;
+        }
+        else
+        {
+            Instance._correctEvidence = null;
+        }
+
         Instance.OpenClueBoard();
         Instance._canPresent = true;
     }
@@ -284,6 +306,10 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
 
         CloseClueBoard();
         string node = GameManager.CharacterManager.GetClueResponse(clue.ClueID);
+        if (!string.IsNullOrEmpty(_correctEvidence) && _correctEvidence != clue.ClueID)
+        {
+            node = _incorrectNode;
+        }
         if (!string.IsNullOrEmpty(node))
         {
             DialogueHelper.Instance.DialogueRunner.StartDialogue(node);

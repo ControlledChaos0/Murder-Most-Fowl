@@ -98,6 +98,13 @@ public class CharacterManager : MonoBehaviour
         cState.CurrentNode = currNode;
     }
 
+    [YarnCommand("set_character_idle_node")]
+    public static void SetIdleNode(string charID, string idleNode = "")
+    {
+        CharacterState cState = GameManager.CharacterManager.GetCharacterStateFromID(charID);
+        cState.CurrentNode = idleNode;
+    }
+
     public void ClearConvoChar()
     {
         GameManager.State.ConvoChar = "";

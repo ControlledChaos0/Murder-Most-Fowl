@@ -16,7 +16,7 @@ MonoBehaviour:
   m_name: Chase Wilde Gander
   m_startingNode: GooseIntroduction
   m_startingIdle: GooseIdle
-  m_startingDismissal: 
+  m_startingDismissal: GooseDismissal
   m_clueResponses:
-  - clueID: Example Clue
-    nodeResponse: GooseAccusation
+  - clueID: Goose
+    nodeResponse: Stool

@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_characterID: Crow
   m_name: Morgana Noir
-  m_startingNode: 
-  m_startingDismissal: 
+  m_startingNode: CrowIntroduction
+  m_startingIdle: CrowConversation
+  m_startingDismissal: CrowDismissal
   m_clueResponses:
-  - clueID: Example Clue
-    nodeResponse: GooseAccusation
+  - clueID: GlassShard
+    nodeResponse: CrowGlass

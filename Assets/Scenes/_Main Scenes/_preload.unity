@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607a79191ecb4144da315beee2405368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_startScene: TestScene
+  m_startScene: Main Menu
 --- !u!114 &1772704875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +217,7 @@ MonoBehaviour:
     NoticedSandwich: 0
     HasHandkerchief: 0
     InspectHandkerchief: 0
+    ConvoChar: 
     CharacterStates: []
     DiscoveredClues: []
     ClueBoardClues: []

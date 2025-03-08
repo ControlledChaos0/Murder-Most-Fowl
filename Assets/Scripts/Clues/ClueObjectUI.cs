@@ -54,9 +54,9 @@ namespace Clues
             _initialScale = Vector3.one;
         }
 
-        public void AddClue(string clue)
+        public void AddClue(string clueID)
         {
-            _clue = ClueManager.GetClueFromID(clue);
+            _clue = ClueManager.GetClueFromID(clueID);
             _image.sprite = _clue.Icon;
         }
 

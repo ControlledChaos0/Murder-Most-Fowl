@@ -14,5 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_characterID: Penguin
   m_name: Skipper McGraw
-  m_startingNode: 
+  m_startingNode: PenguinIntroduction
+  m_startingIdle: PenguinProof
   m_startingDismissal: 
+  m_clueResponses:
+  - clueID: Stool
+    nodeResponse: PenguinStool
+  - clueID: Rope
+    nodeResponse: PenguinRope
+  - clueID: Bottle
+    nodeResponse: PenguinBottle
