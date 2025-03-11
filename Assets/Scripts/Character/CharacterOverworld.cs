@@ -1,3 +1,4 @@
+using GlobalManagers;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Yarn.Unity;
