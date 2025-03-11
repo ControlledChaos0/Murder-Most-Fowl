@@ -690,6 +690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd4c04960a3b4b67a6b963ce32f0bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorDetectionType: 0
   modeOfCursor: 1
 --- !u!1 &858197947
 GameObject:
