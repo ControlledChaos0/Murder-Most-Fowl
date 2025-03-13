@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67d5fc6f1d9bb1645873221a2a70fc26, type: 3}
-  m_Name: Character Database
+  m_Name: _DATABASE Characters
   m_EditorClassIdentifier: 
   m_goose: {fileID: 11400000, guid: b61f781dc3f929b4ba2ad115aa72a95d, type: 2}
   m_peacock: {fileID: 11400000, guid: 390dca530322f7340b952b78e6db9648, type: 2}

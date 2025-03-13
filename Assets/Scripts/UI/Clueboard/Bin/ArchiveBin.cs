@@ -4,13 +4,13 @@ using UnityEngine;
 public class ArchiveBin : ClueBoardBin
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private new void Start()
     {
         base.Start();
     }
 
     // Update is called once per frame
-    void Update()
+    private new void Update()
     {
         base.Update();
     }

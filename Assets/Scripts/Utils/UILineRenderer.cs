@@ -10,7 +10,8 @@ public class UILineRenderer : MaskableGraphic
     public float thickness = 10f;
     public bool center = true;
 
-    void Awake()
+    
+    protected override void Awake()
     {
         transform.SetAsLastSibling();
     }
