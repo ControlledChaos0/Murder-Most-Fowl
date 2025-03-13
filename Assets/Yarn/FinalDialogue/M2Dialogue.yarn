@@ -228,9 +228,9 @@ tags: lc: Owl rc:
 Athena: Oh Phoenix Above, what do you mean SHE's here?
 Athena: Just what I need, my romantic life getting tangled with my professional one.
 Athena: I really don't need to be reminded of that messy breakup now.
-Noir: Oh look who it is.
+Morgana: Oh look who it is.
 Athena: I'm not in the mood right now.
-Noir: I was in a good one, until you walked in.
+Morgana: I was in a good one, until you walked in.
 Athena: Look, I just want to talk.
 <<jump CrowConversation>>
 ===
@@ -239,28 +239,28 @@ title: CrowConversation
 tags: c:Owl:Crow
 ---
 <<set $ConvoChar = "Crow">>
-Noir: …
-Noir: Not a chance.
--> This is serious, Noir.
-	Athena: This is serious, Noir. Someone is dead.
-	Noir: I thought WE were serious.
+Morgana: …
+Morgana: Not a chance.
+-> This is serious, Morgana.
+	Athena: This is serious, Morgana. Someone is dead.
+	Morgana: I thought WE were serious.
 ->Present
 	<<PresentEvidence>>
 ===
 
 title: CrowGlass
 ---
-Noir: Glass? What do you want me to say?
+Morgana: Glass? What do you want me to say?
 Athena: Glass, Bottles, Alcohol… Isn't that your specialty?
-Noir: …
-Noir: I did notice a wine bottle was missing from the bar today. 
-Noir: But don't you try to pin this one on me, Nox.
+Morgana: …
+Morgana: I did notice a wine bottle was missing from the bar today. 
+Morgana: But don't you try to pin this one on me, Nox.
 <<CreateClue ClueBoardCanvas Bottle>>
 ===
 
 title: CrowDismissal
 ---
-Noir: And?
+Morgana: And?
 ===
 
 

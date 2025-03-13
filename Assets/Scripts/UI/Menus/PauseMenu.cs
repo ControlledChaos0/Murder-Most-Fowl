@@ -3,15 +3,14 @@ using UnityEngine.SceneManagement;
 
 namespace UI
 {
-    public class PauseMenu : MonoBehaviour
+    public class PauseMenu : Menu
     {
         [SerializeField] private string mainMenuSceneName = "Main Menu";
         public static bool GameIsPaused;
-        
-        public GameObject pauseMenuUI;
 
         void Start()
         {
+            base.Start();
             InputController.Instance.Pause += OnPause;
             GameIsPaused = false;
         }
@@ -30,24 +29,34 @@ namespace UI
         {
             if (GameIsPaused)
             {
-                Resume();
+                Enter();
             }
             else
             {
-                Pause();
+                Exit();
             }
+        }
+
+        public override void Enter()
+        {
+            base.Enter();
+            Pause();
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+            Resume();
         }
 
         private void Pause()
         {
-            pauseMenuUI.SetActive(true);
             Time.timeScale = 0f;
             GameIsPaused = true;
         }
 
         private void Resume()
         {
-            pauseMenuUI.SetActive(false);
             Time.timeScale = 1f;
             GameIsPaused = false;
         }
@@ -57,7 +66,6 @@ namespace UI
             Time.timeScale = 1f;
             GameManager.SceneManager.LoadSceneAndSwap(mainMenuSceneName);
         }
-
         public void QuitGame()
         {
             GameManager.SceneManager.QuitApplication();
