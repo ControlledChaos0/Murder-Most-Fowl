@@ -1,3 +1,4 @@
+using GlobalManagers;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour

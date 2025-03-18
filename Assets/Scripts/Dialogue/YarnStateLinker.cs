@@ -2,6 +2,7 @@ using Yarn.Unity;
 using System.Reflection;
 using System.Collections.Generic;
 using System;
+using GlobalManagers;
 using UnityEngine;
 
 public class YarnStateLinker : VariableStorageBehaviour

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using GlobalManagers;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 using Yarn.Unity;

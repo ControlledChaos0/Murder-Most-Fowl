@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using GlobalManagers;
 
 [RequireComponent(typeof(GameManager))]
 public class SceneManager : MonoBehaviour

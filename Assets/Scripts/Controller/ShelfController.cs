@@ -1,65 +1,48 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class CabinetController : MonoBehaviour
+namespace Controller
 {
-    [SerializeField]
-    Sprite openSprite;
-    [SerializeField]
-    Sprite closedSprite;
-    [SerializeField]
-    BoxCollider closedCollider;
-    [SerializeField]
-    BoxCollider openCollider1;
-    [SerializeField]
-    BoxCollider openCollider2;
-    [SerializeField]
-    private Texture2D _normalCursor;
-    [SerializeField]
-    private Texture2D _magnifyingCursor;
-    private bool open = false;
-    SpriteRenderer sr =  null;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class CabinetController : MonoBehaviour
     {
-        sr = GetComponent<SpriteRenderer>();
-        sr.sprite = closedSprite;
-        openCollider1.enabled = false;
-        openCollider2.enabled = false;
-        open = false;
-    }
+        [SerializeField] private Sprite openSprite;
+        [SerializeField] private Sprite closedSprite;
+        [SerializeField] private BoxCollider closedCollider;
+        [SerializeField] private BoxCollider openCollider1;
+        [SerializeField] private BoxCollider openCollider2;
+        private bool _open;
+        private SpriteRenderer _sr;
 
-    void OnMouseDown()
-    {
-        if (open)
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        private void Start()
         {
-            sr.sprite = closedSprite;
+            _sr = GetComponent<SpriteRenderer>();
+            _sr.sprite = closedSprite;
             openCollider1.enabled = false;
             openCollider2.enabled = false;
-            closedCollider.enabled = true;
-            open = false;
-        } else {
-            sr.sprite = openSprite;
-            openCollider1.enabled = true;
-            openCollider2.enabled = true;
-            closedCollider.enabled = false;
-            open = true;
+            _open = false;
         }
-    }
 
-    void OnMouseEnter()
-    {
-         Cursor.SetCursor(_magnifyingCursor, Vector2.zero, CursorMode.Auto);
-    }
+        private void OnMouseDown()
+        {
+            if (_open)
+            {
+                _sr.sprite = closedSprite;
+                openCollider1.enabled = false;
+                openCollider2.enabled = false;
+                closedCollider.enabled = true;
+                _open = false;
+            } else {
+                _sr.sprite = openSprite;
+                openCollider1.enabled = true;
+                openCollider2.enabled = true;
+                closedCollider.enabled = false;
+                _open = true;
+            }
+        }
 
-    void OnMouseExit()
-    {
-        Cursor.SetCursor(_normalCursor, Vector2.zero, CursorMode.Auto);
-    }
-
-    public bool IsOpen() 
-    {
-        return open;
+        public bool IsOpen() 
+        {
+            return _open;
+        }
     }
 }

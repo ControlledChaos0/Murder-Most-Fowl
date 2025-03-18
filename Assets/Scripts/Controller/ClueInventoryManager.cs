@@ -1,4 +1,5 @@
 using System;
+using GlobalManagers;
 using UnityEngine;
 
 public class ClueInventoryManager : Singleton<ClueInventoryManager>

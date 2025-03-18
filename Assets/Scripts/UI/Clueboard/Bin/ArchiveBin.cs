@@ -1,4 +1,5 @@
 using Clues;
+using GlobalManagers;
 using UnityEngine;
 
 public class ArchiveBin : ClueBoardBin

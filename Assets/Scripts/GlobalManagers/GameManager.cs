@@ -1,32 +1,37 @@
 using UnityEngine;
-using System.Collections.Generic;
 
-[RequireComponent(typeof(SceneManager), typeof(StateManager))]
-public class GameManager : MonoBehaviour
+namespace GlobalManagers
 {
-    public static GameManager Instance { get; private set; }
-
-    private SceneManager m_sceneManager;
-    public static SceneManager SceneManager => Instance.m_sceneManager;
-
-    private StateManager m_stateManager;
-    public static StateManager StateManager => Instance.m_stateManager;
-    public static State State => StateManager.ActiveState;
-
-    private ClueManager m_clueManager;
-    public static ClueManager ClueManager => Instance.m_clueManager;
-    private CharacterManager m_characterManager;
-    public static CharacterManager CharacterManager => Instance.m_characterManager;
-
-
-    private void Awake()
+    [RequireComponent(typeof(SceneManager), typeof(StateManager))]
+    public class GameManager : MonoBehaviour
     {
-        if (Instance != null && Instance != this) Destroy(this);
-        else Instance = this;
+        private static GameManager Instance { get; set; }
 
-        m_sceneManager = GetComponent<SceneManager>();
-        m_stateManager = GetComponent<StateManager>();
-        m_clueManager = GetComponent<ClueManager>();
-        m_characterManager = GetComponent<CharacterManager>();
+        private SceneManager _mSceneManager;
+        public static SceneManager SceneManager => Instance._mSceneManager;
+
+        private StateManager _mStateManager;
+        public static StateManager StateManager => Instance._mStateManager;
+        public static State State => StateManager.ActiveState;
+
+        private ClueManager _mClueManager;
+        public static ClueManager ClueManager => Instance._mClueManager;
+        private CharacterManager _mCharacterManager;
+        public static CharacterManager CharacterManager => Instance._mCharacterManager;
+        
+        private CursorManager _mCursorManager;
+        public static CursorManager CursorManager => Instance._mCursorManager;
+    
+        private void Awake()
+        {
+            if (Instance != null && Instance != this) Destroy(this);
+            else Instance = this;
+
+            _mSceneManager = GetComponent<SceneManager>();
+            _mStateManager = GetComponent<StateManager>();
+            _mClueManager = GetComponent<ClueManager>();
+            _mCharacterManager = GetComponent<CharacterManager>();
+            _mCursorManager = GetComponent<CursorManager>();
+        }
     }
 }
