@@ -49,7 +49,7 @@ public abstract class Singleton<T> : MonoBehaviour
             else
             {
                 CheckForAndDestroyDuplicates();
-                _instance = FindObjectOfType<T>();
+                _instance = FindAnyObjectByType<T>();
                 return true;
             }
         }
@@ -82,7 +82,7 @@ public abstract class Singleton<T> : MonoBehaviour
         } else
         {
             CheckForAndDestroyDuplicates();
-            _instance = FindObjectOfType<T>();
+            _instance = FindAnyObjectByType<T>();
             return false;
         }
     }
@@ -90,7 +90,7 @@ public abstract class Singleton<T> : MonoBehaviour
     private void CheckForAndDestroyDuplicates()
     {
         // I'm using LINQ here for funsies, regular for loops would be fine (and probably easier to read) :)
-        IEnumerable<T> instances = FindObjectsOfType<T>();
+        IEnumerable<T> instances = FindObjectsByType<T>(FindObjectsSortMode.None);
         if (instances.Count() > 1)
         {
             Debug.LogError($"{instances.Count()} Singleton components of type {typeof(T)} were detected. An arbitrary one was chosen " +

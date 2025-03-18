@@ -61,14 +61,14 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     private GraphicRaycaster _graphicRaycaster;
     public GraphicRaycaster GraphicRaycast => _graphicRaycaster;
     private Animator _animator;
-    private ClueObjectUI _selectedObj;
+    //private ClueObjectUI _selectedObj;
 
     private Vector2 _boardCenter;
     private Rect _boardBoundsRect;
 
     private bool _toggleLock;
     private bool _activated;
-    private bool _scrollEnabled;
+    //private bool _scrollEnabled;
     private bool _canPresent;
 
     private string _correctEvidence;
@@ -98,10 +98,10 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
         _boardCenter = _boardTransform.parent.position;
 
         _activated = false;
-        _scrollEnabled = true;
+        //_scrollEnabled = true;
         _canPresent = false;
 
-        _selectedObj = null;
+        //_selectedObj = null;
         _animator = _board.GetComponent<Animator>();
 
         RectTransform mask = _boardTransform.parent as RectTransform;
