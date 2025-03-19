@@ -14,7 +14,7 @@ public class UIManager : Singleton<UIManager>
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -41,5 +41,10 @@ public class UIManager : Singleton<UIManager>
         {
             m_CurrentMenu[0].EnterTransition();
         }
+    }
+
+    public void RemoveMenu(Menu menu)
+    {
+        m_CurrentMenu.Remove(menu);
     }
 }

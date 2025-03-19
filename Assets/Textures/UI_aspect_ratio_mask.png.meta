@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dc4a14779ab94de44a09bf356a45a4f3
+guid: 12457d481e6d1f94689510ac453d45d0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3072032230960502070
-    second: Penguin Conversation_0
+      213: -6038235846280991793
+    second: UI_aspect_ratio_mask_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Penguin Conversation_0
+      name: UI_aspect_ratio_mask_0
       rect:
         serializedVersion: 2
-        x: 52
+        x: 0
         y: 0
-        width: 1131
-        height: 1884
+        width: 16
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 63593f8a90d02aa20800000000000000
-      internalID: 3072032230960502070
+      spriteID: fcb24606d70e33ca0800000000000000
+      internalID: -6038235846280991793
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Penguin Conversation_0: 3072032230960502070
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -29,11 +29,11 @@ namespace UI
         {
             if (GameIsPaused)
             {
-                Enter();
+                Exit();
             }
             else
             {
-                Exit();
+                Enter();
             }
         }
 
