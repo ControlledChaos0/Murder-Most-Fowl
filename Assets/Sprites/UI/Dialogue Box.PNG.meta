@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 12457d481e6d1f94689510ac453d45d0
+guid: fdc52451064ba5e449f65d8c7da23c1f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6038235846280991793
-    second: UI_aspect_ratio_mask_0
+      213: 3877369958027668088
+    second: Dialogue Box_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_aspect_ratio_mask_0
+      name: Dialogue Box_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 9
+        x: 239
+        y: 553
+        width: 3619
+        height: 606
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fcb24606d70e33ca0800000000000000
-      internalID: -6038235846280991793
+      spriteID: 87aa2030f6f2fc530800000000000000
+      internalID: 3877369958027668088
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      UI_aspect_ratio_mask_0: -6038235846280991793
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

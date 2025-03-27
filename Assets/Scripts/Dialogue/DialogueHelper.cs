@@ -72,16 +72,29 @@ public class DialogueHelper : Singleton<DialogueHelper>
         
     }
 
+
     public void StartDialogue()
     {
+        AddContinueInput();
         ClueBoardManager.Instance.LockToggle();
         _background.SetActive(true);
     }
 
     public void EndDialogue()
     {
+        RemoveContinueInput();
         ClueBoardManager.Instance.UnlockToggle();
         _background.SetActive(false);
+    }
+
+    public void AddContinueInput()
+    {
+
+    }
+
+    public void RemoveContinueInput()
+    {
+
     }
 
     public void StartNode(string node)
@@ -99,6 +112,53 @@ public class DialogueHelper : Singleton<DialogueHelper>
         foreach (string tag in tags)
         {
             MetadataParser(tag);
+        }
+    }
+
+    private void MetadataParser(string tag)
+    {
+        string[] tagParts = tag.Split(':');
+        if (tagParts[0] == "lockP")
+        {
+            lockPortrait = true;
+        }
+        if (tagParts[0] == "c")
+        {
+            ChangeCharacters(tagParts[1], tagParts[2]);
+            return;
+        }
+        if (tagParts[0] == "lc")
+        {
+            ChangeLeft(tagParts[1]);
+            return;
+        }
+        if (tagParts[0] == "rc")
+        {
+            ChangeRight(tagParts[1]);
+            return;
+        }
+    }
+
+    private void NamePortraitUpdater(string name)
+    {
+        if (string.IsNullOrEmpty(name))
+        {
+            return;
+        }
+        _nameDict.TryGetValue(name, out string spriteName);
+        if (string.IsNullOrEmpty(spriteName))
+        {
+            Debug.LogError("Name is not in the dictionary. Check spelling.");
+            return;
+        }
+
+        if (spriteName == "Owl")
+        {
+            ChangeLeft(spriteName);
+        }
+        else
+        {
+            ChangeRight(spriteName);
         }
     }
 
@@ -181,53 +241,6 @@ public class DialogueHelper : Singleton<DialogueHelper>
             {
                 MetadataParser(s);
             }
-        }
-    }
-
-    private void MetadataParser(string tag)
-    {
-        string[] tagParts = tag.Split(':');
-        if (tagParts[0] == "lockP")
-        {
-            lockPortrait = true;
-        }
-        if (tagParts[0] == "c")
-        {
-            ChangeCharacters(tagParts[1], tagParts[2]);
-            return;
-        }
-        if (tagParts[0] == "lc")
-        {
-            ChangeLeft(tagParts[1]);
-            return;
-        }
-        if (tagParts[0] == "rc")
-        {
-            ChangeRight(tagParts[1]);
-            return;
-        }
-    }
-
-    private void NamePortraitUpdater(string name)
-    {
-        if (string.IsNullOrEmpty(name))
-        {
-            return;
-        }
-        _nameDict.TryGetValue(name, out string spriteName);
-        if (string.IsNullOrEmpty(spriteName))
-        {
-            Debug.LogError("Name is not in the dictionary. Check spelling.");
-            return;
-        }
-
-        if (spriteName == "Owl")
-        {
-            ChangeLeft(spriteName);
-        }
-        else
-        {
-            ChangeRight(spriteName);
         }
     }
 }

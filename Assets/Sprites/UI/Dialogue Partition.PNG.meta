@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 12457d481e6d1f94689510ac453d45d0
+guid: df83365f63b920f4ba441be36cc0317f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6038235846280991793
-    second: UI_aspect_ratio_mask_0
+      213: 6381465524065481515
+    second: Dialogue Partition_0
+  - first:
+      213: 8196664682717552287
+    second: Dialogue Partition_1
+  - first:
+      213: -4597554611789740960
+    second: Dialogue Partition_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +106,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_aspect_ratio_mask_0
+      name: Dialogue Partition_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 9
+        x: 1520
+        y: 855
+        width: 1055
+        height: 84
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fcb24606d70e33ca0800000000000000
-      internalID: -6038235846280991793
+      spriteID: b23335c65158f8850800000000000000
+      internalID: 6381465524065481515
       vertices: []
       indices: 
       edges: []
@@ -125,8 +131,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -135,7 +141,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_aspect_ratio_mask_0: -6038235846280991793
+      Dialogue Partition_0: 6381465524065481515
+      Dialogue Partition_1: 8196664682717552287
+      Dialogue Partition_2: -4597554611789740960
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
