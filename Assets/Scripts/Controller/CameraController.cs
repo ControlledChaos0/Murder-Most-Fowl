@@ -13,12 +13,12 @@ public class CameraController : Singleton<CameraController>
 {
     [SerializeField]
     private Camera mainCamera;
-    [SerializeField]
-    private float cameraSensitivity = 0.5f;
-    [SerializeField]
-    private float zoomSensitivity = 0.5f;
-    [SerializeField]
-    private float panSensitivity = 5f;
+    //[SerializeField]
+    //private float cameraSensitivity = 0.5f;
+    //[SerializeField]
+    //private float zoomSensitivity = 0.5f;
+    //[SerializeField]
+    //private float panSensitivity = 5f;
 
     //[SerializeField]
     //private float distanceFrom = 5.0f;

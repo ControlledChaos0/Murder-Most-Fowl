@@ -45,7 +45,7 @@ public class InputController : Singleton<InputController>
     //private Vector2 _screenPosition;
     //private float _scrollDelta;
     private bool _clickDown;
-    private bool _rightClickDown;
+    //private bool _rightClickDown;
 
     private float _clickTime;
     private float _rightClickTime;
@@ -57,6 +57,7 @@ public class InputController : Singleton<InputController>
     //}
 
     ////Events
+#pragma warning disable 67
     public event Action<PointerEventData> Click;
     public event Action Hold;
     public event Action Cancel;
@@ -69,6 +70,7 @@ public class InputController : Singleton<InputController>
 
     public event Action ToggleClueBoard;
     //public event Action<float> OnScrollCB;
+#pragma warning restore 67
 
     private void Awake()
     {
@@ -81,7 +83,7 @@ public class InputController : Singleton<InputController>
     void Start()
     {
         _clickDown = false;
-        _rightClickDown = false;
+        //_rightClickDown = false;
     }
 
     //// Update is called once per frame

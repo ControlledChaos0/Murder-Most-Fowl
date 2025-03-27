@@ -187,7 +187,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
     private void MetadataParser(string tag)
     {
         string[] tagParts = tag.Split(':');
-        if (tagParts[0] == "lockPortrait")
+        if (tagParts[0] == "lockP")
         {
             lockPortrait = true;
         }

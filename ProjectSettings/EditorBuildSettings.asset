@@ -27,19 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Sophia/Train_Car_Hall.unity
     guid: a67445562f9f9204db685d815e8bcb8e
   - enabled: 0
-    path: Assets/Scenes/Jade/TestSceneOG.unity
-    guid: 824d33574ff40c949939853c4843d158
-  - enabled: 0
-    path: Assets/Scenes/Jade/TestSceneJade.unity
-    guid: b6899592aed0b3e4f8038d801421a5e8
-  - enabled: 0
     path: Assets/Scenes/Emilee/TestScene Emilee.unity
     guid: 39c78e029a8671b41a95c0617576255f
-  - enabled: 0
-    path: Assets/Scenes/TestScene.unity
-    guid: bd76065897d3e53459107fc5f762ad86
-  - enabled: 0
-    path: Assets/Scenes/Jade/TrainCarMainJade.unity
-    guid: d4ecb1fded7045d4a978325056ef45cd
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

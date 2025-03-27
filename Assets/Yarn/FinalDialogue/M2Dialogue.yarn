@@ -245,6 +245,9 @@ Morgana: Not a chance.
 -> This is serious, Noir.
 	Athena: This is serious, Noir. Someone is dead.
 	Noir: I thought WE were serious.
+-> This is serious, Morgana.
+	Athena: This is serious, Morgana. Someone is dead.
+	Morgana: I thought WE were serious.
 ->Present
 	<<PresentEvidence>>
 ===
@@ -261,7 +264,7 @@ Morgana: But don't you try to pin this one on me, Nox.
 
 title: CrowDismissal
 ---
-Noir: And?
+Morgana: And?
 ===
 
 

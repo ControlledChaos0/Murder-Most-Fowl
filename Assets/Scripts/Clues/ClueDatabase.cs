@@ -26,4 +26,9 @@ public class ClueDatabase : ScriptableObject
             Clues.Add(c.ClueID, c);
         }
     }
+
+    public void GenerateDictionary()
+    {
+        OnValidate();
+    }
 }
