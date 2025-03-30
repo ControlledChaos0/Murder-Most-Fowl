@@ -3621,6 +3621,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -25.300049
       objectReference: {fileID: 0}
+    - target: {fileID: 4850879928802998942, guid: 6f5014a5efe13af4881abf9cec211ca1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850879928802998942, guid: 6f5014a5efe13af4881abf9cec211ca1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5092495082324831966, guid: 6f5014a5efe13af4881abf9cec211ca1, type: 3}
       propertyPath: m_fontSize
       value: 12.2
@@ -5038,9 +5046,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 956921681}
-  cameraSensitivity: 0.5
-  zoomSensitivity: 0.5
-  panSensitivity: 5
   _hitMask:
     serializedVersion: 2
     m_Bits: 241
@@ -6954,7 +6959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3231515563247730419, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00049777626
+      value: 0.0007390278
       objectReference: {fileID: 0}
     - target: {fileID: 3691073673336351334, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_Name
@@ -6986,7 +6991,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5073712475295230537, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00049990154
+      value: 0.0007392237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459840063042205999, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459840063042205999, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10091,9 +10104,45 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _spriteList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[5].name
+      value: MorganaAngry
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _spriteList.Array.data[5].name
+      value: Crow_Angry
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _spriteList.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: -7577487481039880905, guid: 0854bea7f4791443ab057907b0ee6bf0, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _spriteList.Array.data[5].sprite
+      value: 
+      objectReference: {fileID: 6856779745698498924, guid: 3a8682ecc56342d40adfb0583c20dcfd, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[5].spriteName
+      value: Crow_Angry
+      objectReference: {fileID: 0}
     - target: {fileID: 3550219144273042960, guid: 6abb264982467054ba4fe940958d0824, type: 3}
       propertyPath: m_Name
       value: Dialogue System MMF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116285871445633725, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116285871445633725, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5891085521661955111, guid: 6abb264982467054ba4fe940958d0824, type: 3}
       propertyPath: onNodeStart.m_PersistentCalls.m_Calls.Array.size
