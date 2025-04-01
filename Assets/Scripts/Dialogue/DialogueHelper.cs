@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -20,6 +21,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
     {
         public string spriteName;
         public string name;
+        public List<SpriteItem> expressions;
     }
 
     [Header("Yarn Components")] 
@@ -42,6 +44,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
     private static string _leftName;
     private static string _rightName;
     private static List<SpriteItem> _sprites;
+    private static List<NameSpriteMatch> _names;
     private static bool lockPortrait = false;
 
     private Dictionary<string, string> _nameDict = new();
@@ -53,6 +56,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
         _left = _leftCharacter;
         _right = _rightCharacter;
         _sprites = _spriteList;
+        _names = _nameList;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -159,6 +163,33 @@ public class DialogueHelper : Singleton<DialogueHelper>
         _right.sprite = spriteItem.sprite;
     }
 
+    public static void ChangeRightExpression(string name = null)
+    {
+        if (lockPortrait)
+        {
+            return;
+        }
+
+        if (string.IsNullOrEmpty(name))
+        {
+            _right.gameObject.SetActive(false);
+            return;
+        }
+
+        NameSpriteMatch charInfo = _names.Find(e => e.spriteName == _rightName);
+
+        List<SpriteItem> expressions = charInfo.expressions;
+        Debug.Log(charInfo.name);
+        Debug.Log(charInfo.spriteName);
+        
+        if (expressions != null)
+        {
+            _right.gameObject.SetActive(true);
+            SpriteItem spriteItem = expressions.Find(e => e.name == name);
+            _right.sprite = spriteItem.sprite;
+        }
+    }
+
     [YarnCommand("ChangeCharacters")]
     public static void ChangeCharacters(string left_name = null, string right_name = null)
     {
@@ -206,6 +237,12 @@ public class DialogueHelper : Singleton<DialogueHelper>
             ChangeRight(tagParts[1]);
             return;
         }
+        if (tagParts[0] == "e")
+        {
+            ChangeRightExpression(tagParts[1]);
+            return;
+        }
+        
     }
 
     private void NamePortraitUpdater(string name)
@@ -221,13 +258,16 @@ public class DialogueHelper : Singleton<DialogueHelper>
             return;
         }
 
-        if (spriteName == "Owl")
+        if (spriteName != _leftName && spriteName != _rightName)
         {
-            ChangeLeft(spriteName);
-        }
-        else
-        {
-            ChangeRight(spriteName);
+            if (spriteName == "Owl")
+            {
+                ChangeLeft(spriteName);
+            }
+            else
+            {
+                ChangeRight(spriteName);
+            }
         }
     }
 }
