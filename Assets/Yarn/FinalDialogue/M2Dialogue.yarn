@@ -10,7 +10,7 @@ Athena: Yes, yes, I understand, but conveniently I'm a detective.
 Skipper: A detective? But what needs investigating? The poor duck clearly hung himself. #e:Sad
 Skipper: I don't want to mess with the scene until the police arrive.
 Athena: Say, bellboy, if I can prove to you this “suicide” was in fact a murder, will you let me investigate further?
-Skipper: I suppose… If this was a murder it couldn't help to have a detective on the case.
+Skipper: I suppose… If this was a murder it couldn't help to have a detective on the case.#e:Neutral
 Athena: It's a deal. 
 ===
 
@@ -56,7 +56,7 @@ Athena: This stool was placed by the murderer to make the scene look more convin
 
 title:ProofWrong1
 ---
-Skipper: I don't follow.
+Skipper: I don't follow. #e:Sad
 Athena: I'll see if I can find anything more relevant.
 ===
 
@@ -156,7 +156,7 @@ tags: c:Owl:Goose
 Chase: What do you want?
 -> What did you mean earlier?
 	Athena: You said this was “unfortunate but not entirely unexpected.” Could you elaborate?
-	Chase: It would be wrong of me to gossip of one who just took their life.
+	Chase: It would be wrong of me to gossip of one who just took their life. #e:Sad
 	Athena: I understand.
 -> Present
 	<<PresentEvidence>>
@@ -231,7 +231,7 @@ Athena: Just what I need, my romantic life getting tangled with my professional 
 Athena: My breakup with Morgana Noir was probably my messiest, and I don't have time to deal with that right now.
 Morgana: Oh look who it is.
 Athena: I'm not in the mood right now.
-Morgana: I was in a good one, until you walked in.
+Morgana: I was in a good one, until you walked in. #e:Sad
 Athena: Look, I just want to talk.
 <<jump CrowConversation>>
 ===
@@ -256,9 +256,9 @@ title: CrowGlass
 ---
 Morgana: Glass? What do you want me to say?
 Athena: Glass, Bottles, Alcohol… Isn't that your specialty?
-Morgana: …
+Morgana: … #e:Embarrassed
 Morgana: I did notice a wine bottle was missing from the bar today. 
-Morgana: But don't you try to pin this one on me, Nox.
+Morgana: But don't you try to pin this one on me, Nox. #e:Angry
 <<CreateClue ClueBoardCanvas Bottle>>
 ===
 

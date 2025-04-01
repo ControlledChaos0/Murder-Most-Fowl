@@ -72,6 +72,8 @@ public class DialogueHelper : Singleton<DialogueHelper>
         foreach (NameSpriteMatch match in _nameList)
         {
             _nameDict[match.name] = match.charID;
+            Debug.Log(match.name);
+            Debug.Log(_nameDict[match.name]);
         }
     }
 
@@ -186,7 +188,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
         SpriteItemList expressions = charInfo.expressions;
         Debug.Log(charInfo.name);
         Debug.Log(charInfo.charID);
-        
+        Debug.Log(name);
         if (expressions != null)
         {
             _right.gameObject.SetActive(true);

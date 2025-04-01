@@ -9264,6 +9264,62 @@ PrefabInstance:
       propertyPath: _nameList.Array.data[4].expressions.Array.data[2].sprite
       value: 
       objectReference: {fileID: -199876445757598851, guid: 30f736b8374cc3447b5791447c5aae10, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[1].expressions.spriteItemList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[1].expressions.spriteItemList.Array.data[0].name
+      value: Neutral
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[1].expressions.spriteItemList.Array.data[1].name
+      value: Sad
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.data[0].name
+      value: Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.data[1].name
+      value: Embarrassed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.data[2].name
+      value: Angry
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.data[3].name
+      value: Sad
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[1].expressions.spriteItemList.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: -199876445757598851, guid: 30f736b8374cc3447b5791447c5aae10, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[1].expressions.spriteItemList.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 5965557193794043855, guid: 681bc3b08dc0c74438dbe9889f65771d, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 287759248693289744, guid: 056c6f42f254c5a40849c0f835038ecd, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 831179347940552104, guid: b4a383920367dd8429ac2d66e263cdc5, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 6856779745698498924, guid: 3a8682ecc56342d40adfb0583c20dcfd, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: -3396483237174663184, guid: 477235fef336b7546abe472c92f0354f, type: 3}
     - target: {fileID: 3550219144273042960, guid: 6abb264982467054ba4fe940958d0824, type: 3}
       propertyPath: m_Name
       value: Dialogue System MMF
