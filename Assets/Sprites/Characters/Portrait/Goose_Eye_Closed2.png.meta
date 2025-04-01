@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Goose_Eye_Closed2_0: 5965557193794043855
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

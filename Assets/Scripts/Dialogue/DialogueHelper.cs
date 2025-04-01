@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using Yarn.Unity;
-using Object = System.Object;
 
 public class DialogueHelper : Singleton<DialogueHelper>
 {
@@ -16,12 +15,18 @@ public class DialogueHelper : Singleton<DialogueHelper>
         public string name;
         public Sprite sprite;
     }
+
+    [Serializable]
+    public class SpriteItemList
+    {
+        public List<SpriteItem> spriteItemList = new();
+    }
     [Serializable]
     public struct NameSpriteMatch
     {
-        public string spriteName;
+        public string charID;
         public string name;
-        public List<SpriteItem> expressions;
+        public SpriteItemList expressions;
     }
 
     [Header("Yarn Components")] 
@@ -66,7 +71,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
 
         foreach (NameSpriteMatch match in _nameList)
         {
-            _nameDict[match.name] = match.spriteName;
+            _nameDict[match.name] = match.charID;
         }
     }
 
@@ -176,16 +181,16 @@ public class DialogueHelper : Singleton<DialogueHelper>
             return;
         }
 
-        NameSpriteMatch charInfo = _names.Find(e => e.spriteName == _rightName);
+        NameSpriteMatch charInfo = _names.Find(e => e.charID == _rightName);
 
-        List<SpriteItem> expressions = charInfo.expressions;
+        SpriteItemList expressions = charInfo.expressions;
         Debug.Log(charInfo.name);
-        Debug.Log(charInfo.spriteName);
+        Debug.Log(charInfo.charID);
         
         if (expressions != null)
         {
             _right.gameObject.SetActive(true);
-            SpriteItem spriteItem = expressions.Find(e => e.name == name);
+            SpriteItem spriteItem = expressions.spriteItemList.Find(e => e.name == name);
             _right.sprite = spriteItem.sprite;
         }
     }

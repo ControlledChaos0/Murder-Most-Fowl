@@ -9185,6 +9185,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[0].charID
+      value: Owl
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[1].charID
+      value: Goose
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[2].charID
+      value: Peacock
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].charID
+      value: Crow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[4].charID
+      value: Penguin
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
       propertyPath: _nameList.Array.data[0].expressions.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -9264,6 +9284,46 @@ PrefabInstance:
       propertyPath: _nameList.Array.data[4].expressions.Array.data[2].sprite
       value: 
       objectReference: {fileID: -199876445757598851, guid: 30f736b8374cc3447b5791447c5aae10, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[0].expressions.spriteItemList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[4].expressions.spriteItemList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[0].expressions.spriteItemList.Array.data[0].name
+      value: Neutral
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[4].expressions.spriteItemList.Array.data[0].name
+      value: Neutral
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[4].expressions.spriteItemList.Array.data[1].name
+      value: Happy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[4].expressions.spriteItemList.Array.data[2].name
+      value: Sad
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[0].expressions.spriteItemList.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: -1788626132936788117, guid: 1a31de99fa89e4f438db8fb8d7af808a, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[4].expressions.spriteItemList.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 3072032230960502070, guid: dc4a14779ab94de44a09bf356a45a4f3, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[4].expressions.spriteItemList.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: -899229396933672516, guid: 6b3a78a8f9b91074cb7d4f43d5804513, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[4].expressions.spriteItemList.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 3424118716958518853, guid: 1c41a55f90e55f742b5d0ddd041fb6cd, type: 3}
     - target: {fileID: 3550219144273042960, guid: 6abb264982467054ba4fe940958d0824, type: 3}
       propertyPath: m_Name
       value: Dialogue System MMF

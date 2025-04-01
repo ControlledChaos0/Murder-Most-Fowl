@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Penguin_Happy_0: -899229396933672516
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

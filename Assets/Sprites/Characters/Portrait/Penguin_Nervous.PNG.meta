@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Penguin_Nervous_0: 3424118716958518853
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
