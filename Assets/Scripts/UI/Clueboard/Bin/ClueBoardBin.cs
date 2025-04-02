@@ -70,6 +70,7 @@ public class ClueBoardBin : MonoBehaviour,
         _clueList.Add(clueObject);
         clueObject.transform.parent = _storageTransform;
         clueObject.transform.localPosition = Vector3.zero;
+        clueObject.transform.localScale = Vector3.one;
         clueObject.Image.transform.localScale = Vector3.one;
     }
 

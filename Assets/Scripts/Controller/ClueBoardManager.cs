@@ -95,8 +95,6 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
         InputController.Instance.ToggleClueBoard += ToggleClueBoard;
         // InputController.Instance.ToggleStickyNote += ToggleStickyNote;
 
-        _boardCenter = _boardTransform.parent.position;
-
         _activated = false;
         //_scrollEnabled = true;
         _canPresent = false;
@@ -111,7 +109,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     // Update is called once per frame
     void Update()
     {
-        
+        _boardCenter = _boardTransform.parent.position;
     }
 
     public void ToggleClueBoard() {
@@ -181,6 +179,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
 
     private void DynamicZoom(PointerEventData eventData, float zoom)
     {
+        
         Vector2 newCenter = _boardCenter + _boardTransform.anchoredPosition;
         float scale = _boardTransform.localScale.x;
         Vector2 offset = eventData.position - newCenter;
