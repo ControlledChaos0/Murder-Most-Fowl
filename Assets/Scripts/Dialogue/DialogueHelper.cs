@@ -193,6 +193,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
         {
             _right.gameObject.SetActive(true);
             SpriteItem spriteItem = expressions.spriteItemList.Find(e => e.name == name);
+            Debug.Log(spriteItem);
             _right.sprite = spriteItem.sprite;
         }
     }
