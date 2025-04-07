@@ -63,7 +63,7 @@ public class CharacterManager : MonoBehaviour
     {
         if (GetCharacterStateFromID(characterID).CharClueDict.TryGetValue(clueID, out CharacterClue cClue))
         {
-            if (cClue.ShownClue)
+            if (cClue.ShownClue && characterID != "Penguin")
             {
                 return GetCurrentDismissal(characterID);
             }
