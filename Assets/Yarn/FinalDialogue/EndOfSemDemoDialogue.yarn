@@ -353,11 +353,54 @@ tags: c:Owl:Crow
 <<set $ConvoChar = "Crow">>
 Morgana: …
 Morgana: Not a chance.
--> This is serious, Morgana.
-	Athena: This is serious, Morgana. Someone is dead.
-	Morgana: I thought WE were serious.
 ->Present
 	<<PresentEvidence>>
+-> This is serious, Morgana.
+	Athena: This is serious, Morgana. Someone is dead.
+	Morgana: Oh cluck off.
+	Morgana: I thought WE were serious.
+-> Where were you last night.
+	Morgana: Wouldn't you like to know.
+	Athena: I would actually.
+	Morgana: ...
+	Morgana: I was drinking with Melissa.
+	Athena: And what about the morning.
+	Morgana: I woke up.
+	Morgana: Forgot my keys.
+	Morgana: Found my keys.
+	Morgana: That all?
+	Athena: Is there anything else you can give me?
+	Morgana: ...
+	-> Present
+		<<PresentEvidence>>
+-> How do you feel about Mallard?
+	Morgana: Didn't like him. Don't like him.
+	<<jump CrowConversation>>
+-> Do you know if anyone would want to kill him?
+	Morgana: I may not like him, but that doesn't mean I would kill him.
+	-> Present
+		<<PresentEvidence>>
+===
+
+title: CrowKeys
+---
+Morgana: Yeah that penguin lost his keys and asked me to lock up.
+Morgana: 
+===
+
+title: CrowEx
+---
+Morgana: Yeah, imagine my luck.
+Morgana: Both my Exs on a train. One ends up dead and the other wants to turn me in.
+Athena: I don't want to turn you in.
+Morgana: Yeah Im sure you don't.
+Athena: I mean it. Why would I want to turn you in?
+Morgana: I don't know? Why would you leave me like that.
+Athena: ...
+Athena: Look Morgana, I really care about you.
+Morgana: How do you do that to someone you care about?
+Athena: I thought it would be best for you.
+Morgana: ...
 ===
 
 title: CrowGlass
