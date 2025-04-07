@@ -1,0 +1,310 @@
+﻿title: Start
+tags: lc: rc:
+---
+
+???: [wave]CRASH[/wave]
+Athena: Ahh! 
+Athena: ... What was that?
+Athena: Can't a poor owl with the flu get any sleep around here? 
+Athena: It's my only break...
+Athena: …
+???: clop clop clop
+Athena: Who's up this late at night making such a ruckus. 
+Athena: *cough cough* Luckily for them I'm too sick to do anything about it.
+Athena: ...
+Athena: zzzzz
+<<ChangeRightCharacter>>
+<<ChangeLeftCharacter>>
+???: What's going on? Why's the door locked?
+???: Isn't the parlor supposed to be open by now?
+???: I'm sorry, I'll get that unlocked for you.
+Athena: The early birds are up bright and early...
+Athena: Unfortunately I am too...
+<<ChangeLeftCharacter>>
+???: Alright you should be able to get in now.
+???: I apologize for the inconvenience.
+Athena: Great. Now I can get back to slee-
+???: AAAAAAAAAAAAAAH!
+???: Oh dear heavens.
+???: What on earth?
+Athena: What's that all about?
+Athena: I should check this out.
+Athena: Oh dear Pheonix. How did this happen?
+Athena: I suppose that's up to me to figure out.
+Skipper: Excuse me ma'am, but I can't let you disturb the scene. I'm about to phone the police.
+Athena: Yes, yes, I understand, but conveniently I'm a detective.
+Skipper: A detective? But what needs investigating? The poor duck clearly hung himself.
+Skipper: I don't want to mess with the scene until the police arrive.
+Athena: Say, bellboy, if I can prove to you this “suicide” was in fact a murder, will you let me investigate further?
+Skipper: I suppose… If this was a murder it would help to have a detective on the case.
+Athena: It's a deal. 
+===
+
+
+title: PenguinIntroduction
+tags: lc:Owl rc:
+---
+Athena: This is that bellboy that stopped me earlier. He looks so nervous…
+Athena: Makes sense. If I worked here, I would be nervous too.
+Athena: Poor kid.
+<<jump PenguinProof>>
+===
+
+
+
+
+
+title:PenguinProof
+tags: c:Owl:Penguin
+---
+<<set $ConvoChar = "Penguin">>
+Skipper: Hello Detective. Do you have evidence for me?
+-> I do
+	<<jump ProofIdleNode1>>
+===
+
+title:ProofIdleNode1
+---
+Skipper: What makes you think the duck couldn't have committed the act himself?
+-> Present
+    <<PresentEvidence Stool ProofWrong1>>
+-> Leave
+===
+
+title:PenguinStool
+---
+Athena: This stool is way too short for the duck to have reached the chandelier himself.
+Athena: He must've been hung up by someone else. 
+Athena: This stool was placed by the murderer to make the scene look more convincing.
+<<set_character_idle_node Penguin PenguinProof2>>
+<<jump PenguinProof2>>
+===
+
+title:ProofWrong1
+---
+Skipper: I don't follow.
+Athena: I'll see if I can find anything more relevant.
+===
+
+title:PenguinProof2
+tags: c:Owl:Penguin
+---
+<<set $ConvoChar = "Penguin">>
+Skipper: If that's the case, what was his cause of death?
+<<jump ProofIdleNode2>>
+===
+
+title:ProofIdleNode2
+---
+-> Present
+    <<PresentEvidence Rope ProofWrong2>>
+-> Leave
+===
+
+title:PenguinRope
+---
+Athena: He was currently hanged. The suffication is clear.
+Athena: However, there is no signs of struggle, even as he sufficated.
+Athena: He must have been unconscious while he died, meaning he couldn't have hung himself.
+<<set_character_idle_node Penguin PenguinProof3>>
+<<jump PenguinProof3>>
+===
+
+title:ProofWrong2
+---
+Athena: Because he… uh…
+Skipper: I'll give you more time.
+===
+
+title:PenguinProof3
+tags: c:Owl:Penguin
+---
+<<set $ConvoChar = "Penguin">>
+Skipper: I see. What was he knocked out with?
+<<jump ProofIdleNode3>>
+===
+
+title:ProofIdleNode3
+---
+-> Present
+    <<PresentEvidence Bottle ProofWrong3>>
+-> Leave
+===
+
+title:PenguinBottle
+tags: c:Owl:Penguin
+---
+Athena: There's a wine bottle missing from the bar cabinet.
+Athena: Glass shards matching the glass were found next to the body.
+Athena: I believe the duck was hit over the head with the bottle, then his unconscious body was hung and strangled to make it look like a suicide.
+<<set_character_idle_node Penguin PenguinConclusion>>
+<<jump PenguinConclusion>>
+===
+
+title:ProofWrong3
+---
+Skipper: I don't think this is a weapon.
+Athena: I'll be back when I find it.
+===
+
+title:PenguinConclusion
+---
+Skipper: Interesting… 
+Skipper: I think you have a good case, Ms..?
+Athena: Athena. Athena Nox.
+Skipper: Thank you Detective Nox. I'll give you some time to investigate.
+Skipper: Let me know when you're ready to call the police, and you can turn in your suspect to them.
+
+===
+
+
+
+
+
+title: GooseIntroduction
+tags: lc:Owl rc:
+---
+Athena: Chase Gander…
+Athena: Richest man this side of the country. I wouldn't be surprised if he owns this train.
+Athena: I'm almost too intimidated to talk to him.
+Athena: Good Morning, Mr. Gander.
+Chase: Who am I speaking to?
+Athena: I'm Detective Athena Nox.
+Chase: I assure you there's not much more than what meets the eye.
+Chase: This scenario is… unfortunate but not entirely unexpected.
+Athena: I'm sure there's something you could help me with to shed light on the situation.
+<<jump GooseConversation>>
+===
+
+title: GooseConversation
+tags: c:Owl:Goose
+---
+<<set $ConvoChar = "Goose">>
+Chase: What do you want?
+-> What did you mean earlier?
+	Athena: You said this was “unfortunate but not entirely unexpected.” Could you elaborate?
+	Chase: It would be wrong of me to gossip of one who just took their life.
+	Athena: I understand.
+-> Present
+	<<PresentEvidence>>
+-> Nothing Now
+	Goose: My time is precious.
+===
+
+title: GooseStool
+---
+Goose: You think Mallard used that in his attempt?
+Goose: I find that… hard to believe.
+Athena: What do you mean by that?
+Goose: Well, Mallard, you've seen him. 
+Chase: Poor thing he was never one to stand out of a crowd.
+===
+
+title: GooseDismissal
+---
+Chase: I don't see the relevance of this.
+===
+
+title: PeacockIntroduction
+tags: lc:Owl rc:
+---
+Athena: Melissa Miss Peacock. Never thought I'd get to meet her in person.
+Athena: I've been listening to her music since the beginning of her career.
+Athena: Oh my gosh and her new single, “Birds of a Feather”, is soooo good.
+Athena: Good morning Miss Peacock.
+Melissa: Hello darling. Quite an unfortunate morning, is it not?
+Athena: Quite. I'm actually here to speak with you about this.
+Melissa: Oh?
+Athena: I'm a detective. Detective Nox. I may have a few questions for you about this.
+Melissa: Oh dear, am I a suspect?
+Athena: Not at the moment, you're not. But there's something fishy about this scene, and I'd like some help to get to the bottom of this.
+Melissa: I see.
+<<jump PeacockConversation>>
+===
+
+title: PeacockConversation
+tags: c:Owl:Peacock
+---
+<<set $ConvoChar = "Peacock">>
+Melissa: How can I help you, dear?
+-> Present
+	<<PresentEvidence>>
+-> Could I get your autograph?
+	Melissa: Oh! Uh
+	Melissa: Perhaps now isn't the time?
+-> Nothing now
+	Melissa: Don't hesitate to ask.
+===
+
+title: PeacockDismissal
+---
+Melissa: I'm sorry, I'm not sure what to say.
+===
+
+
+
+title: CrowIntroduction
+tags: lc: Owl rc:
+---
+Athena: Oh Phoenix Above, what do you mean SHE's here?
+Athena: Just what I need, my romantic life getting tangled with my professional one.
+Athena: I really don't need to be reminded of that messy breakup now.
+Morgana: Oh look who it is.
+Athena: I'm not in the mood right now.
+Morgana: I was in a good one, until you walked in.
+Athena: Look, I just want to talk.
+<<jump CrowConversation>>
+===
+
+title: CrowConversation
+tags: c:Owl:Crow
+---
+<<set $ConvoChar = "Crow">>
+Morgana: …
+Morgana: Not a chance.
+-> This is serious, Morgana.
+	Athena: This is serious, Morgana. Someone is dead.
+	Morgana: I thought WE were serious.
+->Present
+	<<PresentEvidence>>
+===
+
+title: CrowGlass
+---
+Morgana: Glass? What do you want me to say?
+Athena: Glass, Bottles, Alcohol… Isn't that your specialty?
+Morgana: …
+Morgana: I did notice a wine bottle was missing from the bar today. 
+Morgana: But don't you try to pin this one on me, Nox.
+<<CreateClue ClueBoardCanvas Bottle>>
+===
+
+title: CrowDismissal
+---
+Morgana: And?
+===
+
+
+title: HangingDuck
+tags: c:Owl:
+---
+Athena: Poor guy.
+Athena: He shows clear signs of asphyxiation, but there's something off...
+Athena: Why are the feathers laying so flat?
+Athena: He would've at least struggled a little if he was awake...
+===
+
+title: Shards
+tags: c:Owl:
+---
+Athena: Glass shards...
+Athena: Why would that be there?
+===
+
+title: Stool
+tags: c:Owl:
+---
+Athena: That's certainly a short stool.
+Athena: He had access to tall barstools and yet he used this step-stool.
+Athena: I don't even know if he's tall enough to have reached the noose even standing on this stool.
+===
