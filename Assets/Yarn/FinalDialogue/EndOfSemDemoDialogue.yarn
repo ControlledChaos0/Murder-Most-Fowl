@@ -1,9 +1,11 @@
-﻿title: Start
+﻿
+
+title: Start
 tags: lc: rc:
 ---
-<<set $section = "tutoial">>
 ???: [wave]CRASH[/wave]
 Athena: Ahh! 
+<<declare $section = "main" as string>>
 Athena: ... What was that?
 Athena: Can't a poor owl with the flu get any sleep around here? 
 Athena: It's my only break...
@@ -37,7 +39,7 @@ Skipper: A detective? But what needs investigating? The poor duck clearly hung h
 Skipper: I don't want to mess with the scene until the police arrive.
 Athena: Say, bellboy, if I can prove to you this “suicide” was in fact a murder, will you let me investigate further?
 Skipper: I suppose… If this was a murder it would help to have a detective on the case.
-Athena: It's a deal. 
+Athena: It's a deal.
 ===
 
 
@@ -154,7 +156,6 @@ Skipper: I think you have a good case, Ms..?
 Athena: Athena. Athena Nox.
 Skipper: Thank you Detective Nox. I'll give you some time to investigate.
 Skipper: Let me know when you're ready to call the police, and you can turn in your suspect to them.
-<<set $section = "main">>
 ===
 
 
@@ -181,7 +182,34 @@ tags: c:Owl:Goose
 ---
 <<set $ConvoChar = "Goose">>
 Chase: What do you want?
--> What did you mean earlier?
+-> Where were you last night?
+	Gander: Mallard and I were discussing private business matters.
+	Athena: Business matters?
+	Gander: As I said. Private.
+	Gander: After we concluded, I decided to retire to bed early.
+	Gander: I was woken by a large crash in the dining car, but assumed nothing of and went back to sleep.
+	Athena: Did you hear anything else?
+	Gander: I did not. The earplugs I put in after waking assured that.
+	Gander: When I finally woke at an appropriate time, I heard Melissa's voice outside my quarters.
+	Gander: When I exited, I was greeted by a locked parlor car door and noticed that bartender enter her dorm.
+	Athena: Bartender? As in Morgana?
+	Gander: Ah yes, that is her name, isn't it?
+	Gander: Anyways, I confronted the bellboy about the locked door, but he claimed to have misplaced his key.
+	Gander: My ask was for naught however, as the door was soon unlocked by someone. 
+	Gander: Followed by a bloodcurtling scream.
+	Athena: Is that when they found the body?
+	Gander: ...
+	Gander: Indeed.
+-> What are your thoughts about Mallard?
+	Gander: Mallard.. He was always quite troubled.
+	Athena: Can you elaborate?
+	Gander: I will not speak ill of the dead.
+	->Present
+		<<PresentEvidence>>
+-> Do you know if anyone would want to kill him?
+	Gander: It is not my place throw lofty accusations.
+	Gander: That's your job, is it not?
+-> What did you mean by "not unexpected"?
 	Athena: You said this was “unfortunate but not entirely unexpected.” Could you elaborate?
 	Chase: It would be wrong of me to gossip of one who just took their life.
 	Athena: I understand.
@@ -198,6 +226,18 @@ Goose: I find that… hard to believe.
 Athena: What do you mean by that?
 Goose: Well, Mallard, you've seen him. 
 Chase: Poor thing he was never one to stand out of a crowd.
+===
+
+title: GooseBusinessPartners
+---
+Goose: We were indeed business partners.
+Goose: While our partnership was rather lucrative, it was nonetheless... tenuous.
+Goose: Let's leave it at he was never the most business savvy duck in the pond.
+===
+
+title: GooseDuckBroke
+---
+Goose: I cannot legally discuss this matter.
 ===
 
 title: GooseDismissal
