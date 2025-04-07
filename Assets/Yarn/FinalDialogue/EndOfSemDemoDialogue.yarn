@@ -158,10 +158,6 @@ Skipper: Thank you Detective Nox. I'll give you some time to investigate.
 Skipper: Let me know when you're ready to call the police, and you can turn in your suspect to them.
 ===
 
-
-
-
-
 title: GooseIntroduction
 tags: lc:Owl rc:
 ---
@@ -256,7 +252,7 @@ Melissa: Hello darling. Quite an unfortunate morning, is it not?
 Athena: Quite. I'm actually here to speak with you about this.
 Melissa: Oh?
 Athena: I'm a detective. Detective Nox. I may have a few questions for you about this.
-Melissa: Oh dear, am I a suspect?
+Melissa: Oh my, am I a suspect?
 Athena: Not at the moment, you're not. But there's something fishy about this scene, and I'd like some help to get to the bottom of this.
 Melissa: I see.
 <<jump PeacockConversation>>
@@ -269,11 +265,43 @@ tags: c:Owl:Peacock
 Melissa: How can I help you, dear?
 -> Present
 	<<PresentEvidence>>
+-> Where were you last night?
+	Melissa: My, let's see. 
+	Melissa: I recall drinking with Morgana around last night.
+	Melissa: She was such a darling and made me my favorite cocktail.
+	Athena: What did you two drink?
+	Melissa: She made me a Blue Lagoon, but I don't believe she actually had any alcohol.
+	Athena: ...
+	Melissa: We chatted for a while until I went off to bed. I don't remember exactly when, but I remember I woke up in the morning around 7:55 with a nasty hangover.
+	<<jump PeacockQuestions1>>
 -> Could I get your autograph?
 	Melissa: Oh! Uh
 	Melissa: Perhaps now isn't the time?
 -> Nothing now
 	Melissa: Don't hesitate to ask.
+===
+
+title: PeacockQuestions1
+---
+Melissa: Is there anything else, dear?
+	-> Did you hear anything in the morning?
+		Melissa: I don't recall. No.
+		<<jump PeacockQuestions1>>
+	-> What did you do after waking up?
+		Melissa: I looked around my room for 10 minutes for antiacid. When I couldn't find one, I left to ask Morgana for one.
+		Melissa: To my surprise I found her in front of the parlor door. 
+		Melissa: I asked about entering the parlor, but the poor thing said she lost them in her room. I was happy to wait outside, but that businessman wasn't too keen.
+		Athena: The businessman?
+		Melissa: Gander was clearly grumpy. He was complaining of hunger and someone being late.
+		Athena: I see. What happened after?
+		Melissa: When Morgana got back, she unlocked the car door.. and..
+		Melissa: That was when..
+		Athena: ... you saw it.
+		Melissa: ...
+		Melissa: anyways..
+		<<jump PeacockQuestions1>>
+	-> That's all
+		<<jump PeacockConversation>>
 ===
 
 title: PeacockDismissal
