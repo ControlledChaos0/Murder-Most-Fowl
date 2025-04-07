@@ -274,9 +274,34 @@ Melissa: How can I help you, dear?
 	Athena: ...
 	Melissa: We chatted for a while until I went off to bed. I don't remember exactly when, but I remember I woke up in the morning around 7:55 with a nasty hangover.
 	<<jump PeacockQuestions1>>
+-> What are your thoughts about Mallard?
+	Melissa: He. Ugh. You see..
+	Athena: It's ok. Take your time.
+	Melissa: He and I used to get along fine, at least until I knew he was a swindler.
+	Athena: Swindler?
+	Melissa: The greedy duck agreed to pay me to perform at some of his lavish parties.
+	Melissa: Except he never had any money to begin with.
+	Melissa: You wouldn't think it by looking at him, but even I probably have more savings than he did.
+-> Do you know if anyone would want to kill him?
+	Melissa: My.. well I've overheard Mr. Gander was having troubles with Mallard.
+	Melissa: I don't know much, but I believe it has something to do with Gander's disdain for Mallard's business practices.
+	Melissa: I hear he blames Mallard for the current state of his company...
+	Athena: what of the other passengers?
+	Melissa: Well the bellboy has always given me strange vibes. There's just something.. off about him.
+	Athena: That's hardly evidence.
+	Melissa: I suppose not.
+	Melissa: ...
+	Melissa: As for Morgana, given that you're still alive, I doubt it was her.
+	Athena: What do you mean?
+	Melissa: *laugh* Well she used to be in love with that duck. If she were the ex killing type, I think you'd be the first she'd kill.
+	Athena: She.. what?
+	Melissa: Oh dear, did you not know?
+	Athena: ... 
+	Athena: Let's just move on.
+	Melissa: Alright..
 -> Could I get your autograph?
 	Melissa: Oh! Uh
-	Melissa: Perhaps now isn't the time?
+	Melissa: I'm terribly sorry, but perhaps now isn't the time?
 -> Nothing now
 	Melissa: Don't hesitate to ask.
 ===
