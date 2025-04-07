@@ -1,7 +1,7 @@
 ﻿title: Start
 tags: lc: rc:
 ---
-
+<<set $section = "tutoial">>
 ???: [wave]CRASH[/wave]
 Athena: Ahh! 
 Athena: ... What was that?
@@ -154,7 +154,7 @@ Skipper: I think you have a good case, Ms..?
 Athena: Athena. Athena Nox.
 Skipper: Thank you Detective Nox. I'll give you some time to investigate.
 Skipper: Let me know when you're ready to call the police, and you can turn in your suspect to them.
-
+<<set $section = "main">>
 ===
 
 
