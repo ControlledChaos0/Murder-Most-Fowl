@@ -76,6 +76,14 @@ Skipper: Is there any way I can help?
 -> What are your thoughts about Mallard?
 	Skipper: ...
 	Skipper: Honestly I don't like him.
+	Skipper: He's quite rude and snobbish.
+	Skipper: He came from great wealth, so he probably grew up with everything going his way.
+	Skipper: However.. I feel like there was something off about him.
+	Athena: Have you interacted with him much?
+	Skipper: Thankfully I haven't had to deal with him much when I worked with Mr. Gander.
+	Athena: What do you know about Mallard and Gander?
+	Skipper: I know they started the company together, but if you want to know more, Mr. Gander would be the one to ask.
+	<<jump PenguinConversation>>
 -> Do you know if anyone would want to kill him?
 	Skipper: Oh he knew how to make enemies.
 	Skipper: In fact I believe he's involved with everyone in this car in some way.
@@ -94,7 +102,7 @@ Athena: Tell me about...
 -> Chase Gander
 	Skipper: Ah, Gander.
 	Skipper: Mallard definitely.. left on bad terms with him.
-	Skipper: I'm not sure exactly why, but Gander had told that duck he needs to find a new job.
+	Skipper: I'm not sure exactly why, but Mr. Gander had told that duck he needs to find a new job.
 	Skipper: Kicked the poor guy off to the streets.
 	Skipper: Would you like to know about anyone else?
 	<<jump PenguinEnemies>>
@@ -192,6 +200,7 @@ Skipper: I'll give you more time.
 
 title:PenguinProof3
 tags: c:Owl:Penguin
+position: 120,120
 ---
 <<set $ConvoChar = "Penguin">>
 Skipper: I see. What was he knocked out with?
