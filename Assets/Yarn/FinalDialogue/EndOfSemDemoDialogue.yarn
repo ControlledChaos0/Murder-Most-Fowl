@@ -57,11 +57,76 @@ tags: c:Owl:Penguin
 ---
 Skipper: Is there any way I can help?
 -> Where were you last night?
+	Skipper: Hmm.. Well I spent a lot of time searching for my keys last night.
+	Athena: Your keys? What happened to them?
+	Skipper: I believe I misplaced them. Though...
+	Skipper: ...
+	Skipper: Now that I think about it.. that eve Mallard offered to hang my coat up for me.
+	Skipper: I didn't think much of it at the time, but I believe my keys went missing around that time.
+	Athena: Did you ever find your keys?
+	Skipper: I did not, so I asked Morgana to lock up the parlor.
+	Athena: Did you notice anything else last night?
+	Skipper: I heard a crash in the middle of the night, but I did not have the energy to deal with it.
+	Athena: What about the morning? 
+	Skipper: I woke to the sound of chatter outside.
+	Skipper: I hadn't slept well so I was pretty groggy.
+	Skipper: When Morgana unlocked the parlor door in the morning and the body was found, I took charge of the situation.
+	Skipper: It's my job to ensure the safety of this train, which is why I wanted to handle it.
+	<<jump PenguinConversation>>
 -> What are your thoughts about Mallard?
+	Skipper: ...
+	Skipper: Honestly I don't like him.
 -> Do you know if anyone would want to kill him?
+	Skipper: Oh he knew how to make enemies.
+	Skipper: In fact I believe he's involved with everyone in this car in some way.
+	Skipper: I can tell you about whoever you wish.
+	<<jump PenguinEnemies>>
+-> Not now
+	Athena: Thank you for your help. I'll be back later.
+	Skipper: Glad to help!
+	Skipper: If you need anything, I'll be in the luggage room.
 ===
 
-
+title: PenguinEnemies
+tags: c:Owl:Penguin
+---
+Athena: Tell me about...
+-> Chase Gander
+	Skipper: Ah, Gander.
+	Skipper: Mallard definitely.. left on bad terms with him.
+	Skipper: I'm not sure exactly why, but Gander had told that duck he needs to find a new job.
+	Skipper: Kicked the poor guy off to the streets.
+	Skipper: Would you like to know about anyone else?
+	<<jump PenguinEnemies>>
+-> Melissa Peacock
+	Skipper: Melissa comes across as the most suspicious to me.
+	Athena: Oh?
+	Skipper: I overheard those two having a quite.. extreme argument the other day.
+	Skipper: I couldn't make out a lot of what they were saying, but what I did overhear was concerning to say the least.
+	Athena: What did you hear?
+	Skipper: I heard phrases such as "...RUINING PEOPLE'S LIVES"..
+	Skipper: and "...MONEY OR YOU'RE FUCKING DEAD".
+	Athena: Coming from Melissa? I find that kind of hard to believe.
+	Skipper: It's hard for me to believe too, but I remember what I heard.
+	Athena: I'll take note of this.
+	Skipper: Would you like to know about anyone else?
+	<<jump PenguinEnemies>>
+-> Morgana Noir
+	Skipper: Well Mallard would complain to me about her messing up his drinks constantly.
+	Skipper: Morgana is a good bartender. If she messed up his drink that many times it must've been out of spite.
+	Skipper: Would you like to know about anyone else?
+	<<jump PenguinEnemies>>
+-> You.
+	Skipper: Me?
+	Skipper: I mean I knew him. 
+	Skipper: We were never really close.
+	Skipper: Would you like to know about anyone else?
+	<<jump PenguinEnemies>>
+-> That's all.
+	Athena: That's all the questions about connections I have for now.
+	Skipper: Alright!
+	<<jump PenguinConversation>>
+===
 
 title:PenguinProof
 tags: c:Owl:Penguin
