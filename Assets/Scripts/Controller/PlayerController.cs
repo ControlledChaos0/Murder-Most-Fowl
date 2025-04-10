@@ -68,4 +68,8 @@ public class PlayerController : MonoBehaviour
         m_ClickTime = Time.time;
         m_IsMoving = true;
     }
+
+    public bool getIsMoving() {
+        return m_IsMoving;
+    }
 }

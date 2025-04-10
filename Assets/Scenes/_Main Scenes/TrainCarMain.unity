@@ -767,6 +767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterID: Goose
+  player: {fileID: 1711888264}
 --- !u!1 &84518887
 GameObject:
   m_ObjectHideFlags: 0
@@ -5938,6 +5939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterID: Crow
+  player: {fileID: 1711888264}
 --- !u!61 &1467268262
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6266,9 +6268,25 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 427029477822732481, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 883970160576151651, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_Size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600398623592735818, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600398623592735818, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600398623592735818, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3220183017203778704, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_Pivot.x
@@ -6352,7 +6370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3231515563247730419, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0000058338046
+      value: 0.00008653646
       objectReference: {fileID: 0}
     - target: {fileID: 3691073673336351334, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_Name
@@ -6366,13 +6384,29 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3731425453812182387, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4309237291879705291, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_Size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4358073387675039137, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358073387675039137, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358073387675039137, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5073712475295230537, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0000058338046
+      value: 0.00011747499
       objectReference: {fileID: 0}
     - target: {fileID: 7886430963500268991, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_Camera
@@ -6388,6 +6422,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8459840063042205999, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459840063042205999, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6865,6 +6903,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1716800287}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1711888264 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6908834827541839011, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
+  m_PrefabInstance: {fileID: 5403604900587025497}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e748dd963812744187d1a000e43d169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1716800286
 GameObject:
   m_ObjectHideFlags: 0
@@ -7143,6 +7192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterID: Peacock
+  player: {fileID: 1711888264}
 --- !u!61 &1755522867
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7991,6 +8041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterID: Penguin
+  player: {fileID: 1711888264}
 --- !u!61 &1971884846
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9528,7 +9579,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7737023882130387901, guid: 6abb264982467054ba4fe940958d0824, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6abb264982467054ba4fe940958d0824, type: 3}
@@ -9546,7 +9598,7 @@ PrefabInstance:
       objectReference: {fileID: 574658710}
     - target: {fileID: 5307606233354055047, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.000038325787
+      value: 0.00019398332
       objectReference: {fileID: 0}
     - target: {fileID: 5307606233354055047, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
@@ -9554,7 +9606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5307606233354055047, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.99992335
+      value: 0.99961203
       objectReference: {fileID: 0}
     - target: {fileID: 5307606233354055047, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
@@ -9562,11 +9614,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6548477791969500148, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.88992
+      value: -12.896327
       objectReference: {fileID: 0}
     - target: {fileID: 6548477791969500148, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5065899
+      value: 1.50651
       objectReference: {fileID: 0}
     - target: {fileID: 6962509048914766816, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
       propertyPath: m_Name
@@ -9628,6 +9680,7 @@ SceneRoots:
   - {fileID: 95785180}
   - {fileID: 1756452966}
   - {fileID: 151348260}
+  - {fileID: 1755522865}
   - {fileID: 288748808}
   - {fileID: 1096486370}
   - {fileID: 1223813812}
@@ -9643,4 +9696,3 @@ SceneRoots:
   - {fileID: 297964990}
   - {fileID: 414348923}
   - {fileID: 1216663836}
-  - {fileID: 1755522865}
