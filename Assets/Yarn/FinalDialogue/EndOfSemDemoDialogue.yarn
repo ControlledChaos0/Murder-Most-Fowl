@@ -223,7 +223,7 @@ tags: c:Owl:Penguin
 Athena: There's a wine bottle missing from the bar cabinet.
 Athena: Glass shards matching the glass were found next to the body.
 Athena: I believe the duck was hit over the head with the bottle, then his unconscious body was hung and strangled to make it look like a suicide.
-<<set_character_idle_node Penguin PenguinConclusion>>
+<<set_character_idle_node Penguin PenguinConversation>>
 <<jump PenguinConclusion>>
 ===
 
@@ -369,13 +369,45 @@ Melissa: I see.
 <<jump PeacockConversation>>
 ===
 
+title: PeacockIdle
+---
+<<if $Tutorial is false>>
+	<<jump PeacockMain>>
+<<else>>
+	<<jump PeacockConversation>>
+<<endif>>
+===
+
 title: PeacockConversation
 tags: c:Owl:Peacock
 ---
 <<set $ConvoChar = "Peacock">>
 Melissa: How can I help you, dear?
+-> Could I get your autograph?
+	Melissa: Oh! Uh
 -> Present
 	<<PresentEvidence>>
+	Melissa: I'm terribly sorry, but perhaps now isn't the time?
+-> Nothing now
+	Melissa: Don't hesitate to ask.
+===
+
+title: PeacockMain
+---
+-> I have a few questions for you.
+	<<jump PeacockQuestions0>>
+-> Could I get your autograph?
+	Melissa: Oh! Uh
+	Melissa: I'm terribly sorry, but perhaps now isn't the time?
+-> Present
+	<<PresentEvidence>>
+-> Nothing now
+	Melissa: Don't hesitate to ask.
+===
+
+title: PeacockQuestions0
+---
+Melissa: Now, what would you like to ask?
 -> Where were you last night?
 	Melissa: My, let's see. 
 	Melissa: I recall drinking with Morgana around last night.
@@ -393,6 +425,7 @@ Melissa: How can I help you, dear?
 	Melissa: The greedy duck agreed to pay me to perform at some of his lavish parties.
 	Melissa: Except he never had any money to begin with.
 	Melissa: You wouldn't think it by looking at him, but even I probably have more savings than he did.
+	<<jump PeacockQuestions0>>
 -> Do you know if anyone would want to kill him?
 	Melissa: My.. well I've overheard Mr. Gander was having troubles with Mallard.
 	Melissa: I don't know much, but I believe it has something to do with Gander's disdain for Mallard's business practices.
@@ -410,11 +443,9 @@ Melissa: How can I help you, dear?
 	Athena: ... 
 	Athena: Let's just move on.
 	Melissa: Alright..
--> Could I get your autograph?
-	Melissa: Oh! Uh
-	Melissa: I'm terribly sorry, but perhaps now isn't the time?
--> Nothing now
-	Melissa: Don't hesitate to ask.
+	<<jump PeacockQuestions0>>
+-> That's all the questions
+	<<jump PeacockMain>>
 ===
 
 title: PeacockQuestions1
@@ -435,15 +466,13 @@ Melissa: Is there anything else, dear?
 		Melissa: anyways..
 		<<jump PeacockQuestions1>>
 	-> That's all
-		<<jump PeacockConversation>>
+		<<jump PeacockQuestions0>>
 ===
 
 title: PeacockDismissal
 ---
 Melissa: I'm sorry, I'm not sure what to say.
 ===
-
-
 
 title: CrowIntroduction
 tags: lc: Owl rc:
@@ -458,6 +487,15 @@ Athena: Look, I just want to talk.
 <<jump CrowConversation>>
 ===
 
+title: CrowIdle
+---
+<<if $Tutorial is false>>
+	<<jump CrowMainUpset>>
+<<else>>
+	<<jump CrowConversation>>
+<<endif>>
+===
+
 title: CrowConversation
 tags: c:Owl:Crow
 ---
@@ -470,6 +508,22 @@ Morgana: Not a chance.
 	Athena: This is serious, Morgana. Someone is dead.
 	Morgana: Oh cluck off.
 	Morgana: I thought WE were serious.
+-> Leave
+===
+
+title: CrowMainUpset
+---
+Morgana: …
+Morgana: Not a chance.
+-> I have a few questions for you.
+	<<jump CrowQuestions>>
+->Present
+	<<PresentEvidence>>
+-> Leave
+===
+
+title: CrowQuestions
+---
 -> Where were you last night.
 	Morgana: Wouldn't you like to know.
 	Athena: I would actually.
@@ -480,17 +534,23 @@ Morgana: Not a chance.
 	Morgana: Forgot my keys.
 	Morgana: Found my keys.
 	Morgana: That all?
-	Athena: Is there anything else you can give me?
+	Athena: Is there anything you're not telling me?
 	Morgana: ...
-	-> Present
+	-> Press
 		<<PresentEvidence>>
+	-> Alright...
+		<<jump CrowQuestions>>
 -> How do you feel about Mallard?
 	Morgana: Didn't like him. Don't like him.
-	<<jump CrowConversation>>
+	<<jump CrowQuestions>>
 -> Do you know if anyone would want to kill him?
 	Morgana: I may not like him, but that doesn't mean I would kill him.
-	-> Present
+	-> Press
 		<<PresentEvidence>>
+	-> Alright...
+		<<jump CrowQuestions>>
+-> That's all the questions I have
+	<<jump CrowIdle>>
 ===
 
 title: CrowKeys
