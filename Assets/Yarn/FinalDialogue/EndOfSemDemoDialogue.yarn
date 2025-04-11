@@ -3,9 +3,11 @@
 title: Start
 tags: lc: rc:
 ---
-???: [wave]CRASH[/wave]
+<<declare $Tutorial = false>>
+<<set $Tutorial = true>>
+<<declare $CrowRelationship = 0>>
+???: CRASH
 Athena: Ahh! 
-<<declare $section = "main" as string>>
 Athena: ... What was that?
 Athena: Can't a poor owl with the flu get any sleep around here? 
 Athena: It's my only break...
@@ -143,6 +145,7 @@ tags: c:Owl:Penguin
 Skipper: Hello Detective. Do you have evidence for me?
 -> I do
 	<<jump ProofIdleNode1>>
+-> Leave
 ===
 
 title:ProofIdleNode1
@@ -185,7 +188,7 @@ title:ProofIdleNode2
 
 title:PenguinRope
 ---
-Athena: He was currently hanged. The suffication is clear.
+Athena: He was certainly hung. The suffication is clear.
 Athena: However, there is no signs of struggle, even as he sufficated.
 Athena: He must have been unconscious while he died, meaning he couldn't have hung himself.
 <<set_character_idle_node Penguin PenguinProof3>>
@@ -235,6 +238,7 @@ title:PenguinConclusion
 Skipper: Interesting… 
 Skipper: I think you have a good case, Ms..?
 Athena: Athena. Athena Nox.
+<<set $Tutorial to false>>
 Skipper: Thank you Detective Nox. I'll give you some time to investigate.
 Skipper: Let me know when you're ready to call the police, and you can turn in your suspect to them.
 ===
@@ -258,7 +262,34 @@ title: GooseConversation
 tags: c:Owl:Goose
 ---
 <<set $ConvoChar = "Goose">>
+<<if $Tutorial is false>>
+	<<jump GooseMain>>
+<<endif>>
 Chase: What do you want?
+-> What did you mean by "not unexpected"?
+	Athena: You said this was “unfortunate but not entirely unexpected.” Could you elaborate?
+	Chase: It would be wrong of me to gossip of one who just took their life.
+	Athena: I understand.
+-> Present
+	<<PresentEvidence>>
+-> Nothing Now
+	Goose: My time is precious.
+===
+
+
+title: GooseMain
+---
+Chase: What do you want?
+-> I have a few questions for you.
+	<<jump GooseQuestions>>
+-> Present
+	<<PresentEvidence>>
+-> Nothing Now
+	Goose: My time is precious.
+===
+title: GooseQuestions
+---
+Goose: What else would you like to ask?
 -> Where were you last night?
 	Gander: Mallard and I were discussing private business matters.
 	Athena: Business matters?
@@ -277,23 +308,22 @@ Chase: What do you want?
 	Athena: Is that when they found the body?
 	Gander: ...
 	Gander: Indeed.
+	<<jump GooseQuestions>>
 -> What are your thoughts about Mallard?
 	Gander: Mallard.. He was always quite troubled.
 	Athena: Can you elaborate?
 	Gander: I will not speak ill of the dead.
-	->Present
+	-> Press
 		<<PresentEvidence>>
+	-> Anyways...
+		<<jump GooseQuestions>>
 -> Do you know if anyone would want to kill him?
 	Gander: It is not my place throw lofty accusations.
 	Gander: That's your job, is it not?
--> What did you mean by "not unexpected"?
-	Athena: You said this was “unfortunate but not entirely unexpected.” Could you elaborate?
-	Chase: It would be wrong of me to gossip of one who just took their life.
-	Athena: I understand.
--> Present
-	<<PresentEvidence>>
--> Nothing Now
-	Goose: My time is precious.
+	<<jump GooseQuestions>>
+-> That's all
+	<<jump GooseConversation>>
+
 ===
 
 title: GooseStool

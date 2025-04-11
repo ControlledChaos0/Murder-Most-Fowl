@@ -23,6 +23,10 @@ public class State
     public string ConvoChar = "";
     public List<CharacterState> CharacterStates;
 
+    [Header("Dialogue State")]
+    public bool Tutorial = true;
+    public int CrowRelationship = 0;
+
     [Header("Inventory")] 
     public List<string> DiscoveredClues = new();
 
