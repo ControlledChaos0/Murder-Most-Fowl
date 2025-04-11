@@ -81,16 +81,29 @@ public class DialogueHelper : Singleton<DialogueHelper>
         
     }
 
+
     public void StartDialogue()
     {
+        AddContinueInput();
         ClueBoardManager.Instance.LockToggle();
         _background.SetActive(true);
     }
 
     public void EndDialogue()
     {
+        RemoveContinueInput();
         ClueBoardManager.Instance.UnlockToggle();
         _background.SetActive(false);
+    }
+
+    public void AddContinueInput()
+    {
+
+    }
+
+    public void RemoveContinueInput()
+    {
+
     }
 
     public void StartNode(string node)
