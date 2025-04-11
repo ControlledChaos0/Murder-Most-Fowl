@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f341f0ba79a438845aeaaece502aa7a4
+guid: a41f9f1d5a622e3479f89321f6d7e16d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3232475185304733910
-    second: Magnifying_Glass_0
+      213: 709657289480405090
+    second: Glass_Bottle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Magnifying_Glass_0
+      name: Glass_Bottle_0
       rect:
         serializedVersion: 2
-        x: 296
-        y: 14
-        width: 609
-        height: 1143
+        x: 49
+        y: 31
+        width: 902
+        height: 917
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d88a5dfd0f0cdc20800000000000000
-      internalID: 3232475185304733910
+      spriteID: 2600fbb7b8539d900800000000000000
+      internalID: 709657289480405090
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Magnifying_Glass_0: 3232475185304733910
+      Glass_Bottle_0: 709657289480405090
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

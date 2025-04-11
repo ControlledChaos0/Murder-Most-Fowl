@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 9668fde292636df428ce9d943ed7e92a
+guid: 97d65d67f1a26bc4dbddab9b02d21f58
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2788250296871982078
-    second: cabinet_0
+      213: -750070162565067341
+    second: Owl_Talk_0
+  - first:
+      213: 6076699689570217229
+    second: Owl_Talk_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cabinet_0
+      name: Owl_Talk_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 150
         y: 0
-        width: 1098
-        height: 1920
+        width: 666
+        height: 2212
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 20c6116b0252e49d0800000000000000
-      internalID: -2788250296871982078
+      spriteID: 3bd80b349273795f0800000000000000
+      internalID: -750070162565067341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Owl_Talk_1
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 0
+        width: 666
+        height: 2212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0d2f830c26c45450800000000000000
+      internalID: 6076699689570217229
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cabinet_0: -2788250296871982078
+      Owl_Talk_0: -750070162565067341
+      Owl_Talk_1: 6076699689570217229
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
