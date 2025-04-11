@@ -1,0 +1,615 @@
+﻿
+
+title: Start
+tags: lc: rc:
+---
+<<declare $Tutorial = false>>
+<<set $Tutorial = true>>
+<<declare $CrowRelationship = 0>>
+???: CRASH
+Athena: Ahh! 
+Athena: ... What was that?
+Athena: Can't a poor owl with the flu get any sleep around here? 
+Athena: It's my only break...
+Athena: …
+???: clop clop clop
+Athena: Who's up this late at night making such a ruckus. 
+Athena: *cough cough* Luckily for them I'm too sick to do anything about it.
+Athena: ...
+Athena: zzzzz
+<<ChangeRightCharacter>>
+<<ChangeLeftCharacter>>
+???: What's going on? Why's the door locked?
+???: Isn't the parlor supposed to be open by now?
+???: I'm sorry, I'll get that unlocked for you.
+Athena: The early birds are up bright and early...
+Athena: Unfortunately I am too...
+<<ChangeLeftCharacter>>
+???: Alright you should be able to get in now.
+???: I apologize for the inconvenience.
+Athena: Great. Now I can get back to slee-
+???: AAAAAAAAAAAAAAH!
+???: Oh dear heavens.
+???: What on earth?
+Athena: What's that all about?
+Athena: I should check this out.
+Athena: Oh dear Pheonix. How did this happen?
+Athena: I suppose that's up to me to figure out.
+Skipper: Excuse me ma'am, but I can't let you disturb the scene. I'm about to phone the police.
+Athena: Yes, yes, I understand, but conveniently I'm a detective.
+Skipper: A detective? But what needs investigating? The poor duck clearly hung himself.
+Skipper: I don't want to mess with the scene until the police arrive.
+Athena: Say, bellboy, if I can prove to you this “suicide” was in fact a murder, will you let me investigate further?
+Skipper: I suppose… If this was a murder it would help to have a detective on the case.
+Athena: It's a deal.
+===
+
+
+title: PenguinIntroduction
+tags: lc:Owl rc:
+---
+Athena: This is that bellboy that stopped me earlier. He looks so nervous…
+Athena: Makes sense. If I worked here, I would be nervous too.
+Athena: Poor kid.
+<<jump PenguinProof>>
+===
+
+title:PenguinConversation
+tags: c:Owl:Penguin
+---
+Skipper: Is there any way I can help?
+-> Where were you last night?
+	Skipper: Hmm.. Well I spent a lot of time searching for my keys last night.
+	Athena: Your keys? What happened to them?
+	Skipper: I believe I misplaced them. Though...
+	Skipper: ...
+	Skipper: Now that I think about it.. that eve Mallard offered to hang my coat up for me.
+	Skipper: I didn't think much of it at the time, but I believe my keys went missing around that time.
+	Athena: Did you ever find your keys?
+	Skipper: I did not, so I asked Morgana to lock up the parlor.
+	Athena: Did you notice anything else last night?
+	Skipper: I heard a crash in the middle of the night, but I did not have the energy to deal with it.
+	Athena: What about the morning? 
+	Skipper: I woke to the sound of chatter outside.
+	Skipper: I hadn't slept well so I was pretty groggy.
+	Skipper: When Morgana unlocked the parlor door in the morning and the body was found, I took charge of the situation.
+	Skipper: It's my job to ensure the safety of this train, which is why I wanted to handle it.
+	<<jump PenguinConversation>>
+-> What are your thoughts about Mallard?
+	Skipper: ...
+	Skipper: Honestly I don't like him.
+	Skipper: He's quite rude and snobbish.
+	Skipper: He came from great wealth, so he probably grew up with everything going his way.
+	Skipper: However.. I feel like there was something off about him.
+	Athena: Have you interacted with him much?
+	Skipper: Thankfully I haven't had to deal with him much when I worked with Mr. Gander.
+	Athena: What do you know about Mallard and Gander?
+	Skipper: I know they started the company together, but if you want to know more, Mr. Gander would be the one to ask.
+	<<jump PenguinConversation>>
+-> Do you know if anyone would want to kill him?
+	Skipper: Oh he knew how to make enemies.
+	Skipper: In fact I believe he's involved with everyone in this car in some way.
+	Skipper: I can tell you about whoever you wish.
+	<<jump PenguinEnemies>>
+-> Not now
+	Athena: Thank you for your help. I'll be back later.
+	Skipper: Glad to help!
+	Skipper: If you need anything, I'll be in the luggage room.
+===
+
+title: PenguinEnemies
+tags: c:Owl:Penguin
+---
+Athena: Tell me about...
+-> Chase Gander
+	Skipper: Ah, Gander.
+	Skipper: Mallard definitely.. left on bad terms with him.
+	Skipper: I'm not sure exactly why, but Mr. Gander had told that duck he needs to find a new job.
+	Skipper: Kicked the poor guy off to the streets.
+	Skipper: Would you like to know about anyone else?
+	<<jump PenguinEnemies>>
+-> Melissa Peacock
+	Skipper: Melissa comes across as the most suspicious to me.
+	Athena: Oh?
+	Skipper: I overheard those two having a quite.. extreme argument the other day.
+	Skipper: I couldn't make out a lot of what they were saying, but what I did overhear was concerning to say the least.
+	Athena: What did you hear?
+	Skipper: I heard phrases such as "...RUINING PEOPLE'S LIVES"..
+	Skipper: and "...MONEY OR YOU'RE FUCKING DEAD".
+	Athena: Coming from Melissa? I find that kind of hard to believe.
+	Skipper: It's hard for me to believe too, but I remember what I heard.
+	Athena: I'll take note of this.
+	Skipper: Would you like to know about anyone else?
+	<<jump PenguinEnemies>>
+-> Morgana Noir
+	Skipper: Well Mallard would complain to me about her messing up his drinks constantly.
+	Skipper: Morgana is a good bartender. If she messed up his drink that many times it must've been out of spite.
+	Skipper: Would you like to know about anyone else?
+	<<jump PenguinEnemies>>
+-> You.
+	Skipper: Me?
+	Skipper: I mean I knew him. 
+	Skipper: We were never really close.
+	Skipper: Would you like to know about anyone else?
+	<<jump PenguinEnemies>>
+-> That's all.
+	Athena: That's all the questions about connections I have for now.
+	Skipper: Alright!
+	<<jump PenguinConversation>>
+===
+
+title:PenguinProof
+tags: c:Owl:Penguin
+---
+<<set $ConvoChar = "Penguin">>
+Skipper: Hello Detective. Do you have evidence for me?
+-> I do
+	<<jump ProofIdleNode1>>
+-> Leave
+===
+
+title:ProofIdleNode1
+---
+Skipper: What makes you think the duck couldn't have committed the act himself?
+-> Present
+    <<PresentEvidence Stool ProofWrong1>>
+-> Leave
+===
+
+title:PenguinStool
+---
+Athena: This stool is way too short for the duck to have reached the chandelier himself.
+Athena: He must've been hung up by someone else. 
+Athena: This stool was placed by the murderer to make the scene look more convincing.
+<<set_character_idle_node Penguin PenguinProof2>>
+<<jump PenguinProof2>>
+===
+
+title:ProofWrong1
+---
+Skipper: I don't follow.
+Athena: I'll see if I can find anything more relevant.
+===
+
+title:PenguinProof2
+tags: c:Owl:Penguin
+---
+<<set $ConvoChar = "Penguin">>
+Skipper: If that's the case, what was his cause of death?
+<<jump ProofIdleNode2>>
+===
+
+title:ProofIdleNode2
+---
+-> Present
+    <<PresentEvidence Rope ProofWrong2>>
+-> Leave
+===
+
+title:PenguinRope
+---
+Athena: He was certainly hung. The suffication is clear.
+Athena: However, there is no signs of struggle, even as he sufficated.
+Athena: He must have been unconscious while he died, meaning he couldn't have hung himself.
+<<set_character_idle_node Penguin PenguinProof3>>
+<<jump PenguinProof3>>
+===
+
+title:ProofWrong2
+---
+Athena: Because he… uh…
+Skipper: I'll give you more time.
+===
+
+title:PenguinProof3
+tags: c:Owl:Penguin
+position: 120,120
+---
+<<set $ConvoChar = "Penguin">>
+Skipper: I see. What was he knocked out with?
+<<jump ProofIdleNode3>>
+===
+
+title:ProofIdleNode3
+---
+-> Present
+    <<PresentEvidence Bottle ProofWrong3>>
+-> Leave
+===
+
+title:PenguinBottle
+tags: c:Owl:Penguin
+---
+Athena: There's a wine bottle missing from the bar cabinet.
+Athena: Glass shards matching the glass were found next to the body.
+Athena: I believe the duck was hit over the head with the bottle, then his unconscious body was hung and strangled to make it look like a suicide.
+<<set_character_idle_node Penguin PenguinConversation>>
+<<jump PenguinConclusion>>
+===
+
+title:ProofWrong3
+---
+Skipper: I don't think this is a weapon.
+Athena: I'll be back when I find it.
+===
+
+title:PenguinConclusion
+---
+Skipper: Interesting… 
+Skipper: I think you have a good case, Ms..?
+Athena: Athena. Athena Nox.
+<<set $Tutorial to false>>
+Skipper: Thank you Detective Nox. I'll give you some time to investigate.
+Skipper: Let me know when you're ready to call the police, and you can turn in your suspect to them.
+===
+
+title: GooseIntroduction
+tags: lc:Owl rc:
+---
+Athena: Chase Gander…
+Athena: Richest man this side of the country. I wouldn't be surprised if he owns this train.
+Athena: I'm almost too intimidated to talk to him.
+Athena: Good Morning, Mr. Gander.
+Chase: Who am I speaking to?
+Athena: I'm Detective Athena Nox.
+Chase: I assure you there's not much more than what meets the eye.
+Chase: This scenario is… unfortunate but not entirely unexpected.
+Athena: I'm sure there's something you could help me with to shed light on the situation.
+<<jump GooseConversation>>
+===
+
+title: GooseConversation
+tags: c:Owl:Goose
+---
+<<set $ConvoChar = "Goose">>
+<<if $Tutorial is false>>
+	<<jump GooseMain>>
+<<endif>>
+Chase: What do you want?
+-> What did you mean by "not unexpected"?
+	Athena: You said this was “unfortunate but not entirely unexpected.” Could you elaborate?
+	Chase: It would be wrong of me to gossip of one who just took their life.
+	Athena: I understand.
+-> Present
+	<<PresentEvidence>>
+-> Nothing Now
+	Goose: My time is precious.
+===
+
+
+title: GooseMain
+---
+Chase: What do you want?
+-> I have a few questions for you.
+	<<jump GooseQuestions>>
+-> Present
+	<<PresentEvidence>>
+-> Nothing Now
+	Goose: My time is precious.
+===
+title: GooseQuestions
+---
+Goose: What else would you like to ask?
+-> Where were you last night?
+	Gander: Mallard and I were discussing private business matters.
+	Athena: Business matters?
+	Gander: As I said. Private.
+	Gander: After we concluded, I decided to retire to bed early.
+	Gander: I was woken by a large crash in the dining car, but assumed nothing of and went back to sleep.
+	Athena: Did you hear anything else?
+	Gander: I did not. The earplugs I put in after waking assured that.
+	Gander: When I finally woke at an appropriate time, I heard Melissa's voice outside my quarters.
+	Gander: When I exited, I was greeted by a locked parlor car door and noticed that bartender enter her dorm.
+	Athena: Bartender? As in Morgana?
+	Gander: Ah yes, that is her name, isn't it?
+	Gander: Anyways, I confronted the bellboy about the locked door, but he claimed to have misplaced his key.
+	Gander: My ask was for naught however, as the door was soon unlocked by someone. 
+	Gander: Followed by a bloodcurtling scream.
+	Athena: Is that when they found the body?
+	Gander: ...
+	Gander: Indeed.
+	<<jump GooseQuestions>>
+-> What are your thoughts about Mallard?
+	Gander: Mallard.. He was always quite troubled.
+	Athena: Can you elaborate?
+	Gander: I will not speak ill of the dead.
+	-> Press
+		<<PresentEvidence>>
+	-> Anyways...
+		<<jump GooseQuestions>>
+-> Do you know if anyone would want to kill him?
+	Gander: It is not my place throw lofty accusations.
+	Gander: That's your job, is it not?
+	<<jump GooseQuestions>>
+-> That's all
+	<<jump GooseConversation>>
+
+===
+
+title: GooseStool
+---
+Goose: You think Mallard used that in his attempt?
+Goose: I find that… hard to believe.
+Athena: What do you mean by that?
+Goose: Well, Mallard, you've seen him. 
+Chase: Poor thing he was never one to stand out of a crowd.
+===
+
+title: GooseBusinessPartners
+---
+Goose: We were indeed business partners.
+Goose: While our partnership was rather lucrative, it was nonetheless... tenuous.
+Goose: Let's leave it at he was never the most business savvy duck in the pond.
+===
+
+title: GooseDuckBroke
+---
+Goose: I cannot legally discuss this matter.
+===
+
+title: GooseDismissal
+---
+Chase: I don't see the relevance of this.
+===
+
+title: PeacockIntroduction
+tags: lc:Owl rc:
+---
+Athena: Melissa Miss Peacock. Never thought I'd get to meet her in person.
+Athena: I've been listening to her music since the beginning of her career.
+Athena: Oh my gosh and her new single, “Birds of a Feather”, is soooo good.
+Athena: Good morning Miss Peacock.
+Melissa: Hello darling. Quite an unfortunate morning, is it not?
+Athena: Quite. I'm actually here to speak with you about this.
+Melissa: Oh?
+Athena: I'm a detective. Detective Nox. I may have a few questions for you about this.
+Melissa: Oh my, am I a suspect?
+Athena: Not at the moment, you're not. But there's something fishy about this scene, and I'd like some help to get to the bottom of this.
+Melissa: I see.
+<<jump PeacockConversation>>
+===
+
+title: PeacockIdle
+---
+<<if $Tutorial is false>>
+	<<jump PeacockMain>>
+<<else>>
+	<<jump PeacockConversation>>
+<<endif>>
+===
+
+title: PeacockConversation
+tags: c:Owl:Peacock
+---
+<<set $ConvoChar = "Peacock">>
+Melissa: How can I help you, dear?
+-> Could I get your autograph?
+	Melissa: Oh! Uh
+-> Present
+	<<PresentEvidence>>
+	Melissa: I'm terribly sorry, but perhaps now isn't the time?
+-> Nothing now
+	Melissa: Don't hesitate to ask.
+===
+
+title: PeacockMain
+---
+-> I have a few questions for you.
+	<<jump PeacockQuestions0>>
+-> Could I get your autograph?
+	Melissa: Oh! Uh
+	Melissa: I'm terribly sorry, but perhaps now isn't the time?
+-> Present
+	<<PresentEvidence>>
+-> Nothing now
+	Melissa: Don't hesitate to ask.
+===
+
+title: PeacockQuestions0
+---
+Melissa: Now, what would you like to ask?
+-> Where were you last night?
+	Melissa: My, let's see. 
+	Melissa: I recall drinking with Morgana around last night.
+	Melissa: She was such a darling and made me my favorite cocktail.
+	Athena: What did you two drink?
+	Melissa: She made me a Blue Lagoon, but I don't believe she actually had any alcohol.
+	Athena: ...
+	Melissa: We chatted for a while until I went off to bed. I don't remember exactly when, but I remember I woke up in the morning around 7:55 with a nasty hangover.
+	<<jump PeacockQuestions1>>
+-> What are your thoughts about Mallard?
+	Melissa: He. Ugh. You see..
+	Athena: It's ok. Take your time.
+	Melissa: He and I used to get along fine, at least until I knew he was a swindler.
+	Athena: Swindler?
+	Melissa: The greedy duck agreed to pay me to perform at some of his lavish parties.
+	Melissa: Except he never had any money to begin with.
+	Melissa: You wouldn't think it by looking at him, but even I probably have more savings than he did.
+	<<jump PeacockQuestions0>>
+-> Do you know if anyone would want to kill him?
+	Melissa: My.. well I've overheard Mr. Gander was having troubles with Mallard.
+	Melissa: I don't know much, but I believe it has something to do with Gander's disdain for Mallard's business practices.
+	Melissa: I hear he blames Mallard for the current state of his company...
+	Athena: what of the other passengers?
+	Melissa: Well the bellboy has always given me strange vibes. There's just something.. off about him.
+	Athena: That's hardly evidence.
+	Melissa: I suppose not.
+	Melissa: ...
+	Melissa: As for Morgana, given that you're still alive, I doubt it was her.
+	Athena: What do you mean?
+	Melissa: *laugh* Well she used to be in love with that duck. If she were the ex killing type, I think you'd be the first she'd kill.
+	Athena: She.. what?
+	Melissa: Oh dear, did you not know?
+	Athena: ... 
+	Athena: Let's just move on.
+	Melissa: Alright..
+	<<jump PeacockQuestions0>>
+-> That's all the questions
+	<<jump PeacockMain>>
+===
+
+title: PeacockQuestions1
+---
+Melissa: Is there anything else, dear?
+	-> Did you hear anything in the morning?
+		Melissa: I don't recall. No.
+		<<jump PeacockQuestions1>>
+	-> What did you do after waking up?
+		Melissa: I looked around my room for 10 minutes for antiacid. When I couldn't find one, I left to ask Morgana for one.
+		Melissa: To my surprise I found her in front of the parlor door. 
+		Melissa: I asked about entering the parlor, but the poor thing said she lost them in her room. I admit I may have been a bit loud. I think I woke up Mr. Gander.
+		Athena: I see. What happened after?
+		Melissa: When Morgana got back, she unlocked the car door.. and..
+		Melissa: That was when..
+		Athena: ... you saw it.
+		Melissa: ...
+		Melissa: anyways..
+		<<jump PeacockQuestions1>>
+	-> That's all
+		<<jump PeacockQuestions0>>
+===
+
+title: PeacockDismissal
+---
+Melissa: I'm sorry, I'm not sure what to say.
+===
+
+title: CrowIntroduction
+tags: lc: Owl rc:
+---
+Athena: Oh Phoenix Above, what do you mean SHE's here?
+Athena: Just what I need, my romantic life getting tangled with my professional one.
+Athena: I really don't need to be reminded of that messy breakup now.
+Morgana: Oh look who it is.
+Athena: I'm not in the mood right now.
+Morgana: I was in a good one, until you walked in.
+Athena: Look, I just want to talk.
+<<jump CrowConversation>>
+===
+
+title: CrowIdle
+---
+<<if $Tutorial is false>>
+	<<jump CrowMainUpset>>
+<<else>>
+	<<jump CrowConversation>>
+<<endif>>
+===
+
+title: CrowConversation
+tags: c:Owl:Crow
+---
+<<set $ConvoChar = "Crow">>
+Morgana: …
+Morgana: Not a chance.
+->Present
+	<<PresentEvidence>>
+-> This is serious, Morgana.
+	Athena: This is serious, Morgana. Someone is dead.
+	Morgana: Oh cluck off.
+	Morgana: I thought WE were serious.
+-> Leave
+===
+
+title: CrowMainUpset
+---
+Morgana: …
+Morgana: Not a chance.
+-> I have a few questions for you.
+	<<jump CrowQuestions>>
+->Present
+	<<PresentEvidence>>
+-> Leave
+===
+
+title: CrowQuestions
+---
+-> Where were you last night.
+	Morgana: Wouldn't you like to know.
+	Athena: I would actually.
+	Morgana: ...
+	Morgana: I was drinking with Melissa.
+	Athena: And what about the morning.
+	Morgana: I woke up.
+	Morgana: Forgot my keys.
+	Morgana: Found my keys.
+	Morgana: That all?
+	Athena: Is there anything you're not telling me?
+	Morgana: ...
+	-> Press
+		<<PresentEvidence>>
+	-> Alright...
+		<<jump CrowQuestions>>
+-> How do you feel about Mallard?
+	Morgana: Didn't like him. Don't like him.
+	<<jump CrowQuestions>>
+-> Do you know if anyone would want to kill him?
+	Morgana: I may not like him, but that doesn't mean I would kill him.
+	-> Press
+		<<PresentEvidence>>
+	-> Alright...
+		<<jump CrowQuestions>>
+-> That's all the questions I have
+	<<jump CrowIdle>>
+===
+
+title: CrowKeys
+---
+Morgana: Yeah that penguin lost his keys and asked me to lock up.
+Morgana: 
+===
+
+title: CrowEx
+---
+Morgana: Yeah, imagine my luck.
+Morgana: Both my Exs on a train. One ends up dead and the other wants to turn me in.
+Athena: I don't want to turn you in.
+Morgana: Yeah Im sure you don't.
+Athena: I mean it. Why would I want to turn you in?
+Morgana: I don't know? Why would you leave me like that.
+Athena: ...
+Athena: Look Morgana, I really care about you.
+Morgana: How do you do that to someone you care about?
+Athena: I thought it would be best for you.
+Morgana: ...
+===
+
+title: CrowGlass
+---
+Morgana: Glass? What do you want me to say?
+Athena: Glass, Bottles, Alcohol… Isn't that your specialty?
+Morgana: …
+Morgana: I did notice a wine bottle was missing from the bar today. 
+Morgana: But don't you try to pin this one on me, Nox.
+<<CreateClue ClueBoardCanvas Bottle>>
+===
+
+title: CrowDismissal
+---
+Morgana: And?
+===
+
+
+title: HangingDuck
+tags: c:Owl:
+---
+Athena: Poor guy.
+Athena: He shows clear signs of asphyxiation, but there's something off...
+Athena: Why are the feathers laying so flat?
+Athena: He would've at least struggled a little if he was awake...
+===
+
+title: Shards
+tags: c:Owl:
+---
+Athena: Glass shards...
+Athena: Why would that be there?
+===
+
+title: Stool
+tags: c:Owl:
+---
+Athena: That's certainly a short stool.
+Athena: He had access to tall barstools and yet he used this step-stool.
+Athena: I don't even know if he's tall enough to have reached the noose even standing on this stool.
+===

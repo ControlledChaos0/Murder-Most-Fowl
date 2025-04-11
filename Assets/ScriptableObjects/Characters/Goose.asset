@@ -15,7 +15,7 @@ MonoBehaviour:
   m_characterID: Goose
   m_name: Chase Wilde Gander
   m_startingNode: GooseIntroduction
-  m_startingIdle: GooseIdle
+  m_startingIdle: GooseConversation
   m_startingDismissal: GooseDismissal
   m_clueResponses:
   - clueID: Goose

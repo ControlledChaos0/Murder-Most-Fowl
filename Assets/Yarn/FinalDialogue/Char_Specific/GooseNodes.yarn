@@ -1,5 +1,7 @@
 ﻿title: GooseBaseIdle
 tags:
 ---
-
+<<if $Tutorial is false>>
+	<<jump GooseMain>>
+<<endif>>
 ===

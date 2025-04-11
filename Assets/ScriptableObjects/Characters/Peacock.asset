@@ -15,6 +15,6 @@ MonoBehaviour:
   m_characterID: Peacock
   m_name: Melissa Peacock
   m_startingNode: PeacockIntroduction
-  m_startingIdle: PeacockConversation
+  m_startingIdle: PeacockIdle
   m_startingDismissal: PeacockDismissal
   m_clueResponses: []
