@@ -55,6 +55,11 @@ public class PlayerController : MonoBehaviour
     [YarnCommand("move")]
     public void Move(Ray ray) 
     {
+        if (DialogueHelper.Instance.InDialogue || ClueBoardManager.Instance.InClueboard)
+        {
+            return;
+        }
+
         m_OldPos = transform.position;
         m_NewPos = ScreenManager.Instance.GetClosestFloorLocation(ray);
         Debug.Log(m_NewPos);
