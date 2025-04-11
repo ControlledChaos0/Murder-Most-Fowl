@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9668fde292636df428ce9d943ed7e92a
+guid: 1c41a55f90e55f742b5d0ddd041fb6cd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2788250296871982078
-    second: cabinet_0
+      213: 3424118716958518853
+    second: Penguin_Nervous_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cabinet_0
+      name: Penguin_Nervous_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 52
         y: 0
-        width: 1098
-        height: 1920
+        width: 1131
+        height: 1888
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 20c6116b0252e49d0800000000000000
-      internalID: -2788250296871982078
+      spriteID: 54e2411d4d9e48f20800000000000000
+      internalID: 3424118716958518853
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cabinet_0: -2788250296871982078
+      Penguin_Nervous_0: 3424118716958518853
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

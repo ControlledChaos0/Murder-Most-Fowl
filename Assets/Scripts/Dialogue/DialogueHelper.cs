@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using Yarn.Unity;
-using Object = System.Object;
 
 public class DialogueHelper : Singleton<DialogueHelper>
 {
@@ -15,11 +15,18 @@ public class DialogueHelper : Singleton<DialogueHelper>
         public string name;
         public Sprite sprite;
     }
+
+    [Serializable]
+    public class SpriteItemList
+    {
+        public List<SpriteItem> spriteItemList = new();
+    }
     [Serializable]
     public struct NameSpriteMatch
     {
-        public string spriteName;
+        public string charID;
         public string name;
+        public SpriteItemList expressions;
     }
 
     [Header("Yarn Components")] 
@@ -42,6 +49,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
     private static string _leftName;
     private static string _rightName;
     private static List<SpriteItem> _sprites;
+    private static List<NameSpriteMatch> _names;
     private static bool lockPortrait = false;
 
     private Dictionary<string, string> _nameDict = new();
@@ -53,6 +61,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
         _left = _leftCharacter;
         _right = _rightCharacter;
         _sprites = _spriteList;
+        _names = _nameList;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -62,7 +71,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
 
         foreach (NameSpriteMatch match in _nameList)
         {
-            _nameDict[match.name] = match.spriteName;
+            _nameDict[match.name] = match.charID;
         }
     }
 
@@ -112,53 +121,6 @@ public class DialogueHelper : Singleton<DialogueHelper>
         foreach (string tag in tags)
         {
             MetadataParser(tag);
-        }
-    }
-
-    private void MetadataParser(string tag)
-    {
-        string[] tagParts = tag.Split(':');
-        if (tagParts[0] == "lockP")
-        {
-            lockPortrait = true;
-        }
-        if (tagParts[0] == "c")
-        {
-            ChangeCharacters(tagParts[1], tagParts[2]);
-            return;
-        }
-        if (tagParts[0] == "lc")
-        {
-            ChangeLeft(tagParts[1]);
-            return;
-        }
-        if (tagParts[0] == "rc")
-        {
-            ChangeRight(tagParts[1]);
-            return;
-        }
-    }
-
-    private void NamePortraitUpdater(string name)
-    {
-        if (string.IsNullOrEmpty(name))
-        {
-            return;
-        }
-        _nameDict.TryGetValue(name, out string spriteName);
-        if (string.IsNullOrEmpty(spriteName))
-        {
-            Debug.LogError("Name is not in the dictionary. Check spelling.");
-            return;
-        }
-
-        if (spriteName == "Owl")
-        {
-            ChangeLeft(spriteName);
-        }
-        else
-        {
-            ChangeRight(spriteName);
         }
     }
 
@@ -219,6 +181,33 @@ public class DialogueHelper : Singleton<DialogueHelper>
         _right.sprite = spriteItem.sprite;
     }
 
+    public static void ChangeRightExpression(string name = null)
+    {
+        if (lockPortrait)
+        {
+            return;
+        }
+
+        if (string.IsNullOrEmpty(name))
+        {
+            _right.gameObject.SetActive(false);
+            return;
+        }
+
+        NameSpriteMatch charInfo = _names.Find(e => e.charID == _rightName);
+
+        SpriteItemList expressions = charInfo.expressions;
+        Debug.Log(charInfo.name);
+        Debug.Log(charInfo.charID);
+        
+        if (expressions != null)
+        {
+            _right.gameObject.SetActive(true);
+            SpriteItem spriteItem = expressions.spriteItemList.Find(e => e.name == name);
+            _right.sprite = spriteItem.sprite;
+        }
+    }
+
     [YarnCommand("ChangeCharacters")]
     public static void ChangeCharacters(string left_name = null, string right_name = null)
     {
@@ -240,6 +229,62 @@ public class DialogueHelper : Singleton<DialogueHelper>
             foreach (string s in meta)
             {
                 MetadataParser(s);
+            }
+        }
+    }
+
+    private void MetadataParser(string tag)
+    {
+        string[] tagParts = tag.Split(':');
+        if (tagParts[0] == "lockP")
+        {
+            lockPortrait = true;
+        }
+        if (tagParts[0] == "c")
+        {
+            ChangeCharacters(tagParts[1], tagParts[2]);
+            return;
+        }
+        if (tagParts[0] == "lc")
+        {
+            ChangeLeft(tagParts[1]);
+            return;
+        }
+        if (tagParts[0] == "rc")
+        {
+            ChangeRight(tagParts[1]);
+            return;
+        }
+        if (tagParts[0] == "e")
+        {
+            ChangeRightExpression(tagParts[1]);
+            return;
+        }
+        
+    }
+
+    private void NamePortraitUpdater(string name)
+    {
+        if (string.IsNullOrEmpty(name))
+        {
+            return;
+        }
+        _nameDict.TryGetValue(name, out string spriteName);
+        if (string.IsNullOrEmpty(spriteName))
+        {
+            Debug.LogError("Name is not in the dictionary. Check spelling.");
+            return;
+        }
+
+        if (spriteName != _leftName && spriteName != _rightName)
+        {
+            if (spriteName == "Owl")
+            {
+                ChangeLeft(spriteName);
+            }
+            else
+            {
+                ChangeRight(spriteName);
             }
         }
     }
