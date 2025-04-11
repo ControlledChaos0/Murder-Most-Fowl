@@ -32,5 +32,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Andy/Andy.unity
     guid: 13d025c831bfa4b49a99d81af707fc38
+  - enabled: 1
+    path: Assets/Scenes/Sophia/FinalDialogue.unity
+    guid: 63adf8022f63f3d42bda7d090d9f014c
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
