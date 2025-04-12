@@ -42,6 +42,9 @@ Skipper: I don't want to mess with the scene until the police arrive.
 Athena: Say, bellboy, if I can prove to you this “suicide” was in fact a murder, will you let me investigate further?
 Skipper: I suppose… If this was a murder it would help to have a detective on the case.#e:Neutral
 Athena: It's a deal.
+Athena: Before I begin. Could I ask, what is the victim's name?
+Skipper: Mallard. Seaton Mallard.
+Athena: Thank you. I ensure you I'll get to the bottom of this.
 ===
 
 
@@ -387,7 +390,7 @@ tags: c:Owl:Peacock
 ---
 Melissa: How can I help you, dear?
 -> Could I get your autograph?
-	Melissa: Oh! Uh
+	Melissa: Oh! Uh...
 	Melissa: Perhaps now isn't the time?
 -> Present
 	<<PresentEvidence>>
@@ -401,7 +404,7 @@ title: PeacockMain
 -> I have a few questions for you.
 	<<jump PeacockQuestions0>>
 -> Could I get your autograph?
-	Melissa: Oh! Uh
+	Melissa: Oh! Uh...
 	Melissa: I'm terribly sorry, but perhaps now isn't the time?
 -> Present
 	<<PresentEvidence>>
@@ -434,14 +437,16 @@ Melissa: Now, what would you like to ask?
 	Melissa: My.. well I've overheard Mr. Gander was having troubles with Mallard.
 	Melissa: I don't know much, but I believe it has something to do with Gander's disdain for Mallard's business practices.
 	Melissa: I hear he blames Mallard for the current state of his company...
-	Athena: what of the other passengers?
+	Melissa: I don't blame him to be honest.
+	Melissa: Mallard has a way with <color=\#f3db82>spending more than he has...</color>
+	Athena: What of the other passengers?
 	Melissa: Well the bellboy has always given me strange vibes. There's just something.. off about him.
 	Athena: That's hardly evidence.
 	Melissa: I suppose not.
 	Melissa: ...
 	Melissa: As for Morgana, given that you're still alive, I doubt it was her.
 	Athena: What do you mean?
-	Melissa: *laugh* Well she used to be in love with that duck. If she were the ex killing type, I think you'd be the first she'd kill.
+	Melissa: *laugh* <color=\#f3db82>Well she used to be in love with that duck.</color> If she were the ex killing type, I think you'd be the first she'd kill.
 	Athena: She.. what?
 	<<CreateClue ClueBoardCanvas CrowEx>>
 	Melissa: Oh dear, did you not know?
@@ -462,7 +467,7 @@ Melissa: Is there anything else, dear?
 	-> What did you do after waking up?
 		Melissa: I looked around my room for 10 minutes for antiacid. When I couldn't find one, I left to ask Morgana for one.
 		Melissa: To my surprise I found her in front of the parlor door. 
-		Melissa: I asked about entering the parlor, but the poor thing said she lost them in her room. I admit I may have been a bit loud. I think I woke up Mr. Gander.
+		Melissa: I asked about entering the parlor, but the poor thing said she lost her keys in her room. I admit I may have been a bit loud. I think I woke up Mr. Gander.
 		Athena: I see. What happened after?
 		Melissa: When Morgana got back, she unlocked the car door.. and..
 		Melissa: That was when..
@@ -618,6 +623,7 @@ Morgana: And?
 title: HangingDuck
 tags: c:Owl:
 ---
+Athena: This must be Mallard...
 Athena: Poor guy.
 Athena: He shows clear signs of asphyxiation, but there's something off...
 Athena: Why are the feathers laying so flat?
