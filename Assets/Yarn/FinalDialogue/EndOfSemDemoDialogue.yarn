@@ -58,6 +58,7 @@ Athena: Poor kid.
 title:PenguinConversation
 tags: c:Owl:Penguin
 ---
+<<set $ConvoChar = "Penguin">>
 Skipper: Is there any way I can help?#e:Happy
 -> Where were you last night?
 	Skipper: Hmm.. Well I spent a lot of time searching for my keys last night.#e:Neutral
@@ -368,11 +369,12 @@ Athena: I'm a detective. Detective Nox. I may have a few questions for you about
 Melissa: Oh my, am I a suspect?
 Athena: Not at the moment, you're not. But there's something fishy about this scene, and I'd like some help to get to the bottom of this.
 Melissa: I see.
-<<jump PeacockConversation>>
+<<jump PeacockIdle>>
 ===
 
 title: PeacockIdle
 ---
+<<set $ConvoChar = "Peacock">>
 <<if $Tutorial is false>>
 	<<jump PeacockMain>>
 <<else>>
@@ -383,10 +385,10 @@ title: PeacockIdle
 title: PeacockConversation
 tags: c:Owl:Peacock
 ---
-<<set $ConvoChar = "Peacock">>
 Melissa: How can I help you, dear?
 -> Could I get your autograph?
 	Melissa: Oh! Uh
+	Melissa: Perhaps now isn't the time?
 -> Present
 	<<PresentEvidence>>
 	Melissa: I'm terribly sorry, but perhaps now isn't the time?
@@ -492,12 +494,9 @@ Athena: Look, I just want to talk.
 
 title: CrowIdle
 ---
+<<set $ConvoChar = "Crow">>
 <<if $Tutorial is false>>
-	<<if $CrowRelationship is 0>>
-		<<jump CrowMainUpset>>
-	<<elseif $CrowRelationship > 0>>
-		<<jump CrowMainNeutral>>
-	<<endif>>
+	<<jump CrowMainUpset>>
 <<else>>
 	<<jump CrowConversation>>
 <<endif>>
