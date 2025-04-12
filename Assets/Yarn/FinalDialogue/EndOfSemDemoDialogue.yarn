@@ -65,12 +65,12 @@ Skipper: Is there any way I can help?#e:Happy
 	Athena: Your keys? What happened to them?
 	Skipper: I believe I misplaced them. Though...
 	Skipper: ...#e:Sad
-	Skipper: Now that I think about it.. that eve Mallard offered to hang my coat up for me.#e:Neutral
+	Skipper: Now that I think about it.. <color=\#f3db82>that eve Mallard offered to hang my coat up for me.</color>#e:Neutral
 	Skipper: I didn't think much of it at the time, but I believe my keys went missing around that time.
 	Athena: Did you ever find your keys?
 	Skipper: I did not, so I asked Morgana to lock up the parlor.#e:Sad
 	Athena: Did you notice anything else last night?
-	Skipper: I heard a crash in the middle of the night, but I did not have the energy to deal with it.#e:Neutral
+	Skipper: <color=\#f3db82>I heard a crash in the middle of the night</color>, but I did not have the energy to deal with it.#e:Neutral
 	Athena: What about the morning? 
 	Skipper: I woke to the sound of chatter outside.
 	Skipper: I hadn't slept well so I was pretty groggy.
@@ -106,7 +106,7 @@ Athena: Tell me about...
 -> Chase Gander
 	Skipper: Ah, Gander.#e:Neutral
 	Skipper: Mallard definitely.. left on bad terms with him.#e:Sad
-	Skipper: I'm not sure exactly why, but Mr. Gander had told that duck he needs to find a new job.
+	Skipper: I'm not sure exactly why, but Mr. Gander had told that duck <color=\#f3db82>he needs to find a new job</color>.
 	Skipper: Kicked the poor guy off to the streets.
 	Skipper: Would you like to know about anyone else?#e:Neutral
 	<<jump PenguinEnemies>>
@@ -116,8 +116,8 @@ Athena: Tell me about...
 	Skipper: I overheard those two having a quite.. extreme argument the other day.#e:Sad
 	Skipper: I couldn't make out a lot of what they were saying, but what I did overhear was concerning to say the least.
 	Athena: What did you hear?
-	Skipper: I heard phrases such as "...RUINING PEOPLE'S LIVES"..#e:Neutral
-	Skipper: and "...MONEY OR YOU'RE FUCKING DEAD".
+	Skipper: I heard phrases such as <color=\#f3db82>"...RUINING PEOPLE'S LIVES"..</color>#e:Neutral
+	Skipper: and <color=\#f3db82>"...MONEY OR YOU'RE FUCKING DEAD"</color?.
 	Athena: Coming from Melissa? I find that kind of hard to believe.
 	Skipper: It's hard for me to believe too, but I remember what I heard.
 	Athena: I'll take note of this.
@@ -256,7 +256,7 @@ Athena: Good Morning, Mr. Gander.
 Chase: Who am I speaking to?
 Athena: I'm Detective Athena Nox.
 Chase: I assure you there's not much more than what meets the eye.
-Chase: This scenario is… unfortunate but not entirely unexpected.
+Chase: This scenario is… <color=\#f3db82>unfortunate but not entirely unexpected</color>.
 Athena: I'm sure there's something you could help me with to shed light on the situation.
 <<jump GooseConversation>>
 ===
