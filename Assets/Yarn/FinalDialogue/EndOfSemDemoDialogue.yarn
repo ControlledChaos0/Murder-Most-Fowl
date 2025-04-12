@@ -5,7 +5,7 @@ tags: lc: rc:
 ---
 <<declare $Tutorial = false>>
 <<set $Tutorial = true>>
-<<declare $CrowRelationship = 0>>
+<<declare $CrowRelationship = 0.0>>
 ???: CRASH
 Athena: Ahh! 
 Athena: ... What was that?
@@ -51,6 +51,7 @@ tags: lc:Owl rc:
 Athena: This is that bellboy that stopped me earlier. He looks so nervous…
 Athena: Makes sense. If I worked here, I would be nervous too.
 Athena: Poor kid.
+<<set_character_idle_node Penguin PenguinProof>>
 <<jump PenguinProof>>
 ===
 
@@ -223,7 +224,6 @@ tags: c:Owl:Penguin
 Athena: There's a wine bottle missing from the bar cabinet.
 Athena: Glass shards matching the glass were found next to the body.
 Athena: I believe the duck was hit over the head with the bottle, then his unconscious body was hung and strangled to make it look like a suicide.
-<<set_character_idle_node Penguin PenguinConversation>>
 <<jump PenguinConclusion>>
 ===
 
@@ -239,6 +239,7 @@ Skipper: Interesting…
 Skipper: I think you have a good case, Ms..?
 Athena: Athena. Athena Nox.
 <<set $Tutorial to false>>
+<<set_character_idle_node Penguin PenguinConversation>>
 Skipper: Thank you Detective Nox. I'll give you some time to investigate.
 Skipper: Let me know when you're ready to call the police, and you can turn in your suspect to them.
 ===
@@ -439,6 +440,7 @@ Melissa: Now, what would you like to ask?
 	Athena: What do you mean?
 	Melissa: *laugh* Well she used to be in love with that duck. If she were the ex killing type, I think you'd be the first she'd kill.
 	Athena: She.. what?
+	<<CreateClue ClueBoardCanvas CrowEx>>
 	Melissa: Oh dear, did you not know?
 	Athena: ... 
 	Athena: Let's just move on.
@@ -490,7 +492,11 @@ Athena: Look, I just want to talk.
 title: CrowIdle
 ---
 <<if $Tutorial is false>>
-	<<jump CrowMainUpset>>
+	<<if $CrowRelationship is 0>>
+		<<jump CrowMainUpset>>
+	<<elseif $CrowRelationship > 0>>
+		<<jump CrowMainNeutral>>
+	<<endif>>
 <<else>>
 	<<jump CrowConversation>>
 <<endif>>
@@ -517,6 +523,23 @@ Morgana: …
 Morgana: Not a chance.
 -> I have a few questions for you.
 	<<jump CrowQuestions>>
+-> This is serious, Morgana.
+	Athena: This is serious, Morgana. Someone is dead.
+	Morgana: Oh cluck off.
+	Morgana: I thought WE were serious.
+->Present
+	<<PresentEvidence>>
+-> Leave
+===
+
+title: CrowMainNeutral
+---
+Morgana: …
+Morgana: What's Up.
+-> I have a few questions for you.
+	<<jump CrowQuestions>>
+-> Are you doing alright?
+	Morgana: I'm fine.
 ->Present
 	<<PresentEvidence>>
 -> Leave
@@ -572,6 +595,7 @@ Athena: Look Morgana, I really care about you.
 Morgana: How do you do that to someone you care about?
 Athena: I thought it would be best for you.
 Morgana: ...
+<<set $CrowRelationship = $CrowRelationship + 1.0>>
 ===
 
 title: CrowGlass
