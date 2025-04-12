@@ -37,10 +37,10 @@ Athena: Oh dear Pheonix. How did this happen?
 Athena: I suppose that's up to me to figure out.
 Skipper: Excuse me ma'am, but I can't let you disturb the scene. I'm about to phone the police.
 Athena: Yes, yes, I understand, but conveniently I'm a detective.
-Skipper: A detective? But what needs investigating? The poor duck clearly hung himself.
+Skipper: A detective? But what needs investigating? The poor duck clearly hung himself.#e:Sad
 Skipper: I don't want to mess with the scene until the police arrive.
 Athena: Say, bellboy, if I can prove to you this “suicide” was in fact a murder, will you let me investigate further?
-Skipper: I suppose… If this was a murder it would help to have a detective on the case.
+Skipper: I suppose… If this was a murder it would help to have a detective on the case.#e:Neutral
 Athena: It's a deal.
 ===
 
@@ -58,18 +58,18 @@ Athena: Poor kid.
 title:PenguinConversation
 tags: c:Owl:Penguin
 ---
-Skipper: Is there any way I can help?
+Skipper: Is there any way I can help?#e:Happy
 -> Where were you last night?
-	Skipper: Hmm.. Well I spent a lot of time searching for my keys last night.
+	Skipper: Hmm.. Well I spent a lot of time searching for my keys last night.#e:Neutral
 	Athena: Your keys? What happened to them?
 	Skipper: I believe I misplaced them. Though...
-	Skipper: ...
-	Skipper: Now that I think about it.. that eve Mallard offered to hang my coat up for me.
+	Skipper: ...#e:Sad
+	Skipper: Now that I think about it.. that eve Mallard offered to hang my coat up for me.#e:Neutral
 	Skipper: I didn't think much of it at the time, but I believe my keys went missing around that time.
 	Athena: Did you ever find your keys?
-	Skipper: I did not, so I asked Morgana to lock up the parlor.
+	Skipper: I did not, so I asked Morgana to lock up the parlor.#e:Sad
 	Athena: Did you notice anything else last night?
-	Skipper: I heard a crash in the middle of the night, but I did not have the energy to deal with it.
+	Skipper: I heard a crash in the middle of the night, but I did not have the energy to deal with it.#e:Neutral
 	Athena: What about the morning? 
 	Skipper: I woke to the sound of chatter outside.
 	Skipper: I hadn't slept well so I was pretty groggy.
@@ -77,25 +77,25 @@ Skipper: Is there any way I can help?
 	Skipper: It's my job to ensure the safety of this train, which is why I wanted to handle it.
 	<<jump PenguinConversation>>
 -> What are your thoughts about Mallard?
-	Skipper: ...
-	Skipper: Honestly I don't like him.
+	Skipper: ...#e:Neutral
+	Skipper: Honestly I don't like him.#e:Sad
 	Skipper: He's quite rude and snobbish.
-	Skipper: He came from great wealth, so he probably grew up with everything going his way.
+	Skipper: He came from great wealth, so he probably grew up with everything going his way.#e:Neutral
 	Skipper: However.. I feel like there was something off about him.
 	Athena: Have you interacted with him much?
 	Skipper: Thankfully I haven't had to deal with him much when I worked with Mr. Gander.
 	Athena: What do you know about Mallard and Gander?
 	Skipper: I know they started the company together, but if you want to know more, Mr. Gander would be the one to ask.
 	<<jump PenguinConversation>>
--> Do you know if anyone would want to kill him?
+-> Do you know if anyone would want to kill him?#e:Neutral
 	Skipper: Oh he knew how to make enemies.
 	Skipper: In fact I believe he's involved with everyone in this car in some way.
 	Skipper: I can tell you about whoever you wish.
 	<<jump PenguinEnemies>>
 -> Not now
 	Athena: Thank you for your help. I'll be back later.
-	Skipper: Glad to help!
-	Skipper: If you need anything, I'll be in the luggage room.
+	Skipper: Glad to help!#e:Happy
+	Skipper: If you need anything, I'll be in the luggage room.#e:Neutral
 ===
 
 title: PenguinEnemies
@@ -103,19 +103,19 @@ tags: c:Owl:Penguin
 ---
 Athena: Tell me about...
 -> Chase Gander
-	Skipper: Ah, Gander.
-	Skipper: Mallard definitely.. left on bad terms with him.
+	Skipper: Ah, Gander.#e:Neutral
+	Skipper: Mallard definitely.. left on bad terms with him.#e:Sad
 	Skipper: I'm not sure exactly why, but Mr. Gander had told that duck he needs to find a new job.
 	Skipper: Kicked the poor guy off to the streets.
-	Skipper: Would you like to know about anyone else?
+	Skipper: Would you like to know about anyone else?#e:Neutral
 	<<jump PenguinEnemies>>
 -> Melissa Peacock
-	Skipper: Melissa comes across as the most suspicious to me.
+	Skipper: Melissa comes across as the most suspicious to me.#e:Neutral
 	Athena: Oh?
-	Skipper: I overheard those two having a quite.. extreme argument the other day.
+	Skipper: I overheard those two having a quite.. extreme argument the other day.#e:Sad
 	Skipper: I couldn't make out a lot of what they were saying, but what I did overhear was concerning to say the least.
 	Athena: What did you hear?
-	Skipper: I heard phrases such as "...RUINING PEOPLE'S LIVES"..
+	Skipper: I heard phrases such as "...RUINING PEOPLE'S LIVES"..#e:Neutral
 	Skipper: and "...MONEY OR YOU'RE FUCKING DEAD".
 	Athena: Coming from Melissa? I find that kind of hard to believe.
 	Skipper: It's hard for me to believe too, but I remember what I heard.
@@ -123,19 +123,20 @@ Athena: Tell me about...
 	Skipper: Would you like to know about anyone else?
 	<<jump PenguinEnemies>>
 -> Morgana Noir
-	Skipper: Well Mallard would complain to me about her messing up his drinks constantly.
+	Skipper: Well Mallard would complain to me about her messing up his drinks constantly.#e:Neutral
 	Skipper: Morgana is a good bartender. If she messed up his drink that many times it must've been out of spite.
 	Skipper: Would you like to know about anyone else?
 	<<jump PenguinEnemies>>
 -> You.
-	Skipper: Me?
+	Skipper: Me?#e:Neutral
 	Skipper: I mean I knew him. 
 	Skipper: We were never really close.
+	Skipper: ...#e:Sad
 	Skipper: Would you like to know about anyone else?
 	<<jump PenguinEnemies>>
 -> That's all.
 	Athena: That's all the questions about connections I have for now.
-	Skipper: Alright!
+	Skipper: Alright!#e:Happy
 	<<jump PenguinConversation>>
 ===
 
@@ -168,7 +169,7 @@ Athena: This stool was placed by the murderer to make the scene look more convin
 
 title:ProofWrong1
 ---
-Skipper: I don't follow.
+Skipper: I don't follow.#e:Sad
 Athena: I'll see if I can find anything more relevant.
 ===
 
@@ -240,7 +241,7 @@ Skipper: I think you have a good case, Ms..?
 Athena: Athena. Athena Nox.
 <<set $Tutorial to false>>
 <<set_character_idle_node Penguin PenguinConversation>>
-Skipper: Thank you Detective Nox. I'll give you some time to investigate.
+Skipper: Thank you Detective Nox. I'll give you some time to investigate.#e:Happy
 Skipper: Let me know when you're ready to call the police, and you can turn in your suspect to them.
 ===
 
@@ -506,26 +507,26 @@ title: CrowConversation
 tags: c:Owl:Crow
 ---
 <<set $ConvoChar = "Crow">>
-Morgana: …
-Morgana: Not a chance.
+Morgana: …#e:Sad
+Morgana: Not a chance.#e:Angry
 ->Present
 	<<PresentEvidence>>
 -> This is serious, Morgana.
 	Athena: This is serious, Morgana. Someone is dead.
-	Morgana: Oh cluck off.
+	Morgana: Oh cluck off.#e:Angry
 	Morgana: I thought WE were serious.
 -> Leave
 ===
 
 title: CrowMainUpset
 ---
-Morgana: …
-Morgana: Not a chance.
+Morgana: …#e:Sad
+Morgana: Not a chance.#e:Angry
 -> I have a few questions for you.
 	<<jump CrowQuestions>>
 -> This is serious, Morgana.
 	Athena: This is serious, Morgana. Someone is dead.
-	Morgana: Oh cluck off.
+	Morgana: Oh cluck off.#e:Angry
 	Morgana: I thought WE were serious.
 ->Present
 	<<PresentEvidence>>
@@ -548,7 +549,7 @@ Morgana: What's Up.
 title: CrowQuestions
 ---
 -> Where were you last night.
-	Morgana: Wouldn't you like to know.
+	Morgana: Wouldn't you like to know.#e:Neutral
 	Athena: I would actually.
 	Morgana: ...
 	Morgana: I was drinking with Melissa.
@@ -564,10 +565,10 @@ title: CrowQuestions
 	-> Alright...
 		<<jump CrowQuestions>>
 -> How do you feel about Mallard?
-	Morgana: Didn't like him. Don't like him.
+	Morgana: Didn't like him. Don't like him.#e:Angry
 	<<jump CrowQuestions>>
 -> Do you know if anyone would want to kill him?
-	Morgana: I may not like him, but that doesn't mean I would kill him.
+	Morgana: I may not like him, but that doesn't mean I would kill him.#e:Neutral
 	-> Press
 		<<PresentEvidence>>
 	-> Alright...
@@ -584,12 +585,13 @@ Morgana:
 
 title: CrowEx
 ---
-Morgana: Yeah, imagine my luck.
-Morgana: Both my Exs on a train. One ends up dead and the other wants to turn me in.
+Athena: I heard you used to date the victim?
+Morgana: Yeah, imagine my luck.#e:Neutral
+Morgana: Both my Exs on a train. One ends up dead and the other wants to turn me in.#e:Angry
 Athena: I don't want to turn you in.
 Morgana: Yeah Im sure you don't.
 Athena: I mean it. Why would I want to turn you in?
-Morgana: I don't know? Why would you leave me like that.
+Morgana: I don't know? Why would you leave me like that.#e:Sad
 Athena: ...
 Athena: Look Morgana, I really care about you.
 Morgana: How do you do that to someone you care about?
@@ -600,10 +602,10 @@ Morgana: ...
 
 title: CrowGlass
 ---
-Morgana: Glass? What do you want me to say?
+Morgana: Glass? What do you want me to say?#e:Angry
 Athena: Glass, Bottles, Alcohol… Isn't that your specialty?
 Morgana: …
-Morgana: I did notice a wine bottle was missing from the bar today. 
+Morgana: I did notice a wine bottle was missing from the bar today. #e:Neutral
 Morgana: But don't you try to pin this one on me, Nox.
 <<CreateClue ClueBoardCanvas Bottle>>
 ===
