@@ -33,7 +33,7 @@ Athena: Great. Now I can get back to slee-
 ???: What on earth?
 Athena: What's that all about?#s:Investigate
 Athena: I should check this out.
-Athena: Oh dear Pheonix. How did this happen?
+Athena: Oh dear Phoenix. How did this happen?
 Athena: I suppose that's up to me to figure out.
 Skipper: Excuse me ma'am, but I can't let you disturb the scene. I'm about to phone the police.
 Athena: Yes, yes, I understand, but conveniently I'm a detective.
@@ -43,7 +43,7 @@ Athena: Say, bellboy, if I can prove to you this “suicide” was in fact a mur
 Skipper: I suppose… If this was a murder it would help to have a detective on the case.#e:Neutral
 Athena: It's a deal.
 Athena: Before I begin. Could I ask, what is the victim's name?
-Skipper: Mallard. Seaton Mallard.
+Skipper: Mallard. <color=\#f3db82>Seaton Mallard.</color>
 Athena: Thank you. I ensure you I'll get to the bottom of this.
 ===
 
@@ -120,7 +120,7 @@ Athena: Tell me about...
 	Skipper: I couldn't make out a lot of what they were saying, but what I did overhear was concerning to say the least.
 	Athena: What did you hear?
 	Skipper: I heard phrases such as <color=\#f3db82>"...RUINING PEOPLE'S LIVES"..</color>#e:Neutral
-	Skipper: and <color=\#f3db82>"...MONEY OR YOU'RE FUCKING DEAD"</color?.
+	Skipper: and <color=\#f3db82>"...MONEY OR YOU'RE CLUCKING DEAD"</color>.
 	Athena: Coming from Melissa? I find that kind of hard to believe.
 	Skipper: It's hard for me to believe too, but I remember what I heard.
 	Athena: I'll take note of this.
@@ -156,8 +156,8 @@ Skipper: Hello Detective. Do you have evidence for me?
 
 title:ProofIdleNode1
 ---
-Skipper: What makes you think the duck couldn't have committed the act himself?
--> Present
+Skipper: What makes you think it was <color=\#f3db82>impossible</color> for Mallard to have committed the act alone?
+-> <color=\#94e9e4>Present</color>
     <<PresentEvidence Stool ProofWrong1>>
 -> Leave
 ===
@@ -187,15 +187,15 @@ Skipper: If that's the case, what was his cause of death?
 
 title:ProofIdleNode2
 ---
--> Present
+-> <color=\#94e9e4>Present</color>
     <<PresentEvidence Rope ProofWrong2>>
 -> Leave
 ===
 
 title:PenguinRope
 ---
-Athena: He was certainly hung. The suffication is clear.
-Athena: However, there is no signs of struggle, even as he sufficated.
+Athena: He was certainly hung. The suffocation is clear.
+Athena: However, there are no signs of struggle, even as he sufficated.
 Athena: He must have been unconscious while he died, meaning he couldn't have hung himself.
 <<set_character_idle_node Penguin PenguinProof3>>
 <<jump PenguinProof3>>
@@ -218,7 +218,7 @@ Skipper: I see. What was he knocked out with?
 
 title:ProofIdleNode3
 ---
--> Present
+-> <color = \#94e9e4>Present</color>
     <<PresentEvidence Bottle ProofWrong3>>
 -> Leave
 ===
@@ -234,8 +234,10 @@ Athena: I believe the duck was hit over the head with the bottle, then his uncon
 
 title:ProofWrong3
 ---
-Skipper: I don't think this is a weapon.
-Athena: I'll be back when I find it.
+Skipper: Hmm.. I'm not sure if that's a weapon...
+Skipper: Perhaps you could <color=\#f3db82>ask some of the passengers about your evidence</color>.
+Skipper: That could <color=\#f3db82>shed some light</color> on your evidence.
+Athena: Thanks. I'll try that.
 ===
 
 title:PenguinConclusion
@@ -246,7 +248,9 @@ Athena: Athena. Athena Nox.
 <<set $Tutorial to false>>
 <<set_character_idle_node Penguin PenguinConversation>>
 Skipper: Thank you Detective Nox. I'll give you some time to investigate.#e:Happy
-Skipper: Let me know when you're ready to call the police, and you can turn in your suspect to them.
+Skipper: Be sure to <color=\#f3db82>question everyone thoroughly</color>.
+Skipper: If you have any questions for me, I'm happy to answer.
+Skipper: Let me know when you're ready to call the police, and you can turn in your suspect to them.#e:Neutral
 ===
 
 title: GooseIntroduction
@@ -276,7 +280,7 @@ Chase: What do you want?
 	Athena: You said this was “unfortunate but not entirely unexpected.” Could you elaborate?
 	Chase: It would be wrong of me to gossip of one who just took their life.
 	Athena: I understand.
--> Present
+-> <color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Nothing Now
 	Goose: My time is precious.
@@ -288,7 +292,7 @@ title: GooseMain
 Chase: What do you want?
 -> I have a few questions for you.
 	<<jump GooseQuestions>>
--> Present
+-> <color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Nothing Now
 	Goose: My time is precious.
@@ -310,7 +314,7 @@ Goose: What else would you like to ask?
 	Gander: Ah yes, that is her name, isn't it?
 	Gander: Anyways, I confronted the bellboy about the locked door, but he claimed to have misplaced his key.
 	Gander: My ask was for naught however, as the door was soon unlocked by someone. 
-	Gander: Followed by a bloodcurtling scream.
+	Gander: Followed by a bloodcurdling scream.
 	Athena: Is that when they found the body?
 	Gander: ...
 	Gander: Indeed.
@@ -338,7 +342,7 @@ Goose: You think Mallard used that in his attempt?
 Goose: I find that… hard to believe.
 Athena: What do you mean by that?
 Goose: Well, Mallard, you've seen him. 
-Chase: Poor thing he was never one to stand out of a crowd.
+Chase: Poor thing he was <color=\#f3db82>never one to stand out of a crowd</color>.
 ===
 
 title: GooseBusinessPartners
@@ -392,21 +396,21 @@ Melissa: How can I help you, dear?
 -> Could I get your autograph?
 	Melissa: Oh! Uh...
 	Melissa: Perhaps now isn't the time?
--> Present
+-> <color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
-	Melissa: I'm terribly sorry, but perhaps now isn't the time?
 -> Nothing now
 	Melissa: Don't hesitate to ask.
 ===
 
 title: PeacockMain
 ---
+Melissa: How can I help you, dear?
 -> I have a few questions for you.
 	<<jump PeacockQuestions0>>
 -> Could I get your autograph?
 	Melissa: Oh! Uh...
 	Melissa: I'm terribly sorry, but perhaps now isn't the time?
--> Present
+-> <color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Nothing now
 	Melissa: Don't hesitate to ask.
@@ -449,6 +453,7 @@ Melissa: Now, what would you like to ask?
 	Melissa: *laugh* <color=\#f3db82>Well she used to be in love with that duck.</color> If she were the ex killing type, I think you'd be the first she'd kill.
 	Athena: She.. what?
 	<<CreateClue ClueBoardCanvas CrowEx>>
+	: Got Evidence <color=\#94e9e4>Morgana's Ex</color>
 	Melissa: Oh dear, did you not know?
 	Athena: ... 
 	Athena: Let's just move on.
@@ -465,7 +470,7 @@ Melissa: Is there anything else, dear?
 		Melissa: I don't recall. No.
 		<<jump PeacockQuestions1>>
 	-> What did you do after waking up?
-		Melissa: I looked around my room for 10 minutes for antiacid. When I couldn't find one, I left to ask Morgana for one.
+		Melissa: I looked around my room for 10 minutes for antacid. When I couldn't find one, I left to ask Morgana for one.
 		Melissa: To my surprise I found her in front of the parlor door. 
 		Melissa: I asked about entering the parlor, but the poor thing said she lost her keys in her room. I admit I may have been a bit loud. I think I woke up Mr. Gander.
 		Athena: I see. What happened after?
@@ -532,7 +537,7 @@ Morgana: Not a chance.#e:Angry
 	Athena: This is serious, Morgana. Someone is dead.
 	Morgana: Oh cluck off.#e:Angry
 	Morgana: I thought WE were serious.
-->Present
+-><color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Leave
 ===
@@ -545,7 +550,7 @@ Morgana: What's Up.
 	<<jump CrowQuestions>>
 -> Are you doing alright?
 	Morgana: I'm fine.
-->Present
+-><color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Leave
 ===
@@ -564,7 +569,7 @@ title: CrowQuestions
 	Morgana: That all?
 	Athena: Is there anything you're not telling me?
 	Morgana: ...
-	-> Press
+	-> <color=\#94e9e4>Press</color>
 		<<PresentEvidence>>
 	-> Alright...
 		<<jump CrowQuestions>>
@@ -573,7 +578,7 @@ title: CrowQuestions
 	<<jump CrowQuestions>>
 -> Do you know if anyone would want to kill him?
 	Morgana: I may not like him, but that doesn't mean I would kill him.#e:Neutral
-	-> Press
+	-> <color=\#94e9e4>Press</color>
 		<<PresentEvidence>>
 	-> Alright...
 		<<jump CrowQuestions>>
@@ -591,7 +596,7 @@ title: CrowEx
 ---
 Athena: I heard you used to date the victim?
 Morgana: Yeah, imagine my luck.#e:Neutral
-Morgana: Both my Exs on a train. One ends up dead and the other wants to turn me in.#e:Angry
+Morgana: Both my Exes on a train. One ends up dead and the other wants to turn me in.#e:Angry
 Athena: I don't want to turn you in.
 Morgana: Yeah Im sure you don't.
 Athena: I mean it. Why would I want to turn you in?
@@ -611,6 +616,7 @@ Athena: Glass, Bottles, Alcohol… Isn't that your specialty?
 Morgana: …
 Morgana: I did notice a wine bottle was missing from the bar today. #e:Neutral
 Morgana: But don't you try to pin this one on me, Nox.
+: Got Evidence <color=\#94e9e4>Bottle</color>
 <<CreateClue ClueBoardCanvas Bottle>>
 ===
 
