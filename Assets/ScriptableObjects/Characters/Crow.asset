@@ -20,3 +20,5 @@ MonoBehaviour:
   m_clueResponses:
   - clueID: GlassShard
     nodeResponse: CrowGlass
+  - clueID: CrowEx
+    nodeResponse: CrowEx

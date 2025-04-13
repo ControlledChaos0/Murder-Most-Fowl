@@ -5,7 +5,7 @@ tags: lc: rc:
 ---
 <<declare $Tutorial = false>>
 <<set $Tutorial = true>>
-<<declare $CrowRelationship = 0>>
+<<declare $CrowRelationship = 0.0>>
 ???: CRASH
 Athena: Ahh! 
 Athena: ... What was that?
@@ -31,17 +31,20 @@ Athena: Great. Now I can get back to slee-
 ???: AAAAAAAAAAAAAAH!
 ???: Oh dear heavens.
 ???: What on earth?
-Athena: What's that all about?
+Athena: What's that all about?#s:Investigate
 Athena: I should check this out.
-Athena: Oh dear Pheonix. How did this happen?
+Athena: Oh dear Phoenix. How did this happen?
 Athena: I suppose that's up to me to figure out.
 Skipper: Excuse me ma'am, but I can't let you disturb the scene. I'm about to phone the police.
 Athena: Yes, yes, I understand, but conveniently I'm a detective.
-Skipper: A detective? But what needs investigating? The poor duck clearly hung himself.
+Skipper: A detective? But what needs investigating? The poor duck clearly hung himself.#e:Sad
 Skipper: I don't want to mess with the scene until the police arrive.
 Athena: Say, bellboy, if I can prove to you this “suicide” was in fact a murder, will you let me investigate further?
-Skipper: I suppose… If this was a murder it would help to have a detective on the case.
+Skipper: I suppose… If this was a murder it would help to have a detective on the case.#e:Neutral
 Athena: It's a deal.
+Athena: Before I begin. Could I ask, what is the victim's name?
+Skipper: Mallard. <color=\#f3db82>Seaton Mallard.</color>
+Athena: Thank you. I ensure you I'll get to the bottom of this.
 ===
 
 
@@ -51,24 +54,26 @@ tags: lc:Owl rc:
 Athena: This is that bellboy that stopped me earlier. He looks so nervous…
 Athena: Makes sense. If I worked here, I would be nervous too.
 Athena: Poor kid.
+<<set_character_idle_node Penguin PenguinProof>>
 <<jump PenguinProof>>
 ===
 
 title:PenguinConversation
 tags: c:Owl:Penguin
 ---
-Skipper: Is there any way I can help?
+<<set $ConvoChar = "Penguin">>
+Skipper: Is there any way I can help?#e:Happy
 -> Where were you last night?
-	Skipper: Hmm.. Well I spent a lot of time searching for my keys last night.
+	Skipper: Hmm.. Well I spent a lot of time searching for my keys last night.#e:Neutral
 	Athena: Your keys? What happened to them?
 	Skipper: I believe I misplaced them. Though...
-	Skipper: ...
-	Skipper: Now that I think about it.. that eve Mallard offered to hang my coat up for me.
+	Skipper: ...#e:Sad
+	Skipper: Now that I think about it.. <color=\#f3db82>that eve Mallard offered to hang my coat up for me.</color>#e:Neutral
 	Skipper: I didn't think much of it at the time, but I believe my keys went missing around that time.
 	Athena: Did you ever find your keys?
-	Skipper: I did not, so I asked Morgana to lock up the parlor.
+	Skipper: I did not, so I asked Morgana to lock up the parlor.#e:Sad
 	Athena: Did you notice anything else last night?
-	Skipper: I heard a crash in the middle of the night, but I did not have the energy to deal with it.
+	Skipper: <color=\#f3db82>I heard a crash in the middle of the night</color>, but I did not have the energy to deal with it.#e:Neutral
 	Athena: What about the morning? 
 	Skipper: I woke to the sound of chatter outside.
 	Skipper: I hadn't slept well so I was pretty groggy.
@@ -76,25 +81,25 @@ Skipper: Is there any way I can help?
 	Skipper: It's my job to ensure the safety of this train, which is why I wanted to handle it.
 	<<jump PenguinConversation>>
 -> What are your thoughts about Mallard?
-	Skipper: ...
-	Skipper: Honestly I don't like him.
+	Skipper: ...#e:Neutral
+	Skipper: Honestly I don't like him.#e:Sad
 	Skipper: He's quite rude and snobbish.
-	Skipper: He came from great wealth, so he probably grew up with everything going his way.
+	Skipper: He came from great wealth, so he probably grew up with everything going his way.#e:Neutral
 	Skipper: However.. I feel like there was something off about him.
 	Athena: Have you interacted with him much?
 	Skipper: Thankfully I haven't had to deal with him much when I worked with Mr. Gander.
 	Athena: What do you know about Mallard and Gander?
 	Skipper: I know they started the company together, but if you want to know more, Mr. Gander would be the one to ask.
 	<<jump PenguinConversation>>
--> Do you know if anyone would want to kill him?
+-> Do you know if anyone would want to kill him?#e:Neutral
 	Skipper: Oh he knew how to make enemies.
 	Skipper: In fact I believe he's involved with everyone in this car in some way.
 	Skipper: I can tell you about whoever you wish.
 	<<jump PenguinEnemies>>
 -> Not now
 	Athena: Thank you for your help. I'll be back later.
-	Skipper: Glad to help!
-	Skipper: If you need anything, I'll be in the luggage room.
+	Skipper: Glad to help!#e:Happy
+	Skipper: If you need anything, I'll be in the luggage room.#e:Neutral
 ===
 
 title: PenguinEnemies
@@ -102,39 +107,40 @@ tags: c:Owl:Penguin
 ---
 Athena: Tell me about...
 -> Chase Gander
-	Skipper: Ah, Gander.
-	Skipper: Mallard definitely.. left on bad terms with him.
-	Skipper: I'm not sure exactly why, but Mr. Gander had told that duck he needs to find a new job.
+	Skipper: Ah, Gander.#e:Neutral
+	Skipper: Mallard definitely.. left on bad terms with him.#e:Sad
+	Skipper: I'm not sure exactly why, but Mr. Gander had told that duck <color=\#f3db82>he needs to find a new job</color>.
 	Skipper: Kicked the poor guy off to the streets.
-	Skipper: Would you like to know about anyone else?
+	Skipper: Would you like to know about anyone else?#e:Neutral
 	<<jump PenguinEnemies>>
 -> Melissa Peacock
-	Skipper: Melissa comes across as the most suspicious to me.
+	Skipper: Melissa comes across as the most suspicious to me.#e:Neutral
 	Athena: Oh?
-	Skipper: I overheard those two having a quite.. extreme argument the other day.
+	Skipper: I overheard those two having a quite.. extreme argument the other day.#e:Sad
 	Skipper: I couldn't make out a lot of what they were saying, but what I did overhear was concerning to say the least.
 	Athena: What did you hear?
-	Skipper: I heard phrases such as "...RUINING PEOPLE'S LIVES"..
-	Skipper: and "...MONEY OR YOU'RE FUCKING DEAD".
+	Skipper: I heard phrases such as <color=\#f3db82>"...RUINING PEOPLE'S LIVES"..</color>#e:Neutral
+	Skipper: and <color=\#f3db82>"...MONEY OR YOU'RE CLUCKING DEAD"</color>.
 	Athena: Coming from Melissa? I find that kind of hard to believe.
 	Skipper: It's hard for me to believe too, but I remember what I heard.
 	Athena: I'll take note of this.
 	Skipper: Would you like to know about anyone else?
 	<<jump PenguinEnemies>>
 -> Morgana Noir
-	Skipper: Well Mallard would complain to me about her messing up his drinks constantly.
+	Skipper: Well Mallard would complain to me about her messing up his drinks constantly.#e:Neutral
 	Skipper: Morgana is a good bartender. If she messed up his drink that many times it must've been out of spite.
 	Skipper: Would you like to know about anyone else?
 	<<jump PenguinEnemies>>
 -> You.
-	Skipper: Me?
+	Skipper: Me?#e:Neutral
 	Skipper: I mean I knew him. 
 	Skipper: We were never really close.
+	Skipper: ...#e:Sad
 	Skipper: Would you like to know about anyone else?
 	<<jump PenguinEnemies>>
 -> That's all.
 	Athena: That's all the questions about connections I have for now.
-	Skipper: Alright!
+	Skipper: Alright!#e:Happy
 	<<jump PenguinConversation>>
 ===
 
@@ -150,8 +156,8 @@ Skipper: Hello Detective. Do you have evidence for me?
 
 title:ProofIdleNode1
 ---
-Skipper: What makes you think the duck couldn't have committed the act himself?
--> Present
+Skipper: What makes you think it was <color=\#f3db82>impossible</color> for Mallard to have committed the act alone?
+-> <color=\#94e9e4>Present</color>
     <<PresentEvidence Stool ProofWrong1>>
 -> Leave
 ===
@@ -167,7 +173,7 @@ Athena: This stool was placed by the murderer to make the scene look more convin
 
 title:ProofWrong1
 ---
-Skipper: I don't follow.
+Skipper: I don't follow.#e:Sad
 Athena: I'll see if I can find anything more relevant.
 ===
 
@@ -181,15 +187,15 @@ Skipper: If that's the case, what was his cause of death?
 
 title:ProofIdleNode2
 ---
--> Present
+-> <color=\#94e9e4>Present</color>
     <<PresentEvidence Rope ProofWrong2>>
 -> Leave
 ===
 
 title:PenguinRope
 ---
-Athena: He was certainly hung. The suffication is clear.
-Athena: However, there is no signs of struggle, even as he sufficated.
+Athena: He was certainly hung. The suffocation is clear.
+Athena: However, there are no signs of struggle, even as he sufficated.
 Athena: He must have been unconscious while he died, meaning he couldn't have hung himself.
 <<set_character_idle_node Penguin PenguinProof3>>
 <<jump PenguinProof3>>
@@ -212,7 +218,7 @@ Skipper: I see. What was he knocked out with?
 
 title:ProofIdleNode3
 ---
--> Present
+-> <color = \#94e9e4>Present</color>
     <<PresentEvidence Bottle ProofWrong3>>
 -> Leave
 ===
@@ -223,14 +229,15 @@ tags: c:Owl:Penguin
 Athena: There's a wine bottle missing from the bar cabinet.
 Athena: Glass shards matching the glass were found next to the body.
 Athena: I believe the duck was hit over the head with the bottle, then his unconscious body was hung and strangled to make it look like a suicide.
-<<set_character_idle_node Penguin PenguinConversation>>
 <<jump PenguinConclusion>>
 ===
 
 title:ProofWrong3
 ---
-Skipper: I don't think this is a weapon.
-Athena: I'll be back when I find it.
+Skipper: Hmm.. I'm not sure if that's a weapon...
+Skipper: Perhaps you could <color=\#f3db82>ask some of the passengers about your evidence</color>.
+Skipper: That could <color=\#f3db82>shed some light</color> on your evidence.
+Athena: Thanks. I'll try that.
 ===
 
 title:PenguinConclusion
@@ -239,8 +246,11 @@ Skipper: Interesting…
 Skipper: I think you have a good case, Ms..?
 Athena: Athena. Athena Nox.
 <<set $Tutorial to false>>
-Skipper: Thank you Detective Nox. I'll give you some time to investigate.
-Skipper: Let me know when you're ready to call the police, and you can turn in your suspect to them.
+<<set_character_idle_node Penguin PenguinConversation>>
+Skipper: Thank you Detective Nox. I'll give you some time to investigate.#e:Happy
+Skipper: Be sure to <color=\#f3db82>question everyone thoroughly</color>.
+Skipper: If you have any questions for me, I'm happy to answer.
+Skipper: Let me know when you're ready to call the police, and you can turn in your suspect to them.#e:Neutral
 ===
 
 title: GooseIntroduction
@@ -253,7 +263,7 @@ Athena: Good Morning, Mr. Gander.
 Chase: Who am I speaking to?
 Athena: I'm Detective Athena Nox.
 Chase: I assure you there's not much more than what meets the eye.
-Chase: This scenario is… unfortunate but not entirely unexpected.
+Chase: This scenario is… <color=\#f3db82>unfortunate but not entirely unexpected</color>.
 Athena: I'm sure there's something you could help me with to shed light on the situation.
 <<jump GooseConversation>>
 ===
@@ -270,7 +280,7 @@ Chase: What do you want?
 	Athena: You said this was “unfortunate but not entirely unexpected.” Could you elaborate?
 	Chase: It would be wrong of me to gossip of one who just took their life.
 	Athena: I understand.
--> Present
+-> <color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Nothing Now
 	Goose: My time is precious.
@@ -282,7 +292,7 @@ title: GooseMain
 Chase: What do you want?
 -> I have a few questions for you.
 	<<jump GooseQuestions>>
--> Present
+-> <color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Nothing Now
 	Goose: My time is precious.
@@ -304,7 +314,7 @@ Goose: What else would you like to ask?
 	Gander: Ah yes, that is her name, isn't it?
 	Gander: Anyways, I confronted the bellboy about the locked door, but he claimed to have misplaced his key.
 	Gander: My ask was for naught however, as the door was soon unlocked by someone. 
-	Gander: Followed by a bloodcurtling scream.
+	Gander: Followed by a bloodcurdling scream.
 	Athena: Is that when they found the body?
 	Gander: ...
 	Gander: Indeed.
@@ -332,7 +342,7 @@ Goose: You think Mallard used that in his attempt?
 Goose: I find that… hard to believe.
 Athena: What do you mean by that?
 Goose: Well, Mallard, you've seen him. 
-Chase: Poor thing he was never one to stand out of a crowd.
+Chase: Poor thing he was <color=\#f3db82>never one to stand out of a crowd</color>.
 ===
 
 title: GooseBusinessPartners
@@ -366,11 +376,12 @@ Athena: I'm a detective. Detective Nox. I may have a few questions for you about
 Melissa: Oh my, am I a suspect?
 Athena: Not at the moment, you're not. But there's something fishy about this scene, and I'd like some help to get to the bottom of this.
 Melissa: I see.
-<<jump PeacockConversation>>
+<<jump PeacockIdle>>
 ===
 
 title: PeacockIdle
 ---
+<<set $ConvoChar = "Peacock">>
 <<if $Tutorial is false>>
 	<<jump PeacockMain>>
 <<else>>
@@ -381,25 +392,25 @@ title: PeacockIdle
 title: PeacockConversation
 tags: c:Owl:Peacock
 ---
-<<set $ConvoChar = "Peacock">>
 Melissa: How can I help you, dear?
 -> Could I get your autograph?
-	Melissa: Oh! Uh
--> Present
+	Melissa: Oh! Uh...
+	Melissa: Perhaps now isn't the time?
+-> <color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
-	Melissa: I'm terribly sorry, but perhaps now isn't the time?
 -> Nothing now
 	Melissa: Don't hesitate to ask.
 ===
 
 title: PeacockMain
 ---
+Melissa: How can I help you, dear?
 -> I have a few questions for you.
 	<<jump PeacockQuestions0>>
 -> Could I get your autograph?
-	Melissa: Oh! Uh
+	Melissa: Oh! Uh...
 	Melissa: I'm terribly sorry, but perhaps now isn't the time?
--> Present
+-> <color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Nothing now
 	Melissa: Don't hesitate to ask.
@@ -430,15 +441,19 @@ Melissa: Now, what would you like to ask?
 	Melissa: My.. well I've overheard Mr. Gander was having troubles with Mallard.
 	Melissa: I don't know much, but I believe it has something to do with Gander's disdain for Mallard's business practices.
 	Melissa: I hear he blames Mallard for the current state of his company...
-	Athena: what of the other passengers?
+	Melissa: I don't blame him to be honest.
+	Melissa: Mallard has a way with <color=\#f3db82>spending more than he has...</color>
+	Athena: What of the other passengers?
 	Melissa: Well the bellboy has always given me strange vibes. There's just something.. off about him.
 	Athena: That's hardly evidence.
 	Melissa: I suppose not.
 	Melissa: ...
 	Melissa: As for Morgana, given that you're still alive, I doubt it was her.
 	Athena: What do you mean?
-	Melissa: *laugh* Well she used to be in love with that duck. If she were the ex killing type, I think you'd be the first she'd kill.
+	Melissa: *laugh* <color=\#f3db82>Well she used to be in love with that duck.</color> If she were the ex killing type, I think you'd be the first she'd kill.
 	Athena: She.. what?
+	<<CreateClue ClueBoardCanvas CrowEx>>
+	: Got Evidence <color=\#94e9e4>Morgana's Ex</color>
 	Melissa: Oh dear, did you not know?
 	Athena: ... 
 	Athena: Let's just move on.
@@ -455,9 +470,9 @@ Melissa: Is there anything else, dear?
 		Melissa: I don't recall. No.
 		<<jump PeacockQuestions1>>
 	-> What did you do after waking up?
-		Melissa: I looked around my room for 10 minutes for antiacid. When I couldn't find one, I left to ask Morgana for one.
+		Melissa: I looked around my room for 10 minutes for antacid. When I couldn't find one, I left to ask Morgana for one.
 		Melissa: To my surprise I found her in front of the parlor door. 
-		Melissa: I asked about entering the parlor, but the poor thing said she lost them in her room. I admit I may have been a bit loud. I think I woke up Mr. Gander.
+		Melissa: I asked about entering the parlor, but the poor thing said she lost her keys in her room. I admit I may have been a bit loud. I think I woke up Mr. Gander.
 		Athena: I see. What happened after?
 		Melissa: When Morgana got back, she unlocked the car door.. and..
 		Melissa: That was when..
@@ -489,6 +504,7 @@ Athena: Look, I just want to talk.
 
 title: CrowIdle
 ---
+<<set $ConvoChar = "Crow">>
 <<if $Tutorial is false>>
 	<<jump CrowMainUpset>>
 <<else>>
@@ -500,24 +516,41 @@ title: CrowConversation
 tags: c:Owl:Crow
 ---
 <<set $ConvoChar = "Crow">>
-Morgana: …
-Morgana: Not a chance.
-->Present
-	<<PresentEvidence>>
+Morgana: …#e:Sad
+Morgana: Not a chance.#e:Angry
 -> This is serious, Morgana.
 	Athena: This is serious, Morgana. Someone is dead.
-	Morgana: Oh cluck off.
+	Morgana: Oh cluck off.#e:Angry
 	Morgana: I thought WE were serious.
+-><color=\#94e9e4>Present</color>
+	<<PresentEvidence>>
 -> Leave
 ===
 
 title: CrowMainUpset
 ---
-Morgana: …
-Morgana: Not a chance.
+Morgana: …#e:Sad
+Morgana: Not a chance.#e:Angry
 -> I have a few questions for you.
 	<<jump CrowQuestions>>
-->Present
+-> This is serious, Morgana.
+	Athena: This is serious, Morgana. Someone is dead.
+	Morgana: Oh cluck off.#e:Angry
+	Morgana: I thought WE were serious.
+-><color=\#94e9e4>Present</color>
+	<<PresentEvidence>>
+-> Leave
+===
+
+title: CrowMainNeutral
+---
+Morgana: …
+Morgana: What's Up.
+-> I have a few questions for you.
+	<<jump CrowQuestions>>
+-> Are you doing alright?
+	Morgana: I'm fine.
+-><color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Leave
 ===
@@ -525,7 +558,7 @@ Morgana: Not a chance.
 title: CrowQuestions
 ---
 -> Where were you last night.
-	Morgana: Wouldn't you like to know.
+	Morgana: Wouldn't you like to know.#e:Neutral
 	Athena: I would actually.
 	Morgana: ...
 	Morgana: I was drinking with Melissa.
@@ -536,16 +569,16 @@ title: CrowQuestions
 	Morgana: That all?
 	Athena: Is there anything you're not telling me?
 	Morgana: ...
-	-> Press
+	-> <color=\#94e9e4>Press</color>
 		<<PresentEvidence>>
 	-> Alright...
 		<<jump CrowQuestions>>
 -> How do you feel about Mallard?
-	Morgana: Didn't like him. Don't like him.
+	Morgana: Didn't like him. Don't like him.#e:Angry
 	<<jump CrowQuestions>>
 -> Do you know if anyone would want to kill him?
-	Morgana: I may not like him, but that doesn't mean I would kill him.
-	-> Press
+	Morgana: I may not like him, but that doesn't mean I would kill him.#e:Neutral
+	-> <color=\#94e9e4>Press</color>
 		<<PresentEvidence>>
 	-> Alright...
 		<<jump CrowQuestions>>
@@ -561,26 +594,29 @@ Morgana:
 
 title: CrowEx
 ---
-Morgana: Yeah, imagine my luck.
-Morgana: Both my Exs on a train. One ends up dead and the other wants to turn me in.
+Athena: I heard you used to date the victim?
+Morgana: Yeah, imagine my luck.#e:Neutral
+Morgana: Both my Exes on a train. One ends up dead and the other wants to turn me in.#e:Angry
 Athena: I don't want to turn you in.
 Morgana: Yeah Im sure you don't.
 Athena: I mean it. Why would I want to turn you in?
-Morgana: I don't know? Why would you leave me like that.
+Morgana: I don't know? Why would you leave me like that.#e:Sad
 Athena: ...
 Athena: Look Morgana, I really care about you.
 Morgana: How do you do that to someone you care about?
 Athena: I thought it would be best for you.
 Morgana: ...
+<<set $CrowRelationship = $CrowRelationship + 1.0>>
 ===
 
 title: CrowGlass
 ---
-Morgana: Glass? What do you want me to say?
+Morgana: Glass? What do you want me to say?#e:Angry
 Athena: Glass, Bottles, Alcohol… Isn't that your specialty?
 Morgana: …
-Morgana: I did notice a wine bottle was missing from the bar today. 
+Morgana: I did notice a wine bottle was missing from the bar today. #e:Neutral
 Morgana: But don't you try to pin this one on me, Nox.
+: Got Evidence <color=\#94e9e4>Bottle</color>
 <<CreateClue ClueBoardCanvas Bottle>>
 ===
 
@@ -593,6 +629,7 @@ Morgana: And?
 title: HangingDuck
 tags: c:Owl:
 ---
+Athena: This must be Mallard...
 Athena: Poor guy.
 Athena: He shows clear signs of asphyxiation, but there's something off...
 Athena: Why are the feathers laying so flat?

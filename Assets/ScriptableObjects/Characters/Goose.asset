@@ -18,5 +18,5 @@ MonoBehaviour:
   m_startingIdle: GooseConversation
   m_startingDismissal: GooseDismissal
   m_clueResponses:
-  - clueID: Goose
-    nodeResponse: Stool
+  - clueID: Stool
+    nodeResponse: GooseStool

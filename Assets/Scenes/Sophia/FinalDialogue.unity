@@ -2975,6 +2975,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &621670735 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 556776215337174519, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
+  m_PrefabInstance: {fileID: 5403604900587025497}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &654223408
 GameObject:
   m_ObjectHideFlags: 0
@@ -6377,7 +6382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3231515563247730419, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0005881573
+      value: -0.000030830364
       objectReference: {fileID: 0}
     - target: {fileID: 3691073673336351334, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_Name
@@ -6409,7 +6414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5073712475295230537, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00061345927
+      value: -0.00003083035
       objectReference: {fileID: 0}
     - target: {fileID: 7886430963500268991, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_Camera
@@ -6684,8 +6689,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.60054666, w: 0.7995897}
   m_LocalPosition: {x: 1.52, y: -2.57, z: 0}
-  m_LocalScale: {x: 0.21, y: 0.07699999, z: 0.6999999}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1716800287}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 73.818}
@@ -6748,7 +6753,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3558828565769491007, guid: 902b11c2cb82b414987691c405127b1c, type: 3}
+  m_Sprite: {fileID: 6320295989700651804, guid: d2200fa3127745647b46dbf6c77a1fe4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6811,7 +6816,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.213171, y: 15.9800005}
+    oldSize: {x: 10.75, y: 8.4}
     newSize: {x: 2.9, y: 0.93}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -7945,7 +7950,7 @@ Transform:
   m_GameObject: {fileID: 1971884840}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.53, y: -0.61, z: 0}
+  m_LocalPosition: {x: 4.53, y: 0.56, z: 0}
   m_LocalScale: {x: 0.43, y: 0.43, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9318,6 +9323,90 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _source
+      value: 
+      objectReference: {fileID: 621670735}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 621670735}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: songs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _trackList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: songs.Array.data[0].name
+      value: Leisure
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: songs.Array.data[0].song
+      value: 
+      objectReference: {fileID: 8300000, guid: c3bbbfcfd0be02c4899667bf702cec15, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: songs.Array.data[1].name
+      value: Investigate
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: songs.Array.data[1].song
+      value: 
+      objectReference: {fileID: 8300000, guid: 18e1b0ddb81fe6f449386ab8e33a68ac, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _trackList.Array.data[0].name
+      value: Investigate
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _trackList.Array.data[0].song
+      value: 
+      objectReference: {fileID: 8300000, guid: 18e1b0ddb81fe6f449386ab8e33a68ac, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _trackList.Array.data[1].name
+      value: Leisure
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _trackList.Array.data[1].song
+      value: 
+      objectReference: {fileID: 8300000, guid: c3bbbfcfd0be02c4899667bf702cec15, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.data[0].name
+      value: Neutral
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.data[1].name
+      value: Angry
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.data[2].name
+      value: Embarrassed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.data[3].name
+      value: Sad
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 287759248693289744, guid: 056c6f42f254c5a40849c0f835038ecd, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 6856779745698498924, guid: 4f19fe7c5f193fd4ca7912e5148ad558, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 831179347940552104, guid: 6ff052270b1a8874b9d627368e19345d, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _nameList.Array.data[3].expressions.spriteItemList.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: -3396483237174663184, guid: b2bbe89ea9746de4cbbd3a520c1bb0b3, type: 3}
     - target: {fileID: 3083913963246606234, guid: 6abb264982467054ba4fe940958d0824, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -9585,7 +9674,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1698125683756053222, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3423885343512093013, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
       propertyPath: m_BoundingShape2D

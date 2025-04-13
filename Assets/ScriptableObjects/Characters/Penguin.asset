@@ -15,7 +15,7 @@ MonoBehaviour:
   m_characterID: Penguin
   m_name: Skipper McGraw
   m_startingNode: PenguinIntroduction
-  m_startingIdle: PenguinIdle
+  m_startingIdle: PenguinProof
   m_startingDismissal: 
   m_clueResponses:
   - clueID: Stool
