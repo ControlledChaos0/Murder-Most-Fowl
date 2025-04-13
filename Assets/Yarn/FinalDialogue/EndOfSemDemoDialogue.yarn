@@ -518,12 +518,12 @@ tags: c:Owl:Crow
 <<set $ConvoChar = "Crow">>
 Morgana: …#e:Sad
 Morgana: Not a chance.#e:Angry
-->Present
-	<<PresentEvidence>>
 -> This is serious, Morgana.
 	Athena: This is serious, Morgana. Someone is dead.
 	Morgana: Oh cluck off.#e:Angry
 	Morgana: I thought WE were serious.
+-><color=\#94e9e4>Present</color>
+	<<PresentEvidence>>
 -> Leave
 ===
 
