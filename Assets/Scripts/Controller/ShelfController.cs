@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CabinetController : MonoBehaviour
+public class ShelfController : MonoBehaviour
 {
     [SerializeField]
     Sprite openSprite;
@@ -59,6 +59,11 @@ public class CabinetController : MonoBehaviour
     }
 
     public bool IsOpen() 
+    {
+        return open;
+    }
+
+    public bool isOpen()
     {
         return open;
     }
