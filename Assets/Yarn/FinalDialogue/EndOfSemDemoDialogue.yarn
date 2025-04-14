@@ -10,31 +10,31 @@ tags: lc: rc:
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
 <<declare $CrowRelationship = 0.0>>
+Athena: *cough cough* Ugh I can't sleep.
+Athena: The Bird Flu is no joke...
 ???: CRASH
-Athena: Ahh! 
-Athena: ... What was that?
-Athena: Can't a poor owl with the flu get any sleep around here? 
-Athena: It's my only break...
-Athena: …
+Athena: ... what was that?
 ???: clop clop clop
 Athena: Who's up this late at night making such a ruckus. 
-Athena: *cough cough* Luckily for them I'm too sick to do anything about it.
+Athena: Luckily *cough* for them I'm too sick to do anything about it.
+Athena: I'm already up. Perhaps I'll just read a book for a bit.
 Athena: ...
+Athena: .....
 Athena: zzzzz
 <<ChangeRightCharacter>>
 <<ChangeLeftCharacter>>
-???: What's going on? Why's the door locked?
-???: Isn't the parlor supposed to be open by now?
-???: I'm sorry, I'll get that unlocked for you.
+Singsongy Woman: What's going on? Why's the door locked?
+Disgruntled Man: Isn't the parlor supposed to be open by now?
+Tired Woman: I'm sorry, I'll get that unlocked for you.
 Athena: The early birds are up bright and early...
 Athena: Unfortunately I am too...
 <<ChangeLeftCharacter>>
-???: Alright you should be able to get in now.
-???: I apologize for the inconvenience.
+Tired Woman: Alright you should be able to get in now.
+Tired Woman: I apologize for the inconvenience.
 Athena: Great. Now I can get back to slee-
-???: AAAAAAAAAAAAAAH!
-???: Oh dear heavens.
-???: What on earth?
+Singsongy Woman: AAAAAAAAAAAAAAH!
+Disgruntled Man: Oh dear heavens.
+Nervous Boy: What on earth?
 Athena: What's that all about?
 Athena: I should check this out.
 Athena: Oh dear Phoenix. How did this happen?
@@ -49,6 +49,21 @@ Athena: It's a deal.
 Athena: Before I begin. Could I ask, what is the victim's name?
 Skipper: Mallard. <color=\#f3db82>Seaton Mallard.</color>
 Athena: Thank you. I ensure you I'll get to the bottom of this.
+<<ChangeRightCharacter>>
+Athena: ...
+Athena: The murder must've transpired last night.
+Athena: Now that I think about it <color=\#f3db82>I did hear a lot of weird noises</color> while reading my book last night...
+Athena: Let's see.
+Athena: First, I heard <color=\#f3db82>muffled talking</color> outside my room followed by <color=\#f3db82>two doors opening and closing.</color>
+Athena: I then heard <color=\#f3db82>another set of doors open and close.</color>
+Athena: I can only assume these were bedroom doors...
+Athena: I heard <color=\#f3db82>another room door open</color> just as <color=\#f3db82>the parlor door and luggage doors were open and shut.</color>
+Athena: Must've been the parlor door and luggage car doors as they're both sliding doors.
+Athena: Then there was a <color=\#f3db82>loud crash</color> before <color=\#f3db82>another room door opened</color> and the <color=\#f3db82>main parlor door was opened and shut</color>.
+Athena: I heard <color=\#f3db82>another room door open and shut</color> followed by a <color=\#f3db82>thump</color> before hearing <color=\#f3db82>a room door open and shut.</color>
+Athena: Finally, <color=\#f3db82>the parlor door was open and shut one more time</color>...
+Athena: This alone is not much to go off of. 
+Athena: I should <color=\#f3db82>find clues</color> and <color=\#f3db82>question the passengers</color> before I present my proof.
 ===
 
 
@@ -332,8 +347,10 @@ Goose: What else would you like to ask?
 	-> Anyways...
 		<<jump GooseQuestions>>
 -> Do you know if anyone would want to kill him?
-	Gander: It is not my place throw lofty accusations.
-	Gander: That's your job, is it not?
+	Gander: I hope you do not suspect it was me.
+	Gander: Though I would not blame you for the suspicion.
+	Athena: Do you have any suspects?
+	Gander: I will not throw any lofty accusations.
 	<<jump GooseQuestions>>
 -> That's all
 	<<jump GooseConversation>>
