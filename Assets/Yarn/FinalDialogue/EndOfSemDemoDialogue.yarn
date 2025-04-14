@@ -667,6 +667,7 @@ Athena: Poor guy.
 Athena: He shows clear signs of asphyxiation, but there's something off...
 Athena: Why are the feathers laying so flat?
 Athena: He would've at least struggled a little if he was awake...
+: Got Evidence <color=\#94e9e4>Suffocation</color>
 ===
 
 title: Shards
@@ -674,6 +675,7 @@ tags: c:Owl:
 ---
 Athena: Glass shards...
 Athena: Why would that be there?
+: Got Evidence <color=\#94e9e4>Glass Shards</color>
 <<set $HasShards = true>>
 ===
 
@@ -683,6 +685,7 @@ tags: c:Owl:
 Athena: That's certainly a short stool.
 Athena: He had access to tall barstools and yet he used this step-stool.
 Athena: I don't even know if he's tall enough to have reached the noose even standing on this stool.
+: Got Evidence <color=\#94e9e4>Short Stool</color>
 ===
 
 title: MissingBottle
@@ -700,4 +703,12 @@ tags: c:Owl:
 	Athena: I thought they usually restock those overnight.
 	Athena: There must be <color=\#f3db82>some evidence</color> tied to this...
 <<endif>>
+===
+
+title: Key
+tags: c:Owl:
+---
+Athena: A key?
+Athena: Why would Mallard have a key in his pocket?
+: Got Evidence <color=\#94e9e4>Key</color>
 ===
