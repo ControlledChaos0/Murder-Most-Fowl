@@ -4,6 +4,10 @@ title: Start
 tags: lc: rc:
 ---
 <<declare $Tutorial = false>>
+<<declare $HasShards = false>>
+<<declare $PresentedShards = false>>
+<<set $HasShards = false>>
+<<set $PresentedShards = false>>
 <<set $Tutorial = true>>
 <<declare $CrowRelationship = 0.0>>
 ???: CRASH
@@ -31,7 +35,7 @@ Athena: Great. Now I can get back to slee-
 ???: AAAAAAAAAAAAAAH!
 ???: Oh dear heavens.
 ???: What on earth?
-Athena: What's that all about?#s:Investigate
+Athena: What's that all about?
 Athena: I should check this out.
 Athena: Oh dear Phoenix. How did this happen?
 Athena: I suppose that's up to me to figure out.
@@ -62,7 +66,7 @@ title:PenguinConversation
 tags: c:Owl:Penguin
 ---
 <<set $ConvoChar = "Penguin">>
-Skipper: Is there any way I can help?#e:Happy
+Skipper: Is there any way I can help?#e:Happy#s:Penguin
 -> Where were you last night?
 	Skipper: Hmm.. Well I spent a lot of time searching for my keys last night.#e:Neutral
 	Athena: Your keys? What happened to them?
@@ -181,7 +185,7 @@ title:PenguinProof2
 tags: c:Owl:Penguin
 ---
 <<set $ConvoChar = "Penguin">>
-Skipper: If that's the case, what was his cause of death?
+Skipper: If that's the case, what was his <color=\#f3db82>cause of death</color>?
 <<jump ProofIdleNode2>>
 ===
 
@@ -212,13 +216,13 @@ tags: c:Owl:Penguin
 position: 120,120
 ---
 <<set $ConvoChar = "Penguin">>
-Skipper: I see. What was he knocked out with?
+Skipper: I see. What was he <color=\#f3db82>knocked out with</color>?
 <<jump ProofIdleNode3>>
 ===
 
 title:ProofIdleNode3
 ---
--> <color = \#94e9e4>Present</color>
+-> <color=\#94e9e4>Present</color>
     <<PresentEvidence Bottle ProofWrong3>>
 -> Leave
 ===
@@ -256,7 +260,7 @@ Skipper: Let me know when you're ready to call the police, and you can turn in y
 title: GooseIntroduction
 tags: lc:Owl rc:
 ---
-Athena: Chase Gander…
+Athena: Chase Gander…#s:Goose
 Athena: Richest man this side of the country. I wouldn't be surprised if he owns this train.
 Athena: I'm almost too intimidated to talk to him.
 Athena: Good Morning, Mr. Gander.
@@ -289,7 +293,7 @@ Chase: What do you want?
 
 title: GooseMain
 ---
-Chase: What do you want?
+Chase: What do you want?#s:Goose
 -> I have a few questions for you.
 	<<jump GooseQuestions>>
 -> <color=\#94e9e4>Present</color>
@@ -365,7 +369,7 @@ Chase: I don't see the relevance of this.
 title: PeacockIntroduction
 tags: lc:Owl rc:
 ---
-Athena: Melissa Miss Peacock. Never thought I'd get to meet her in person.
+Athena: Melissa Miss Peacock. Never thought I'd get to meet her in person.#s:Peacock
 Athena: I've been listening to her music since the beginning of her career.
 Athena: Oh my gosh and her new single, “Birds of a Feather”, is soooo good.
 Athena: Good morning Miss Peacock.
@@ -404,7 +408,7 @@ Melissa: How can I help you, dear?
 
 title: PeacockMain
 ---
-Melissa: How can I help you, dear?
+Melissa: How can I help you, dear?#s:Peacock
 -> I have a few questions for you.
 	<<jump PeacockQuestions0>>
 -> Could I get your autograph?
@@ -492,7 +496,7 @@ Melissa: I'm sorry, I'm not sure what to say.
 title: CrowIntroduction
 tags: lc: Owl rc:
 ---
-Athena: Oh Phoenix Above, what do you mean SHE's here?
+Athena: Oh Phoenix Above, what do you mean SHE's here?#s:Crow
 Athena: Just what I need, my romantic life getting tangled with my professional one.
 Athena: I really don't need to be reminded of that messy breakup now.
 Morgana: Oh look who it is.
@@ -529,7 +533,7 @@ Morgana: Not a chance.#e:Angry
 
 title: CrowMainUpset
 ---
-Morgana: …#e:Sad
+Morgana: …#e:Sad#s:Crow
 Morgana: Not a chance.#e:Angry
 -> I have a few questions for you.
 	<<jump CrowQuestions>>
@@ -617,6 +621,7 @@ Morgana: …
 Morgana: I did notice a wine bottle was missing from the bar today. #e:Neutral
 Morgana: But don't you try to pin this one on me, Nox.
 : Got Evidence <color=\#94e9e4>Bottle</color>
+<<set $PresentedShards = true>>
 <<CreateClue ClueBoardCanvas Bottle>>
 ===
 
@@ -641,6 +646,7 @@ tags: c:Owl:
 ---
 Athena: Glass shards...
 Athena: Why would that be there?
+<<set $HasShards = true>>
 ===
 
 title: Stool
@@ -649,4 +655,21 @@ tags: c:Owl:
 Athena: That's certainly a short stool.
 Athena: He had access to tall barstools and yet he used this step-stool.
 Athena: I don't even know if he's tall enough to have reached the noose even standing on this stool.
+===
+
+title: MissingBottle
+tags: c:Owl:
+---
+<<if $Tutorial is false>>
+	Athena: The bottle was used to <color=\#f3db82>knock the victim out.</color>
+<<elseif $PresentedShards>>
+	Athena: The missing bottle <color=\#f3db82>must be involved</color> somehow in the murder...
+<<elseif $HasShards>>
+	Athena: These wine bottles match the shards I just picked up.
+	Athena: ... Perhaps <color=\#f3db82>Morgana would know something</color> about this...
+<<else>>
+	Athena: Hmmm, this shelf doesn't look completely stocked.
+	Athena: I thought they usually restock those overnight.
+	Athena: There must be <color=\#f3db82>some evidence</color> tied to this...
+<<endif>>
 ===
