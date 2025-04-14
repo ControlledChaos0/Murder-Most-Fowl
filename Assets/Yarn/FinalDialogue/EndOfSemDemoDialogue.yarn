@@ -223,7 +223,7 @@ title:ProofIdleNode2
 title:PenguinRope
 ---
 Athena: He was certainly hung. The suffocation is clear.
-Athena: However, there are no signs of struggle, even as he sufficated.
+Athena: However, there are no signs of struggle, even as he suffocated.
 Athena: He must have been unconscious while he died, meaning he couldn't have hung himself.
 <<set_character_idle_node Penguin PenguinProof3>>
 <<jump PenguinProof3>>
@@ -276,9 +276,22 @@ Athena: Athena. Athena Nox.
 <<set $Tutorial to false>>
 <<set_character_idle_node Penguin PenguinConversation>>
 Skipper: Thank you Detective Nox. I'll give you some time to investigate.#e:Happy
+Skipper: Feel free to <color=\#f3db82>investigate the body</color> if you deem necessary.
 Skipper: Be sure to <color=\#f3db82>question everyone thoroughly</color>.
 Skipper: If you have any questions for me, I'm happy to answer.
 Skipper: Let me know when you're ready to call the police, and you can turn in your suspect to them.#e:Neutral
+===
+
+title: PenguinKey
+---
+Skipper: Oh! That's my key! Where did you find it?#e:Happy
+Athena: I found them in the victim's pocket...
+<<CreateClue ClueBoardCanvas PenguinKey>>
+: Got Evidence <color=\#94e9e4>Skipper's Key</color>
+Skipper: Oh. I had a feeling he was the one who took them...#e:Sad
+Skipper: ...
+Skipper: Could I perhaps have it back if you don't need it for the investigation?#e:Neutral
+Athena: Sure.
 ===
 
 title: GooseIntroduction
