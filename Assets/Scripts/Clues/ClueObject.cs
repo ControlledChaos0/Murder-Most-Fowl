@@ -11,6 +11,7 @@ namespace Clues
         [SerializeField] private string _clueID;
         [SerializeField] private string _node;
         [SerializeField] private bool _disappearOnClick = true;
+        [SerializeField] private bool _disabledInTutorial = false;
 
         private SpriteRenderer _spriteRenderer;
         private bool _found;
@@ -57,16 +58,29 @@ namespace Clues
         {
             // TODO
             Debug.Log("Click the clue!");
-            if (!_found)
+            if (!_disabledInTutorial || !GameManager.StateManager.ActiveState.Tutorial)
             {
-                _found = true;
-                ClueBoardManager.Instance.InstantiateClue(_clueID);
-                DialogueHelper.Instance.DialogueRunner.StartDialogue(_node);
+                if (!_found)
+                {
+                    _found = true;
+                    ClueBoardManager.Instance.InstantiateClue(_clueID);
+                    DialogueHelper.Instance.DialogueRunner.StartDialogue(_node);
+                }
+                if (_disappearOnClick)
+                {
+                    Collect();
+                }
             }
-            if (_disappearOnClick)
-            {
-                Collect();
-            }
+            // if (!_found)
+            // {
+            //     _found = true;
+            //     ClueBoardManager.Instance.InstantiateClue(_clueID);
+            //     DialogueHelper.Instance.DialogueRunner.StartDialogue(_node);
+            // }
+            // if (_disappearOnClick)
+            // {
+            //     Collect();
+            // }
         }
 
         [YarnCommand("collect_clue")]
