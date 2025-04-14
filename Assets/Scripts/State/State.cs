@@ -26,6 +26,8 @@ public class State
     [Header("Dialogue State")]
     public bool Tutorial = true;
     public int CrowRelationship = 0;
+    public bool HasShards = false;
+    public bool PresentedShards = false;
 
     [Header("Inventory")] 
     public List<string> DiscoveredClues = new();

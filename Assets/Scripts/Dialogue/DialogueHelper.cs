@@ -233,9 +233,13 @@ public class DialogueHelper : Singleton<DialogueHelper>
 
     public void ChangeTrack(string trackName = null)
     {
-        _audioSource.clip = _tracks.Find(e => e.name == trackName).song;
-        _audioSource.volume = 1;
-        _audioSource.Play();
+        AudioClip newClip = _tracks.Find(e => e.name == trackName).song;
+        if (newClip != _audioSource.clip)
+        {
+            _audioSource.clip = newClip;
+            _audioSource.volume = 1;
+            _audioSource.Play();
+        }
     }
 
     public void UpdateDialogueUI(LocalizedLine localLine)
