@@ -10,6 +10,7 @@ tags: lc: rc:
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
 <<declare $CrowRelationship = 0.0>>
+<<jump Skip>>
 Athena: *cough cough* Ugh I can't sleep.
 Athena: The Bird Flu is no joke...
 ???: CRASH
@@ -66,6 +67,10 @@ Athena: This alone is not much to go off of.
 Athena: I should <color=\#f3db82>find clues</color> and <color=\#f3db82>question the passengers</color> before I present my proof.
 ===
 
+title: Skip
+---
+:...
+===
 
 title: PenguinIntroduction
 tags: lc:Owl rc:
@@ -109,12 +114,16 @@ Skipper: Is there any way I can help?#e:Happy#s:Penguin
 	Skipper: Thankfully I haven't had to deal with him much when I worked with Mr. Gander.
 	Athena: What do you know about Mallard and Gander?
 	Skipper: I know they started the company together, but if you want to know more, Mr. Gander would be the one to ask.
+	: Got Evidence <color=\#94e9e4>Gander's Business Partner</color>
+	<<CreateClue ClueBoardCanvas GooseBusinessPartner>>
 	<<jump PenguinConversation>>
 -> Do you know if anyone would want to kill him?#e:Neutral
 	Skipper: Oh he knew how to make enemies.
 	Skipper: In fact I believe he's involved with everyone in this car in some way.
 	Skipper: I can tell you about whoever you wish.
 	<<jump PenguinEnemies>>
+-> <color=\#94e9e4>Present</color>
+	<<PresentEvidence>>
 -> Not now
 	Athena: Thank you for your help. I'll be back later.
 	Skipper: Glad to help!#e:Happy
@@ -359,28 +368,30 @@ Goose: What else would you like to ask?
 
 title: GooseStool
 ---
-Goose: You think Mallard used that in his attempt?
-Goose: I find that… hard to believe.
+Gander: You think Mallard used that in his attempt?
+Gander: I find that… hard to believe.
 Athena: What do you mean by that?
-Goose: Well, Mallard, you've seen him. 
-Chase: Poor thing he was <color=\#f3db82>never one to stand out of a crowd</color>.
+Gander: Well, Mallard, you've seen him. 
+Gander: Poor thing he was <color=\#f3db82>never one to stand out of a crowd</color>.
 ===
 
-title: GooseBusinessPartners
+title: GooseBusinessPartner
 ---
-Goose: We were indeed business partners.
-Goose: While our partnership was rather lucrative, it was nonetheless... tenuous.
-Goose: Let's leave it at he was never the most business savvy duck in the pond.
+Gander: We were indeed business partners.
+Gander: While our partnership was rather lucrative, it was nonetheless... tenuous.
+Gander: Mallard inherited quite the fortune from his family and with it came great connections. 
+Gander: However, he was never the most business savvy duck in the pond.
+Gander: ...
 ===
 
 title: GooseDuckBroke
 ---
-Goose: I cannot legally discuss this matter.
+Gander: I cannot legally discuss this matter.
 ===
 
 title: GooseDismissal
 ---
-Chase: I don't see the relevance of this.
+Gander: I don't see the relevance of this.
 ===
 
 title: PeacockIntroduction
