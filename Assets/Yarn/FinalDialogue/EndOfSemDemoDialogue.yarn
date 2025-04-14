@@ -10,31 +10,32 @@ tags: lc: rc:
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
 <<declare $CrowRelationship = 0.0>>
+<<jump Skip>>
+Athena: *cough cough* Ugh I can't sleep.
+Athena: The Bird Flu is no joke...
 ???: CRASH
-Athena: Ahh! 
-Athena: ... What was that?
-Athena: Can't a poor owl with the flu get any sleep around here? 
-Athena: It's my only break...
-Athena: …
+Athena: ... what was that?
 ???: clop clop clop
 Athena: Who's up this late at night making such a ruckus. 
-Athena: *cough cough* Luckily for them I'm too sick to do anything about it.
+Athena: Luckily *cough* for them I'm too sick to do anything about it.
+Athena: I'm already up. Perhaps I'll just read a book for a bit.
 Athena: ...
+Athena: .....
 Athena: zzzzz
 <<ChangeRightCharacter>>
 <<ChangeLeftCharacter>>
-???: What's going on? Why's the door locked?
-???: Isn't the parlor supposed to be open by now?
-???: I'm sorry, I'll get that unlocked for you.
+Singsongy Woman: What's going on? Why's the door locked?
+Disgruntled Man: Isn't the parlor supposed to be open by now?
+Tired Woman: I'm sorry, I'll get that unlocked for you.
 Athena: The early birds are up bright and early...
 Athena: Unfortunately I am too...
 <<ChangeLeftCharacter>>
-???: Alright you should be able to get in now.
-???: I apologize for the inconvenience.
+Tired Woman: Alright you should be able to get in now.
+Tired Woman: I apologize for the inconvenience.
 Athena: Great. Now I can get back to slee-
-???: AAAAAAAAAAAAAAH!
-???: Oh dear heavens.
-???: What on earth?
+Singsongy Woman: AAAAAAAAAAAAAAH!
+Disgruntled Man: Oh dear heavens.
+Nervous Boy: What on earth?
 Athena: What's that all about?
 Athena: I should check this out.
 Athena: Oh dear Phoenix. How did this happen?
@@ -49,8 +50,27 @@ Athena: It's a deal.
 Athena: Before I begin. Could I ask, what is the victim's name?
 Skipper: Mallard. <color=\#f3db82>Seaton Mallard.</color>
 Athena: Thank you. I ensure you I'll get to the bottom of this.
+<<ChangeRightCharacter>>
+Athena: ...
+Athena: The murder must've transpired last night.
+Athena: Now that I think about it <color=\#f3db82>I did hear a lot of weird noises</color> while reading my book last night...
+Athena: Let's see.
+Athena: First, I heard <color=\#f3db82>muffled talking</color> outside my room followed by <color=\#f3db82>two doors opening and closing.</color>
+Athena: I then heard <color=\#f3db82>another set of doors open and close.</color>
+Athena: I can only assume these were bedroom doors...
+Athena: I heard <color=\#f3db82>another room door open</color> just as <color=\#f3db82>the parlor door and luggage doors were open and shut.</color>
+Athena: Must've been the parlor door and luggage car doors as they're both sliding doors.
+Athena: Then there was a <color=\#f3db82>loud crash</color> before <color=\#f3db82>another room door opened</color> and the <color=\#f3db82>main parlor door was opened and shut</color>.
+Athena: I heard <color=\#f3db82>another room door open and shut</color> followed by a <color=\#f3db82>thump</color> before hearing <color=\#f3db82>a room door open and shut.</color>
+Athena: Finally, <color=\#f3db82>the parlor door was open and shut one more time</color>...
+Athena: This alone is not much to go off of. 
+Athena: I should <color=\#f3db82>find clues</color> and <color=\#f3db82>question the passengers</color> before I present my proof.
 ===
 
+title: Skip
+---
+:...
+===
 
 title: PenguinIntroduction
 tags: lc:Owl rc:
@@ -94,12 +114,16 @@ Skipper: Is there any way I can help?#e:Happy#s:Penguin
 	Skipper: Thankfully I haven't had to deal with him much when I worked with Mr. Gander.
 	Athena: What do you know about Mallard and Gander?
 	Skipper: I know they started the company together, but if you want to know more, Mr. Gander would be the one to ask.
+	: Got Evidence <color=\#94e9e4>Gander's Business Partner</color>
+	<<CreateClue ClueBoardCanvas GooseBusinessPartner>>
 	<<jump PenguinConversation>>
 -> Do you know if anyone would want to kill him?#e:Neutral
 	Skipper: Oh he knew how to make enemies.
 	Skipper: In fact I believe he's involved with everyone in this car in some way.
 	Skipper: I can tell you about whoever you wish.
 	<<jump PenguinEnemies>>
+-> <color=\#94e9e4>Present</color>
+	<<PresentEvidence>>
 -> Not now
 	Athena: Thank you for your help. I'll be back later.
 	Skipper: Glad to help!#e:Happy
@@ -199,7 +223,7 @@ title:ProofIdleNode2
 title:PenguinRope
 ---
 Athena: He was certainly hung. The suffocation is clear.
-Athena: However, there are no signs of struggle, even as he sufficated.
+Athena: However, there are no signs of struggle, even as he suffocated.
 Athena: He must have been unconscious while he died, meaning he couldn't have hung himself.
 <<set_character_idle_node Penguin PenguinProof3>>
 <<jump PenguinProof3>>
@@ -252,9 +276,22 @@ Athena: Athena. Athena Nox.
 <<set $Tutorial to false>>
 <<set_character_idle_node Penguin PenguinConversation>>
 Skipper: Thank you Detective Nox. I'll give you some time to investigate.#e:Happy
+Skipper: Feel free to <color=\#f3db82>investigate the body</color> if you deem necessary.
 Skipper: Be sure to <color=\#f3db82>question everyone thoroughly</color>.
 Skipper: If you have any questions for me, I'm happy to answer.
 Skipper: Let me know when you're ready to call the police, and you can turn in your suspect to them.#e:Neutral
+===
+
+title: PenguinKey
+---
+Skipper: Oh! That's my key! Where did you find it?#e:Happy
+Athena: I found them in the victim's pocket...
+<<CreateClue ClueBoardCanvas PenguinKey>>
+: Got Evidence <color=\#94e9e4>Skipper's Key</color>
+Skipper: Oh. I had a feeling he was the one who took them...#e:Sad
+Skipper: ...
+Skipper: Could I perhaps have it back if you don't need it for the investigation?#e:Neutral
+Athena: Sure.
 ===
 
 title: GooseIntroduction
@@ -332,8 +369,10 @@ Goose: What else would you like to ask?
 	-> Anyways...
 		<<jump GooseQuestions>>
 -> Do you know if anyone would want to kill him?
-	Gander: It is not my place throw lofty accusations.
-	Gander: That's your job, is it not?
+	Gander: I hope you do not suspect it was me.
+	Gander: Though I would not blame you for the suspicion.
+	Athena: Do you have any suspects?
+	Gander: I will not throw any lofty accusations.
 	<<jump GooseQuestions>>
 -> That's all
 	<<jump GooseConversation>>
@@ -342,28 +381,30 @@ Goose: What else would you like to ask?
 
 title: GooseStool
 ---
-Goose: You think Mallard used that in his attempt?
-Goose: I find that… hard to believe.
+Gander: You think Mallard used that in his attempt?
+Gander: I find that… hard to believe.
 Athena: What do you mean by that?
-Goose: Well, Mallard, you've seen him. 
-Chase: Poor thing he was <color=\#f3db82>never one to stand out of a crowd</color>.
+Gander: Well, Mallard, you've seen him. 
+Gander: Poor thing he was <color=\#f3db82>never one to stand out of a crowd</color>.
 ===
 
-title: GooseBusinessPartners
+title: GooseBusinessPartner
 ---
-Goose: We were indeed business partners.
-Goose: While our partnership was rather lucrative, it was nonetheless... tenuous.
-Goose: Let's leave it at he was never the most business savvy duck in the pond.
+Gander: We were indeed business partners.
+Gander: While our partnership was rather lucrative, it was nonetheless... tenuous.
+Gander: Mallard inherited quite the fortune from his family and with it came great connections. 
+Gander: However, he was never the most business savvy duck in the pond.
+Gander: ...
 ===
 
 title: GooseDuckBroke
 ---
-Goose: I cannot legally discuss this matter.
+Gander: I cannot legally discuss this matter.
 ===
 
 title: GooseDismissal
 ---
-Chase: I don't see the relevance of this.
+Gander: I don't see the relevance of this.
 ===
 
 title: PeacockIntroduction
@@ -639,6 +680,7 @@ Athena: Poor guy.
 Athena: He shows clear signs of asphyxiation, but there's something off...
 Athena: Why are the feathers laying so flat?
 Athena: He would've at least struggled a little if he was awake...
+: Got Evidence <color=\#94e9e4>Suffocation</color>
 ===
 
 title: Shards
@@ -646,6 +688,7 @@ tags: c:Owl:
 ---
 Athena: Glass shards...
 Athena: Why would that be there?
+: Got Evidence <color=\#94e9e4>Glass Shards</color>
 <<set $HasShards = true>>
 ===
 
@@ -655,6 +698,7 @@ tags: c:Owl:
 Athena: That's certainly a short stool.
 Athena: He had access to tall barstools and yet he used this step-stool.
 Athena: I don't even know if he's tall enough to have reached the noose even standing on this stool.
+: Got Evidence <color=\#94e9e4>Short Stool</color>
 ===
 
 title: MissingBottle
@@ -672,4 +716,12 @@ tags: c:Owl:
 	Athena: I thought they usually restock those overnight.
 	Athena: There must be <color=\#f3db82>some evidence</color> tied to this...
 <<endif>>
+===
+
+title: Key
+tags: c:Owl:
+---
+Athena: A key?
+Athena: Why would Mallard have a key in his pocket?
+: Got Evidence <color=\#94e9e4>Key</color>
 ===

@@ -20,3 +20,5 @@ MonoBehaviour:
   m_clueResponses:
   - clueID: Stool
     nodeResponse: GooseStool
+  - clueID: GooseBusinessPartner
+    nodeResponse: GooseBusinessPartner
