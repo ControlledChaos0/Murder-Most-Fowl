@@ -6,6 +6,8 @@ tags: lc: rc:
 <<declare $Tutorial = false>>
 <<declare $HasShards = false>>
 <<declare $PresentedShards = false>>
+<<declare $DuckBroke = false>>
+<<declare $PeacockArgument = false>>
 <<set $HasShards = false>>
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
@@ -98,6 +100,8 @@ Skipper: Is there any way I can help?#e:Happy#s:Penguin
 	Skipper: I did not, so I asked Morgana to lock up the parlor.#e:Sad
 	Athena: Did you notice anything else last night?
 	Skipper: <color=\#f3db82>I heard a crash in the middle of the night</color>, but I did not have the energy to deal with it.#e:Neutral
+	Skipper: I swear I tied all the luggage down properly.
+	Skipper: Though... I could've missed something when <color=\#f3db82>Melissa came to get something from her luggage</color>.
 	Athena: What about the morning? 
 	Skipper: I woke to the sound of chatter outside.
 	Skipper: I hadn't slept well so I was pretty groggy.
@@ -139,6 +143,7 @@ Athena: Tell me about...
 	Skipper: Mallard definitely.. left on bad terms with him.#e:Sad
 	Skipper: I'm not sure exactly why, but Mr. Gander had told that duck <color=\#f3db82>he needs to find a new job</color>.
 	Skipper: Kicked the poor guy off to the streets.
+	Athena: 
 	Skipper: Would you like to know about anyone else?#e:Neutral
 	<<jump PenguinEnemies>>
 -> Melissa Peacock
@@ -151,7 +156,8 @@ Athena: Tell me about...
 	Skipper: and <color=\#f3db82>"...MONEY OR YOU'RE CLUCKING DEAD"</color>.
 	Athena: Coming from Melissa? I find that kind of hard to believe.
 	Skipper: It's hard for me to believe too, but I remember what I heard.
-	Athena: I'll take note of this.
+	Athena: Perhaps I should <color=\#f3db82>ask Melissa</color> about this...
+	<<set $PeacockArgument to true>>
 	Skipper: Would you like to know about anyone else?
 	<<jump PenguinEnemies>>
 -> Morgana Noir
@@ -176,6 +182,9 @@ title:PenguinProof
 tags: c:Owl:Penguin
 ---
 <<set $ConvoChar = "Penguin">>
+<<if $Tutorial is false>>
+	<<jump PenguinConversation>>
+<<endif>>
 Skipper: Hello Detective. Do you have evidence for me?
 -> I do
 	<<jump ProofIdleNode1>>
@@ -374,6 +383,14 @@ Goose: What else would you like to ask?
 	Athena: Do you have any suspects?
 	Gander: I will not throw any lofty accusations.
 	<<jump GooseQuestions>>
+-> Is it true Mallard was low on money?<<if $DuckBroke>>
+	Gander: ...
+	Gander: Who told you this?
+	Athena: Melissa did.
+	Gander: Please keep this in confidence.
+	Gander: I was not supposed to tell Miss Peacock in the first place.
+	Gander: ...
+	Gander: I thought she deserved to know learning that duck owed her a large sum of money.
 -> That's all
 	<<jump GooseConversation>>
 
@@ -395,6 +412,13 @@ Gander: While our partnership was rather lucrative, it was nonetheless... tenuou
 Gander: Mallard inherited quite the fortune from his family and with it came great connections. 
 Gander: However, he was never the most business savvy duck in the pond.
 Gander: ...
+===
+
+title: GooseHandkerchief
+---
+Gander: Yes. This is mine.
+Gander: Mallard loved to snag little trinkets from me.
+Gander: It was quite petty honestly.
 ===
 
 title: GooseDuckBroke
@@ -478,9 +502,7 @@ Melissa: Now, what would you like to ask?
 	Athena: It's ok. Take your time.
 	Melissa: He and I used to get along fine, at least until I knew he was a swindler.
 	Athena: Swindler?
-	Melissa: The greedy duck agreed to pay me to perform at some of his lavish parties.
-	Melissa: Except he never had any money to begin with.
-	Melissa: You wouldn't think it by looking at him, but even I probably have more savings than he did.
+	Melissa: ...
 	<<jump PeacockQuestions0>>
 -> Do you know if anyone would want to kill him?
 	Melissa: My.. well I've overheard Mr. Gander was having troubles with Mallard.
@@ -504,6 +526,17 @@ Melissa: Now, what would you like to ask?
 	Athena: Let's just move on.
 	Melissa: Alright..
 	<<jump PeacockQuestions0>>
+-> I heard you and Mallard had an argument. <<if $PeacockArgument>>
+	Melissa: Yes we had an argument. 
+	Melissa: It was about the money he owed me.
+	Melissa: I was upset that he somehow was unable to pay me despite that fortune he boasts about.
+	Melissa: That extravagant duck was <color=\#94e9e4>broke this entire time</color>...
+	Melissa: I was angry in the moment, but I swear I would never actually hurt someone over this.
+	Athena: How did you learn of lack of funds? I hear he kept up his appearances well.
+	Melissa: ...
+	Melissa: I've said too much.
+	Athena: Perhaps I should ask <color=\#f3db82>someone who worked closely</color> with Mallard about this...
+	<<set $DuckBroke to true>>
 -> That's all the questions
 	<<jump PeacockMain>>
 ===
@@ -725,3 +758,27 @@ Athena: A key?
 Athena: Why would Mallard have a key in his pocket?
 : Got Evidence <color=\#94e9e4>Key</color>
 ===
+
+title: Handkerchief
+tags: c:Owl:
+---
+Athena: That's definitely a <color=\#f3db82>blunt force wound</color> on his head.
+Athena: That's strange though. It looks like someone <color=\#f3db82>intentionally cleaned the wound</color>...
+Athena: But wait, what's this?
+Athena: <color=\#f3db82>A handkerchief</color> in his hat?
+Athena: This must be what they used to clean out the wound.
+Athena: ... but why?
+: Got Evidence <color=\#94e9e4>Bloody Handkerchief</color>
+===
+
+title: PocketKnife
+tags: c:Owl:
+---
+Athena: Ah a knife.
+Athena: Quite a nice pocket knife as well.
+Athena: ...?
+Athena: What's this <color=\#f3db82>strange white powder</color> on the knife?
+Athena: I hope it's nothing too illegal.
+: Got Evidence <color=\#94e9e4>Pocket Knife</color>
+===
+

@@ -19,6 +19,9 @@ public class State
     public bool HasHandkerchief = false;
     public bool InspectHandkerchief = false;
 
+    //[Header("Player")]
+    //public PlayerState PlayerState;
+
     [Header("Characters")]
     public string ConvoChar = "";
     public List<CharacterState> CharacterStates;
@@ -28,6 +31,8 @@ public class State
     public int CrowRelationship = 0;
     public bool HasShards = false;
     public bool PresentedShards = false;
+    public bool DuckBroke = false;
+    public bool PeacockArgument = false;
 
     [Header("Inventory")] 
     public List<string> DiscoveredClues = new();

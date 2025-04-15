@@ -22,3 +22,5 @@ MonoBehaviour:
     nodeResponse: GooseStool
   - clueID: GooseBusinessPartner
     nodeResponse: GooseBusinessPartner
+  - clueID: Handkerchief
+    nodeResponse: GooseHandkerchief

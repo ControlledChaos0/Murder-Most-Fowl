@@ -6,12 +6,14 @@ public class MagnifyingCursor : MonoBehaviour
     private Texture2D _normalCursor;
     [SerializeField]
     private Texture2D _magnifyingCursor;
+    [SerializeField]
+    private bool onlyMain = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -22,7 +24,10 @@ public class MagnifyingCursor : MonoBehaviour
 
     void OnMouseEnter()
     {
-         Cursor.SetCursor(_magnifyingCursor, Vector2.zero, CursorMode.Auto);
+        if (!onlyMain || !GameManager.StateManager.ActiveState.Tutorial)
+        {
+            Cursor.SetCursor(_magnifyingCursor, Vector2.zero, CursorMode.Auto);
+        }
     }
 
     void OnMouseExit()

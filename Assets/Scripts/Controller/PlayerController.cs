@@ -20,22 +20,27 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // TODO
-        // Uncomment when ClosestFloorLocation is fixed!
-
-        //transform.position = ScreenManager.Instance.GetClosestFloorLocation(new Ray(transform.position, transform.forward));
+        transform.position = ScreenManager.Instance.GetClosestFloorLocation(new Ray(transform.position, transform.forward));
         InputController.Instance.Click += OnClick;
+
+        m_OldPos = transform.position;
+        m_NewPos = m_OldPos;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (m_IsMoving && !m_OldPos.Equals(m_NewPos))
+
+    }
+
+    void FixedUpdate()
+    {
+        if (m_IsMoving)
         {
-            if ((Time.time - m_ClickTime) / 5f < 1)
+            if (Vector2.Distance(transform.position, m_NewPos) >= 0.001f)
             {
-                transform.position = Vector2.Lerp(m_OldPos, m_NewPos, (Time.time - m_ClickTime) / m_MoveTime);
-              
+                transform.position = Vector2.Lerp(m_OldPos, m_NewPos, m_ClickTime / m_MoveTime);
+                m_ClickTime += Time.deltaTime;
             }
             else
             {
@@ -55,6 +60,11 @@ public class PlayerController : MonoBehaviour
     [YarnCommand("move")]
     public void Move(Ray ray) 
     {
+        if (DialogueHelper.Instance.InDialogue || ClueBoardManager.Instance.InClueboard)
+        {
+            return;
+        }
+
         m_OldPos = transform.position;
         m_NewPos = ScreenManager.Instance.GetClosestFloorLocation(ray);
         Debug.Log(m_NewPos);
@@ -65,11 +75,12 @@ public class PlayerController : MonoBehaviour
             _characterSprite.flipX = false;
         }
 
-        m_ClickTime = Time.time;
+        m_ClickTime = 0.0f;
         m_IsMoving = true;
     }
 
-    public bool getIsMoving() {
-        return !m_OldPos.Equals(m_NewPos);
+    public bool getIsMoving()
+    {
+        return m_IsMoving;
     }
 }

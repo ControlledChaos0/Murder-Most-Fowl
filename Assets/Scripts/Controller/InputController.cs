@@ -39,6 +39,7 @@ public class InputController : Singleton<InputController>
 
     //private InputAction _moveAction;
     private InputAction _clueBoardAction;
+    private InputAction _continueAction;
     //private InputAction _scrollClueBoardAction;
 
     //private Vector2 _mouseDelta;
@@ -65,6 +66,7 @@ public class InputController : Singleton<InputController>
     public event Action RightHold;
     public event Action RightCancel;
     public event Action Pause;
+    public event Action Continue;
     //public event Action<Vector2> Hover;
     //public event Action<Vector2> MouseMove;
 
@@ -119,6 +121,7 @@ public class InputController : Singleton<InputController>
         _mainControls = inputActions.FindActionMap("MainControls");
 
         _clueBoardAction = _mainControls.FindAction("ClueBoard");
+        _continueAction = _mainControls.FindAction("Continue");
     }
 
     private void SetUIControls()
