@@ -32,4 +32,9 @@ public class ScreenManager : Singleton<ScreenManager>
     public Vector2 GetClosestFloorLocation(Ray clickRay) {
         return m_CurrentRoomScreenContainer.Floor.GetClosestFloorLocation(clickRay);
     }
+
+    public Vector2 GetClosestFloorLocation(Vector3 point)
+    {
+        return m_CurrentRoomScreenContainer.Floor.GetClosestFloorLocation(point);
+    }
 }
