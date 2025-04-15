@@ -28,6 +28,8 @@ public class State
     public int CrowRelationship = 0;
     public bool HasShards = false;
     public bool PresentedShards = false;
+    public bool DuckBroke = false;
+    public bool PeacockArgument = false;
 
     [Header("Inventory")] 
     public List<string> DiscoveredClues = new();

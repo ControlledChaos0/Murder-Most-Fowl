@@ -6,6 +6,8 @@ tags: lc: rc:
 <<declare $Tutorial = false>>
 <<declare $HasShards = false>>
 <<declare $PresentedShards = false>>
+<<declare $DuckBroke = false>>
+<<declare $PeacockArgument = false>>
 <<set $HasShards = false>>
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
@@ -380,6 +382,14 @@ Goose: What else would you like to ask?
 	Athena: Do you have any suspects?
 	Gander: I will not throw any lofty accusations.
 	<<jump GooseQuestions>>
+-> Is it true Mallard was low on money?<<if $DuckBroke>>
+	Gander: ...
+	Gander: Who told you this?
+	Athena: Melissa did.
+	Gander: Please keep this in confidence.
+	Gander: I was not supposed to tell Miss Peacock in the first place.
+	Gander: ...
+	Gander: I thought she deserved to know learning that duck owed her a large sum of money.
 -> That's all
 	<<jump GooseConversation>>
 
@@ -494,6 +504,9 @@ Melissa: Now, what would you like to ask?
 	Melissa: The greedy duck agreed to pay me to perform at some of his lavish parties.
 	Melissa: Except he never had any money to begin with.
 	Melissa: You wouldn't think it by looking at him, but even I probably have more savings than he did.
+	Athena: ...
+	Athena: Perhaps I should ask <color=\#f3db82>someone who worked closely</color> with Mallard about this...
+	<<set $DuckBroke to true>>
 	<<jump PeacockQuestions0>>
 -> Do you know if anyone would want to kill him?
 	Melissa: My.. well I've overheard Mr. Gander was having troubles with Mallard.
@@ -761,3 +774,4 @@ Athena: What's this <color=\#f3db82>strange white powder</color> on the knife?
 Athena: I hope it's nothing too illegal.
 : Got Evidence <color=\#94e9e4>Pocket Knife</color>
 ===
+
