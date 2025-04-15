@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Handkerchief_0: -6556667986676761837
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

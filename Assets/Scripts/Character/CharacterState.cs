@@ -103,6 +103,16 @@ public partial class CharacterState
             m_charClueDict = value;
         }
     }
+
+    [Key(7), SerializeField]
+    private Vector3 m_position;
+
+    [IgnoreMember]
+    public Vector3 Position
+    {
+        get { return m_position; }
+        set { m_position = value; }
+    }
 }
 
 [MessagePackObject(AllowPrivate = true), System.Serializable]

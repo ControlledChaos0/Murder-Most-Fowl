@@ -49,6 +49,11 @@ public class DialogueHelper : Singleton<DialogueHelper>
     [SerializeField] private AudioSource _source;
     [SerializeField] private List<Song> _trackList;
 
+
+    public bool InDialogue
+    {
+        get => _inDialogue;
+    }
     public DialogueRunner DialogueRunner
     {
         get => _dialogueRunner;
@@ -66,6 +71,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
     private static List<Song> _tracks;
 
     private Dictionary<string, string> _nameDict = new();
+    private bool _inDialogue;
 
     void Awake()
     {
@@ -82,6 +88,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _inDialogue = false;
         _dialogueRunner.onNodeStart.AddListener(StartNode);
         //TMPro_EventManager.TEXT_CHANGED_EVENT.Add(NamePortraitUpdater);
 
@@ -100,6 +107,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
 
     public void StartDialogue()
     {
+        _inDialogue = true;
         AddContinueInput();
         ClueBoardManager.Instance.LockToggle();
         _background.SetActive(true);
@@ -107,6 +115,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
 
     public void EndDialogue()
     {
+        _inDialogue = false;
         RemoveContinueInput();
         ClueBoardManager.Instance.UnlockToggle();
         _background.SetActive(false);

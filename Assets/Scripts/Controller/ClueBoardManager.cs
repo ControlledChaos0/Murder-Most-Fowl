@@ -58,6 +58,11 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     [SerializeField] private float _zoomOutLimit = 0.328f;
     [SerializeField] private float _zoomInLimit = 1.25f;
 
+    public bool InClueboard
+    {
+        get => _activated;
+    }
+
     private GraphicRaycaster _graphicRaycaster;
     public GraphicRaycaster GraphicRaycast => _graphicRaycaster;
     private Animator _animator;
@@ -84,6 +89,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     private void Awake() {
         InitializeSingleton();
         _toggleLock = false;
+        _activated = false;
     }
 
     // Start is called before the first frame update
@@ -94,8 +100,6 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
 
         InputController.Instance.ToggleClueBoard += ToggleClueBoard;
         // InputController.Instance.ToggleStickyNote += ToggleStickyNote;
-
-        _activated = false;
         //_scrollEnabled = true;
         _canPresent = false;
 

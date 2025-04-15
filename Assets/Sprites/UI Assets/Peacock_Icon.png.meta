@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Peacock_Icon_0: -7748286355381842774
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
