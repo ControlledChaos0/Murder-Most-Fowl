@@ -179,6 +179,9 @@ title:PenguinProof
 tags: c:Owl:Penguin
 ---
 <<set $ConvoChar = "Penguin">>
+<<if $Tutorial is false>>
+	<<jump PenguinConversation>>
+<<endif>>
 Skipper: Hello Detective. Do you have evidence for me?
 -> I do
 	<<jump ProofIdleNode1>>
