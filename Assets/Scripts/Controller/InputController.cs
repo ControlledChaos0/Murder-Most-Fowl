@@ -37,9 +37,8 @@ public class InputController : Singleton<InputController>
     private InputAction _scrollAction;
     //private InputAction _cancelAction;
 
-    //private InputAction _moveAction;
+    private InputAction _moveAction;
     private InputAction _clueBoardAction;
-    private InputAction _continueAction;
     //private InputAction _scrollClueBoardAction;
 
     //private Vector2 _mouseDelta;
@@ -66,7 +65,7 @@ public class InputController : Singleton<InputController>
     public event Action RightHold;
     public event Action RightCancel;
     public event Action Pause;
-    public event Action Continue;
+    public event Action<float> Move;
     //public event Action<Vector2> Hover;
     //public event Action<Vector2> MouseMove;
 
@@ -121,7 +120,7 @@ public class InputController : Singleton<InputController>
         _mainControls = inputActions.FindActionMap("MainControls");
 
         _clueBoardAction = _mainControls.FindAction("ClueBoard");
-        _continueAction = _mainControls.FindAction("Continue");
+        _moveAction = _mainControls.FindAction("Move");
     }
 
     private void SetUIControls()
@@ -137,6 +136,7 @@ public class InputController : Singleton<InputController>
     private void InitializeMainControls()
     {
         _clueBoardAction.performed += OnToggleClueBoard;
+        _moveAction.performed += OnMove;
 
         _mainControls.Enable();
     }
@@ -154,6 +154,7 @@ public class InputController : Singleton<InputController>
     private void DeinitializeMainControls()
     {
         _clueBoardAction.performed -= OnToggleClueBoard;
+        _moveAction.performed -= OnMove;
 
         _mainControls.Disable();
     }
@@ -168,22 +169,6 @@ public class InputController : Singleton<InputController>
         _uiControls.Disable();
     }
 
-    //private void OnEnable() {
-    //    inputActions.FindActionMap(_currentActionMap.id).Enable();
-    //}
-
-    //private void OnDisable() {
-    //    inputActions.FindActionMap(_currentActionMap.id).Disable();
-    //}
-
-    //private void OnDeltaCursor(InputAction.CallbackContext inputValue) {
-    //    _mouseDelta = inputValue.ReadValue<Vector2>();
-    //    MouseMove?.Invoke(_mouseDelta);
-    //}
-
-    //private void OnCancel(InputValue inputValue) {
-    //    Cancel?.Invoke();
-    //}
     private void OnClickPerformed(InputAction.CallbackContext context)
     {
         if (_clickDown)
@@ -254,6 +239,11 @@ public class InputController : Singleton<InputController>
     private void OnPausePerformed(InputAction.CallbackContext context)
     {
         Pause?.Invoke();
+    }
+
+    private void OnMove(InputAction.CallbackContext context)
+    {
+        Move?.Invoke(context.ReadValue<float>());
     }
 
     //private void OnCloseClueBoard(InputAction.CallbackContext context) {
