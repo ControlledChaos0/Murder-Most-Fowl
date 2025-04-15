@@ -12,7 +12,6 @@ tags: lc: rc:
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
 <<declare $CrowRelationship = 0.0>>
-<<jump Skip>>
 Athena: *cough cough* Ugh I can't sleep.
 Athena: The Bird Flu is no joke...
 ???: CRASH
@@ -383,6 +382,10 @@ Goose: What else would you like to ask?
 	Athena: Do you have any suspects?
 	Gander: I will not throw any lofty accusations.
 	<<jump GooseQuestions>>
+-> What did you mean by "not unexpected"?
+	Athena: You said this was “unfortunate but not entirely unexpected.” Could you elaborate?
+	Chase: ...
+	Chase: Let's just say he knew how to dig himself a hole.
 -> Is it true Mallard was low on money?<<if $DuckBroke>>
 	Gander: ...
 	Gander: Who told you this?
@@ -530,8 +533,10 @@ Melissa: Now, what would you like to ask?
 	Melissa: Yes we had an argument. 
 	Melissa: It was about the money he owed me.
 	Melissa: I was upset that he somehow was unable to pay me despite that fortune he boasts about.
-	Melissa: That extravagant duck was <color=\#94e9e4>broke this entire time</color>...
+	Melissa: That extravagant duck was <color=\#f3db82>broke this entire time</color>...
 	Melissa: I was angry in the moment, but I swear I would never actually hurt someone over this.
+	Athena: People don't always kill for rational reasons.
+	Melissa: ...
 	Athena: How did you learn of lack of funds? I hear he kept up his appearances well.
 	Melissa: ...
 	Melissa: I've said too much.
