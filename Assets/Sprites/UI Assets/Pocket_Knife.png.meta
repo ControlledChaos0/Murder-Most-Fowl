@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pocket_Knife_0: 5929359292380248679
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

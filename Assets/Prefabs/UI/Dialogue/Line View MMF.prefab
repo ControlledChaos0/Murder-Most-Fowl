@@ -988,11 +988,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueView: {fileID: 1138983699199077274}
-  continueActionType: 1
+  continueActionType: 4
   continueActionKeyCode: 13
   continueActionButtonName: Jump
   continueActionOnButtonRelease: 0
-  continueActionReference: {fileID: 0}
+  continueActionReference: {fileID: -6752888180545934054, guid: b55fb176813d48f4380b77e22f9e0a7f, type: 3}
   continueAction:
     m_Name: Skip
     m_Type: 1
