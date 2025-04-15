@@ -156,7 +156,8 @@ Athena: Tell me about...
 	Skipper: and <color=\#f3db82>"...MONEY OR YOU'RE CLUCKING DEAD"</color>.
 	Athena: Coming from Melissa? I find that kind of hard to believe.
 	Skipper: It's hard for me to believe too, but I remember what I heard.
-	Athena: I'll take note of this.
+	Athena: Perhaps I should <color=\#f3db82>ask Melissa</color> about this...
+	<<set $PeacockArgument to true>>
 	Skipper: Would you like to know about anyone else?
 	<<jump PenguinEnemies>>
 -> Morgana Noir
@@ -501,12 +502,7 @@ Melissa: Now, what would you like to ask?
 	Athena: It's ok. Take your time.
 	Melissa: He and I used to get along fine, at least until I knew he was a swindler.
 	Athena: Swindler?
-	Melissa: The greedy duck agreed to pay me to perform at some of his lavish parties.
-	Melissa: Except he never had any money to begin with.
-	Melissa: You wouldn't think it by looking at him, but even I probably have more savings than he did.
-	Athena: ...
-	Athena: Perhaps I should ask <color=\#f3db82>someone who worked closely</color> with Mallard about this...
-	<<set $DuckBroke to true>>
+	Melissa: ...
 	<<jump PeacockQuestions0>>
 -> Do you know if anyone would want to kill him?
 	Melissa: My.. well I've overheard Mr. Gander was having troubles with Mallard.
@@ -530,6 +526,17 @@ Melissa: Now, what would you like to ask?
 	Athena: Let's just move on.
 	Melissa: Alright..
 	<<jump PeacockQuestions0>>
+-> I heard you and Mallard had an argument. <<if $PeacockArgument>>
+	Melissa: Yes we had an argument. 
+	Melissa: It was about the money he owed me.
+	Melissa: I was upset that he somehow was unable to pay me despite that fortune he boasts about.
+	Melissa: That extravagant duck was <color=\#94e9e4>broke this entire time</color>...
+	Melissa: I was angry in the moment, but I swear I would never actually hurt someone over this.
+	Athena: How did you learn of lack of funds? I hear he kept up his appearances well.
+	Melissa: ...
+	Melissa: I've said too much.
+	Athena: Perhaps I should ask <color=\#f3db82>someone who worked closely</color> with Mallard about this...
+	<<set $DuckBroke to true>>
 -> That's all the questions
 	<<jump PeacockMain>>
 ===
