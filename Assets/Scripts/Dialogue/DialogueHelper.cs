@@ -1,8 +1,10 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using Yarn.Unity;
@@ -14,6 +16,12 @@ public class DialogueHelper : Singleton<DialogueHelper>
     {
         public string name;
         public Sprite sprite;
+    }
+    [Serializable]
+    public struct Song
+    {
+        public string name;
+        public AudioClip song;
     }
 
     [Serializable]
@@ -38,6 +46,8 @@ public class DialogueHelper : Singleton<DialogueHelper>
     [SerializeField] private Image _rightCharacter;
     [SerializeField] private List<SpriteItem> _spriteList;
     [SerializeField] private List<NameSpriteMatch> _nameList;
+    [SerializeField] private AudioSource _source;
+    [SerializeField] private List<Song> _trackList;
 
 
     public bool InDialogue
@@ -57,6 +67,9 @@ public class DialogueHelper : Singleton<DialogueHelper>
     private static List<NameSpriteMatch> _names;
     private static bool lockPortrait = false;
 
+    private static AudioSource _audioSource;
+    private static List<Song> _tracks;
+
     private Dictionary<string, string> _nameDict = new();
     private bool _inDialogue;
 
@@ -68,6 +81,9 @@ public class DialogueHelper : Singleton<DialogueHelper>
         _right = _rightCharacter;
         _sprites = _spriteList;
         _names = _nameList;
+        _tracks = _trackList;
+        _audioSource = _source;
+
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -224,6 +240,17 @@ public class DialogueHelper : Singleton<DialogueHelper>
         ChangeRight(right_name);
     }
 
+    public void ChangeTrack(string trackName = null)
+    {
+        AudioClip newClip = _tracks.Find(e => e.name == trackName).song;
+        if (newClip != _audioSource.clip)
+        {
+            _audioSource.clip = newClip;
+            _audioSource.volume = 1;
+            _audioSource.Play();
+        }
+    }
+
     public void UpdateDialogueUI(LocalizedLine localLine)
     {
         string[] nameParts = localLine.RawText.Split(':');
@@ -267,6 +294,11 @@ public class DialogueHelper : Singleton<DialogueHelper>
         if (tagParts[0] == "e")
         {
             ChangeRightExpression(tagParts[1]);
+            return;
+        }
+        if (tagParts[0] == "s")
+        {
+            ChangeTrack(tagParts[1]);
             return;
         }
         

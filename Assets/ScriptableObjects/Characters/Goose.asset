@@ -15,8 +15,12 @@ MonoBehaviour:
   m_characterID: Goose
   m_name: Chase Wilde Gander
   m_startingNode: GooseIntroduction
-  m_startingIdle: GooseIdle
+  m_startingIdle: GooseConversation
   m_startingDismissal: GooseDismissal
   m_clueResponses:
-  - clueID: Goose
-    nodeResponse: Stool
+  - clueID: Stool
+    nodeResponse: GooseStool
+  - clueID: GooseBusinessPartner
+    nodeResponse: GooseBusinessPartner
+  - clueID: Handkerchief
+    nodeResponse: GooseHandkerchief

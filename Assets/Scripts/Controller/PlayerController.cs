@@ -75,6 +75,6 @@ public class PlayerController : MonoBehaviour
     }
 
     public bool getIsMoving() {
-        return m_IsMoving;
+        return !m_OldPos.Equals(m_NewPos);
     }
 }

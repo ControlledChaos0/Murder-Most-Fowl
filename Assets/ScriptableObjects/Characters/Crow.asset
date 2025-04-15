@@ -15,8 +15,10 @@ MonoBehaviour:
   m_characterID: Crow
   m_name: Morgana Noir
   m_startingNode: CrowIntroduction
-  m_startingIdle: CrowConversation
+  m_startingIdle: CrowIdle
   m_startingDismissal: CrowDismissal
   m_clueResponses:
   - clueID: GlassShard
     nodeResponse: CrowGlass
+  - clueID: CrowEx
+    nodeResponse: CrowEx

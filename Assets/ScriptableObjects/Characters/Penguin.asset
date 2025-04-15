@@ -24,3 +24,5 @@ MonoBehaviour:
     nodeResponse: PenguinRope
   - clueID: Bottle
     nodeResponse: PenguinBottle
+  - clueID: Key
+    nodeResponse: PenguinKey
