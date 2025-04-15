@@ -98,6 +98,8 @@ Skipper: Is there any way I can help?#e:Happy#s:Penguin
 	Skipper: I did not, so I asked Morgana to lock up the parlor.#e:Sad
 	Athena: Did you notice anything else last night?
 	Skipper: <color=\#f3db82>I heard a crash in the middle of the night</color>, but I did not have the energy to deal with it.#e:Neutral
+	Skipper: I swear I tied all the luggage down properly.
+	Skipper: Though... I could've missed something when <color=\#f3db82>Melissa came to get something from her luggage</color>.
 	Athena: What about the morning? 
 	Skipper: I woke to the sound of chatter outside.
 	Skipper: I hadn't slept well so I was pretty groggy.
@@ -139,6 +141,7 @@ Athena: Tell me about...
 	Skipper: Mallard definitely.. left on bad terms with him.#e:Sad
 	Skipper: I'm not sure exactly why, but Mr. Gander had told that duck <color=\#f3db82>he needs to find a new job</color>.
 	Skipper: Kicked the poor guy off to the streets.
+	Athena: 
 	Skipper: Would you like to know about anyone else?#e:Neutral
 	<<jump PenguinEnemies>>
 -> Melissa Peacock
@@ -395,6 +398,13 @@ Gander: While our partnership was rather lucrative, it was nonetheless... tenuou
 Gander: Mallard inherited quite the fortune from his family and with it came great connections. 
 Gander: However, he was never the most business savvy duck in the pond.
 Gander: ...
+===
+
+title: GooseHandkerchief
+---
+Gander: Yes. This is mine.
+Gander: Mallard loved to snag little trinkets from me.
+Gander: It was quite petty honestly.
 ===
 
 title: GooseDuckBroke
@@ -724,4 +734,27 @@ tags: c:Owl:
 Athena: A key?
 Athena: Why would Mallard have a key in his pocket?
 : Got Evidence <color=\#94e9e4>Key</color>
+===
+
+title: Handkerchief
+tags: c:Owl:
+---
+Athena: That's definitely a <color=\#f3db82>blunt force wound</color> on his head.
+Athena: That's strange though. It looks like someone <color=\#f3db82>intentionally cleaned the wound</color>...
+Athena: But wait, what's this?
+Athena: <color=\#f3db82>A handkerchief</color> in his hat?
+Athena: This must be what they used to clean out the wound.
+Athena: ... but why?
+: Got Evidence <color=\#94e9e4>Bloody Handkerchief</color>
+===
+
+title: PocketKnife
+tags: c:Owl:
+---
+Athena: Ah a knife.
+Athena: Quite a nice pocket knife as well.
+Athena: ...?
+Athena: What's this <color=\#f3db82>strange white powder</color> on the knife?
+Athena: I hope it's nothing too illegal.
+: Got Evidence <color=\#94e9e4>Pocket Knife</color>
 ===
