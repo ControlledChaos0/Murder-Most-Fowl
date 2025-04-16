@@ -33,6 +33,7 @@ public class State
     public bool PresentedShards = false;
     public bool DuckBroke = false;
     public bool PeacockArgument = false;
+    public bool DeliverLetter = false;
 
     [Header("Inventory")] 
     public List<string> DiscoveredClues = new();
