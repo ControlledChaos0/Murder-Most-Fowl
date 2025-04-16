@@ -17,4 +17,6 @@ MonoBehaviour:
   m_startingNode: PeacockIntroduction
   m_startingIdle: PeacockIdle
   m_startingDismissal: PeacockDismissal
-  m_clueResponses: []
+  m_clueResponses:
+  - clueID: LoveLetter
+    nodeResponse: PeacockLoveLetter

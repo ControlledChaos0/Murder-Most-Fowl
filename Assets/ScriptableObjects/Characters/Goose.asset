@@ -24,3 +24,5 @@ MonoBehaviour:
     nodeResponse: GooseBusinessPartner
   - clueID: Handkerchief
     nodeResponse: GooseHandkerchief
+  - clueID: LoveLetter
+    nodeResponse: GooseLoveLetter
