@@ -13,6 +13,7 @@ tags: lc: rc:
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
 <<declare $CrowRelationship = 0.0>>
+<<jump Skip>>
 Athena: *cough cough* Ugh I can't sleep.
 Athena: The Bird Flu is no joke...
 ???: CRASH
@@ -611,6 +612,27 @@ Melissa: Oh! A letter.
 <<endif>>
 ===
 
+title: PeacockBurnedNote
+---
+Athena: I noticed your name on this note. Do you know why Mallard would address you in a note such as this?
+Melissa: He did <color=\#f3db82>owe me a large sum of money</color>.
+Athena: Do you know why someone may burn the note?
+Melissa: ...
+Athena: Do you have an idea of what the rest of the note may contain?
+Melissa: He was a <color=\#f3db82>gambling addict</color>.
+Athena: Gambling addict?
+Melissa: Could I see the note, perhaps?
+Athena: Sure.
+Melissa: ...
+Melissa: My, is this a suicide note?
+Athena: It would appear so.
+Athena: At least <i>appears</i> so.
+Athena: We've already proven this was not in fact a suicide, so <color=\#f3db82>it's very possible the murderer planted it as fake evidence</color>.
+Athena: The only question is though, <color=\#f3db82>why would it be burned</color>?
+Melissa: And how did they know about me and Mallard's-
+Melissa: Nevermind.
+===
+
 title: CrowIntroduction
 tags: lc: Owl rc:
 ---
@@ -824,5 +846,13 @@ Athena: ...?
 Athena: What's this <color=\#f3db82>strange white powder</color> on the knife?
 Athena: I hope it's nothing too illegal.
 : Got Evidence <color=\#94e9e4>Pocket Knife</color>
+===
+
+title: BurnedNote
+tags: c:Owl:
+---
+Athena: A burned note in the furnace?
+Athena: I should try to read this.
+: Got Evidence <color=\#94e9e4>Burned Note</color>
 ===
 
