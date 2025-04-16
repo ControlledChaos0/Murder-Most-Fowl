@@ -8,11 +8,11 @@ tags: lc: rc:
 <<declare $PresentedShards = false>>
 <<declare $DuckBroke = false>>
 <<declare $PeacockArgument = false>>
+<<declare $DeliverLetter = false>>
 <<set $HasShards = false>>
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
 <<declare $CrowRelationship = 0.0>>
-<<jump Skip>>
 Athena: *cough cough* Ugh I can't sleep.
 Athena: The Bird Flu is no joke...
 ???: CRASH
@@ -349,48 +349,52 @@ Chase: What do you want?#s:Goose
 ===
 title: GooseQuestions
 ---
-Goose: What else would you like to ask?
+Chase: What else would you like to ask?
 -> Where were you last night?
-	Gander: Mallard and I were discussing private business matters.
+	Chase: Mallard and I were discussing private business matters.
 	Athena: Business matters?
-	Gander: As I said. Private.
-	Gander: After we concluded, I decided to retire to bed early.
-	Gander: I was woken by a large crash in the dining car, but assumed nothing of and went back to sleep.
+	Chase: As I said. Private.
+	Chase: After we concluded, I decided to retire to bed early.
+	Chase: I was woken by a large crash in the dining car, but assumed nothing of and went back to sleep.
 	Athena: Did you hear anything else?
-	Gander: I did not. The earplugs I put in after waking assured that.
-	Gander: When I finally woke at an appropriate time, I heard Melissa's voice outside my quarters.
-	Gander: When I exited, I was greeted by a locked parlor car door and noticed that bartender enter her dorm.
+	Chase: I did not. The earplugs I put in after waking assured that.
+	Chase: When I finally woke at an appropriate time, I heard Melissa's voice outside my quarters.
+	Chase: When I exited, I was greeted by a locked parlor car door and noticed that bartender enter her dorm.
 	Athena: Bartender? As in Morgana?
-	Gander: Ah yes, that is her name, isn't it?
-	Gander: Anyways, I confronted the bellboy about the locked door, but he claimed to have misplaced his key.
-	Gander: My ask was for naught however, as the door was soon unlocked by someone. 
-	Gander: Followed by a bloodcurdling scream.
+	Chase: Ah yes, that is her name, isn't it?
+	Chase: Anyways, I confronted the bellboy about the locked door, but he claimed to have misplaced his key.
+	Chase: My ask was for naught however, as the door was soon unlocked by someone. 
+	Chase: Followed by a bloodcurdling scream.
 	Athena: Is that when they found the body?
-	Gander: ...
-	Gander: Indeed.
+	Chase: ...
+	Chase: Indeed.
 	<<jump GooseQuestions>>
 -> What are your thoughts about Mallard?
-	Gander: Mallard.. He was always quite troubled.
+	Chase: Mallard.. He was always quite troubled.
 	Athena: Can you elaborate?
-	Gander: I will not speak ill of the dead.
+	Chase: I will not speak ill of the dead.
 	-> Press
 		<<PresentEvidence>>
 	-> Anyways...
 		<<jump GooseQuestions>>
 -> Do you know if anyone would want to kill him?
-	Gander: I hope you do not suspect it was me.
-	Gander: Though I would not blame you for the suspicion.
+	Chase: I hope you do not suspect it was me.
+	Chase: Though I would not blame you for the suspicion.
 	Athena: Do you have any suspects?
-	Gander: I will not throw any lofty accusations.
+	Chase: I will not throw any lofty accusations.
 	<<jump GooseQuestions>>
+-> What did you mean by "not unexpected"?
+	Athena: You said this was “unfortunate but not entirely unexpected.” Could you elaborate?
+	Chase: ...
+	Chase: Let's just say he knew how to dig himself a hole.
 -> Is it true Mallard was low on money?<<if $DuckBroke>>
-	Gander: ...
-	Gander: Who told you this?
+	Chase: ...
+	Chase: Who told you this?
 	Athena: Melissa did.
-	Gander: Please keep this in confidence.
-	Gander: I was not supposed to tell Miss Peacock in the first place.
-	Gander: ...
-	Gander: I thought she deserved to know learning that duck owed her a large sum of money.
+	Chase: Please keep this in confidence.
+	Chase: I was not supposed to tell Miss Peacock in the first place.
+	Chase: ...
+	Chase: I thought she deserved to know learning that duck owed her a large sum of money.
 -> That's all
 	<<jump GooseConversation>>
 
@@ -398,37 +402,56 @@ Goose: What else would you like to ask?
 
 title: GooseStool
 ---
-Gander: You think Mallard used that in his attempt?
-Gander: I find that… hard to believe.
+Chase: You think Mallard used that in his attempt?
+Chase: I find that… hard to believe.
 Athena: What do you mean by that?
-Gander: Well, Mallard, you've seen him. 
-Gander: Poor thing he was <color=\#f3db82>never one to stand out of a crowd</color>.
+Chase: Well, Mallard, you've seen him. 
+Chase: Poor thing he was <color=\#f3db82>never one to stand out of a crowd</color>.
 ===
 
 title: GooseBusinessPartner
 ---
-Gander: We were indeed business partners.
-Gander: While our partnership was rather lucrative, it was nonetheless... tenuous.
-Gander: Mallard inherited quite the fortune from his family and with it came great connections. 
-Gander: However, he was never the most business savvy duck in the pond.
-Gander: ...
+Chase: We were indeed business partners.
+Chase: While our partnership was rather lucrative, it was nonetheless... tenuous.
+Chase: Mallard inherited quite the fortune from his family and with it came great connections. 
+Chase: However, he was never the most business savvy duck in the pond.
+Chase: ...
 ===
 
 title: GooseHandkerchief
 ---
-Gander: Yes. This is mine.
-Gander: Mallard loved to snag little trinkets from me.
-Gander: It was quite petty honestly.
+Chase: Yes. This is mine.
+Chase: Mallard loved to snag little trinkets from me.
+Chase: It was quite petty honestly.
 ===
 
 title: GooseDuckBroke
 ---
-Gander: I cannot legally discuss this matter.
+Chase: I cannot legally discuss this matter.
 ===
 
 title: GooseDismissal
 ---
-Gander: I don't see the relevance of this.
+Chase: I don't see the relevance of this.
+===
+
+title: GooseLoveLetter
+---
+Chase: Oh. Well that's a bit private.
+Athena: I apologize, but this is an investigation.
+Chase: Understood.
+Chase: Melissa and I did <color=\#f3db82>sleep in the same bed last night</color>.
+Chase: We've been quite close recently... but elected to keep it under wraps.
+Chase: Last night she was drunk, so I would never dream to make further advances.
+Chase: I accidentally fell asleep, <color=\#f3db82>only to be started awake by the aformentioned crash</color>.
+Chase: However, before I left the room <color=\#f3db82>I heard someone walking down the hallway</color>.
+Chase: I'm not entirely sure who it was, however.
+Chase: I waited around 30 more minutes, worried my cover would be blown, before I ultimately retired to my room.
+Chase: ...
+Chase: I still have things left unsaid to Melissa.
+Chase: I know this is the cowardly method, but would you mind <color=\#f3db82>delivering that letter to her</color>?
+Athena: Of course.
+<<set $DeliverLetter to true>>
 ===
 
 title: PeacockIntroduction
@@ -530,8 +553,10 @@ Melissa: Now, what would you like to ask?
 	Melissa: Yes we had an argument. 
 	Melissa: It was about the money he owed me.
 	Melissa: I was upset that he somehow was unable to pay me despite that fortune he boasts about.
-	Melissa: That extravagant duck was <color=\#94e9e4>broke this entire time</color>...
+	Melissa: That extravagant duck was <color=\#f3db82>broke this entire time</color>...
 	Melissa: I was angry in the moment, but I swear I would never actually hurt someone over this.
+	Athena: People don't always kill for rational reasons.
+	Melissa: ...
 	Athena: How did you learn of lack of funds? I hear he kept up his appearances well.
 	Melissa: ...
 	Melissa: I've said too much.
@@ -565,6 +590,25 @@ Melissa: Is there anything else, dear?
 title: PeacockDismissal
 ---
 Melissa: I'm sorry, I'm not sure what to say.
+===
+
+title: PeacockLoveLetter
+---
+Melissa: Oh! A letter.
+<<if $DeliverLetter>>
+	Athena: Gander wanted me to deliver this to you.
+	Melissa: Oh my. Let me see.
+	Melissa: ...
+	Melissa: Oh! Oh Gander!
+	Athena: Was it true he was with you last night?
+	Melissa: Yes, now that I think about it.
+	Melissa: My memory is a little hazy, but <color=\#f3db82>he was with me for quite a while last night</color>.
+	Melissa: Oh Gander... what should I say?
+	Athena: I'll leave you with your thoughts.
+<<else>>
+	Athena: Have you seen this letter before?
+	Melissa: No, it doesn't look familiar.
+<<endif>>
 ===
 
 title: CrowIntroduction

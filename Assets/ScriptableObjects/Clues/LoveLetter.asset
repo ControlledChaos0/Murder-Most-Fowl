@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
+  m_Name: LoveLetter
+  m_EditorClassIdentifier: 
+  m_clueID: LoveLetter
+  m_name: LoveLetter
+  m_clarificationInfo: 
+  m_description: 
+  m_icon: {fileID: 2041384896188227262, guid: 562358534d0d5a1488886c2bf1caaa95, type: 3}
