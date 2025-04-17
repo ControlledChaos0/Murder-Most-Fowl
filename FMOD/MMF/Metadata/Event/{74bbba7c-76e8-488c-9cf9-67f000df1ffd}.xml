@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{74bbba7c-76e8-488c-9cf9-67f000df1ffd}">
 		<property name="note">
 			<value>This is an example of a horizontal re-sequencing music event with quantized stingers and transition regions.
@@ -488,10 +488,13 @@ https://www.fmod.com/docs/studio/working-with-instruments.html#delay-and-quantiz
 	<object class="MixerBusPanner" id="{f4bea47b-a7d6-4ff7-8e50-61d3d2dd56d7}" />
 	<object class="ParameterCondition" id="{05c2e4db-c26a-48e9-889e-e1bb40ee73fe}">
 		<property name="minimum">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<property name="maximum">
-			<value>0</value>
+			<value>1</value>
+		</property>
+		<property name="isInverted">
+			<value>true</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{25a540fc-fedb-48d6-8e2f-c51e3cbea5b0}</destination>
@@ -517,7 +520,7 @@ https://www.fmod.com/docs/studio/working-with-instruments.html#delay-and-quantiz
 			<value>0</value>
 		</property>
 		<property name="curveShape">
-			<value>-0.2547189</value>
+			<value>0.660030365</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{1ba52d06-a54f-40e5-8f11-4e24e29f91f7}">
