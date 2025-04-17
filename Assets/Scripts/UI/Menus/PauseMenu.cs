@@ -53,12 +53,14 @@ namespace UI
         {
             Time.timeScale = 0f;
             GameIsPaused = true;
+            AudioManager.Instance.PauseEffect(GameIsPaused);
         }
 
         private void Resume()
         {
             Time.timeScale = 1f;
             GameIsPaused = false;
+            AudioManager.Instance.PauseEffect(GameIsPaused);
         }
 
         public void LoadMainMenu()

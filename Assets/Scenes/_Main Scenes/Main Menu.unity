@@ -701,12 +701,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.00019222498
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.05013174
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.99961555
       objectReference: {fileID: 0}
     - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8997365
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3530235729408648359, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_Name
@@ -723,6 +731,30 @@ PrefabInstance:
     - target: {fileID: 4146576473392162029, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982810427223459047, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: PauseParam
+      value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982810427223459047, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: PlayerStateEvent.Path
+      value: event:/Music/Leisure Theme
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982810427223459047, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: PlayerStateEvent.Guid.Data1
+      value: 442722726
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982810427223459047, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: PlayerStateEvent.Guid.Data2
+      value: 1321233250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982810427223459047, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: PlayerStateEvent.Guid.Data3
+      value: 2004624822
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982810427223459047, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: PlayerStateEvent.Guid.Data4
+      value: -1984706905
       objectReference: {fileID: 0}
     - target: {fileID: 9072688080832006082, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_LocalPosition.x
