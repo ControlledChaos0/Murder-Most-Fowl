@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1340290992381003391}
-  - component: {fileID: 2995439071781968964}
+  - component: {fileID: 5982810427223459047}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -26,13 +26,13 @@ Transform:
   m_GameObject: {fileID: 1616869763683136538}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.88992, y: 1.5065899, z: -10.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9072688080832006082}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2995439071781968964
+--- !u!114 &5982810427223459047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,28 +41,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 1616869763683136538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Script: {fileID: 11500000, guid: b486f138cf43f8243b9e593b83d141ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
+  musicList:
+  - Guid:
+      Data1: 442722726
+      Data2: 1321233250
+      Data3: 2004624822
+      Data4: -1984706905
+    Path: event:/Music/Leisure Theme
+  - Guid:
       Data1: -621343343
       Data2: 1144242051
       Data3: -382869067
       Data4: -210749033
     Path: event:/Music/Start Music
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  - Guid:
+      Data1: 765647763
+      Data2: 1259591308
+      Data3: 1941464491
+      Data4: 316826349
+    Path: event:/Music/Peacock
+  - Guid:
+      Data1: -1922771416
+      Data2: 1204786309
+      Data3: -111328842
+      Data4: 452533512
+    Path: event:/Music/Penguin
+  startMusicIndex: 0
 --- !u!1 &3530235729408648359
 GameObject:
   m_ObjectHideFlags: 0

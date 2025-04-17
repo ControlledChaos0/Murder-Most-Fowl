@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{18c31db5-88aa-4751-9a4d-b53fa7f5251a}">
 		<property name="assetPath">
-			<value>crow theme draft loopable.mp3</value>
+			<value>Music/crow theme draft loopable.mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
