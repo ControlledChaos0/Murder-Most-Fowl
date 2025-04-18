@@ -233,6 +233,33 @@ public class DialogueHelper : Singleton<DialogueHelper>
         }
     }
 
+    public static void ChangeLeftExpression(string name = null)
+    {
+        if (lockPortrait)
+        {
+            return;
+        }
+
+        if (string.IsNullOrEmpty(name))
+        {
+            _left.gameObject.SetActive(false);
+            return;
+        }
+
+        NameSpriteMatch charInfo = _names.Find(e => e.charID == _leftName);
+
+        SpriteItemList expressions = charInfo.expressions;
+        Debug.Log(charInfo.name);
+        Debug.Log(charInfo.charID);
+        
+        if (expressions != null)
+        {
+            _left.gameObject.SetActive(true);
+            SpriteItem spriteItem = expressions.spriteItemList.Find(e => e.name == name);
+            _left.sprite = spriteItem.sprite;
+        }
+    }
+
     [YarnCommand("ChangeCharacters")]
     public static void ChangeCharacters(string left_name = null, string right_name = null)
     {
@@ -294,6 +321,11 @@ public class DialogueHelper : Singleton<DialogueHelper>
         if (tagParts[0] == "e")
         {
             ChangeRightExpression(tagParts[1]);
+            return;
+        }
+        if (tagParts[0] == "el")
+        {
+            ChangeLeftExpression(tagParts[1]);
             return;
         }
         if (tagParts[0] == "s")

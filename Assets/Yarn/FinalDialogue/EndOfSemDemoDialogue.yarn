@@ -13,11 +13,10 @@ tags: lc: rc:
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
 <<declare $CrowRelationship = 0.0>>
-<<jump Skip>>
 Athena: *cough cough* Ugh I can't sleep.
-Athena: The Bird Flu is no joke...
+Athena: The Bird Flu is no joke...#el:Sad
 ???: CRASH
-Athena: ... what was that?
+Athena: ... what was that?#el:Surprised
 ???: clop clop clop
 Athena: Who's up this late at night making such a ruckus. 
 Athena: Luckily *cough* for them I'm too sick to do anything about it.

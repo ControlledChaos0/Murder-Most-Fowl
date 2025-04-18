@@ -221,6 +221,10 @@ MonoBehaviour:
     CharacterStates: []
     Tutorial: 1
     CrowRelationship: 0
+    HasShards: 0
+    PresentedShards: 0
+    DuckBroke: 0
+    PeacockArgument: 0
     DiscoveredClues: []
     ClueBoardClues: []
     ClueBoardNotes: []
