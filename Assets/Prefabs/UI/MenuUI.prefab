@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 2238696594621326301}
   - component: {fileID: 8490908638121587579}
   - component: {fileID: 9194098921988443492}
-  - component: {fileID: 702910972389131302}
+  - component: {fileID: 3150324112411363047}
   m_Layer: 5
   m_Name: PauseIcon
   m_TagString: Untagged
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &702910972389131302
+--- !u!114 &3150324112411363047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -452,11 +452,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4824657222758922832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 2aeb83625f072e542b287ddeca888108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 3
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -487,7 +487,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6379116915678403979}
         m_TargetAssemblyTypeName: UI.PauseMenu, Assembly-CSharp
         m_MethodName: OnPause
         m_Mode: 1
@@ -753,7 +753,7 @@ GameObject:
   - component: {fileID: 8222672701042724354}
   - component: {fileID: 544634736374141357}
   - component: {fileID: 3245376882784627369}
-  - component: {fileID: 8370267542994577642}
+  - component: {fileID: 8142079034435574385}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -819,7 +819,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8370267542994577642
+--- !u!114 &8142079034435574385
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -828,11 +828,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8835654901561124048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 2aeb83625f072e542b287ddeca888108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 3
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -840,10 +840,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.54509807}
-    m_PressedColor: {r: 0, g: 0, b: 0, a: 0.8235294}
-    m_SelectedColor: {r: 0, g: 0, b: 0, a: 0.80784315}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -886,7 +886,7 @@ GameObject:
   - component: {fileID: 8638400392048733220}
   - component: {fileID: 1964472427557978772}
   - component: {fileID: 5055207950491232756}
-  - component: {fileID: 7505654234445184881}
+  - component: {fileID: 5141214450909504368}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -952,7 +952,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7505654234445184881
+--- !u!114 &5141214450909504368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -961,11 +961,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9052700745643177800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 2aeb83625f072e542b287ddeca888108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 3
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -973,10 +973,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.54509807}
-    m_PressedColor: {r: 0, g: 0, b: 0, a: 0.8235294}
-    m_SelectedColor: {r: 0, g: 0, b: 0, a: 0.80784315}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

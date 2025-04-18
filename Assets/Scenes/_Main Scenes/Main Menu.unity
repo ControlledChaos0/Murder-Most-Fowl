@@ -625,6 +625,7 @@ GameObject:
   m_Component:
   - component: {fileID: 827001081}
   - component: {fileID: 827001082}
+  - component: {fileID: 827001083}
   m_Layer: 5
   m_Name: ButtonGroup
   m_TagString: Untagged
@@ -680,6 +681,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &827001083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827001080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac040a1341bc5440a9b2554ed0b2d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modeOfCursor: 1
 --- !u!1001 &844898946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -702,7 +716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.00019222498
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
@@ -710,7 +724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.99961555
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_NormalizedViewPortRect.height

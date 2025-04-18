@@ -46,12 +46,14 @@ namespace Clues
         {
             // TODO
             Debug.Log("Pointer Enter!");
+            CursorManager.Instance.SetToMode(ModeOfCursor.Inspect);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
             // TODO
             Debug.Log("Pointer Exit!");
+            CursorManager.Instance.SetToMode(ModeOfCursor.Default);
         }
 
         public void OnPointerClick(PointerEventData eventData)
