@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ChangeCursorUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ChangeCursor : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private ModeOfCursor modeOfCursor;
 
@@ -20,12 +20,12 @@ public class ChangeCursorUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     
     public void OnPointerEnter(PointerEventData eventData)
     {
-        //CursorManager.Instance.SetToMode(modeOfCursor);
+        CursorManager.Instance.SetToMode(modeOfCursor);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        //CursorManager.Instance.SetToMode(ModeOfCursor.Default);
+        CursorManager.Instance.SetToMode(ModeOfCursor.Default);
     }
     
     #if UNITY_EDITOR
