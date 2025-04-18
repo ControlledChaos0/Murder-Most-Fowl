@@ -1,0 +1,136 @@
+title: CrowIntroduction
+tags: lc: Owl rc:
+---
+Athena: <i>Oh Phoenix Above, what do you mean SHE's here?</i>#s:Crow#el:Intense
+Athena: <i>Just what I need, my romantic life getting tangled with my professional one.</i>
+Athena: <i>I really don't need to be reminded of that messy breakup now.</i>#el:Sad
+Morgana: Oh look who it is.#el:Neutral
+Athena: I'm not in the mood right now.#el:Intense
+Morgana: I was in a good one, until you walked in.
+Athena: Look, I just want to talk.#el:Neutral
+<<jump CrowConversation>>
+===
+
+title: CrowIdle
+---
+<<set $ConvoChar = "Crow">>
+<<if $Tutorial is false>>
+	<<jump CrowMainUpset>>
+<<else>>
+	<<jump CrowConversation>>
+<<endif>>
+===
+
+title: CrowConversation
+tags: c:Owl:Crow
+---
+<<set $ConvoChar = "Crow">>
+Morgana: …#e:Sad
+Morgana: Not a chance.#e:Angry
+-> This is serious, Morgana.
+	Athena: This is serious, Morgana. Someone is dead.#el:Intense
+	Morgana: Oh cluck off.#e:Angry
+	Morgana: I thought WE were serious.#el:Neutral
+-><color=\#94e9e4>Present</color>
+	<<PresentEvidence>>
+-> Leave
+===
+
+title: CrowMainUpset
+---
+Morgana: …#e:Sad#s:Crow
+Morgana: Not a chance.#e:Angry
+-> I have a few questions for you.
+	<<jump CrowQuestions>>
+-> This is serious, Morgana.
+	Athena: This is serious, Morgana. Someone is dead.#el:Intense
+	Morgana: Oh cluck off.#e:Angry
+	Morgana: I thought WE were serious.#el:Neutral
+-><color=\#94e9e4>Present</color>
+	<<PresentEvidence>>
+-> Leave
+===
+
+title: CrowMainNeutral
+---
+Morgana: …
+Morgana: What's Up.
+-> I have a few questions for you.
+	<<jump CrowQuestions>>
+-> Are you doing alright?
+	Morgana: I'm fine.
+-><color=\#94e9e4>Present</color>
+	<<PresentEvidence>>
+-> Leave
+===
+
+title: CrowQuestions
+---
+-> Where were you last night.
+	Morgana: Wouldn't you like to know.#e:Neutral
+	Athena: I would actually.
+	Morgana: ...
+	Morgana: I was drinking with Melissa.
+	Athena: And what about the morning.
+	Morgana: I woke up.
+	Morgana: Forgot my keys.
+	Morgana: Found my keys.
+	Morgana: That all?
+	Athena: Is there anything you're not telling me?#el:Intense
+	Morgana: ...#el:Neutral
+	-> <color=\#94e9e4>Press</color>
+		<<PresentEvidence>>
+	-> Alright...
+		<<jump CrowQuestions>>
+-> How do you feel about Mallard?
+	Morgana: Didn't like him. Don't like him.#e:Angry
+	<<jump CrowQuestions>>
+-> Do you know if anyone would want to kill him?
+	Morgana: I may not like him, but that doesn't mean I would kill him.#e:Neutral
+	-> <color=\#94e9e4>Press</color>
+		<<PresentEvidence>>
+	-> Alright...
+		<<jump CrowQuestions>>
+-> That's all the questions I have
+	<<jump CrowIdle>>
+===
+
+title: CrowKeys
+---
+Morgana: Yeah that penguin lost his keys and asked me to lock up.
+Morgana: 
+===
+
+title: CrowEx
+---
+Athena: I heard you used to date the victim?
+Morgana: Yeah, imagine my luck.#e:Neutral
+Morgana: Both my Exes on a train. One ends up dead and the other wants to turn me in.#e:Angry
+Athena: I don't want to turn you in.#el:Sad
+Morgana: Yeah Im sure you don't.
+Athena: I mean it. Why would I want to turn you in?
+Morgana: I don't know? Why would you leave me like that.#e:Sad
+Athena: ...
+Athena: Look Morgana, I really care about you.
+Morgana: How do you do that to someone you care about?
+Athena: I thought it would be best for you.
+Morgana: ...#el:Neutral
+<<set $CrowRelationship = $CrowRelationship + 1.0>>
+===
+
+title: CrowGlass
+---
+Morgana: Glass? What do you want me to say?#e:Angry
+Athena: Glass, Bottles, Alcohol… Isn't that your specialty?
+Morgana: …
+Morgana: I did notice a wine bottle was missing from the bar today. #e:Neutral
+Morgana: But don't you try to pin this one on me, Nox.
+: Got Evidence <color=\#94e9e4>Bottle</color>
+<<set $PresentedShards = true>>
+<<CreateClue ClueBoardCanvas Bottle>>
+===
+
+title: CrowDismissal
+---
+Morgana: And?
+===

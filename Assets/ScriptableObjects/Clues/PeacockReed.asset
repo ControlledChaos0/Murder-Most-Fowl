@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
-  m_Name: AttorneyLetter
+  m_Name: PeacockReed
   m_EditorClassIdentifier: 
-  m_clueID: AttorneyLetter
-  m_name: Attorney's Letter
+  m_clueID: PeacockReed
+  m_name: Melissa's Reed
   m_clarificationInfo: 
-  m_description: A letter found in Mr. Gander's room from his Attorney.
-  m_icon: {fileID: -4181906289457810447, guid: 4e2bcfcea8cbb4746945d9626b841786, type: 3}
+  m_description: Controlled substance found in Melissa's safe. Isn't smoking bad
+    for your voice?
+  m_icon: {fileID: 7486676739521829481, guid: 98ecd6dcd8be0294085ab793c2109676, type: 3}
