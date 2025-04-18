@@ -9,6 +9,7 @@ tags: lc: rc:
 <<declare $DuckBroke = false>>
 <<declare $PeacockArgument = false>>
 <<declare $DeliverLetter = false>>
+<<declare $PresentedReed = false>>
 <<set $HasShards = false>>
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>

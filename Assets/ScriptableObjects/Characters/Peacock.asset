@@ -22,3 +22,5 @@ MonoBehaviour:
     nodeResponse: PeacockLoveLetter
   - clueID: BurnedNote
     nodeResponse: PeacockBurnedNote
+  - clueID: DuckReed
+    nodeResponse: PeacockDuckReed

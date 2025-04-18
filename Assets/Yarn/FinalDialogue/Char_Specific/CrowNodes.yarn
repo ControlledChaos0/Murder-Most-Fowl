@@ -15,7 +15,7 @@ title: CrowIdle
 ---
 <<set $ConvoChar = "Crow">>
 <<if $Tutorial is false>>
-	<<jump CrowMainUpset>>
+	<<jump CrowMain>>
 <<else>>
 	<<jump CrowConversation>>
 <<endif>>
@@ -36,16 +36,17 @@ Morgana: Not a chance.#e:Angry
 -> Leave
 ===
 
-title: CrowMainUpset
+title: CrowMain
 ---
 Morgana: …#e:Sad#s:Crow
 Morgana: Not a chance.#e:Angry
 -> I have a few questions for you.
 	<<jump CrowQuestions>>
--> This is serious, Morgana.
+-> This is serious, Morgana.<<if not $PresentedReed>>
 	Athena: This is serious, Morgana. Someone is dead.#el:Intense
 	Morgana: Oh cluck off.#e:Angry
 	Morgana: I thought WE were serious.#el:Neutral
+-> Can we talk?<<if $PresentedReed>>
 -><color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Leave
