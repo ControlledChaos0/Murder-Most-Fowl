@@ -625,6 +625,7 @@ GameObject:
   m_Component:
   - component: {fileID: 827001081}
   - component: {fileID: 827001082}
+  - component: {fileID: 827001083}
   m_Layer: 5
   m_Name: ButtonGroup
   m_TagString: Untagged
@@ -680,6 +681,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &827001083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827001080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac040a1341bc5440a9b2554ed0b2d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modeOfCursor: 1
 --- !u!1001 &844898946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -701,12 +715,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.05013174
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8997365
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3530235729408648359, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_Name
@@ -723,6 +745,30 @@ PrefabInstance:
     - target: {fileID: 4146576473392162029, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982810427223459047, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: PauseParam
+      value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982810427223459047, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: PlayerStateEvent.Path
+      value: event:/Music/Leisure Theme
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982810427223459047, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: PlayerStateEvent.Guid.Data1
+      value: 442722726
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982810427223459047, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: PlayerStateEvent.Guid.Data2
+      value: 1321233250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982810427223459047, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: PlayerStateEvent.Guid.Data3
+      value: 2004624822
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982810427223459047, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: PlayerStateEvent.Guid.Data4
+      value: -1984706905
       objectReference: {fileID: 0}
     - target: {fileID: 9072688080832006082, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_LocalPosition.x
