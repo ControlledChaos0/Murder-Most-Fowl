@@ -855,3 +855,61 @@ Athena: <i>I should try to read this.</i>
 : Got Evidence <color=\#94e9e4>Burned Note</color>
 ===
 
+title: SootyGloves
+tags: c:Owl:
+---
+Athena: <i>Huh? Why would Morgana have these?</i>#el:Neutral
+Athena: <i>There's <color=\#f3db82>so much soot</color> on these gloves...</i>#el:Intense
+Athena: <i>There must be <color=\#f3db82>some connection</color> to this piece of evidence.</i>
+: Got Evidence <color=\#94e9e4>Sooty Gloves</color>#el:Neutral
+===
+
+title: LoversPhoto
+tags: c:Owl:
+---
+Athena: <i>Is this?</i>#el:Surprised
+Athena: <i>...</i>#el:Sad
+Athena: <i> I remember when we took that photo.</i> 
+Athena: <i>Before I had to go...</i>
+Athena: <i>Oh Morgana...</i>
+Athena: <i>You kept it all this time?</i>
+: Got Evidence <color=\#94e9e4>The Lovers</color>#el:Neutral
+===
+
+title: MaidenPhoto
+tags: c:Owl:
+---
+Athena: <i>Who is this?</i>#el:Neutral
+Athena: <i>Did Mr. Gander know this woman?</i>
+Athena: <i>Oh there's some text on the back</i>
+Athena: <i><color=\#94e9e4>"I'll always remember my last day with you."</color></i>#el:Sad
+Athena: <i>Is she..gone?</i>
+: Got Evidence <color=\#94e9e4>The Maiden</color>#el:Neutral
+===
+
+title: AttorneyLetter
+tags: c:Owl:
+---
+Athena: <i>This looks like a letter from an attorney.</i>#el:Neutral
+Athena: <i>Why would <color=\#94e9e4>Mr. Gander require an attorney</color> right now?</i>
+Athena: <i>And who is this Phoenix Right guy?</i>#el:Surprised
+: Got Evidence <color=\#94e9e4>Attorney's Letter</color>#el:Neutral
+===
+
+title: DebtDocument
+tags: c:Owl:
+---
+Athena: <i>This is a lot of money!</i>#el:Surprised
+Athena: <i>Was Mallard truly in this much debt?</i>
+: Got Evidence <color=\#94e9e4>Debt Documents</color>#el:Neutral
+===
+
+title: DuckReed
+tags: c:Owl:
+---
+Athena: <i>Oh my!</i>#el:Surprised
+Athena: <i>I haven't seen one of those since college.</i>
+Athena: <i>I guess he needed to take the edge off a bit...</i>#el:Neutral
+: Got Evidence <color=\#94e9e4>Mallard's Reed</color>
+===
+
