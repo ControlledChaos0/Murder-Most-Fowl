@@ -11,6 +11,10 @@ tags: lc: rc:
 <<declare $DeliverLetter = false>>
 <<declare $PresentedReed = false>>
 <<declare $FixedRelationship = false>>
+<<declare $MorganaTestimony = false>>
+<<declare $ShowedGloves = false>>
+<<declare $CrowGlovesStory = false>>
+<<declare $HasLetter = false>>
 <<set $HasShards = false>>
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
@@ -158,6 +162,7 @@ tags: c:Owl:
 ---
 Athena: <i>A burned note in the furnace?</i>
 Athena: <i>I should try to read this.</i>
+<<set $HasLetter to true>>
 : Got Evidence <color=\#94e9e4>Burned Note</color>
 ===
 

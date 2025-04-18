@@ -25,7 +25,7 @@ title: CrowConversation
 tags: c:Owl:Crow
 ---
 <<set $ConvoChar = "Crow">>
-Morgana: …#e:Sad
+Morgana: …#e:Sad#el:Neutral
 Morgana: Not a chance.#e:Angry
 -> This is serious, Morgana.
 	Athena: This is serious, Morgana. Someone is dead.#el:Intense
@@ -38,15 +38,19 @@ Morgana: Not a chance.#e:Angry
 
 title: CrowMain
 ---
-Morgana: …#e:Sad#s:Crow
-Morgana: Not a chance.#e:Angry
+<<if $FixedRelationship>>
+    Morgana: Hey Athena.#e:Neutral#s:Crow#el:Neutral
+<<else>>
+    Morgana: …#e:Sad#s:Crow#el:Neutral
+    Morgana: Not a chance.#e:Angry
+<<endif>>
 -> I have a few questions for you.
 	<<jump CrowQuestions>>
 -> This is serious, Morgana.<<if not $PresentedReed>>
 	Athena: This is serious, Morgana. Someone is dead.#el:Intense
 	Morgana: Oh cluck off.#e:Angry
 	Morgana: I thought WE were serious.#el:Neutral
--> Can we talk?<<if $PresentedReed>>
+-> Can we talk?<<if $PresentedReed and not $FixedRelationship>>
     Morgana: What on earth should we talk about?#e:Angry
     Athena: About us.
     Morgana: What? What about us? I thought you made it clear you didn't want anything to do with me anymore.#e:Sad
@@ -83,7 +87,27 @@ Morgana: Not a chance.#e:Angry
     Athena: I have a case to attend to, but as soon as I'm done, I have someone important to spend time with.#el:Neutral
     Morgana: ..!#e:Embarrassed
     Morgana: I'll see you later, dork. #e:Neutral
+    Morgana: Also uh...
+    Morgana: I wasn't <color=\#f3db82>telling you everything</color> about last night...
+    Morgana: I'm willing to <color=\#f3db82>answer your question</color> now if you need me to.
     <<set $FixedRelationship to true>>
+    <<jump CrowMain>>
+-> I know there's something you're not telling me.<<if $MorganaTestimony and not $CrowGlovesStory and $HasLetter>>
+    Athena: <i>There's something she's not telling me about those gloves...</i>#el:Intense
+    Athena: Morgana... about the gloves.
+    Athena: Tell me one more time. Are they yours?
+    Morgana: ...#e:Sad
+    Morgana: ...yes.
+    Athena: Why are they so sooty? Did you burn the letter?
+    Morgana: I did...
+    Morgana: But it's not what it looks like.#e:Neutral
+    Morgana: I came into the room in the morning and found the body.
+    Morgana: I read the note and panicked.
+    Morgana: He said terrible and revealing things about Melissa.
+    Morgana: As her friend, I couldn't let the world find out.
+    Morgana: ...#e:Sad
+    Morgana: So I burned it.
+
 -><color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Leave
@@ -97,6 +121,31 @@ title: CrowQuestions
         Athena: It's ok. You can tell me.
         Morgana: Just, you believe I didn't do it, right?#e:Neutral
         Athena: Of course.
+        Morgana: Well I was at the bar last night, as usual.
+        Morgana: Mallard came up an ordered a drink from me.
+        Morgana: He started <color=\#f3db82>complaining about Mr. Gander</color> of all people.
+        Morgana: If I'm being honest, I tuned most of it out.
+        Morgana: I didn't care much for his complaining.#e:Angry
+        Morgana: Anyways...#e:Neutral
+        Morgana: He soon stepped away to smoke a cigarette.
+        Morgana: Melissa came in, and told Mallard to cluck off.
+        Morgana: Mallard made a weird face though... <color=\#f3db82>as if he figured something out.</color>#e:Sad
+        Morgana: Melissa sat down with me, and Mallard made some distance. #e:Neutral
+        Morgana: Skipper soon came in for his break and began chatting with Mallard.
+        Morgana: I'm not sure if this is relevant, but I saw <color=\#f3db82>Mallard take Skipper's coat</color> for him.
+        Morgana: He walked past the bar to leave the room, and I overheard him mumbling...
+        Morgana: <color=\#f3db82>"Mark my words. This is the day I get even."</color>
+        Morgana: Shortly after Melissa and I left to go to sleep, I heard Gander in the hall.
+        Morgana: I think he was <color=\#f3db82>headed to Melissa's room</color>.
+        Morgana: I...#e:Sad
+        Morgana: I'm sorry.
+        Morgana: I should have told you sooner.
+        Athena: It's alright. I understand.
+        Morgana: ...
+        Athena: Is that all to your testimony?
+        Morgana: I-
+        Morgana: Uh yes.
+        <<set $MorganaTestimony to true>>
     <<else>>
         Morgana: Wouldn't you like to know.#e:Angry
         Athena: I would actually.
@@ -127,8 +176,30 @@ title: CrowQuestions
 
 title: CrowKeys
 ---
-Morgana: Yeah that penguin lost his keys and asked me to lock up.
+Morgana: Yeah that penguin lost his keys and asked me to lock up.#el:Neutral
 Morgana: 
+===
+
+title: CrowGloves
+---
+Morgana: What of them?#e:Neutral
+Athena: They're yours?
+<<if $MorganaTestimony>>
+Morgana: ... #e:Sad
+Morgana: Yes...
+Athena: Why are they so sooty? Did you burn the letter?
+Morgana: I did...
+Morgana: But it's not what it looks like.#e:Neutral
+Morgana: I came into the room in the morning and found the body.
+Morgana: I read the note and panicked.
+Morgana: He said terrible and revealing things about Melissa.
+Morgana: As her friend, I couldn't let the world find out.
+Morgana: ...#e:Sad
+Morgana: So I burned it.
+<<set $CrowGlovesStory to true>>
+<<else>>
+Morgana: Nope.
+<<endif>>
 ===
 
 title: CrowEx
@@ -158,7 +229,7 @@ Morgana: ...#el:Neutral
 
 title: CrowExGood
 ---
-Athena: Is it true you used to date Mallard?#e:Embarrassed
+Athena: Is it true you used to date Mallard?#e:Embarrassed#el:Neutral
 Morgana: Yeah...#e:Sad
 Morgana: I only ever really loved you though.
 Morgana: I just... used him to feel better.
@@ -172,7 +243,7 @@ Morgana: I dug that hole myself.
 
 title: CrowGlass
 ---
-Morgana: Glass? What do you want me to say?#e:Angry
+Morgana: Glass? What do you want me to say?#e:Angry#el:Neutral
 Athena: Glass, Bottles, Alcohol… Isn't that your specialty?
 Morgana: …
 Morgana: I did notice a wine bottle was missing from the bar today. #e:Neutral
@@ -193,10 +264,10 @@ title: CrowDismissal
 
 title: CrowBadDismissal
 ---
-Morgana: And?#e:Angry
+Morgana: And?#e:Angry#el:Neutral
 ===
 
 title: CrowGoodDismissal
 ---
-Morgana: Sorry. That doesn't look familiar.
+Morgana: Sorry. That doesn't look familiar.#el:Neutral
 ===
