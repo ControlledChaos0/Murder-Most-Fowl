@@ -10,6 +10,7 @@ tags: lc: rc:
 <<declare $PeacockArgument = false>>
 <<declare $DeliverLetter = false>>
 <<declare $PresentedReed = false>>
+<<declare $FixedRelationship = false>>
 <<set $HasShards = false>>
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>

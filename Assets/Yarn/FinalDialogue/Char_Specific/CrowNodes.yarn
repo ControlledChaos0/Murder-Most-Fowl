@@ -52,19 +52,6 @@ Morgana: Not a chance.#e:Angry
 -> Leave
 ===
 
-title: CrowMainNeutral
----
-Morgana: …
-Morgana: What's Up.
--> I have a few questions for you.
-	<<jump CrowQuestions>>
--> Are you doing alright?
-	Morgana: I'm fine.
--><color=\#94e9e4>Present</color>
-	<<PresentEvidence>>
--> Leave
-===
-
 title: CrowQuestions
 ---
 -> Where were you last night.
@@ -104,7 +91,16 @@ Morgana:
 
 title: CrowEx
 ---
-Athena: I heard you used to date the victim?
+<<if $FixedRelationship>>
+    <<jump CrowExGood>>
+<<else>>
+    <<jump CrowExBad>>
+<<endif>>
+===
+
+title: CrowExBad
+---
+Athena: I heard you used to date the victim?#el:Neutral
 Morgana: Yeah, imagine my luck.#e:Neutral
 Morgana: Both my Exes on a train. One ends up dead and the other wants to turn me in.#e:Angry
 Athena: I don't want to turn you in.#el:Sad
@@ -116,7 +112,20 @@ Athena: Look Morgana, I really care about you.
 Morgana: How do you do that to someone you care about?
 Athena: I thought it would be best for you.
 Morgana: ...#el:Neutral
-<<set $CrowRelationship = $CrowRelationship + 1.0>>
+===
+
+title: CrowExGood
+---
+Athena: Is it true you used to date Mallard?
+Morgana: Yeah...#e:Sad
+Morgana: I only ever really loved you though.
+Morgana: I just... used him to feel better.
+Morgana: I realized what I was doing, and left.
+Morgana: ...
+Morgana: He never let me forget though.
+Athena: I'm sorry, Morgana.#el:Sad
+Morgana: Don't be.#e:Neutral
+Morgana: I dug that hole myself.
 ===
 
 title: CrowGlass
@@ -133,5 +142,19 @@ Morgana: But don't you try to pin this one on me, Nox.
 
 title: CrowDismissal
 ---
-Morgana: And?
+<<if $FixedRelationship>>
+    <<jump CrowGoodDismissal>>
+<<else>>
+    <<jump CrowBadDismissal>>
+<<endif>>
+===
+
+title: CrowBadDismissal
+---
+Morgana: And?#e:Angry
+===
+
+title: CrowGoodDismissal
+---
+Morgana: Sorry. That doesn't look familiar.
 ===
