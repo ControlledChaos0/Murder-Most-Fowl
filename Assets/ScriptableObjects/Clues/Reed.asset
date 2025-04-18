@@ -15,5 +15,6 @@ MonoBehaviour:
   m_clueID: Reed
   m_name: Reed
   m_clarificationInfo: 
-  m_description: 
+  m_description: Controlled substance that allegedly makes you chill out. Don't look
+    at me, I wouldn't know.
   m_icon: {fileID: -4292141645959811470, guid: be2d44a95d76f76459ba0b309df2d6b6, type: 3}

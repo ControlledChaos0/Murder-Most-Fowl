@@ -20,3 +20,5 @@ MonoBehaviour:
   m_clueResponses:
   - clueID: LoveLetter
     nodeResponse: PeacockLoveLetter
+  - clueID: BurnedNote
+    nodeResponse: PeacockBurnedNote

@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
-  m_Name: Key
+  m_Name: BurnedNote
   m_EditorClassIdentifier: 
-  m_clueID: Key
-  m_name: Key
+  m_clueID: BurnedNote
+  m_name: BurntNote
   m_clarificationInfo: 
-  m_description: A golden key found in the pocket of the victim.
-  m_icon: {fileID: 3591384076093090303, guid: 08a9280d1a473e249921a5f8be837199, type: 3}
+  m_description: Half of a burned suicide note supposedly written by Mallard. It
+    notably mentions "Melissa."
+  m_icon: {fileID: 8469227874765211877, guid: 4f78b9134775d6c4c9c61b6d26393c80, type: 3}

@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
-  m_Name: Key
+  m_Name: FightersPhoto
   m_EditorClassIdentifier: 
-  m_clueID: Key
-  m_name: Key
+  m_clueID: FightersPhoto
+  m_name: FightersPhoto
   m_clarificationInfo: 
-  m_description: A golden key found in the pocket of the victim.
-  m_icon: {fileID: 3591384076093090303, guid: 08a9280d1a473e249921a5f8be837199, type: 3}
+  m_description: A photo of a peacock fighter fighting a rooster in an arena. In
+    marker there's writing on the photo that reads "Happy 20th Birthday, Thorn -
+    9/15/1916"
+  m_icon: {fileID: 940210836864303615, guid: 9ccfccc6b5e4f684389fc2e6b5842a4d, type: 3}

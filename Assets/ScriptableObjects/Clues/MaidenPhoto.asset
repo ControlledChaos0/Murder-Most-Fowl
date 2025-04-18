@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
-  m_Name: Key
+  m_Name: MaidenPhoto
   m_EditorClassIdentifier: 
-  m_clueID: Key
-  m_name: Key
+  m_clueID: MaidenPhoto
+  m_name: MaidenPhoto
   m_clarificationInfo: 
-  m_description: A golden key found in the pocket of the victim.
-  m_icon: {fileID: 3591384076093090303, guid: 08a9280d1a473e249921a5f8be837199, type: 3}
+  m_description: A photo found on Gander's safe of a maiden standing in a flower
+    field.
+  m_icon: {fileID: 3294275711073481898, guid: da8bd94e9fb46874c918f8c45f3ae8e9, type: 3}
