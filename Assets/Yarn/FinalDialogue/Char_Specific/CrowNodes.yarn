@@ -54,31 +54,36 @@ Morgana: Not a chance.#e:Angry
 
 title: CrowQuestions
 ---
--> Where were you last night.
-	Morgana: Wouldn't you like to know.#e:Neutral
-	Athena: I would actually.
-	Morgana: ...
-	Morgana: I was drinking with Melissa.
-	Athena: And what about the morning.
-	Morgana: I woke up.
-	Morgana: Forgot my keys.
-	Morgana: Found my keys.
-	Morgana: That all?
-	Athena: Is there anything you're not telling me?#el:Intense
-	Morgana: ...#el:Neutral
-	-> <color=\#94e9e4>Press</color>
-		<<PresentEvidence>>
-	-> Alright...
-		<<jump CrowQuestions>>
+-> Where were you last night.#e:Neutral#el:Neutral
+    <<if $FixedRelationship>>
+        Morgana: ...#e:Sad
+        Athena: It's ok. You can tell me.
+        Morgana: Just, you believe I didn't do it, right?#e:Neutral
+        Athena: Of course.
+    <<else>>
+        Morgana: Wouldn't you like to know.#e:Angry
+        Athena: I would actually.
+        Morgana: ...#e:Neutral
+        Morgana: I was drinking with Melissa.
+        Athena: And what about the morning.
+        Morgana: I woke up.
+        Morgana: Forgot my keys.
+        Morgana: Found my keys.
+        Morgana: That all?
+    <<endif>>
+	<<jump CrowQuestions>>
 -> How do you feel about Mallard?
-	Morgana: Didn't like him. Don't like him.#e:Angry
+    <<if $FixedRelationship>>
+        Morgana: He and I uh...
+        Morgana: Had a bit of a rebound relationship. #e:Sad#el:Sad
+        Morgana: It didn't last long though. #e:Neutral
+    <<else>>
+        Morgana: Didn't like him. Don't like him.#e:Angry
+    <<endif>>
 	<<jump CrowQuestions>>
 -> Do you know if anyone would want to kill him?
-	Morgana: I may not like him, but that doesn't mean I would kill him.#e:Neutral
-	-> <color=\#94e9e4>Press</color>
-		<<PresentEvidence>>
-	-> Alright...
-		<<jump CrowQuestions>>
+	Morgana: I may not like him, but that doesn't mean I would kill him.#e:Sad
+	<<jump CrowQuestions>>
 -> That's all the questions I have
 	<<jump CrowIdle>>
 ===
