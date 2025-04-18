@@ -47,7 +47,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     private ArchiveBin _archiveBin;
     public ArchiveBin ArchiveBin => _archiveBin;
     [SerializeField]
-    private GameObject _toggleButton;
+    private ClueboardButton _toggleButton;
     [SerializeField]
     private GameObject _stickyNote;
     
@@ -137,6 +137,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
         _newBin.InitBin();
         _archiveBin.InitBin();
         _activated = true;
+        _toggleButton.OpenClueBoard();
         _animator.Play("Reveal");
     }
 
@@ -144,19 +145,20 @@ public class ClueBoardManager : Singleton<ClueBoardManager>,
     {
         _activated = false;
         _canPresent = false;
+        _toggleButton.CloseClueBoard();
         _animator.Play("Hide");
     }
 
     public void LockToggle()
     {
         _toggleLock = true;
-        _toggleButton.SetActive(false);
+        _toggleButton.gameObject.SetActive(false);
     }
 
     public void UnlockToggle()
     {
         _toggleLock = false;
-        _toggleButton.SetActive(true);
+        _toggleButton.gameObject.SetActive(true);
     }
 
     public void OnScroll(PointerEventData eventData)

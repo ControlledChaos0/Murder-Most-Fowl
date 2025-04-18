@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d0a0409047e883e45aeb8146354bd308
+guid: d55cd37a8cfda7543bc76c1e47beddaf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3794403196182220197
-    second: Floor_Barrier_0
+      213: -7496229233903711017
+    second: Owl_Clueboard_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Floor_Barrier_0
+      name: Owl_Clueboard_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1800
-        height: 176
+        x: 63
+        y: 14
+        width: 508
+        height: 611
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ad4c037a9d68a430800000000000000
-      internalID: 3794403196182220197
+      spriteID: 7dc454e7a3b08f790800000000000000
+      internalID: -7496229233903711017
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 36b915e72b4f08840a189943b353b4aa
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Floor_Barrier_0: 3794403196182220197
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

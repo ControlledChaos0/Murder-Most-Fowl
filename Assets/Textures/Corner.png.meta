@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d0a0409047e883e45aeb8146354bd308
+guid: 788f5255c0cb7c943a3f78948250d4f7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3794403196182220197
-    second: Floor_Barrier_0
+      213: 1552646742204772202
+    second: Corner_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Floor_Barrier_0
+      name: Corner_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1800
-        height: 176
+        width: 177
+        height: 177
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ad4c037a9d68a430800000000000000
-      internalID: 3794403196182220197
+      spriteID: a6f68ca5cfb1c8510800000000000000
+      internalID: 1552646742204772202
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 36b915e72b4f08840a189943b353b4aa
+    spriteID: 879e493ab633e864f8616746e008d64c
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Floor_Barrier_0: 3794403196182220197
+      Corner_0: 1552646742204772202
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

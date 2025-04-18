@@ -85,7 +85,8 @@ public class PlayerController : MonoBehaviour
             m_NewPos = transform.position;
             m_OldPos = m_NewPos;
             m_DirectionalMovement = true;
-            m_IsMoving = true;
+            m_IsMoving = true; 
+            _characterSprite.flipX = direction < 0.0f;
         }
         else
         {
