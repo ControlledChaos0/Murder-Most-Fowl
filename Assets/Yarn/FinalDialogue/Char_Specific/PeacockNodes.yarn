@@ -1,0 +1,177 @@
+title: PeacockIntroduction
+tags: lc:Owl rc:
+---
+Athena: <i>Melissa Miss Peacock. Never thought I'd get to meet her in person.</i>#s:Peacock#el:Surprised
+Athena: <i>I've been listening to her music since the beginning of her career.</i>
+Athena: <i>Oh my gosh and her new single, “Birds of a Feather”, is soooo good.</i>#el:Happy
+Athena: Good morning Miss Peacock.#el:Neutral
+Melissa: Hello darling. Quite an unfortunate morning, is it not?
+Athena: Quite. I'm actually here to speak with you about this.#el:Intense
+Melissa: Oh?
+Athena: I'm a detective. Detective Nox. I may have a few questions for you about this.#el:Neutral
+Melissa: Oh my, am I a suspect?
+Athena: Not at the moment, you're not. But there's something fishy about this scene, and I'd like some help to get to the bottom of this.
+Melissa: I see.
+<<jump PeacockIdle>>
+===
+
+title: PeacockIdle
+---
+<<set $ConvoChar = "Peacock">>
+<<if $Tutorial is false>>
+	<<jump PeacockMain>>
+<<else>>
+	<<jump PeacockConversation>>
+<<endif>>
+===
+
+title: PeacockConversation
+tags: c:Owl:Peacock
+---
+Melissa: How can I help you, dear?
+-> Could I get your autograph?
+	Melissa: Oh! Uh...
+	Melissa: Perhaps now isn't the time?
+-> <color=\#94e9e4>Present</color>
+	<<PresentEvidence>>
+-> Nothing now
+	Melissa: Don't hesitate to ask.
+===
+
+title: PeacockMain
+---
+Melissa: How can I help you, dear?#s:Peacock
+-> I have a few questions for you.
+	<<jump PeacockQuestions0>>
+-> Could I get your autograph?
+	Melissa: Oh! Uh...
+	Melissa: I'm terribly sorry, but perhaps now isn't the time?
+-> <color=\#94e9e4>Present</color>
+	<<PresentEvidence>>
+-> Nothing now
+	Melissa: Don't hesitate to ask.
+===
+
+title: PeacockQuestions0
+---
+Melissa: Now, what would you like to ask?
+-> Where were you last night?
+	Melissa: My, let's see. 
+	Melissa: I recall drinking with Morgana around last night.
+	Melissa: She was such a darling and made me my favorite cocktail.
+	Athena: What did you two drink?
+	Melissa: She made me a Blue Lagoon, but I don't believe she actually had any alcohol.
+	Athena: ...#el:Sad
+	Melissa: We chatted for a while until I went off to bed. I don't remember exactly when, but I remember I woke up in the morning around 7:55 with a nasty hangover.#el:Neutral
+	<<jump PeacockQuestions1>>
+-> What are your thoughts about Mallard?
+	Melissa: He. Ugh. You see..
+	Athena: It's ok. Take your time.
+	Melissa: He and I used to get along fine, at least until I knew he was a swindler.
+	Athena: Swindler?#el:Intense
+	Melissa: ...#el:Neutral
+	<<jump PeacockQuestions0>>
+-> Do you know if anyone would want to kill him?
+	Melissa: My.. well I've overheard Mr. Gander was having troubles with Mallard.
+	Melissa: I don't know much, but I believe it has something to do with Gander's disdain for Mallard's business practices.
+	Melissa: I hear he blames Mallard for the current state of his company...
+	Melissa: I don't blame him to be honest.
+	Melissa: Mallard has a way with <color=\#f3db82>spending more than he has...</color>
+	Athena: What of the other passengers?
+	Melissa: Well the bellboy has always given me strange vibes. There's just something.. off about him.
+	Athena: That's hardly evidence.
+	Melissa: I suppose not.
+	Melissa: ...
+	Melissa: As for Morgana, given that you're still alive, I doubt it was her.
+	Athena: What do you mean?
+	Melissa: *laugh* <color=\#f3db82>Well she used to be in love with that duck.</color> If she were the ex killing type, I think you'd be the first she'd kill.
+	Athena: She.. what?#el:Surprised
+	<<CreateClue ClueBoardCanvas CrowEx>>
+	: Got Evidence <color=\#94e9e4>Morgana's Ex</color>
+	Melissa: Oh dear, did you not know?
+	Athena: ... #el:Sad
+	Athena: Let's just move on.#el:Neutral
+	Melissa: Alright..
+	<<jump PeacockQuestions0>>
+-> I heard you and Mallard had an argument. <<if $PeacockArgument>>
+	Melissa: Yes we had an argument. 
+	Melissa: It was about the money he owed me.
+	Melissa: I was upset that he somehow was unable to pay me despite that fortune he boasts about.
+	Melissa: That extravagant duck was <color=\#f3db82>broke this entire time</color>...
+	Melissa: I was angry in the moment, but I swear I would never actually hurt someone over this.
+	Athena: People don't always kill for rational reasons.#el:Intense
+	Melissa: ...
+	Athena: How did you learn of lack of funds? I hear he kept up his appearances well.#el:Neutral
+	Melissa: ...
+	Melissa: I've said too much.
+	Athena: <i>Perhaps I should ask <color=\#f3db82>someone who worked closely</color> with Mallard about this...</i>
+	<<set $DuckBroke to true>>
+-> That's all the questions
+	<<jump PeacockMain>>
+===
+
+title: PeacockQuestions1
+---
+Melissa: Is there anything else, dear?
+	-> Did you hear anything in the morning?
+		Melissa: I don't recall. No.
+		<<jump PeacockQuestions1>>
+	-> What did you do after waking up?
+		Melissa: I looked around my room for 10 minutes for antacid. When I couldn't find one, I left to ask Morgana for one.
+		Melissa: To my surprise I found her in front of the parlor door. 
+		Melissa: I asked about entering the parlor, but the poor thing said she lost her keys in her room. I admit I may have been a bit loud. I think I woke up Mr. Gander.
+		Athena: I see. What happened after?
+		Melissa: When Morgana got back, she unlocked the car door.. and..
+		Melissa: That was when..
+		Athena: ... you saw it.#el:Sad
+		Melissa: ...
+		Melissa: anyways..#el:Neutral
+		<<jump PeacockQuestions1>>
+	-> That's all
+		<<jump PeacockQuestions0>>
+===
+
+title: PeacockDismissal
+---
+Melissa: I'm sorry, I'm not sure what to say.
+===
+
+title: PeacockLoveLetter
+---
+Melissa: Oh! A letter.
+<<if $DeliverLetter>>
+	Athena: Gander wanted me to deliver this to you.
+	Melissa: Oh my. Let me see.
+	Melissa: ...
+	Melissa: Oh! Oh Gander!
+	Athena: Was it true he was with you last night?
+	Melissa: Yes, now that I think about it.
+	Melissa: My memory is a little hazy, but <color=\#f3db82>he was with me for quite a while last night</color>.
+	Melissa: Oh Gander... what should I say?
+	Athena: I'll leave you with your thoughts.
+<<else>>
+	Athena: Have you seen this letter before?
+	Melissa: No, it doesn't look familiar.
+<<endif>>
+===
+
+title: PeacockBurnedNote
+---
+Athena: I noticed your name on this note. Do you know why Mallard would address you in a note such as this?
+Melissa: He did <color=\#f3db82>owe me a large sum of money</color>.
+Athena: Do you know why someone may burn the note?
+Melissa: ...
+Athena: Do you have an idea of what the rest of the note may contain?
+Melissa: He was a <color=\#f3db82>gambling addict</color>.
+Athena: Gambling addict?#el:Intense
+Melissa: Could I see the note, perhaps?
+Athena: Sure.#el:Neutral
+Melissa: ...
+Melissa: My, is this a suicide note?
+Athena: It would appear so.
+Athena: At least <i>appears</i> so.
+Athena: We've already proven this was not in fact a suicide, so <color=\#f3db82>it's very possible the murderer planted it as fake evidence</color>.
+Athena: The only question is though, <color=\#f3db82>why would it be burned</color>?#el:Intense
+Melissa: And how did they know about me and Mallard's-
+Melissa: Nevermind.#el:Neutral
+===

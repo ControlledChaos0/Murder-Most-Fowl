@@ -1,0 +1,227 @@
+title: PenguinIntroduction
+tags: lc:Owl rc:
+---
+Athena:<i> This is that bellboy that stopped me earlier. He looks so nervous…</i>
+Athena: <i>Makes sense. If I worked here, I would be nervous too.</i>
+Athena: <i>Poor kid.</i>
+<<set_character_idle_node Penguin PenguinProof>>
+<<jump PenguinProof>>
+===
+
+title:PenguinConversation
+tags: c:Owl:Penguin
+---
+<<set $ConvoChar = "Penguin">>
+Skipper: Is there any way I can help?#e:Happy#s:Penguin
+-> Where were you last night?
+	Skipper: Hmm.. Well I spent a lot of time searching for my keys last night.#e:Neutral
+	Athena: Your keys? What happened to them?
+	Skipper: I believe I misplaced them. Though...
+	Skipper: ...#e:Sad
+	Skipper: Now that I think about it.. <color=\#f3db82>that eve Mallard offered to hang my coat up for me.</color>#e:Neutral
+	Skipper: I didn't think much of it at the time, but I believe my keys went missing around that time.
+	Athena: Did you ever find your keys?
+	Skipper: I did not, so I asked Morgana to lock up the parlor.#e:Sad
+	Athena: Did you notice anything else last night?
+	Skipper: <color=\#f3db82>I heard a crash in the middle of the night</color>, but I did not have the energy to deal with it.#e:Neutral
+	Skipper: I swear I tied all the luggage down properly.
+	Skipper: Though... I could've missed something when <color=\#f3db82>Melissa came to get something from her luggage</color>.
+	Athena: What about the morning? 
+	Skipper: I woke to the sound of chatter outside.
+	Skipper: I hadn't slept well so I was pretty groggy.
+	Skipper: When Morgana unlocked the parlor door in the morning and the body was found, I took charge of the situation.
+	Skipper: It's my job to ensure the safety of this train, which is why I wanted to handle it.
+	<<jump PenguinConversation>>
+-> What are your thoughts about Mallard?
+	Skipper: ...#e:Neutral
+	Skipper: Honestly I don't like him.#e:Sad
+	Skipper: He's quite rude and snobbish.
+	Skipper: He came from great wealth, so he probably grew up with everything going his way.#e:Neutral
+	Skipper: However.. I feel like there was something off about him.
+	Athena: Have you interacted with him much?
+	Skipper: Thankfully I haven't had to deal with him much when I worked with Mr. Gander.
+	Athena: What do you know about Mallard and Gander?
+	Skipper: I know they started the company together, but if you want to know more, Mr. Gander would be the one to ask.
+	: Got Evidence <color=\#94e9e4>Gander's Business Partner</color>
+	<<CreateClue ClueBoardCanvas GooseBusinessPartner>>
+	<<jump PenguinConversation>>
+-> Do you know if anyone would want to kill him?#e:Neutral
+	Skipper: Oh he knew how to make enemies.
+	Skipper: In fact I believe he's involved with everyone in this car in some way.
+	Skipper: I can tell you about whoever you wish.
+	<<jump PenguinEnemies>>
+-> <color=\#94e9e4>Present</color>
+	<<PresentEvidence>>
+-> Not now
+	Athena: Thank you for your help. I'll be back later.
+	Skipper: Glad to help!#e:Happy
+	Skipper: If you need anything, I'll be in the luggage room.#e:Neutral
+===
+
+title: PenguinEnemies
+tags: c:Owl:Penguin
+---
+Athena: Tell me about...
+-> Chase Gander
+	Skipper: Ah, Gander.#e:Neutral
+	Skipper: Mallard definitely.. left on bad terms with him.#e:Sad
+	Skipper: I'm not sure exactly why, but Mr. Gander had told that duck <color=\#f3db82>he needs to find a new job</color>.
+	Skipper: Kicked the poor guy off to the streets.
+	Skipper: Would you like to know about anyone else?#e:Neutral
+	<<jump PenguinEnemies>>
+-> Melissa Peacock
+	Skipper: Melissa comes across as the most suspicious to me.#e:Neutral
+	Athena: Oh?#el:Surprised
+	Skipper: I overheard those two having a quite.. extreme argument the other day.#e:Sad
+	Skipper: I couldn't make out a lot of what they were saying, but what I did overhear was concerning to say the least.
+	Athena: What did you hear?#el:Neutral
+	Skipper: I heard phrases such as <color=\#f3db82>"...RUINING PEOPLE'S LIVES"..</color>#e:Neutral
+	Skipper: and <color=\#f3db82>"...MONEY OR YOU'RE CLUCKING DEAD"</color>.
+	Athena: Coming from Melissa? I find that kind of hard to believe.#el:Intense
+	Skipper: It's hard for me to believe too, but I remember what I heard.
+	Athena: Perhaps I should <color=\#f3db82>ask Melissa</color> about this...
+	<<set $PeacockArgument to true>>
+	Skipper: Would you like to know about anyone else?#el:Neutral
+	<<jump PenguinEnemies>>
+-> Morgana Noir
+	Skipper: Well Mallard would complain to me about her messing up his drinks constantly.#e:Neutral
+	Skipper: Morgana is a good bartender. If she messed up his drink that many times it must've been out of spite.
+	Skipper: Would you like to know about anyone else?
+	<<jump PenguinEnemies>>
+-> You.
+	Skipper: Me?#e:Neutral
+	Skipper: I mean I knew him. 
+	Skipper: We were never really close.
+	Skipper: ...#e:Sad
+	Skipper: Would you like to know about anyone else?
+	<<jump PenguinEnemies>>
+-> That's all.
+	Athena: That's all the questions about connections I have for now.
+	Skipper: Alright!#e:Happy
+	<<jump PenguinConversation>>
+===
+
+title:PenguinProof
+tags: c:Owl:Penguin
+---
+<<set $ConvoChar = "Penguin">>
+<<if $Tutorial is false>>
+	<<jump PenguinConversation>>
+<<endif>>
+Skipper: Hello Detective. Do you have evidence for me?
+-> I do
+	<<jump ProofIdleNode1>>
+-> Leave
+===
+
+title:ProofIdleNode1
+---
+Skipper: What makes you think it was <color=\#f3db82>impossible</color> for Mallard to have committed the act alone?
+-> <color=\#94e9e4>Present</color>
+    <<PresentEvidence Stool ProofWrong1>>
+-> Leave
+===
+
+title:PenguinStool
+---
+Athena: This stool is way too short for the duck to have reached the chandelier himself.
+Athena: He must've been hung up by someone else. 
+Athena: This stool was placed by the murderer to make the scene look more convincing.
+<<set_character_idle_node Penguin PenguinProof2>>
+<<jump PenguinProof2>>
+===
+
+title:ProofWrong1
+---
+Skipper: I don't follow.#e:Sad
+Athena: I'll see if I can find anything more relevant.
+===
+
+title:PenguinProof2
+tags: c:Owl:Penguin
+---
+<<set $ConvoChar = "Penguin">>
+Skipper: If that's the case, what was his <color=\#f3db82>cause of death</color>?
+<<jump ProofIdleNode2>>
+===
+
+title:ProofIdleNode2
+---
+-> <color=\#94e9e4>Present</color>
+    <<PresentEvidence Rope ProofWrong2>>
+-> Leave
+===
+
+title:PenguinRope
+---
+Athena: He was certainly hung. The suffocation is clear.
+Athena: However, there are no signs of struggle, even as he suffocated.
+Athena: He must have been unconscious while he died, meaning he couldn't have hung himself.
+<<set_character_idle_node Penguin PenguinProof3>>
+<<jump PenguinProof3>>
+===
+
+title:ProofWrong2
+---
+Athena: Because he… uh…#el:Surprised
+Skipper: I'll give you more time.#el:Neutral
+===
+
+title:PenguinProof3
+tags: c:Owl:Penguin
+position: 120,120
+---
+<<set $ConvoChar = "Penguin">>
+Skipper: I see. What was he <color=\#f3db82>knocked out with</color>?
+<<jump ProofIdleNode3>>
+===
+
+title:ProofIdleNode3
+---
+-> <color=\#94e9e4>Present</color>
+    <<PresentEvidence Bottle ProofWrong3>>
+-> Leave
+===
+
+title:PenguinBottle
+tags: c:Owl:Penguin
+---
+Athena: There's a wine bottle missing from the bar cabinet.
+Athena: Glass shards matching the glass were found next to the body.
+Athena: I believe the duck was hit over the head with the bottle, then his unconscious body was hung and strangled to make it look like a suicide.
+<<jump PenguinConclusion>>
+===
+
+title:ProofWrong3
+---
+Skipper: Hmm.. I'm not sure if that's a weapon...
+Skipper: Perhaps you could <color=\#f3db82>ask some of the passengers about your evidence</color>.
+Skipper: That could <color=\#f3db82>shed some light</color> on your evidence.
+Athena: Thanks. I'll try that.
+===
+
+title:PenguinConclusion
+---
+Skipper: Interesting… 
+Skipper: I think you have a good case, Ms..?
+Athena: Athena. Athena Nox.
+<<set $Tutorial to false>>
+<<set_character_idle_node Penguin PenguinConversation>>
+Skipper: Thank you Detective Nox. I'll give you some time to investigate.#e:Happy
+Skipper: Feel free to <color=\#f3db82>investigate the body</color> if you deem necessary.
+Skipper: Be sure to <color=\#f3db82>question everyone thoroughly</color>.
+Skipper: If you have any questions for me, I'm happy to answer.
+Skipper: Let me know when you're ready to call the police, and you can turn in your suspect to them.#e:Neutral
+===
+
+title: PenguinKey
+---
+Skipper: Oh! That's my key! Where did you find it?#e:Angry
+Athena: I found them in the victim's pocket...
+<<CreateClue ClueBoardCanvas PenguinKey>>
+: Got Evidence <color=\#94e9e4>Skipper's Key</color>
+Skipper: Oh. I had a feeling he was the one who took them...#e:Sad
+Skipper: ...
+Skipper: Could I perhaps have it back if you don't need it for the investigation?#e:Neutral
+Athena: Sure.
+===
