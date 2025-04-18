@@ -15,5 +15,5 @@ MonoBehaviour:
   m_clueID: AttorneyLetter
   m_name: AttorneyLetter
   m_clarificationInfo: 
-  m_description: 
+  m_description: A letter found in Mr. Gander's room from his Attorney.
   m_icon: {fileID: -4181906289457810447, guid: 4e2bcfcea8cbb4746945d9626b841786, type: 3}

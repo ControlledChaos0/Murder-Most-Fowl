@@ -15,5 +15,5 @@ MonoBehaviour:
   m_clueID: GlassShard
   m_name: Glass Shards
   m_clarificationInfo: 
-  m_description: 
+  m_description: Shards of broken glass found by the body.
   m_icon: {fileID: 1300329888934492961, guid: 4a8d223903637564ba2b4d447b6a3313, type: 3}

@@ -15,5 +15,5 @@ MonoBehaviour:
   m_clueID: PocketKnife
   m_name: PocketKnife
   m_clarificationInfo: 
-  m_description: 
+  m_description: Pocket Knife found on in the victim's right pocket.
   m_icon: {fileID: 5929359292380248679, guid: c72220c44c3c9934c9e4d556a5407637, type: 3}

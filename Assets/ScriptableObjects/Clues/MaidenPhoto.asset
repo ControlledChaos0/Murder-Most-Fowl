@@ -15,5 +15,6 @@ MonoBehaviour:
   m_clueID: MaidenPhoto
   m_name: MaidenPhoto
   m_clarificationInfo: 
-  m_description: 
+  m_description: A photo found on Gander's safe of a maiden standing in a flower
+    field.
   m_icon: {fileID: 3294275711073481898, guid: da8bd94e9fb46874c918f8c45f3ae8e9, type: 3}
