@@ -47,6 +47,43 @@ Morgana: Not a chance.#e:Angry
 	Morgana: Oh cluck off.#e:Angry
 	Morgana: I thought WE were serious.#el:Neutral
 -> Can we talk?<<if $PresentedReed>>
+    Morgana: What on earth should we talk about?#e:Angry
+    Athena: About us.
+    Morgana: What? What about us? I thought you made it clear you didn't want anything to do with me anymore.#e:Sad
+    Athena: I wanted everything to do with you, Morgana.#el:Sad
+    Athena: I... I thought.
+    Morgana: You clearly didn't before sending me that letter.#e:Angry
+    Athena: ...
+    Athena: You're the love of my life.
+    Athena: But I was away on cases all the time, and it was clearly hurting you.
+    Morgana: I-#e:Sad
+    Athena: I noticed how lonely you were.
+    Athena: I thought if I left... you could move on and be happier with someone else.
+    Morgana: That's not what I wanted.
+    Athena: I shouldn't have made that decision for you.
+    Athena: We- We could've worked something out.
+    Morgana: ...
+    Morgana: We still can.
+    Athena: ..!#el:Surprised
+    Morgana: Leaving me like you did... was a horrible way to go about it.#el:Sad
+    Morgana: And hurt me incredibly deeply.
+    Morgana: ...
+    Morgana: But you're right. It's not what I wanted.#e:Neutral
+    Morgana: I want you, Athena.
+    Athena: Morgana...
+    Morgana: ... #e:Sad
+    Morgana: Oh Phoenix, I can't pretend to hate you.#e:Crying
+    Morgana: I love you Athena.
+    Athena: ...#el:Surprised
+    Athena: I love you too, Morgana.#el:Sad
+    Athena: I shouldn't have sent that letter.
+    Athena: Do you want to try to work something out?
+    Morgana: I'd like that. #e:Sad
+    Athena: ...
+    Athena: I have a case to attend to, but as soon as I'm done, I have someone important to spend time with.#el:Neutral
+    Morgana: ..!#e:Embarrassed
+    Morgana: I'll see you later, dork. #e:Neutral
+    <<set $FixedRelationship to true>>
 -><color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Leave
@@ -74,7 +111,7 @@ title: CrowQuestions
 	<<jump CrowQuestions>>
 -> How do you feel about Mallard?
     <<if $FixedRelationship>>
-        Morgana: He and I uh...
+        Morgana: He and I uh...#e:Embarrassed
         Morgana: Had a bit of a rebound relationship. #e:Sad#el:Sad
         Morgana: It didn't last long though. #e:Neutral
     <<else>>
@@ -121,7 +158,7 @@ Morgana: ...#el:Neutral
 
 title: CrowExGood
 ---
-Athena: Is it true you used to date Mallard?
+Athena: Is it true you used to date Mallard?#e:Embarrassed
 Morgana: Yeah...#e:Sad
 Morgana: I only ever really loved you though.
 Morgana: I just... used him to feel better.
