@@ -214,3 +214,33 @@ Melissa: <color=\#f3db82>You should talk with her</color>.
 Athena: ... #el:Sad
 <<set $PresentedReed to true>>
 ===
+
+title: PeacockId
+---
+Melissa: Oh my, this is my Id.#el:Neutral
+Athena: It was laying on your floor. You should keep it in a safe place.
+Melissa: Thank you for letting me know darling.
+Melissa: I wouldn't want the <color=\#f3db82>wrong person knowing my birthday</color>.
+===
+
+title: PeacockFighters
+---
+Athena: Do you know who the people in this photo are?#el:Neutral
+Melissa: Well the Rooster is Even Rudy. Also known in the arena as Rude Rocky.
+Athena: And the other peacock?
+Melissa: Oh honey. Did you not know?
+Athena: Know what?
+Melissa: <color=\#f3db82>That peacock was me.</color>
+Athena: Wait... You're trans?#el:Surprised
+Melissa: Oh hahaha. I don't even try to hide it, darling.
+Melissa: I didn't even change my coloring.
+Melissa: Perhaps they need to revoke your detective license.
+===
+
+title: PeacockLovers
+---
+Melissa: Oh my. Is that you and Morgana? #el:Neutral
+Athena: Yeah... #el:Sad
+Athena: Do you know why she still had this?
+Melissa: That would be something <color=\#f3db82>you should ask her</color>, honey.
+===
