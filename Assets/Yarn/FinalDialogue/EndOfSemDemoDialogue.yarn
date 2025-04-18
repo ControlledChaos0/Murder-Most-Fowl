@@ -18,19 +18,19 @@ Athena: The Bird Flu is no joke...#el:Sad
 ???: CRASH
 Athena: ... what was that?#el:Surprised
 ???: clop clop clop
-Athena: Who's up this late at night making such a ruckus. 
-Athena: Luckily *cough* for them I'm too sick to do anything about it.
+Athena: Who's up this late at night making such a ruckus.#el:Intense
+Athena: Luckily *cough* for them I'm too sick to do anything about it.#el:Sad
 Athena: I'm already up. Perhaps I'll just read a book for a bit.
 Athena: ...
-Athena: .....
+Athena: .....#el:Happy
 Athena: zzzzz
 <<ChangeRightCharacter>>
 <<ChangeLeftCharacter>>
 Singsongy Woman: What's going on? Why's the door locked?
 Disgruntled Man: Isn't the parlor supposed to be open by now?
 Tired Woman: I'm sorry, I'll get that unlocked for you.
-Athena: The early birds are up bright and early...
-Athena: Unfortunately I am too...
+Athena: The early birds are up bright and early...#el:Neutral
+Athena: Unfortunately I am too...#el:Sad
 <<ChangeLeftCharacter>>
 Tired Woman: Alright you should be able to get in now.
 Tired Woman: I apologize for the inconvenience.
@@ -38,12 +38,12 @@ Athena: Great. Now I can get back to slee-
 Singsongy Woman: AAAAAAAAAAAAAAH!
 Disgruntled Man: Oh dear heavens.
 Nervous Boy: What on earth?
-Athena: What's that all about?
-Athena: I should check this out.
-Athena: Oh dear Phoenix. How did this happen?
-Athena: I suppose that's up to me to figure out.
+Athena: What's that all about?#el:Surprised
+Athena: I should check this out.#el:Neutral
+Athena: Oh dear Phoenix. How did this happen?#el:Surprised
+Athena: I suppose that's up to me to figure out.#el:Intense
 Skipper: Excuse me ma'am, but I can't let you disturb the scene. I'm about to phone the police.
-Athena: Yes, yes, I understand, but conveniently I'm a detective.
+Athena: Yes, yes, I understand, but conveniently I'm a detective.#el:Neutral
 Skipper: A detective? But what needs investigating? The poor duck clearly hung himself.#e:Sad
 Skipper: I don't want to mess with the scene until the police arrive.
 Athena: Say, bellboy, if I can prove to you this “suicide” was in fact a murder, will you let me investigate further?
