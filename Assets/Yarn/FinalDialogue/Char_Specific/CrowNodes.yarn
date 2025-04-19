@@ -107,6 +107,15 @@ title: CrowMain
     Morgana: As her friend, I couldn't let the world find out.
     Morgana: ...#e:Sad
     Morgana: So I burned it.
+    <<set $CrowDone to true>>
+-> How are you doing?
+    Morgana: I'm doing fine.
+    Morgana: Could use a cigarette though.
+    Morgana: You wanna smoke?
+    Athena: Sure. #el:Happy
+    Morgana: I keep them in a <color=\#f3db82>secret compartment in the bar</color>.#el:Neutral
+    Morgana: Be a dear and grab them for me?
+    <<set $CrowCigs to true>>
 -><color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Leave
