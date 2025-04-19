@@ -19,6 +19,15 @@ tags: lc: rc:
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
 <<declare $CrowRelationship = 0.0>>
+<<CreateClue ClueBoardCanvas AttorneyLetter>>
+<<CreateClue ClueBoardCanvas SootyGloves>>
+<<CreateClue ClueBoardCanvas PeacockReed>>
+<<CreateClue ClueBoardCanvas DuckReed>>
+<<CreateClue ClueBoardCanvas LoveLetter>>
+<<CreateClue ClueBoardCanvas MaidenPhoto>>
+<<CreateClue ClueBoardCanvas LoversPhoto>>
+<<CreateClue ClueBoardCanvas FightersPhoto>>
+<<jump Skip>>
 Athena: *cough cough* Ugh I can't sleep.
 Athena: The Bird Flu is no joke...#el:Sad
 ???: CRASH

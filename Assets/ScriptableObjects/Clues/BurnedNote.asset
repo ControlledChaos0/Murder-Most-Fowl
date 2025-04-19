@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BurnedNote
   m_EditorClassIdentifier: 
   m_clueID: BurnedNote
-  m_name: BurntNote
+  m_name: Burnt Note
   m_clarificationInfo: 
   m_description: Half of a burned suicide note supposedly written by Mallard. It
     notably mentions "Melissa."

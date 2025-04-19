@@ -150,6 +150,7 @@ Chase: ...
 Chase: I still have things left unsaid to Melissa.
 Chase: I know this is the cowardly method, but would you mind <color=\#f3db82>delivering that letter to her</color>?
 Athena: Of course.
+<<ClearClue Peacock LoveLetter>>
 <<set $DeliverLetter to true>>
 ===
 

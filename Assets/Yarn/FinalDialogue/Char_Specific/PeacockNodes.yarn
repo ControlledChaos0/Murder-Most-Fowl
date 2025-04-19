@@ -152,6 +152,7 @@ Melissa: Oh! A letter.#el:Neutral
 <<else>>
 	Athena: Have you seen this letter before?
 	Melissa: No, it doesn't look familiar.
+    
 <<endif>>
 ===
 
@@ -178,10 +179,11 @@ Melissa: Nevermind.#el:Neutral
 
 title: PeacockDuckReed
 ---
-<<if $PresentedReed>>
+<<if not $PresentedReed>>
     Athena: I found this in Mallard's room. Do you know anything about it?#el:Neutral
     Melissa: ...
     Melissa: I don't know.
+    <<ClearClue Peacock DuckReed>>
 <<else>>
     Athena: Are you sure you don't know anything about Mallard's reed?#el:Neutral
     Melissa: ...

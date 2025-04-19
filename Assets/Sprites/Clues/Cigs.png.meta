@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 84927670489549b489b73751f7f98b41
+guid: 1bf7ab80023f73641b38c9c2a5da8f29
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7650618461979813879
-    second: Owl_Overworld_0
+      213: -1667369994665506814
+    second: Cigs_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Owl_Overworld_0
+      name: Cigs_0
       rect:
         serializedVersion: 2
-        x: 302
-        y: 116
-        width: 324
-        height: 373
+        x: 49
+        y: 60
+        width: 902
+        height: 880
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7f72a5ad4f47c2a60800000000000000
-      internalID: 7650618461979813879
+      spriteID: 20841dee2df4cd8e0800000000000000
+      internalID: -1667369994665506814
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Owl_Overworld_0: 7650618461979813879
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

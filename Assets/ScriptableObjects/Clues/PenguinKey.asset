@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PenguinKey
   m_EditorClassIdentifier: 
   m_clueID: PenguinKey
-  m_name: PenguinKey
+  m_name: Skipper's Key
   m_clarificationInfo: 
   m_description: Skipper's missing key that was found on the victim's body.
   m_icon: {fileID: 7235219391446019889, guid: 6c3da4d39ac12b54ea82eee5f5363f06, type: 3}
