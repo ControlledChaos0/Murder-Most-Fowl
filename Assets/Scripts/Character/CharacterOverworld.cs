@@ -1,19 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMOD;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Yarn.Unity;
 
 public class CharacterOverworld : MonoBehaviour,
-    IPointerClickHandler
+    IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private string characterID;
     [SerializeField] private string yarnNode => GetCurrentNode();
     [SerializeField] private PlayerController player;
+
     public void OnPointerClick(PointerEventData eventData)
     {
         player.Move(new Ray(GetComponent<Transform>().position, CameraController.Instance.CameraTransform.forward));
         StartCoroutine(waitUntilStopMoving());
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        CursorManager.Instance.SetToMode(ModeOfCursor.Inspect);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        CursorManager.Instance.SetToMode(ModeOfCursor.Default);
     }
 
     public string GetCurrentNode()

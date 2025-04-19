@@ -14,37 +14,34 @@ public class DialogueHover : MonoBehaviour
     private float scaleDuration = 0.5f;
     Coroutine dialogueAnimation = null;
 
-    [SerializeField] 
-    private GameObject _background;
-
     private SpriteRenderer sr;
+    private float _scale;
+    private float _startScale;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sr = dialogueIndicator.GetComponent<SpriteRenderer>();
+        _scale = sr.transform.localScale.x;
+        _startScale = _scale / 3.0f;
         sr.enabled = false;
-        dialogueIndicator.transform.localScale = new Vector3(0.2f, 0.2f, 1);
+        dialogueIndicator.transform.localScale = new Vector3(_startScale, _startScale, 1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_background.activeSelf && dialogueAnimation != null) 
+        if (dialogueAnimation == null)
         {
             sr.enabled = false;
-            StopCoroutine(dialogueAnimation);
-            dialogueIndicator.transform.localScale = new Vector3(0.2f, 0.2f, 1);
+            dialogueIndicator.transform.localScale = new Vector3(_startScale, _startScale, 1);
         }
     }
 
     void OnMouseEnter()
     {
-        if (!_background.activeSelf)
-        {
-            sr.enabled = true;
-            dialogueAnimation = StartCoroutine(openDialogue());
-        }
+        sr.enabled = true;
+        dialogueAnimation = StartCoroutine(openDialogue());
     }
 
     void OnMouseExit()
@@ -53,18 +50,17 @@ public class DialogueHover : MonoBehaviour
         {
             sr.enabled = false;
             StopCoroutine(dialogueAnimation);
-            dialogueIndicator.transform.localScale = new Vector3(0.2f, 0.2f, 1);
+            dialogueIndicator.transform.localScale = new Vector3(_startScale, _startScale, 1);
         }
     }
 
     public IEnumerator openDialogue()
     {
-        float startSize = 0.2f;
         float startTime = Time.time;
         while (Time.time - startTime < scaleDuration)
         {
             float t = (Time.time - startTime) / scaleDuration;
-            float scale = Mathf.Lerp(startSize, 0.45f, curve.Evaluate(t));
+            float scale = Mathf.Lerp(_startScale, _scale, curve.Evaluate(t));
             dialogueIndicator.transform.localScale = new Vector3(scale, scale, 1);
             yield return null;
         }

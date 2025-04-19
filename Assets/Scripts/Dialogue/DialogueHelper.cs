@@ -67,8 +67,8 @@ public class DialogueHelper : Singleton<DialogueHelper>
     private static List<NameSpriteMatch> _names;
     private static bool lockPortrait = false;
 
-    private static AudioSource _audioSource;
-    private static List<Song> _tracks;
+    //private static AudioSource _audioSource;
+    //private static List<Song> _tracks;
 
     private Dictionary<string, string> _nameDict = new();
     private bool _inDialogue;
@@ -81,8 +81,8 @@ public class DialogueHelper : Singleton<DialogueHelper>
         _right = _rightCharacter;
         _sprites = _spriteList;
         _names = _nameList;
-        _tracks = _trackList;
-        _audioSource = _source;
+        //_tracks = _trackList;
+        //_audioSource = _source;
 
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -233,6 +233,33 @@ public class DialogueHelper : Singleton<DialogueHelper>
         }
     }
 
+    public static void ChangeLeftExpression(string name = null)
+    {
+        if (lockPortrait)
+        {
+            return;
+        }
+
+        if (string.IsNullOrEmpty(name))
+        {
+            _left.gameObject.SetActive(false);
+            return;
+        }
+
+        NameSpriteMatch charInfo = _names.Find(e => e.charID == _leftName);
+
+        SpriteItemList expressions = charInfo.expressions;
+        Debug.Log(charInfo.name);
+        Debug.Log(charInfo.charID);
+        
+        if (expressions != null)
+        {
+            _left.gameObject.SetActive(true);
+            SpriteItem spriteItem = expressions.spriteItemList.Find(e => e.name == name);
+            _left.sprite = spriteItem.sprite;
+        }
+    }
+
     [YarnCommand("ChangeCharacters")]
     public static void ChangeCharacters(string left_name = null, string right_name = null)
     {
@@ -240,16 +267,16 @@ public class DialogueHelper : Singleton<DialogueHelper>
         ChangeRight(right_name);
     }
 
-    public void ChangeTrack(string trackName = null)
-    {
-        AudioClip newClip = _tracks.Find(e => e.name == trackName).song;
-        if (newClip != _audioSource.clip)
-        {
-            _audioSource.clip = newClip;
-            _audioSource.volume = 1;
-            _audioSource.Play();
-        }
-    }
+    //public void ChangeTrack(string trackName = null)
+    //{
+    //    AudioClip newClip = _tracks.Find(e => e.name == trackName).song;
+    //    if (newClip != _audioSource.clip)
+    //    {
+    //        _audioSource.clip = newClip;
+    //        _audioSource.volume = 1;
+    //        _audioSource.Play();
+    //    }
+    //}
 
     public void UpdateDialogueUI(LocalizedLine localLine)
     {
@@ -296,9 +323,14 @@ public class DialogueHelper : Singleton<DialogueHelper>
             ChangeRightExpression(tagParts[1]);
             return;
         }
+        if (tagParts[0] == "el")
+        {
+            ChangeLeftExpression(tagParts[1]);
+            return;
+        }
         if (tagParts[0] == "s")
         {
-            ChangeTrack(tagParts[1]);
+            //ChangeTrack(tagParts[1]);
             return;
         }
         

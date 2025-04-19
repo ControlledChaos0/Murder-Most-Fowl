@@ -15,5 +15,5 @@ MonoBehaviour:
   m_clueID: Key
   m_name: Key
   m_clarificationInfo: 
-  m_description: 
+  m_description: A golden key found in the pocket of the victim.
   m_icon: {fileID: 3591384076093090303, guid: 08a9280d1a473e249921a5f8be837199, type: 3}

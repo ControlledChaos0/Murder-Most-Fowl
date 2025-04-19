@@ -15,5 +15,6 @@ MonoBehaviour:
   m_clueID: Rope
   m_name: Strange Hanging
   m_clarificationInfo: 
-  m_description: 
+  m_description: The victim showed no signs of struggle. This is almost unheard of
+    in concious hangings, even if self inflicted.
   m_icon: {fileID: -4570153536982545689, guid: 05f6168e1c33948419e168c7b0a1607f, type: 3}

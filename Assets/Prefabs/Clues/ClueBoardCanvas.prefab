@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7083567320863708109}
   - component: {fileID: 2330484646131664105}
   - component: {fileID: 2520091148303793637}
-  - component: {fileID: 4346253562272464057}
+  - component: {fileID: 7989884159912608650}
   m_Layer: 5
   m_Name: ClueBoardButton
   m_TagString: Untagged
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4346253562272464057
+--- !u!114 &7989884159912608650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1112443637991054846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 2aeb83625f072e542b287ddeca888108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:

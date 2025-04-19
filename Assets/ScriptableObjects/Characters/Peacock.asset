@@ -20,3 +20,15 @@ MonoBehaviour:
   m_clueResponses:
   - clueID: LoveLetter
     nodeResponse: PeacockLoveLetter
+  - clueID: BurnedNote
+    nodeResponse: PeacockBurnedNote
+  - clueID: DuckReed
+    nodeResponse: PeacockDuckReed
+  - clueID: PeacockReed
+    nodeResponse: PeacockReed
+  - clueID: Id
+    nodeResponse: PeacockId
+  - clueID: FightersPhoto
+    nodeResponse: PeacockFighters
+  - clueID: LoversPhoto
+    nodeResponse: PeacockLovers

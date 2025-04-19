@@ -15,5 +15,6 @@ MonoBehaviour:
   m_clueID: Bottle
   m_name: Wine Bottle
   m_clarificationInfo: 
-  m_description: 
+  m_description: The missing bottle from the alcohol cabinet. Matches the glass type
+    of the glass shards found by the body.
   m_icon: {fileID: 709657289480405090, guid: e0ea33599c5625748b47ed688c57efd7, type: 3}

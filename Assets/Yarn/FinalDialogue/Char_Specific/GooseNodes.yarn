@@ -5,3 +5,195 @@ tags:
 	<<jump GooseMain>>
 <<endif>>
 ===
+
+title: GooseIntroduction
+tags: lc:Owl rc:
+---
+Athena: <i>Chase Gander…</i>#s:Goose#el:Neutral
+Athena: <i>Richest man this side of the country. I wouldn't be surprised if he owns this train.</i>#el:Surprised
+Athena: <i>I'm almost too intimidated to talk to him.</i>#el:Neutral
+Athena: Good Morning, Mr. Gander.
+Chase: Who am I speaking to?
+Athena: I'm Detective Athena Nox.
+Chase: I assure you there's not much more than what meets the eye.
+Chase: This scenario is… <color=\#f3db82>unfortunate but not entirely unexpected</color>.
+Athena: I'm sure there's something you could help me with to shed light on the situation.
+<<jump GooseConversation>>
+===
+
+title: GooseConversation
+tags: c:Owl:Goose
+---
+<<set $ConvoChar = "Goose">>
+<<if $Tutorial is false>>
+	<<jump GooseMain>>
+<<endif>>
+Chase: What do you want?#el:Neutral
+-> What did you mean by "not unexpected"?
+	Athena: You said this was “unfortunate but not entirely unexpected.” Could you elaborate?
+	Chase: It would be wrong of me to gossip of one who just took their life.
+	Athena: ... #el:Intense
+	Athena: I understand.#el:Neutral
+-> <color=\#94e9e4>Present</color>
+	<<PresentEvidence>>
+-> Nothing Now
+	Chase: My time is precious.
+===
+
+
+title: GooseMain
+---
+Chase: What do you want?#s:Goose#el:Neutral
+-> I have a few questions for you.
+	<<jump GooseQuestions>>
+-> <color=\#94e9e4>Present</color>
+	<<PresentEvidence>>
+-> Nothing Now
+	Chase: My time is precious.
+===
+title: GooseQuestions
+---
+Chase: What else would you like to ask?#el:Neutral
+-> Where were you last night?
+	Chase: Mallard and I were discussing private business matters.
+	Athena: Business matters?#el:Intense
+	Chase: As I said. Private.#el:Neutral
+	Chase: After we concluded, I decided to retire to bed early.
+	Chase: I was woken by a large crash in the dining car, but assumed nothing of and went back to sleep.
+	Athena: Did you hear anything else?
+	Chase: I did not. The earplugs I put in after waking assured that.
+	Chase: When I finally woke at an appropriate time, I heard Melissa's voice outside my quarters.
+	Chase: When I exited, I was greeted by a locked parlor car door and noticed that bartender enter her dorm.
+	Athena: Bartender? As in Morgana?
+	Chase: Ah yes, that is her name, isn't it?
+	Chase: Anyways, I confronted the bellboy about the locked door, but he claimed to have misplaced his key.
+	Chase: My ask was for naught however, as the door was soon unlocked by someone. 
+	Chase: Followed by a bloodcurdling scream.
+	Athena: Is that when they found the body?
+	Chase: ...
+	Chase: Indeed.
+	<<jump GooseQuestions>>
+-> What are your thoughts about Mallard?
+	Chase: Mallard.. He was always quite troubled.
+	Athena: Can you elaborate?
+	Chase: I will not speak ill of the dead.
+	-> Press
+		<<PresentEvidence>>
+	-> Anyways...
+		<<jump GooseQuestions>>
+-> Do you know if anyone would want to kill him?
+	Chase: I hope you do not suspect it was me.
+	Chase: Though I would not blame you for the suspicion.
+	Athena: Do you have any suspects?
+	Chase: I will not throw any lofty accusations.
+	<<jump GooseQuestions>>
+-> What did you mean by "not unexpected"?
+	Athena: You said this was “unfortunate but not entirely unexpected.” Could you elaborate?
+	Chase: ...
+	Chase: Let's just say he knew how to dig himself a hole.
+-> Is it true Mallard was low on money?<<if $DuckBroke>>
+	Chase: ...
+	Chase: Who told you this?
+	Athena: Melissa did.
+	Chase: Please keep this in confidence.
+	Chase: I was not supposed to tell Miss Peacock in the first place.
+	Chase: ...
+	Chase: I thought she deserved to know learning that duck owed her a large sum of money.
+-> That's all
+	<<jump GooseConversation>>
+
+===
+
+title: GooseStool
+---
+Chase: You think Mallard used that in his attempt?#el:Neutral
+Chase: I find that… hard to believe.
+Athena: What do you mean by that?
+Chase: Well, Mallard, you've seen him. 
+Chase: Poor thing he was <color=\#f3db82>never one to stand out of a crowd</color>.
+===
+
+title: GooseBusinessPartner
+---
+Chase: We were indeed business partners.#el:Neutral
+Chase: While our partnership was rather lucrative, it was nonetheless... tenuous.
+Chase: Mallard inherited quite the fortune from his family and with it came great connections. 
+Chase: However, he was never the most business savvy duck in the pond.
+Chase: ...
+===
+
+title: GooseHandkerchief
+---
+Chase: Yes. This is mine.#el:Neutral
+Chase: Mallard loved to snag little trinkets from me.
+Chase: It was quite petty honestly.
+===
+
+title: GooseDismissal
+---
+Chase: I don't see the relevance of this.#el:Neutral
+===
+
+title: GooseLoveLetter
+---
+Chase: Oh. Well that's a bit private.#el:Neutral
+Athena: I apologize, but this is an investigation.
+Chase: Understood.
+Chase: Melissa and I did <color=\#f3db82>sleep in the same bed last night</color>.
+Chase: We've been quite close recently... but elected to keep it under wraps.
+Chase: Last night she was drunk, so I would never dream to make further advances.
+Chase: I accidentally fell asleep, <color=\#f3db82>only to be started awake by the aformentioned crash</color>.
+Chase: However, before I left the room <color=\#f3db82>I heard someone walking down the hallway</color>.
+Chase: I'm not entirely sure who it was, however.
+Chase: I waited around 30 more minutes, worried my cover would be blown, before I ultimately retired to my room.
+Chase: ...
+Chase: I still have things left unsaid to Melissa.
+Chase: I know this is the cowardly method, but would you mind <color=\#f3db82>delivering that letter to her</color>?
+Athena: Of course.
+<<set $DeliverLetter to true>>
+===
+
+title: GooseMaidenPhoto
+---
+Chase: You're investigating a murder, not my personal life.#el:Neutral
+Chase: However, if you must know...
+Chase: ...
+Chase: That's my Eve. <color=\#f3db82>Evelyn Gander</color>.
+Athena: Is she your wife?
+Chase: ...
+Chase: Yes. She was.
+Athena: What happened?
+Chase: The Avian Flu pandemic a few years back.
+Chase: The disease used to me much more potent than it is now.
+Chase: ...
+Chase: If only I could go back to that <color=\#f3db82>March</color>.
+Chase: Oh the things I wish I could've said to you, my dear.
+===
+
+title: GooseAttorneyLetter
+---
+Chase: Yes I contacted my Attorney.#el:Neutral
+Chase: I believe I have the right to, <color=\#f3db82>seeing I'm being sued</color>.
+Athena: I see they say <color=\#f3db82>March</color> is hard for you.
+Athena: Why is that, Mr. Gander?
+Chase: ...
+Chase: I lost something dear to me one <color=\#f3db82>March</color>.
+Chase: That's all.
+===
+
+title: GooseDebtDocument
+---
+Chase: I cannot comment about this.#el:Neutral
+Athena: But you know something?#el:Intense
+Chase: If you care at all for my legal wellbeing, you will cease pushing for an answer.
+===
+
+title: GooseDuckReed
+---
+Chase: I do not do drugs. #el:Neutral
+===
+
+title: GoosePeacockReed
+---
+Chase: I do not do drugs. #el:Neutral
+===
