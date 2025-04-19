@@ -32,3 +32,5 @@ MonoBehaviour:
     nodeResponse: PeacockFighters
   - clueID: LoversPhoto
     nodeResponse: PeacockLovers
+  - clueID: CargoManifest
+    nodeResponse: PeacockCargoManifest

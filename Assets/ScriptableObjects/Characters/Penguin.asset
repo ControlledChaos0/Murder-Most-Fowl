@@ -26,3 +26,9 @@ MonoBehaviour:
     nodeResponse: PenguinBottle
   - clueID: Key
     nodeResponse: PenguinKey
+  - clueID: BurnedNote
+    nodeResponse: PenguinBurntNote
+  - clueID: CargoManifest
+    nodeResponse: PenguinManifest
+  - clueID: MissingBriefcase
+    nodeResponse: PenguinMissingBriefCase

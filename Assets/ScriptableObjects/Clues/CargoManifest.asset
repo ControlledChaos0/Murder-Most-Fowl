@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
-  m_Name: BurnedNote
+  m_Name: CargoManifest
   m_EditorClassIdentifier: 
-  m_clueID: BurnedNote
-  m_name: Burned Note
+  m_clueID: CargoManifest
+  m_name: Cargo Manifest
   m_clarificationInfo: 
-  m_description: Half of a burned suicide note supposedly written by Mallard. It
-    notably mentions "Melissa."
-  m_icon: {fileID: 8469227874765211877, guid: 4f78b9134775d6c4c9c61b6d26393c80, type: 3}
+  m_description: A manifest detailing registered luggage on the train. The manifest
+    has luggage from Melissa, Skipper, Athena, Morgana, and Mallard. Is there someone
+    missing?
+  m_icon: {fileID: 8176632288665185867, guid: 571df24994b847641a6eb60f5453dd9b, type: 3}

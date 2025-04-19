@@ -246,3 +246,15 @@ Athena: Yeah... #el:Sad
 Athena: Do you know why she still had this?
 Melissa: That would be something <color=\#f3db82>you should ask her</color>, honey.
 ===
+
+title: PeacockCargoManifest
+---
+Melissa: Yes, this looks cor-
+Melissa: Wait...
+Melissa: Does Gander not have a registered briefcase?
+Athena: It would appear he does not.
+Melissa: I clearly remember moving <color=\#f3db82>his heavy briefcase off of my bag</color>.
+<<CreateClue ClueBoardCanvas MissingBriefcase>>
+: Got Evidence <color=\#94e9e4>Missing Briefcase</color>#el:Neutral
+
+===
