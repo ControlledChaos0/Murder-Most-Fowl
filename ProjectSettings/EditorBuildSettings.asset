@@ -11,8 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/_Main Scenes/Main Menu.unity
     guid: bc9e61c9636102942b8416cea8cc9953
-  - enabled: 1
-    path: Assets/Scenes/_Main Scenes/TrainCarMain.unity
+  - enabled: 0
+    path: Assets/Scenes/Jade/TrainCarMain.unity
     guid: b03bd3aadeea7fd458ed0edd20f17544
   - enabled: 0
     path: Assets/Scenes/Sophia/Train_Car.unity

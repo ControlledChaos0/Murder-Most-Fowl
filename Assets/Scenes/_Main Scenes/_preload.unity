@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607a79191ecb4144da315beee2405368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_startScene: FinalDialogue
+  m_startScene: Main Menu
 --- !u!114 &1772704875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +227,12 @@ MonoBehaviour:
     DuckBroke: 0
     PeacockArgument: 0
     DeliverLetter: 0
+    PresentedReed: 0
+    FixedRelationship: 0
+    MorganaTestimony: 0
+    ShowedGloves: 0
+    CrowGlovesStory: 0
+    HasLetter: 0
     DiscoveredClues: []
     ClueBoardClues: []
     ClueBoardNotes: []

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Reed_Overworld_0: -128457886809725864
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
