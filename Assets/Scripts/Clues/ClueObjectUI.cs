@@ -14,6 +14,7 @@ namespace Clues
         IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] private Image _image;
+        [SerializeField] private Pin _pin;
         public Image Image => _image;
         public GameObject _menu;
 
@@ -155,6 +156,13 @@ namespace Clues
                         break;
                 }
             }
+
+            if (!placed)
+            {
+                // TODO
+                // Fix being able to place the UI anywhere but the folder and the clueboard
+            }
+
             _scaling = false;
         }
 
@@ -195,6 +203,10 @@ namespace Clues
             _mouseDown = false;
 
             if (!_dragging) {
+                if (eventData.pointerEnter && _pin.gameObject.Equals(eventData.pointerDrag))
+                {
+                    return;
+                }
                 if (_onBoard)
                 {
                     bool isActive = _menu.activeSelf;

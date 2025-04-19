@@ -61,6 +61,7 @@ public class Pin : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandl
             if (pin != null)
             {
                 _connected = pin;
+                clueString.SetRaycastTarget(true);
                 break;
             }
         }
