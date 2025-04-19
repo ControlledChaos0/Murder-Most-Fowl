@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6ec7517671dbb8d459881bf5d10e19a7
+guid: 1bffcf7b72fbd5d4ba5482e913155837
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -9,7 +9,7 @@ TextureImporter:
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -103,10 +103,10 @@ TextureImporter:
       name: Magnifying_Glass_Cursor_0
       rect:
         serializedVersion: 2
-        x: 86
-        y: 106
-        width: 439
-        height: 487
+        x: 0
+        y: 0
+        width: 544
+        height: 585
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -26,13 +26,13 @@ public class ClueString : MonoBehaviour,
 
     void Start()
     {
-        //transforms = new RectTransform[ropePointProvider.linePoints];
-        //for (int i = 0; i < transform.childCount; i++)
-        //{
-        //    transforms[i] = (RectTransform)transform.GetChild(i);
-        //}
+        transforms = new RectTransform[ropePointProvider.linePoints];
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transforms[i] = (RectTransform)transform.GetChild(i);
+        }
     }
-    
+
     private bool _lrNeedSetParent = true;
     private void SetLineRendererParent()
     {
@@ -49,7 +49,7 @@ public class ClueString : MonoBehaviour,
         _lineRenderer.points = ropePointProvider.Points;
         _lineRenderer.SetVerticesDirty();
 
-        //UpdateCollision();
+        UpdateCollision();
 
         SetRopeLen();
     }
@@ -112,6 +112,6 @@ public class ClueString : MonoBehaviour,
 
     public void SetRaycastTarget(bool set)
     {
-        _lineRenderer.raycastTarget = set;
+        //_lineRenderer.raycastTarget = set;
     }
 }
