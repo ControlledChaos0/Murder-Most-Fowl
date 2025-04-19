@@ -24,3 +24,5 @@ MonoBehaviour:
     nodeResponse: CrowEx
   - clueID: SootyGloves
     nodeResponse: CrowSootyGloves
+  - clueID: Cigs
+    nodeResponse: CrowCigs

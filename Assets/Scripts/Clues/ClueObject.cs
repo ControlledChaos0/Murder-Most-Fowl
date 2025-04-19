@@ -12,6 +12,7 @@ namespace Clues
         [SerializeField] private string _node;
         [SerializeField] private bool _disappearOnClick = true;
         [SerializeField] private bool _disabledInTutorial = false;
+        [SerializeField] private bool _morganaClue = false;
 
         private SpriteRenderer _spriteRenderer;
         private bool _hovered;
@@ -22,7 +23,7 @@ namespace Clues
         {
             // TODO
             _spriteRenderer = GetComponent<SpriteRenderer>();
-            if (_disabledInTutorial)
+            if (_disabledInTutorial || _morganaClue)
             {
                 _spriteRenderer.enabled = false;
             }
@@ -32,7 +33,10 @@ namespace Clues
         {
             if (!_disabledInTutorial || !GameManager.StateManager.ActiveState.Tutorial)
             {
-                _spriteRenderer.enabled = true;
+                if (!_morganaClue || GameManager.StateManager.ActiveState.CrowCigs)
+                {
+                    _spriteRenderer.enabled = true;
+                }
             }
         }
 
@@ -82,15 +86,18 @@ namespace Clues
             Debug.Log("Click the clue!");
             if (!_disabledInTutorial || !GameManager.StateManager.ActiveState.Tutorial)
             {
-                if (!_found)
+                if (!_morganaClue || GameManager.StateManager.ActiveState.CrowCigs)
                 {
-                    _found = true;
-                    ClueBoardManager.Instance.InstantiateClue(_clueID);
-                    DialogueHelper.Instance.DialogueRunner.StartDialogue(_node);
-                }
-                if (_disappearOnClick)
-                {
-                    Collect();
+                    if (!_found)
+                    {
+                        _found = true;
+                        ClueBoardManager.Instance.InstantiateClue(_clueID);
+                        DialogueHelper.Instance.DialogueRunner.StartDialogue(_node);
+                    }
+                    if (_disappearOnClick)
+                    {
+                        Collect();
+                    }
                 }
             }
             // if (!_found)

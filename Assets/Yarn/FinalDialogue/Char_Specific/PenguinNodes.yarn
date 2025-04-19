@@ -239,7 +239,7 @@ Athena: Athena. Athena Nox.
 :In the final version these clues will be found in the bedrooms of the characters, which is currently inaccessibe.
 :These unobtainable clues have been added to your inventory, so you can still enjoy the full story!
 :Feel free to play around with them and test them all out!
-<<ChangeLeftCharacter Athena>>
+Athena: Have fun!
 Skipper: Thank you Detective Nox. I'll give you some time to investigate.#e:Happy
 Skipper: Feel free to <color=\#f3db82>investigate the body</color> if you deem necessary.
 Skipper: Be sure to <color=\#f3db82>question everyone thoroughly</color>.
@@ -279,7 +279,7 @@ title: PenguinManifest
 Skipper: As I said, nothing in the cargo room is missing.#e:Neutral
 ===
 
-title: PenguinMissingBriefcase
+title: PenguinMissingBriefCase
 ---
 Athena: Are you sure nothing is missing?#el:Intense#e:Neutral
 Skipper: I don't believe so.
@@ -311,12 +311,53 @@ Athena: ...#el:Sad
 
 title: PenguinNewspaper
 ---
-Skipper: They were inseperable <color=\#f3db82>partners in crime</color>- er I mean business.
+Skipper: They were inseperable <color=\#f3db82>partners in crime</color>- er I mean business.#el:Neutral
 ===
 
 title: PenguinPenguinKey
 ---
-Skipper: Those are my keys.
+Skipper: Those are my keys.#el:Neutral
 Skipper: I lend them to you for your investigation.
 Skipper: Do not abuse this power.
+===
+
+title: PenguinBriefcase
+---
+Athena: <i>I have a hunch it's his. I'm not 100% sure, but maybe if I pretend I know and press him enough, he'll crack.</i>#el:Intense
+Athena: I'll ask one time. Is this yours.
+Skipper: I-
+Skipper: No.
+Athena: Don't mess with me. I know it's yours.
+Skipper: It's mine, ok. But the drugs aren't! I don't know where that came from!#e:Angry
+Athena: I didn't <color=\#f3db82>tell you about the contents</color>.
+Athena: <color=\#f3db82>How did you know there were drugs in the suitcase</color>?
+Skipper: ... A wild guess! #e:Nervous
+Skipper: I'm being interrogated about a suspicious briefcase! Of course there are drugs involved.
+Athena: Why would Mallard have your briefcase?
+Skipper: Huh? How did you kn-
+Skipper: It's Mallard's?
+Athena: No. It's yours. Why did Mallard have it?
+Skipper: ...
+Skipper: I didn't do it.#e:Angry
+Athena: Answer my question.
+Skipper: He must've... Must've taken my briefcase and filled it with drugs!
+Athena: Cut the crap. I know the drugs are yours.
+Athena: I'll ask one more time. What happened with the briefcase?
+Skipper:...#e:Sad
+Skipper: I was <color=\#f3db82>smuggling the drugs on the train</color>...
+Skipper: I heard a crash in the middle of the night, and found Mallard with my briefcase.
+Skipper: Mallard was still... bitter about his termination.
+Skipper: He thought the briefcase was Gander's, and claimed he's just getting what he deserved.
+Skipper: I didn't tell anyone, because I was afraid.
+Skipper: Please don't turn me in.
+Skipper: I didn't kill him.
+Athena: There was white powder on the knife in his pocket.
+Athena: He must have <color=\#f3db82>stolen the briefcase</color> before he was murdered.
+Athena: And there was a stab mark on the table from the knife.
+Athena: If someone caught him, it was not peaceful.
+Skipper: It was an accide-#e:Nervous
+Skipper: ...#e:Neutral
+Skipper: I'm sure it's unrelated.#e:Neutral
+Skipper: Do you have any more questions?
+Athena: No. I think that's all I need.
 ===

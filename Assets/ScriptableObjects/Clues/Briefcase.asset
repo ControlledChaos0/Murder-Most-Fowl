@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
-  m_Name: MissingBriefcase
+  m_Name: Briefcase
   m_EditorClassIdentifier: 
-  m_clueID: MissingBriefcase
-  m_name: Missing Briefcase
+  m_clueID: Briefcase
+  m_name: Briefcase
   m_clarificationInfo: 
-  m_description: (Gander's?) Briefcase is missing from the cargo manifest.
-  m_icon: {fileID: 5086068445134230541, guid: 6eb4b36829ea45d4badcfcdbb1966865, type: 3}
+  m_description: Briefcase found in Morgana's cigarette stash. She has no idea how
+    it got there. The briefcase contains a lot of crack corn, identical to the baggie
+    Skipper had in his room.
+  m_icon: {fileID: 1334335333589366465, guid: a280af6a25e3363478ca483b144201a7, type: 3}

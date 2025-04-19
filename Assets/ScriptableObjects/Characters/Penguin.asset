@@ -38,5 +38,5 @@ MonoBehaviour:
     nodeResponse: PenguinCrowEx
   - clueID: Newspaper
     nodeResponse: PenguinNewspaper
-  - clueID: Newspaper
-    nodeResponse: PenguinNewspaper
+  - clueID: Briefcase
+    nodeResponse: PenguinBriefcase

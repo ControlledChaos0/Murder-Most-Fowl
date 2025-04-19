@@ -92,7 +92,7 @@ title: CrowMain
     Morgana: I'm willing to <color=\#f3db82>answer your question</color> now if you need me to.
     <<set $FixedRelationship to true>>
     <<jump CrowMain>>
--> I know there's something you're not telling me.<<if $MorganaTestimony and not $CrowGlovesStory and $HasLetter>>
+-> I know there's something you're not telling me.<<if $MorganaTestimony and $HasLetter and not $CrowGlovesStory>>
     Athena: <i>There's something she's not telling me about those gloves...</i>#el:Intense
     Athena: Morgana... about the gloves.
     Athena: Tell me one more time. Are they yours?
@@ -108,7 +108,7 @@ title: CrowMain
     Morgana: ...#e:Sad
     Morgana: So I burned it.
     <<set $CrowDone to true>>
--> How are you doing?
+-> How are you doing?<<if $CrowDone>>
     Morgana: I'm doing fine.
     Morgana: Could use a cigarette though.
     Morgana: You wanna smoke?
@@ -204,6 +204,7 @@ Athena: They're yours?
     Morgana: As her friend, I couldn't let the world find out.
     Morgana: ...#e:Sad
     Morgana: So I burned it.
+    <<set $CrowDone to true>>
     <<set $CrowGlovesStory to true>>
 <<else>>
     Morgana: Nope.
@@ -279,4 +280,15 @@ Morgana: And?#e:Angry#el:Neutral
 title: CrowGoodDismissal
 ---
 Morgana: Sorry. That doesn't look familiar.#el:Neutral
+===
+
+title: CrowCigs
+---
+Morgana: Thank you, Athena. I could really use one right now.
+Athena: Likewise.
+Morgana: ... #e:Sad
+Morgana: I really missed sharing a good smoke with you.
+Athena: I missed you too.
+Athena: You mean the world to me, Morgana.
+Morgana: ...#e:Embarrassed
 ===
