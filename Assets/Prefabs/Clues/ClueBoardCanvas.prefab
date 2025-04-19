@@ -1395,6 +1395,7 @@ GameObject:
   - component: {fileID: 3544324078344815488}
   - component: {fileID: 4703620466174839677}
   - component: {fileID: 7532216139715027180}
+  - component: {fileID: 304042333819480625}
   m_Layer: 5
   m_Name: Sticky Notes
   m_TagString: Untagged
@@ -1459,6 +1460,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &304042333819480625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3084214115316940314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7cb66232c6132f43b57c7a5b4361ade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stickyNotePrefab: {fileID: 1086468133419905555, guid: f34aa1fbf944b9545b40618a2aadd3a5, type: 3}
 --- !u!1 &3691073673336351334
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,7 +2036,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 117964918300607792}
   m_HandleRect: {fileID: 3966520414422677587}
   m_Direction: 2
-  m_Value: 0.99999964
+  m_Value: 0.9999998
   m_Size: 0.58066386
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2411,7 +2425,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.2849, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 304.6189, y: 170.6703}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8819180420557452436
