@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Clues;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -46,6 +47,10 @@ public class ClueString : MonoBehaviour,
 
     void OnDestroy()
     {
+        if (stringMenu.Equals(ClueBoardManager.Instance.SelectedString.stringMenu))
+        {
+            OnDeselect(null);
+        }
         _pins[0]?.ClueStrings.Remove(this);
         _pins[1]?.ClueStrings.Remove(this);
     }
@@ -141,9 +146,27 @@ public class ClueString : MonoBehaviour,
         stringMenu.transform.localPosition = ropePointProvider.MidPoint;
     }
 
-
     public bool CheckIfDuplicate()
     {
         return _pins[0].ClueStrings.Any(x => (x.Pins[0].Equals(_pins[0]) && x.Pins[1].Equals(_pins[1])) || (x.Pins[1].Equals(_pins[0]) && x.Pins[0].Equals(_pins[1])));
+    }
+
+    public void Deduce()
+    {
+        ClueObjectUI clue1 = _pins[0].gameObject.GetComponentInParent<ClueObjectUI>();
+        ClueObjectUI clue2 = _pins[1].gameObject.GetComponentInParent<ClueObjectUI>();
+        Clue deduction = ClueManager.GetClueFromDeduction(clue1.Clue.ClueID, clue2.Clue.ClueID);
+
+        if (deduction != null)
+        {
+            ClueBoardManager.Instance.InstantiateClue(deduction.ClueID);
+        }
+
+        stringMenu.gameObject.SetActive(false);
+    }
+
+    public void Delete()
+    {
+        Destroy(gameObject);
     }
 }
