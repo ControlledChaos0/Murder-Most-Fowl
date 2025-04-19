@@ -58,6 +58,12 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
         get => _activated;
     }
 
+    public bool ToggleLock
+    {
+        get => _toggleLock;
+        set => _toggleLock = value;
+    }
+
     private GraphicRaycaster _graphicRaycaster;
 
     public GraphicRaycaster GraphicRaycast => _graphicRaycaster;
