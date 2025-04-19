@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: SootyGloves
   m_EditorClassIdentifier: 
   m_clueID: SootyGloves
-  m_name: Sooty Gloves
+  m_name: Morgana's Inferno
   m_clarificationInfo: 
-  m_description: Gloves with soot on the fingers found in Morgana's room.
+  m_description: I found gloves with soot on them in Morgana's room, and a suspicious
+    burned note in the furnace. Could she have burned the note?
   m_icon: {fileID: 4150118663006781376, guid: f99650f1ae285c04cb8e895cdab66a49, type: 3}

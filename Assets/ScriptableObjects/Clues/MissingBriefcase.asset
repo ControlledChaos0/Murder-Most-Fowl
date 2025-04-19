@@ -15,5 +15,5 @@ MonoBehaviour:
   m_clueID: MissingBriefcase
   m_name: Missing Briefcase
   m_clarificationInfo: 
-  m_description: Chase Gander's briefcase is missing from the cargo manifest.
-  m_icon: {fileID: 1334335333589366465, guid: a280af6a25e3363478ca483b144201a7, type: 3}
+  m_description: (Gander's?) Briefcase is missing from the cargo manifest.
+  m_icon: {fileID: 5086068445134230541, guid: 6eb4b36829ea45d4badcfcdbb1966865, type: 3}
