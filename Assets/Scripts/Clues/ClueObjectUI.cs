@@ -238,6 +238,8 @@ namespace Clues
             {
                 ClueInventoryManager.Instance.UpdateClueBoardClue(_saveClue);
             }
+
+            _pin.gameObject.SetActive(true);
         }
 
         public void OnPlacedBin(NewBin binGO)
@@ -254,6 +256,8 @@ namespace Clues
                 ClueBoardManager.Instance.NewBin.AddToBin(this);
                 _inBin = true;
             }
+
+            _pin.gameObject.SetActive(false);
         }
 
         public void PresentEvidence()
@@ -264,7 +268,7 @@ namespace Clues
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (!ClueBoardManager.Instance.Selected)
+            if (!ClueBoardManager.Instance.SelectedClue)
             {
                 SetDisplay();
             }
@@ -272,7 +276,7 @@ namespace Clues
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            if (!ClueBoardManager.Instance.Selected)
+            if (!ClueBoardManager.Instance.SelectedClue)
             {
                 ClueBoardManager.Instance.ChangeDisplay();
             }
@@ -290,9 +294,9 @@ namespace Clues
 
         public void OnDeselect(BaseEventData eventData)
         {
-            ClueBoardManager.Instance.Selected._menu.SetActive(false);
+            ClueBoardManager.Instance.SelectedClue._menu.SetActive(false);
             ClueBoardManager.Instance.ChangeDisplay();
-            ClueBoardManager.Instance.Selected = null;
+            ClueBoardManager.Instance.SelectedClue = null;
         }
     }
 }

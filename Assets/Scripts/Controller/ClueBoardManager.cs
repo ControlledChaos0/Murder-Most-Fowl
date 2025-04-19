@@ -46,11 +46,18 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
     [SerializeField]
     private GameObject _stickyNote;
 
-    private ClueObjectUI _selected;
-    public ClueObjectUI Selected
+    private ClueObjectUI _selectedClue;
+    public ClueObjectUI SelectedClue
     {
-        get => _selected;
-        set => _selected = value;
+        get => _selectedClue;
+        set => _selectedClue = value;
+    }
+
+    private ClueString _selectedString;
+    public ClueString SelectedString
+    {
+        get => _selectedString;
+        set => _selectedString = value;
     }
 
     public bool InClueboard
@@ -100,6 +107,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
 
         InputController.Instance.ToggleClueBoard += ToggleClueBoard;
         InputController.Instance.Click += SetSelectedClueObject;
+        InputController.Instance.Click += SetSelectedString;
         // InputController.Instance.ToggleStickyNote += ToggleStickyNote;
         //_scrollEnabled = true;
         _canPresent = false;
@@ -117,6 +125,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
     {
         InputController.Instance.ToggleClueBoard -= ToggleClueBoard;
         InputController.Instance.Click -= SetSelectedClueObject;
+        InputController.Instance.Click -= SetSelectedString;
     }
 
     public void ToggleClueBoard() {
@@ -144,7 +153,8 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
 
     private void CloseClueBoard()
     {
-        Selected?.OnDeselect(null);
+        SelectedClue?.OnDeselect(null);
+        SelectedString?.OnDeselect(null);
         _activated = false;
         _canPresent = false;
         _toggleButton.CloseClueBoard();
@@ -187,23 +197,52 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
 
         if (!pointerEvent.pointerClick)
         {
-            Selected?.OnDeselect(pointerEvent);
+            SelectedClue?.OnDeselect(pointerEvent);
             return;
         }
 
         ClueObjectUI selectedUI = pointerEvent.pointerClick.GetComponentInParent<ClueObjectUI>();
         if (selectedUI)
         {
-            if (!Selected || (Selected && !Selected.Equals(selectedUI)))
+            if (!SelectedClue || (SelectedClue && !SelectedClue.Equals(selectedUI)))
             {
-                Selected?.OnDeselect(pointerEvent);
-                Selected = selectedUI;
-                Selected.OnSelect(pointerEvent);
+                SelectedClue?.OnDeselect(pointerEvent);
+                SelectedClue = selectedUI;
+                SelectedClue.OnSelect(pointerEvent);
             }
         }
         else
         {
-            Selected?.OnDeselect(pointerEvent);
+            SelectedClue?.OnDeselect(pointerEvent);
+        }
+    }
+
+    public void SetSelectedString(PointerEventData pointerEvent)
+    {
+        if (!InClueboard)
+        {
+            return;
+        }
+
+        if (!pointerEvent.pointerClick)
+        {
+            SelectedString?.OnDeselect(pointerEvent);
+            return;
+        }
+
+        ClueString selectedString = pointerEvent.pointerClick.GetComponentInParent<ClueString>();
+        if (selectedString)
+        {
+            if (!SelectedString || (SelectedString && !SelectedString.Equals(selectedString)))
+            {
+                SelectedString?.OnDeselect(pointerEvent);
+                SelectedString = selectedString;
+                SelectedString.OnSelect(pointerEvent);
+            }
+        }
+        else
+        {
+            SelectedString?.OnDeselect(pointerEvent);
         }
     }
 

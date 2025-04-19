@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(UILineRenderer))]
 public class ClueString : MonoBehaviour,
-    IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+    IPointerClickHandler
 {
     [SerializeField]
     private RopePointProvider ropePointProvider = new RopePointProvider();
@@ -14,23 +15,39 @@ public class ClueString : MonoBehaviour,
     [SerializeField]
     private float lengthScale;
 
-    [SerializeField] private RectTransform[] transforms;
+    [SerializeField] private RectTransform tTransform;
+    [SerializeField] private GameObject stringMenu;
+    
+    private RectTransform[] transforms;
     
     private UILineRenderer _lineRenderer;
     private MeshCollider _meshCollider;
+    private Pin[] _pins;
+
+    public Pin[] Pins
+    {
+        get => _pins;
+    }
     
     void Awake()
     {
+        _pins = new Pin[2];
         _lineRenderer = GetComponent<UILineRenderer>();
     }
 
     void Start()
     {
         transforms = new RectTransform[ropePointProvider.linePoints];
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < tTransform.childCount; i++)
         {
-            transforms[i] = (RectTransform)transform.GetChild(i);
+            transforms[i] = (RectTransform)tTransform.GetChild(i);
         }
+    }
+
+    void OnDestroy()
+    {
+        _pins[0]?.ClueStrings.Remove(this);
+        _pins[1]?.ClueStrings.Remove(this);
     }
 
     private bool _lrNeedSetParent = true;
@@ -49,7 +66,15 @@ public class ClueString : MonoBehaviour,
         _lineRenderer.points = ropePointProvider.Points;
         _lineRenderer.SetVerticesDirty();
 
+        if (_pins[1])
+        {
+            transform.position = _pins[0].transform.position;
+            Vector2 endPos = (_pins[1].transform.position - transform.position) / (ClueBoard.Instance.BoardTransform.localScale.x * ClueBoardManager.Instance.transform.localScale.x);
+            SetEndPoint(endPos);
+        }
+
         UpdateCollision();
+        UpdateStringMenu();
 
         SetRopeLen();
     }
@@ -100,18 +125,25 @@ public class ClueString : MonoBehaviour,
         Debug.Log("Click");
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void OnSelect(BaseEventData eventData)
     {
-        Debug.Log("Pointer enterrrrrr");
+        ClueBoardManager.Instance.SelectedString.stringMenu.SetActive(true);
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void OnDeselect(BaseEventData eventData)
     {
-        Debug.Log("God fucking dammit");
+        ClueBoardManager.Instance.SelectedString.stringMenu.SetActive(false);
+        ClueBoardManager.Instance.SelectedString = null;
     }
 
-    public void SetRaycastTarget(bool set)
+    private void UpdateStringMenu()
     {
-        //_lineRenderer.raycastTarget = set;
+        stringMenu.transform.localPosition = ropePointProvider.MidPoint;
+    }
+
+
+    public bool CheckIfDuplicate()
+    {
+        return _pins[0].ClueStrings.Any(x => (x.Pins[0].Equals(_pins[0]) && x.Pins[1].Equals(_pins[1])) || (x.Pins[1].Equals(_pins[0]) && x.Pins[0].Equals(_pins[1])));
     }
 }
