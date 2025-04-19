@@ -4,7 +4,7 @@ public class MainMenu : Menu
 {
     public void StartGame()
     {
-        GameManager.SceneManager.LoadSceneAndSwap("TrainCarMain");
+        GameManager.SceneManager.LoadSceneAndSwap("FinalDialogue");
     }
 
     public void QuitGame()

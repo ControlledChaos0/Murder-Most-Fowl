@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MallardReed_0: -2463536149805411390
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
