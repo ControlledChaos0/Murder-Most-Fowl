@@ -32,3 +32,11 @@ MonoBehaviour:
     nodeResponse: PenguinManifest
   - clueID: MissingBriefcase
     nodeResponse: PenguinMissingBriefCase
+  - clueID: CrackCorn
+    nodeResponse: PenguinCrackCorn
+  - clueID: CrowEx
+    nodeResponse: PenguinCrowEx
+  - clueID: Newspaper
+    nodeResponse: PenguinNewspaper
+  - clueID: Newspaper
+    nodeResponse: PenguinNewspaper

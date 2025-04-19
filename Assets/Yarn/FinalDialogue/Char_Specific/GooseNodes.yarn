@@ -99,6 +99,15 @@ Chase: What else would you like to ask?#el:Neutral
 	Chase: I was not supposed to tell Miss Peacock in the first place.
 	Chase: ...
 	Chase: I thought she deserved to know learning that duck owed her a large sum of money.
+-> Did you leave your room last night?<<if $MorganaTestimony>>
+	<<if $DeliverLetter>>
+		Gander: Yes. As I said I did leave my room.
+		Gander: My wife died <color=\#f3db82>7 years ago</color>, but I think I can finally move on.
+	<<else>>
+		Gander: ...
+		Gander: These accusations are false.
+		Gander: My wife died <color=\#f3db82>7 years go</color>. I am still mourning her.
+	<<endif>>
 -> That's all
 	<<jump GooseConversation>>
 
@@ -201,5 +210,9 @@ Chase: I do not do drugs. #el:Neutral
 
 title: GooseMissingBriefcase
 ---
-Chase: Yes. I did bring a briefcase aboard this train.
+Chase: I do have a bag, yes.
+Chase: However, I never keep my bags in the cargo hold.
+Chase: Why do you assume it is mine?
+Athena: Melissa assumed so.
+Chase: tsk. Well I am not the only businessman on this train.
 ===

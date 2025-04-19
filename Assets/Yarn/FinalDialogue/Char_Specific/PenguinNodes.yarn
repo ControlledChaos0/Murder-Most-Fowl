@@ -229,6 +229,10 @@ Athena: Athena. Athena Nox.
 <<CreateClue ClueBoardCanvas MaidenPhoto>>
 <<CreateClue ClueBoardCanvas LoversPhoto>>
 <<CreateClue ClueBoardCanvas FightersPhoto>>
+<<CreateClue ClueBoardCanvas CrackCorn>>
+<<CreateClue ClueBoardCanvas Newspaper>>
+<<CreateClue ClueBoardCanvas Id>>
+<<CreateClue ClueBoardCanvas Note>>
 <<ChangeRightCharacter>>
 <<ChangeLeftCharacter>>
 :For the purposes of this demo, not all clues in the overworld are able to be obtained.
@@ -279,10 +283,40 @@ title: PenguinMissingBriefcase
 ---
 Athena: Are you sure nothing is missing?#el:Intense#e:Neutral
 Skipper: I don't believe so.
-Athena: Melissa remembers Gander clearly having a briefcase on this train.
+Athena: Melissa remembers a quite heavy briefcase in the cargo hold...
 Athena: However, his bag is absent in the manifest.
 Skipper: ...#e:Angry
 Skipper: Perhaps I missed something.#e:Happy
 Skipper: People routinely store things in the back without telling me. #e:Neutral
 Skipper: They try to get around the luggage prices...
+===
+
+title: PenguinCrackCorn
+---
+Skipper: When I was organizing the luggage, this <color=\#f3db82>fell out of Mallard's suitcase</color>.#el:Neutral#e:Neutral
+Skipper: I wasn't trying to pry, I swear.
+Skipper: However, I couldn't leave such an illegal drug laying out in the cargo bay.#e:Sad
+Skipper: I had to remove it.#e:Neutral
+===
+
+title: PenguinCrowEx
+---
+Skipper: She and the victim used to date, yes.#el:Neutral#e:Neutral
+Skipper: She talks about you way more though.
+Athena: She does? #el:Surprised
+Skipper: I think she wishes <color=\#f3db82>you'd apologize about that letter</color>.#e:Sad
+Skipper: Quite a cruel way to cut someone off, isn't it?
+Athena: ...#el:Sad
+===
+
+title: PenguinNewspaper
+---
+Skipper: They were inseperable <color=\#f3db82>partners in crime</color>- er I mean business.
+===
+
+title: PenguinPenguinKey
+---
+Skipper: Those are my keys.
+Skipper: I lend them to you for your investigation.
+Skipper: Do not abuse this power.
 ===
