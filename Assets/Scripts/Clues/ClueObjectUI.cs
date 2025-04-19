@@ -14,6 +14,7 @@ namespace Clues
         IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] private Image _image;
+        [SerializeField] private Pin _pin;
         public Image Image => _image;
         public GameObject _menu;
 
@@ -155,6 +156,13 @@ namespace Clues
                         break;
                 }
             }
+
+            if (!placed)
+            {
+                // TODO
+                // Fix being able to place the UI anywhere but the folder and the clueboard
+            }
+
             _scaling = false;
         }
 
@@ -195,6 +203,10 @@ namespace Clues
             _mouseDown = false;
 
             if (!_dragging) {
+                if (eventData.pointerEnter && _pin.gameObject.Equals(eventData.pointerDrag))
+                {
+                    return;
+                }
                 if (_onBoard)
                 {
                     bool isActive = _menu.activeSelf;
@@ -226,6 +238,8 @@ namespace Clues
             {
                 ClueInventoryManager.Instance.UpdateClueBoardClue(_saveClue);
             }
+
+            _pin.gameObject.SetActive(true);
         }
 
         public void OnPlacedBin(NewBin binGO)
@@ -242,6 +256,8 @@ namespace Clues
                 ClueBoardManager.Instance.NewBin.AddToBin(this);
                 _inBin = true;
             }
+
+            _pin.gameObject.SetActive(false);
         }
 
         public void PresentEvidence()
@@ -252,7 +268,7 @@ namespace Clues
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (!ClueBoardManager.Instance.Selected)
+            if (!ClueBoardManager.Instance.SelectedClue)
             {
                 SetDisplay();
             }
@@ -260,7 +276,7 @@ namespace Clues
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            if (!ClueBoardManager.Instance.Selected)
+            if (!ClueBoardManager.Instance.SelectedClue)
             {
                 ClueBoardManager.Instance.ChangeDisplay();
             }
@@ -278,9 +294,9 @@ namespace Clues
 
         public void OnDeselect(BaseEventData eventData)
         {
-            ClueBoardManager.Instance.Selected._menu.SetActive(false);
+            ClueBoardManager.Instance.SelectedClue._menu.SetActive(false);
             ClueBoardManager.Instance.ChangeDisplay();
-            ClueBoardManager.Instance.Selected = null;
+            ClueBoardManager.Instance.SelectedClue = null;
         }
     }
 }

@@ -10,6 +10,8 @@ public class UILineRenderer : MaskableGraphic
     public float thickness = 10f;
     public bool center = true;
 
+    public Mesh mesh;
+
     
     protected override void Awake()
     {

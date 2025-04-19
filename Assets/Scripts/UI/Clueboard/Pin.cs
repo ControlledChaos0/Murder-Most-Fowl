@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Clues;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,27 +10,42 @@ using UnityEngine.EventSystems;
 public class Pin : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
     //private UILineRenderer _lineRenderer;
-    private ClueString clueString;
+    [SerializeField]
+    private GameObject stringPrefab;
 
+    private ClueString currString;
     private Pin _connected;
+
+    public List<ClueString> ClueStrings;
     
     private void Awake()
     {
-        clueString = GetComponentInChildren<ClueString>();
+        ClueStrings = new List<ClueString>();
+        //clueString = GetComponentInChildren<ClueString>();
     }
     
     bool _isDragging;
 
     void Update()
     {
-        clueString.transform.position = transform.position;
-        if (!_isDragging && _connected != null)
+
+    }
+
+    void OnEnable()
+    {
+        ClueStrings.Clear();
+    }
+
+    void OnDisable()
+    {
+        int count = ClueStrings.Count;
+        for (int i = 0; i < count; i++)
         {
-            SetLineRendererEnd(_connected.transform.position);
+            Destroy(ClueStrings[i].gameObject);
         }
     }
 
-    void SetLineRendererEnd(Vector2 endPos)
+    void SetLineRendererEnd(ClueString clueString, Vector2 endPos)
     {
         endPos = (endPos - (Vector2) transform.position) / (ClueBoard.Instance.BoardTransform.localScale.x * ClueBoardManager.Instance.transform.localScale.x);
         clueString.SetEndPoint(endPos);
@@ -38,11 +54,18 @@ public class Pin : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandl
     public void OnBeginDrag(PointerEventData eventData)
     {
         _isDragging = true;
+        GameObject stringGO = Instantiate(stringPrefab);
+        stringGO.transform.parent = ClueBoardManager.Instance.StringRenderers;
+        stringGO.transform.localScale = Vector2.one;
+
+        currString = stringGO.GetComponent<ClueString>();
+        currString.Pins[0] = this;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        SetLineRendererEnd(eventData.position);
+        currString.transform.position = transform.position;
+        SetLineRendererEnd(currString, eventData.position);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -61,13 +84,25 @@ public class Pin : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandl
             if (pin != null)
             {
                 _connected = pin;
+                currString.Pins[1] = _connected;
                 break;
             }
         }
 
-        if (_connected == null)
+        if (_connected == null || currString.CheckIfDuplicate())
         {
-            clueString.SetEndPoint(Vector2.zero);
+            Destroy(currString.gameObject);
+            currString = null;
+            return;
         }
+
+        ClueStrings.Add(currString);
+        currString.Pins[1].ClueStrings.Add(currString);
+        currString = null;
+    }
+
+    public void RemoveString(ClueString clueString)
+    {
+        ClueStrings.Remove(clueString);
     }
 }
