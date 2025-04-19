@@ -18,5 +18,5 @@ MonoBehaviour:
   m_description: Short stool that Mallard appeared to have used in his attempt. However,
     the stool is notably short.
   m_icon: {fileID: -5197547882860782317, guid: 7b78d0aa5449a3d49bbacf30b8d3cdac, type: 3}
-  m_viewable: 1
-  _viewSprite: {fileID: -450376430400614745, guid: 1338c5b79f39ab446ab570c1adf19715, type: 3}
+  m_viewable: 0
+  _viewSprite: {fileID: 0}
