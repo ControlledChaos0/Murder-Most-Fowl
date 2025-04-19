@@ -27,6 +27,21 @@ public class Clue : ScriptableObject
     private Sprite m_icon;
     public Sprite Icon { get => m_icon; private set => m_icon = value; }
 
+    [SerializeField] private bool m_viewable;
+    public bool Viewable
+    {
+        get => m_viewable;
+        private set => m_viewable = value;
+    }
+
+    [SerializeField] private Sprite _viewSprite;
+
+    public Sprite ViewSprite
+    {
+        get => _viewSprite;
+        private set => _viewSprite = value;
+    }
+
     private void OnValidate()
     {
 #if UNITY_EDITOR
