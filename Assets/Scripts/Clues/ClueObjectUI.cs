@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -9,7 +10,8 @@ namespace Clues
 {
     public class ClueObjectUI : MonoBehaviour, 
         IDragHandler, IBeginDragHandler, IEndDragHandler,
-        IScrollHandler, IPointerDownHandler, IPointerUpHandler
+        IScrollHandler, IPointerDownHandler, IPointerUpHandler,
+        IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] private Image _image;
         public Image Image => _image;
@@ -20,7 +22,6 @@ namespace Clues
 
         private bool _onBoard;
         private bool _inBin;
-        private ClueBoardBin _currentBin;
 
         private Vector2 _offset;
         private Vector2 _menuOffset;
@@ -43,8 +44,7 @@ namespace Clues
         // Start is called before the first frame update
         private void Start()
         {
-            _currentBin = ClueBoardManager.Instance.NewBin;
-            OnPlacedBin(_currentBin.gameObject);
+            OnPlacedBin(ClueBoardManager.Instance.NewBin);
             _mouseDown = false;
             _scaleChange = new Vector3(0.2f, 0.2f, 0.2f);
 
@@ -58,6 +58,41 @@ namespace Clues
         {
             _clue = ClueManager.GetClueFromID(clueID);
             _image.sprite = _clue.Icon;
+        }
+
+        public void OnBeginDrag(PointerEventData eventData)
+        {
+            Vector2 mousePos = eventData.pressPosition;
+            Vector2 uiPos = transform.position;
+            _offset = uiPos - mousePos;
+
+            transform.parent = ClueBoardManager.Instance.Front;
+            Vector3 mousePosWorld = Camera.main.WorldToScreenPoint(new Vector3(mousePos.x, mousePos.y, 0));
+            Vector3 uiPosWorld = Camera.main.WorldToScreenPoint(new Vector3(uiPos.x, uiPos.y, 0));
+            _worldOffset = uiPosWorld - mousePosWorld;
+
+            GameObject image = _image.gameObject;
+            Vector2 menuPos = _menu.transform.position;
+            Vector2 cornerPos = image.transform.Find("Corner").transform.position;
+            _menuOffset = cornerPos - menuPos;
+
+            var renderer = _image.GetComponent<RectTransform>();
+            var width = renderer.rect.width * _image.transform.localScale.x;
+            var height = renderer.rect.height * _image.transform.localScale.y;
+            var margin = 5;
+
+            if (!_inBin && (_offset.x > (width / 2 - margin) * 0.6f || _offset.y > (height / 2 - margin) * 0.6f || _offset.x < (-width / 2 + margin) * 0.6f || _offset.y < (-height / 2 + margin) * 0.6f))
+            {
+                _scaling = true;
+                _initialScale = _image.transform.localScale;
+            }
+            else
+            {
+                _scaling = false;
+            }
+
+            _dragging = true;
+
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -96,38 +131,6 @@ namespace Clues
             }
         }
 
-        public void OnBeginDrag(PointerEventData eventData)
-        {
-            Vector2 mousePos = eventData.pressPosition;
-            Vector2 uiPos = transform.position;
-            _offset = uiPos - mousePos;
-
-            transform.parent = ClueBoardManager.Instance.Front;
-            Vector3 mousePosWorld = Camera.main.WorldToScreenPoint(new Vector3(mousePos.x, mousePos.y, 0));
-            Vector3 uiPosWorld = Camera.main.WorldToScreenPoint(new Vector3(uiPos.x, uiPos.y, 0));
-            _worldOffset = uiPosWorld - mousePosWorld;
-
-            GameObject image = _image.gameObject;
-            Vector2 menuPos = _menu.transform.position;
-            Vector2 cornerPos = image.transform.Find("Corner").transform.position;
-            _menuOffset = cornerPos - menuPos;
-
-            var renderer = _image.GetComponent<RectTransform>();
-            var width = renderer.rect.width * _image.transform.localScale.x;
-            var height = renderer.rect.height * _image.transform.localScale.y;
-            var margin = 5;
-
-            if (!_inBin && (_offset.x > (width/2 - margin) * 0.6f || _offset.y > (height/2 - margin) * 0.6f || _offset.x < (-width/2 + margin) * 0.6f || _offset.y < (-height/2 + margin) * 0.6f)) {
-                _scaling = true;
-                _initialScale = _image.transform.localScale;
-            } else {
-                _scaling = false;
-            }
-
-            _dragging = true;
-            
-        }
-
         public void OnEndDrag(PointerEventData eventData)
         {
             _offset = Vector2.zero;
@@ -143,7 +146,7 @@ namespace Clues
                 switch (result.gameObject.tag)
                 {
                     case ("Bin"):
-                        OnPlacedBin(result.gameObject);
+                        OnPlacedBin(result.gameObject.GetComponent<NewBin>());
                         placed = true;
                         break;
                     case ("Board"):
@@ -157,6 +160,11 @@ namespace Clues
 
         public void OnScroll(PointerEventData eventData)
         {
+            if (!_onBoard)
+            {
+                return;
+            }
+
             if (_mouseDown)
             {
                 GameObject image = _image.gameObject;
@@ -173,7 +181,7 @@ namespace Clues
             }
             else
             {
-                ClueBoardManager.Instance.OnScroll(eventData);
+                ClueBoard.Instance.OnScroll(eventData);
             }
         }
 
@@ -184,12 +192,16 @@ namespace Clues
 
         public void OnPointerUp(PointerEventData eventData)
         {
+            _mouseDown = false;
+
             if (!_dragging) {
-                bool isActive = _menu.activeSelf;
-                _menu.SetActive(!isActive);
+                if (_onBoard)
+                {
+                    bool isActive = _menu.activeSelf;
+                    _menu.SetActive(!isActive);
+                }
             }
             _dragging = false;
-            _mouseDown = false;
         }
 
         public void OnPlacedClueboard()
@@ -206,7 +218,7 @@ namespace Clues
             _onBoard = true;
             if (_inBin)
             {
-                _currentBin.RemoveFromBin(this);
+                ClueBoardManager.Instance.NewBin.RemoveFromBin(this);
                 _inBin = false;
                 ClueInventoryManager.Instance.AddClueBoardClue(_saveClue);
             }
@@ -216,27 +228,59 @@ namespace Clues
             }
         }
 
-        public void OnPlacedBin(GameObject binGO)
+        public void OnPlacedBin(NewBin binGO)
         {
             //Clue
             if (_onBoard)
             {
                 ClueInventoryManager.Instance.DeleteClueBoardClue(_saveClue);
                 _onBoard = false;
-            } else if (_inBin)
-            {
-                _currentBin.RemoveFromBin(this);
             }
 
-            _currentBin = binGO.GetComponentInParent<ClueBoardBin>();
-            _currentBin.AddToBin(this);
-            _inBin = true;
+            if (!_inBin)
+            {
+                ClueBoardManager.Instance.NewBin.AddToBin(this);
+                _inBin = true;
+            }
         }
 
         public void PresentEvidence()
         {
             _menu.SetActive(false);
             ClueBoardManager.Instance.PresentEvidence(Clue);
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            if (!ClueBoardManager.Instance.Selected)
+            {
+                SetDisplay();
+            }
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            if (!ClueBoardManager.Instance.Selected)
+            {
+                ClueBoardManager.Instance.ChangeDisplay();
+            }
+        }
+
+        private void SetDisplay()
+        {
+            ClueBoardManager.Instance.ChangeDisplay(_clue.ClueID);
+        }
+
+        public void OnSelect(BaseEventData eventData)
+        {
+            SetDisplay();
+        }
+
+        public void OnDeselect(BaseEventData eventData)
+        {
+            ClueBoardManager.Instance.Selected._menu.SetActive(false);
+            ClueBoardManager.Instance.ChangeDisplay();
+            ClueBoardManager.Instance.Selected = null;
         }
     }
 }

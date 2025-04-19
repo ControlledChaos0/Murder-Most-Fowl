@@ -1,7 +1,9 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ShelfController : MonoBehaviour
+public class ShelfController : MonoBehaviour,
+    IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
     [SerializeField]
     Sprite openSprite;
@@ -20,6 +22,8 @@ public class ShelfController : MonoBehaviour
     private bool open = false;
     SpriteRenderer sr =  null;
 
+    private bool hovered = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,7 +34,7 @@ public class ShelfController : MonoBehaviour
         open = false;
     }
 
-    void OnMouseDown()
+    public void OnPointerDown(PointerEventData eventData)
     {
         if (open)
         {
@@ -48,14 +52,16 @@ public class ShelfController : MonoBehaviour
         }
     }
 
-    void OnMouseEnter()
+    public void OnPointerEnter(PointerEventData eventData)
     {
          Cursor.SetCursor(_magnifyingCursor, Vector2.zero, CursorMode.Auto);
+         hovered = true;
     }
 
-    void OnMouseExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
         Cursor.SetCursor(_normalCursor, Vector2.zero, CursorMode.Auto);
+        hovered = false;
     }
 
     public bool IsOpen() 
@@ -66,5 +72,14 @@ public class ShelfController : MonoBehaviour
     public bool isOpen()
     {
         return open;
+    }
+
+    void OnDisable()
+    {
+        if (hovered)
+        {
+            CursorManager.Instance.SetToMode(ModeOfCursor.Default);
+            hovered = false;
+        }
     }
 }

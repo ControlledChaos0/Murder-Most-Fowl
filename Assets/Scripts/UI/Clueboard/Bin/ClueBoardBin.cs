@@ -5,29 +5,19 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ClueBoardBin : MonoBehaviour,
-    IDragHandler, IBeginDragHandler, IEndDragHandler,
-    IPointerClickHandler
+    IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    [Header("Bin Sprites")]
-    [SerializeField] protected Image _image;
-    [SerializeField] protected Sprite _spriteClose;
-    [SerializeField] protected Sprite _spriteOpen;
-
     [Header("Bin Transforms")]
-    [SerializeField] protected RectTransform _menuTransform;
     [SerializeField] protected RectTransform _storageTransform;
-    [SerializeField] protected Animator _animator;
 
     [SerializeField] protected internal List<ClueObjectUI> _clueList;
 
     protected ClueObjectUI _draggedClue;
-    protected bool _showMenu;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected void Start()
     {
         _clueList = new List<ClueObjectUI>();
-        _image.sprite = _spriteClose;
     }
 
     // Update is called once per frame
@@ -82,42 +72,5 @@ public class ClueBoardBin : MonoBehaviour,
         }
 
         _clueList.Remove(clueObject);
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        ToggleBin();
-    }
-
-    public void InitBin()
-    {
-        _menuTransform.sizeDelta = Vector2.zero;
-        _menuTransform.anchoredPosition = Vector2.zero;
-    }
-
-    protected void ToggleBin()
-    {
-        if (_showMenu)
-        {
-            CloseBin();
-        }
-        else
-        {
-            OpenBin();
-        }
-    }
-
-    protected void OpenBin()
-    {
-        _showMenu = true;
-        _animator.Play("Reveal");
-        _image.sprite = _spriteOpen;
-    }
-
-    protected void CloseBin()
-    {
-        _showMenu = false;
-        _animator.Play("Hide");
-        _image.sprite = _spriteClose;
     }
 }

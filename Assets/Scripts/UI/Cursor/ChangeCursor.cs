@@ -5,6 +5,7 @@ public class ChangeCursor : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 {
     [SerializeField] private ModeOfCursor modeOfCursor;
 
+    private bool _hovered = false;
     public ModeOfCursor ModeOfCursor
     {
         get => modeOfCursor;
@@ -21,11 +22,22 @@ public class ChangeCursor : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void OnPointerEnter(PointerEventData eventData)
     {
         CursorManager.Instance.SetToMode(modeOfCursor);
+        _hovered = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         CursorManager.Instance.SetToMode(ModeOfCursor.Default);
+        _hovered = false;
+    }
+
+    void OnDisable()
+    {
+        if (_hovered)
+        {
+            CursorManager.Instance.SetToMode(ModeOfCursor.Default);
+            _hovered = false;
+        }
     }
     
     #if UNITY_EDITOR

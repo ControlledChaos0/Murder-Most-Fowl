@@ -14,6 +14,7 @@ namespace Clues
         [SerializeField] private bool _disabledInTutorial = false;
 
         private SpriteRenderer _spriteRenderer;
+        private bool _hovered;
         private bool _found;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -42,6 +43,11 @@ namespace Clues
 
         private void OnDisable()
         {
+            if (_hovered)
+            {
+                CursorManager.Instance.SetToMode(ModeOfCursor.Default);
+                _hovered = false;
+            }
             // TODO
             // CameraController.Instance.PointerEnterAction -= OnPointerEnter;
             // CameraController.Instance.PointerExitAction -= OnPointerExit;
@@ -59,6 +65,7 @@ namespace Clues
             // TODO
             Debug.Log("Pointer Enter!");
             CursorManager.Instance.SetToMode(ModeOfCursor.Inspect);
+            _hovered = true;
         }
 
         public void OnPointerExit(PointerEventData eventData)
@@ -66,6 +73,7 @@ namespace Clues
             // TODO
             Debug.Log("Pointer Exit!");
             CursorManager.Instance.SetToMode(ModeOfCursor.Default);
+            _hovered = false;
         }
 
         public void OnPointerClick(PointerEventData eventData)

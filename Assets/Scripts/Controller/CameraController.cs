@@ -140,17 +140,16 @@ public class CameraController : Singleton<CameraController>
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventData, results);
 
-        bool ui = results.Where(r => r.gameObject.layer == LayerMask.NameToLayer("UI")).Count() > 0;
+        //bool ui = results.Where(r => r.gameObject.layer == LayerMask.NameToLayer("UI")).Count() > 0;
 
-        if (ui)
-        {
-            return null;
-        }
+        //if (ui)
+        //{
+        //    return null;
+        //}
 
         _cameraRayOut = MainCamera.ScreenPointToRay(screenPos);
-        GameObject hit = GetClosest(results);
         eventData.position = _cameraRayOut.origin;
-        eventData.pointerClick = hit;
+        eventData.pointerClick = results.Count > 0 ? results[0].gameObject : null;
         return eventData;
     }
 

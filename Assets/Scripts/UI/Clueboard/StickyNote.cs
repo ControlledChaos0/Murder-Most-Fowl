@@ -26,7 +26,7 @@ public class StickyNote : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
         Vector2 uiPos = transform.position;
         _offset = uiPos - mousePos;
 
-        transform.parent = ClueBoardManager.Instance.BoardTransform;
+        transform.parent = ClueBoard.Instance.BoardTransform;
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -62,7 +62,7 @@ public class StickyNote : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
         }
         else
         {
-            ClueBoardManager.Instance.OnScroll(eventData);
+            ClueBoard.Instance.OnScroll(eventData);
         }
     }
 
