@@ -73,6 +73,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnClick(PointerEventData eventData)
     {
+        if (eventData == null || eventData.pointerClick?.layer == LayerMask.NameToLayer("UI"))
+        {
+            return;
+        }
+
         Move(new Ray(eventData.position, CameraController.Instance.CameraTransform.forward));
     }
 
@@ -85,7 +90,8 @@ public class PlayerController : MonoBehaviour
             m_NewPos = transform.position;
             m_OldPos = m_NewPos;
             m_DirectionalMovement = true;
-            m_IsMoving = true;
+            m_IsMoving = true; 
+            _characterSprite.flipX = direction < 0.0f;
         }
         else
         {

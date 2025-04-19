@@ -202,13 +202,10 @@ public class InputController : Singleton<InputController>
         PointerEventData eventData = CameraController.Instance.Raycast(screenPos);
         if (eventData != null)
         {
-            Debug.Log(eventData.lastPress);
-        }
-        
-        if (eventData != null)
-        {
-            Click?.Invoke(eventData);
-        }
+            Debug.Log(eventData.pointerClick);
+        } 
+
+        Click?.Invoke(eventData);
     }
 
     //TODO
