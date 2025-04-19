@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LoveLetter
   m_EditorClassIdentifier: 
   m_clueID: LoveLetter
-  m_name: LoveLetter
+  m_name: Love Letter <3
   m_clarificationInfo: 
   m_description: A love letter found in Gander's safe. Oooh, who could it be for?
   m_icon: {fileID: 2041384896188227262, guid: 562358534d0d5a1488886c2bf1caaa95, type: 3}
