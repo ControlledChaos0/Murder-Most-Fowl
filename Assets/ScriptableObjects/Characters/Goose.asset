@@ -26,3 +26,13 @@ MonoBehaviour:
     nodeResponse: GooseHandkerchief
   - clueID: LoveLetter
     nodeResponse: GooseLoveLetter
+  - clueID: MaidenPhoto
+    nodeResponse: GooseMaidenPhoto
+  - clueID: AttorneyLetter
+    nodeResponse: GooseAttorneyLetter
+  - clueID: DebtDocument
+    nodeResponse: GooseDebtDocument
+  - clueID: DuckReed
+    nodeResponse: GooseDuckReed
+  - clueID: PeacockReed
+    nodeResponse: GoosePeacockReed

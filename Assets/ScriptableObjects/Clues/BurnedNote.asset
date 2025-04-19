@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
-  m_Name: Reed
+  m_Name: BurnedNote
   m_EditorClassIdentifier: 
-  m_clueID: Reed
-  m_name: Reed
+  m_clueID: BurnedNote
+  m_name: Burnt Note
   m_clarificationInfo: 
-  m_description: 
-  m_icon: {fileID: -4292141645959811470, guid: be2d44a95d76f76459ba0b309df2d6b6, type: 3}
+  m_description: Half of a burned suicide note supposedly written by Mallard. It
+    notably mentions "Melissa."
+  m_icon: {fileID: 8469227874765211877, guid: 4f78b9134775d6c4c9c61b6d26393c80, type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GooseBusinessPartner
   m_EditorClassIdentifier: 
   m_clueID: GooseBusinessPartner
-  m_name: GooseBusinessPartner
+  m_name: Gander's Partner
   m_clarificationInfo: 
-  m_description: 
+  m_description: Gander and Mallard used to be business partners.
   m_icon: {fileID: 8824809349133479700, guid: 02a2e4a88a3ea7443a11be22ec1e5541, type: 3}

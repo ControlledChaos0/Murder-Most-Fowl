@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SootyGloves
   m_EditorClassIdentifier: 
   m_clueID: SootyGloves
-  m_name: SootyGloves
+  m_name: Sooty Gloves
   m_clarificationInfo: 
-  m_description: 
+  m_description: Gloves with soot on the fingers found in Morgana's room.
   m_icon: {fileID: 4150118663006781376, guid: f99650f1ae285c04cb8e895cdab66a49, type: 3}

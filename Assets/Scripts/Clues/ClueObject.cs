@@ -22,6 +22,18 @@ namespace Clues
         {
             // TODO
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            if (_disabledInTutorial)
+            {
+                _spriteRenderer.enabled = false;
+            }
+        }
+
+        private void Update()
+        {
+            if (!_disabledInTutorial || !GameManager.StateManager.ActiveState.Tutorial)
+            {
+                _spriteRenderer.enabled = true;
+            }
         }
 
         private void OnEnable()

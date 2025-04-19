@@ -109,4 +109,12 @@ public class CharacterManager : MonoBehaviour
     {
         GameManager.State.ConvoChar = "";
     }
+
+    [YarnCommand("ClearClue")]
+    public static void ClearClue(string charID, string clueID)
+    {
+        CharacterState cState = GameManager.CharacterManager.GetCharacterStateFromID(charID);
+        CharacterClue charClue = cState.CharClueDict[clueID];
+        charClue.ShownClue = false;
+    }
 }
