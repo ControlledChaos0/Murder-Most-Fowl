@@ -101,6 +101,11 @@ Athena: Tell me about...
 	<<jump PenguinConversation>>
 ===
 
+title:PenguinDismissal
+---
+Skipper: I don't know anything about this.
+===
+
 title:PenguinProof
 tags: c:Owl:Penguin
 ---
@@ -124,6 +129,9 @@ Skipper: What makes you think it was <color=\#f3db82>impossible</color> for Mall
 
 title:PenguinStool
 ---
+<<if not $Tutorial>>
+    <<jump PenguinDismissal>>
+<<endif>>
 Athena: This stool is way too short for the duck to have reached the chandelier himself.
 Athena: He must've been hung up by someone else. 
 Athena: This stool was placed by the murderer to make the scene look more convincing.
@@ -154,6 +162,9 @@ title:ProofIdleNode2
 
 title:PenguinRope
 ---
+<<if not $Tutorial>>
+    <<jump PenguinDismissal>>
+<<endif>>
 Athena: He was certainly hung. The suffocation is clear.
 Athena: However, there are no signs of struggle, even as he suffocated.
 Athena: He must have been unconscious while he died, meaning he couldn't have hung himself.
@@ -186,6 +197,9 @@ title:ProofIdleNode3
 title:PenguinBottle
 tags: c:Owl:Penguin
 ---
+<<if not $Tutorial>>
+    <<jump PenguinDismissal>>
+<<endif>>
 Athena: There's a wine bottle missing from the bar cabinet.
 Athena: Glass shards matching the glass were found next to the body.
 Athena: I believe the duck was hit over the head with the bottle, then his unconscious body was hung and strangled to make it look like a suicide.
