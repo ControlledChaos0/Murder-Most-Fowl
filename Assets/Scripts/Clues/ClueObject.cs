@@ -23,7 +23,7 @@ namespace Clues
         {
             // TODO
             _spriteRenderer = GetComponent<SpriteRenderer>();
-            if (_disabledInTutorial || _morganaClue)
+            if (_spriteRenderer && (_disabledInTutorial || _morganaClue))
             {
                 _spriteRenderer.enabled = false;
             }
@@ -31,7 +31,7 @@ namespace Clues
 
         private void Update()
         {
-            if (!_disabledInTutorial || !GameManager.StateManager.ActiveState.Tutorial)
+            if (_spriteRenderer && (!_disabledInTutorial || !GameManager.StateManager.ActiveState.Tutorial))
             {
                 if (!_morganaClue || GameManager.StateManager.ActiveState.CrowCigs)
                 {

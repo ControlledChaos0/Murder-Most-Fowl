@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Owl_Surprised_0: 3100214429260589117
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
