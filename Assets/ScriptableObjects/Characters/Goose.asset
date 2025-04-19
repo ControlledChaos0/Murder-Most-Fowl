@@ -36,5 +36,5 @@ MonoBehaviour:
     nodeResponse: GooseDuckReed
   - clueID: PeacockReed
     nodeResponse: GoosePeacockReed
-  - clueID: PeacockReed
-    nodeResponse: GoosePeacockReed
+  - clueID: MissingBriefcase
+    nodeResponse: GooseMissingBriefCase

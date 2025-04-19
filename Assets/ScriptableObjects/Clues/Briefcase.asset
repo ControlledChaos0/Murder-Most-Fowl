@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
-  m_Name: Gloves
+  m_Name: Briefcase
   m_EditorClassIdentifier: 
-  m_clueID: Gloves
-  m_name: Sooty Gloves
+  m_clueID: Briefcase
+  m_name: Briefcase
   m_clarificationInfo: 
-  m_description: Gloves found in Morgana's room. The fingers are covered in soot.
-  m_icon: {fileID: 6829406338367461404, guid: ebaa97debe309bc468afe35b9888cf23, type: 3}
+  m_description: Briefcase found in Morgana's cigarette stash. She has no idea how
+    it got there. The briefcase contains a lot of crack corn, identical to the baggie
+    Skipper had in his room.
+  m_icon: {fileID: 1334335333589366465, guid: a280af6a25e3363478ca483b144201a7, type: 3}

@@ -22,7 +22,8 @@ tags: lc: rc:
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
 <<declare $CrowRelationship = 0.0>>
-<<jump Skip>>
+WARNING: This game contains graphic depictions of suicide.
+WARNING: If this may be triggering to you, please play no further.
 Athena: *cough cough* Ugh I can't sleep.
 Athena: The Bird Flu is no joke...#el:Sad
 ???: CRASH
@@ -237,3 +238,20 @@ Athena: <i>I guess it doesn't hurt to have more intel on someone.</i>#el:Happy
 : Got Evidence <color=\#94e9e4>Melissa's Id</color>
 ===
 
+title: Briefcase
+tags: c:Owl:
+---
+Athena: <i>Alright this must be where Morgana keeps her cigarettes.</i>
+Athena: <i>Oh dear what is this? <color=\#f3db82>A briefcase</color>?</i>#el:Surprised
+Athena: Morgana, do you have a briefcase?#el:Neutral
+Morgana: No? Why?
+Athena: There's a whole briefcase shoved in here.
+Morgana: That's the first I'm seeing of it.
+Athena: How could it have gotten there?
+Morgana: The only other people that know about my hiding spot are <color=\#f3db82>Mallard and Melissa</color>.
+Morgana: Melissa went to bed around the same time I did though...
+Athena: <i>Could <color=\#f3db82>Mallard have placed it there</color>?</i>#el:Intense
+<<CreateClue ClueBoardCanvas Cigs>>
+: Got Evidence <color=\#94e9e4>Briefcase</color>
+: Got Item <color=\#94e9e4>Cigarettes</color>#el:Neutral
+===

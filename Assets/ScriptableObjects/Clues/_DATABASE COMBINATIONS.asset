@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: _DATABASE COMBINATIONS
   m_EditorClassIdentifier: 
   deductions:
-  - clue1: {fileID: 11400000, guid: 9f7e7e1d700ef5248a5dc42f9a25499f, type: 2}
-    clue2: {fileID: 11400000, guid: d0644522f4f0d544c85dce3737930b2e, type: 2}
-    deduction: {fileID: 11400000, guid: db637af9212f21f45a3ea222faa735d5, type: 2}
+  - clue1: {fileID: 11400000, guid: 7bac48795d20fc34592c9fc24932f3c1, type: 2}
+    clue2: {fileID: 11400000, guid: 4f896bd5cf2e28e41b87e83b1daffc22, type: 2}
+    deduction: {fileID: 11400000, guid: 859d7c9ed9a30e04b93b960b361f9bef, type: 2}

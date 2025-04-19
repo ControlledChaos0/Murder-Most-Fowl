@@ -256,5 +256,4 @@ Athena: It would appear he does not.
 Melissa: I clearly remember moving <color=\#f3db82>his heavy briefcase off of my bag</color>.
 <<CreateClue ClueBoardCanvas MissingBriefcase>>
 : Got Evidence <color=\#94e9e4>Missing Briefcase</color>#el:Neutral
-
 ===
