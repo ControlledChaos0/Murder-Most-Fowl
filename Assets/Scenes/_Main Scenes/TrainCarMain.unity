@@ -1209,7 +1209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7795890270399248213, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000091552734
+      value: 0.00012373924
       objectReference: {fileID: 0}
     - target: {fileID: 8459840063042205999, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1221,6 +1221,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8459840063042205999, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459840063042205999, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9948,19 +9952,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5307606233354055047, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.00011613965
-      objectReference: {fileID: 0}
-    - target: {fileID: 5307606233354055047, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
-      propertyPath: m_NormalizedViewPortRect.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5307606233354055047, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0.00015822053
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307606233354055047, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9997677
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5307606233354055047, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.99968356
       objectReference: {fileID: 0}
     - target: {fileID: 6548477791969500148, guid: 3730246dbf5ddda4aa53aa4883c7aea3, type: 3}
       propertyPath: m_LocalPosition.x
