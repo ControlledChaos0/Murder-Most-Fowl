@@ -24,6 +24,7 @@ public class ClueBoardDisplay : MonoBehaviour
         ChangeName();
         ChangeDescription();
         ChangeImage();
+        ClueBoardManager.Instance.InspectButton.SetActive(false);
     }
 
     public void SetDisplay(string clueID = null)
@@ -38,6 +39,7 @@ public class ClueBoardDisplay : MonoBehaviour
         ChangeName(clue.Name);
         ChangeDescription(clue.Description);
         ChangeImage(clue.Icon);
+        ClueBoardManager.Instance.InspectButton.SetActive(clue.Viewable);
     }
 
     private void ChangeName(string name = "")

@@ -8,7 +8,6 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 using Yarn.Unity;
 
 public class ClueBoardManager : Singleton<ClueBoardManager>
@@ -30,6 +29,8 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
     public RectTransform Clues => clues;
     [SerializeField] private RectTransform _front;
     public RectTransform Front => _front;
+    [SerializeField] private RectTransform _inspectScreen;
+    public RectTransform InspectScreen => _inspectScreen;
 
     [Header("Clue UI")]
     [SerializeField]
@@ -43,6 +44,17 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
     private ClueBoardDisplay _display;
     [SerializeField]
     private ClueboardButton _toggleButton;
+
+    [SerializeField] 
+    private GameObject _inspectButton;
+
+    public GameObject InspectButton
+    {
+        get => _inspectButton;
+    }
+
+    [SerializeField]
+    private Image _viewableImage;
     [SerializeField]
     private GameObject _stickyNote;
 
@@ -52,6 +64,8 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
         get => _selectedClue;
         set => _selectedClue = value;
     }
+
+    private ClueObjectUI _prevSelectedClue;
 
     private ClueString _selectedString;
     public ClueString SelectedString
@@ -113,12 +127,16 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
         _canPresent = false;
 
         _spawnable = false;
+        _inspectButton.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (SelectedClue)
+        {
+            _prevSelectedClue = SelectedClue;
+        }
     }
 
     void OnDestroy()
@@ -248,7 +266,14 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
 
     public void ChangeDisplay(string clueID = null)
     {
-        _display.SetDisplay(clueID);
+        tempClueID = clueID;
+        CoroutineUtils.ExecuteAfterEndOfFrame(ChangeDisplayWait, this);
+    }
+
+    private string tempClueID;
+    public void ChangeDisplayWait()
+    {
+        _display.SetDisplay(tempClueID);
     }
 
     // Sticky note function
@@ -300,5 +325,17 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
         {
             DialogueHelper.Instance.DialogueRunner.StartDialogue(node);
         }
+    }
+
+    public void OpenInspectScreen()
+    {
+        _viewableImage.sprite = _prevSelectedClue.Clue.ViewSprite;
+        _viewableImage.preserveAspect = true;
+        InspectScreen.gameObject.SetActive(true);
+    }
+
+    public void CloseInspectScreen()
+    {
+        InspectScreen.gameObject.SetActive(false);
     }
 }
