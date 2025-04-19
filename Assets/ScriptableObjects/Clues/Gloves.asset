@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gloves
   m_EditorClassIdentifier: 
   m_clueID: Gloves
-  m_name: Gloves
+  m_name: Sooty Gloves
   m_clarificationInfo: 
-  m_description: 
+  m_description: Gloves found in Morgana's room. The fingers are covered in soot.
   m_icon: {fileID: 6829406338367461404, guid: ebaa97debe309bc468afe35b9888cf23, type: 3}

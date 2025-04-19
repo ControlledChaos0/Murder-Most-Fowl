@@ -222,7 +222,7 @@ Athena: Athena. Athena Nox.
 <<set $Tutorial to false>>
 <<set_character_idle_node Penguin PenguinConversation>>
 <<CreateClue ClueBoardCanvas AttorneyLetter>>
-<<CreateClue ClueBoardCanvas SootyGloves>>
+<<CreateClue ClueBoardCanvas Gloves>>
 <<CreateClue ClueBoardCanvas PeacockReed>>
 <<CreateClue ClueBoardCanvas DuckReed>>
 <<CreateClue ClueBoardCanvas LoveLetter>>
@@ -235,12 +235,25 @@ Athena: Athena. Athena Nox.
 <<CreateClue ClueBoardCanvas Note>>
 <<ChangeRightCharacter>>
 <<ChangeLeftCharacter>>
-:For the purposes of this demo, not all clues in the overworld are able to be obtained.
-:In the final version these clues will be found in the bedrooms of the characters, which is currently inaccessibe.
-:These unobtainable clues have been added to your inventory, so you can still enjoy the full story!
-:Feel free to play around with them and test them all out!
-Athena: Have fun!
-Skipper: Thank you Detective Nox. I'll give you some time to investigate.#e:Happy
+:<color=\#94e9e4>For the purposes of this demo, not all clues in the overworld are able to be obtained.</color>
+:<color=\#94e9e4>In the final version these clues will be found in the bedrooms of the characters, which is currently inaccessibe.</color>
+:<color=\#94e9e4>These unobtainable clues have been added to your inventory, so you can still enjoy the full story!</color>
+:<color=\#94e9e4>Feel free to play around with them and test them all out!</color>
+:<color=\#94e9e4>Also, huge thanks to everyone who worked on the game!</color>
+:<color=\#94e9e4>I promise there will be an official credits when the game is finished, but for now let's thank everyone through the wonderful method of dialogue boxes!</color>
+:<color=\#94e9e4>Thank you everyone:
+:<color=\#94e9e4>Andy Chen: UI Art, Character Art, Music, Programming, Writing</color>
+:<color=\#94e9e4>Haoxiang Zhao: SFX, Music</color>
+:<color=\#94e9e4>Evelyn Moore: Writing, Programming
+:<color=\#94e9e4>Monia Hossain: Character Art, Clue Art
+:<color=\#94e9e4>Gabriel Decker: Music
+:<color=\#94e9e4>Emilee Tran: Programming
+:<color=\#94e9e4>Luke Doty: Programming
+:<color=\#94e9e4>Eleanor Bertocchi: Background Art
+:<color=\#94e9e4>Vaughn Casarez: Character Design
+:<color=\#94e9e4>Anyways~ Back to the game</color>
+Athena: Have fun!#el:Happy
+Skipper: Thank you Detective Nox. I'll give you some time to investigate.#e:Happy#el:Neutral
 Skipper: Feel free to <color=\#f3db82>investigate the body</color> if you deem necessary.
 Skipper: Be sure to <color=\#f3db82>question everyone thoroughly</color>.
 Skipper: If you have any questions for me, I'm happy to answer.

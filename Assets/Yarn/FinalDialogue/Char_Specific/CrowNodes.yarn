@@ -92,22 +92,6 @@ title: CrowMain
     Morgana: I'm willing to <color=\#f3db82>answer your question</color> now if you need me to.
     <<set $FixedRelationship to true>>
     <<jump CrowMain>>
--> I know there's something you're not telling me.<<if $MorganaTestimony and $HasLetter and not $CrowGlovesStory>>
-    Athena: <i>There's something she's not telling me about those gloves...</i>#el:Intense
-    Athena: Morgana... about the gloves.
-    Athena: Tell me one more time. Are they yours?
-    Morgana: ...#e:Sad
-    Morgana: ...yes.
-    Athena: Why are they so sooty? Did you burn the letter?
-    Morgana: I did...
-    Morgana: But it's not what it looks like.#e:Neutral
-    Morgana: I came into the room in the morning and found the body.
-    Morgana: I read the note and panicked.
-    Morgana: He said terrible and revealing things about Melissa.
-    Morgana: As her friend, I couldn't let the world find out.
-    Morgana: ...#e:Sad
-    Morgana: So I burned it.
-    <<set $CrowDone to true>>
 -> How are you doing?<<if $CrowDone>>
     Morgana: I'm doing fine.
     Morgana: Could use a cigarette though.
@@ -188,28 +172,27 @@ Morgana: Yeah that penguin lost his keys and asked me to lock up.#el:Neutral
 Morgana: 
 ===
 
-title: CrowSootyGloves
+title: CrowGloves
 ---
 Morgana: What of them?#e:Neutral
 Athena: They're yours?
-<<if $MorganaTestimony>>
-    Morgana: ... #e:Sad
-    Morgana: Yes...
-    Athena: Why are they so sooty? Did you burn the letter?
-    Morgana: I did...
-    Morgana: But it's not what it looks like.#e:Neutral
-    Morgana: I came into the room in the morning and found the body.
-    Morgana: I read the note and panicked.
-    Morgana: He said terrible and revealing things about Melissa.
-    Morgana: As her friend, I couldn't let the world find out.
-    Morgana: ...#e:Sad
-    Morgana: So I burned it.
-    <<set $CrowDone to true>>
-    <<set $CrowGlovesStory to true>>
-<<else>>
-    Morgana: Nope.
-    <<ClearClue Crow SootyGloves>>
-<<endif>>
+Morgana: Yup.
+===
+
+title: CrowSootyGloves
+---
+Morgana: ... #e:Sad
+Morgana: Yes...
+Athena: Why are they so sooty? Did you burn the letter?
+Morgana: I did...
+Morgana: But it's not what it looks like.#e:Neutral
+Morgana: I came into the room in the morning and found the body.
+Morgana: I read the note and panicked.
+Morgana: He said terrible and revealing things about Melissa.
+Morgana: As her friend, I couldn't let the world find out.
+Morgana: ...#e:Sad
+<<set $CrowDone to true>>
+<<set $CrowGlovesStory to true>>
 ===
 
 title: CrowEx
