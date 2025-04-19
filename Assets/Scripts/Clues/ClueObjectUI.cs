@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -15,6 +16,8 @@ namespace Clues
         public Image Image => _image;
         public GameObject _menu;
 
+        private String _description;
+        
         private Clue _clue;
         private ClueBoardClue _saveClue;
 
@@ -58,6 +61,16 @@ namespace Clues
         {
             _clue = ClueManager.GetClueFromID(clueID);
             _image.sprite = _clue.Icon;
+            _description = _clue.Description;
+            print(_description);
+            setDescriptionText(_description);
+        }
+
+        private void setDescriptionText(String text)
+        {
+            TMP_Text[] tmp = _menu.GetComponentsInChildren<TMP_Text>();
+            tmp[2].text = text;
+            print(tmp[2].text);
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -215,7 +228,6 @@ namespace Clues
                 ClueInventoryManager.Instance.UpdateClueBoardClue(_saveClue);
             }
         }
-
         public void OnPlacedBin(GameObject binGO)
         {
             //Clue

@@ -15,5 +15,5 @@ MonoBehaviour:
   m_clueID: Stool
   m_name: Short Stool
   m_clarificationInfo: 
-  m_description: 
+  m_description: testing123
   m_icon: {fileID: -5197547882860782317, guid: 7b78d0aa5449a3d49bbacf30b8d3cdac, type: 3}

@@ -31,9 +31,18 @@ EditorBuildSettings:
     guid: 39c78e029a8671b41a95c0617576255f
   - enabled: 1
     path: Assets/Scenes/Andy/Andy.unity
-    guid: 13d025c831bfa4b49a99d81af707fc38
+    guid: ecc8aeecfebf8eb4cac3488773794551
   - enabled: 1
     path: Assets/Scenes/Sophia/FinalDialogue.unity
     guid: 63adf8022f63f3d42bda7d090d9f014c
+  - enabled: 0
+    path: Assets/Scenes/Samad/TestDialogueClues.unity
+    guid: ec25c535f47541249a090fd84fc0f2ae
+  - enabled: 1
+    path: Assets/Scenes/Samad/asdf.unity
+    guid: 3fbb712490176f949bd3e70a28be48ef
+  - enabled: 1
+    path: Assets/Scenes/Samad/esdf.unity
+    guid: 1fec74f0535ab3c47ada0cdca8415cda
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
