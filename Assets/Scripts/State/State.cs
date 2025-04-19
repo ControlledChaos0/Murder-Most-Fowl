@@ -34,6 +34,12 @@ public class State
     public bool DuckBroke = false;
     public bool PeacockArgument = false;
     public bool DeliverLetter = false;
+    public bool PresentedReed = false;
+    public bool FixedRelationship = false;
+    public bool MorganaTestimony = false;
+    public bool ShowedGloves = false;
+    public bool CrowGlovesStory = false;
+    public bool HasLetter = false;
 
     [Header("Inventory")] 
     public List<string> DiscoveredClues = new();

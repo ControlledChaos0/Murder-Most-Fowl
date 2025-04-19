@@ -9,6 +9,12 @@ tags: lc: rc:
 <<declare $DuckBroke = false>>
 <<declare $PeacockArgument = false>>
 <<declare $DeliverLetter = false>>
+<<declare $PresentedReed = false>>
+<<declare $FixedRelationship = false>>
+<<declare $MorganaTestimony = false>>
+<<declare $ShowedGloves = false>>
+<<declare $CrowGlovesStory = false>>
+<<declare $HasLetter = false>>
 <<set $HasShards = false>>
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
@@ -156,6 +162,7 @@ tags: c:Owl:
 ---
 Athena: <i>A burned note in the furnace?</i>
 Athena: <i>I should try to read this.</i>
+<<set $HasLetter to true>>
 : Got Evidence <color=\#94e9e4>Burned Note</color>
 ===
 
@@ -184,7 +191,8 @@ title: MaidenPhoto
 tags: c:Owl:
 ---
 Athena: <i>Who is this?</i>#el:Neutral
-Athena: <i>Did Mr. Gander know this woman?</i>
+Athena: <i><color=\#94e9e4>A mourning dove?</color></i>
+Athena: <i>Did Mr. Gander know her?</i>
 Athena: <i>Oh there's some text on the back</i>
 Athena: <i><color=\#94e9e4>"I'll always remember my last day with you."</color></i>#el:Sad
 Athena: <i>Is she..gone?</i>

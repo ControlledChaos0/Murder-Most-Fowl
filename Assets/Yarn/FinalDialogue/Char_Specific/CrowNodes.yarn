@@ -15,7 +15,7 @@ title: CrowIdle
 ---
 <<set $ConvoChar = "Crow">>
 <<if $Tutorial is false>>
-	<<jump CrowMainUpset>>
+	<<jump CrowMain>>
 <<else>>
 	<<jump CrowConversation>>
 <<endif>>
@@ -25,7 +25,7 @@ title: CrowConversation
 tags: c:Owl:Crow
 ---
 <<set $ConvoChar = "Crow">>
-Morgana: …#e:Sad
+Morgana: …#e:Sad#el:Neutral
 Morgana: Not a chance.#e:Angry
 -> This is serious, Morgana.
 	Athena: This is serious, Morgana. Someone is dead.#el:Intense
@@ -36,29 +36,78 @@ Morgana: Not a chance.#e:Angry
 -> Leave
 ===
 
-title: CrowMainUpset
+title: CrowMain
 ---
-Morgana: …#e:Sad#s:Crow
-Morgana: Not a chance.#e:Angry
+<<if $FixedRelationship>>
+    Morgana: Hey Athena.#e:Neutral#s:Crow#el:Neutral
+<<else>>
+    Morgana: …#e:Sad#s:Crow#el:Neutral
+    Morgana: Not a chance.#e:Angry
+<<endif>>
 -> I have a few questions for you.
 	<<jump CrowQuestions>>
--> This is serious, Morgana.
+-> This is serious, Morgana.<<if not $PresentedReed>>
 	Athena: This is serious, Morgana. Someone is dead.#el:Intense
 	Morgana: Oh cluck off.#e:Angry
 	Morgana: I thought WE were serious.#el:Neutral
--><color=\#94e9e4>Present</color>
-	<<PresentEvidence>>
--> Leave
-===
+-> Can we talk?<<if $PresentedReed and not $FixedRelationship>>
+    Morgana: What on earth should we talk about?#e:Angry
+    Athena: About us.
+    Morgana: What? What about us? I thought you made it clear you didn't want anything to do with me anymore.#e:Sad
+    Athena: I wanted everything to do with you, Morgana.#el:Sad
+    Athena: I... I thought.
+    Morgana: You clearly didn't before sending me that letter.#e:Angry
+    Athena: ...
+    Athena: You're the love of my life.
+    Athena: But I was away on cases all the time, and it was clearly hurting you.
+    Morgana: I-#e:Sad
+    Athena: I noticed how lonely you were.
+    Athena: I thought if I left... you could move on and be happier with someone else.
+    Morgana: That's not what I wanted.
+    Athena: I shouldn't have made that decision for you.
+    Athena: We- We could've worked something out.
+    Morgana: ...
+    Morgana: We still can.
+    Athena: ..!#el:Surprised
+    Morgana: Leaving me like you did... was a horrible way to go about it.#el:Sad
+    Morgana: And hurt me incredibly deeply.
+    Morgana: ...
+    Morgana: But you're right. It's not what I wanted.#e:Neutral
+    Morgana: I want you, Athena.
+    Athena: Morgana...
+    Morgana: ... #e:Sad
+    Morgana: Oh Phoenix, I can't pretend to hate you.#e:Crying
+    Morgana: I love you Athena.
+    Athena: ...#el:Surprised
+    Athena: I love you too, Morgana.#el:Sad
+    Athena: I shouldn't have sent that letter.
+    Athena: Do you want to try to work something out?
+    Morgana: I'd like that. #e:Sad
+    Athena: ...
+    Athena: I have a case to attend to, but as soon as I'm done, I have someone important to spend time with.#el:Neutral
+    Morgana: ..!#e:Embarrassed
+    Morgana: I'll see you later, dork. #e:Neutral
+    Morgana: Also uh...
+    Morgana: I wasn't <color=\#f3db82>telling you everything</color> about last night...
+    Morgana: I'm willing to <color=\#f3db82>answer your question</color> now if you need me to.
+    <<set $FixedRelationship to true>>
+    <<jump CrowMain>>
+-> I know there's something you're not telling me.<<if $MorganaTestimony and not $CrowGlovesStory and $HasLetter>>
+    Athena: <i>There's something she's not telling me about those gloves...</i>#el:Intense
+    Athena: Morgana... about the gloves.
+    Athena: Tell me one more time. Are they yours?
+    Morgana: ...#e:Sad
+    Morgana: ...yes.
+    Athena: Why are they so sooty? Did you burn the letter?
+    Morgana: I did...
+    Morgana: But it's not what it looks like.#e:Neutral
+    Morgana: I came into the room in the morning and found the body.
+    Morgana: I read the note and panicked.
+    Morgana: He said terrible and revealing things about Melissa.
+    Morgana: As her friend, I couldn't let the world find out.
+    Morgana: ...#e:Sad
+    Morgana: So I burned it.
 
-title: CrowMainNeutral
----
-Morgana: …
-Morgana: What's Up.
--> I have a few questions for you.
-	<<jump CrowQuestions>>
--> Are you doing alright?
-	Morgana: I'm fine.
 -><color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Leave
@@ -66,44 +115,105 @@ Morgana: What's Up.
 
 title: CrowQuestions
 ---
--> Where were you last night.
-	Morgana: Wouldn't you like to know.#e:Neutral
-	Athena: I would actually.
-	Morgana: ...
-	Morgana: I was drinking with Melissa.
-	Athena: And what about the morning.
-	Morgana: I woke up.
-	Morgana: Forgot my keys.
-	Morgana: Found my keys.
-	Morgana: That all?
-	Athena: Is there anything you're not telling me?#el:Intense
-	Morgana: ...#el:Neutral
-	-> <color=\#94e9e4>Press</color>
-		<<PresentEvidence>>
-	-> Alright...
-		<<jump CrowQuestions>>
+-> Where were you last night.#e:Neutral#el:Neutral
+    <<if $FixedRelationship>>
+        Morgana: ...#e:Sad
+        Athena: It's ok. You can tell me.
+        Morgana: Just, you believe I didn't do it, right?#e:Neutral
+        Athena: Of course.
+        Morgana: Well I was at the bar last night, as usual.
+        Morgana: Mallard came up an ordered a drink from me.
+        Morgana: He started <color=\#f3db82>complaining about Mr. Gander</color> of all people.
+        Morgana: If I'm being honest, I tuned most of it out.
+        Morgana: I didn't care much for his complaining.#e:Angry
+        Morgana: Anyways...#e:Neutral
+        Morgana: He soon stepped away to smoke a cigarette.
+        Morgana: Melissa came in, and told Mallard to cluck off.
+        Morgana: Mallard made a weird face though... <color=\#f3db82>as if he figured something out.</color>#e:Sad
+        Morgana: Melissa sat down with me, and Mallard made some distance. #e:Neutral
+        Morgana: Skipper soon came in for his break and began chatting with Mallard.
+        Morgana: I'm not sure if this is relevant, but I saw <color=\#f3db82>Mallard take Skipper's coat</color> for him.
+        Morgana: He walked past the bar to leave the room, and I overheard him mumbling...
+        Morgana: <color=\#f3db82>"Mark my words. This is the day I get even."</color>
+        Morgana: Shortly after Melissa and I left to go to sleep, I heard Gander in the hall.
+        Morgana: I think he was <color=\#f3db82>headed to Melissa's room</color>.
+        Morgana: I...#e:Sad
+        Morgana: I'm sorry.
+        Morgana: I should have told you sooner.
+        Athena: It's alright. I understand.
+        Morgana: ...
+        Athena: Is that all to your testimony?
+        Morgana: I-
+        Morgana: Uh yes.
+        <<set $MorganaTestimony to true>>
+    <<else>>
+        Morgana: Wouldn't you like to know.#e:Angry
+        Athena: I would actually.
+        Morgana: ...#e:Neutral
+        Morgana: I was drinking with Melissa.
+        Athena: And what about the morning.
+        Morgana: I woke up.
+        Morgana: Forgot my keys.
+        Morgana: Found my keys.
+        Morgana: That all?
+    <<endif>>
+	<<jump CrowQuestions>>
 -> How do you feel about Mallard?
-	Morgana: Didn't like him. Don't like him.#e:Angry
+    <<if $FixedRelationship>>
+        Morgana: He and I uh...#e:Embarrassed
+        Morgana: Had a bit of a rebound relationship. #e:Sad#el:Sad
+        Morgana: It didn't last long though. #e:Neutral
+    <<else>>
+        Morgana: Didn't like him. Don't like him.#e:Angry
+    <<endif>>
 	<<jump CrowQuestions>>
 -> Do you know if anyone would want to kill him?
-	Morgana: I may not like him, but that doesn't mean I would kill him.#e:Neutral
-	-> <color=\#94e9e4>Press</color>
-		<<PresentEvidence>>
-	-> Alright...
-		<<jump CrowQuestions>>
+	Morgana: I may not like him, but that doesn't mean I would kill him.#e:Sad
+	<<jump CrowQuestions>>
 -> That's all the questions I have
 	<<jump CrowIdle>>
 ===
 
 title: CrowKeys
 ---
-Morgana: Yeah that penguin lost his keys and asked me to lock up.
+Morgana: Yeah that penguin lost his keys and asked me to lock up.#el:Neutral
 Morgana: 
+===
+
+title: CrowGloves
+---
+Morgana: What of them?#e:Neutral
+Athena: They're yours?
+<<if $MorganaTestimony>>
+Morgana: ... #e:Sad
+Morgana: Yes...
+Athena: Why are they so sooty? Did you burn the letter?
+Morgana: I did...
+Morgana: But it's not what it looks like.#e:Neutral
+Morgana: I came into the room in the morning and found the body.
+Morgana: I read the note and panicked.
+Morgana: He said terrible and revealing things about Melissa.
+Morgana: As her friend, I couldn't let the world find out.
+Morgana: ...#e:Sad
+Morgana: So I burned it.
+<<set $CrowGlovesStory to true>>
+<<else>>
+Morgana: Nope.
+<<endif>>
 ===
 
 title: CrowEx
 ---
-Athena: I heard you used to date the victim?
+<<if $FixedRelationship>>
+    <<jump CrowExGood>>
+<<else>>
+    <<jump CrowExBad>>
+<<endif>>
+===
+
+title: CrowExBad
+---
+Athena: I heard you used to date the victim?#el:Neutral
 Morgana: Yeah, imagine my luck.#e:Neutral
 Morgana: Both my Exes on a train. One ends up dead and the other wants to turn me in.#e:Angry
 Athena: I don't want to turn you in.#el:Sad
@@ -115,12 +225,25 @@ Athena: Look Morgana, I really care about you.
 Morgana: How do you do that to someone you care about?
 Athena: I thought it would be best for you.
 Morgana: ...#el:Neutral
-<<set $CrowRelationship = $CrowRelationship + 1.0>>
+===
+
+title: CrowExGood
+---
+Athena: Is it true you used to date Mallard?#e:Embarrassed#el:Neutral
+Morgana: Yeah...#e:Sad
+Morgana: I only ever really loved you though.
+Morgana: I just... used him to feel better.
+Morgana: I realized what I was doing, and left.
+Morgana: ...
+Morgana: He never let me forget though.
+Athena: I'm sorry, Morgana.#el:Sad
+Morgana: Don't be.#e:Neutral
+Morgana: I dug that hole myself.
 ===
 
 title: CrowGlass
 ---
-Morgana: Glass? What do you want me to say?#e:Angry
+Morgana: Glass? What do you want me to say?#e:Angry#el:Neutral
 Athena: Glass, Bottles, Alcohol… Isn't that your specialty?
 Morgana: …
 Morgana: I did notice a wine bottle was missing from the bar today. #e:Neutral
@@ -132,5 +255,19 @@ Morgana: But don't you try to pin this one on me, Nox.
 
 title: CrowDismissal
 ---
-Morgana: And?
+<<if $FixedRelationship>>
+    <<jump CrowGoodDismissal>>
+<<else>>
+    <<jump CrowBadDismissal>>
+<<endif>>
+===
+
+title: CrowBadDismissal
+---
+Morgana: And?#e:Angry#el:Neutral
+===
+
+title: CrowGoodDismissal
+---
+Morgana: Sorry. That doesn't look familiar.#el:Neutral
 ===
