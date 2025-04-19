@@ -203,12 +203,9 @@ public class InputController : Singleton<InputController>
         if (eventData != null)
         {
             Debug.Log(eventData.lastPress);
-        }
-        
-        if (eventData != null)
-        {
-            Click?.Invoke(eventData);
-        }
+        } 
+
+        Click?.Invoke(eventData);
     }
 
     //TODO

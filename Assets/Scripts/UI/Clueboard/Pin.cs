@@ -31,7 +31,7 @@ public class Pin : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandl
 
     void SetLineRendererEnd(Vector2 endPos)
     {
-        endPos = (endPos - (Vector2) transform.position) / ClueBoardManager.Instance.BoardTransform.localScale;
+        endPos = (endPos - (Vector2) transform.position) / ClueBoard.Instance.BoardTransform.localScale;
         clueString.SetEndPoint(endPos);
     }
 

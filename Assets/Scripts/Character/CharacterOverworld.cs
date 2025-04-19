@@ -11,6 +11,7 @@ public class CharacterOverworld : MonoBehaviour,
     [SerializeField] private string characterID;
     [SerializeField] private string yarnNode => GetCurrentNode();
     [SerializeField] private PlayerController player;
+    private bool _hovered = false;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -21,11 +22,22 @@ public class CharacterOverworld : MonoBehaviour,
     public void OnPointerEnter(PointerEventData eventData)
     {
         CursorManager.Instance.SetToMode(ModeOfCursor.Inspect);
+        _hovered = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         CursorManager.Instance.SetToMode(ModeOfCursor.Default);
+        _hovered = false;
+    }
+
+    void OnDisable()
+    {
+        if (_hovered)
+        {
+            CursorManager.Instance.SetToMode(ModeOfCursor.Default);
+            _hovered = false;
+        }
     }
 
     public string GetCurrentNode()

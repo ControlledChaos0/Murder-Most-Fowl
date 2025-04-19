@@ -73,6 +73,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnClick(PointerEventData eventData)
     {
+        if (eventData == null || eventData.pointerClick?.layer == LayerMask.NameToLayer("UI"))
+        {
+            return;
+        }
+
         Move(new Ray(eventData.position, CameraController.Instance.CameraTransform.forward));
     }
 
