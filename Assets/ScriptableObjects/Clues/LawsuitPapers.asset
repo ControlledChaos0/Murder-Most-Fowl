@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
-  m_Name: BurnedNote
+  m_Name: LawsuitPapers
   m_EditorClassIdentifier: 
-  m_clueID: BurnedNote
-  m_name: Burned Note
+  m_clueID: LawsuitPapers
+  m_name: Lawsuit
   m_clarificationInfo: 
-  m_description: Half of a burned suicide note supposedly written by Mallard. It
-    notably mentions "Melissa."
-  m_icon: {fileID: 8469227874765211877, guid: 4f78b9134775d6c4c9c61b6d26393c80, type: 3}
+  m_description: Unfinished lawsuit papers filled out by Mallard against Mr. Gander
+    for "Wrongful Termination".
+  m_icon: {fileID: 7602970641636741391, guid: dce4c8a3e5f02fe47b028dcbc57b66d4, type: 3}

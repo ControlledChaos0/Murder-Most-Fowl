@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
-  m_Name: BurnedNote
+  m_Name: CrackCorn
   m_EditorClassIdentifier: 
-  m_clueID: BurnedNote
-  m_name: Burned Note
+  m_clueID: CrackCorn
+  m_name: Crack Corn Baggie
   m_clarificationInfo: 
-  m_description: Half of a burned suicide note supposedly written by Mallard. It
-    notably mentions "Melissa."
-  m_icon: {fileID: 8469227874765211877, guid: 4f78b9134775d6c4c9c61b6d26393c80, type: 3}
+  m_description: A baggie of crack corn found in Skipper's room. This drug is highly
+    illegal. I'm a bit nervous holding onto it...
+  m_icon: {fileID: -2029919456413390490, guid: a8bb78d067270f5469510b9361dd5bd1, type: 3}

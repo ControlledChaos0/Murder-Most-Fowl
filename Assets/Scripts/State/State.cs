@@ -40,6 +40,7 @@ public class State
     public bool ShowedGloves = false;
     public bool CrowGlovesStory = false;
     public bool HasLetter = false;
+    public bool NoticedManifest = false;
 
     [Header("Inventory")] 
     public List<string> DiscoveredClues = new();

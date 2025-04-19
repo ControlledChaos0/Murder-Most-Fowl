@@ -221,6 +221,25 @@ Skipper: I think you have a good case, Ms..?
 Athena: Athena. Athena Nox.
 <<set $Tutorial to false>>
 <<set_character_idle_node Penguin PenguinConversation>>
+<<CreateClue ClueBoardCanvas AttorneyLetter>>
+<<CreateClue ClueBoardCanvas SootyGloves>>
+<<CreateClue ClueBoardCanvas PeacockReed>>
+<<CreateClue ClueBoardCanvas DuckReed>>
+<<CreateClue ClueBoardCanvas LoveLetter>>
+<<CreateClue ClueBoardCanvas MaidenPhoto>>
+<<CreateClue ClueBoardCanvas LoversPhoto>>
+<<CreateClue ClueBoardCanvas FightersPhoto>>
+<<CreateClue ClueBoardCanvas CrackCorn>>
+<<CreateClue ClueBoardCanvas Newspaper>>
+<<CreateClue ClueBoardCanvas Id>>
+<<CreateClue ClueBoardCanvas Note>>
+<<ChangeRightCharacter>>
+<<ChangeLeftCharacter>>
+:For the purposes of this demo, not all clues in the overworld are able to be obtained.
+:In the final version these clues will be found in the bedrooms of the characters, which is currently inaccessibe.
+:These unobtainable clues have been added to your inventory, so you can still enjoy the full story!
+:Feel free to play around with them and test them all out!
+<<ChangeLeftCharacter Athena>>
 Skipper: Thank you Detective Nox. I'll give you some time to investigate.#e:Happy
 Skipper: Feel free to <color=\#f3db82>investigate the body</color> if you deem necessary.
 Skipper: Be sure to <color=\#f3db82>question everyone thoroughly</color>.
@@ -236,6 +255,68 @@ Athena: I found them in the victim's pocket...
 : Got Evidence <color=\#94e9e4>Skipper's Key</color>
 Skipper: Oh. I had a feeling he was the one who took them...#e:Sad
 Skipper: ...
-Skipper: Could I perhaps have it back if you don't need it for the investigation?#e:Neutral
-Athena: Sure.
+Skipper: Now that we have my keys, you can use these to search the rest of the car.#e:Neutral
+Skipper: Oh also! Here take this cargo manifest.
+Skipper: It may be useful in your investigation.
+<<CreateClue  ClueBoardCanvas CargoManifest>>
+: Got Evidence <color=\#94e9e4>Cargo Manifest</color>#el:Neutral
+Athena: Thank you, Skipper.
+Skipper: Likewise, detective.
+===
+
+title: PenguinBurntNote
+---
+Skipper: That and the noose made me think this was nothing but a suicide...#e:Neutral
+Skipper: ...#e:Angry
+Skipper: A part of me wishes that was never proven wrong.
+Athena: You <color=\#f3db82>saw the note</color>?
+Skipper: ...
+Skipper: Yes I noticed it, but thought you would notice it as well, detective.#e:Neutral
+===
+
+title: PenguinManifest
+---
+Skipper: As I said, nothing in the cargo room is missing.#e:Neutral
+===
+
+title: PenguinMissingBriefcase
+---
+Athena: Are you sure nothing is missing?#el:Intense#e:Neutral
+Skipper: I don't believe so.
+Athena: Melissa remembers a quite heavy briefcase in the cargo hold...
+Athena: However, his bag is absent in the manifest.
+Skipper: ...#e:Angry
+Skipper: Perhaps I missed something.#e:Happy
+Skipper: People routinely store things in the back without telling me. #e:Neutral
+Skipper: They try to get around the luggage prices...
+===
+
+title: PenguinCrackCorn
+---
+Skipper: When I was organizing the luggage, this <color=\#f3db82>fell out of Mallard's suitcase</color>.#el:Neutral#e:Neutral
+Skipper: I wasn't trying to pry, I swear.
+Skipper: However, I couldn't leave such an illegal drug laying out in the cargo bay.#e:Sad
+Skipper: I had to remove it.#e:Neutral
+===
+
+title: PenguinCrowEx
+---
+Skipper: She and the victim used to date, yes.#el:Neutral#e:Neutral
+Skipper: She talks about you way more though.
+Athena: She does? #el:Surprised
+Skipper: I think she wishes <color=\#f3db82>you'd apologize about that letter</color>.#e:Sad
+Skipper: Quite a cruel way to cut someone off, isn't it?
+Athena: ...#el:Sad
+===
+
+title: PenguinNewspaper
+---
+Skipper: They were inseperable <color=\#f3db82>partners in crime</color>- er I mean business.
+===
+
+title: PenguinPenguinKey
+---
+Skipper: Those are my keys.
+Skipper: I lend them to you for your investigation.
+Skipper: Do not abuse this power.
 ===
