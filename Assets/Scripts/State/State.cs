@@ -41,7 +41,8 @@ public class State
     public bool CrowGlovesStory = false;
     public bool HasLetter = false;
     public bool NoticedManifest = false;
-
+    public bool CrowCigs = false;
+    public bool CrowDone = false;
     [Header("Inventory")] 
     public List<string> DiscoveredClues = new();
 
