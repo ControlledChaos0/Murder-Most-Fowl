@@ -26,3 +26,17 @@ MonoBehaviour:
     nodeResponse: PenguinBottle
   - clueID: Key
     nodeResponse: PenguinKey
+  - clueID: BurnedNote
+    nodeResponse: PenguinBurntNote
+  - clueID: CargoManifest
+    nodeResponse: PenguinManifest
+  - clueID: MissingBriefcase
+    nodeResponse: PenguinMissingBriefCase
+  - clueID: CrackCorn
+    nodeResponse: PenguinCrackCorn
+  - clueID: CrowEx
+    nodeResponse: PenguinCrowEx
+  - clueID: Newspaper
+    nodeResponse: PenguinNewspaper
+  - clueID: Newspaper
+    nodeResponse: PenguinNewspaper

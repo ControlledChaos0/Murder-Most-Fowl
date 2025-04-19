@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
-  m_Name: BurnedNote
+  m_Name: Cigs
   m_EditorClassIdentifier: 
-  m_clueID: BurnedNote
-  m_name: Burned Note
+  m_clueID: Cigs
+  m_name: Morgana's Cigarettes
   m_clarificationInfo: 
-  m_description: Half of a burned suicide note supposedly written by Mallard. It
-    notably mentions "Melissa."
-  m_icon: {fileID: 8469227874765211877, guid: 4f78b9134775d6c4c9c61b6d26393c80, type: 3}
+  m_description: A pack of cigs from Morgana's secret cigarette compartment. I bet
+    she'd be down for a smoke break.
+  m_icon: {fileID: -1667369994665506814, guid: 1bf7ab80023f73641b38c9c2a5da8f29, type: 3}
