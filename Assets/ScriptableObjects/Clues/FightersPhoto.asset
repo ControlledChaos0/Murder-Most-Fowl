@@ -19,3 +19,5 @@ MonoBehaviour:
     marker there's writing on the photo that reads "Happy 20th Birthday, Thorn -
     9/15/1916"
   m_icon: {fileID: 940210836864303615, guid: 9ccfccc6b5e4f684389fc2e6b5842a4d, type: 3}
+  m_viewable: 1
+  _viewSprite: {fileID: -7846552399159441088, guid: 2cd8cf71d1559c74b964a53e7ff9b61e, type: 3}

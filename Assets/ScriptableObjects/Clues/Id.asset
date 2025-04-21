@@ -18,3 +18,5 @@ MonoBehaviour:
   m_description: Melissa's Id found in her bedroom. It's registered in the state
     of Flewida.
   m_icon: {fileID: 8899163946262087522, guid: fbf8f202300885f4c8e13fb9ac133b1f, type: 3}
+  m_viewable: 1
+  _viewSprite: {fileID: -3346769215540018884, guid: 2602daa3b3118fd45876158b083b0724, type: 3}

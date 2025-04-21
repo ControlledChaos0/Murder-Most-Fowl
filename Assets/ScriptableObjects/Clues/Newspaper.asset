@@ -18,3 +18,5 @@ MonoBehaviour:
   m_description: A newspaper article highlighting the removal of Mallard from him
     and Gander's company.
   m_icon: {fileID: 2391255840840876710, guid: 877391e681a32eb4b808ce0311c255fe, type: 3}
+  m_viewable: 1
+  _viewSprite: {fileID: -4970960972106783310, guid: c6ebc723ca154174ab7beb6b97925575, type: 3}
