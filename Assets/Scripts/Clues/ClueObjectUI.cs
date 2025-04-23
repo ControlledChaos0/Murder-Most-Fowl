@@ -260,11 +260,11 @@ namespace Clues
             _pin.gameObject.SetActive(false);
         }
 
-        public void PresentEvidence()
-        {
-            _menu.SetActive(false);
-            ClueBoardManager.Instance.PresentEvidence(Clue);
-        }
+        //public void PresentEvidence()
+        //{
+        //    //_menu.SetActive(false);
+        //    //ClueBoardManager.Instance.PresentEvidence(Clue);
+        //}
 
         public void OnPointerEnter(PointerEventData eventData)
         {

@@ -149,11 +149,8 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
             _presentButton.SetActive(SelectedClue != null && _canPresent);
             _inspectButton.SetActive(SelectedClue != null && SelectedClue.Clue.Viewable);
         }
-
-        if (SelectedClue)
-        {
-            _prevSelectedClue = SelectedClue;
-        }
+        
+        _prevSelectedClue = SelectedClue;
     }
 
     void OnDestroy()
@@ -278,7 +275,8 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
     public void ChangeDisplay(string clueID = null)
     {
         tempClueID = clueID;
-        CoroutineUtils.ExecuteAfterEndOfFrame(ChangeDisplayWait, this);
+        _display.SetDisplay(clueID);
+        //CoroutineUtils.ExecuteAfterEndOfFrame(ChangeDisplayWait, this);
     }
 
     private string tempClueID;
@@ -319,16 +317,15 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
         Instance._canPresent = true;
     }
 
-    public void PresentEvidence(Clue clue)
+    public void PresentEvidence()
     {
         if (!_canPresent)
         {
             return;
         }
 
-        CloseClueBoard();
-        string node = GameManager.CharacterManager.GetClueResponse(clue.ClueID);
-        if (!string.IsNullOrEmpty(_correctEvidence) && _correctEvidence != clue.ClueID)
+        string node = GameManager.CharacterManager.GetClueResponse(SelectedClue.Clue.ClueID);
+        if (!string.IsNullOrEmpty(_correctEvidence) && _correctEvidence != SelectedClue.Clue.ClueID)
         {
             node = _incorrectNode;
         }
@@ -336,6 +333,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
         {
             DialogueHelper.Instance.DialogueRunner.StartDialogue(node);
         }
+        CloseClueBoard();
     }
 
     public void OpenInspectScreen()
