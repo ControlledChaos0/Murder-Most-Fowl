@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BurntSuicideNote_0: -7878322707355939730
+      BurntSuicideNote_1: 540422602273186658
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

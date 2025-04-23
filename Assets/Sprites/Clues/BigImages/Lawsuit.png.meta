@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lawsuit_0: 5778730882637819021
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

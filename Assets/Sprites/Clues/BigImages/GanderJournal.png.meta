@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GanderJournal_0: -8330864507062237533
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

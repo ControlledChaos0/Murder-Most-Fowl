@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AttorneyLetter_0: 4975239156793605248
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

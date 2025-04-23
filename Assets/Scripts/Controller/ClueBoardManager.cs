@@ -41,9 +41,19 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
     private NewBin _newBin;
     public NewBin NewBin => _newBin;
     [SerializeField]
+    private ClueBoard _clueBoard;
+    [SerializeField]
     private ClueBoardDisplay _display;
     [SerializeField]
     private ClueboardButton _toggleButton;
+
+    [SerializeField]
+    private GameObject _presentButton;
+
+    public GameObject PresentButton
+    {
+        get => _presentButton;
+    }
 
     [SerializeField] 
     private GameObject _inspectButton;
@@ -127,12 +137,19 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
         _canPresent = false;
 
         _spawnable = false;
+        _presentButton.SetActive(false);
         _inspectButton.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_prevSelectedClue != SelectedClue)
+        {
+            _presentButton.SetActive(SelectedClue != null && _canPresent);
+            _inspectButton.SetActive(SelectedClue != null && SelectedClue.Clue.Viewable);
+        }
+
         if (SelectedClue)
         {
             _prevSelectedClue = SelectedClue;
@@ -208,14 +225,8 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
 
     public void SetSelectedClueObject(PointerEventData pointerEvent)
     {
-        if (!InClueboard)
+        if (!InClueboard || !pointerEvent.pointerClick)
         {
-            return;
-        }
-
-        if (!pointerEvent.pointerClick)
-        {
-            SelectedClue?.OnDeselect(pointerEvent);
             return;
         }
 
@@ -229,7 +240,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
                 SelectedClue.OnSelect(pointerEvent);
             }
         }
-        else
+        else if (pointerEvent.pointerClick.Equals(_clueBoard.BoardTransform.gameObject))
         {
             SelectedClue?.OnDeselect(pointerEvent);
         }

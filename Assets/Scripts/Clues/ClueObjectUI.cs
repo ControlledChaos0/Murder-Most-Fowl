@@ -210,7 +210,7 @@ namespace Clues
                 if (_onBoard)
                 {
                     bool isActive = _menu.activeSelf;
-                    _menu.SetActive(!isActive);
+                    //_menu.SetActive(!isActive);
                 }
             }
             _dragging = false;

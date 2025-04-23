@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      peacock fight_0: -7846552399159441088
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
