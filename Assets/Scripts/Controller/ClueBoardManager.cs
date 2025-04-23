@@ -41,9 +41,19 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
     private NewBin _newBin;
     public NewBin NewBin => _newBin;
     [SerializeField]
+    private ClueBoard _clueBoard;
+    [SerializeField]
     private ClueBoardDisplay _display;
     [SerializeField]
     private ClueboardButton _toggleButton;
+
+    [SerializeField]
+    private GameObject _presentButton;
+
+    public GameObject PresentButton
+    {
+        get => _presentButton;
+    }
 
     [SerializeField] 
     private GameObject _inspectButton;
@@ -127,16 +137,20 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
         _canPresent = false;
 
         _spawnable = false;
+        _presentButton.SetActive(false);
         _inspectButton.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SelectedClue)
+        if (_prevSelectedClue != SelectedClue)
         {
-            _prevSelectedClue = SelectedClue;
+            _presentButton.SetActive(SelectedClue != null && _canPresent);
+            _inspectButton.SetActive(SelectedClue != null && SelectedClue.Clue.Viewable);
         }
+        
+        _prevSelectedClue = SelectedClue;
     }
 
     void OnDestroy()
@@ -208,14 +222,8 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
 
     public void SetSelectedClueObject(PointerEventData pointerEvent)
     {
-        if (!InClueboard)
+        if (!InClueboard || !pointerEvent.pointerClick)
         {
-            return;
-        }
-
-        if (!pointerEvent.pointerClick)
-        {
-            SelectedClue?.OnDeselect(pointerEvent);
             return;
         }
 
@@ -229,7 +237,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
                 SelectedClue.OnSelect(pointerEvent);
             }
         }
-        else
+        else if (pointerEvent.pointerClick.Equals(_clueBoard.BoardTransform.gameObject))
         {
             SelectedClue?.OnDeselect(pointerEvent);
         }
@@ -267,7 +275,8 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
     public void ChangeDisplay(string clueID = null)
     {
         tempClueID = clueID;
-        CoroutineUtils.ExecuteAfterEndOfFrame(ChangeDisplayWait, this);
+        _display.SetDisplay(clueID);
+        //CoroutineUtils.ExecuteAfterEndOfFrame(ChangeDisplayWait, this);
     }
 
     private string tempClueID;
@@ -308,16 +317,15 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
         Instance._canPresent = true;
     }
 
-    public void PresentEvidence(Clue clue)
+    public void PresentEvidence()
     {
         if (!_canPresent)
         {
             return;
         }
 
-        CloseClueBoard();
-        string node = GameManager.CharacterManager.GetClueResponse(clue.ClueID);
-        if (!string.IsNullOrEmpty(_correctEvidence) && _correctEvidence != clue.ClueID)
+        string node = GameManager.CharacterManager.GetClueResponse(SelectedClue.Clue.ClueID);
+        if (!string.IsNullOrEmpty(_correctEvidence) && _correctEvidence != SelectedClue.Clue.ClueID)
         {
             node = _incorrectNode;
         }
@@ -325,6 +333,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
         {
             DialogueHelper.Instance.DialogueRunner.StartDialogue(node);
         }
+        CloseClueBoard();
     }
 
     public void OpenInspectScreen()

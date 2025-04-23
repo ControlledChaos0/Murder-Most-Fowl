@@ -18,3 +18,5 @@ MonoBehaviour:
   m_description: Betting slip for betting on fighters. This one has Chase Gander's
     signature on it. The slip reds "Burn After Bout" at the bottom.
   m_icon: {fileID: -6386660190877702441, guid: b821cef3a935fea48b6d281428ab47bf, type: 3}
+  m_viewable: 1
+  _viewSprite: {fileID: 8829148155181012427, guid: c645f1791fc02c346a5091680ab7fd64, type: 3}

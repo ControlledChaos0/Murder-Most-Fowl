@@ -18,3 +18,5 @@ MonoBehaviour:
   m_description: A photo of me and Morgana when we were together... The text reads
     "Athena & Noir Forever".
   m_icon: {fileID: -1236053729512411802, guid: 11440182072908e4a97eb8eb96e77945, type: 3}
+  m_viewable: 1
+  _viewSprite: {fileID: -1133162152766732383, guid: 0f8aed41a4d5a6647b6a9cfeed41d983, type: 3}

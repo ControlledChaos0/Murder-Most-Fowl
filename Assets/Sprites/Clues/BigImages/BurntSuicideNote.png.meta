@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 67da67ce8b56fc74fa25b92d98f0e2e4
+guid: 2b45cbca9a77d974fb4c99bdd4730f4a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6361236133824221572
-    second: BriefCase Gone_0
+      213: -7878322707355939730
+    second: BurntSuicideNote_0
   - first:
-      213: -8965477237615972773
-    second: BriefCase Gone_1
+      213: 540422602273186658
+    second: BurntSuicideNote_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BriefCase Gone_0
+      name: BurntSuicideNote_0
       rect:
         serializedVersion: 2
-        x: 46
-        y: 60
-        width: 918
-        height: 892
+        x: 0
+        y: 0
+        width: 741
+        height: 940
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7e2707807958b7a0800000000000000
-      internalID: -6361236133824221572
+      spriteID: e6cc7222d339aa290800000000000000
+      internalID: -7878322707355939730
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BriefCase Gone_1
+      name: BurntSuicideNote_1
       rect:
         serializedVersion: 2
-        x: 557
-        y: 942
-        width: 48
-        height: 14
+        x: 570
+        y: 871
+        width: 6
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b5eac0a14f9349380800000000000000
-      internalID: -8965477237615972773
+      spriteID: 263e5155e77ff7700800000000000000
+      internalID: 540422602273186658
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BriefCase Gone_0: -6361236133824221572
-      BriefCase Gone_1: -8965477237615972773
+      BurntSuicideNote_0: -7878322707355939730
+      BurntSuicideNote_1: 540422602273186658
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

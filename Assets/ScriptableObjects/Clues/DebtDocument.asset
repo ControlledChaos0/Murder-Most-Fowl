@@ -17,3 +17,5 @@ MonoBehaviour:
   m_clarificationInfo: 
   m_description: A final debt notice addressed to Mallard.
   m_icon: {fileID: 6468547071527208932, guid: 5bd63ee79e42a6e45b803e55c8825749, type: 3}
+  m_viewable: 1
+  _viewSprite: {fileID: -6847878400908012274, guid: a29cd54bc40e4b847be225d757c5a0dc, type: 3}

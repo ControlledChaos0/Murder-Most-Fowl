@@ -17,3 +17,5 @@ MonoBehaviour:
   m_clarificationInfo: 
   m_description: A note detailing Gander's troubles with Mallard.
   m_icon: {fileID: 2358724274683603655, guid: a058107bec3d539469e788ae100071b6, type: 3}
+  m_viewable: 1
+  _viewSprite: {fileID: -8330864507062237533, guid: c68e2ca5ae0cba341a933bafd0d78f20, type: 3}

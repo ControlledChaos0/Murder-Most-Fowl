@@ -18,3 +18,5 @@ MonoBehaviour:
   m_description: Unfinished lawsuit papers filled out by Mallard against Mr. Gander
     for "Wrongful Termination".
   m_icon: {fileID: 7602970641636741391, guid: dce4c8a3e5f02fe47b028dcbc57b66d4, type: 3}
+  m_viewable: 1
+  _viewSprite: {fileID: 5778730882637819021, guid: 5eae66f986c178145b040d9de4e78cae, type: 3}

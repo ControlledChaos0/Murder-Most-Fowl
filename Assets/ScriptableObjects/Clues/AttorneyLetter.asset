@@ -17,3 +17,5 @@ MonoBehaviour:
   m_clarificationInfo: 
   m_description: A letter found in Mr. Gander's room from his Attorney.
   m_icon: {fileID: -4181906289457810447, guid: 4e2bcfcea8cbb4746945d9626b841786, type: 3}
+  m_viewable: 1
+  _viewSprite: {fileID: 4975239156793605248, guid: 7ea5366c11a131a4dbae6c3b35f85c6e, type: 3}

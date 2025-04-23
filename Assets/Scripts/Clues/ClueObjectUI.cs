@@ -210,7 +210,7 @@ namespace Clues
                 if (_onBoard)
                 {
                     bool isActive = _menu.activeSelf;
-                    _menu.SetActive(!isActive);
+                    //_menu.SetActive(!isActive);
                 }
             }
             _dragging = false;
@@ -260,11 +260,11 @@ namespace Clues
             _pin.gameObject.SetActive(false);
         }
 
-        public void PresentEvidence()
-        {
-            _menu.SetActive(false);
-            ClueBoardManager.Instance.PresentEvidence(Clue);
-        }
+        //public void PresentEvidence()
+        //{
+        //    //_menu.SetActive(false);
+        //    //ClueBoardManager.Instance.PresentEvidence(Clue);
+        //}
 
         public void OnPointerEnter(PointerEventData eventData)
         {

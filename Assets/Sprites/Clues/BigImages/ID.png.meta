@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 67da67ce8b56fc74fa25b92d98f0e2e4
+guid: 2602daa3b3118fd45876158b083b0724
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6361236133824221572
-    second: BriefCase Gone_0
-  - first:
-      213: -8965477237615972773
-    second: BriefCase Gone_1
+      213: -3346769215540018884
+    second: ID_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BriefCase Gone_0
+      name: ID_0
       rect:
         serializedVersion: 2
-        x: 46
-        y: 60
-        width: 918
-        height: 892
+        x: 0
+        y: 0
+        width: 1647
+        height: 1020
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7e2707807958b7a0800000000000000
-      internalID: -6361236133824221572
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BriefCase Gone_1
-      rect:
-        serializedVersion: 2
-        x: 557
-        y: 942
-        width: 48
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b5eac0a14f9349380800000000000000
-      internalID: -8965477237615972773
+      spriteID: c3146826123ed81d0800000000000000
+      internalID: -3346769215540018884
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BriefCase Gone_0: -6361236133824221572
-      BriefCase Gone_1: -8965477237615972773
+      ID_0: -3346769215540018884
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
