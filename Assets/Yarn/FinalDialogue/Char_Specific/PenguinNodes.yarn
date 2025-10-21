@@ -1,5 +1,6 @@
 title: PenguinIntroduction
 tags: lc:Owl rc:
+position: -1134,-1037
 ---
 Athena:<i> This is that bellboy that stopped me earlier. He looks so nervous…</i>
 Athena: <i>Makes sense. If I worked here, I would be nervous too.</i>
@@ -10,6 +11,7 @@ Athena: <i>Poor kid.</i>
 
 title:PenguinConversation
 tags: c:Owl:Penguin
+position: -495,-931
 ---
 <<set $ConvoChar = "Penguin">>
 Skipper: Is there any way I can help?#e:Happy#s:Penguin
@@ -60,6 +62,7 @@ Skipper: Is there any way I can help?#e:Happy#s:Penguin
 
 title: PenguinEnemies
 tags: c:Owl:Penguin
+position: -150,-965
 ---
 Athena: Tell me about...
 -> Chase Gander
@@ -102,12 +105,14 @@ Athena: Tell me about...
 ===
 
 title:PenguinDismissal
+position: -711,-137
 ---
 Skipper: I don't know anything about this.
 ===
 
 title:PenguinProof
 tags: c:Owl:Penguin
+position: -787,-1036
 ---
 <<set $ConvoChar = "Penguin">>
 <<if $Tutorial is false>>
@@ -120,6 +125,7 @@ Skipper: Hello Detective. Do you have evidence for me?
 ===
 
 title:ProofIdleNode1
+position: -464,-1156
 ---
 Skipper: What makes you think it was <color=\#f3db82>impossible</color> for Mallard to have committed the act alone?
 -> <color=\#94e9e4>Present</color>
@@ -128,6 +134,7 @@ Skipper: What makes you think it was <color=\#f3db82>impossible</color> for Mall
 ===
 
 title:PenguinStool
+position: -951,-441
 ---
 <<if not $Tutorial>>
     <<jump PenguinDismissal>>
@@ -140,6 +147,7 @@ Athena: This stool was placed by the murderer to make the scene look more convin
 ===
 
 title:ProofWrong1
+position: 348,-615
 ---
 Skipper: I don't follow.#e:Sad
 Athena: I'll see if I can find anything more relevant.
@@ -147,13 +155,16 @@ Athena: I'll see if I can find anything more relevant.
 
 title:PenguinProof2
 tags: c:Owl:Penguin
+position: -513,-743
 ---
 <<set $ConvoChar = "Penguin">>
 Skipper: If that's the case, what was his <color=\#f3db82>cause of death</color>?
+<<set_character_idle_node Penguin PenguinProof2>>
 <<jump ProofIdleNode2>>
 ===
 
 title:ProofIdleNode2
+position: -232,-743
 ---
 -> <color=\#94e9e4>Present</color>
     <<PresentEvidence Rope ProofWrong2>>
@@ -161,6 +172,7 @@ title:ProofIdleNode2
 ===
 
 title:PenguinRope
+position: -605,-536
 ---
 <<if not $Tutorial>>
     <<jump PenguinDismissal>>
@@ -173,6 +185,7 @@ Athena: He must have been unconscious while he died, meaning he couldn't have hu
 ===
 
 title:ProofWrong2
+position: 348,-744
 ---
 Athena: Because he… uh…#el:Surprised
 Skipper: I'll give you more time.#el:Neutral
@@ -180,14 +193,16 @@ Skipper: I'll give you more time.#el:Neutral
 
 title:PenguinProof3
 tags: c:Owl:Penguin
-position: 120,120
+position: -332,-536
 ---
 <<set $ConvoChar = "Penguin">>
 Skipper: I see. What was he <color=\#f3db82>knocked out with</color>?
+<<set_character_idle_node Penguin PenguinProof3>>
 <<jump ProofIdleNode3>>
 ===
 
 title:ProofIdleNode3
+position: -23,-538
 ---
 -> <color=\#94e9e4>Present</color>
     <<PresentEvidence Bottle ProofWrong3>>
@@ -196,6 +211,7 @@ title:ProofIdleNode3
 
 title:PenguinBottle
 tags: c:Owl:Penguin
+position: -475,-360
 ---
 <<if not $Tutorial>>
     <<jump PenguinDismissal>>
@@ -207,6 +223,8 @@ Athena: I believe the duck was hit over the head with the bottle, then his uncon
 ===
 
 title:ProofWrong3
+position: -445,-156
+color: red
 ---
 Skipper: Hmm.. I'm not sure if that's a weapon...
 Skipper: Perhaps you could <color=\#f3db82>ask some of the passengers about your evidence</color>.
@@ -215,6 +233,7 @@ Athena: Thanks. I'll try that.
 ===
 
 title:PenguinConclusion
+position: -167,-361
 ---
 Skipper: Interesting… 
 Skipper: I think you have a good case, Ms..?
@@ -261,6 +280,7 @@ Skipper: Let me know when you're ready to call the police, and you can turn in y
 ===
 
 title: PenguinKey
+position: 730,184
 ---
 Skipper: Oh! That's my key! Where did you find it?#e:Angry
 Athena: I found them in the victim's pocket...
@@ -278,6 +298,7 @@ Skipper: Likewise, detective.
 ===
 
 title: PenguinBurntNote
+position: 723,-421
 ---
 Skipper: That and the noose made me think this was nothing but a suicide...#e:Neutral
 Skipper: ...#e:Angry
@@ -288,11 +309,13 @@ Skipper: Yes I noticed it, but thought you would notice it as well, detective.#e
 ===
 
 title: PenguinManifest
+position: 722,59
 ---
 Skipper: As I said, nothing in the cargo room is missing.#e:Neutral
 ===
 
 title: PenguinMissingBriefCase
+position: 718,-177
 ---
 Athena: Are you sure nothing is missing?#el:Intense#e:Neutral
 Skipper: I don't believe so.
@@ -305,6 +328,7 @@ Skipper: They try to get around the luggage prices...
 ===
 
 title: PenguinCrackCorn
+position: 725,-302
 ---
 Skipper: When I was organizing the luggage, this <color=\#f3db82>fell out of Mallard's suitcase</color>.#el:Neutral#e:Neutral
 Skipper: I wasn't trying to pry, I swear.
@@ -313,6 +337,7 @@ Skipper: I had to remove it.#e:Neutral
 ===
 
 title: PenguinCrowEx
+position: 911,-183
 ---
 Skipper: She and the victim used to date, yes.#el:Neutral#e:Neutral
 Skipper: She talks about you way more though.
@@ -323,11 +348,13 @@ Athena: ...#el:Sad
 ===
 
 title: PenguinNewspaper
+position: 920,-413
 ---
 Skipper: They were inseperable <color=\#f3db82>partners in crime</color>- er I mean business.#el:Neutral
 ===
 
 title: PenguinPenguinKey
+position: 722,-63
 ---
 Skipper: Those are my keys.#el:Neutral
 Skipper: I lend them to you for your investigation.
@@ -335,6 +362,7 @@ Skipper: Do not abuse this power.
 ===
 
 title: PenguinBriefcase
+position: 920,-305
 ---
 Athena: <i>I have a hunch it's his. I'm not 100% sure, but maybe if I pretend I know and press him enough, he'll crack.</i>#el:Intense
 Athena: I'll ask one time. Is this yours.
