@@ -3,22 +3,18 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class ShelfController : MonoBehaviour,
-    IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
+    IPointerDownHandler
 {
     [SerializeField]
     Sprite openSprite;
     [SerializeField]
     Sprite closedSprite;
     [SerializeField]
-    BoxCollider closedCollider;
+    BoxCollider2D closedCollider;
     [SerializeField]
-    BoxCollider openCollider1;
+    BoxCollider2D openCollider1;
     [SerializeField]
-    BoxCollider openCollider2;
-    [SerializeField]
-    private Texture2D _normalCursor;
-    [SerializeField]
-    private Texture2D _magnifyingCursor;
+    BoxCollider2D openCollider2;
     private bool open = false;
     SpriteRenderer sr =  null;
 
@@ -31,6 +27,7 @@ public class ShelfController : MonoBehaviour,
         sr.sprite = closedSprite;
         openCollider1.enabled = false;
         openCollider2.enabled = false;
+        closedCollider.enabled = true;
         open = false;
     }
 
@@ -50,18 +47,6 @@ public class ShelfController : MonoBehaviour,
             closedCollider.enabled = false;
             open = true;
         }
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-         Cursor.SetCursor(_magnifyingCursor, Vector2.zero, CursorMode.Auto);
-         hovered = true;
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Cursor.SetCursor(_normalCursor, Vector2.zero, CursorMode.Auto);
-        hovered = false;
     }
 
     public bool IsOpen() 
