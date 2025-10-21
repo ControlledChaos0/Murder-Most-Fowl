@@ -204,6 +204,11 @@ public class CameraController : Singleton<CameraController>
         return hit;
     }
 
+    public void TeleportCamera(Vector3 position)
+    {
+        transform.position = position;
+    }
+
     //    public void ScreenClick()
     //    {
     //        if (_closestHit.Equals(new RaycastHit2D()))

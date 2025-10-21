@@ -1,9 +1,19 @@
+using System.Drawing;
+using Cinemachine;
 using UnityEngine;
 
 public class RoomTeleport : MonoBehaviour
 {
     [SerializeField]
-    private RoomScreenContainer room;
+    private RoomScreenContainer _room;
+    [SerializeField]
+    private PlayerController _player;
+    [SerializeField]
+    private CinemachineVirtualCamera _newCamera;
+    [SerializeField]
+    private CinemachineVirtualCamera _currCamera;
+    [SerializeField]
+    private Vector3 _roomTarget;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,9 +23,12 @@ public class RoomTeleport : MonoBehaviour
     // Update is called once per frame
     public void OnMouseDown()
     {
-        if (room != null)
+        if (_room != null && _player != null)
         {
-            ScreenManager.Instance.ChangeRooms(room);
+            ScreenManager.Instance.ChangeRooms(_room);
+            _player.Teleport(_roomTarget);
+            _newCamera.Priority = 10;
+            _currCamera.Priority = 1;
         }
     }
 }

@@ -125,4 +125,10 @@ public class PlayerController : MonoBehaviour
     {
         return m_IsMoving;
     }
+
+    public void Teleport(Vector3 position)
+    {
+        m_IsMoving = false;
+        transform.position = position;
+    }
 }
