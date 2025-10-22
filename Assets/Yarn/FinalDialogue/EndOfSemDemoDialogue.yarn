@@ -22,6 +22,7 @@ tags: lc: rc:
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
 <<declare $CrowRelationship = 0.0>>
+<<jump Skip>>
 WARNING: This game contains graphic depictions of suicide.
 WARNING: If this may be triggering to you, please play no further.
 Athena: *cough cough* Ugh I can't sleep.

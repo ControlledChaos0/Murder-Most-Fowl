@@ -15,7 +15,7 @@ TagManager:
   - UI
   - Level
   - GameObjectUI
-  - 
+  - FrontUI
   - 
   - 
   - 
@@ -42,6 +42,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: FrontUI
+    uniqueID: 2913944213
     locked: 0
   - name: UI
     uniqueID: 1135281843

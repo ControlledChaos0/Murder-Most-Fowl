@@ -200,6 +200,7 @@ public class InputController : Singleton<InputController>
         //Debug.Log("Just a click!!!");
         Vector2 screenPos = _pointAction.ReadValue<Vector2>();
         PointerEventData eventData = CameraController.Instance.Raycast(screenPos);
+        ClueBoardManager.Instance.CloseInspectScreen();
         if (eventData != null)
         {
             Debug.Log(eventData.pointerClick);

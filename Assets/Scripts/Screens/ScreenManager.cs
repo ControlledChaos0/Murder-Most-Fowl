@@ -10,7 +10,7 @@ public class ScreenManager : Singleton<ScreenManager>
 
     public RoomScreenContainer CurrentRoomScreenContainer {
         get { return m_CurrentRoomScreenContainer;}
-        private set { m_CurrentRoomScreenContainer = value;}
+        set { m_CurrentRoomScreenContainer = value;}
     }
 
     private void Awake() {
@@ -26,7 +26,12 @@ public class ScreenManager : Singleton<ScreenManager>
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+    
+    public void ChangeRooms(RoomScreenContainer room)
+    {
+        m_CurrentRoomScreenContainer = room;
     }
 
     public Vector2 GetClosestFloorLocation(Ray clickRay) {

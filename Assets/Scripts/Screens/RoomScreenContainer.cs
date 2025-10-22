@@ -7,19 +7,27 @@ public class RoomScreenContainer : ScreenContainer
     [SerializeField]
     private Floor m_Floor;
 
+    [SerializeField]
+    private List<Floor> _floors;
+
     public Floor Floor {
         get { return m_Floor; }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void ChangeFloor(int floorNum)
     {
-        
+        if (floorNum > _floors.Count - 1)
+        {
+            return;
+        }
+        m_Floor = _floors[floorNum];
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+        if (!GameManager.StateManager.ActiveState.Tutorial)
+        {
+            ChangeFloor(1);
+        }
     }
 }

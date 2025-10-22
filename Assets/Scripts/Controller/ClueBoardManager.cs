@@ -338,13 +338,19 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
 
     public void OpenInspectScreen()
     {
-        _viewableImage.sprite = _prevSelectedClue.Clue.ViewSprite;
         _viewableImage.preserveAspect = true;
+        _viewableImage.sprite = _prevSelectedClue.Clue.ViewSprite;
         InspectScreen.gameObject.SetActive(true);
+        CanvasGroup inspectGroup = InspectScreen.gameObject.GetComponent<CanvasGroup>();
+        inspectGroup.alpha = 1;
+        Debug.Log("Open!");
     }
 
     public void CloseInspectScreen()
     {
+        Debug.Log("Closed!");
         InspectScreen.gameObject.SetActive(false);
+        CanvasGroup inspectGroup = InspectScreen.gameObject.GetComponent<CanvasGroup>();
+        inspectGroup.alpha = 0;
     }
 }
