@@ -66,18 +66,22 @@ namespace Clues
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            // TODO
             Debug.Log("Pointer Enter!");
-            CursorManager.Instance.SetToMode(ModeOfCursor.Inspect);
-            _hovered = true;
+            if (!_disabledInTutorial || !GameManager.StateManager.ActiveState.Tutorial)
+            {
+                CursorManager.Instance.SetToMode(ModeOfCursor.Inspect);
+                _hovered = true;
+            }
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            // TODO
-            Debug.Log("Pointer Exit!");
-            CursorManager.Instance.SetToMode(ModeOfCursor.Default);
-            _hovered = false;
+            if (!_disabledInTutorial || !GameManager.StateManager.ActiveState.Tutorial)
+            {
+                Debug.Log("Pointer Exit!");
+                CursorManager.Instance.SetToMode(ModeOfCursor.Default);
+                _hovered = false;
+            }
         }
 
         public void OnPointerClick(PointerEventData eventData)
