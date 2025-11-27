@@ -1,5 +1,7 @@
 title: CrowIntroduction
 tags: lc: Owl rc:
+position: -350,-575
+color: green
 ---
 Athena: <i>Oh Phoenix Above, what do you mean SHE's here?</i>#s:Crow#el:Intense
 Athena: <i>Just what I need, my romantic life getting tangled with my professional one.</i>
@@ -12,6 +14,7 @@ Athena: Look, I just want to talk.#el:Neutral
 ===
 
 title: CrowIdle
+position: -349,-361
 ---
 <<set $ConvoChar = "Crow">>
 <<if $Tutorial is false>>
@@ -23,6 +26,7 @@ title: CrowIdle
 
 title: CrowConversation
 tags: c:Owl:Crow
+position: 11,-362
 ---
 <<set $ConvoChar = "Crow">>
 Morgana: …#e:Sad#el:Neutral
@@ -37,6 +41,7 @@ Morgana: Not a chance.#e:Angry
 ===
 
 title: CrowMain
+position: -553,-63
 ---
 <<if $FixedRelationship>>
     Morgana: Hey Athena.#e:Neutral#s:Crow#el:Neutral
@@ -106,6 +111,8 @@ title: CrowMain
 ===
 
 title: CrowQuestions
+position: -616,-357
+color: green
 ---
 -> Where were you last night.#e:Neutral#el:Neutral
     <<if $FixedRelationship>>
@@ -167,12 +174,16 @@ title: CrowQuestions
 ===
 
 title: CrowKeys
+position: 1216,180
+color: blue
 ---
 Morgana: Yeah that penguin lost his keys and asked me to lock up.#el:Neutral
 Morgana: 
 ===
 
 title: CrowGloves
+position: 778,40
+color: blue
 ---
 Morgana: What of them?#e:Neutral
 Athena: They're yours?
@@ -180,6 +191,8 @@ Morgana: Yup.
 ===
 
 title: CrowSootyGloves
+position: 989,45
+color: blue
 ---
 Morgana: ... #e:Sad
 Morgana: Yes...
@@ -196,6 +209,8 @@ Morgana: ...#e:Sad
 ===
 
 title: CrowEx
+position: 452,46
+color: blue
 ---
 <<if $FixedRelationship>>
     <<jump CrowExGood>>
@@ -205,6 +220,7 @@ title: CrowEx
 ===
 
 title: CrowExBad
+position: 594,349
 ---
 Athena: I heard you used to date the victim?#el:Neutral
 Morgana: Yeah, imagine my luck.#e:Neutral
@@ -221,6 +237,7 @@ Morgana: ...#el:Neutral
 ===
 
 title: CrowExGood
+position: 348,296
 ---
 Athena: Is it true you used to date Mallard?#e:Embarrassed#el:Neutral
 Morgana: Yeah...#e:Sad
@@ -235,6 +252,8 @@ Morgana: I dug that hole myself.
 ===
 
 title: CrowGlass
+position: 1217,43
+color: blue
 ---
 Morgana: Glass? What do you want me to say?#e:Angry#el:Neutral
 Athena: Glass, Bottles, Alcohol… Isn't that your specialty?
@@ -247,6 +266,8 @@ Morgana: But don't you try to pin this one on me, Nox.
 ===
 
 title: CrowDismissal
+position: 750,-338
+color: red
 ---
 <<if $FixedRelationship>>
     <<jump CrowGoodDismissal>>
@@ -256,16 +277,20 @@ title: CrowDismissal
 ===
 
 title: CrowBadDismissal
+position: 563,-184
 ---
 Morgana: And?#e:Angry#el:Neutral
 ===
 
 title: CrowGoodDismissal
+position: 943,-198
 ---
 Morgana: Sorry. That doesn't look familiar.#el:Neutral
 ===
 
 title: CrowCigs
+position: 999,184
+color: blue
 ---
 Morgana: Thank you, Athena. I could really use one right now.
 Athena: Likewise.
@@ -277,6 +302,8 @@ Morgana: ...#e:Embarrassed
 ===
 
 title: CrowKey
+position: 793,178
+color: blue
 ---
 Morgana: Oh is that <color=\#f3db82>Skipper's key</color>?
 Morgana: He lost his last night.

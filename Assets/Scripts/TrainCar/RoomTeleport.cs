@@ -27,7 +27,7 @@ public class RoomTeleport : MonoBehaviour
         {
             ScreenManager.Instance.ChangeRooms(_room);
             
-            _player.Teleport(new Vector3(_door.transform.position.x, _door.transform.position.y - 5, _door.transform.position.z));
+            _player.Teleport(new Vector3(_door.transform.position.x, _door.transform.position.y - 6, _door.transform.position.z));
             _newCamera.Priority = 10;
             _currCamera.Priority = 1;
         }

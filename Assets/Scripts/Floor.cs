@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -7,7 +8,7 @@ public class Floor : MonoBehaviour
 {
     [SerializeField]
     private SplineContainer _floorSplineContainer;
-
+    
     private Spline _floorSpline;
     private Vector2[] _floorPoints;
 
