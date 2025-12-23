@@ -15,6 +15,21 @@ position: -495,-931
 ---
 <<set $ConvoChar = "Penguin">>
 Skipper: Is there any way I can help?#e:Happy#s:Penguin
+-> I have a few questions for you.
+	<<jump PenguinQuestions0>>
+-> <color=\#94e9e4>Present</color>
+	<<PresentEvidence>>
+-> <color=\#f94449>I know who did it.</color>
+	<<jump PenguinTurnIn>>
+-> Not now
+	Athena: Thank you for your help. I'll be back later.
+	Skipper: Glad to help!#e:Happy
+===
+
+title:PenguinQuestions0
+tags: c:Owl:Penguin
+---
+Skipper: What would you like to ask?
 -> Where were you last night?
 	Skipper: Hmm.. Well I spent a lot of time searching for my keys last night.#e:Neutral
 	Athena: Your keys? What happened to them?
@@ -52,12 +67,18 @@ Skipper: Is there any way I can help?#e:Happy#s:Penguin
 	Skipper: In fact I believe he's involved with everyone in this car in some way.
 	Skipper: I can tell you about whoever you wish.
 	<<jump PenguinEnemies>>
--> <color=\#94e9e4>Present</color>
-	<<PresentEvidence>>
--> Not now
-	Athena: Thank you for your help. I'll be back later.
-	Skipper: Glad to help!#e:Happy
-	Skipper: If you need anything, I'll be in the luggage room.#e:Neutral
+===
+
+title: PenguinTurnIn
+tags: c:Owl:Penguin
+---
+Skipper: Are you sure? You should be <color=\#f94449>certain</color> before we call the police.
+-> I'm sure.
+	Skipper: Alright I'll call them now.
+	Skipper: Get your <color=\#94e9e4>evidence</color> ready for the police.
+	<<jump EndingDialogue>>
+-> Nevermind
+	Skipper: Better keep investigating. I'll be here until you're ready.
 ===
 
 title: PenguinEnemies
@@ -401,4 +422,16 @@ Skipper: ...#e:Neutral
 Skipper: I'm sure it's unrelated.#e:Neutral
 Skipper: Do you have any more questions?
 Athena: No. I think that's all I need.
+===
+
+title: EndingDialogue
+---
+Athena: ... #e:Intense#bg:Dark
+Athena: Let me review my clues before they show up.
+Athena: Here he comes.
+Officer: Hello ma'am. I was informed there was a murder discovered aboard this vehicle.
+Officer: You must be the detective the bellboy told me about.
+Athena: Yes that's me. Detective Athena Nox.
+Officer Parrot: A pleasure. I'm <color=\#f3db82>Officer Hercule Parrot</color>.
+Officer Parrot: I suppose you must have a lot of information to give me. We should continue in a more secure location.
 ===
