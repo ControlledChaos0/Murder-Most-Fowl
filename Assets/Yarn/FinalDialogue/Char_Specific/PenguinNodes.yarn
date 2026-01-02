@@ -454,13 +454,38 @@ Athena: Morgana Noir, the bartender.
 Athena: Skipper McCraw, the bellboy.
 Athena: Melissa "Miss" Peacock, the performer.
 Athena: Chase Gander, the businessman.
-Officer Parrot: Tell me all you know about those involved.
+Officer Parrot: And the victim?
+Athena: Seaton Mallard.
+Athena: Let's just say not the most popular duck in the pond from what I gather.
+Officer Parrot: Ha, seems they may all have a motive to kill him then?
+Athena: Yea, that only made it more difficult.
+Officer Parrot: Well I'd appreciate if you could debrief me further on those involved.
 Officer Parrot: Who would you like to discuss first?
 -> Morgana Noir
 	<<jump MorganaDebrief>>
 -> Skipper McCraw
+	<<jump SkipperDebrief>>
 -> Chase Gander
+	<<jump ChaseDebrief>>
 -> Melissa Peacock
+	<<jump MelissaDebrief>>
+-> Seaton Mallard
+-> Let's cut to the chase.
+===
+
+title: CharacterDebrief
+---
+Officer Parrot: Who would you like to discuss now?
+-> Morgana Noir
+	<<jump MorganaDebrief>>
+-> Skipper McCraw
+	<<jump SkipperDebrief>>
+-> Chase Gander
+	<<jump ChaseDebrief>>
+-> Melissa Peacock
+	<<jump MelissaDebrief>>
+-> Seaton Mallard
+-> Let's cut to the chase.
 ===
 
 title: MorganaDebrief
@@ -490,8 +515,8 @@ Athena: She was rightfully very upset with me when she saw me on the train.
 	Athena: She told me the night of the murder, she was the first to find the body.
 	Athena: However, she was very insistant she did not commit the murder.
 	Athena: She found a fake suicide note that was written by the murderer. 
-	Athena: The note reportedly contained information that would defame her close friend, Melissa.
-	Athena: In a panic, she burned the note in the furnace.
+	Athena: The note allegedly contained information that would defame her close friend, Melissa.
+	Athena: She claimed she burned the note in the furnace in a panic.
 	<<endif>>
 <<else>>
 	Athena: Though... she never did give me a full testimony.
@@ -500,4 +525,52 @@ Athena: She was rightfully very upset with me when she saw me on the train.
 	Athena: ...
 	Athena: Or she's hiding something.
 <<endif>>
+Athena: That's all my intel on Morgana.
+<<jump CharacterDebrief>>
+===
+
+title: ChaseDebrief
+---
+
+===
+
+title: SkipperDebrief
+---
+
+===
+
+title: MelissaDebrief
+---
+Athena: I'd heard of Miss Peacock well before the investigation.
+Athena: I even saw her on tour once!
+Athena: ... 
+Athena: Anyways, if you haven't heard of her, she's a famous performer and singer.
+Officer Parrot: Oh of course I have. I see her perform whenever she's in town!
+<<if $PeacockArgument>>
+Athena: Mr McCraw informed me he heard Miss Peacock in an intense argument with the victim.
+Athena: She reportedly threatened to kill him.
+Officer Parrot: That's quite damning.
+Athena: ...
+<<endif>>
+<<if $DuckBroke>>
+Athena: I think I understand why she would be upset however.
+Athena: She reported their argument was over a large sum of money he owed her.
+Athena: I'm not sure exactly how killing him would get her the money back...
+Officer Parrot: I see.
+<<endif>>
+<<if $CockfightingArena>>
+Athena: <i>I know there's one thing Im omitting...</i>
+Athena: <i>Do I tell him about Melissa's Underground Fightclub?</i>
+-> Yes.
+	Athena: <i>Fightclubs are illegal for a reason. I should let him know before someone gets killed.</i>		
+	Athena: There's one more major thing. 
+	Athena: I discovered Melissa runs an underground fightclub.
+	Officer Parrot: A fightclub? That's highly illegal.
+	Officer Parrot: Thank you for reporting that.
+	Athena: Of course, Officer.
+-> No.
+	Athena: <i>No I shouldn't... I worry what a cop would do about this.</i>
+<<endif>>
+Athena: That's all my intel on Melissa.
+<<jump CharacterDebrief>>
 ===

@@ -18,6 +18,8 @@ tags: lc: rc:
 <<declare $NoticedManifest = false>>
 <<declare $CrowCigs = false>>
 <<declare $CrowDone = false>>
+<<declare $GanderBriefcase = false>>
+<<declare $CockfightingArena = false>>
 <<set $HasShards = false>>
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>

@@ -228,7 +228,7 @@ Melissa: I wouldn't want the <color=\#f3db82>wrong person knowing my birthday</c
 title: PeacockFighters
 ---
 Athena: Do you know who the people in this photo are?#el:Neutral
-Melissa: Well the Rooster is Even Rudy. Also known in the arena as Rude Rocky.
+Melissa: Well the Rooster is Evan Rudy. Also known in the arena as Rude Rocky.
 Athena: And the other peacock?
 Melissa: Oh honey. Did you not know?
 Athena: Know what?
@@ -237,14 +237,34 @@ Athena: Wait... You're trans?#el:Surprised
 Melissa: Oh hahaha. I don't even try to hide it, darling.
 Melissa: I didn't even change my coloring.
 Melissa: Perhaps they need to revoke your detective license.
+Athena: So you were a boxer?
+Melissa: Yes, back in the day. 
+Melissa: I actually ran that place.
+Melissa: They called me Thorn. Sharp as an arrow and impossible to get rid of, hah.
+Melissa: Though I started to realize I didn't want that life.
+Melissa: I found a passion for singing and discovered I wanted to be the rose, not the thorn.
+Melissa: Still, I find it a little hard to escape that old arena sometimes.
+Melissa: When you run a gig that so many people rely on, you can't just up and leave.
+Melissa: Now I just manage it from afar.
+Melissa: I know this kind of fighting is illegal, but we have a really great community.
+Melissa: I would hate for anything to happen to it.
+<<set $CockfightingArena = true>>
 ===
 
 title: PeacockLovers
 ---
 Melissa: Oh my. Is that you and Morgana? #el:Neutral
+<<if $FixedRelationship>>
+Athena: Yeah, it's quite an old photo. #e:Happy
+Melissa: You don't seem very sad, do you?
+Athena: I talked to her. We figured things out.
+Melissa: Oh that's wonderful. I'm glad things are alright.
+<<else>>
 Athena: Yeah... #el:Sad
 Athena: Do you know why she still had this?
 Melissa: That would be something <color=\#f3db82>you should ask her</color>, honey.
+<<endif>>
+
 ===
 
 title: PeacockCargoManifest
