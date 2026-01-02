@@ -415,4 +415,9 @@ public class DialogueHelper : Singleton<DialogueHelper>
             }
         }
     }
+
+    private bool hasClue(string clueID)
+    {
+        return GameManager.State.DiscoveredClues.Contains(clueID);
+    }
 }

@@ -427,11 +427,54 @@ Athena: No. I think that's all I need.
 title: EndingDialogue
 ---
 Athena: ... #e:Intense#bg:Dark
-Athena: Let me review my clues before they show up.
-Athena: Here he comes.
-Officer: Hello ma'am. I was informed there was a murder discovered aboard this vehicle.
+Athena: <i>Let me review my clues before they show up.</i>
+Athena: <i>Here he comes.</i>
+Officer: Hello ma'am. I was informed there was a murder discovered aboard this vehicle.#e:Neutral
 Officer: You must be the detective the bellboy told me about.
 Athena: Yes that's me. Detective Athena Nox.
 Officer Parrot: A pleasure. I'm <color=\#f3db82>Officer Hercule Parrot</color>.
 Officer Parrot: I suppose you must have a lot of information to give me. We should continue in a more secure location.
+<<jump Debrief>>
+===
+
+title: Debrief
+---
+Officer Parrot: Let's get started. Tell me everything you know.#bg:Dark
+Athena: I know the hanging was most definitely a murder and not a suicide. 
+Athena: Firstly, the stool the victim "used" to set up the rope was far too short for him to reach the chandelier.
+Athena: Thus I believe this stool was placed to stage a suicide.
+Athena: I noticed the victim showed signs of suffocation, meaning the hanging certainly was his cause of death.
+Athena: However, I noticed no signs of struggle, implying the victim was unconscious when hung.
+Officer Parrot: Fascinating.
+Athena: He had a visible blunt force wound on the skull. I believe I found the shattered remains of the weapon by his corpse.
+Athena: He was knocked out with a wine bottle identical to those remaining on the bar shelf.
+Athena: The victim was knocked out with the wine bottle, hung and suffocated as a cover up, then the murderer placed a stool to make the suicide story appear more convincing.
+Officer Parrot: I see. Who are your current suspects.
+Athena: Morgana Noir, the bartender.
+Athena: Skipper McCraw, the bellboy.
+Athena: Melissa "Miss" Peacock, the performer.
+Athena: Chase Gander, the businessman.
+Officer Parrot: Let's begin with Noir. Tell me everything you know about the bartender.
+Athena: Miss Noir... well I knew her pretty well. 
+Athena: She and I used to be partners. Romantic ones.
+Officer Parrot: I hope this will not cloud your judgement.
+Athena: Of course not. I always keep my work professional.
+Officer Parrot: I'm sure. I just must make sure.
+Athena: I understand.
+Athena: We broke up a while ago. I believed I didn't have enough time to be a good partner.
+Athena: ... #e:Sad
+Athena: I sent her a letter while I was out on an investigation.
+Athena: I told her I knew she wanted more and said she should find someone else who could give her what she needed.
+Athena: She was rightfully very upset with me when she saw me on the train.
+<<if $FixedRelationship>>
+	Athena: However, we made up. I shouldn't have sent that letter.
+<<endif>>
+<<if $MorganaTestimony>>
+	Athena: She originally gave me a false testimony, fearing it would make her seem guilty.
+	Athena: She didn't trust me to be objective.
+	Athena: I'd like you to know as a detective, I am <i>always</i> objective.
+	Athena: 
+<<else>>
+<<endif>>
+
 ===
