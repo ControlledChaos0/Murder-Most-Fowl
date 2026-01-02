@@ -454,7 +454,17 @@ Athena: Morgana Noir, the bartender.
 Athena: Skipper McCraw, the bellboy.
 Athena: Melissa "Miss" Peacock, the performer.
 Athena: Chase Gander, the businessman.
-Officer Parrot: Let's begin with Noir. Tell me everything you know about the bartender.
+Officer Parrot: Tell me all you know about those involved.
+Officer Parrot: Who would you like to discuss first?
+-> Morgana Noir
+	<<jump MorganaDebrief>>
+-> Skipper McCraw
+-> Chase Gander
+-> Melissa Peacock
+===
+
+title: MorganaDebrief
+---
 Athena: Miss Noir... well I knew her pretty well. 
 Athena: She and I used to be partners. Romantic ones.
 Officer Parrot: I hope this will not cloud your judgement.
@@ -470,11 +480,24 @@ Athena: She was rightfully very upset with me when she saw me on the train.
 	Athena: However, we made up. I shouldn't have sent that letter.
 <<endif>>
 <<if $MorganaTestimony>>
-	Athena: She originally gave me a false testimony, fearing it would make her seem guilty.
+	Athena: Once she gave me her testimony, I got some more insight on Mallard.
+	Athena: She said she saw Mallard take Skipper's coat for him.
+	Athena: However, she reported hearing Mallard say "this is when we get even."
+	<<if $CrowDone>>
+	Athena: Noir originally left more important details out, fearing it would make her seem guilty.
 	Athena: She didn't trust me to be objective.
 	Athena: I'd like you to know as a detective, I am <i>always</i> objective.
-	Athena: 
+	Athena: She told me the night of the murder, she was the first to find the body.
+	Athena: However, she was very insistant she did not commit the murder.
+	Athena: She found a fake suicide note that was written by the murderer. 
+	Athena: The note reportedly contained information that would defame her close friend, Melissa.
+	Athena: In a panic, she burned the note in the furnace.
+	<<endif>>
 <<else>>
+	Athena: Though... she never did give me a full testimony.
+	Officer Parrot: Why do you think that was?
+	Athena: Either she still wanted nothing to do with me. 
+	Athena: ...
+	Athena: Or she's hiding something.
 <<endif>>
-
 ===
