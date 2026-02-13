@@ -470,6 +470,7 @@ Officer Parrot: Who would you like to discuss first?
 -> Melissa Peacock
 	<<jump MelissaDebrief>>
 -> Seaton Mallard
+	<<jump MallardDebrief>>
 -> Let's cut to the chase.
 ===
 
@@ -485,7 +486,76 @@ Officer Parrot: Who would you like to discuss now?
 -> Melissa Peacock
 	<<jump MelissaDebrief>>
 -> Seaton Mallard
+	<<jump MallardDebrief>>
 -> Let's cut to the chase.
+	Officer Parrot: Are you ready to accuse someone?
+	-> <color=\#f94449>I'm ready</color>.
+		<<jump Accusation>>
+	-> No.. Let's discuss the suspects again.
+		<<jump CharacterDebrief>>
+===
+
+title: Accusation
+---
+Officer Parrot: <color=\#f94449>Hoo did it?</color>
+-> Morgana Noir
+	Athena: <color=\#f94449>Miss Noir</color> killed the duck.
+	<<jump BadEndingNoir>>
+-> Skipper McCraw
+	Athena: <color=\#f94449>Mr. McCraw</color> killed the duck.
+	<<if $FixedRelationship>>
+		<<jump TrueEnding>>
+	<<else>>
+		<<jump GoodEnding>>
+	<<endif>>
+
+-> Chase Gander
+	Athena: <color=\#f94449>Mr. Gander</color> killed the duck.
+	<<jump BadEndingGander>>
+-> Melissa Peacock
+	Athena: <color=\#f94449>Miss. Peacock</color> killed the duck.
+	<<jump BadEndingPeacock>>
+===
+
+title: GoodEnding
+---
+: ... 
+: A few days later.
+===
+
+title: TrueEnding
+---
+: ... 
+: A few days later.
+===
+
+title: BadEndingGander
+---
+: ... 
+: A few days later.
+<<jump BadEnding>>
+===
+
+title: BadEndingPeacock
+---
+: ... 
+: A few days later.
+<<jump BadEnding>>
+===
+
+title: BadEndingNoir
+---
+: ... 
+: A few days later.
+<<if $FixedRelationship>>
+
+<<else>>
+<<endif>>
+<<jump BadEnding>>
+===
+
+title: BadEnding
+---
 ===
 
 title: MorganaDebrief
@@ -531,12 +601,12 @@ Athena: That's all my intel on Morgana.
 
 title: ChaseDebrief
 ---
-
+<<jump CharacterDebrief>>
 ===
 
 title: SkipperDebrief
 ---
-
+<<jump CharacterDebrief>>
 ===
 
 title: MelissaDebrief
@@ -572,5 +642,12 @@ Athena: <i>Do I tell him about Melissa's Underground Fightclub?</i>
 	Athena: <i>No I shouldn't... I worry what a cop would do about this.</i>
 <<endif>>
 Athena: That's all my intel on Melissa.
+<<jump CharacterDebrief>>
+===
+
+title: MallardDebrief
+---
+Athena: Our victim is a 5'10" male duck of the name Seaton Mallard.
+Athena: His death was staged as a suicide, but was proven to be fowl play.
 <<jump CharacterDebrief>>
 ===
