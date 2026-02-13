@@ -503,12 +503,7 @@ Officer Parrot: <color=\#f94449>Hoo did it?</color>
 	<<jump BadEndingNoir>>
 -> Skipper McCraw
 	Athena: <color=\#f94449>Mr. McCraw</color> killed the duck.
-	<<if $FixedRelationship>>
-		<<jump TrueEnding>>
-	<<else>>
-		<<jump GoodEnding>>
-	<<endif>>
-
+	<<jump GoodEndingSkipper>>
 -> Chase Gander
 	Athena: <color=\#f94449>Mr. Gander</color> killed the duck.
 	<<jump BadEndingGander>>
@@ -519,20 +514,56 @@ Officer Parrot: <color=\#f94449>Hoo did it?</color>
 
 title: GoodEnding
 ---
-: ... 
-: A few days later.
+Athena: Another week, another case done.
+Athena: <i>Yawn</i>
+Athena: Now I can finally get a break-
+Phone: <i>Brrrrring</i>
+Athena: Who could it be at this hour.
+Athena: Hello?
+Dispatch: <i>Athena! It's dispatch, we have an urgent case.</i>
+Athena: ...
+Athena: Another case?
+Dispatch: <i>Report to 1332 Agatha Drive as soon as possible.</i>
+Athena: <i>Sigh</i>
+Athena: Alright, I'm on it.
 ===
 
 title: TrueEnding
 ---
+===
+
+title: GoodEndingSkipper
+---
 : ... 
 : A few days later.
+Skipper: Hey, what's going on?
+Athena: You're in prison, Skipper.
+Skipper: Wait, this wasn't supposed to happen.
+Athena: This is what happens to murderers.
+Skipper: It was an accident! I didn't mean to!
+Athena: Then why did you attempt to hide it?
+Skipper: Why do you think? I didn't want to end up here...
+Skipper: ...
+Skipper: I don't want the police anywhere near my business.
+Athena: It was clever, playing like an authority figure.
+Athena: But you failed to consider...
+Athena: I'm never wrong.
+<<if $FixedRelationship>>
+	<<jump TrueEnding>>
+<<else>>
+	<<jump GoodEnding>>
+<<endif>>
 ===
 
 title: BadEndingGander
 ---
 : ... 
 : A few days later.
+Gander: Would you care to explain to me why I am behind bars?
+Athena: Care to explain why you murdered Mallard?
+Gander: I did no such thing.
+Athena: Tell that to the judge.
+Gander: The only person the judge will be hearing from is my lawyer.
 <<jump BadEnding>>
 ===
 
@@ -540,6 +571,12 @@ title: BadEndingPeacock
 ---
 : ... 
 : A few days later.
+Melissa: Surely there's been some mistake.
+Athena: I don't believe there has.
+Melissa: I would never kill, darling. 
+Athena: Evidently you have. 
+Melissa: Please believe me dear.
+Athena: Tell that to the judge.
 <<jump BadEnding>>
 ===
 
@@ -548,14 +585,44 @@ title: BadEndingNoir
 : ... 
 : A few days later.
 <<if $FixedRelationship>>
-
+Morgana: Athena? Why?
+Morgana: You know I didn't do it. Please tell them. 
+Athena: ...
+Athena: I'm sorry Morgana. The evidence said otherwise.
+Morgana: Cluck your evidence! Cluck you! I didn't do it!
+Morgana: ...
+Morgana: Just go.
 <<else>>
+Morgana: I knew it.
+Athena: Don't start.
+Morgana: I told you I didn't do it. Of course you wouldn't believe me.
+Athena: The evidence said otherwise.
+Morgana: ...
+Morgana: This is the second time you've ruined my life.
+Morgana: Just please leave before you make it worse.
 <<endif>>
 <<jump BadEnding>>
 ===
 
 title: BadEnding
 ---
+:...
+Athena: That case... why is it still on my mind?
+Athena: Case closed, right?
+Athena: ...
+Athena: Wait a minute. 
+Athena: I must be missing something...
+Athena: Aha! It couldn't have bee-
+???: 
+Athena: Who's there?
+???: 
+Athena: Wait. Wait please, no.
+Athena: AAAAAAAAAH
+:
+???: You should've kept your beak where it belonged.
+???: I can't have this evidence getting out.
+:
+: The End?
 ===
 
 title: MorganaDebrief
@@ -601,11 +668,22 @@ Athena: That's all my intel on Morgana.
 
 title: ChaseDebrief
 ---
+Athena: Chase Gander is a man who needs little introduction.
+Athena: World renound businessman, Co-Owner of the lucrative Gander & Mallard Co.
+Athena: I was a little surprised to find him outside of a fancy private car.
+Athena: He could probably afford to book the whole train for himself...
+
 <<jump CharacterDebrief>>
 ===
 
 title: SkipperDebrief
 ---
+Athena: Skipper McCraw was one of the few passengers I didn't know much about.
+Athena: He was just an unassuming bellboy.
+Athena: After finding the body, he immediately took control of the situation.
+Athena: He initially wanted to rule the murder as a suicide, refusing to let me investigate until I proved him otherwise.
+Athena: Eventually he did let me investigate.
+
 <<jump CharacterDebrief>>
 ===
 
