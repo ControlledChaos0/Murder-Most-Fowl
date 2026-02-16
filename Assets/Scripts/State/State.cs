@@ -43,6 +43,10 @@ public class State
     public bool NoticedManifest = false;
     public bool CrowCigs = false;
     public bool CrowDone = false;
+    public bool GanderBriefcase = false;
+    public bool CockfightingArena = false;
+    public bool AskingCrow = false;
+    public bool PenguinDrugs = false;
     [Header("Inventory")] 
     public List<string> DiscoveredClues = new();
 

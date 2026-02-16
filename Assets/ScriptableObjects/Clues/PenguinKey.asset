@@ -15,5 +15,7 @@ MonoBehaviour:
   m_clueID: PenguinKey
   m_name: Skipper's Key
   m_clarificationInfo: 
-  m_description: Skipper's missing key that was found on the victim's body.
+  m_description: Skipper had a spare key on the night of the murder.
   m_icon: {fileID: 7235219391446019889, guid: 6c3da4d39ac12b54ea82eee5f5363f06, type: 3}
+  m_viewable: 0
+  _viewSprite: {fileID: 0}

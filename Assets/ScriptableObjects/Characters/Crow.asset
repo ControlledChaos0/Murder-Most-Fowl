@@ -28,3 +28,5 @@ MonoBehaviour:
     nodeResponse: CrowCigs
   - clueID: Gloves
     nodeResponse: CrowGloves
+  - clueID: LoversPhoto
+    nodeResponse: CrowLoversPhoto

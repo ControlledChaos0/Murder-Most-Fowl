@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering;
@@ -36,12 +37,21 @@ public class DialogueHelper : Singleton<DialogueHelper>
         public string name;
         public SpriteItemList expressions;
     }
+    [Serializable]
+    public struct Background
+    {
+        public string name;
+        public Sprite image;
+        public Color color;
+        public bool includeCharacters;
+    }
 
     [Header("Yarn Components")] 
     [SerializeField] private DialogueRunner _dialogueRunner;
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject _background;
+    [SerializeField] private List<Background> _backgroundList;
     [SerializeField] private Image _leftCharacter;
     [SerializeField] private Image _rightCharacter;
     [SerializeField] private List<SpriteItem> _spriteList;
@@ -63,6 +73,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
     private static Image _right;
     private static string _leftName;
     private static string _rightName;
+    private static bool charactersHidden = false;
     private static List<SpriteItem> _sprites;
     private static List<NameSpriteMatch> _names;
     private static bool lockPortrait = false;
@@ -155,7 +166,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
     [YarnCommand("ChangeLeftCharacter")]
     public static void ChangeLeft(string name = null)
     {
-        if (lockPortrait)
+        if (lockPortrait || charactersHidden)
         {
             return;
         }
@@ -182,7 +193,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
     [YarnCommand("ChangeRightCharacter")]
     public static void ChangeRight(string name = null)
     {
-        if (lockPortrait)
+        if (lockPortrait || charactersHidden)
         {
             return;
         }
@@ -208,7 +219,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
 
     public static void ChangeRightExpression(string name = null)
     {
-        if (lockPortrait)
+        if (lockPortrait || charactersHidden)
         {
             return;
         }
@@ -235,7 +246,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
 
     public static void ChangeLeftExpression(string name = null)
     {
-        if (lockPortrait)
+        if (lockPortrait || charactersHidden)
         {
             return;
         }
@@ -296,6 +307,41 @@ public class DialogueHelper : Singleton<DialogueHelper>
         }
     }
 
+    private void UpdateBackground(string bg)
+    {
+        Debug.Log(bg);
+        Sprite bgSprite = _backgroundList.Find(e => e.name == bg).image;
+        Color bgColor = _backgroundList.Find(e => e.name == bg).color;
+        bool includeCharacters = _backgroundList.Find(e => e.name == bg).includeCharacters;
+
+        ToggleCharacters(includeCharacters);
+
+        Image bgImage = _background.GetComponent<Image>();
+        bgImage.color = bgColor;
+        bgImage.sprite = bgSprite;
+    }
+
+    private void ToggleCharacters(bool show)
+    {
+        if (show)
+        {
+            charactersHidden = false;
+            if (_rightCharacter.sprite != null)
+            {
+                _rightCharacter.GameObject().SetActive(true);
+            }
+            if (_leftCharacter.sprite != null)
+            {
+                _leftCharacter.GameObject().SetActive(true);
+            }
+        } else
+        {
+            charactersHidden = true;
+            _rightCharacter.GameObject().SetActive(false);
+            _leftCharacter.GameObject().SetActive(false);
+        }
+    }
+
     private void MetadataParser(string tag)
     {
         string[] tagParts = tag.Split(':');
@@ -333,12 +379,20 @@ public class DialogueHelper : Singleton<DialogueHelper>
             //ChangeTrack(tagParts[1]);
             return;
         }
-        
+        if (tagParts[0] == "bg")
+        {
+            UpdateBackground(tagParts[1]);
+            return;
+        }
     }
 
     private void NamePortraitUpdater(string name)
     {
         if (string.IsNullOrEmpty(name))
+        {
+            return;
+        }
+        if (charactersHidden)
         {
             return;
         }
@@ -360,5 +414,10 @@ public class DialogueHelper : Singleton<DialogueHelper>
                 ChangeRight(spriteName);
             }
         }
+    }
+
+    private bool hasClue(string clueID)
+    {
+        return GameManager.State.DiscoveredClues.Contains(clueID);
     }
 }

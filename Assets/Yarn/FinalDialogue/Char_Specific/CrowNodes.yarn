@@ -1,5 +1,7 @@
 title: CrowIntroduction
 tags: lc: Owl rc:
+position: -350,-575
+color: green
 ---
 Athena: <i>Oh Phoenix Above, what do you mean SHE's here?</i>#s:Crow#el:Intense
 Athena: <i>Just what I need, my romantic life getting tangled with my professional one.</i>
@@ -12,6 +14,7 @@ Athena: Look, I just want to talk.#el:Neutral
 ===
 
 title: CrowIdle
+position: -349,-361
 ---
 <<set $ConvoChar = "Crow">>
 <<if $Tutorial is false>>
@@ -23,6 +26,7 @@ title: CrowIdle
 
 title: CrowConversation
 tags: c:Owl:Crow
+position: 11,-362
 ---
 <<set $ConvoChar = "Crow">>
 Morgana: …#e:Sad#el:Neutral
@@ -37,6 +41,7 @@ Morgana: Not a chance.#e:Angry
 ===
 
 title: CrowMain
+position: -553,-63
 ---
 <<if $FixedRelationship>>
     Morgana: Hey Athena.#e:Neutral#s:Crow#el:Neutral
@@ -46,66 +51,37 @@ title: CrowMain
 <<endif>>
 -> I have a few questions for you.
 	<<jump CrowQuestions>>
--> This is serious, Morgana.<<if not $PresentedReed>>
+-> This is serious, Morgana.<<if not $FixedRelationship>>
 	Athena: This is serious, Morgana. Someone is dead.#el:Intense
 	Morgana: Oh cluck off.#e:Angry
 	Morgana: I thought WE were serious.#el:Neutral
--> Can we talk?<<if $PresentedReed and not $FixedRelationship>>
+-> Can we talk?<<if not $Tutorial and not $FixedRelationship>>
+    <<set $AskingCrow = true>>
     Morgana: What on earth should we talk about?#e:Angry
     Athena: About us.
     Morgana: What? What about us? I thought you made it clear you didn't want anything to do with me anymore.#e:Sad
     Athena: I wanted everything to do with you, Morgana.#el:Sad
+    Morgana: Then why did you leave me?#e:Angry
     Athena: I... I thought.
     Morgana: You clearly didn't before sending me that letter.#e:Angry
-    Athena: ...
-    Athena: You're the love of my life.
-    Athena: But I was away on cases all the time, and it was clearly hurting you.
-    Morgana: I-#e:Sad
-    Athena: I noticed how lonely you were.
-    Athena: I thought if I left... you could move on and be happier with someone else.
-    Morgana: That's not what I wanted.
-    Athena: I shouldn't have made that decision for you.
-    Athena: We- We could've worked something out.
-    Morgana: ...
-    Morgana: We still can.
-    Athena: ..!#el:Surprised
-    Morgana: Leaving me like you did... was a horrible way to go about it.#el:Sad
-    Morgana: And hurt me incredibly deeply.
-    Morgana: ...
-    Morgana: But you're right. It's not what I wanted.#e:Neutral
-    Morgana: I want you, Athena.
-    Athena: Morgana...
-    Morgana: ... #e:Sad
-    Morgana: Oh Phoenix, I can't pretend to hate you.#e:Crying
-    Morgana: I love you Athena.
-    Athena: ...#el:Surprised
-    Athena: I love you too, Morgana.#el:Sad
-    Athena: I shouldn't have sent that letter.
-    Athena: Do you want to try to work something out?
-    Morgana: I'd like that. #e:Sad
-    Athena: ...
-    Athena: I have a case to attend to, but as soon as I'm done, I have someone important to spend time with.#el:Neutral
-    Morgana: ..!#e:Embarrassed
-    Morgana: I'll see you later, dork. #e:Neutral
-    Morgana: Also uh...
-    Morgana: I wasn't <color=\#f3db82>telling you everything</color> about last night...
-    Morgana: I'm willing to <color=\#f3db82>answer your question</color> now if you need me to.
-    <<set $FixedRelationship to true>>
-    <<jump CrowMain>>
--> How are you doing?<<if $CrowDone>>
-    Morgana: I'm doing fine.
-    Morgana: Could use a cigarette though.
-    Morgana: You wanna smoke?
-    Athena: Sure. #el:Happy
-    Morgana: I keep them in a <color=\#f3db82>secret compartment in the bar</color>.#el:Neutral
-    Morgana: Be a dear and grab them for me?
-    <<set $CrowCigs to true>>
+    Athena: <i>I really messed up...</i>
+    Athena: <i>Maybe there's something I can show her to remind her about our love.</i>
+    <<PresentEvidence LoversPhoto CrowWrong1>>
 -><color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Leave
 ===
 
+title: CrowWrong1
+---
+<<set $AskingCrow = false>>
+Morgana: ... #e:Sad
+Morgana: Just leave.
+===
+
 title: CrowQuestions
+position: -616,-357
+color: green
 ---
 -> Where were you last night.#e:Neutral#el:Neutral
     <<if $FixedRelationship>>
@@ -162,40 +138,70 @@ title: CrowQuestions
 -> Do you know if anyone would want to kill him?
 	Morgana: I may not like him, but that doesn't mean I would kill him.#e:Sad
 	<<jump CrowQuestions>>
+-> <color=\#f3db82>Can you tell me anything about the other passengers?</color> <<if $FixedRelationship>>
+    <<jump CrowPeople>>
 -> That's all the questions I have
 	<<jump CrowIdle>>
 ===
 
-title: CrowKeys
+title: CrowPeople
 ---
-Morgana: Yeah that penguin lost his keys and asked me to lock up.#el:Neutral
-Morgana: 
+Morgana: Who do you want to hear about?
+-> Melissa
+    Morgana: We've been close friends since shortly after we broke up.#e:Sad
+    Morgana: We were hanging out last night and I made her quite a few drinks.#e:Neutral
+    Morgana: I technically wasn't supposed to, but <color=\#f3db82>I gave her my spare key</color> so she could stay in the parlor after I went to bed.
+    Morgana: She asked me so nicely, how could I say no?
+    <<jump CrowPeople>>
+-> Chase
+    Morgana: He just comes across as a snobby businessman to me.
+    Morgana: In the brief time I dated Mallard, all he ever quacked about was that man.
+    Morgana: He was <color=\#f3db82>obsessed with him</color>.
+    Morgana: I think he always felt like he was living in Mr. Gander's shadow.
+    Morgana: No wonder he <color=\#f3db82>stole so much money from their company</color>.
+    <<jump CrowPeople>>
+-> Skipper
+    Morgana: The bellboy? I don't know much about him.
+    Morgana: I believe <color=\#f3db82>Melissa and Skipper were talking</color> though.
+    <<jump CrowPeople>>
+-> Nevermind
+    <<jump CrowQuestions>>
+===
+
+title: CrowKeys
+position: 1216,180
+color: blue
+---
+Morgana: Yeah all the staff has a <color=\#f3db82>staff key and spare key</color>.
 ===
 
 title: CrowGloves
+position: 778,40
+color: blue
 ---
-Morgana: What of them?#e:Neutral
-Athena: They're yours?
-Morgana: Yup.
-===
-
-title: CrowSootyGloves
----
-Morgana: ... #e:Sad
-Morgana: Yes...
-Athena: Why are they so sooty? Did you burn the letter?
-Morgana: I did...
-Morgana: But it's not what it looks like.#e:Neutral
-Morgana: I came into the room in the morning and found the body.
-Morgana: I read the note and panicked.
-Morgana: He said terrible and revealing things about Melissa.
-Morgana: As her friend, I couldn't let the world find out.
-Morgana: ...#e:Sad
-<<set $CrowDone to true>>
-<<set $CrowGlovesStory to true>>
+<<if $FixedRelationship>>
+    Morgana: ... #e:Sad
+    Morgana: Yes...
+    Athena: Why are they so sooty? Did you burn the letter?
+    Morgana: I did...
+    Morgana: But it's not what it looks like.#e:Neutral
+    Morgana: I came into the room in the morning and found the body.
+    Morgana: I read the note and panicked.
+    Morgana: He said terrible and revealing things about Melissa.
+    Morgana: As her friend, I couldn't let the world find out.
+    Morgana: ...#e:Sad
+    <<set $CrowDone to true>>
+    <<set $CrowGlovesStory to true>>
+<<else>>
+    Morgana: What of them?#e:Neutral
+    Athena: They're yours?
+    Morgana: Yup.
+<<endif>>
 ===
 
 title: CrowEx
+position: 452,46
+color: blue
 ---
 <<if $FixedRelationship>>
     <<jump CrowExGood>>
@@ -205,6 +211,7 @@ title: CrowEx
 ===
 
 title: CrowExBad
+position: 594,349
 ---
 Athena: I heard you used to date the victim?#el:Neutral
 Morgana: Yeah, imagine my luck.#e:Neutral
@@ -221,6 +228,7 @@ Morgana: ...#el:Neutral
 ===
 
 title: CrowExGood
+position: 348,296
 ---
 Athena: Is it true you used to date Mallard?#e:Embarrassed#el:Neutral
 Morgana: Yeah...#e:Sad
@@ -235,6 +243,8 @@ Morgana: I dug that hole myself.
 ===
 
 title: CrowGlass
+position: 1217,43
+color: blue
 ---
 Morgana: Glass? What do you want me to say?#e:Angry#el:Neutral
 Athena: Glass, Bottles, Alcohol… Isn't that your specialty?
@@ -247,7 +257,12 @@ Morgana: But don't you try to pin this one on me, Nox.
 ===
 
 title: CrowDismissal
+position: 750,-338
+color: red
 ---
+<<if $AskingCrow>>
+    <<jump CrowLoversPhoto>>
+<<endif>>
 <<if $FixedRelationship>>
     <<jump CrowGoodDismissal>>
 <<else>>
@@ -255,17 +270,76 @@ title: CrowDismissal
 <<endif>>
 ===
 
+title: CrowLoversPhoto
+---
+<<if $AskingCrow>>
+    Athena: You had this photo all along...
+    Athena: You cared about me so much.
+    Athena: ...
+    Athena: You're the love of my life.
+    Athena: But I was away on cases all the time, and it was clearly hurting you.
+    Morgana: I-#e:Sad
+    Athena: I noticed how lonely you were.
+    Athena: I thought if I left... you could move on and be happier with someone else.
+    Morgana: That's not what I wanted.
+    Athena: I shouldn't have made that decision for you.
+    Athena: We- We could've worked something out.
+    Morgana: ...
+    Morgana: We still can.
+    Athena: ..!#el:Surprised
+    Morgana: Leaving me like you did... was a horrible way to go about it.#el:Sad
+    Morgana: And hurt me incredibly deeply.
+    Morgana: ...
+    Morgana: But you're right. It's not what I wanted.#e:Neutral
+    Morgana: I want you, Athena.
+    Athena: Morgana...
+    Morgana: ... #e:Sad
+    Morgana: Oh Phoenix, I can't pretend to hate you.#e:Crying
+    Morgana: I love you Athena.
+    Athena: ...#el:Surprised
+    Athena: I love you too, Morgana.#el:Sad
+    Athena: I shouldn't have sent that letter.
+    Athena: Do you want to try to work something out?
+    Morgana: I'd like that. #e:Sad
+    Athena: ...
+    Athena: I have a case to attend to, but as soon as I'm done, I have someone important to spend time with.#el:Neutral
+    Morgana: ..!#e:Embarrassed
+    Morgana: Also uh...#e:Neutral
+    Morgana: I wasn't <color=\#f3db82>telling you everything</color> about last night...
+    Morgana: I'm willing to <color=\#f3db82>answer your question</color> now if you need me to.
+    Morgana: ... Though first.
+    Morgana: You wanna smoke? For old time's sake?
+    Athena: I'd love to. #el:Happy
+    Morgana: I keep my cigarettes in a <color=\#f3db82>secret compartment in the bar</color>.#el:Neutral
+    Morgana: Be a dear and grab them for me?
+    <<set $CrowCigs to true>>
+    <<set $AskingCrow = false>>
+    <<set $FixedRelationship to true>>
+<<else>>
+    <<if $FixedRelationship>>
+        Morgana: I love that photo. #e:Embarrassed
+    <<else>>
+        Morgana: ... #e:Sad
+        Morgana: Why are you showing me this?
+    <<endif>>
+<<endif>>
+===
+
 title: CrowBadDismissal
+position: 563,-184
 ---
 Morgana: And?#e:Angry#el:Neutral
 ===
 
 title: CrowGoodDismissal
+position: 943,-198
 ---
 Morgana: Sorry. That doesn't look familiar.#el:Neutral
 ===
 
 title: CrowCigs
+position: 999,184
+color: blue
 ---
 Morgana: Thank you, Athena. I could really use one right now.
 Athena: Likewise.
@@ -277,6 +351,8 @@ Morgana: ...#e:Embarrassed
 ===
 
 title: CrowKey
+position: 793,178
+color: blue
 ---
 Morgana: Oh is that <color=\#f3db82>Skipper's key</color>?
 Morgana: He lost his last night.

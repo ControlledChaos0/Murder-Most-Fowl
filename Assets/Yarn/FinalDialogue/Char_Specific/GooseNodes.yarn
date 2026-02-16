@@ -102,11 +102,12 @@ Chase: What else would you like to ask?#el:Neutral
 -> Did you leave your room last night?<<if $MorganaTestimony>>
 	<<if $DeliverLetter>>
 		Gander: Yes. As I said I did leave my room.
-		Gander: My wife died <color=\#f3db82>7 years ago</color>, but I think I can finally move on.
+		Gander: My wife died <color=\#f3db82>7 years ago</color>, but as ashamed as I am to say, I think I need to move on.
 	<<else>>
 		Gander: ...
 		Gander: These accusations are false.
 		Gander: My wife died <color=\#f3db82>7 years go</color>. I am still mourning her.
+		Athena: <i>He seems strangely defensive.</i>
 	<<endif>>
 -> That's all
 	<<jump GooseConversation>>
@@ -134,7 +135,9 @@ Chase: ...
 title: GooseHandkerchief
 ---
 Chase: Yes. This is mine.#el:Neutral
-Chase: Mallard loved to snag little trinkets from me.
+Chase: Where did you find it?
+Athena: On the body of the victim.
+Chase: Ah, Mallard loved to snag little trinkets from me.
 Chase: It was quite petty honestly.
 ===
 
@@ -177,7 +180,7 @@ Chase: The Avian Flu pandemic a few years back.
 Chase: The disease used to me much more potent than it is now.
 Chase: ...
 Chase: If only I could go back to that <color=\#f3db82>March</color>.
-Chase: Oh the things I wish I could've said to you, my dear.
+Chase: There are so many things I would've done differently.
 ===
 
 title: GooseAttorneyLetter
@@ -210,9 +213,12 @@ Chase: I do not do drugs. #el:Neutral
 
 title: GooseMissingBriefCase
 ---
-Chase: I do have a bag, yes.
-Chase: However, I never keep my bags in the cargo hold.
+Athena: I have reason to believe Mallard was in possession of this briefcase.#el:Neutral
+Athena: Is this briefcase yours?
+Chase: No it does not look familiar.
 Chase: Why do you assume it is mine?
-Athena: Melissa assumed so.
-Chase: tsk. Well I am not the only businessman on this train.
+Athena: Melissa told me it was yours.
+Chase: Tsk just because I'm a businessman doesn't mean every briefcase is mine.
+Chase: She must be confused. Go ask her why she thought it was mine.
+<<set $GanderBriefcase to true>>
 ===

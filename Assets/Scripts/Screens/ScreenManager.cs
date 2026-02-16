@@ -16,18 +16,6 @@ public class ScreenManager : Singleton<ScreenManager>
     private void Awake() {
         InitializeSingleton();
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     
     public void ChangeRooms(RoomScreenContainer room)
     {

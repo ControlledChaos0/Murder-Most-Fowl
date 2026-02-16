@@ -18,19 +18,22 @@ tags: lc: rc:
 <<declare $NoticedManifest = false>>
 <<declare $CrowCigs = false>>
 <<declare $CrowDone = false>>
+<<declare $GanderBriefcase = false>>
+<<declare $CockfightingArena = false>>
+<<declare $AskingCrow = false>>
+<<declare $PenguinDrugs = false>>
 <<set $HasShards = false>>
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
 <<declare $CrowRelationship = 0.0>>
-<<jump Skip>>
-WARNING: This game contains graphic depictions of suicide.
+WARNING: This game contains graphic depictions of suicide.#bg:DarkHidden
 WARNING: If this may be triggering to you, please play no further.
-Athena: *cough cough* Ugh I can't sleep.
+Athena: *cough cough* Ugh I can't sleep.#bg:Dark
 Athena: The Bird Flu is no joke...#el:Sad
-???: CRASH
-Athena: ... what was that?#el:Surprised
-???: clop clop clop
-Athena: Who's up this late at night making such a ruckus.#el:Intense
+???: CRASH #bg:DarkHidden
+Athena: ... what was that?#el:Surprised #bg:Dark
+???: clop clop clop#bg:DarkHidden
+Athena: Who's up this late at night making such a ruckus.#el:Intense#bg:Dark
 Athena: Luckily *cough* for them I'm too sick to do anything about it.#el:Sad
 Athena: I'm already up. Perhaps I'll just read a book for a bit.
 Athena: ...
@@ -47,12 +50,13 @@ Athena: Unfortunately I am too...#el:Sad
 Tired Woman: Alright you should be able to get in now.
 Tired Woman: I apologize for the inconvenience.
 Athena: Great. Now I can get back to slee-
+<<ChangeLeftCharacter>>
 Singsongy Woman: AAAAAAAAAAAAAAH!
 Disgruntled Man: Oh dear heavens.
 Nervous Boy: What on earth?
 Athena: What's that all about?#el:Surprised
 Athena: I should check this out.#el:Neutral
-Athena: Oh dear Phoenix. How did this happen?#el:Surprised
+Athena: Oh dear Phoenix. How did this happen?#el:Surprised#bg:Default
 Athena: I suppose that's up to me to figure out.#el:Intense
 Skipper: Excuse me ma'am, but I can't let you disturb the scene. I'm about to phone the police.#e:Angry
 Athena: Yes, yes, I understand, but conveniently I'm a detective.#el:Neutral
@@ -66,6 +70,10 @@ Skipper: Mallard. <color=\#f3db82>Seaton Mallard.</color>
 Athena: Thank you. I ensure you I'll get to the bottom of this.
 <<ChangeRightCharacter>>
 Athena: ...#el:Intense
+===
+
+title: AthenaRecall
+---
 Athena: The murder must've transpired last night.#e:Neutral
 Athena: Now that I think about it <color=\#f3db82>I did hear a lot of weird noises</color> while reading my book last night...
 Athena: Let's see.#el:Intense
@@ -168,6 +176,8 @@ tags: c:Owl:
 ---
 Athena: <i>A burned note in the furnace?</i>
 Athena: <i>I should try to read this.</i>
+Athena: <i>...</i>
+Athena: <i>That's weird. Of the handwriting I can see, it looks characteristic of someone <color=\#f3db82left handed.</color></i>
 <<set $HasLetter to true>>
 : Got Evidence <color=\#94e9e4>Burned Note</color>
 ===

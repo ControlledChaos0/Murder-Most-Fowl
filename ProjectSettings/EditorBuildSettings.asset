@@ -17,13 +17,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Sophia/Train_Car.unity
     guid: f5e3a4e23ddab584eadd1c2445e46a66
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sophia/Train_Car_Hall.unity
     guid: a67445562f9f9204db685d815e8bcb8e
   - enabled: 0
     path: Assets/Scenes/Emilee/TestScene Emilee.unity
     guid: 39c78e029a8671b41a95c0617576255f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Andy/Andy.unity
     guid: ecc8aeecfebf8eb4cac3488773794551
   - enabled: 1

@@ -15,6 +15,21 @@ position: -495,-931
 ---
 <<set $ConvoChar = "Penguin">>
 Skipper: Is there any way I can help?#e:Happy#s:Penguin
+-> I have a few questions for you.
+	<<jump PenguinQuestions0>>
+-> <color=\#94e9e4>Present</color>
+	<<PresentEvidence>>
+-> <color=\#f94449>I know who did it.</color>
+	<<jump PenguinTurnIn>>
+-> Not now
+	Athena: Thank you for your help. I'll be back later.
+	Skipper: Glad to help!#e:Happy
+===
+
+title:PenguinQuestions0
+tags: c:Owl:Penguin
+---
+Skipper: What would you like to ask?
 -> Where were you last night?
 	Skipper: Hmm.. Well I spent a lot of time searching for my keys last night.#e:Neutral
 	Athena: Your keys? What happened to them?
@@ -52,12 +67,18 @@ Skipper: Is there any way I can help?#e:Happy#s:Penguin
 	Skipper: In fact I believe he's involved with everyone in this car in some way.
 	Skipper: I can tell you about whoever you wish.
 	<<jump PenguinEnemies>>
--> <color=\#94e9e4>Present</color>
-	<<PresentEvidence>>
--> Not now
-	Athena: Thank you for your help. I'll be back later.
-	Skipper: Glad to help!#e:Happy
-	Skipper: If you need anything, I'll be in the luggage room.#e:Neutral
+===
+
+title: PenguinTurnIn
+tags: c:Owl:Penguin
+---
+Skipper: Are you sure? You should be <color=\#f94449>certain</color> before we call the police.
+-> I'm sure.
+	Skipper: Alright I'll call them now.
+	Skipper: Get your <color=\#94e9e4>evidence</color> ready for the police.
+	<<jump EndingDialogue>>
+-> Nevermind
+	Skipper: Better keep investigating. I'll be here until you're ready.
 ===
 
 title: PenguinEnemies
@@ -284,11 +305,12 @@ position: 730,184
 ---
 Skipper: Oh! That's my key! Where did you find it?#e:Angry
 Athena: I found them in the victim's pocket...
-<<CreateClue ClueBoardCanvas PenguinKey>>
 : Got Evidence <color=\#94e9e4>Skipper's Key</color>
 Skipper: Oh. I had a feeling he was the one who took them...#e:Sad
 Skipper: ...
-Skipper: Now that we have my keys, you can use these to search the rest of the car.#e:Neutral
+Skipper: Why don't you take the key for a bit? You can use it to search the rest of the car. #e:Neutral
+Skipper: I <color=\#f3db82>have a spare key</color>, so I don't need it for now.
+<<CreateClue ClueBoardCanvas PenguinKey>>
 Skipper: Oh also! Here take this cargo manifest.
 Skipper: It may be useful in your investigation.
 <<CreateClue  ClueBoardCanvas CargoManifest>>
@@ -401,4 +423,311 @@ Skipper: ...#e:Neutral
 Skipper: I'm sure it's unrelated.#e:Neutral
 Skipper: Do you have any more questions?
 Athena: No. I think that's all I need.
+===
+
+title: EndingDialogue
+---
+Athena: ... #e:Intense#bg:Dark
+Athena: <i>Let me review my clues before they show up.</i>
+Athena: <i>Here he comes.</i>
+Officer: Hello ma'am. I was informed there was a murder discovered aboard this vehicle.#e:Neutral
+Officer: You must be the detective the bellboy told me about.
+Athena: Yes that's me. Detective Athena Nox.
+Officer Parrot: A pleasure. I'm <color=\#f3db82>Officer Hercule Parrot</color>.
+Officer Parrot: I suppose you must have a lot of information to give me. We should continue in a more secure location.
+<<jump Debrief>>
+===
+
+title: Debrief
+---
+Officer Parrot: Let's get started. Tell me everything you know.#bg:Dark
+Athena: I know the hanging was most definitely a murder and not a suicide. 
+Athena: Firstly, the stool the victim "used" to set up the rope was far too short for him to reach the chandelier.
+Athena: Thus I believe this stool was placed to stage a suicide.
+Athena: I noticed the victim showed signs of suffocation, meaning the hanging certainly was his cause of death.
+Athena: However, I noticed no signs of struggle, implying the victim was unconscious when hung.
+Officer Parrot: Fascinating.
+Athena: He had a visible blunt force wound on the skull. I believe I found the shattered remains of the weapon by his corpse.
+Athena: He was knocked out with a wine bottle identical to those remaining on the bar shelf.
+Athena: The victim was knocked out with the wine bottle, hung and suffocated as a cover up, then the murderer placed a stool to make the suicide story appear more convincing.
+Officer Parrot: I see. Who are your current suspects.
+Athena: Morgana Noir, the bartender.
+Athena: Skipper McCraw, the bellboy.
+Athena: Melissa "Miss" Peacock, the performer.
+Athena: Chase Gander, the businessman.
+Officer Parrot: And the victim?
+Athena: Seaton Mallard.
+Athena: Let's just say not the most popular duck in the pond from what I gather.
+Officer Parrot: Ha, seems they may all have a motive to kill him then?
+Athena: Yea, that only made it more difficult.
+Officer Parrot: Well I'd appreciate if you could debrief me further on those involved.
+Officer Parrot: Who would you like to discuss first?
+-> Morgana Noir
+	<<jump MorganaDebrief>>
+-> Skipper McCraw
+	<<jump SkipperDebrief>>
+-> Chase Gander
+	<<jump ChaseDebrief>>
+-> Melissa Peacock
+	<<jump MelissaDebrief>>
+-> Seaton Mallard
+	<<jump MallardDebrief>>
+-> Let's cut to the chase.
+===
+
+title: CharacterDebrief
+---
+Officer Parrot: Who would you like to discuss now?
+-> Morgana Noir
+	<<jump MorganaDebrief>>
+-> Skipper McCraw
+	<<jump SkipperDebrief>>
+-> Chase Gander
+	<<jump ChaseDebrief>>
+-> Melissa Peacock
+	<<jump MelissaDebrief>>
+-> Seaton Mallard
+	<<jump MallardDebrief>>
+-> Let's cut to the chase.
+	Officer Parrot: Are you ready to accuse someone?
+	-> <color=\#f94449>I'm ready</color>.
+		<<jump Accusation>>
+	-> No.. Let's discuss the suspects again.
+		<<jump CharacterDebrief>>
+===
+
+title: Accusation
+---
+Officer Parrot: <color=\#f94449>Hoo did it?</color>
+-> Morgana Noir
+	Athena: <color=\#f94449>Miss Noir</color> killed the duck.
+	<<jump BadEndingNoir>>
+-> Skipper McCraw
+	Athena: <color=\#f94449>Mr. McCraw</color> killed the duck.
+	<<jump GoodEndingSkipper>>
+-> Chase Gander
+	Athena: <color=\#f94449>Mr. Gander</color> killed the duck.
+	<<jump BadEndingGander>>
+-> Melissa Peacock
+	Athena: <color=\#f94449>Miss. Peacock</color> killed the duck.
+	<<jump BadEndingPeacock>>
+===
+
+title: GoodEnding
+---
+Athena: Another week, another case done.
+Athena: <i>Yawn</i>
+Athena: Now I can finally get a break-
+Phone: <i>Brrrrring</i>
+Athena: Who could it be at this hour.
+Athena: Hello?
+Dispatch: <i>Athena! It's dispatch, we have an urgent case.</i>
+Athena: ...
+Athena: Another case?
+Dispatch: <i>Report to 1332 Agatha Drive as soon as possible.</i>
+Athena: <i>Sigh</i>
+Athena: Alright, I'm on it.
+===
+
+title: TrueEnding
+---
+
+===
+
+title: GoodEndingSkipper
+---
+: ... 
+: A few days later.
+Skipper: Hey, what's going on?
+Athena: You're in prison, Skipper.
+Skipper: Wait, this wasn't supposed to happen.
+Athena: This is what happens to murderers.
+Skipper: It was an accident! I didn't mean to!
+Athena: Then why did you attempt to hide it?
+Skipper: Why do you think? I didn't want to end up here...
+Skipper: ...
+Skipper: I don't want the police anywhere near my business.
+Athena: It was clever, playing like an authority figure.
+Athena: But you failed to consider...
+Athena: I'm never wrong.
+<<if $FixedRelationship>>
+	<<jump TrueEnding>>
+<<else>>
+	<<jump GoodEnding>>
+<<endif>>
+===
+
+title: BadEndingGander
+---
+: ... 
+: A few days later.
+Gander: Would you care to explain to me why I am behind bars?
+Athena: Care to explain why you murdered Mallard?
+Gander: I did no such thing.
+Athena: Tell that to the judge.
+Gander: The only person the judge will be hearing from is my lawyer.
+<<jump BadEnding>>
+===
+
+title: BadEndingPeacock
+---
+: ... 
+: A few days later.
+Melissa: Surely there's been some mistake.
+Athena: I don't believe there has.
+Melissa: I would never kill, darling. 
+Athena: Evidently you have. 
+Melissa: Please believe me dear.
+Athena: Tell that to the judge.
+<<jump BadEnding>>
+===
+
+title: BadEndingNoir
+---
+: ... 
+: A few days later.
+<<if $FixedRelationship>>
+Morgana: Athena? Why?
+Morgana: You know I didn't do it. Please tell them. 
+Athena: ...
+Athena: I'm sorry Morgana. The evidence said otherwise.
+Morgana: Cluck your evidence! Cluck you! I didn't do it!
+Morgana: ...
+Morgana: Just go.
+<<else>>
+Morgana: I knew it.
+Athena: Don't start.
+Morgana: I told you I didn't do it. Of course you wouldn't believe me.
+Athena: The evidence said otherwise.
+Morgana: ...
+Morgana: This is the second time you've ruined my life.
+Morgana: Just please leave before you make it worse.
+<<endif>>
+<<jump BadEnding>>
+===
+
+title: BadEnding
+---
+:...
+Athena: That case... why is it still on my mind?
+Athena: Case closed, right?
+Athena: ...
+Athena: Wait a minute. 
+Athena: I must be missing something...
+Athena: Aha! It couldn't have bee-
+???: 
+Athena: Who's there?
+???: 
+Athena: Wait. Wait please, no.
+Athena: AAAAAAAAAH
+:
+???: You should've kept your beak where it belonged.
+???: I can't have this evidence getting out.
+:
+: The End?
+===
+
+title: MorganaDebrief
+---
+Athena: Miss Noir... well I knew her pretty well. 
+Athena: She and I used to be partners. Romantic ones.
+Officer Parrot: I hope this will not cloud your judgement.
+Athena: Of course not. I always keep my work professional.
+Officer Parrot: I'm sure. I just must make sure.
+Athena: I understand.
+Athena: We broke up a while ago. I believed I didn't have enough time to be a good partner.
+Athena: ... #e:Sad
+Athena: I sent her a letter while I was out on an investigation.
+Athena: I told her I knew she wanted more and said she should find someone else who could give her what she needed.
+Athena: She was rightfully very upset with me when she saw me on the train.
+<<if $FixedRelationship>>
+	Athena: However, we made up. I shouldn't have sent that letter.
+<<endif>>
+<<if $MorganaTestimony>>
+	Athena: Once she gave me her testimony, I got some more insight on Mallard.
+	Athena: She said she saw Mallard take Skipper's coat for him.
+	Athena: However, she reported hearing Mallard say "this is when we get even."
+	<<if $CrowDone>>
+	Athena: Noir originally left more important details out, fearing it would make her seem guilty.
+	Athena: She didn't trust me to be objective.
+	Athena: I'd like you to know as a detective, I am <i>always</i> objective.
+	Athena: She told me the night of the murder, she was the first to find the body.
+	Athena: However, she was very insistant she did not commit the murder.
+	Athena: She found a fake suicide note that was written by the murderer. 
+	Athena: The note allegedly contained information that would defame her close friend, Melissa.
+	Athena: She claimed she burned the note in the furnace in a panic.
+	<<endif>>
+<<else>>
+	Athena: Though... she never did give me a full testimony.
+	Officer Parrot: Why do you think that was?
+	Athena: Either she still wanted nothing to do with me. 
+	Athena: ...
+	Athena: Or she's hiding something.
+<<endif>>
+Athena: That's all my intel on Morgana.
+<<jump CharacterDebrief>>
+===
+
+title: ChaseDebrief
+---
+Athena: Chase Gander is a man who needs little introduction.
+Athena: World renound businessman, Co-Owner of the lucrative Gander & Mallard Co.
+Athena: I was a little surprised to find him outside of a fancy private car.
+Athena: He could probably afford to book the whole train for himself...
+
+<<jump CharacterDebrief>>
+===
+
+title: SkipperDebrief
+---
+Athena: Skipper McCraw was one of the few passengers I didn't know much about.
+Athena: He was just an unassuming bellboy.
+Athena: After finding the body, he immediately took control of the situation.
+Athena: He initially wanted to rule the murder as a suicide, refusing to let me investigate until I proved him otherwise.
+Athena: Eventually he did let me investigate.
+
+<<jump CharacterDebrief>>
+===
+
+title: MelissaDebrief
+---
+Athena: I'd heard of Miss Peacock well before the investigation.
+Athena: I even saw her on tour once!
+Athena: ... 
+Athena: Anyways, if you haven't heard of her, she's a famous performer and singer.
+Officer Parrot: Oh of course I have. I see her perform whenever she's in town!
+<<if $PeacockArgument>>
+Athena: Mr McCraw informed me he heard Miss Peacock in an intense argument with the victim.
+Athena: She reportedly threatened to kill him.
+Officer Parrot: That's quite damning.
+Athena: ...
+<<endif>>
+<<if $DuckBroke>>
+Athena: I think I understand why she would be upset however.
+Athena: She reported their argument was over a large sum of money he owed her.
+Athena: I'm not sure exactly how killing him would get her the money back...
+Officer Parrot: I see.
+<<endif>>
+<<if $CockfightingArena>>
+Athena: <i>I know there's one thing Im omitting...</i>
+Athena: <i>Do I tell him about Melissa's Underground Fightclub?</i>
+-> Yes.
+	Athena: <i>Fightclubs are illegal for a reason. I should let him know before someone gets killed.</i>		
+	Athena: There's one more major thing. 
+	Athena: I discovered Melissa runs an underground fightclub.
+	Officer Parrot: A fightclub? That's highly illegal.
+	Officer Parrot: Thank you for reporting that.
+	Athena: Of course, Officer.
+-> No.
+	Athena: <i>No I shouldn't... I worry what a cop would do about this.</i>
+<<endif>>
+Athena: That's all my intel on Melissa.
+<<jump CharacterDebrief>>
+===
+
+title: MallardDebrief
+---
+Athena: Our victim is a 5'10" male duck of the name Seaton Mallard.
+Athena: His death was staged as a suicide, but was proven to be fowl play.
+<<jump CharacterDebrief>>
 ===
