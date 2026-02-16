@@ -138,8 +138,33 @@ color: green
 -> Do you know if anyone would want to kill him?
 	Morgana: I may not like him, but that doesn't mean I would kill him.#e:Sad
 	<<jump CrowQuestions>>
+-> Can you tell me anything about the other passengers? <<if $FixedRelationship>>
+    <<jump CrowPeople>>
 -> That's all the questions I have
 	<<jump CrowIdle>>
+===
+
+title: CrowPeople
+---
+Morgana: Who do you want to hear about?
+-> Melissa
+    Morgana: We've been close friends since shortly after we broke up.#e:Sad
+    Morgana: We were hanging out last night and I made her quite a few drinks.#e:Neutral
+    Morgana: I technically wasn't supposed to, but <color=\#f3db82>I gave her my spare key</color> so she could stay in the parlor after I went to bed.
+    Morgana: She asked me so nicely, how could I say no?
+    <<jump CrowPeople>>
+-> Chase
+    Morgana: He just comes across as a snobby businessman to me.
+    Morgana: In the brief time I dated Mallard, all he ever quacked about was that man.
+    Morgana: He was <color=\#f3db82>obsessed with him</color>.
+    Morgana: I think he always felt like he was living in Mr. Gander's shadow.
+    Morgana: No wonder he <color=\#f3db82>stole so much money from their company</color>.
+-> Skipper
+    Morgana: The bellboy? I don't know much about him.
+    Morgana: I believe <color=\#f3db82>Melissa and Skipper were talking</color> though.
+    <<jump CrowPeople>>
+-> Nevermind
+    <<jump CrowQuestions>>
 ===
 
 title: CrowKeys
