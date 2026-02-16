@@ -93,7 +93,7 @@ Melissa: Now, what would you like to ask?#el:Neutral
 	Athena: Let's just move on.#el:Neutral
 	Melissa: Alright..
 	<<jump PeacockQuestions0>>
--> I heard you and Mallard had an argument. <<if $PeacockArgument>>
+-> <color=\#f3db82>I heard you and Mallard had an argument.</color> <<if $PeacockArgument>>
 	Melissa: Yes we had an argument. 
 	Melissa: It was about the money he owed me.
 	Melissa: I was upset that he somehow was unable to pay me despite that fortune he boasts about.
@@ -106,8 +106,53 @@ Melissa: Now, what would you like to ask?#el:Neutral
 	Melissa: I've said too much.
 	Athena: <i>Perhaps I should ask <color=\#f3db82>someone who worked closely</color> with Mallard about this...</i>
 	<<set $DuckBroke to true>>
+-> <color=\#f3db82>Can you tell me anything about the other passengers?</color><<if $CockfightingArena>>
+	<<jump PeacockPeople>>
 -> That's all the questions
 	<<jump PeacockMain>>
+===
+
+title: PeacockPeople
+---
+Melissa: Who do you want to hear about?
+-> Morgana
+    Melissa: Oh Morgana is a dear.
+	Melissa: You would know.
+	<<if $FixedRelationship>>
+		Athena: Yeah, she's something special. 
+	<<else>>
+		Athena: ... #el:Sad
+		Athena: Yeah she was.
+	<<endif>>
+	Melissa: We've been good friends lately. #el:Neutral
+	Melissa: We met at that bar she used to tend. 
+	Melissa: I believe it was called <i>The Painted Swan</i>.
+	Athena: <i>I used to frequent that place...</i>
+	Melissa: As much as she acts tough, I know the dear wouldn't hurt a fly.
+	Melissa: ...
+	Melissa: I must tell you, there's <color=\#f3db82>some evidence I was withholding</color>.
+	Melissa: After the murder <color=\#f3db82>I entered the room</color>.
+	Melissa: I was going to report the murder, but I found something incriminating.
+	Melissa: I found a <color=\#f3db82>pocket knife stabbed in the bar counter</color>.
+	Melissa: On the pocket knife, was a <color=\#f3db82>part of a black feather</color>.
+	Melissa: I was drunk and I feared this would be used to incriminate Morgana.
+	Melissa: Foolishly, I took the feather and <color=\#f3db82>put the pocket knife in the victim's pocket</color>.
+	Melissa: Please believe that Morgana wouldn't do it.
+	Melissa: Anyways, she's not the only suspect <color=\#f3db82>with black feathers</color>.
+    <<jump PeacockPeople>>
+-> Chase
+    Melissa: Chase used to frequent my arena, alongside Mallard.
+	Melissa: They both enjoyed betting on the winners, though I'd say <color=\#f3db82>Mallard had an unhealthy obsession with it</color>.
+	<<jump PeacockPeople>>
+-> Skipper
+    Melissa: ...
+	Melissa: I did actually <color=\#f3db82>buy drugs from him</color>.
+	Melissa: It wasn't anything too strong, just Reed.
+	Melissa: But I can tell you <color=\#f3db82>he was selling much stronger stuff</color>.
+	<<set $PenguinDrugs = true>>
+    <<jump PeacockPeople>>
+-> Nevermind
+    <<jump PeacockQuestions0>>
 ===
 
 title: PeacockQuestions1
@@ -179,41 +224,22 @@ Melissa: Nevermind.#el:Neutral
 
 title: PeacockDuckReed
 ---
-<<if not $PresentedReed>>
-    Athena: I found this in Mallard's room. Do you know anything about it?#el:Neutral
-    Melissa: ...
-    Melissa: I don't know.
-    <<ClearClue Peacock DuckReed>>
-<<else>>
-    Athena: Are you sure you don't know anything about Mallard's reed?#el:Neutral
-    Melissa: ...
-    Melissa: <color=\#f3db82>Yeah that was also from me</color>, but I can explain.
-    Melissa: I smuggled some on the train, not to sell. 
-    Melissa: <color=\#f3db82>I went to my bag last night to grab some</color>, just because I was stressed.
-    Melissa: The slimy duck caught me smoking it, and threatened to report me if I didn't give him one.
-    Melissa: I wanted to punch the living daylights out of him, but I resisted.
-    Melissa: I gave him the reed and told him <color=\#f3db82>I didn't want to move Gander's heavy suitcase again</color>.
-<<endif>>
+Melissa: ...
+Melissa: <color=\#f3db82>Yeah that was from me</color>, but I can explain.
+Melissa: I <color=\#f3db82>bought this reed on the train</color> and kept it in my bag.
+Melissa: <color=\#f3db82>I went to my bag last night to grab some</color>, just because I was stressed.
+Melissa: The slimy duck caught me smoking it, and threatened to report me if I didn't give him one.
+Melissa: I wanted to punch the living daylights out of him, but I resisted.
+Melissa: I just gave him one I already had on me and told him <color=\#f3db82>I didn't want to move that heavy briefcase again</color>.
 ===
 
 title: PeacockReed
 ---
 Athena: I found this in your safe, Melissa. #el:Intense
 Melissa: I- uh.
-Melissa: Please don't report this. I'll help you.
-Athena: Help me?#el:Neutral
-Melissa: Yes! I can help you with your lover troubles, darling.
-Athena: ...#el:Surprised
-Athena: With Morgana?
-Melissa: Yes, dear.
-Athena: ...#el:Neutral
-Melissa: You know, the dear talks about you quite a lot.
-Melissa: She used to go out with that duck, yes, but she clearly never felt the same about him as she did for you.
-Melissa: He was clearly a bounce back relationship.
-Melissa: Anyways...
-Melissa: I think she really misses you.
-Melissa: <color=\#f3db82>You should talk with her</color>.
-Athena: ... #el:Sad
+Melissa: Please don't report this. I've just been so stressed lately.
+Athena: I'm just trying to get to the bottom of the case, not bust your petty drugs.
+Melissa: I swear reed is the worst I have.
 <<set $PresentedReed to true>>
 ===
 
@@ -248,7 +274,14 @@ Melissa: When you run a gig that so many people rely on, you can't just up and l
 Melissa: Now I just manage it from afar.
 Melissa: I know this kind of fighting is illegal, but we have a really great community.
 Melissa: I would hate for anything to happen to it.
+Melissa: ...
+Melissa: I know you're a detective darling and you'll be going to the police with information.
+Melissa: I just ask, please don't report this? 
+Athena: I'll keep your secret.
+Athena: <i>I'll have to decide later. I need her to trust me for now.</i>#el:Intense
 <<set $CockfightingArena = true>>
+Melissa: Oh thank you dear. I really appreciate it.
+Melissa: I'll admit, there's <color=\#f3db82>more I wasn't telling you</color>. I'll answer any questions you have.
 ===
 
 title: PeacockLovers
@@ -271,9 +304,9 @@ title: PeacockCargoManifest
 ---
 Melissa: Yes, this looks cor-
 Melissa: Wait...
-Melissa: Does Gander not have a registered briefcase?
+Melissa: Is there no briefcase on the manifest?
 Athena: It would appear he does not.
-Melissa: I clearly remember moving <color=\#f3db82>his heavy briefcase off of my bag</color>.
+Melissa: I clearly remember moving <color=\#f3db82>a heavy briefcase off of my bag</color>.
 <<CreateClue ClueBoardCanvas MissingBriefcase>>
 : Got Evidence <color=\#94e9e4>Missing Briefcase</color>#el:Neutral
 ===

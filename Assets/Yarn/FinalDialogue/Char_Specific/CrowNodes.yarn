@@ -138,7 +138,7 @@ color: green
 -> Do you know if anyone would want to kill him?
 	Morgana: I may not like him, but that doesn't mean I would kill him.#e:Sad
 	<<jump CrowQuestions>>
--> Can you tell me anything about the other passengers? <<if $FixedRelationship>>
+-> <color=\#f3db82>Can you tell me anything about the other passengers?</color> <<if $FixedRelationship>>
     <<jump CrowPeople>>
 -> That's all the questions I have
 	<<jump CrowIdle>>
@@ -159,6 +159,7 @@ Morgana: Who do you want to hear about?
     Morgana: He was <color=\#f3db82>obsessed with him</color>.
     Morgana: I think he always felt like he was living in Mr. Gander's shadow.
     Morgana: No wonder he <color=\#f3db82>stole so much money from their company</color>.
+    <<jump CrowPeople>>
 -> Skipper
     Morgana: The bellboy? I don't know much about him.
     Morgana: I believe <color=\#f3db82>Melissa and Skipper were talking</color> though.

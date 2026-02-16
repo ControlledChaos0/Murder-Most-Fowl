@@ -21,6 +21,7 @@ tags: lc: rc:
 <<declare $GanderBriefcase = false>>
 <<declare $CockfightingArena = false>>
 <<declare $AskingCrow = false>>
+<<declare $PenguinDrugs = false>>
 <<set $HasShards = false>>
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>

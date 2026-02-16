@@ -46,6 +46,7 @@ public class State
     public bool GanderBriefcase = false;
     public bool CockfightingArena = false;
     public bool AskingCrow = false;
+    public bool PenguinDrugs = false;
     [Header("Inventory")] 
     public List<string> DiscoveredClues = new();
 
