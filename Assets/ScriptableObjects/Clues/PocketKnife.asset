@@ -15,5 +15,8 @@ MonoBehaviour:
   m_clueID: PocketKnife
   m_name: Pocket Knife
   m_clarificationInfo: 
-  m_description: Pocket Knife found on in the victim's right pocket.
+  m_description: Pocket Knife found on in the victim's right pocket. It notably has
+    traces of white powder and blood on the blade.
   m_icon: {fileID: 5929359292380248679, guid: c72220c44c3c9934c9e4d556a5407637, type: 3}
+  m_viewable: 0
+  _viewSprite: {fileID: 0}

@@ -305,11 +305,12 @@ position: 730,184
 ---
 Skipper: Oh! That's my key! Where did you find it?#e:Angry
 Athena: I found them in the victim's pocket...
-<<CreateClue ClueBoardCanvas PenguinKey>>
 : Got Evidence <color=\#94e9e4>Skipper's Key</color>
 Skipper: Oh. I had a feeling he was the one who took them...#e:Sad
 Skipper: ...
-Skipper: Now that we have my keys, you can use these to search the rest of the car.#e:Neutral
+Skipper: Why don't you take the key for a bit? You can use it to search the rest of the car. #e:Neutral
+Skipper: I <color=\#f3db82>have a spare key</color>, so I don't need it for now.
+<<CreateClue ClueBoardCanvas PenguinKey>>
 Skipper: Oh also! Here take this cargo manifest.
 Skipper: It may be useful in your investigation.
 <<CreateClue  ClueBoardCanvas CargoManifest>>
@@ -530,6 +531,7 @@ Athena: Alright, I'm on it.
 
 title: TrueEnding
 ---
+
 ===
 
 title: GoodEndingSkipper

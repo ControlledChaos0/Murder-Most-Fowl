@@ -20,6 +20,7 @@ tags: lc: rc:
 <<declare $CrowDone = false>>
 <<declare $GanderBriefcase = false>>
 <<declare $CockfightingArena = false>>
+<<declare $AskingCrow = false>>
 <<set $HasShards = false>>
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
@@ -174,6 +175,8 @@ tags: c:Owl:
 ---
 Athena: <i>A burned note in the furnace?</i>
 Athena: <i>I should try to read this.</i>
+Athena: <i>...</i>
+Athena: <i>That's weird. Of the handwriting I can see, it looks characteristic of someone <color=\#f3db82left handed.</color></i>
 <<set $HasLetter to true>>
 : Got Evidence <color=\#94e9e4>Burned Note</color>
 ===
