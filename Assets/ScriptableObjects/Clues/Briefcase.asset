@@ -16,6 +16,7 @@ MonoBehaviour:
   m_name: Briefcase
   m_clarificationInfo: 
   m_description: Briefcase found in Morgana's cigarette stash. She has no idea how
-    it got there. The briefcase contains a lot of crack corn, identical to the baggie
-    Skipper had in his room.
+    it got there. The briefcase contains a lot of crack corn.
   m_icon: {fileID: 1334335333589366465, guid: a280af6a25e3363478ca483b144201a7, type: 3}
+  m_viewable: 0
+  _viewSprite: {fileID: 0}

@@ -315,8 +315,28 @@ Skipper: Oh also! Here take this cargo manifest.
 Skipper: It may be useful in your investigation.
 <<CreateClue  ClueBoardCanvas CargoManifest>>
 : Got Evidence <color=\#94e9e4>Cargo Manifest</color>#el:Neutral
+Skipper: This document contains every passenger and their luggage.
+Skipper: I checked the cargo hold this morning and ensured there was nothing missing.
 Athena: Thank you, Skipper.
 Skipper: Likewise, detective.
+===
+
+title: PenguinCrash
+---
+Skipper: Yes I heard the crash last night as well.
+Skipper: I have reason to believe it was <color=\#f3db82>from the cargo hold</color>.
+Athena: Why is that?
+Skipper: When I went to check on the cargo in the morning, I noticed luggage was all over the ground.
+Skipper: Upon closer inspection I saw the <color=\#f3db82>rope tying the luggage was missing</color>.
+Athena: <i>Could it be the same rope used to hang the victim?</i>#el:Intense
+: Got Evidence <color=\#94e9e4>Cargo Hold Rope</color>
+<<CreateClue  ClueBoardCanvas CargoHoldRope>>
+Athena: Tell me, who has access to the cargo hold?#el:Neutral
+Skipper: <color=\#f3db82>Anyone with a staff key</color> can access the cargo hold.
+Skipper: We keep it locked at night to prevent theft.
+Athena: <i>Id imagine staff members have keys, but could the other passengers get a key somehow?</i>#el:Intense
+Athena: Thank you for the information.#el:Neutral
+Skipper: Anytime.#e:Happy
 ===
 
 title: PenguinBurntNote
@@ -333,7 +353,9 @@ Skipper: Yes I noticed it, but thought you would notice it as well, detective.#e
 title: PenguinManifest
 position: 722,59
 ---
-Skipper: As I said, nothing in the cargo room is missing.#e:Neutral
+Athena: Are you sure this document accounts for everyone's luggage?
+Skipper: As I said, this is a comprehensive document.#e:Neutral
+Athena: <i>He's the only one with <color=\#f3db82>no luggage registered on the train</color>...</i>
 ===
 
 title: PenguinMissingBriefCase
@@ -427,18 +449,19 @@ Athena: No. I think that's all I need.
 
 title: EndingDialogue
 ---
-Athena: ... #e:Intense#bg:Dark
+Athena: ... #e:Intense#bg:Dark #rc:
 Athena: <i>Let me review my clues before they show up.</i>
 Athena: <i>Here he comes.</i>
-Officer: Hello ma'am. I was informed there was a murder discovered aboard this vehicle.#e:Neutral
+Officer: Hello ma'am. I was informed there was a murder discovered aboard this vehicle.#e:Neutral#rc:Parrot
 Officer: You must be the detective the bellboy told me about.
 Athena: Yes that's me. Detective Athena Nox.
-Officer Parrot: A pleasure. I'm <color=\#f3db82>Officer Hercule Parrot</color>.
+Officer Parrot: A pleasure. I'm <color=\#f3db82>Officer Hercule Parrot</color>.#rc:Parrot
 Officer Parrot: I suppose you must have a lot of information to give me. We should continue in a more secure location.
 <<jump Debrief>>
 ===
 
 title: Debrief
+tags: c:Owl:Parrot
 ---
 Officer Parrot: Let's get started. Tell me everything you know.#bg:Dark
 Athena: I know the hanging was most definitely a murder and not a suicide. 
@@ -476,6 +499,7 @@ Officer Parrot: Who would you like to discuss first?
 ===
 
 title: CharacterDebrief
+tags: c:Owl:Parrot
 ---
 Officer Parrot: Who would you like to discuss now?
 -> Morgana Noir
@@ -497,6 +521,7 @@ Officer Parrot: Who would you like to discuss now?
 ===
 
 title: Accusation
+tags: c:Owl:Parrot
 ---
 Officer Parrot: <color=\#f94449>Hoo did it?</color>
 -> Morgana Noir
@@ -628,6 +653,7 @@ Athena: AAAAAAAAAH
 ===
 
 title: MorganaDebrief
+tags: c:Owl:Parrot
 ---
 Athena: Miss Noir... well I knew her pretty well. 
 Athena: She and I used to be partners. Romantic ones.
@@ -636,7 +662,7 @@ Athena: Of course not. I always keep my work professional.
 Officer Parrot: I'm sure. I just must make sure.
 Athena: I understand.
 Athena: We broke up a while ago. I believed I didn't have enough time to be a good partner.
-Athena: ... #e:Sad
+Athena: ... #el:Sad
 Athena: I sent her a letter while I was out on an investigation.
 Athena: I told her I knew she wanted more and said she should find someone else who could give her what she needed.
 Athena: She was rightfully very upset with me when she saw me on the train.
@@ -669,6 +695,7 @@ Athena: That's all my intel on Morgana.
 ===
 
 title: ChaseDebrief
+tags: c:Owl:Parrot
 ---
 Athena: Chase Gander is a man who needs little introduction.
 Athena: World renound businessman, Co-Owner of the lucrative Gander & Mallard Co.
@@ -679,6 +706,7 @@ Athena: He could probably afford to book the whole train for himself...
 ===
 
 title: SkipperDebrief
+tags: c:Owl:Parrot
 ---
 Athena: Skipper McCraw was one of the few passengers I didn't know much about.
 Athena: He was just an unassuming bellboy.
@@ -690,6 +718,7 @@ Athena: Eventually he did let me investigate.
 ===
 
 title: MelissaDebrief
+tags: c:Owl:Parrot
 ---
 Athena: I'd heard of Miss Peacock well before the investigation.
 Athena: I even saw her on tour once!
@@ -707,7 +736,10 @@ Athena: I think I understand why she would be upset however.
 Athena: She reported their argument was over a large sum of money he owed her.
 Athena: I'm not sure exactly how killing him would get her the money back...
 Officer Parrot: I see.
+<<else>>
+Athena: Yeah, it wasn't a great look.
 <<endif>>
+Officer Parrot: Is there anything else you'd like to report?
 <<if $CockfightingArena>>
 Athena: <i>I know there's one thing Im omitting...</i>
 Athena: <i>Do I tell him about Melissa's Underground Fightclub?</i>
@@ -726,6 +758,7 @@ Athena: That's all my intel on Melissa.
 ===
 
 title: MallardDebrief
+tags: c:Owl:Parrot
 ---
 Athena: Our victim is a 5'10" male duck of the name Seaton Mallard.
 Athena: His death was staged as a suicide, but was proven to be fowl play.

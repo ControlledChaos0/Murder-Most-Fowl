@@ -32,6 +32,8 @@ Athena: *cough cough* Ugh I can't sleep.#bg:Dark
 Athena: The Bird Flu is no joke...#el:Sad
 ???: CRASH #bg:DarkHidden
 Athena: ... what was that?#el:Surprised #bg:Dark
+: Got Evidence <color=\#94e9e4>Crash</color>
+<<CreateClue ClueBoardCanvas Crash>>
 ???: clop clop clop#bg:DarkHidden
 Athena: Who's up this late at night making such a ruckus.#el:Intense#bg:Dark
 Athena: Luckily *cough* for them I'm too sick to do anything about it.#el:Sad

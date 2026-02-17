@@ -1,4 +1,4 @@
-﻿title: GooseBaseIdle
+title: GooseBaseIdle
 tags:
 ---
 <<if $Tutorial is false>>
@@ -215,10 +215,9 @@ title: GooseMissingBriefCase
 ---
 Athena: I have reason to believe Mallard was in possession of this briefcase.#el:Neutral
 Athena: Is this briefcase yours?
-Chase: No it does not look familiar.
+Chase: No, it does not look familiar.
 Chase: Why do you assume it is mine?
-Athena: Melissa told me it was yours.
+Athena: ... It looks very official.
 Chase: Tsk just because I'm a businessman doesn't mean every briefcase is mine.
-Chase: She must be confused. Go ask her why she thought it was mine.
 <<set $GanderBriefcase to true>>
 ===

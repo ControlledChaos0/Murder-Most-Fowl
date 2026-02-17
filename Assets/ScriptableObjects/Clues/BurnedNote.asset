@@ -16,7 +16,8 @@ MonoBehaviour:
   m_name: Burned Note
   m_clarificationInfo: 
   m_description: Half of a burned suicide note supposedly written by Mallard. It
-    notably mentions "Melissa."
+    notably mentions "Melissa." The handwritng is characteristic of a right handed
+    writer.
   m_icon: {fileID: 8469227874765211877, guid: 4f78b9134775d6c4c9c61b6d26393c80, type: 3}
   m_viewable: 1
   _viewSprite: {fileID: -7878322707355939730, guid: 2b45cbca9a77d974fb4c99bdd4730f4a, type: 3}

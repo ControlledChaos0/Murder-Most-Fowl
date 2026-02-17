@@ -40,3 +40,5 @@ MonoBehaviour:
     nodeResponse: PenguinNewspaper
   - clueID: Briefcase
     nodeResponse: PenguinBriefcase
+  - clueID: Crash
+    nodeResponse: PenguinCrash

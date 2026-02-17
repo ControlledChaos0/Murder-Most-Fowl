@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
-  m_Name: Rope
+  m_Name: BlackFeathers
   m_EditorClassIdentifier: 
-  m_clueID: Rope
-  m_name: Suffocation
+  m_clueID: BlackFeathers
+  m_name: Black Feathers
   m_clarificationInfo: 
-  m_description: The victim showed no signs of struggle. This is almost unheard of
-    in concious hangings, even if self inflicted. However it is clear the victim
-    did die by suffocation.
-  m_icon: {fileID: -80282103083059097, guid: 9c954933d8880c44083a7ec4a5219c73, type: 3}
+  m_description: Pieces of a black feather found on Mallard's pocket knife. It is
+    most likely the murderer had black feathers.
+  m_icon: {fileID: -8519156973718329817, guid: ca7ae6f4046dff74aa2e7a2f1419804c, type: 3}
   m_viewable: 0
   _viewSprite: {fileID: 0}

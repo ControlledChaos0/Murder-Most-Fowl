@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
-  m_Name: Rope
+  m_Name: Crash
   m_EditorClassIdentifier: 
-  m_clueID: Rope
-  m_name: Suffocation
+  m_clueID: Crash
+  m_name: Crash
   m_clarificationInfo: 
-  m_description: The victim showed no signs of struggle. This is almost unheard of
-    in concious hangings, even if self inflicted. However it is clear the victim
-    did die by suffocation.
-  m_icon: {fileID: -80282103083059097, guid: 9c954933d8880c44083a7ec4a5219c73, type: 3}
+  m_description: There was a crash in the cargo hold in the dead of night. I heard
+    it myself.
+  m_icon: {fileID: 4655868819431197315, guid: 42a3e864716aa3142972835c59ce935c, type: 3}
   m_viewable: 0
   _viewSprite: {fileID: 0}

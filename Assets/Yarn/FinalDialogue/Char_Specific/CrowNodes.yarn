@@ -151,6 +151,7 @@ Morgana: Who do you want to hear about?
     Morgana: We've been close friends since shortly after we broke up.#e:Sad
     Morgana: We were hanging out last night and I made her quite a few drinks.#e:Neutral
     Morgana: I technically wasn't supposed to, but <color=\#f3db82>I gave her my spare key</color> so she could stay in the parlor after I went to bed.
+    <<CreateClue ClueBoardCanvas MelissaKey>>
     Morgana: She asked me so nicely, how could I say no?
     <<jump CrowPeople>>
 -> Chase
@@ -196,6 +197,7 @@ color: blue
     Morgana: What of them?#e:Neutral
     Athena: They're yours?
     Morgana: Yup.
+    <<ClearClue Crow Gloves>>
 <<endif>>
 ===
 

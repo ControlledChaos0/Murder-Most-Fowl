@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
-  m_Name: Rope
+  m_Name: CargoHoldRope
   m_EditorClassIdentifier: 
-  m_clueID: Rope
-  m_name: Suffocation
+  m_clueID: CargoHoldRope
+  m_name: Cargo Hold Rope
   m_clarificationInfo: 
-  m_description: The victim showed no signs of struggle. This is almost unheard of
-    in concious hangings, even if self inflicted. However it is clear the victim
-    did die by suffocation.
-  m_icon: {fileID: -80282103083059097, guid: 9c954933d8880c44083a7ec4a5219c73, type: 3}
+  m_description: The rope was obtained from the locked cargo hold, so the murderer
+    must have had a staff key.
+  m_icon: {fileID: 8067686327730024917, guid: c2a28d5232c5c1746affc5a7dcfe296f, type: 3}
   m_viewable: 0
   _viewSprite: {fileID: 0}

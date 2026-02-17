@@ -16,5 +16,7 @@ MonoBehaviour:
   m_name: Handkerchief
   m_clarificationInfo: 
   m_description: A bloody handkerchief found in the victim's hat to clean his wound.
-    Initials on the handkerchief read "WCG".
+    Initials on the handkerchief read "WGC".
   m_icon: {fileID: -6556667986676761837, guid: f8b37da5d038b524ca5e0d62a0dec73c, type: 3}
+  m_viewable: 0
+  _viewSprite: {fileID: 0}
