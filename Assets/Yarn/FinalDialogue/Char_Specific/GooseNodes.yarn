@@ -77,10 +77,6 @@ Chase: What else would you like to ask?#el:Neutral
 	Chase: Mallard.. He was always quite troubled.
 	Athena: Can you elaborate?
 	Chase: I will not speak ill of the dead.
-	-> Press
-		<<PresentEvidence>>
-	-> Anyways...
-		<<jump GooseQuestions>>
 -> Do you know if anyone would want to kill him?
 	Chase: I hope you do not suspect it was me.
 	Chase: Though I would not blame you for the suspicion.
@@ -91,7 +87,7 @@ Chase: What else would you like to ask?#el:Neutral
 	Athena: You said this was “unfortunate but not entirely unexpected.” Could you elaborate?
 	Chase: ...
 	Chase: Let's just say he knew how to dig himself a hole.
--> Is it true Mallard was low on money?<<if $DuckBroke>>
+-> <color=\#f3db82>Is it true Mallard was low on money?</color><<if $DuckBroke>>
 	Chase: ...
 	Chase: Who told you this?
 	Athena: Melissa did.
@@ -99,19 +95,49 @@ Chase: What else would you like to ask?#el:Neutral
 	Chase: I was not supposed to tell Miss Peacock in the first place.
 	Chase: ...
 	Chase: I thought she deserved to know learning that duck owed her a large sum of money.
--> Did you leave your room last night?<<if $MorganaTestimony>>
-	<<if $DeliverLetter>>
-		Gander: Yes. As I said I did leave my room.
-		Gander: My wife died <color=\#f3db82>7 years ago</color>, but as ashamed as I am to say, I think I need to move on.
-	<<else>>
-		Gander: ...
-		Gander: These accusations are false.
-		Gander: My wife died <color=\#f3db82>7 years go</color>. I am still mourning her.
-		Athena: <i>He seems strangely defensive.</i>
-	<<endif>>
+	Athena: I'll keep my mouth shut if you tell me everything you know.
+	Chase: ...
+	Chase: Alright.
+	Chase: I've been entirely truthful with you, but if you want <color=\#f3db82>more details about the other passengers</color>, feel free to ask.
+	<<set $ChaseQuestions = true>>
+-> <color=\#f3db82>Did you leave your room last night?</color><<if $MorganaTestimony>>
+	Chase: ...
+	Chase: Yes...
+	Chase: I stayed with Melissa for a little while.
+	Chase: I left before we fell asleep.
+-> <color=\#f3db82>Can you tell me anything about the other passengers?</color><<if $ChaseQuestions>>
+	<<jump GoosePeople>>
 -> That's all
 	<<jump GooseConversation>>
 
+===
+
+title: GoosePeople
+---
+Goose: Who do you wish to hear about?
+-> Morgana
+	Chase: Morgana? 
+	Athena: The bartender.
+	Chase: Oh yes.
+	Chase: Only thing I could tell you about her is she has an attitude and <color=\#f3db82>writes with her left hand</color>.
+	<<CreateClue ClueBoardCanvas LeftHanded>>
+	: Got Evidence <color=\#94e9e4>Morgana's Left Handed</color>
+	Athena: <i>I suppose that could be relevant.</i>
+	<<jump GoosePeople>>
+-> Melissa
+	Chase: ...
+	Chase: We have been having relations.
+	Chase: I stopped by her room last night.
+	Chase: She was drunk, so it never advanced beyond flirting.
+	Chase: ...
+	<<jump GoosePeople>>
+-> Skipper
+	Chase: The bellboy annoys me.
+	Chase: He stutters too much.
+	Chase: what is he so nervous about?
+	<<jump GoosePeople>>
+-> Nevermind
+	<<jump GooseQuestions>>
 ===
 
 title: GooseStool
@@ -176,7 +202,7 @@ Athena: Is she your wife?
 Chase: ...
 Chase: Yes. She was.
 Athena: What happened?
-Chase: The Avian Flu pandemic a few years back.
+Chase: The Avian Flu pandemic <color=\#f3db82>of '20</color>
 Chase: The disease used to me much more potent than it is now.
 Chase: ...
 Chase: If only I could go back to that <color=\#f3db82>March</color>.

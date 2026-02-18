@@ -67,6 +67,42 @@ Skipper: What would you like to ask?
 	Skipper: In fact I believe he's involved with everyone in this car in some way.
 	Skipper: I can tell you about whoever you wish.
 	<<jump PenguinEnemies>>
+-> <color=\#94e9e4>I have intel you're dealing drugs.</color><<if $PenguinDrugs and not $PenguinBust>>
+	<<jump PenguinDrugs>>
+-> <color=\#94e9e4>I know you're a dealer.</color><<if $PenguinBust>>
+	<<jump PenguinBust>>
+-> Actually that's all for now.
+	<<jump PenguinConversation>>
+===
+
+title: PenguinBust
+---
+Athena: I know you're dealing drugs, Skipper.
+Athena: Just admit it.
+Skipper: I'm not! #e:Nervous
+Athena: <i>This is it. I'm close.</i>
+<<PresentEvidence Briefcase PenguinWrongCase>>
+===
+
+title: PenguinDrugs
+---
+Skipper: What? Who would tell you that?
+Athena: That's not your business.
+Skipper: I can assure you it's untrue.
+Athena: <i>Maybe there's some <color=\#94e9e4>evidence</color> that'll get him to talk.</i>
+<<PresentEvidence CrackCorn PenguinWrongCrack>>
+===
+
+title:PenguinWrongCase
+---
+Skipper: How does this mean I'm dealing drugs?
+Athena: <i>... I need different evidence.</i>
+===
+
+title: PenguinWrongCrack
+---
+Skipper: I don't understand?
+Skipper: I promise I'm not dealing drugs.
 ===
 
 title: PenguinTurnIn
@@ -374,10 +410,18 @@ Skipper: They try to get around the luggage prices...
 title: PenguinCrackCorn
 position: 725,-302
 ---
-Skipper: When I was organizing the luggage, this <color=\#f3db82>fell out of Mallard's suitcase</color>.#el:Neutral#e:Neutral
+<<if $PenguinDrugs>>
+Athena: I know this was yours.
+Athena: With the intel, and the baggie, it's too much to ignore.
+Skipper: Okay, fine. It's mine, but I'm not selling anything. I swear.
+Athena: <i>I need to find the <color=\#f3db82>final piece of evidence against him</color>.</i>
+<<set $PenguinBust to true>>
+<<else>>
+Skipper: I found it in the cargo hold, and picked it up.#el:Neutral#e:Neutral
 Skipper: I wasn't trying to pry, I swear.
-Skipper: However, I couldn't leave such an illegal drug laying out in the cargo bay.#e:Sad
+Skipper: However, I couldn't leave such an illegal drug laying out in the cargo hold.#e:Sad
 Skipper: I had to remove it.#e:Neutral
+<<endif>>
 ===
 
 title: PenguinCrowEx
@@ -408,8 +452,9 @@ Skipper: Do not abuse this power.
 title: PenguinBriefcase
 position: 920,-305
 ---
-Athena: <i>I have a hunch it's his. I'm not 100% sure, but maybe if I pretend I know and press him enough, he'll crack.</i>#el:Intense
-Athena: I'll ask one time. Is this yours.
+<<if $PenguinBust>>
+Athena: <i>This briefcase has to be his.</i>#el:Intense
+Athena: Is this yours.
 Skipper: I-
 Skipper: No.
 Athena: Don't mess with me. I know it's yours.
@@ -418,10 +463,9 @@ Athena: I didn't <color=\#f3db82>tell you about the contents</color>.
 Athena: <color=\#f3db82>How did you know there were drugs in the suitcase</color>?
 Skipper: ... A wild guess! #e:Nervous
 Skipper: I'm being interrogated about a suspicious briefcase! Of course there are drugs involved.
+Athena: <i>Skipper doesn't know where Morgana's smoke spot is. It must've been someone else.</i>
 Athena: Why would Mallard have your briefcase?
 Skipper: Huh? How did you kn-
-Skipper: It's Mallard's?
-Athena: No. It's yours. Why did Mallard have it?
 Skipper: ...
 Skipper: I didn't do it.#e:Angry
 Athena: Answer my question.
@@ -431,20 +475,20 @@ Athena: I'll ask one more time. What happened with the briefcase?
 Skipper:...#e:Sad
 Skipper: I was <color=\#f3db82>smuggling the drugs on the train</color>...
 Skipper: I heard a crash in the middle of the night, and found Mallard with my briefcase.
-Skipper: Mallard was still... bitter about his termination.
-Skipper: He thought the briefcase was Gander's, and claimed he's just getting what he deserved.
+Skipper: I think he was desperate for money.
 Skipper: I didn't tell anyone, because I was afraid.
 Skipper: Please don't turn me in.
 Skipper: I didn't kill him.
-Athena: There was white powder on the knife in his pocket.
-Athena: He must have <color=\#f3db82>stolen the briefcase</color> before he was murdered.
-Athena: And there was a stab mark on the table from the knife.
-Athena: If someone caught him, it was not peaceful.
+Athena: What did you do when you found him with the briefcase?
+Athena: Surely you didn't let him take your drugs.
 Skipper: It was an accide-#e:Nervous
 Skipper: ...#e:Neutral
-Skipper: I'm sure it's unrelated.#e:Neutral
+Skipper: I didn't do anything.#e:Neutral
 Skipper: Do you have any more questions?
 Athena: No. I think that's all I need.
+<<else>>
+	<<jump PenguinDismissal>>
+<<endif>>
 ===
 
 title: EndingDialogue

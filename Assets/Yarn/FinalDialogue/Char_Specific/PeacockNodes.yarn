@@ -135,6 +135,8 @@ Melissa: Who do you want to hear about?
 	Melissa: I was going to report the murder, but I found something incriminating.
 	Melissa: I found a <color=\#f3db82>pocket knife stabbed in the bar counter</color>.
 	Melissa: On the pocket knife, was a <color=\#f3db82>part of a black feather</color>.
+	<<CreateClue ClueBoardCanvas BlackFeathers>>
+	: Got Evidence <color=\#94e9e4>Black Feathers</color>
 	Melissa: I was drunk and I feared this would be used to incriminate Morgana.
 	Melissa: Foolishly, I took the feather and <color=\#f3db82>put the pocket knife in the victim's pocket</color>.
 	Melissa: Please believe that Morgana wouldn't do it.
@@ -149,6 +151,8 @@ Melissa: Who do you want to hear about?
 	Melissa: I did actually <color=\#f3db82>buy drugs from him</color>.
 	Melissa: It wasn't anything too strong, just Reed.
 	Melissa: But I can tell you <color=\#f3db82>he was selling much stronger stuff</color>.
+	Athena: <i>That's a pretty serious accusation.</i>
+	Athena: <i>I should <color=\#f3db82>interrogate Skipper about this</color>.</i>
 	<<set $PenguinDrugs = true>>
     <<jump PeacockPeople>>
 -> Nevermind
