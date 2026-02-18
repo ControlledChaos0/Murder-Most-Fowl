@@ -814,5 +814,8 @@ tags: c:Owl:Parrot
 ---
 Athena: Our victim is a 5'10" male duck of the name Seaton Mallard.
 Athena: His death was staged as a suicide, but was proven to be fowl play.
+<<if $DuckBroke>>
+Athena: I also have intel the duck was desperate for money.
+<<endif>>
 <<jump CharacterDebrief>>
 ===
