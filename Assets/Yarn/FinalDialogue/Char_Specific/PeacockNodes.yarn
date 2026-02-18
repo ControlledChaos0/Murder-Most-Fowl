@@ -270,6 +270,13 @@ Melissa: I didn't even change my coloring.
 Melissa: Perhaps they need to revoke your detective license.
 Athena: So you were a boxer?
 Melissa: Yes, back in the day. 
+<<if not $CockfightingArena>>
+	<<jump PeacockFightingArena>>
+<<endif>>
+===
+
+title:PeacockFightingArena
+---
 Melissa: I actually ran that place.
 Melissa: They called me Thorn. Sharp as an arrow and impossible to get rid of, hah.
 Melissa: Though I started to realize I didn't want that life.
@@ -314,4 +321,41 @@ Athena: It would appear he does not.
 Melissa: I clearly remember moving <color=\#f3db82>a heavy briefcase off of my bag</color>.
 <<CreateClue ClueBoardCanvas MissingBriefcase>>
 : Got Evidence <color=\#94e9e4>Missing Briefcase</color>#el:Neutral
+===
+
+title: PeacockCrash
+---
+Athena: Did you hear a crash last night?
+Melissa: I think I did.
+Melissa: My memory is a little hazy.
+Athena: Why don't you remember?
+Melissa: I drank quite excessively last night.
+Melissa: Morgana's cocktails are simply exquisite.
+===
+
+title: PeacockBettingSlip
+---
+Athena: Have you seen this slip before?
+Melissa: Yes this is from <color=\#f3db82>an underground fighting arena</color>.
+Melissa: Mr. Gander comes to view fights often, but he doesn't bet as much as <color=\#f3db82>the duck</color>.
+Melissa: Oh Gander, did you not read the part that says to burn after bout?
+Melissa: Anyways...
+<<if not $CockfightingArena>>
+	<<jump PeacockFightingArena>>
+<<endif>>
+===
+
+title: PeacockMelissaKey
+---
+Melissa: Oh yes, Morgana gave me her spare key.
+Melissa: I wanted access to the main parlor after hours.
+===
+
+title: PeacockMaidenPhoto
+---
+Melissa: Oh, is that <color=\#f3db82>Evelyn</color>?
+Athena: What can you tell me about her?
+Melissa: She's <color=\#f3db82>Mr. Gander's late wife</color>.
+Melissa: Poor thing, he hasn't been the same since.
+Melissa: I think she was the only one melting his cold demeanor.
 ===

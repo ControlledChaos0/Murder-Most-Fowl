@@ -61,10 +61,13 @@ Disgruntled Man: Oh dear heavens.
 Nervous Boy: What on earth?
 Athena: What's that all about?#el:Surprised
 Athena: I should check this out.#el:Neutral
-Athena: Oh dear Phoenix. How did this happen?#el:Surprised#bg:Default
-Athena: I suppose that's up to me to figure out.#el:Intense
-Skipper: Excuse me ma'am, but I can't let you disturb the scene. I'm about to phone the police.#e:Angry
-Athena: Yes, yes, I understand, but conveniently I'm a detective.#el:Neutral
+Athena: Oh dear Phoenix. How did this happen?#el:Surprised#bg:Discovery
+Athena: Was this a suicide...?#lc:
+Athena: No...#lc:
+Athena: There's something fishy about this scene.#lc:
+Athena: I suppose that's up to me to get to the bottom of this.#lc:
+Skipper: Excuse me ma'am, but I can't let you disturb the scene. I'm about to phone the police.#e:Angry#bg:Default#rc:Penguin
+Athena: Yes, yes, I understand, but I just happen to be a detective.#el:Neutral
 Skipper: A detective? But what needs investigating? The poor duck clearly hung himself.#e:Sad
 Skipper: I don't want to mess with the scene until the police arrive.
 Athena: Say, bellboy, if I can prove to you this “suicide” was in fact a murder, will you let me investigate further?

@@ -147,7 +147,7 @@ color: green
 title: CrowPeople
 tags: c:Owl:Crow
 ---
-Morgana: Who do you want to hear about?
+Morgana: Who do you want to hear about?#rc:Crow
 -> Melissa
     Morgana: We've been close friends since shortly after we broke up.#e:Sad
     Morgana: We were hanging out last night and I made her quite a few drinks.#e:Neutral
@@ -175,6 +175,8 @@ position: 1216,180
 color: blue
 ---
 Morgana: Yeah all the staff has a <color=\#f3db82>staff key and spare key</color>.
+Athena: So you have a key?
+Morgana: Yes, I do.
 ===
 
 title: CrowGloves

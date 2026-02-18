@@ -34,3 +34,11 @@ MonoBehaviour:
     nodeResponse: PeacockLovers
   - clueID: CargoManifest
     nodeResponse: PeacockCargoManifest
+  - clueID: BettingSlip
+    nodeResponse: PeacockBettingSlip
+  - clueID: Crash
+    nodeResponse: PeacockCrash
+  - clueID: MelissaKey
+    nodeResponse: PeacockMelissaKet
+  - clueID: MaidenPhoto
+    nodeResponse: PeacockMaidenPhoto

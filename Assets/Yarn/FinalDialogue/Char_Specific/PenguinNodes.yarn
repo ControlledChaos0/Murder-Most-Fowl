@@ -67,9 +67,9 @@ Skipper: What would you like to ask?
 	Skipper: In fact I believe he's involved with everyone in this car in some way.
 	Skipper: I can tell you about whoever you wish.
 	<<jump PenguinEnemies>>
--> <color=\#94e9e4>I have intel you're dealing drugs.</color><<if $PenguinDrugs and not $PenguinBust>>
+-> <color=\#f3db82>I have intel you're dealing drugs.</color><<if $PenguinDrugs>>
 	<<jump PenguinDrugs>>
--> <color=\#94e9e4>I know you're a dealer.</color><<if $PenguinBust>>
+-> <color=\#f3db82>I know you're a dealer. I can prove it.</color><<if $PenguinBust>>
 	<<jump PenguinBust>>
 -> Actually that's all for now.
 	<<jump PenguinConversation>>
@@ -309,6 +309,7 @@ Athena: Athena. Athena Nox.
 <<CreateClue ClueBoardCanvas Newspaper>>
 <<CreateClue ClueBoardCanvas Id>>
 <<CreateClue ClueBoardCanvas Note>>
+<<CreateClue ClueBoardCanvas BettingSlip>>
 <<ChangeRightCharacter>>
 <<ChangeLeftCharacter>>
 :<color=\#94e9e4>For the purposes of this demo, not all clues in the overworld are able to be obtained.</color>

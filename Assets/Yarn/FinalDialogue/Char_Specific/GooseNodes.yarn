@@ -59,11 +59,8 @@ Chase: What else would you like to ask?#el:Neutral
 	Athena: Business matters?#el:Intense
 	Chase: As I said. Private.#el:Neutral
 	Chase: After we concluded, I decided to retire to bed early.
-	Chase: I was woken by a large crash in the dining car, but assumed nothing of and went back to sleep.
-	Athena: Did you hear anything else?
-	Chase: I did not. The earplugs I put in after waking assured that.
-	Chase: When I finally woke at an appropriate time, I heard Melissa's voice outside my quarters.
-	Chase: When I exited, I was greeted by a locked parlor car door and noticed that bartender enter her dorm.
+	Chase: When I woke, I heard Melissa's voice outside my quarters.
+	Chase: I left my room and I was greeted by a locked parlor car door and noticed that bartender enter her dorm.
 	Athena: Bartender? As in Morgana?
 	Chase: Ah yes, that is her name, isn't it?
 	Chase: Anyways, I confronted the bellboy about the locked door, but he claimed to have misplaced his key.
@@ -247,4 +244,59 @@ Chase: Why do you assume it is mine?
 Athena: ... It looks very official.
 Chase: Tsk just because I'm a businessman doesn't mean every briefcase is mine.
 <<set $GanderBriefcase to true>>
+===
+
+title: GooseLawsuitPapers
+---
+Chase: Mallard threatened me with a lawsuit for wrongful termination.
+Chase: However, <color=\#f3db82>I knew something about him he wouldn't want getting out</color>.
+Chase: I threatened to leak this information if he proceeded with the lawsuit.
+Chase: It's been a stalemate since then.
+Athena: What do you know about him?
+<<if $ChaseQuestions>>
+Chase: You already know.
+Chase: He's in <color=\#f3db82>immense debt</color>.
+Athena: I see.
+Chase: A lot of people would be angry if they found out they aren't getting their money back.
+Chase: He had a habit of borrowing recklessly.
+Chase: The duck may be dead, but his debt still impacts his family's reputation.
+Chase: They have far more influence than I'd like to toy with.
+<<else>>
+Chase: I'm afraid I can't say.
+Athena: Well he's dead now. Surely he can't sue anymore.
+Chase: Yet there are still people living that would be interested in continuing the suit.
+Chase: I cannot risk it.
+Athena: I see.
+<<endif>>
+===
+
+title: GooseCrash
+---
+Chase: Yes, I heard it. It woke me up in the dead of night.
+Athena: Did you hear anything else?
+Chase: No, I did not.
+Chase: I fell back asleep soon after.
+===
+
+title: GooseNewspaper
+---
+Chase: I did remove Mallard from our shared company. 
+Chase: I didn't wish to, but he continually proved to be a liability.
+Chase: He gambled with company money, took out reckless loans, pocketed company assets.
+Chase: A straightforward businessman should not have to resort to such shady practices.
+===
+
+title: GooseBlackFeathers
+---
+Athena: I have reason to believe the murderer had black feathers.
+Chase: I do have black feathers, but I assure you I did not do it.
+Athena: <i>We'll see about that...</i>
+===
+
+title: GooseBettingSlip
+---
+Athena: Your name is on this betting slip. Care to explain?
+Chase: Yes, I do frequent <color=\#f3db82>the arena</color>.
+Chase: I bet on fighters occasionally.
+Chase: Mallard <color=\#f3db82>was obsessed with it</color>, however.
 ===
