@@ -24,6 +24,7 @@ tags: lc: rc:
 <<declare $PenguinDrugs = false>>
 <<declare $PenguinBust = false>>
 <<declare $ChaseQuestions = false>>
+<<declare $PenguinCaught = false>>
 <<set $HasShards = false>>
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>

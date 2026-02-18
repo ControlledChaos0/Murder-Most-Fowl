@@ -486,6 +486,7 @@ Skipper: ...#e:Neutral
 Skipper: I didn't do anything.#e:Neutral
 Skipper: Do you have any more questions?
 Athena: No. I think that's all I need.
+<<set $PenguinCaught = true>>
 <<else>>
 	<<jump PenguinDismissal>>
 <<endif>>
@@ -584,7 +585,7 @@ Officer Parrot: <color=\#f94449>Hoo did it?</color>
 
 title: GoodEnding
 ---
-Athena: Another week, another case done.
+Athena: Another week, another case done.#rc:
 Athena: <i>Yawn</i>
 Athena: Now I can finally get a break-
 Phone: <i>Brrrrring</i>
@@ -677,7 +678,7 @@ Morgana: Just please leave before you make it worse.
 
 title: BadEnding
 ---
-:...
+:...#rc:
 Athena: That case... why is it still on my mind?
 Athena: Case closed, right?
 Athena: ...
@@ -745,7 +746,6 @@ Athena: Chase Gander is a man who needs little introduction.
 Athena: World renound businessman, Co-Owner of the lucrative Gander & Mallard Co.
 Athena: I was a little surprised to find him outside of a fancy private car.
 Athena: He could probably afford to book the whole train for himself...
-
 <<jump CharacterDebrief>>
 ===
 
@@ -757,7 +757,14 @@ Athena: He was just an unassuming bellboy.
 Athena: After finding the body, he immediately took control of the situation.
 Athena: He initially wanted to rule the murder as a suicide, refusing to let me investigate until I proved him otherwise.
 Athena: Eventually he did let me investigate.
-
+<<if $PenguinCaught>>
+Athena: There's one thing I discovered about him, however, that was quite troubling.
+Athena: The penguin was smuggling highly illegal drugs on the train. 
+Officer Parrot: That's quite an accusation.
+Athena: I found a baggie of Crack Corn in his room and practically got a confession out of him.
+Officer Parrot: Thank you detective.
+Officer Parrot: We will definitely investigate this further.
+<<endif>>
 <<jump CharacterDebrief>>
 ===
 

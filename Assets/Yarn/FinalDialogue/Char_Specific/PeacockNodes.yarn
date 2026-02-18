@@ -113,8 +113,9 @@ Melissa: Now, what would you like to ask?#el:Neutral
 ===
 
 title: PeacockPeople
+tags: c:Owl:Peacock
 ---
-Melissa: Who do you want to hear about?
+Melissa: Who do you want to hear about?#rc:Peacock
 -> Morgana
     Melissa: Oh Morgana is a dear.
 	Melissa: You would know.

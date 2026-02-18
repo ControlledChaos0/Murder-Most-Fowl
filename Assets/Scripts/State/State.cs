@@ -49,6 +49,7 @@ public class State
     public bool PenguinDrugs = false;
     public bool ChaseQuestions = false;
     public bool PenguinBust = false;
+    public bool PenguinCaught = false;
     [Header("Inventory")] 
     public List<string> DiscoveredClues = new();
 
