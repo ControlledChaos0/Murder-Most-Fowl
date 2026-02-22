@@ -586,23 +586,32 @@ Officer Parrot: <color=\#f94449>Hoo did it?</color>
 
 title: GoodEnding
 ---
-Athena: Another week, another case done.#rc:
+Athena: Another week, another case done.#rc:#lc:
 Athena: <i>Yawn</i>
-Athena: Now I can finally get a break-
-Phone: <i>Brrrrring</i>
-Athena: Who could it be at this hour.
-Athena: Hello?
-Dispatch: <i>Athena! It's dispatch, we have an urgent case.</i>
 Athena: ...
-Athena: Another case?
-Dispatch: <i>Report to 1332 Agatha Drive as soon as possible.</i>
-Athena: <i>Sigh</i>
-Athena: Alright, I'm on it.
+Athena: Yet no rest for me. 
+Athena: Time to get on to the next one.
+Athena: Let's see...
+Athena: Murder on 1332 Agatha drive.
+Athena: 82 year old female trumpeter swan.
+Athena: Im on it.
 ===
 
 title: TrueEnding
 ---
-
+Athena: Another week, another case done.#rc:#lc:
+Athena: All the evidence feels satisfied.
+Morgana: You're still looking at the case files?
+Athena: It was definitely one of my most interesting cases to date.
+Morgana: Lucky me got to be involved.
+Athena: I feel lucky you were.
+Athena: It gave me a second chance.
+Morgana: Aw you sap.
+Morgana: What's the next case on your radar?
+Athena: I got a call from dispatch that there's been a murder on 1332 Agatha Drive.
+Athena: You ready to head out?
+Morgana: Absolutely. Ready for my first case.
+Athena: ALright, let's get at it.
 ===
 
 title: GoodEndingSkipper
@@ -621,9 +630,32 @@ Skipper: I don't want the police anywhere near my business.
 Athena: It was clever, playing like an authority figure.
 Athena: But you failed to consider...
 Athena: I'm never wrong.
+:...#rc:#lc:#DarkHidden
+<<if $LoveLetterDelivered>>
+	:Gander's business flourished, and so did his heart.
+	:Melissa responded kindly to his letter, and the two were quickly made a pair.
+	:Gander's cold demeanor finally seemed to melt again.
+<<else>>
+	:Gander's business flourished, but with Evelyn and Mallard gone he was truly alone at the top.
+	:To the outside observer this never seemed to bother him much.
+<<endif>>
+<<if $TurnedInPeacock>>
+	:The cops got word of Melissa's fighting arena and they were not lenient with the ringmaster.
+	:Melissa spent her next 20 years behind bars and the operation was forced to close.
+	:Did the fighters open a new club somewhere?
+	:Unknown.
+<<else>>
+	:Melissa's career flourished since the termination of the case.
+	:Thousands traveled to see her perform in the last year alone.
+	:It's clear she's extremely passionate about her art, and that passion draws people to her shows.
+<<endif>>
 <<if $FixedRelationship>>
+	:Morgana and Athena got their second chance, and they both couldn't be happier.
+	:Morgana even found a new occupation she finds a lot more rewarding than bartending...
 	<<jump TrueEnding>>
 <<else>>
+	:Morgana continued hopping between bars and partners, but none of them truly seemed right.
+	:One thing is for sure, she never worked on a train again.
 	<<jump GoodEnding>>
 <<endif>>
 ===
@@ -637,6 +669,33 @@ Athena: Care to explain why you murdered Mallard?
 Gander: I did no such thing.
 Athena: Tell that to the judge.
 Gander: The only person the judge will be hearing from is my lawyer.
+:...#rc:#lc:#DarkHidden
+<<if $TurnedInPeacock>>
+	:The cops got word of Melissa's fighting arena and they were not lenient with the ringmaster.
+	:Melissa spent her next 20 years behind bars and the operation was forced to close.
+	:Did the fighters open a new club somewhere?
+	:Unknown.
+<<else>>
+	:Melissa's career flourished since the termination of the case.
+	:Thousands traveled to see her perform in the last year alone.
+	:It's clear she's extremely passionate about her art, and that passion draws people to her shows.
+<<endif>>
+<<if $TurnedInPenguin>>
+	:Skipper disappeared off the grid after his operation was busted.
+	:There's a large bounty out for his head, but there hasn't been so much as a sighting.
+<<else>>
+	:Skipper continued working aboard the Oriole Express.	
+<<if $PenguinCaught>>
+	:Presumably he still uses it as a front for his real business.
+<<endif>>
+<<endif>>
+<<if not $FixedRelationship>>
+	:Morgana continued hopping between bars and partners, but none of them truly seemed right.
+	:One thing is for sure, she never worked on a train again.
+<<else>>
+	:Morgana and Athena got their second chance, and they both couldn't be happier.
+	:Morgana even found a new occupation she finds a lot more rewarding than bartending...
+<<endif>>
 <<jump BadEnding>>
 ===
 
@@ -650,6 +709,29 @@ Melissa: I would never kill, darling.
 Athena: Evidently you have. 
 Melissa: Please believe me dear.
 Athena: Tell that to the judge.
+:...#rc:#lc:#DarkHidden
+:Gander's business flourished, but with Evelyn and Mallard gone he was truly alone at the top.
+:To the outside observer this never seemed to bother him much.
+<<if $LoveLetterDelivered>>
+	:However, he still awaits a response to his love letter.
+	:Little does he know, the recipient is in jail.
+<<endif>>
+<<if $TurnedInPenguin>>
+	:Skipper disappeared off the grid after his operation was busted.
+	:There's a large bounty out for his head, but there hasn't been so much as a sighting.
+<<else>>
+	:Skipper continued working aboard the Oriole Express.
+<<if $PenguinCaught>>
+	:Presumably he still uses it as a front for his real business.
+<<endif>>
+<<endif>>
+<<if not $FixedRelationship>>
+	:Morgana continued hopping between bars and partners, but none of them truly seemed right.
+	:One thing is for sure, she never worked on a train again.
+<<else>>
+	:Morgana and Athena got their second chance, and they both couldn't be happier.
+	:Morgana even found a new occupation she finds a lot more rewarding than bartending...
+<<endif>>
 <<jump BadEnding>>
 ===
 
@@ -663,6 +745,7 @@ Morgana: You know I didn't do it. Please tell them.
 Athena: ...
 Athena: I'm sorry Morgana. The evidence said otherwise.
 Morgana: Cluck your evidence! Cluck you! I didn't do it!
+Morgana: I trusted you!
 Morgana: ...
 Morgana: Just go.
 <<else>>
@@ -673,6 +756,34 @@ Athena: The evidence said otherwise.
 Morgana: ...
 Morgana: This is the second time you've ruined my life.
 Morgana: Just please leave before you make it worse.
+<<endif>>
+:...#rc:#lc:#DarkHidden
+<<if $LoveLetterDelivered>>
+	:Gander's business flourished, and so did his heart.
+	:Melissa responded kindly to his letter, and the two were quickly made a pair.
+	:Gander's cold demeanor finally seemed to melt again.
+<<else>>
+	:Gander's business flourished, but with Evelyn and Mallard gone he was truly alone at the top.
+	:To the outside observer this never seemed to bother him much.
+<<endif>>
+<<if $TurnedInPeacock>>
+	:The cops got word of Melissa's fighting arena and they were not lenient with the ringmaster.
+	:Melissa spent her next 20 years behind bars and the operation was forced to close.
+	:Did the fighters open a new club somewhere?
+	:Unknown.
+<<else>>
+	:Melissa's career flourished since the termination of the case.
+	:Thousands traveled to see her perform in the last year alone.
+	:It's clear she's extremely passionate about her art, and that passion draws people to her shows.
+<<endif>>
+<<if $TurnedInPenguin>>
+	:Skipper disappeared off the grid after his operation was busted.
+	:There's a large bounty out for his head, but there hasn't been so much as a sighting.
+<<else>>
+	:Skipper continued working aboard the Oriole Express.
+<<if $PenguinCaught>>
+	:Presumably he still uses it as a front for his real business.
+<<endif>>
 <<endif>>
 <<jump BadEnding>>
 ===
@@ -759,12 +870,22 @@ Athena: After finding the body, he immediately took control of the situation.
 Athena: He initially wanted to rule the murder as a suicide, refusing to let me investigate until I proved him otherwise.
 Athena: Eventually he did let me investigate.
 <<if $PenguinCaught>>
-Athena: There's one thing I discovered about him, however, that was quite troubling.
-Athena: The penguin was smuggling highly illegal drugs on the train. 
-Officer Parrot: That's quite an accusation.
-Athena: I found a baggie of Crack Corn in his room and practically got a confession out of him.
-Officer Parrot: Thank you detective.
-Officer Parrot: We will definitely investigate this further.
+Athena: <i>I know Skipper has been smuggling drugs on the train...</i>
+Athena: <i>Should I report this to the police?</i>
+-> Yes.
+	Athena: <i>Yes, it's a pretty serious offense.</i>
+	Athena: There's one thing I discovered about him, however, that was quite troubling.
+	Athena: The penguin was smuggling highly illegal drugs on the train. 
+	Officer Parrot: That's quite an accusation.
+	Athena: I found a baggie of Crack Corn in his room and practically got a confession out of him.
+	Officer Parrot: Thank you detective.
+	Officer Parrot: We will definitely investigate this further.
+	Athena: Of course.
+	<<set $TurnedInPenguin to true>>
+-> No.
+	Athena: <i>I don't harbor any ill will towards him.</i>
+	Athena: That's all my intel.
+	Officer Parrot: Thank you for the information, detective.
 <<endif>>
 <<jump CharacterDebrief>>
 ===
@@ -789,7 +910,7 @@ Athena: She reported their argument was over a large sum of money he owed her.
 Athena: I'm not sure exactly how killing him would get her the money back...
 Officer Parrot: I see.
 <<else>>
-Athena: Yeah, it wasn't a great look.
+Athena: It wasn't a great look overall.
 <<endif>>
 Officer Parrot: Is there anything else you'd like to report?
 <<if $CockfightingArena>>
@@ -802,6 +923,7 @@ Athena: <i>Do I tell him about Melissa's Underground Fightclub?</i>
 	Officer Parrot: A fightclub? That's highly illegal.
 	Officer Parrot: Thank you for reporting that.
 	Athena: Of course, Officer.
+	<<set $TurnedInPeacock to true>>
 -> No.
 	Athena: <i>No I shouldn't... I worry what a cop would do about this.</i>
 <<endif>>

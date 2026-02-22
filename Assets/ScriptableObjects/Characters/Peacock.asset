@@ -39,6 +39,6 @@ MonoBehaviour:
   - clueID: Crash
     nodeResponse: PeacockCrash
   - clueID: MelissaKey
-    nodeResponse: PeacockMelissaKet
+    nodeResponse: PeacockMelissaKey
   - clueID: MaidenPhoto
     nodeResponse: PeacockMaidenPhoto

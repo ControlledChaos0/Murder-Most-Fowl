@@ -199,6 +199,7 @@ Melissa: Oh! A letter.#el:Neutral
 	Melissa: My memory is a little hazy, but <color=\#f3db82>he was with me for quite a while last night</color>.
 	Melissa: Oh Gander... what should I say?
 	Athena: I'll leave you with your thoughts.
+	<<set $LoveLetterDelivered to true>>
 <<else>>
 	Athena: Have you seen this letter before?
 	Melissa: No, it doesn't look familiar.
