@@ -5,6 +5,8 @@ using UnityEngine;
 public class RoomScreenContainer : ScreenContainer
 {
     [SerializeField]
+    private PlayerBody m_Player;
+    [SerializeField]
     private Floor m_Floor;
 
     [SerializeField]
@@ -12,6 +14,10 @@ public class RoomScreenContainer : ScreenContainer
 
     public Floor Floor {
         get { return m_Floor; }
+    }
+    public PlayerBody Player
+    {
+        get { return m_Player; }
     }
 
     public void ChangeFloor(int floorNum)
@@ -23,8 +29,9 @@ public class RoomScreenContainer : ScreenContainer
         m_Floor = _floors[floorNum];
     }
 
-    public void Update()
+    protected override void Update()
     {
+        base.Update();
         if (!GameManager.StateManager.ActiveState.Tutorial)
         {
             ChangeFloor(1);

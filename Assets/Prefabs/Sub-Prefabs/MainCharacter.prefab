@@ -96,7 +96,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1653979798632458570}
-  - component: {fileID: 2624754372825356153}
+  - component: {fileID: 5016351176404731387}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -113,14 +113,14 @@ Transform:
   m_GameObject: {fileID: 7798677705428106346}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.85, y: -1.97, z: -0.5}
+  m_LocalPosition: {x: 0, y: 0, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2907730358252555383}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2624754372825356153
+--- !u!114 &5016351176404731387
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,8 +129,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7798677705428106346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e748dd963812744187d1a000e43d169, type: 3}
+  m_Script: {fileID: 11500000, guid: a6d3470a8e919fa4e81491c624fa7e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _characterSprite: {fileID: 8741559076337488506}
-  m_Speed: 6.18

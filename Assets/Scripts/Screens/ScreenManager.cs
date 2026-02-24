@@ -17,9 +17,11 @@ public class ScreenManager : Singleton<ScreenManager>
         InitializeSingleton();
     }
     
-    public void ChangeRooms(RoomScreenContainer room)
+    public void ChangeRooms(RoomScreenContainer room, TeleportInfo teleportInfo)
     {
         m_CurrentRoomScreenContainer = room;
+        PlayerController.Instance.SwitchCurrentPlayer(room.Player, teleportInfo);
+        CameraController.Instance.SwitchCurrentCamera(room.VirtualCamera);
     }
 
     public Vector2 GetClosestFloorLocation(Ray clickRay) {
@@ -29,5 +31,10 @@ public class ScreenManager : Singleton<ScreenManager>
     public Vector2 GetClosestFloorLocation(Vector3 point)
     {
         return m_CurrentRoomScreenContainer.Floor.GetClosestFloorLocation(point);
+    }
+
+    public PlayerBody GetCurrentPlayer()
+    {
+        return m_CurrentRoomScreenContainer.Player;
     }
 }

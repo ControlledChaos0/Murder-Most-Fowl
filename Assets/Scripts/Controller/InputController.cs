@@ -25,7 +25,6 @@ public class InputController : Singleton<InputController>
     private InputActionMap _currentActionMap;
     
     private InputActionMap _mainControls;
-    //private InputActionMap _clueBoardControls;
     private InputActionMap _uiControls;
     private InputActionMap _ui2Controls;
 
@@ -35,26 +34,14 @@ public class InputController : Singleton<InputController>
     private InputAction _pauseAction;
 
     private InputAction _scrollAction;
-    //private InputAction _cancelAction;
 
     private InputAction _moveAction;
     private InputAction _clueBoardAction;
-    //private InputAction _scrollClueBoardAction;
 
-    //private Vector2 _mouseDelta;
-    //private Vector2 _screenPosition;
-    //private float _scrollDelta;
     private bool _clickDown;
-    //private bool _rightClickDown;
 
     private float _clickTime;
     private float _rightClickTime;
-    //private bool _moveCamera;
-    //private bool _panCamera;
-
-    //public Vector2 ScreenPosition {
-    //    get { return _screenPosition; }
-    //}
 
     ////Events
 #pragma warning disable 67
@@ -66,11 +53,8 @@ public class InputController : Singleton<InputController>
     public event Action RightCancel;
     public event Action Pause;
     public event Action<float> Move;
-    //public event Action<Vector2> Hover;
-    //public event Action<Vector2> MouseMove;
 
     public event Action ToggleClueBoard;
-    //public event Action<float> OnScrollCB;
 #pragma warning restore 67
 
     private void Awake()
@@ -243,32 +227,4 @@ public class InputController : Singleton<InputController>
     {
         Move?.Invoke(context.ReadValue<float>());
     }
-
-    //private void OnCloseClueBoard(InputAction.CallbackContext context) {
-    //    ToggleClueBoard?.Invoke(false);
-    //}
-
-    //public void ToggleControls(bool enabled) {
-    //    if (enabled) {
-    //        ToggleActionMap(_clueBoardControls);
-    //    } else {
-    //        ToggleActionMap(_mainControls);
-    //    }
-    //}
-
-    //private void OnScrollPerformed(InputAction.CallbackContext context) {
-    //    //Debug.Log(context.ReadValue<Vector2>().y);
-    //    OnScrollCB?.Invoke(context.ReadValue<Vector2>().y);
-    //}
-
-    //private void ToggleActionMap(InputActionMap actionMap) {
-    //    if (actionMap.enabled) {
-    //        return;
-    //    }
-
-    //    _currentActionMap.Disable();
-    //    _currentActionMap = actionMap;
-    //    _currentActionMap.Enable();
-    //}
-
 }

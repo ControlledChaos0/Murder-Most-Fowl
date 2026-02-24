@@ -3,26 +3,31 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
-public class ScreenContainer : MonoBehaviour
+public abstract class ScreenContainer : MonoBehaviour
 {
     [SerializeField]
-    private CinemachineVirtualCamera m_VirtualCamera;
+    protected CinemachineVirtualCamera m_VirtualCamera;
     [SerializeField]
-    private PolygonCollider2D m_CameraBounds;
+    protected PolygonCollider2D m_CameraBounds;
+
+    public CinemachineVirtualCamera VirtualCamera
+    {
+        get { return m_VirtualCamera; }
+    }
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         FixColliderCorner();
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         
     }
 
-    private void FixColliderCorner()
+    protected void FixColliderCorner()
     {
         Vector2 maxCorner = Vector2.negativeInfinity;
         Vector2 minCorner = Vector2.positiveInfinity;

@@ -1,21 +1,21 @@
+using System;
 using System.Drawing;
 using Cinemachine;
+using Manager;
 using UnityEngine;
 
-public class RoomTeleport : MonoBehaviour
+public class RoomTeleport : PlayerInteractable
 {
     [SerializeField]
-    private RoomScreenContainer _room;
+    private RoomScreenContainer _currentRoom;
     [SerializeField]
-    private PlayerController _originalPlayer;
-    [SerializeField]
-    private PlayerController _newPlayer;
-    [SerializeField]
-    private CinemachineVirtualCamera _newCamera;
-    [SerializeField]
-    private CinemachineVirtualCamera _currCamera;
-    [SerializeField]
-    private Transform _door;
+    private TeleportInfo _teleportInfo;
+
+    private TeleportMediator _teleportMediator;
+    public TeleportMediator TeleportMediator
+    {
+        set { _teleportMediator = value; }
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,17 +23,28 @@ public class RoomTeleport : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void OnMouseDown()
+    protected override void OnPointerClick()
     {
-        if (_room != null && _newPlayer != null)
+        CommandManager.Instance.Queue(new RoomChangeCommand(this));
+    }
+
+    public void Teleport()
+    {
+        _teleportMediator.Teleport(this);
+    }
+
+    public void TeleportTo()
+    {
+        if (_currentRoom != null)
         {
-            ScreenManager.Instance.ChangeRooms(_room);
-            
-            _originalPlayer.enabled = false;
-            _newPlayer.enabled = true;
-            //_player.Teleport(new Vector3(_door.transform.position.x, _door.transform.position.y - 6, _door.transform.position.z));
-            _newCamera.Priority = 10;
-            _currCamera.Priority = 1;
+            ScreenManager.Instance.ChangeRooms(_currentRoom, _teleportInfo);
         }
     }
+}
+
+[Serializable]
+public struct TeleportInfo
+{
+    [SerializeField] public Transform teleportPos;
+    [SerializeField] public PlayerFacing flip;
 }

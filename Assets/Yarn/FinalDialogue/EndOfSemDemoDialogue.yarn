@@ -72,6 +72,15 @@ Athena: Thank you. I ensure you I'll get to the bottom of this.
 Athena: ...#el:Intense
 ===
 
+title: StartSkip
+tags: lc: rc:
+---
+<<set $HasShards = false>>
+<<set $PresentedShards = false>>
+<<set $Tutorial = false>>
+WARNING: This game contains graphic depictions of suicide.
+===
+
 title: AthenaRecall
 ---
 Athena: The murder must've transpired last night.#e:Neutral
