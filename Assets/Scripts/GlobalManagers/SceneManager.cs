@@ -12,6 +12,8 @@ public class SceneManager : MonoBehaviour
     private AsyncOperation m_nextScene;
     public AsyncOperation NextScene => m_nextScene;
 
+    private bool _isSwapTransition = false;
+
     private void Start()
     {
         LoadSceneAndSwap(m_startScene);
@@ -37,7 +39,7 @@ public class SceneManager : MonoBehaviour
         m_nextScene = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
         m_nextScene.allowSceneActivation = false;
 
-        while (!m_nextScene.isDone && m_nextScene.progress < 0.9f) yield return null;
+        while (!IsSceneReady()) yield return null;
     }
 
     public Coroutine LoadSceneAndSwap(string sceneName)
@@ -51,16 +53,37 @@ public class SceneManager : MonoBehaviour
         SwapScene();
     }
 
+    public Coroutine LoadSceneAndSwapTransition(string sceneName)
+    {
+        return StartCoroutine(ILoadSceneAndSwapTransition(sceneName));
+    }
+
+    private IEnumerator ILoadSceneAndSwapTransition(string sceneName)
+    {
+        _isSwapTransition = true;
+        TransitionManager.Instance.FadeIn();
+        yield return LoadScene(sceneName);
+        while (!m_nextScene.allowSceneActivation)
+        {
+            SwapScene();
+            yield return null;
+        }
+        TransitionManager.Instance.FadeOut();
+        _isSwapTransition = false;
+    }
+
     public void SwapScene()
     {
         if (m_nextScene == null) return;
         
-        m_nextScene.allowSceneActivation = true;
+        m_nextScene.allowSceneActivation = IsSceneReady();
     }
 
     public bool IsSceneReady()
     {
-        return m_nextScene != null && m_nextScene.isDone;
+        return m_nextScene != null 
+            && m_nextScene.progress >= 0.9f
+            && (!_isSwapTransition || (_isSwapTransition && !TransitionManager.Instance.IsTransitioning));
     }
 
     public void QuitApplication()
