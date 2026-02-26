@@ -4,18 +4,21 @@ using UnityEngine.EventSystems;
 
 public abstract class PlayerInteractable : MonoBehaviour, IPointerClickHandler
 {
-    public void OnPointerClick(PointerEventData eventData)
+    [SerializeField]
+    protected float radiusToStop = 1.0f;
+    public float Radius
     {
-        PlayerController.Instance.Move(new Ray(GetComponent<Transform>().position, CameraController.Instance.CameraTransform.forward));
-        StartCoroutine(WaitUntilStopMoving());
+        get => radiusToStop;
+        set => radiusToStop = value;
     }
 
-    protected IEnumerator WaitUntilStopMoving()
+    public bool WithinRange(Vector3 pos)
     {
-        while (PlayerController.Instance.IsMoving)
-        {
-            yield return null;
-        }
+        return Mathf.Abs(pos.x - transform.position.x) <= radiusToStop;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
         OnPointerClick();
     }
 

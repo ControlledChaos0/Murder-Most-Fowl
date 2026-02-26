@@ -1,12 +1,12 @@
+using Manager;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Yarn.Unity;
 
 namespace Clues
 {
-    public class ClueObject : MonoBehaviour,
-        IPointerEnterHandler, IPointerExitHandler,
-        IPointerClickHandler
+    public class ClueObject : PlayerInteractable,
+        IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] private string _clueID;
         [SerializeField] private string _node;
@@ -84,7 +84,12 @@ namespace Clues
             }
         }
 
-        public void OnPointerClick(PointerEventData eventData)
+        protected override void OnPointerClick()
+        {
+            CommandManager.Instance.Queue(new CollectClueCommand(this));
+        }
+
+        public void CollectClue()
         {
             // TODO
             Debug.Log("Click the clue!");
@@ -104,16 +109,6 @@ namespace Clues
                     }
                 }
             }
-            // if (!_found)
-            // {
-            //     _found = true;
-            //     ClueBoardManager.Instance.InstantiateClue(_clueID);
-            //     DialogueHelper.Instance.DialogueRunner.StartDialogue(_node);
-            // }
-            // if (_disappearOnClick)
-            // {
-            //     Collect();
-            // }
         }
 
         [YarnCommand("collect_clue")]

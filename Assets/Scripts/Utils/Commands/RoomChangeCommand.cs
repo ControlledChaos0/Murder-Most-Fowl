@@ -8,13 +8,16 @@ public class RoomChangeCommand : Command
         _roomTeleport = roomTeleport;
     }
 
-    public override bool IsCompleted()
+    protected override bool IsCompleted()
     {
-        return true;
+        return !ScreenManager.Instance.IsChangingRooms;
     }
 
     public override void Stop()
     {
+        // TO-DO
+        // Stopping in the middle seems to be bad
+        // See if there's another way to prevent it
         throw new System.NotImplementedException();
     }
 

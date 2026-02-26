@@ -9,10 +9,17 @@ public class ScreenManager : Singleton<ScreenManager>
     [SerializeField]
     private Animator _animator;
 
+    private bool _isChangingRooms;
+    private Coroutine _changeRoomsCoroutine;
 
     public RoomScreenContainer CurrentRoomScreenContainer {
         get { return m_CurrentRoomScreenContainer; }
         set { m_CurrentRoomScreenContainer = value; }
+    }
+
+    public bool IsChangingRooms
+    {
+        get => _isChangingRooms;
     }
 
     private void Awake() {
@@ -21,7 +28,7 @@ public class ScreenManager : Singleton<ScreenManager>
 
     public void ChangeRooms(RoomScreenContainer room, TeleportInfo teleportInfo)
     {
-        StartCoroutine(IChangeRooms(room, teleportInfo));
+        _changeRoomsCoroutine = StartCoroutine(IChangeRooms(room, teleportInfo));
     }
 
     public Vector2 GetClosestFloorLocation(Ray clickRay) {
@@ -39,6 +46,7 @@ public class ScreenManager : Singleton<ScreenManager>
     }
 
     private IEnumerator IChangeRooms(RoomScreenContainer room, TeleportInfo teleportInfo) {
+        _isChangingRooms = true;
         _animator.SetTrigger("HideTrigger");
         // Begin Transition
         yield return ITransition("RoomT_Show", "RoomT_ToHide");
@@ -48,6 +56,8 @@ public class ScreenManager : Singleton<ScreenManager>
         CameraController.Instance.SwitchCurrentCamera(room.VirtualCamera);
 
         _animator.SetTrigger("ShowTrigger");
+        yield return ITransition("RoomT_Hide", "RoomT_ToShow");
+        _isChangingRooms = false;
     }
 
     private IEnumerator ITransition(string stateName1, string stateName2)

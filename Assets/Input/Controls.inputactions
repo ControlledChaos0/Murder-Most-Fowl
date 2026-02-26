@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "Controls",
     "maps": [
         {
@@ -487,7 +488,7 @@
                 {
                     "name": "",
                     "id": "1a22aabb-c2bf-4e37-b9cd-b3dbea9bf549",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": ";KeyboardMouse",

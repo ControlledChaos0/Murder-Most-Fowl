@@ -9,14 +9,13 @@ public class MoveCommand : Command
         _position = position;
     }
 
-    public override bool IsCompleted()
+    protected override bool IsCompleted()
     {
-        return true;
+        return !PlayerController.Instance.IsMoving;
     }
     public override void Stop()
     {
         PlayerController.Instance.StopPlayer();
-        CommandManager.Instance.ClearQueue();
     }
 
     protected override void ExecuteCommand()

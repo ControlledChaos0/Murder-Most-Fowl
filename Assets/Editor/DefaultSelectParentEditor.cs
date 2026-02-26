@@ -2,14 +2,14 @@ using System.ComponentModel;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(PlayerBody))]
-public class PlayerBodyEditor : Editor
+[CustomEditor(typeof(DefaultSelectParent))]
+public class DefaultSelectParentEditor : Editor
 {
     private void OnSceneGUI()
     {
         HandleUtility.AddDefaultControl(0);
 
-        var t = (target as PlayerBody);
+        var t = (target as DefaultSelectParent);
         //Get the transform of the component with the selection base attribute
         Transform selectionBaseTransform = t.transform;
 

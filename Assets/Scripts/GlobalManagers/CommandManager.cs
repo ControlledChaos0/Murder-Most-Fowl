@@ -31,14 +31,14 @@ namespace Manager
 
         public void ClearQueue()
         {
-            _currentCommand.Stop();
+            _currentCommand?.Stop();
             _currentCommand = null;
             _commandQueue.Clear();
         }
 
         private void UpdateQueue()
         {
-            if (_currentCommand != null && _currentCommand.IsCompleted())
+            if (_currentCommand != null && _currentCommand.Completed)
             {
                 _currentCommand = null;
             }    

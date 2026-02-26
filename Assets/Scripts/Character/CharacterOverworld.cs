@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using FMOD;
+using Manager;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Yarn.Unity;
@@ -34,6 +35,16 @@ public class CharacterOverworld : PlayerInteractable,
         }
     }
 
+    public void StartDialogue()
+    {
+        string currNode = GetCurrentNode();
+        if (currNode == "")
+        {
+            return;
+        }
+        DialogueHelper.Instance.DialogueRunner.StartDialogue(currNode);
+    }
+
     public string GetCurrentNode()
     {
         return GameManager.CharacterManager.GetCurrentNode(characterID);
@@ -45,11 +56,6 @@ public class CharacterOverworld : PlayerInteractable,
     }
 
     protected override void OnPointerClick() {
-        string currNode = GetCurrentNode();
-        if (currNode == "")
-        {
-            return;
-        }
-        DialogueHelper.Instance.DialogueRunner.StartDialogue(currNode);
+        CommandManager.Instance.Queue(new DialogueCommand(this));
     }
 }

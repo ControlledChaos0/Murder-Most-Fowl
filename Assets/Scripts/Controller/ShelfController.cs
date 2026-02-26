@@ -2,8 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ShelfController : MonoBehaviour,
-    IPointerDownHandler
+public class ShelfController : PlayerInteractable
 {
     [SerializeField]
     Sprite openSprite;
@@ -31,7 +30,7 @@ public class ShelfController : MonoBehaviour,
         open = false;
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    protected override void OnPointerClick()
     {
         if (open)
         {

@@ -13,6 +13,7 @@ public class PlayerController : Singleton<PlayerController>
     private float m_Speed;
 
     private PlayerBody _currentPlayer;
+    private PlayerInteractable m_Interactable;
 
     private Vector2 m_OldPos;
     private Vector2 m_NewPos;
@@ -35,6 +36,11 @@ public class PlayerController : Singleton<PlayerController>
     public bool IsMoving
     {
         get { return m_IsMoving; }
+    }
+
+    public PlayerInteractable Interactable
+    {
+        get => m_Interactable;
     }
 
     private void Awake()
@@ -74,17 +80,27 @@ public class PlayerController : Singleton<PlayerController>
         {
             if (m_DirectionalMovement)
             {
-                PlayerTransform.position += ((new Vector3(m_Direction, 0.0f, 0.0f)) * m_Speed * Time.deltaTime);
-                PlayerTransform.position = ScreenManager.Instance.GetClosestFloorLocation(PlayerTransform.position);
-                m_NewPos = PlayerTransform.position;
+                if ((Interactable != null && Interactable.WithinRange(PlayerTransform.position)))
+                {
+                    m_IsMoving = false;
+                } 
+                else
+                {
+                    PlayerTransform.position += (m_Speed * Time.deltaTime * (new Vector3(m_Direction, 0.0f, 0.0f)));
+                    PlayerTransform.position = ScreenManager.Instance.GetClosestFloorLocation(PlayerTransform.position);
+                    m_OldPos = m_NewPos;
+                    m_NewPos = PlayerTransform.position;
+                } 
             }
-            else if (Vector2.Distance(PlayerTransform.position, m_NewPos) >= 0.001f)
+            else if ((Interactable != null && !Interactable.WithinRange(PlayerTransform.position)) || (Interactable == null && Vector2.Distance(PlayerTransform.position, m_NewPos) >= 0.001f))
             {
                 PlayerTransform.position = Vector2.Lerp(m_OldPos, m_NewPos, m_ClickTime / m_MoveTime);
                 m_ClickTime += Time.deltaTime;
             }
             else
             {
+                CommandManager.Instance.ClearQueue();
+                m_Interactable = null;
                 m_IsMoving = false;
             }
         }
@@ -101,17 +117,40 @@ public class PlayerController : Singleton<PlayerController>
 
     public void OnClick(PointerEventData eventData)
     {
-        if (eventData == null || eventData.pointerClick?.layer == LayerMask.NameToLayer("UI"))
+        if (eventData == null)
         {
             return;
         }
 
+        GameObject pointClick = eventData.pointerClick;
+        int uiLayer = LayerMask.NameToLayer("UI");
+        if ((pointClick != null ? pointClick.layer : -1) == uiLayer)
+        {
+            return;
+        }
+
+        if (pointClick == null)
+        {
+            m_Interactable = null;
+        } 
+        else
+        {
+            m_Interactable = pointClick.GetComponentInParent<PlayerInteractable>();
+        }
+
+        CommandManager.Instance.ClearQueue();
         Ray ray = new Ray(eventData.position, CameraController.Instance.CameraTransform.forward);
-        Move(ray);
-    }
+        MoveCommand moveCommand = new MoveCommand(ScreenManager.Instance.GetClosestFloorLocation(ray));
+        CommandManager.Instance.Queue(moveCommand);
+     }
 
     public void OnMove(float direction)
     {
+        if (DialogueHelper.Instance.InDialogue || ClueBoardManager.Instance.InClueboard)
+        {
+            return;
+        }
+
         Debug.Log($"moving {direction}");
         m_Direction = direction;
         if (direction != 0.0f)
@@ -121,7 +160,6 @@ public class PlayerController : Singleton<PlayerController>
             m_DirectionalMovement = true;
             m_IsMoving = true; 
             PlayerSprite.flipX = direction < 0.0f;
-            CommandManager.Instance.ClearQueue();
         }
         else
         {
@@ -149,11 +187,6 @@ public class PlayerController : Singleton<PlayerController>
 
         m_ClickTime = 0.0f;
         m_IsMoving = true;
-    }
-
-    public void Move(Ray ray)
-    {
-        Move(ScreenManager.Instance.GetClosestFloorLocation(ray));
     }
 
     public void StopPlayer()

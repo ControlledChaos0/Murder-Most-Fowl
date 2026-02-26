@@ -6,6 +6,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using Yarn.Unity;
@@ -48,6 +49,7 @@ public class DialogueHelper : Singleton<DialogueHelper>
 
     [Header("Yarn Components")] 
     [SerializeField] private DialogueRunner _dialogueRunner;
+    [SerializeField] private DialogueViewBase _dialogueView;
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject _background;
@@ -99,6 +101,9 @@ public class DialogueHelper : Singleton<DialogueHelper>
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        InputController.Instance.Click += AdvanceDialogueClick;
+        InputController.Instance.Hold += AdvanceDialogueClick;
+
         _inDialogue = false;
         _dialogueRunner.onNodeStart.AddListener(StartNode);
         //TMPro_EventManager.TEXT_CHANGED_EVENT.Add(NamePortraitUpdater);
@@ -109,12 +114,11 @@ public class DialogueHelper : Singleton<DialogueHelper>
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        InputController.Instance.Click -= AdvanceDialogueClick;
+        InputController.Instance.Hold -= AdvanceDialogueClick;
     }
-
 
     public void StartDialogue()
     {
@@ -414,6 +418,15 @@ public class DialogueHelper : Singleton<DialogueHelper>
                 ChangeRight(spriteName);
             }
         }
+    }
+
+    private void AdvanceDialogueClick(PointerEventData eventData)
+    {
+        AdvanceDialogueClick();
+    }
+    private void AdvanceDialogueClick()
+    {
+        _dialogueView.UserRequestedViewAdvancement();
     }
 
     private bool hasClue(string clueID)

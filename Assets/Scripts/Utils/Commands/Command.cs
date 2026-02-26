@@ -4,9 +4,18 @@ using UnityEngine;
 
 public abstract class Command
 {
-    private bool _isStarted;
+    protected bool _isStarted;
+
+    public bool Started
+    {
+        get => _isStarted;
+    }
+    public bool Completed
+    {
+        get => _isStarted && IsCompleted();
+    }
     
-    public abstract bool IsCompleted();
+    protected abstract bool IsCompleted();
     public abstract void Stop();
     protected abstract void ExecuteCommand();
 
@@ -14,9 +23,5 @@ public abstract class Command
     {
         _isStarted = true;
         ExecuteCommand();
-    }
-    public bool IsStarted()
-    {
-        return _isStarted;
     }
 }
