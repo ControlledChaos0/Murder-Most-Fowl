@@ -586,7 +586,7 @@ Officer Parrot: <color=\#f94449>Hoo did it?</color>
 
 title: GoodEnding
 ---
-Athena: Another week, another case done.#rc:#lc:
+Athena: Another week, another case done.#rc:#lc:#bg:DarkHidden
 Athena: <i>Yawn</i>
 Athena: ...
 Athena: Yet no rest for me. 
@@ -599,7 +599,7 @@ Athena: Im on it.
 
 title: TrueEnding
 ---
-Athena: Another week, another case done.#rc:#lc:
+Athena: Another week, another case done.#rc:#lc:#bg:DarkHidden
 Athena: All the evidence feels satisfied.
 Morgana: You're still looking at the case files?
 Athena: It was definitely one of my most interesting cases to date.
@@ -631,30 +631,30 @@ Athena: It was clever, playing like an authority figure.
 Athena: But you failed to consider...
 Athena: I'm never wrong.
 :...#rc:#lc:#DarkHidden
-<<if $LoveLetterDelivered>>
-	:Gander's business flourished, and so did his heart.
+<<if $LoveLetterDelivered and not $TurnedInPeacock>>
+	:Gander's business flourished, and so did his heart.#bg:GanderGood
 	:Melissa responded kindly to his letter, and the two were quickly made a pair.
 	:Gander's cold demeanor finally seemed to melt again.
 <<else>>
-	:Gander's business flourished, but with Evelyn and Mallard gone he was truly alone at the top.
+	:Gander's business flourished, but with Evelyn and Mallard gone he was truly alone at the top.#bg:GanderBad
 	:To the outside observer this never seemed to bother him much.
 <<endif>>
 <<if $TurnedInPeacock>>
-	:The cops got word of Melissa's fighting arena and they were not lenient with the ringmaster.
+	:The cops got word of Melissa's fighting arena and they were not lenient with the ringmaster.#bg:MelissaBad
 	:Melissa spent her next 20 years behind bars and the operation was forced to close.
 	:Did the fighters open a new club somewhere?
 	:Unknown.
 <<else>>
-	:Melissa's career flourished since the termination of the case.
+	:Melissa's career flourished since the termination of the case.#bg:MelissaGood
 	:Thousands traveled to see her perform in the last year alone.
 	:It's clear she's extremely passionate about her art, and that passion draws people to her shows.
 <<endif>>
 <<if $FixedRelationship>>
-	:Morgana and Athena got their second chance, and they both couldn't be happier.
+	:Morgana and Athena got their second chance, and they both couldn't be happier.#bg:MorganaGood
 	:Morgana even found a new occupation she finds a lot more rewarding than bartending...
 	<<jump TrueEnding>>
 <<else>>
-	:Morgana continued hopping between bars and partners, but none of them truly seemed right.
+	:Morgana continued hopping between bars and partners, but none of them truly seemed right.#bg:MorganaBad
 	:One thing is for sure, she never worked on a train again.
 	<<jump GoodEnding>>
 <<endif>>
@@ -664,36 +664,36 @@ title: BadEndingGander
 ---
 : ... 
 : A few days later.
-Gander: Would you care to explain to me why I am behind bars?
+Chase: Would you care to explain to me why I am behind bars?
 Athena: Care to explain why you murdered Mallard?
-Gander: I did no such thing.
+Chase: I did no such thing.
 Athena: Tell that to the judge.
-Gander: The only person the judge will be hearing from is my lawyer.
+Chase: The only person the judge will be hearing from is my lawyer.
 :...#rc:#lc:#DarkHidden
 <<if $TurnedInPeacock>>
-	:The cops got word of Melissa's fighting arena and they were not lenient with the ringmaster.
+	:The cops got word of Melissa's fighting arena and they were not lenient with the ringmaster.#bg:MelissaBad
 	:Melissa spent her next 20 years behind bars and the operation was forced to close.
 	:Did the fighters open a new club somewhere?
 	:Unknown.
 <<else>>
-	:Melissa's career flourished since the termination of the case.
+	:Melissa's career flourished since the termination of the case.#bg:MelissaGood
 	:Thousands traveled to see her perform in the last year alone.
 	:It's clear she's extremely passionate about her art, and that passion draws people to her shows.
 <<endif>>
 <<if $TurnedInPenguin>>
-	:Skipper disappeared off the grid after his operation was busted.
+	:Skipper disappeared off the grid after his operation was busted.#bg:SkipperBad
 	:There's a large bounty out for his head, but there hasn't been so much as a sighting.
 <<else>>
-	:Skipper continued working aboard the Oriole Express.	
+	:Skipper continued working aboard the Oriole Express.	#bg:SkipperGood
 <<if $PenguinCaught>>
 	:Presumably he still uses it as a front for his real business.
 <<endif>>
 <<endif>>
 <<if not $FixedRelationship>>
-	:Morgana continued hopping between bars and partners, but none of them truly seemed right.
+	:Morgana continued hopping between bars and partners, but none of them truly seemed right.#bg:MorganaBad
 	:One thing is for sure, she never worked on a train again.
 <<else>>
-	:Morgana and Athena got their second chance, and they both couldn't be happier.
+	:Morgana and Athena got their second chance, and they both couldn't be happier.#bg:MorganaGood
 	:Morgana even found a new occupation she finds a lot more rewarding than bartending...
 <<endif>>
 <<jump BadEnding>>
@@ -710,26 +710,26 @@ Athena: Evidently you have.
 Melissa: Please believe me dear.
 Athena: Tell that to the judge.
 :...#rc:#lc:#DarkHidden
-:Gander's business flourished, but with Evelyn and Mallard gone he was truly alone at the top.
+:Gander's business flourished, but with Evelyn and Mallard gone he was truly alone at the top.#bg:GanderBad
 :To the outside observer this never seemed to bother him much.
 <<if $LoveLetterDelivered>>
-	:However, he still awaits a response to his love letter.
+	:However, he still awaits a response to his love letter.#bg:GanderBad
 	:Little does he know, the recipient is in jail.
 <<endif>>
 <<if $TurnedInPenguin>>
-	:Skipper disappeared off the grid after his operation was busted.
+	:Skipper disappeared off the grid after his operation was busted.#bg:SkipperBad
 	:There's a large bounty out for his head, but there hasn't been so much as a sighting.
 <<else>>
-	:Skipper continued working aboard the Oriole Express.
+	:Skipper continued working aboard the Oriole Express.#bg:SkipperGood
 <<if $PenguinCaught>>
 	:Presumably he still uses it as a front for his real business.
 <<endif>>
 <<endif>>
 <<if not $FixedRelationship>>
-	:Morgana continued hopping between bars and partners, but none of them truly seemed right.
+	:Morgana continued hopping between bars and partners, but none of them truly seemed right.#bg:MorganaBad
 	:One thing is for sure, she never worked on a train again.
 <<else>>
-	:Morgana and Athena got their second chance, and they both couldn't be happier.
+	:Morgana and Athena got their second chance, and they both couldn't be happier.#bg:MorganaGood
 	:Morgana even found a new occupation she finds a lot more rewarding than bartending...
 <<endif>>
 <<jump BadEnding>>
@@ -758,29 +758,29 @@ Morgana: This is the second time you've ruined my life.
 Morgana: Just please leave before you make it worse.
 <<endif>>
 :...#rc:#lc:#DarkHidden
-<<if $LoveLetterDelivered>>
-	:Gander's business flourished, and so did his heart.
+<<if $LoveLetterDelivered and not $TurnedInPeacock>>
+	:Gander's business flourished, and so did his heart.#bg:GanderGood
 	:Melissa responded kindly to his letter, and the two were quickly made a pair.
 	:Gander's cold demeanor finally seemed to melt again.
 <<else>>
-	:Gander's business flourished, but with Evelyn and Mallard gone he was truly alone at the top.
+	:Gander's business flourished, but with Evelyn and Mallard gone he was truly alone at the top.#bg:GanderBad
 	:To the outside observer this never seemed to bother him much.
 <<endif>>
 <<if $TurnedInPeacock>>
-	:The cops got word of Melissa's fighting arena and they were not lenient with the ringmaster.
+	:The cops got word of Melissa's fighting arena and they were not lenient with the ringmaster.#bg:MelissaBad
 	:Melissa spent her next 20 years behind bars and the operation was forced to close.
 	:Did the fighters open a new club somewhere?
 	:Unknown.
 <<else>>
-	:Melissa's career flourished since the termination of the case.
+	:Melissa's career flourished since the termination of the case.#bg:MelissaGood
 	:Thousands traveled to see her perform in the last year alone.
 	:It's clear she's extremely passionate about her art, and that passion draws people to her shows.
 <<endif>>
 <<if $TurnedInPenguin>>
-	:Skipper disappeared off the grid after his operation was busted.
+	:Skipper disappeared off the grid after his operation was busted.#bg:SkipperBad
 	:There's a large bounty out for his head, but there hasn't been so much as a sighting.
 <<else>>
-	:Skipper continued working aboard the Oriole Express.
+	:Skipper continued working aboard the Oriole Express.#bg:SkipperGood
 <<if $PenguinCaught>>
 	:Presumably he still uses it as a front for his real business.
 <<endif>>
@@ -790,7 +790,7 @@ Morgana: Just please leave before you make it worse.
 
 title: BadEnding
 ---
-:...#rc:
+:...#rc:#bg:DarkHidden
 Athena: That case... why is it still on my mind?
 Athena: Case closed, right?
 Athena: ...

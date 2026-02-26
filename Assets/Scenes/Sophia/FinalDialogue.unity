@@ -23264,7 +23264,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 18e1b0ddb81fe6f449386ab8e33a68ac, type: 3}
     - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
       propertyPath: _backgroundList.Array.size
-      value: 5
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
       propertyPath: _nameList.Array.data[5].name
@@ -23343,6 +23343,38 @@ PrefabInstance:
       value: Discovery
       objectReference: {fileID: 0}
     - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[5].name
+      value: GanderBad
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[6].name
+      value: GanderGood
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[7].name
+      value: MelissaGood
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[8].name
+      value: MelissaBad
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[9].name
+      value: SkipperBad
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[10].name
+      value: SkipperGood
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[11].name
+      value: MorganaGood
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[12].name
+      value: MorganaBad
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
       propertyPath: _backgroundList.Array.data[3].image
       value: 
       objectReference: {fileID: -7452707993215037657, guid: e7ad496a34a299a4c980ea13c3b4c929, type: 3}
@@ -23350,6 +23382,38 @@ PrefabInstance:
       propertyPath: _backgroundList.Array.data[4].image
       value: 
       objectReference: {fileID: 6759688343136247405, guid: d67619a7f592dd14488661efff657211, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[5].image
+      value: 
+      objectReference: {fileID: -9117069809322915722, guid: 74d674312386071468ebb87848a7556b, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[6].image
+      value: 
+      objectReference: {fileID: -6411987491251514557, guid: 56d84b3638e90814090ad244fc640928, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[7].image
+      value: 
+      objectReference: {fileID: -4451221152355805645, guid: b10a97afc5087a841a54739fce20ef4d, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[8].image
+      value: 
+      objectReference: {fileID: -3824251656599874487, guid: 7e84b81a1626fdb4e98c876cab90fa52, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[9].image
+      value: 
+      objectReference: {fileID: -1264991366689565379, guid: dd0199aa0a38f6e4ea847f8b3554cfbd, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[10].image
+      value: 
+      objectReference: {fileID: 7874042199812625695, guid: feb728120d1aaf04082af3d23e2b9db1, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[11].image
+      value: 
+      objectReference: {fileID: -4603319760516593715, guid: 27525a8b02f53634bb051e25c2a6f7ed, type: 3}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[12].image
+      value: 
+      objectReference: {fileID: -1827463511166918657, guid: 9b1b7a1c9b848634aae04fb946ca0f40, type: 3}
     - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
       propertyPath: _backgroundList.Array.data[0].color.a
       value: 0.34901962
@@ -23419,6 +23483,134 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[5].color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[5].color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[5].color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[5].color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[6].color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[6].color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[6].color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[6].color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[7].color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[7].color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[7].color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[7].color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[8].color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[8].color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[8].color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[8].color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[9].color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[9].color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[9].color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[9].color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[10].color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[10].color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[10].color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[10].color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[11].color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[11].color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[11].color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[11].color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[12].color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[12].color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[12].color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[12].color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
       propertyPath: _backgroundList.Array.data[0].includeCharacters
       value: 1
       objectReference: {fileID: 0}
@@ -23428,6 +23620,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
       propertyPath: _backgroundList.Array.data[2].includeCharacters
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[5].includeCharacters
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}
+      propertyPath: _backgroundList.Array.data[12].includeCharacters
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2630036577497976393, guid: 6abb264982467054ba4fe940958d0824, type: 3}

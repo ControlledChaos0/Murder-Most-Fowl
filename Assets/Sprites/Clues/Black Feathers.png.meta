@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Black Feathers_0: -8519156973718329817
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
