@@ -31,7 +31,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5782645600917251529}
   - {fileID: 4116285871445633725}
   m_Father: {fileID: 1729708675622223507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -268,7 +267,7 @@ GameObject:
   - component: {fileID: 2630036577497976393}
   - component: {fileID: 2644401551768669220}
   - component: {fileID: 2302480131413949758}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Dialogue System MMF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,6 +387,14 @@ MonoBehaviour:
       spriteItemList:
       - name: Neutral
         sprite: {fileID: -1788626132936788117, guid: 1a31de99fa89e4f438db8fb8d7af808a, type: 3}
+      - name: Happy
+        sprite: {fileID: -3937066570438060873, guid: 46305a6997e57a24aa0995102241a7c6, type: 3}
+      - name: Sad
+        sprite: {fileID: 2759216161688007475, guid: 5ebe553cbc2821145aebc5bd90e4a6e3, type: 3}
+      - name: Surprised
+        sprite: {fileID: 3100214429260589117, guid: 121ed286814b3f54e912f7ee376e1b32, type: 3}
+      - name: Intense
+        sprite: {fileID: 1019392821198921390, guid: 2af880ed158448e4bb94bb20e67c5ceb, type: 3}
   - charID: Goose
     name: Chase
     expressions:
@@ -399,7 +406,17 @@ MonoBehaviour:
   - charID: Crow
     name: Morgana
     expressions:
-      spriteItemList: []
+      spriteItemList:
+      - name: Neutral
+        sprite: {fileID: 287759248693289744, guid: 056c6f42f254c5a40849c0f835038ecd, type: 3}
+      - name: Angry
+        sprite: {fileID: 6856779745698498924, guid: 4f19fe7c5f193fd4ca7912e5148ad558, type: 3}
+      - name: Embarrassed
+        sprite: {fileID: 831179347940552104, guid: 6ff052270b1a8874b9d627368e19345d, type: 3}
+      - name: Sad
+        sprite: {fileID: -3396483237174663184, guid: b2bbe89ea9746de4cbbd3a520c1bb0b3, type: 3}
+      - name: Crying
+        sprite: {fileID: 8853390484998988578, guid: 85a4c12878958704b833b63be31a9f12, type: 3}
   - charID: Penguin
     name: Skipper
     expressions:
@@ -410,8 +427,22 @@ MonoBehaviour:
         sprite: {fileID: -899229396933672516, guid: 6b3a78a8f9b91074cb7d4f43d5804513, type: 3}
       - name: Sad
         sprite: {fileID: 3424118716958518853, guid: 1c41a55f90e55f742b5d0ddd041fb6cd, type: 3}
+      - name: Angry
+        sprite: {fileID: 585134940739957604, guid: e54d0a1a79878aa46ae9664618dfcc15, type: 3}
+      - name: Nervous
+        sprite: {fileID: 7909311838418410951, guid: 5a9c35739bec1c4478920c9b936ccc3f, type: 3}
   _source: {fileID: 0}
-  _trackList: []
+  _trackList:
+  - name: Crow
+    song: {fileID: 8300000, guid: 95910a36f999dd541b16b7c2cf83ccdb, type: 3}
+  - name: Leisure
+    song: {fileID: 8300000, guid: c3bbbfcfd0be02c4899667bf702cec15, type: 3}
+  - name: Goose
+    song: {fileID: 8300000, guid: c3bbbfcfd0be02c4899667bf702cec15, type: 3}
+  - name: Peacock
+    song: {fileID: 8300000, guid: a87f5488232a1e649b881d1846e16d22, type: 3}
+  - name: Penguin
+    song: {fileID: 8300000, guid: 04c53fb7bc6b94746ad283ac5ff33393, type: 3}
 --- !u!114 &2644401551768669220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,111 +536,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: 0, y: 0, z: 0, w: 0}
   m_Softness: {x: 0, y: 0}
---- !u!1 &7737023882130387901
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5782645600917251529}
-  - component: {fileID: 1306648292895959722}
-  - component: {fileID: 4216773429134396625}
-  m_Layer: 0
-  m_Name: Dialogue Advance Inputs
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5782645600917251529
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7737023882130387901}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.6776037, y: -422.86917, z: 1.5731847}
-  m_LocalScale: {x: 2.236459, y: 2.236459, z: 2.236459}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4649373551223031171}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1306648292895959722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7737023882130387901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 097b95c9f69f04f2d8c08a817e7786af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueView: {fileID: 0}
-  continueActionType: 1
-  continueActionKeyCode: 13
-  continueActionButtonName: Jump
-  continueActionOnButtonRelease: 0
-  continueActionReference: {fileID: 0}
-  continueAction:
-    m_Name: Skip
-    m_Type: 1
-    m_ExpectedControlType: 
-    m_Id: 4e23c16f-7e3a-45e2-b1e4-7f7b4d09ee82
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 7593146f-8c29-48e6-a7e5-27e72dc5b924
-      m_Path: Submit
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Skip
-      m_Flags: 0
-    m_Flags: 0
-  enableActionOnStart: 1
---- !u!114 &4216773429134396625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7737023882130387901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 097b95c9f69f04f2d8c08a817e7786af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueView: {fileID: 0}
-  continueActionType: 1
-  continueActionKeyCode: 32
-  continueActionButtonName: Jump
-  continueActionOnButtonRelease: 0
-  continueActionReference: {fileID: 0}
-  continueAction:
-    m_Name: Skip
-    m_Type: 1
-    m_ExpectedControlType: 
-    m_Id: f0741ec6-b8ef-4e20-9ca4-0319b3c69239
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: a08d7009-999e-452c-b52b-0feeaef5c611
-      m_Path: Submit
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Skip
-      m_Flags: 0
-    m_Flags: 0
-  enableActionOnStart: 1
 --- !u!1 &8727645868148735028
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,10 +650,6 @@ PrefabInstance:
     - target: {fileID: 281728943402148893, guid: 949a39a0463aadd4d88a8aa7dc02c9d3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1138983699199077274, guid: 949a39a0463aadd4d88a8aa7dc02c9d3, type: 3}
-      propertyPath: continueButton
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3559434491027144207, guid: 949a39a0463aadd4d88a8aa7dc02c9d3, type: 3}
       propertyPath: m_AnchorMax.y
@@ -950,7 +872,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3928426441485132255, guid: 949a39a0463aadd4d88a8aa7dc02c9d3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 949a39a0463aadd4d88a8aa7dc02c9d3, type: 3}

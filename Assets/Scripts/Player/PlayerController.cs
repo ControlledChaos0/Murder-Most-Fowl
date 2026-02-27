@@ -99,7 +99,6 @@ public class PlayerController : Singleton<PlayerController>
             }
             else
             {
-                CommandManager.Instance.ClearQueue();
                 m_Interactable = null;
                 m_IsMoving = false;
             }
