@@ -316,18 +316,6 @@ Athena: Athena. Athena Nox.
 :<color=\#94e9e4>In the final version these clues will be found in the bedrooms of the characters, which is currently inaccessibe.</color>
 :<color=\#94e9e4>These unobtainable clues have been added to your inventory, so you can still enjoy the full story!</color>
 :<color=\#94e9e4>Feel free to play around with them and test them all out!</color>
-:<color=\#94e9e4>Also, huge thanks to everyone who worked on the game!</color>
-:<color=\#94e9e4>I promise there will be an official credits when the game is finished, but for now let's thank everyone through the wonderful method of dialogue boxes!</color>
-:<color=\#94e9e4>Thank you everyone:
-:<color=\#94e9e4>Andy Chen: UI Art, Character Art, Music, Programming, Writing</color>
-:<color=\#94e9e4>Haoxiang Zhao: SFX, Music</color>
-:<color=\#94e9e4>Evelyn Moore: Writing, Programming
-:<color=\#94e9e4>Monia Hossain: Character Art, Clue Art
-:<color=\#94e9e4>Gabriel Decker: Music
-:<color=\#94e9e4>Emilee Tran: Programming
-:<color=\#94e9e4>Luke Doty: Programming
-:<color=\#94e9e4>Eleanor Bertocchi: Background Art
-:<color=\#94e9e4>Vaughn Casarez: Character Design
 :<color=\#94e9e4>Anyways~ Back to the game</color>
 Athena: Have fun!#el:Happy
 Skipper: Thank you Detective Nox. I'll give you some time to investigate.#e:Happy#el:Neutral
@@ -604,6 +592,10 @@ Athena: Let's see...
 Athena: Murder on 1332 Agatha drive.
 Athena: 82 year old female trumpeter swan.
 Athena: Im on it.
+<<RollCredits>>
+:
+:
+:
 ===
 
 title: TrueEnding
@@ -621,13 +613,17 @@ Athena: I got a call from dispatch that there's been a murder on 1332 Agatha Dri
 Athena: You ready to head out?
 Morgana: Absolutely. Ready for my first case.
 Athena: ALright, let's get at it.
+<<RollCredits>>
+:
+:
+:
 ===
 
 title: GoodEndingSkipper
 ---
-: ... 
-: A few days later.
-Athena: <i>That damn penguin...</i>
+: ... #bg:DarkHidden
+: A few days later.#bg:DarkHidden
+Athena: <i>That damn penguin...</i>#bg:Jail#rc:
 Athena: <i>I can't believe it was him all along.</i>
 Skipper: Hey, what's going on?
 Athena: You're in prison, Skipper.
@@ -673,9 +669,9 @@ Athena: I'm never wrong.
 
 title: BadEndingGander
 ---
-: ... 
-: A few days later.
-Chase: Would you care to explain to me why I am behind bars?
+: ... #bg:DarkHidden
+: A few days later.#bg:DarkHidden
+Chase: Would you care to explain to me why I am behind bars?#lc:Owl#bg:Jail
 Athena: Care to explain why you murdered Mallard?
 Chase: I did no such thing.
 Athena: Tell that to the judge.
@@ -712,9 +708,9 @@ Chase: The only person the judge will be hearing from is my lawyer.
 
 title: BadEndingPeacock
 ---
-: ... 
-: A few days later.
-Melissa: Surely there's been some mistake.
+: ... #bg:DarkHidden
+: A few days later.#bg:DarkHidden
+Melissa: Surely there's been some mistake.#lc:Owl#bg:Jail
 Athena: I don't believe there has.
 Melissa: I would never kill, darling. 
 Athena: Evidently you have. 
@@ -748,10 +744,10 @@ Athena: Tell that to the judge.
 
 title: BadEndingNoir
 ---
-: ... 
-: A few days later.
+: ... #bg:DarkHidden
+: A few days later.#bg:DarkHidden
 <<if $FixedRelationship>>
-Morgana: Athena? Why?
+Morgana: Athena? Why?#lc:Owl#bg:Jail
 Morgana: You know I didn't do it. Please tell them. 
 Athena: ...
 Athena: I'm sorry Morgana. The evidence said otherwise.
@@ -760,7 +756,7 @@ Morgana: I trusted you!
 Morgana: ...
 Morgana: Just go.
 <<else>>
-Morgana: I knew it.
+Morgana: I knew it.#lc:Owl#bg:Jail
 Athena: Don't start.
 Morgana: I told you I didn't do it. Of course you wouldn't believe me.
 Athena: The evidence said otherwise.
@@ -812,12 +808,16 @@ Athena: Aha! It couldn't have bee-
 Athena: Who's there?
 ???: 
 Athena: Wait. Wait please, no.
-Athena: AAAAAAAAAH
+Athena: AAAAAAAAAH#bg:DarkHidden
 :
 ???: You should've kept your beak where it belonged.
 ???: I can't have this evidence getting out.
 :
 : The End?
+<<RollCredits>>
+:
+:
+:
 ===
 
 title: MorganaDebrief
