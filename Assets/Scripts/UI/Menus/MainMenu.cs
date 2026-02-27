@@ -4,7 +4,7 @@ public class MainMenu : Menu
 {
     public void StartGame()
     {
-        GameManager.SceneManager.LoadSceneAndSwap("FinalDialogue");
+        GameManager.SceneManager.LoadSceneAndSwapTransition("FinalDialogue");
     }
 
     public void QuitGame()
