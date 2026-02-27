@@ -113,8 +113,9 @@ Melissa: Now, what would you like to ask?#el:Neutral
 ===
 
 title: PeacockPeople
+tags: c:Owl:Peacock
 ---
-Melissa: Who do you want to hear about?
+Melissa: Who do you want to hear about?#rc:Peacock
 -> Morgana
     Melissa: Oh Morgana is a dear.
 	Melissa: You would know.
@@ -135,6 +136,8 @@ Melissa: Who do you want to hear about?
 	Melissa: I was going to report the murder, but I found something incriminating.
 	Melissa: I found a <color=\#f3db82>pocket knife stabbed in the bar counter</color>.
 	Melissa: On the pocket knife, was a <color=\#f3db82>part of a black feather</color>.
+	<<CreateClue ClueBoardCanvas BlackFeathers>>
+	: Got Evidence <color=\#94e9e4>Black Feathers</color>
 	Melissa: I was drunk and I feared this would be used to incriminate Morgana.
 	Melissa: Foolishly, I took the feather and <color=\#f3db82>put the pocket knife in the victim's pocket</color>.
 	Melissa: Please believe that Morgana wouldn't do it.
@@ -149,6 +152,8 @@ Melissa: Who do you want to hear about?
 	Melissa: I did actually <color=\#f3db82>buy drugs from him</color>.
 	Melissa: It wasn't anything too strong, just Reed.
 	Melissa: But I can tell you <color=\#f3db82>he was selling much stronger stuff</color>.
+	Athena: <i>That's a pretty serious accusation.</i>
+	Athena: <i>I should <color=\#f3db82>interrogate Skipper about this</color>.</i>
 	<<set $PenguinDrugs = true>>
     <<jump PeacockPeople>>
 -> Nevermind
@@ -194,6 +199,7 @@ Melissa: Oh! A letter.#el:Neutral
 	Melissa: My memory is a little hazy, but <color=\#f3db82>he was with me for quite a while last night</color>.
 	Melissa: Oh Gander... what should I say?
 	Athena: I'll leave you with your thoughts.
+	<<set $LoveLetterDelivered to true>>
 <<else>>
 	Athena: Have you seen this letter before?
 	Melissa: No, it doesn't look familiar.
@@ -265,6 +271,13 @@ Melissa: I didn't even change my coloring.
 Melissa: Perhaps they need to revoke your detective license.
 Athena: So you were a boxer?
 Melissa: Yes, back in the day. 
+<<if not $CockfightingArena>>
+	<<jump PeacockFightingArena>>
+<<endif>>
+===
+
+title:PeacockFightingArena
+---
 Melissa: I actually ran that place.
 Melissa: They called me Thorn. Sharp as an arrow and impossible to get rid of, hah.
 Melissa: Though I started to realize I didn't want that life.
@@ -309,4 +322,41 @@ Athena: It would appear he does not.
 Melissa: I clearly remember moving <color=\#f3db82>a heavy briefcase off of my bag</color>.
 <<CreateClue ClueBoardCanvas MissingBriefcase>>
 : Got Evidence <color=\#94e9e4>Missing Briefcase</color>#el:Neutral
+===
+
+title: PeacockCrash
+---
+Athena: Did you hear a crash last night?
+Melissa: I think I did.
+Melissa: My memory is a little hazy.
+Athena: Why don't you remember?
+Melissa: I drank quite excessively last night.
+Melissa: Morgana's cocktails are simply exquisite.
+===
+
+title: PeacockBettingSlip
+---
+Athena: Have you seen this slip before?
+Melissa: Yes this is from <color=\#f3db82>an underground fighting arena</color>.
+Melissa: Mr. Gander comes to view fights often, but he doesn't bet as much as <color=\#f3db82>the duck</color>.
+Melissa: Oh Gander, did you not read the part that says to burn after bout?
+Melissa: Anyways...
+<<if not $CockfightingArena>>
+	<<jump PeacockFightingArena>>
+<<endif>>
+===
+
+title: PeacockMelissaKey
+---
+Melissa: Oh yes, Morgana gave me her spare key.
+Melissa: I wanted access to the main parlor after hours.
+===
+
+title: PeacockMaidenPhoto
+---
+Melissa: Oh, is that <color=\#f3db82>Evelyn</color>?
+Athena: What can you tell me about her?
+Melissa: She's <color=\#f3db82>Mr. Gander's late wife</color>.
+Melissa: Poor thing, he hasn't been the same since.
+Melissa: I think she was the only one melting his cold demeanor.
 ===

@@ -1,4 +1,4 @@
-﻿title: GooseBaseIdle
+title: GooseBaseIdle
 tags:
 ---
 <<if $Tutorial is false>>
@@ -10,7 +10,7 @@ title: GooseIntroduction
 tags: lc:Owl rc:
 ---
 Athena: <i>Chase Gander…</i>#s:Goose#el:Neutral
-Athena: <i>Richest man this side of the country. I wouldn't be surprised if he owns this train.</i>#el:Surprised
+Athena: <i>Richest man this side of the country. Owner of successful company Gander and Mallard Co.</i>#el:Surprised
 Athena: <i>I'm almost too intimidated to talk to him.</i>#el:Neutral
 Athena: Good Morning, Mr. Gander.
 Chase: Who am I speaking to?
@@ -59,11 +59,8 @@ Chase: What else would you like to ask?#el:Neutral
 	Athena: Business matters?#el:Intense
 	Chase: As I said. Private.#el:Neutral
 	Chase: After we concluded, I decided to retire to bed early.
-	Chase: I was woken by a large crash in the dining car, but assumed nothing of and went back to sleep.
-	Athena: Did you hear anything else?
-	Chase: I did not. The earplugs I put in after waking assured that.
-	Chase: When I finally woke at an appropriate time, I heard Melissa's voice outside my quarters.
-	Chase: When I exited, I was greeted by a locked parlor car door and noticed that bartender enter her dorm.
+	Chase: When I woke, I heard Melissa's voice outside my quarters.
+	Chase: I left my room and I was greeted by a locked parlor car door and noticed that bartender enter her dorm.
 	Athena: Bartender? As in Morgana?
 	Chase: Ah yes, that is her name, isn't it?
 	Chase: Anyways, I confronted the bellboy about the locked door, but he claimed to have misplaced his key.
@@ -77,10 +74,6 @@ Chase: What else would you like to ask?#el:Neutral
 	Chase: Mallard.. He was always quite troubled.
 	Athena: Can you elaborate?
 	Chase: I will not speak ill of the dead.
-	-> Press
-		<<PresentEvidence>>
-	-> Anyways...
-		<<jump GooseQuestions>>
 -> Do you know if anyone would want to kill him?
 	Chase: I hope you do not suspect it was me.
 	Chase: Though I would not blame you for the suspicion.
@@ -91,7 +84,7 @@ Chase: What else would you like to ask?#el:Neutral
 	Athena: You said this was “unfortunate but not entirely unexpected.” Could you elaborate?
 	Chase: ...
 	Chase: Let's just say he knew how to dig himself a hole.
--> Is it true Mallard was low on money?<<if $DuckBroke>>
+-> <color=\#f3db82>Is it true Mallard was low on money?</color><<if $DuckBroke>>
 	Chase: ...
 	Chase: Who told you this?
 	Athena: Melissa did.
@@ -99,19 +92,50 @@ Chase: What else would you like to ask?#el:Neutral
 	Chase: I was not supposed to tell Miss Peacock in the first place.
 	Chase: ...
 	Chase: I thought she deserved to know learning that duck owed her a large sum of money.
--> Did you leave your room last night?<<if $MorganaTestimony>>
-	<<if $DeliverLetter>>
-		Gander: Yes. As I said I did leave my room.
-		Gander: My wife died <color=\#f3db82>7 years ago</color>, but as ashamed as I am to say, I think I need to move on.
-	<<else>>
-		Gander: ...
-		Gander: These accusations are false.
-		Gander: My wife died <color=\#f3db82>7 years go</color>. I am still mourning her.
-		Athena: <i>He seems strangely defensive.</i>
-	<<endif>>
+	Athena: I'll keep my mouth shut if you tell me everything you know.
+	Chase: ...
+	Chase: Alright.
+	Chase: I've been entirely truthful with you, but if you want <color=\#f3db82>more details about the other passengers</color>, feel free to ask.
+	<<set $ChaseQuestions = true>>
+-> <color=\#f3db82>Did you leave your room last night?</color><<if $MorganaTestimony>>
+	Chase: ...
+	Chase: Yes...
+	Chase: I stayed with Melissa for a little while.
+	Chase: I left before we fell asleep.
+-> <color=\#f3db82>Can you tell me anything about the other passengers?</color><<if $ChaseQuestions>>
+	<<jump GoosePeople>>
 -> That's all
 	<<jump GooseConversation>>
 
+===
+
+title: GoosePeople
+tags: c:Owl:Goose
+---
+Chase: Who do you wish to hear about?#rc:Goose
+-> Morgana
+	Chase: Morgana? 
+	Athena: The bartender.
+	Chase: Oh yes.
+	Chase: Only thing I could tell you about her is she has an attitude and <color=\#f3db82>writes with her left hand</color>.
+	<<CreateClue ClueBoardCanvas LeftHanded>>
+	: Got Evidence <color=\#94e9e4>Morgana's Left Handed</color>
+	Athena: <i>I suppose that could be relevant.</i>
+	<<jump GoosePeople>>
+-> Melissa
+	Chase: ...
+	Chase: We have been having relations.
+	Chase: I stopped by her room last night.
+	Chase: She was drunk, so it never advanced beyond flirting.
+	Chase: ...
+	<<jump GoosePeople>>
+-> Skipper
+	Chase: The bellboy annoys me.
+	Chase: He stutters too much.
+	Chase: what is he so nervous about?
+	<<jump GoosePeople>>
+-> Nevermind
+	<<jump GooseQuestions>>
 ===
 
 title: GooseStool
@@ -176,7 +200,7 @@ Athena: Is she your wife?
 Chase: ...
 Chase: Yes. She was.
 Athena: What happened?
-Chase: The Avian Flu pandemic a few years back.
+Chase: The Avian Flu pandemic <color=\#f3db82>of '20</color>
 Chase: The disease used to me much more potent than it is now.
 Chase: ...
 Chase: If only I could go back to that <color=\#f3db82>March</color>.
@@ -215,10 +239,64 @@ title: GooseMissingBriefCase
 ---
 Athena: I have reason to believe Mallard was in possession of this briefcase.#el:Neutral
 Athena: Is this briefcase yours?
-Chase: No it does not look familiar.
+Chase: No, it does not look familiar.
 Chase: Why do you assume it is mine?
-Athena: Melissa told me it was yours.
+Athena: ... It looks very official.
 Chase: Tsk just because I'm a businessman doesn't mean every briefcase is mine.
-Chase: She must be confused. Go ask her why she thought it was mine.
 <<set $GanderBriefcase to true>>
+===
+
+title: GooseLawsuitPapers
+---
+Chase: Mallard threatened me with a lawsuit for wrongful termination.
+Chase: However, <color=\#f3db82>I knew something about him he wouldn't want getting out</color>.
+Chase: I threatened to leak this information if he proceeded with the lawsuit.
+Chase: It's been a stalemate since then.
+Athena: What do you know about him?
+<<if $ChaseQuestions>>
+Chase: You already know.
+Chase: He's in <color=\#f3db82>immense debt</color>.
+Athena: I see.
+Chase: A lot of people would be angry if they found out they aren't getting their money back.
+Chase: He had a habit of borrowing recklessly.
+Chase: The duck may be dead, but his debt still impacts his family's reputation.
+Chase: They have far more influence than I'd like to toy with.
+<<else>>
+Chase: I'm afraid I can't say.
+Athena: Well he's dead now. Surely he can't sue anymore.
+Chase: Yet there are still people living that would be interested in continuing the suit.
+Chase: I cannot risk it.
+Athena: I see.
+<<endif>>
+===
+
+title: GooseCrash
+---
+Chase: Yes, I heard it. It woke me up in the dead of night.
+Athena: Did you hear anything else?
+Chase: No, I did not.
+Chase: I fell back asleep soon after.
+===
+
+title: GooseNewspaper
+---
+Chase: I did remove Mallard from our shared company. 
+Chase: I didn't wish to, but he continually proved to be a liability.
+Chase: He gambled with company money, took out reckless loans, pocketed company assets.
+Chase: A straightforward businessman should not have to resort to such shady practices.
+===
+
+title: GooseBlackFeathers
+---
+Athena: I have reason to believe the murderer had black feathers.
+Chase: I do have black feathers, but I assure you I did not do it.
+Athena: <i>We'll see about that...</i>
+===
+
+title: GooseBettingSlip
+---
+Athena: Your name is on this betting slip. Care to explain?
+Chase: Yes, I do frequent <color=\#f3db82>the arena</color>.
+Chase: I bet on fighters occasionally.
+Chase: Mallard <color=\#f3db82>was obsessed with it</color>, however.
 ===

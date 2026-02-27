@@ -67,6 +67,42 @@ Skipper: What would you like to ask?
 	Skipper: In fact I believe he's involved with everyone in this car in some way.
 	Skipper: I can tell you about whoever you wish.
 	<<jump PenguinEnemies>>
+-> <color=\#f3db82>I have intel you're dealing drugs.</color><<if $PenguinDrugs>>
+	<<jump PenguinDrugs>>
+-> <color=\#f3db82>I know you're a dealer. I can prove it.</color><<if $PenguinBust>>
+	<<jump PenguinBust>>
+-> Actually that's all for now.
+	<<jump PenguinConversation>>
+===
+
+title: PenguinBust
+---
+Athena: I know you're dealing drugs, Skipper.
+Athena: Just admit it.
+Skipper: I'm not! #e:Nervous
+Athena: <i>This is it. I'm close.</i>
+<<PresentEvidence Briefcase PenguinWrongCase>>
+===
+
+title: PenguinDrugs
+---
+Skipper: What? Who would tell you that?
+Athena: That's not your business.
+Skipper: I can assure you it's untrue.
+Athena: <i>Maybe there's some <color=\#94e9e4>evidence</color> that'll get him to talk.</i>
+<<PresentEvidence CrackCorn PenguinWrongCrack>>
+===
+
+title:PenguinWrongCase
+---
+Skipper: How does this mean I'm dealing drugs?
+Athena: <i>... I need different evidence.</i>
+===
+
+title: PenguinWrongCrack
+---
+Skipper: I don't understand?
+Skipper: I promise I'm not dealing drugs.
 ===
 
 title: PenguinTurnIn
@@ -273,6 +309,7 @@ Athena: Athena. Athena Nox.
 <<CreateClue ClueBoardCanvas Newspaper>>
 <<CreateClue ClueBoardCanvas Id>>
 <<CreateClue ClueBoardCanvas Note>>
+<<CreateClue ClueBoardCanvas BettingSlip>>
 <<ChangeRightCharacter>>
 <<ChangeLeftCharacter>>
 :<color=\#94e9e4>For the purposes of this demo, not all clues in the overworld are able to be obtained.</color>
@@ -315,8 +352,28 @@ Skipper: Oh also! Here take this cargo manifest.
 Skipper: It may be useful in your investigation.
 <<CreateClue  ClueBoardCanvas CargoManifest>>
 : Got Evidence <color=\#94e9e4>Cargo Manifest</color>#el:Neutral
+Skipper: This document contains every passenger and their luggage.
+Skipper: I checked the cargo hold this morning and ensured there was nothing missing.
 Athena: Thank you, Skipper.
 Skipper: Likewise, detective.
+===
+
+title: PenguinCrash
+---
+Skipper: Yes I heard the crash last night as well.
+Skipper: I have reason to believe it was <color=\#f3db82>from the cargo hold</color>.
+Athena: Why is that?
+Skipper: When I went to check on the cargo in the morning, I noticed luggage was all over the ground.
+Skipper: Upon closer inspection I saw the <color=\#f3db82>rope tying the luggage was missing</color>.
+Athena: <i>Could it be the same rope used to hang the victim?</i>#el:Intense
+: Got Evidence <color=\#94e9e4>Cargo Hold Rope</color>
+<<CreateClue  ClueBoardCanvas CargoHoldRope>>
+Athena: Tell me, who has access to the cargo hold?#el:Neutral
+Skipper: <color=\#f3db82>Anyone with a staff key</color> can access the cargo hold.
+Skipper: We keep it locked at night to prevent theft.
+Athena: <i>Id imagine staff members have keys, but could the other passengers get a key somehow?</i>#el:Intense
+Athena: Thank you for the information.#el:Neutral
+Skipper: Anytime.#e:Happy
 ===
 
 title: PenguinBurntNote
@@ -333,7 +390,9 @@ Skipper: Yes I noticed it, but thought you would notice it as well, detective.#e
 title: PenguinManifest
 position: 722,59
 ---
-Skipper: As I said, nothing in the cargo room is missing.#e:Neutral
+Athena: Are you sure this document accounts for everyone's luggage?
+Skipper: As I said, this is a comprehensive document.#e:Neutral
+Athena: <i>He's the only one with <color=\#f3db82>no luggage registered on the train</color>...</i>
 ===
 
 title: PenguinMissingBriefCase
@@ -352,10 +411,18 @@ Skipper: They try to get around the luggage prices...
 title: PenguinCrackCorn
 position: 725,-302
 ---
-Skipper: When I was organizing the luggage, this <color=\#f3db82>fell out of Mallard's suitcase</color>.#el:Neutral#e:Neutral
+<<if $PenguinDrugs>>
+Athena: I know this was yours.
+Athena: With the intel, and the baggie, it's too much to ignore.
+Skipper: Okay, fine. It's mine, but I'm not selling anything. I swear.
+Athena: <i>I need to find the <color=\#f3db82>final piece of evidence against him</color>.</i>
+<<set $PenguinBust to true>>
+<<else>>
+Skipper: I found it in the cargo hold, and picked it up.#el:Neutral#e:Neutral
 Skipper: I wasn't trying to pry, I swear.
-Skipper: However, I couldn't leave such an illegal drug laying out in the cargo bay.#e:Sad
+Skipper: However, I couldn't leave such an illegal drug laying out in the cargo hold.#e:Sad
 Skipper: I had to remove it.#e:Neutral
+<<endif>>
 ===
 
 title: PenguinCrowEx
@@ -386,8 +453,9 @@ Skipper: Do not abuse this power.
 title: PenguinBriefcase
 position: 920,-305
 ---
-Athena: <i>I have a hunch it's his. I'm not 100% sure, but maybe if I pretend I know and press him enough, he'll crack.</i>#el:Intense
-Athena: I'll ask one time. Is this yours.
+<<if $PenguinBust>>
+Athena: <i>This briefcase has to be his.</i>#el:Intense
+Athena: Is this yours.
 Skipper: I-
 Skipper: No.
 Athena: Don't mess with me. I know it's yours.
@@ -396,10 +464,9 @@ Athena: I didn't <color=\#f3db82>tell you about the contents</color>.
 Athena: <color=\#f3db82>How did you know there were drugs in the suitcase</color>?
 Skipper: ... A wild guess! #e:Nervous
 Skipper: I'm being interrogated about a suspicious briefcase! Of course there are drugs involved.
+Athena: <i>Skipper doesn't know where Morgana's smoke spot is. It must've been someone else.</i>
 Athena: Why would Mallard have your briefcase?
 Skipper: Huh? How did you kn-
-Skipper: It's Mallard's?
-Athena: No. It's yours. Why did Mallard have it?
 Skipper: ...
 Skipper: I didn't do it.#e:Angry
 Athena: Answer my question.
@@ -409,36 +476,38 @@ Athena: I'll ask one more time. What happened with the briefcase?
 Skipper:...#e:Sad
 Skipper: I was <color=\#f3db82>smuggling the drugs on the train</color>...
 Skipper: I heard a crash in the middle of the night, and found Mallard with my briefcase.
-Skipper: Mallard was still... bitter about his termination.
-Skipper: He thought the briefcase was Gander's, and claimed he's just getting what he deserved.
+Skipper: I think he was desperate for money.
 Skipper: I didn't tell anyone, because I was afraid.
 Skipper: Please don't turn me in.
 Skipper: I didn't kill him.
-Athena: There was white powder on the knife in his pocket.
-Athena: He must have <color=\#f3db82>stolen the briefcase</color> before he was murdered.
-Athena: And there was a stab mark on the table from the knife.
-Athena: If someone caught him, it was not peaceful.
+Athena: What did you do when you found him with the briefcase?
+Athena: Surely you didn't let him take your drugs.
 Skipper: It was an accide-#e:Nervous
 Skipper: ...#e:Neutral
-Skipper: I'm sure it's unrelated.#e:Neutral
+Skipper: I didn't do anything.#e:Neutral
 Skipper: Do you have any more questions?
 Athena: No. I think that's all I need.
+<<set $PenguinCaught = true>>
+<<else>>
+	<<jump PenguinDismissal>>
+<<endif>>
 ===
 
 title: EndingDialogue
 ---
-Athena: ... #e:Intense#bg:Dark
+Athena: ... #e:Intense#bg:Dark #rc:
 Athena: <i>Let me review my clues before they show up.</i>
 Athena: <i>Here he comes.</i>
-Officer: Hello ma'am. I was informed there was a murder discovered aboard this vehicle.#e:Neutral
+Officer: Hello ma'am. I was informed there was a murder discovered aboard this vehicle.#e:Neutral#rc:Parrot
 Officer: You must be the detective the bellboy told me about.
 Athena: Yes that's me. Detective Athena Nox.
-Officer Parrot: A pleasure. I'm <color=\#f3db82>Officer Hercule Parrot</color>.
+Officer Parrot: A pleasure. I'm <color=\#f3db82>Officer Hercule Parrot</color>.#rc:Parrot
 Officer Parrot: I suppose you must have a lot of information to give me. We should continue in a more secure location.
 <<jump Debrief>>
 ===
 
 title: Debrief
+tags: c:Owl:Parrot
 ---
 Officer Parrot: Let's get started. Tell me everything you know.#bg:Dark
 Athena: I know the hanging was most definitely a murder and not a suicide. 
@@ -476,6 +545,7 @@ Officer Parrot: Who would you like to discuss first?
 ===
 
 title: CharacterDebrief
+tags: c:Owl:Parrot
 ---
 Officer Parrot: Who would you like to discuss now?
 -> Morgana Noir
@@ -497,6 +567,7 @@ Officer Parrot: Who would you like to discuss now?
 ===
 
 title: Accusation
+tags: c:Owl:Parrot
 ---
 Officer Parrot: <color=\#f94449>Hoo did it?</color>
 -> Morgana Noir
@@ -515,23 +586,32 @@ Officer Parrot: <color=\#f94449>Hoo did it?</color>
 
 title: GoodEnding
 ---
-Athena: Another week, another case done.
+Athena: Another week, another case done.#rc:#lc:#bg:DarkHidden
 Athena: <i>Yawn</i>
-Athena: Now I can finally get a break-
-Phone: <i>Brrrrring</i>
-Athena: Who could it be at this hour.
-Athena: Hello?
-Dispatch: <i>Athena! It's dispatch, we have an urgent case.</i>
 Athena: ...
-Athena: Another case?
-Dispatch: <i>Report to 1332 Agatha Drive as soon as possible.</i>
-Athena: <i>Sigh</i>
-Athena: Alright, I'm on it.
+Athena: Yet no rest for me. 
+Athena: Time to get on to the next one.
+Athena: Let's see...
+Athena: Murder on 1332 Agatha drive.
+Athena: 82 year old female trumpeter swan.
+Athena: Im on it.
 ===
 
 title: TrueEnding
 ---
-
+Athena: Another week, another case done.#rc:#lc:#bg:DarkHidden
+Athena: All the evidence feels satisfied.
+Morgana: You're still looking at the case files?
+Athena: It was definitely one of my most interesting cases to date.
+Morgana: Lucky me got to be involved.
+Athena: I feel lucky you were.
+Athena: It gave me a second chance.
+Morgana: Aw you sap.
+Morgana: What's the next case on your radar?
+Athena: I got a call from dispatch that there's been a murder on 1332 Agatha Drive.
+Athena: You ready to head out?
+Morgana: Absolutely. Ready for my first case.
+Athena: ALright, let's get at it.
 ===
 
 title: GoodEndingSkipper
@@ -550,9 +630,32 @@ Skipper: I don't want the police anywhere near my business.
 Athena: It was clever, playing like an authority figure.
 Athena: But you failed to consider...
 Athena: I'm never wrong.
+:...#rc:#lc:#DarkHidden
+<<if $LoveLetterDelivered and not $TurnedInPeacock>>
+	:Gander's business flourished, and so did his heart.#bg:GanderGood
+	:Melissa responded kindly to his letter, and the two were quickly made a pair.
+	:Gander's cold demeanor finally seemed to melt again.
+<<else>>
+	:Gander's business flourished, but with Evelyn and Mallard gone he was truly alone at the top.#bg:GanderBad
+	:To the outside observer this never seemed to bother him much.
+<<endif>>
+<<if $TurnedInPeacock>>
+	:The cops got word of Melissa's fighting arena and they were not lenient with the ringmaster.#bg:MelissaBad
+	:Melissa spent her next 20 years behind bars and the operation was forced to close.
+	:Did the fighters open a new club somewhere?
+	:Unknown.
+<<else>>
+	:Melissa's career flourished since the termination of the case.#bg:MelissaGood
+	:Thousands traveled to see her perform in the last year alone.
+	:It's clear she's extremely passionate about her art, and that passion draws people to her shows.
+<<endif>>
 <<if $FixedRelationship>>
+	:Morgana and Athena got their second chance, and they both couldn't be happier.#bg:MorganaGood
+	:Morgana even found a new occupation she finds a lot more rewarding than bartending...
 	<<jump TrueEnding>>
 <<else>>
+	:Morgana continued hopping between bars and partners, but none of them truly seemed right.#bg:MorganaBad
+	:One thing is for sure, she never worked on a train again.
 	<<jump GoodEnding>>
 <<endif>>
 ===
@@ -561,11 +664,38 @@ title: BadEndingGander
 ---
 : ... 
 : A few days later.
-Gander: Would you care to explain to me why I am behind bars?
+Chase: Would you care to explain to me why I am behind bars?
 Athena: Care to explain why you murdered Mallard?
-Gander: I did no such thing.
+Chase: I did no such thing.
 Athena: Tell that to the judge.
-Gander: The only person the judge will be hearing from is my lawyer.
+Chase: The only person the judge will be hearing from is my lawyer.
+:...#rc:#lc:#DarkHidden
+<<if $TurnedInPeacock>>
+	:The cops got word of Melissa's fighting arena and they were not lenient with the ringmaster.#bg:MelissaBad
+	:Melissa spent her next 20 years behind bars and the operation was forced to close.
+	:Did the fighters open a new club somewhere?
+	:Unknown.
+<<else>>
+	:Melissa's career flourished since the termination of the case.#bg:MelissaGood
+	:Thousands traveled to see her perform in the last year alone.
+	:It's clear she's extremely passionate about her art, and that passion draws people to her shows.
+<<endif>>
+<<if $TurnedInPenguin>>
+	:Skipper disappeared off the grid after his operation was busted.#bg:SkipperBad
+	:There's a large bounty out for his head, but there hasn't been so much as a sighting.
+<<else>>
+	:Skipper continued working aboard the Oriole Express.	#bg:SkipperGood
+<<if $PenguinCaught>>
+	:Presumably he still uses it as a front for his real business.
+<<endif>>
+<<endif>>
+<<if not $FixedRelationship>>
+	:Morgana continued hopping between bars and partners, but none of them truly seemed right.#bg:MorganaBad
+	:One thing is for sure, she never worked on a train again.
+<<else>>
+	:Morgana and Athena got their second chance, and they both couldn't be happier.#bg:MorganaGood
+	:Morgana even found a new occupation she finds a lot more rewarding than bartending...
+<<endif>>
 <<jump BadEnding>>
 ===
 
@@ -579,6 +709,29 @@ Melissa: I would never kill, darling.
 Athena: Evidently you have. 
 Melissa: Please believe me dear.
 Athena: Tell that to the judge.
+:...#rc:#lc:#DarkHidden
+:Gander's business flourished, but with Evelyn and Mallard gone he was truly alone at the top.#bg:GanderBad
+:To the outside observer this never seemed to bother him much.
+<<if $LoveLetterDelivered>>
+	:However, he still awaits a response to his love letter.#bg:GanderBad
+	:Little does he know, the recipient is in jail.
+<<endif>>
+<<if $TurnedInPenguin>>
+	:Skipper disappeared off the grid after his operation was busted.#bg:SkipperBad
+	:There's a large bounty out for his head, but there hasn't been so much as a sighting.
+<<else>>
+	:Skipper continued working aboard the Oriole Express.#bg:SkipperGood
+<<if $PenguinCaught>>
+	:Presumably he still uses it as a front for his real business.
+<<endif>>
+<<endif>>
+<<if not $FixedRelationship>>
+	:Morgana continued hopping between bars and partners, but none of them truly seemed right.#bg:MorganaBad
+	:One thing is for sure, she never worked on a train again.
+<<else>>
+	:Morgana and Athena got their second chance, and they both couldn't be happier.#bg:MorganaGood
+	:Morgana even found a new occupation she finds a lot more rewarding than bartending...
+<<endif>>
 <<jump BadEnding>>
 ===
 
@@ -592,6 +745,7 @@ Morgana: You know I didn't do it. Please tell them.
 Athena: ...
 Athena: I'm sorry Morgana. The evidence said otherwise.
 Morgana: Cluck your evidence! Cluck you! I didn't do it!
+Morgana: I trusted you!
 Morgana: ...
 Morgana: Just go.
 <<else>>
@@ -603,12 +757,40 @@ Morgana: ...
 Morgana: This is the second time you've ruined my life.
 Morgana: Just please leave before you make it worse.
 <<endif>>
+:...#rc:#lc:#DarkHidden
+<<if $LoveLetterDelivered and not $TurnedInPeacock>>
+	:Gander's business flourished, and so did his heart.#bg:GanderGood
+	:Melissa responded kindly to his letter, and the two were quickly made a pair.
+	:Gander's cold demeanor finally seemed to melt again.
+<<else>>
+	:Gander's business flourished, but with Evelyn and Mallard gone he was truly alone at the top.#bg:GanderBad
+	:To the outside observer this never seemed to bother him much.
+<<endif>>
+<<if $TurnedInPeacock>>
+	:The cops got word of Melissa's fighting arena and they were not lenient with the ringmaster.#bg:MelissaBad
+	:Melissa spent her next 20 years behind bars and the operation was forced to close.
+	:Did the fighters open a new club somewhere?
+	:Unknown.
+<<else>>
+	:Melissa's career flourished since the termination of the case.#bg:MelissaGood
+	:Thousands traveled to see her perform in the last year alone.
+	:It's clear she's extremely passionate about her art, and that passion draws people to her shows.
+<<endif>>
+<<if $TurnedInPenguin>>
+	:Skipper disappeared off the grid after his operation was busted.#bg:SkipperBad
+	:There's a large bounty out for his head, but there hasn't been so much as a sighting.
+<<else>>
+	:Skipper continued working aboard the Oriole Express.#bg:SkipperGood
+<<if $PenguinCaught>>
+	:Presumably he still uses it as a front for his real business.
+<<endif>>
+<<endif>>
 <<jump BadEnding>>
 ===
 
 title: BadEnding
 ---
-:...
+:...#rc:#bg:DarkHidden
 Athena: That case... why is it still on my mind?
 Athena: Case closed, right?
 Athena: ...
@@ -628,6 +810,7 @@ Athena: AAAAAAAAAH
 ===
 
 title: MorganaDebrief
+tags: c:Owl:Parrot
 ---
 Athena: Miss Noir... well I knew her pretty well. 
 Athena: She and I used to be partners. Romantic ones.
@@ -636,7 +819,7 @@ Athena: Of course not. I always keep my work professional.
 Officer Parrot: I'm sure. I just must make sure.
 Athena: I understand.
 Athena: We broke up a while ago. I believed I didn't have enough time to be a good partner.
-Athena: ... #e:Sad
+Athena: ... #el:Sad
 Athena: I sent her a letter while I was out on an investigation.
 Athena: I told her I knew she wanted more and said she should find someone else who could give her what she needed.
 Athena: She was rightfully very upset with me when she saw me on the train.
@@ -669,27 +852,46 @@ Athena: That's all my intel on Morgana.
 ===
 
 title: ChaseDebrief
+tags: c:Owl:Parrot
 ---
 Athena: Chase Gander is a man who needs little introduction.
 Athena: World renound businessman, Co-Owner of the lucrative Gander & Mallard Co.
 Athena: I was a little surprised to find him outside of a fancy private car.
 Athena: He could probably afford to book the whole train for himself...
-
 <<jump CharacterDebrief>>
 ===
 
 title: SkipperDebrief
+tags: c:Owl:Parrot
 ---
 Athena: Skipper McCraw was one of the few passengers I didn't know much about.
 Athena: He was just an unassuming bellboy.
 Athena: After finding the body, he immediately took control of the situation.
 Athena: He initially wanted to rule the murder as a suicide, refusing to let me investigate until I proved him otherwise.
 Athena: Eventually he did let me investigate.
-
+<<if $PenguinCaught>>
+Athena: <i>I know Skipper has been smuggling drugs on the train...</i>
+Athena: <i>Should I report this to the police?</i>
+-> Yes.
+	Athena: <i>Yes, it's a pretty serious offense.</i>
+	Athena: There's one thing I discovered about him, however, that was quite troubling.
+	Athena: The penguin was smuggling highly illegal drugs on the train. 
+	Officer Parrot: That's quite an accusation.
+	Athena: I found a baggie of Crack Corn in his room and practically got a confession out of him.
+	Officer Parrot: Thank you detective.
+	Officer Parrot: We will definitely investigate this further.
+	Athena: Of course.
+	<<set $TurnedInPenguin to true>>
+-> No.
+	Athena: <i>I don't harbor any ill will towards him.</i>
+	Athena: That's all my intel.
+	Officer Parrot: Thank you for the information, detective.
+<<endif>>
 <<jump CharacterDebrief>>
 ===
 
 title: MelissaDebrief
+tags: c:Owl:Parrot
 ---
 Athena: I'd heard of Miss Peacock well before the investigation.
 Athena: I even saw her on tour once!
@@ -707,7 +909,10 @@ Athena: I think I understand why she would be upset however.
 Athena: She reported their argument was over a large sum of money he owed her.
 Athena: I'm not sure exactly how killing him would get her the money back...
 Officer Parrot: I see.
+<<else>>
+Athena: It wasn't a great look overall.
 <<endif>>
+Officer Parrot: Is there anything else you'd like to report?
 <<if $CockfightingArena>>
 Athena: <i>I know there's one thing Im omitting...</i>
 Athena: <i>Do I tell him about Melissa's Underground Fightclub?</i>
@@ -718,6 +923,7 @@ Athena: <i>Do I tell him about Melissa's Underground Fightclub?</i>
 	Officer Parrot: A fightclub? That's highly illegal.
 	Officer Parrot: Thank you for reporting that.
 	Athena: Of course, Officer.
+	<<set $TurnedInPeacock to true>>
 -> No.
 	Athena: <i>No I shouldn't... I worry what a cop would do about this.</i>
 <<endif>>
@@ -726,8 +932,12 @@ Athena: That's all my intel on Melissa.
 ===
 
 title: MallardDebrief
+tags: c:Owl:Parrot
 ---
 Athena: Our victim is a 5'10" male duck of the name Seaton Mallard.
 Athena: His death was staged as a suicide, but was proven to be fowl play.
+<<if $DuckBroke>>
+Athena: I also have intel the duck was desperate for money.
+<<endif>>
 <<jump CharacterDebrief>>
 ===
