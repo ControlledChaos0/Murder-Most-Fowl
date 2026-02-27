@@ -105,14 +105,14 @@ RectTransform:
   m_GameObject: {fileID: 6435056738293206371}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4938405, y: 1.8383, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8461176584527095401}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.1, y: 48.5}
+  m_AnchoredPosition: {x: 53, y: 51.5}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4567417768876699800
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8060725707266790242, guid: 4cfe6b04bd180894eba1f358fef66edb, type: 3}
+  m_Sprite: {fileID: 5871522204350944449, guid: 293a7bf82cad8234aaaf2746456413b9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stringPrefab: {fileID: 8694199259074237759, guid: be496704ffbe6bc4293d36971bbdf98f, type: 3}
+  ClueStrings: []
 --- !u!1 &7339639790616275092
 GameObject:
   m_ObjectHideFlags: 0

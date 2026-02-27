@@ -152,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvas: {fileID: 1405921292}
   _animator: {fileID: 987746826}
+  _isTransitioning: 0
 --- !u!114 &987746824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,6 +514,12 @@ MonoBehaviour:
     CockfightingArena: 0
     AskingCrow: 0
     PenguinDrugs: 0
+    ChaseQuestions: 0
+    PenguinBust: 0
+    PenguinCaught: 0
+    TurnedInPeacock: 0
+    TurnedInPenguin: 0
+    LoveLetterDelivered: 0
     DiscoveredClues: []
     ClueBoardClues: []
     ClueBoardNotes: []

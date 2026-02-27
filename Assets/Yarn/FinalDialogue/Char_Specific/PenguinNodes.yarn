@@ -499,7 +499,7 @@ Athena: No. I think that's all I need.
 
 title: EndingDialogue
 ---
-Athena: ... #e:Intense#bg:Dark #rc:
+Athena: ... #e:Intense#bg:Jail #rc:
 Athena: <i>Let me review my clues before they show up.</i>
 Athena: <i>Here he comes.</i>
 Officer: Hello ma'am. I was informed there was a murder discovered aboard this vehicle.#e:Neutral#rc:Parrot
@@ -513,7 +513,7 @@ Officer Parrot: I suppose you must have a lot of information to give me. We shou
 title: Debrief
 tags: c:Owl:Parrot
 ---
-Officer Parrot: Let's get started. Tell me everything you know.#bg:Dark
+Officer Parrot: Let's get started. Tell me everything you know.#bg:Jail
 Athena: I know the hanging was most definitely a murder and not a suicide. 
 Athena: Firstly, the stool the victim "used" to set up the rope was far too short for him to reach the chandelier.
 Athena: Thus I believe this stool was placed to stage a suicide.
@@ -546,12 +546,17 @@ Officer Parrot: Who would you like to discuss first?
 -> Seaton Mallard
 	<<jump MallardDebrief>>
 -> Let's cut to the chase.
+	Officer Parrot: Are you ready to accuse someone?
+	-> <color=\#f94449>I'm ready</color>.
+		<<jump Accusation>>
+	-> No.. Let's discuss the suspects again.
+		<<jump CharacterDebrief>>
 ===
 
 title: CharacterDebrief
 tags: c:Owl:Parrot
 ---
-Officer Parrot: Who would you like to discuss now?
+Officer Parrot: Who would you like to discuss now?#bg:Jail
 -> Morgana Noir
 	<<jump MorganaDebrief>>
 -> Skipper McCraw
@@ -590,7 +595,7 @@ Officer Parrot: <color=\#f94449>Hoo did it?</color>
 
 title: GoodEnding
 ---
-Athena: Another week, another case done.#rc:#lc:#bg:DarkHidden
+Athena: Another week, another case done.#rc:#lc:#bg:EndingAlone
 Athena: <i>Yawn</i>
 Athena: ...
 Athena: Yet no rest for me. 
@@ -603,7 +608,7 @@ Athena: Im on it.
 
 title: TrueEnding
 ---
-Athena: Another week, another case done.#rc:#lc:#bg:DarkHidden
+Athena: Another week, another case done.#rc:#lc:#bg:EndingAlone
 Athena: All the evidence feels satisfied.
 Morgana: You're still looking at the case files?
 Athena: It was definitely one of my most interesting cases to date.
@@ -796,7 +801,7 @@ Morgana: Just please leave before you make it worse.
 
 title: BadEnding
 ---
-:...#rc:#bg:DarkHidden
+:...#rc:#bg:EndingAlone
 Athena: That case... why is it still on my mind?
 Athena: Case closed, right?
 Athena: ...
