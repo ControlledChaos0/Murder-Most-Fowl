@@ -475,14 +475,18 @@ Athena: Cut the crap. I know the drugs are yours.
 Athena: I'll ask one more time. What happened with the briefcase?
 Skipper:...#e:Sad
 Skipper: I was <color=\#f3db82>smuggling the drugs on the train</color>...
-Skipper: I heard a crash in the middle of the night, and found Mallard with my briefcase.
+Skipper: I heard the cargo hold door slam in the middle of the night, and I went to investigate.
+Skipper: My fears were valid as I came to find my briefcase was gone.
+Skipper: I went into the main car room to find Mallard was still awake awake.
+Skipper: He was rambling on and on about how he was going to bust <color=\#f3db82>Gander's drugs</color>.
+Skipper: The stupid duck thought the briefcase was Gander's!
 Skipper: I think he was desperate for money.
 Skipper: I didn't tell anyone, because I was afraid.
 Skipper: Please don't turn me in.
 Skipper: I didn't kill him.
-Athena: What did you do when you found him with the briefcase?
-Athena: Surely you didn't let him take your drugs.
-Skipper: It was an accide-#e:Nervous
+Athena: What did you do when you learned he would bust your drugs?
+Athena: Surely you didn't let him do that...
+Skipper: I NO CHOI-#e:Nervous
 Skipper: ...#e:Neutral
 Skipper: I didn't do anything.#e:Neutral
 Skipper: Do you have any more questions?
@@ -618,6 +622,8 @@ title: GoodEndingSkipper
 ---
 : ... 
 : A few days later.
+Athena: <i>That damn penguin...</i>
+Athena: <i>I can't believe it was him all along.</i>
 Skipper: Hey, what's going on?
 Athena: You're in prison, Skipper.
 Skipper: Wait, this wasn't supposed to happen.
