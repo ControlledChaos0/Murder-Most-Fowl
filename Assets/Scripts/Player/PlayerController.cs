@@ -38,9 +38,15 @@ public class PlayerController : Singleton<PlayerController>
         get { return m_IsMoving; }
     }
 
+    public Vector3 PlayerPos
+    {
+        get => PlayerTransform.position;
+    }
+
     public PlayerInteractable Interactable
     {
         get => m_Interactable;
+        set => m_Interactable = value;
     }
 
     private void Awake()
@@ -78,28 +84,25 @@ public class PlayerController : Singleton<PlayerController>
 
         if (m_IsMoving)
         {
-            if (m_DirectionalMovement)
+            if ((Interactable != null && Interactable.WithinRange(PlayerTransform.position)))
             {
-                if ((Interactable != null && Interactable.WithinRange(PlayerTransform.position)))
-                {
-                    m_IsMoving = false;
-                } 
-                else
-                {
-                    PlayerTransform.position += (m_Speed * Time.deltaTime * (new Vector3(m_Direction, 0.0f, 0.0f)));
-                    PlayerTransform.position = ScreenManager.Instance.GetClosestFloorLocation(PlayerTransform.position);
-                    m_OldPos = m_NewPos;
-                    m_NewPos = PlayerTransform.position;
-                } 
+                m_Interactable = null;
+                m_IsMoving = false;
             }
-            else if ((Interactable != null && !Interactable.WithinRange(PlayerTransform.position)) || (Interactable == null && Vector2.Distance(PlayerTransform.position, m_NewPos) >= 0.001f))
+            else if (m_DirectionalMovement)
+            {
+                PlayerTransform.position += (m_Speed * Time.deltaTime * (new Vector3(m_Direction, 0.0f, 0.0f)));
+                PlayerTransform.position = ScreenManager.Instance.GetClosestFloorLocation(PlayerTransform.position);
+                m_OldPos = m_NewPos;
+                m_NewPos = PlayerTransform.position;
+            }
+            else if (Vector2.Distance(PlayerTransform.position, m_NewPos) >= 0.001f)
             {
                 PlayerTransform.position = Vector2.Lerp(m_OldPos, m_NewPos, m_ClickTime / m_MoveTime);
                 m_ClickTime += Time.deltaTime;
             }
             else
             {
-                m_Interactable = null;
                 m_IsMoving = false;
             }
         }
@@ -128,6 +131,7 @@ public class PlayerController : Singleton<PlayerController>
             return;
         }
 
+        CommandManager.Instance.ClearQueue();
         if (pointClick == null)
         {
             m_Interactable = null;
@@ -136,8 +140,6 @@ public class PlayerController : Singleton<PlayerController>
         {
             m_Interactable = pointClick.GetComponentInParent<PlayerInteractable>();
         }
-
-        CommandManager.Instance.ClearQueue();
         Ray ray = new Ray(eventData.position, CameraController.Instance.CameraTransform.forward);
         MoveCommand moveCommand = new MoveCommand(ScreenManager.Instance.GetClosestFloorLocation(ray));
         CommandManager.Instance.Queue(moveCommand);

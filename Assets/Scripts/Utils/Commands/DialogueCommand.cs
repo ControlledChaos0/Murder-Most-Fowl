@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class DialogueCommand : Command
+public class DialogueCommand : PlayerInteractableCommand
 {
-    private CharacterOverworld _character;
-
-    public DialogueCommand(CharacterOverworld character)
+    protected CharacterOverworld Character
     {
-        _character = character;
+        get => m_Interactable as CharacterOverworld;
     }
+
+    public DialogueCommand(CharacterOverworld character) : base(character) { }
 
     public override void Stop()
     {
@@ -16,10 +16,10 @@ public class DialogueCommand : Command
 
     protected override void ExecuteCommand()
     {
-        _character.StartDialogue();
+        Character.StartDialogue();
     }
 
-    protected override bool IsCompleted()
+    protected override bool IsCompletedInternal()
     {
         return true;
     }

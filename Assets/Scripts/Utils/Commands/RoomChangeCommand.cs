@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class RoomChangeCommand : Command
+public class RoomChangeCommand : PlayerInteractableCommand
 {
-    private RoomTeleport _roomTeleport;
-    public RoomChangeCommand(RoomTeleport roomTeleport)
+    private RoomTeleport RoomTeleport
     {
-        _roomTeleport = roomTeleport;
+        get => m_Interactable as RoomTeleport;
     }
+    public RoomChangeCommand(RoomTeleport roomTeleport) : base(roomTeleport) { }
 
-    protected override bool IsCompleted()
+    protected override bool IsCompletedInternal()
     {
         return !ScreenManager.Instance.IsChangingRooms;
     }
@@ -23,6 +23,6 @@ public class RoomChangeCommand : Command
 
     protected override void ExecuteCommand()
     {
-        _roomTeleport.Teleport();
+        RoomTeleport.Teleport();
     }
 }
