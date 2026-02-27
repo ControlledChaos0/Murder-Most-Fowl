@@ -30,3 +30,9 @@ MonoBehaviour:
     nodeResponse: CrowGloves
   - clueID: LoversPhoto
     nodeResponse: CrowLoversPhoto
+  - clueID: BurnedNote
+    nodeResponse: CrowBurnedNote
+  - clueID: Crash
+    nodeResponse: CrowCrash
+  - clueID: LeftHanded
+    nodeResponse: CrowLeftHanded

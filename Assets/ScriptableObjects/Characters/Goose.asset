@@ -38,3 +38,13 @@ MonoBehaviour:
     nodeResponse: GoosePeacockReed
   - clueID: MissingBriefcase
     nodeResponse: GooseMissingBriefCase
+  - clueID: LawsuitPapers
+    nodeResponse: GooseLawsuitPapers
+  - clueID: Crash
+    nodeResponse: GooseCrash
+  - clueID: Newspaper
+    nodeResponse: GooseNewspaper
+  - clueID: BlackFeathers
+    nodeResponse: GooseBlackFeathers
+  - clueID: BettingSlip
+    nodeResponse: GooseBettingSlip

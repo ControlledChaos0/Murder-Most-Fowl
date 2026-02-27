@@ -16,6 +16,7 @@ MonoBehaviour:
   m_name: Cargo Manifest
   m_clarificationInfo: 
   m_description: A manifest detailing registered luggage on the train. The manifest
-    has luggage from Melissa, Skipper, Athena, Morgana, and Mallard. Is there someone
-    missing?
+    has luggage from Melissa, Gander, Athena, Morgana, and Mallard.
   m_icon: {fileID: 8176632288665185867, guid: 571df24994b847641a6eb60f5453dd9b, type: 3}
+  m_viewable: 0
+  _viewSprite: {fileID: 0}

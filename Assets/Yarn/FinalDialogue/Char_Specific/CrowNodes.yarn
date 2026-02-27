@@ -145,12 +145,14 @@ color: green
 ===
 
 title: CrowPeople
+tags: c:Owl:Crow
 ---
-Morgana: Who do you want to hear about?
+Morgana: Who do you want to hear about?#rc:Crow
 -> Melissa
     Morgana: We've been close friends since shortly after we broke up.#e:Sad
     Morgana: We were hanging out last night and I made her quite a few drinks.#e:Neutral
     Morgana: I technically wasn't supposed to, but <color=\#f3db82>I gave her my spare key</color> so she could stay in the parlor after I went to bed.
+    <<CreateClue ClueBoardCanvas MelissaKey>>
     Morgana: She asked me so nicely, how could I say no?
     <<jump CrowPeople>>
 -> Chase
@@ -173,6 +175,8 @@ position: 1216,180
 color: blue
 ---
 Morgana: Yeah all the staff has a <color=\#f3db82>staff key and spare key</color>.
+Athena: So you have a key?
+Morgana: Yes, I do.
 ===
 
 title: CrowGloves
@@ -196,6 +200,8 @@ color: blue
     Morgana: What of them?#e:Neutral
     Athena: They're yours?
     Morgana: Yup.
+    Athena: <i>Maybe she'll talk if I <color=\#f3db82>get on her good side</i>...
+    <<ClearClue Crow Gloves>>
 <<endif>>
 ===
 
@@ -357,4 +363,39 @@ color: blue
 Morgana: Oh is that <color=\#f3db82>Skipper's key</color>?
 Morgana: He lost his last night.
 Morgana: He asked me to lock up for him.
+===
+
+title: CrowCrash
+---
+Athena: Did you hear a crash last night?
+Morgana: Yes I did.
+Morgana: It sounded like it came from the <color=\#f3db82>cargo hold</color>.
+Morgana: You should <color=\#f3db82>ask Skipper about it</color>.
+Morgana: He <color=\#f3db82>manages the luggage</color>, so he probably knows something about it.
+===
+
+title: CrowBurnedNote
+---
+<<if $FixedRelationship>>
+    Athena: Have you seen this before?
+    Morgana: I burned it...
+    Morgana: But it's not what it looks like.#e:Neutral
+    Morgana: I came into the room in the morning and found the body.
+    Morgana: I read the note and panicked.
+    Morgana: He said terrible and revealing things about Melissa.
+    Morgana: As her friend, I couldn't let the world find out.
+    Morgana: ...#e:Sad
+    <<set $CrowDone to true>>
+    <<set $CrowGlovesStory to true>>
+<<else>>
+    Athena: Have you seen this before?
+    Morgana: ...
+    Athena: <i>Maybe she'll talk if I <color=\#f3db82>get on her good side</color>.
+<<endif>>
+===
+
+title: CrowLeftHanded
+---
+Morgana: Do you not remember?
+Morgana: Yea, I'm left handed.
 ===
