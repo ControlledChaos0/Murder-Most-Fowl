@@ -1184,11 +1184,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4146576473392162029, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.087255
+      value: -4.797336
       objectReference: {fileID: 0}
     - target: {fileID: 4146576473392162029, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2140801
+      value: 1.2331703
       objectReference: {fileID: 0}
     - target: {fileID: 4146576473392162029, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1687,17 +1687,17 @@ MonoBehaviour:
   - m_EditModeType: 1
     m_Knots:
     - Position:
-        x: -17.87
+        x: -10
         y: -3.5
         z: 0
       TangentIn:
         x: -0
         y: -0
-        z: -2.4870002
+        z: -1.7
       TangentOut:
         x: 0
         y: 0
-        z: 2.4870002
+        z: 1.7
       Rotation:
         value:
           x: 0.00009902948
@@ -1711,11 +1711,11 @@ MonoBehaviour:
       TangentIn:
         x: -0
         y: -0
-        z: -2.4870002
+        z: -1.7
       TangentOut:
         x: 0
         y: 0
-        z: 2.4870002
+        z: 1.7
       Rotation:
         value:
           x: 0.000099109144
@@ -11811,6 +11811,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3498895227392214529, guid: 8dcdd65a4887efb419bfdd2e2191c7c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625320886420589476, guid: 8dcdd65a4887efb419bfdd2e2191c7c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4043062295416734532, guid: 8dcdd65a4887efb419bfdd2e2191c7c0, type: 3}
       propertyPath: m_Splines.Array.data[0].m_Knots.Array.data[0].Position.x
       value: -89.11
