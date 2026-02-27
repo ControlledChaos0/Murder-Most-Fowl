@@ -6497,6 +6497,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 3502715887467967171, guid: 077c50c59134d0743acd61fd805252f0, type: 3}
+    - target: {fileID: 671925808694038226, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1663101764228205032, guid: 6aa0bed6ea63b59479a41ec8409be8a2, type: 3}
     - target: {fileID: 1287151388890982199, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6969,6 +6973,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 3502715887467967171, guid: 077c50c59134d0743acd61fd805252f0, type: 3}
+    - target: {fileID: 9064941436694055441, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7453632067985395730, guid: 026620b1a04c2d3458aa0ad63afb93c8, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
