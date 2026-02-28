@@ -7,14 +7,15 @@ namespace UI
     {
         // The current value of the counter, which will be displayed
         public int counterValue;
-        
+
         // Reference to the NumberSelector script to check if the combo is solved
+        [SerializeField]
         private NumberSelector _numberSelector;
 
         private void Awake()
         {
             // Get the reference to NumberSelector script in the scene
-            _numberSelector = FindFirstObjectByType<NumberSelector>();
+            _numberSelector = GetComponentInParent<NumberSelector>();
         }
         
         // Method to increase or decrease the counter value

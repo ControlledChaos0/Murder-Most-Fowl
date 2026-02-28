@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,7 +8,7 @@ namespace UI
     public class NumberSelector : MonoBehaviour
     {
         // A string of digits (0-9) representing the combination to build the counters
-        [SerializeField] private string combo;
+        [SerializeField] private string _combo;
         
         // Gap between counters in UI
         [SerializeField] private float gap = 200f;
@@ -24,23 +25,32 @@ namespace UI
         // To keep track of the previous combo and gap to prevent unnecessary updates
         private string _previousCombo;
         private float _previousGap = 200f;
-        
+        private bool _isSolved = false;
+
+        public event Action Solve;
+
         // Called when changes are made in the Inspector to validate and update counters
         private void OnValidate()
         {
             // Only update counters if enabled, and if the combo string has changed
-            if (!updateCountersAutomatically || (combo == _previousCombo && (int) gap == (int) _previousGap)) return;
-            var filteredCombo = new string(combo.Where(char.IsDigit).ToArray());
+            if (!updateCountersAutomatically || (_combo == _previousCombo && (int) gap == (int) _previousGap)) return;
+            var filteredCombo = new string(_combo.Where(char.IsDigit).ToArray());
             UpdateComboCounters(filteredCombo);
             
             // Store current combo, gap to compare later
-            _previousCombo = combo;
+            _previousCombo = _combo;
             _previousGap = gap;
+        }
+
+        private void Start()
+        {
+            _isSolved = false;
         }
 
         // Method to check if all counters match the specified combo
         public void CheckIfSolved()
         {
+            if (_isSolved) return;
             // Get all the combo counter controllers in the container
             var counters = comboCountersContainer.GetComponentsInChildren<CounterController>();
 
@@ -53,11 +63,17 @@ namespace UI
                 var counterValue = counters[i].counterValue;
 
                 // Compare it with the corresponding digit in the combo
-                if (counterValue != (combo[i] - '0'))
+                if (counterValue != (_combo[i] - '0'))
                 {
                     isSolved = false;
                     break;
                 }
+            }
+
+            _isSolved |= isSolved;
+            if ( _isSolved)
+            {
+                Solve?.Invoke();
             }
 
             // Log success if the combo is solved, otherwise failure
@@ -80,7 +96,7 @@ namespace UI
             var currentOffsetX = 0f;
             
             // Iterate through each character in the combo string that is a digit
-            foreach (var c in combo.Where(char.IsDigit))
+            foreach (var c in _combo.Where(char.IsDigit))
             {
                 // Instantiate new counter object for each valid digit
                 var counter = Instantiate(comboCounterTemplate, comboCountersContainer.transform.position, Quaternion.identity, comboCountersContainer.transform);
@@ -95,7 +111,18 @@ namespace UI
             }
 
             // Update the combo string to only include valid digits
-            combo = filteredCombo;
+            _combo = filteredCombo;
+        }
+
+        public void SetCombo(string combo)
+        {
+            switch (combo.Length)
+            {
+                case 4: _previousCombo = "0000"; break;
+                case 6: _previousCombo = "000000"; break;
+                default: Debug.LogError("Shit's still fucked."); break;
+            }
+            _combo = combo;
         }
     }
 }

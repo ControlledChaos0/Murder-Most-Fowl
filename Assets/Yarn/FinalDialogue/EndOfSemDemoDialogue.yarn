@@ -34,19 +34,19 @@ tags: lc: rc:
 <<declare $CrowRelationship = 0.0>>
 WARNING: This game contains graphic depictions of suicide.#bg:DarkHidden
 WARNING: If this may be triggering to you, please play no further.
-Athena: *cough cough* Ugh I can't sleep.#bg:Dark
+Athena: <i>*cough cough*</i> Ugh I can't sleep.#bg:Dark
 Athena: The Bird Flu is no joke...#el:Sad
 ???: CRASH #bg:DarkHidden
 Athena: ... what was that?#el:Surprised #bg:Dark
 : Got Evidence <color=\#94e9e4>Crash</color>
 <<CreateClue ClueBoardCanvas Crash>>
-???: clop clop clop#bg:DarkHidden
+???: <i>clop clop clop</i>#bg:DarkHidden
 Athena: Who's up this late at night making such a ruckus?#el:Intense#bg:Dark
 Athena: Luckily *cough* for them I'm too sick to do anything about it.#el:Sad
 Athena: I'm already up. Perhaps I'll just read a book for a bit.
 Athena: ...
 Athena: .....#el:Happy
-Athena: zzzzz
+Athena: <i>zzzzz</i>
 <<ChangeRightCharacter>>
 <<ChangeLeftCharacter>>
 Singsongy Woman: What's going on? Why's the door locked?
@@ -59,7 +59,7 @@ Tired Woman: Alright you should be able to get in now.
 Tired Woman: I apologize for the inconvenience.
 Athena: Great. Now I can get back to slee-
 <<ChangeLeftCharacter>>
-Singsongy Woman: AAAAAAAAAAAAAAH!
+Singsongy Woman: <b>AAAAAAAAAAAAAAH!</b>
 Disgruntled Man: Oh dear heavens.
 Nervous Boy: What on earth?
 Athena: What's that all about?#el:Surprised
@@ -285,4 +285,49 @@ Athena: <i>Could <color=\#f3db82>Mallard have placed it there</color>?</i>#el:In
 <<CreateClue ClueBoardCanvas Cigs>>
 : Got Evidence <color=\#94e9e4>Briefcase</color>
 : Got Item <color=\#94e9e4>Cigarettes</color>#el:Neutral
+===
+
+title: OpenSafe
+---
+Athena: <i>There is nothing in the safe.</i>
+===
+
+title: MelissaSafe
+---
+Athena: <i>This is Melissa's Safe...</i>
+Athena: <i>It's locked.</i>
+Athena: <i>I wonder if she would base her code on some personal information of hers?</i>
+===
+
+title: MelissaSafeOpen
+---
+Athena: <i>Ha! I can't believe her birthday actually worked.</i>
+Athena: <i>Let's see...</i>
+Athena: <i>A photo? Huh, I dont recognize these people.</i>
+<<CreateClue ClueBoardCanvas FightersPhoto>>
+: Got Evidence <color=\#94e9e4>Fighters Photo</color>
+Athena: <i>And what's this?</i>#e:Surprised
+Athena: <i>Oh my, this is reed.</i>
+: Got Evidence <color=\#94e9e4>Melissa's Reed</color>
+<<CreateClue ClueBoardCanvas PeacockReed>>
+===
+
+title: GanderSafe
+---
+Athena: <i>This is Gander's Safe...</i>
+Athena: <i>It's locked.</i>
+Athena: <i>I wonder if he would base his code on some personal information of his?</i>
+===
+
+title: GanderSafeOpen
+---
+Athena: <i>That's grim... He used his wife's death month and year...</i>
+Athena: Let's see what's in here...
+Athena: A letter, a betting slip, and a newspaper...
+: Got Evidence <color=\#94e9e4>Love Letter</color>
+: Got Evidence <color=\#94e9e4>Betting Slip</color>
+: Got Evidence <color=\#94e9e4>Newspaper</color>
+<<CreateClue ClueBoardCanvas LoveLetter>>
+<<CreateClue ClueBoardCanvas BettingSlip>>
+<<CreateClue ClueBoardCanvas Newspaper>>
 ===

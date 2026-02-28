@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3873134821022325633}
   - component: {fileID: 8231910381571526410}
   - component: {fileID: 1154026469172206119}
-  - component: {fileID: 197065282086600982}
+  - component: {fileID: 8267262866831280749}
   m_Layer: 5
   m_Name: PuzzleCanvas
   m_TagString: Untagged
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &197065282086600982
+--- !u!114 &8267262866831280749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,10 +113,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4727398259565184726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f777700f35adf34dbce6dd88a4a3421, type: 3}
+  m_Script: {fileID: 11500000, guid: b51d7271fe63c3b41bc8f056e1f9fc69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzleScreenObj: {fileID: 2247800618924436110}
+  _puzzle4: {fileID: 6273953264812571723}
+  _puzzle6: {fileID: 2101345464330414905}
 --- !u!1001 &7044286505289591379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -248,6 +249,34 @@ PrefabInstance:
     - target: {fileID: 3303614388940987934, guid: 49c5bc3e0d355d54ab0ed35b59bcc2e8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -175
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404126679598298350, guid: 49c5bc3e0d355d54ab0ed35b59bcc2e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404126679598298350, guid: 49c5bc3e0d355d54ab0ed35b59bcc2e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404126679598298350, guid: 49c5bc3e0d355d54ab0ed35b59bcc2e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8267262866831280749}
+    - target: {fileID: 3404126679598298350, guid: 49c5bc3e0d355d54ab0ed35b59bcc2e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404126679598298350, guid: 49c5bc3e0d355d54ab0ed35b59bcc2e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisablePuzzleScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404126679598298350, guid: 49c5bc3e0d355d54ab0ed35b59bcc2e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PuzzleSafe, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404126679598298350, guid: 49c5bc3e0d355d54ab0ed35b59bcc2e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3421971167422547112, guid: 49c5bc3e0d355d54ab0ed35b59bcc2e8, type: 3}
       propertyPath: m_AnchorMax.y
@@ -830,7 +859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bafa9c9241cc840458e239af6eac0e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _comboManager: {fileID: 74754919672273549}
+  comboManager: {fileID: 74754919672273549}
 --- !u!1001 &8071488364367104477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1336,7 +1365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bafa9c9241cc840458e239af6eac0e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _comboManager: {fileID: 6854649218182307445}
+  comboManager: {fileID: 6854649218182307445}
 --- !u!224 &6127753819714325936 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2668814092211405933, guid: 7b463d4ccd6f41b43ae9f2a877970819, type: 3}

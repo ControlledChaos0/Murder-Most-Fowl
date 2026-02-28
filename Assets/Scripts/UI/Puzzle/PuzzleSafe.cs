@@ -1,5 +1,7 @@
+using System;
 using UI;
 using UnityEngine;
+using UnityEngine.U2D.IK;
 
 public class PuzzleSafe : Singleton<PuzzleSafe>
 {
@@ -7,6 +9,10 @@ public class PuzzleSafe : Singleton<PuzzleSafe>
     private SafeScreen _puzzle4;
     [SerializeField]
     private SafeScreen _puzzle6;
+
+    private Safe _currentSafe;
+
+    public event Action Solve;
 
     public enum Code {
         FOUR,
@@ -24,26 +30,31 @@ public class PuzzleSafe : Singleton<PuzzleSafe>
         _puzzleActive = _puzzle4;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void ActivatePuzzleScreen(Code code)
+    public void ActivatePuzzleScreen(Safe safe)
     {
         DisablePuzzleScreen();
-        switch (code)
+        
+        _currentSafe = safe;
+        switch (safe.Combo.Length)
         {
-            case Code.FOUR: _puzzleActive = _puzzle4; break;
-            case Code.SIX: _puzzleActive = _puzzle6; break;
+            case 4: _puzzleActive = _puzzle4; break;
+            case 6: _puzzleActive = _puzzle6; break;
+            default: Debug.LogError("Shit's fucked. Combo is not 4 or 6"); break;
         }
+
+        _puzzleActive.comboManager.SetCombo(safe.Combo);
+        _puzzleActive.comboManager.Solve += _currentSafe.OnSolved;
         // actually wait is it instantiate or set active hmmm a real thinker 
         _puzzleActive.gameObject.SetActive(true);
     }
 
     public void DisablePuzzleScreen()
     {
+        if (_currentSafe != null)
+        {
+            _puzzleActive.comboManager.Solve -= _currentSafe.OnSolved;
+        }
+        _currentSafe = null;
         _puzzleActive.gameObject.SetActive(false);
     }
 }
