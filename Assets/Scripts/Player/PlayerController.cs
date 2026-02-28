@@ -13,6 +13,7 @@ public class PlayerController : Singleton<PlayerController>
     private float m_Speed;
 
     private PlayerBody _currentPlayer;
+    private Animator _currentAnimator;
     private PlayerInteractable m_Interactable;
 
     private Vector2 m_OldPos;
@@ -65,6 +66,8 @@ public class PlayerController : Singleton<PlayerController>
         m_IsMoving = false;
         m_DirectionalMovement = false;
 
+        _currentAnimator = _currentPlayer.GetComponentInChildren<Animator>();
+
         PlayerTransform.position = ScreenManager.Instance.GetClosestFloorLocation(new Ray(PlayerTransform.position, PlayerTransform.forward));
         InputController.Instance.Click += OnClick;
         InputController.Instance.Move += OnMove;
@@ -79,11 +82,14 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (DialogueHelper.Instance.InDialogue || ClueBoardManager.Instance.InClueboard)
         {
+            _currentAnimator.SetBool("moving", false);
+            m_IsMoving = false;
             return;
         }
 
         if (m_IsMoving)
         {
+            _currentAnimator.SetBool("moving", true);
             if ((Interactable != null && Interactable.WithinRange(PlayerTransform.position)))
             {
                 m_Interactable = null;
@@ -105,6 +111,9 @@ public class PlayerController : Singleton<PlayerController>
             {
                 m_IsMoving = false;
             }
+        } else
+        {
+            _currentAnimator.SetBool("moving", false);
         }
 
         Debug.DrawLine(new Vector2(m_NewPos.x - .05f, m_NewPos.y - .05f), new Vector2(m_NewPos.x + .05f, m_NewPos.y + .05f));
@@ -150,6 +159,8 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (DialogueHelper.Instance.InDialogue || ClueBoardManager.Instance.InClueboard)
         {
+            _currentAnimator.SetBool("moving", false);
+            m_IsMoving = false;
             return;
         }
 
@@ -174,6 +185,8 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (DialogueHelper.Instance.InDialogue || ClueBoardManager.Instance.InClueboard)
         {
+            _currentAnimator.SetBool("moving", false);
+            m_IsMoving = false;
             return;
         }
 
@@ -201,6 +214,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         m_IsMoving = false;
         _currentPlayer = newPlayer;
+        _currentAnimator = _currentPlayer.GetComponentInChildren<Animator>();
         Teleport(teleport);
     }
 

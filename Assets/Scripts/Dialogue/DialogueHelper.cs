@@ -164,6 +164,13 @@ public class DialogueHelper : Singleton<DialogueHelper>
         }
     }
 
+    [YarnCommand("RollCredits")]
+    public static void RollCredits()
+    {
+        SceneManager sceneManager = FindFirstObjectByType<SceneManager>();
+        sceneManager.LoadSceneAndSwapTransition("Credits");
+    }
+
     // TODO
     // Generalize these commands
 
