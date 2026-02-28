@@ -93,6 +93,7 @@ WARNING: This game contains graphic depictions of suicide.
 ===
 
 title: AthenaRecall
+tags: c:Owl:
 ---
 Athena: The murder must've transpired last night.#e:Neutral
 Athena: Now that I think about it <color=\#f3db82>I did hear a lot of weird noises</color> while reading my book last night...
@@ -110,6 +111,7 @@ Athena: I should <color=\#f3db82>find clues</color> and <color=\#f3db82>question
 ===
 
 title: Skip
+tags: c:Owl:
 ---
 :...
 ===
@@ -288,11 +290,13 @@ Athena: <i>Could <color=\#f3db82>Mallard have placed it there</color>?</i>#el:In
 ===
 
 title: OpenSafe
+tags: c:Owl:
 ---
 Athena: <i>There is nothing in the safe.</i>
 ===
 
 title: MelissaSafe
+tags: c:Owl:
 ---
 Athena: <i>This is Melissa's Safe...</i>
 Athena: <i>It's locked.</i>
@@ -300,6 +304,7 @@ Athena: <i>I wonder if she would base her code on some personal information of h
 ===
 
 title: MelissaSafeOpen
+tags: c:Owl:
 ---
 Athena: <i>Ha! I can't believe her birthday actually worked.</i>
 Athena: <i>Let's see...</i>
@@ -313,6 +318,7 @@ Athena: <i>Oh my, this is reed.</i>
 ===
 
 title: GanderSafe
+tags: c:Owl:
 ---
 Athena: <i>This is Gander's Safe...</i>
 Athena: <i>It's locked.</i>
@@ -320,6 +326,7 @@ Athena: <i>I wonder if he would base his code on some personal information of hi
 ===
 
 title: GanderSafeOpen
+tags: c:Owl:
 ---
 Athena: <i>That's grim... He used his wife's death month and year...</i>
 Athena: Let's see what's in here...

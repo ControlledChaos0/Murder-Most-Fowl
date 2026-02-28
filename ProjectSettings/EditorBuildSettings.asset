@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/_Main Scenes/FinalDialogue.unity
     guid: 8d2e0f2624d2f8a4d9ba5392209a352e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Jade/FinalDialogue_Jade.unity
     guid: 667c3145c190a734ca5270edd6ffc0ce
   - enabled: 1
