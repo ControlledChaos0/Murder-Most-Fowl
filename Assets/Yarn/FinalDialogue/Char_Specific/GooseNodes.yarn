@@ -62,7 +62,7 @@ Chase: What else would you like to ask?#el:Neutral
 	Chase: When I woke, I heard Melissa's voice outside my quarters.
 	Chase: I left my room and I was greeted by a locked parlor car door and noticed that bartender enter her dorm.
 	Athena: Bartender? As in Morgana?
-	Chase: Ah yes, that is her name, isn't it?
+	Chase: Ah yes. That is her name, isn't it?
 	Chase: Anyways, I confronted the bellboy about the locked door, but he claimed to have misplaced his key.
 	Chase: My ask was for naught however, as the door was soon unlocked by someone. 
 	Chase: Followed by a bloodcurdling scream.
@@ -74,6 +74,7 @@ Chase: What else would you like to ask?#el:Neutral
 	Chase: Mallard.. He was always quite troubled.
 	Athena: Can you elaborate?
 	Chase: I will not speak ill of the dead.
+	<<jump GooseQuestions>>
 -> Do you know if anyone would want to kill him?
 	Chase: I hope you do not suspect it was me.
 	Chase: Though I would not blame you for the suspicion.
@@ -84,6 +85,7 @@ Chase: What else would you like to ask?#el:Neutral
 	Athena: You said this was “unfortunate but not entirely unexpected.” Could you elaborate?
 	Chase: ...
 	Chase: Let's just say he knew how to dig himself a hole.
+	<<jump GooseQuestions>>
 -> <color=\#f3db82>Is it true Mallard was low on money?</color><<if $DuckBroke>>
 	Chase: ...
 	Chase: Who told you this?
