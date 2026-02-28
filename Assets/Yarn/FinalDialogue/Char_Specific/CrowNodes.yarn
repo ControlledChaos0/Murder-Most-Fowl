@@ -43,6 +43,7 @@ Morgana: Not a chance.#e:Angry
 title: CrowMain
 position: -553,-63
 ---
+<<set $AskingCrow = false>>
 <<if $FixedRelationship>>
     Morgana: Hey Athena.#e:Neutral#s:Crow#el:Neutral
 <<else>>
@@ -146,7 +147,9 @@ color: green
 
 title: CrowPeople
 tags: c:Owl:Crow
+position: -889,-121
 ---
+Morgana: Who do you want to hear about?
 -> Melissa
     Morgana: We've been close friends since shortly after we broke up.#e:Sad
     Morgana: We were hanging out last night and I made her quite a few drinks.#e:Neutral
@@ -276,6 +279,7 @@ color: red
 ===
 
 title: CrowLoversPhoto
+position: 79,-222
 ---
 <<if $AskingCrow>>
     Athena: You had this photo all along...
@@ -365,6 +369,7 @@ Morgana: He asked me to lock up for him.
 ===
 
 title: CrowCrash
+position: -12,116
 ---
 Athena: Did you hear a crash last night?
 Morgana: Yes I did.
@@ -374,6 +379,7 @@ Morgana: He <color=\#f3db82>manages the luggage</color>, so he probably knows so
 ===
 
 title: CrowBurnedNote
+position: 245,81
 ---
 <<if $FixedRelationship>>
     Athena: Have you seen this before?
@@ -394,6 +400,7 @@ title: CrowBurnedNote
 ===
 
 title: CrowLeftHanded
+position: 32,264
 ---
 Morgana: Do you not remember?
 Morgana: Yea, I'm left handed.

@@ -114,7 +114,7 @@ Chase: What else would you like to ask?#el:Neutral
 title: GoosePeople
 tags: c:Owl:Goose
 ---
-Chase: Who do you wish to hear about?#rc:Goose
+Chase: Who do you wish to hear about?#s:Goose#el:Neutral
 -> Morgana
 	Chase: Morgana? 
 	Athena: The bartender.

@@ -303,6 +303,7 @@ Skipper: Feel free to <color=\#f3db82>investigate the body</color> if you deem n
 Skipper: Be sure to <color=\#f3db82>question everyone thoroughly</color>.
 Skipper: If you have any questions for me, I'm happy to answer.
 Skipper: Let me know when you're ready to call the police, and you can turn in your suspect to them.#e:Neutral
+<<set_character_idle_node Penguin PenguinConversation>>
 ===
 
 title: PenguinKey
