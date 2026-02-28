@@ -1,25 +1,25 @@
 using Clues;
 using UnityEngine;
 
-public class CollectClueCommand : Command
+public class CollectClueCommand : PlayerInteractableCommand
 {
-    private ClueObject _clueObject;
-    public CollectClueCommand(ClueObject clueObject)
-    {
-        _clueObject = clueObject;
+    private ClueObject ClueObject {
+        get => m_Interactable as ClueObject;
     }
 
-    public override void Stop()
+    public CollectClueCommand(ClueObject clueObject) : base(clueObject) { }
+
+    protected override void StopCommand()
     {
         return;
     }
 
     protected override void ExecuteCommand()
     {
-        _clueObject.CollectClue();
+        ClueObject.CollectClue();
     }
 
-    protected override bool IsCompleted()
+    protected override bool IsCompletedInternal()
     {
         return true;
     }

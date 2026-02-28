@@ -4,24 +4,45 @@ using UnityEngine;
 
 public abstract class Command
 {
+    protected bool _isReady;
     protected bool _isStarted;
 
-    public bool Started
+    public bool IsReady
+    {
+        get => _isReady;                             
+    }
+    public bool IsStarted
     {
         get => _isStarted;
     }
-    public bool Completed
+    public bool IsCompleted
     {
-        get => _isStarted && IsCompleted();
+        get => _isStarted && IsCompletedInternal();
     }
     
-    protected abstract bool IsCompleted();
-    public abstract void Stop();
+    protected abstract bool IsCompletedInternal();
+    protected abstract void StopCommand();
+    protected abstract void ReadyCommand();
     protected abstract void ExecuteCommand();
 
-    public void Execute()
+    public virtual void Ready()
     {
+        _isReady = true;
+        ReadyCommand();
+    }
+
+    public virtual void Execute()
+    {
+        if (!_isReady)
+        {
+            ReadyCommand();
+        }
         _isStarted = true;
         ExecuteCommand();
+    }
+
+    public virtual void Stop()
+    {
+        StopCommand();
     }
 }

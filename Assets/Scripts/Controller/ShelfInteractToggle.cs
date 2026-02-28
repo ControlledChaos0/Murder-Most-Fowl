@@ -1,6 +1,7 @@
+using Manager;
 using UnityEngine;
 
-public class ShelfInteractToggle : MonoBehaviour
+public class ShelfInteractToggle : PlayerInteractable
 {
     [SerializeField] 
     private GameObject _shelf;
@@ -11,15 +12,14 @@ public class ShelfInteractToggle : MonoBehaviour
         _shelfController = _shelf.GetComponent<ShelfController>();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void OnPointerClick()
     {
-        
+        CommandManager.Instance.Queue(new ActionCommand(Execute, this));
     }
 
-    public void OnMouseDown()
+    protected void Execute()
     {
-        if (_shelfController.isOpen())
+        if (_shelfController.IsOpen)
         {
             DialogueHelper.Instance.DialogueRunner.StartDialogue("MissingBottle");
         }

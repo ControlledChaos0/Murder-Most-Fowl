@@ -31,14 +31,23 @@ namespace Manager
 
         public void ClearQueue()
         {
-            _currentCommand?.Stop();
-            _currentCommand = null;
+            ClearCommand();
             _commandQueue.Clear();
+            PlayerController.Instance.Interactable = null;
+        }
+
+        private void ClearCommand()
+        {
+            if (_currentCommand != null && !_currentCommand.IsCompleted)
+            {
+                _currentCommand.Stop();
+            }
+            _currentCommand = null;
         }
 
         private void UpdateQueue()
         {
-            if (_currentCommand != null && _currentCommand.Completed)
+            if (_currentCommand != null && _currentCommand.IsCompleted)
             {
                 _currentCommand = null;
             }    
@@ -52,6 +61,11 @@ namespace Manager
         {
             _currentCommand = _commandQueue.Dequeue();
             _currentCommand.Execute();
+
+            if (_commandQueue.Count > 0)
+            {
+                _commandQueue.Peek().Ready();
+            }
         }
     }
 }

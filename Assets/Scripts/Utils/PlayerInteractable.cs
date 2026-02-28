@@ -1,3 +1,4 @@
+using Manager;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -23,4 +24,30 @@ public abstract class PlayerInteractable : MonoBehaviour, IPointerClickHandler
     }
 
     protected abstract void OnPointerClick();
+}
+
+public abstract class ToggleInteractable : PlayerInteractable
+{
+    [SerializeField]
+    protected bool _isToggled = false;
+    protected abstract void ToggleOn();
+    protected abstract void ToggleOff();
+
+    public virtual void Toggle()
+    {
+        if (_isToggled)
+        {
+            ToggleOff();
+            _isToggled = false;
+        }
+        else
+        {
+            ToggleOn();
+            _isToggled = true;
+        }
+    }
+    protected override void OnPointerClick()
+    {
+        CommandManager.Instance.Queue(new ToggleCommand(this));
+    }
 }

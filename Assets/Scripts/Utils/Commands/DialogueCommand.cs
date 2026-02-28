@@ -1,26 +1,55 @@
 using UnityEngine;
 
-public class DialogueCommand : Command
+public class CharacterDialogueCommand : PlayerInteractableCommand
 {
-    private CharacterOverworld _character;
-
-    public DialogueCommand(CharacterOverworld character)
+    protected CharacterOverworld Character
     {
-        _character = character;
+        get => m_Interactable as CharacterOverworld;
     }
 
-    public override void Stop()
+    public CharacterDialogueCommand(CharacterOverworld character) : base(character) { }
+
+    protected override void StopCommand()
     {
         return;
     }
 
     protected override void ExecuteCommand()
     {
-        _character.StartDialogue();
+        Character.StartDialogue();
     }
 
-    protected override bool IsCompleted()
+    protected override bool IsCompletedInternal()
     {
         return true;
+    }
+}
+
+public class DialogueCommand : Command
+{
+    private string m_Node;
+    public DialogueCommand(string node)
+    {
+        m_Node = node;
+    }
+
+    protected override void StopCommand()
+    {
+        return;
+    }
+
+    protected override void ExecuteCommand()
+    {
+        DialogueHelper.Instance.DialogueRunner.StartDialogue(m_Node);
+    }
+
+    protected override bool IsCompletedInternal()
+    {
+        return true;
+    }
+
+    protected override void ReadyCommand()
+    {
+        return;
     }
 }

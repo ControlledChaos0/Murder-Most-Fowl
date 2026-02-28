@@ -9,11 +9,11 @@ public class MoveCommand : Command
         _position = position;
     }
 
-    protected override bool IsCompleted()
+    protected override bool IsCompletedInternal()
     {
         return !PlayerController.Instance.IsMoving;
     }
-    public override void Stop()
+    protected override void StopCommand()
     {
         PlayerController.Instance.StopPlayer();
     }
@@ -22,5 +22,10 @@ public class MoveCommand : Command
     {
         Vector2 pos = ScreenManager.Instance.GetClosestFloorLocation(_position);
         PlayerController.Instance.Move(pos);
+    }
+
+    protected override void ReadyCommand()
+    {
+        return;
     }
 }

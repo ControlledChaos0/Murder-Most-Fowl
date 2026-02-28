@@ -1,28 +1,28 @@
 using UnityEngine;
 
-public class RoomChangeCommand : Command
+public class RoomChangeCommand : PlayerInteractableCommand
 {
-    private RoomTeleport _roomTeleport;
-    public RoomChangeCommand(RoomTeleport roomTeleport)
+    private RoomTeleport RoomTeleport
     {
-        _roomTeleport = roomTeleport;
+        get => m_Interactable as RoomTeleport;
     }
+    public RoomChangeCommand(RoomTeleport roomTeleport) : base(roomTeleport) { }
 
-    protected override bool IsCompleted()
+    protected override bool IsCompletedInternal()
     {
         return !ScreenManager.Instance.IsChangingRooms;
     }
 
-    public override void Stop()
+    protected override void StopCommand()
     {
         // TO-DO
         // Stopping in the middle seems to be bad
         // See if there's another way to prevent it
-        throw new System.NotImplementedException();
+        Debug.LogError("Room Change Attempted Stop. This is BAD. Investigate later.");
     }
 
     protected override void ExecuteCommand()
     {
-        _roomTeleport.Teleport();
+        RoomTeleport.Teleport();
     }
 }
