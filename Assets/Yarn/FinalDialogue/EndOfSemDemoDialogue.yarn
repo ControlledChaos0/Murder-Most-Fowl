@@ -338,3 +338,11 @@ Athena: A letter, a betting slip, and a newspaper...
 <<CreateClue ClueBoardCanvas BettingSlip>>
 <<CreateClue ClueBoardCanvas Newspaper>>
 ===
+
+title: Lawsuit
+tags: c:Owl:
+---
+Athena: <i>A lawsuit?</i>
+Athena: ...
+Athena: <i>Gander is being sued by Mallard for wrongful termination...</i>
+===

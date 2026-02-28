@@ -1397,11 +1397,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.00017309189
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9996538
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3530235729408648359, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_Name
@@ -7956,8 +7956,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusToStop: 1
-  _clueID: DebtDocument
-  _node: DebtDocument
+  _clueID: LawsuitPapers
+  _node: Lawsuit
   _disappearOnClick: 1
   _disabledInTutorial: 0
   _morganaClue: 0
