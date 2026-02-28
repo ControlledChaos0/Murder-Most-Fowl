@@ -19,7 +19,7 @@ namespace UI
         }
         
         // Method to increase or decrease the counter value
-        private void ChangeCounterValue(int delta)
+        public void ChangeCounterValue(int delta)
         {
             // Modify counterValue by delta (1 for increase, -1 for decrease)
             counterValue = (counterValue + delta + 10) % 10;
@@ -28,7 +28,7 @@ namespace UI
             gameObject.GetComponent<TMP_Text>().text = counterValue.ToString();
         
             // After changing the counter, check if the combo is solved
-            _numberSelector.CheckIfSolved();
+            _numberSelector?.CheckIfSolved();
         }
 
         public void Increase()

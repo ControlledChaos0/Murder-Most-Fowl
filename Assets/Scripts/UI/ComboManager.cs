@@ -116,13 +116,22 @@ namespace UI
 
         public void SetCombo(string combo)
         {
-            switch (combo.Length)
+            if (combo != _combo)
             {
-                case 4: _previousCombo = "0000"; break;
-                case 6: _previousCombo = "000000"; break;
-                default: Debug.LogError("Shit's still fucked."); break;
+                var counters = comboCountersContainer.GetComponentsInChildren<CounterController>();
+                foreach (var c in counters)
+                {
+                    c.ChangeCounterValue(0);
+                }
+                switch (combo.Length)
+                {
+                    case 4: _previousCombo = "0000"; break;
+                    case 6: _previousCombo = "000000"; break;
+                    default: Debug.LogError("Shit's still fucked."); break;
+                }
+                _isSolved = false;
+                _combo = combo;
             }
-            _combo = combo;
         }
     }
 }
