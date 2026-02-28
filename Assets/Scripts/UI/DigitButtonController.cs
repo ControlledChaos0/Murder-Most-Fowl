@@ -7,18 +7,19 @@ namespace UI
     {
         // The current value of the counter, which will be displayed
         public int counterValue;
-        
+
         // Reference to the NumberSelector script to check if the combo is solved
+        [SerializeField]
         private NumberSelector _numberSelector;
 
         private void Awake()
         {
             // Get the reference to NumberSelector script in the scene
-            _numberSelector = FindFirstObjectByType<NumberSelector>();
+            _numberSelector = GetComponentInParent<NumberSelector>();
         }
         
         // Method to increase or decrease the counter value
-        private void ChangeCounterValue(int delta)
+        public void ChangeCounterValue(int delta)
         {
             // Modify counterValue by delta (1 for increase, -1 for decrease)
             counterValue = (counterValue + delta + 10) % 10;
@@ -27,7 +28,7 @@ namespace UI
             gameObject.GetComponent<TMP_Text>().text = counterValue.ToString();
         
             // After changing the counter, check if the combo is solved
-            _numberSelector.CheckIfSolved();
+            _numberSelector?.CheckIfSolved();
         }
 
         public void Increase()

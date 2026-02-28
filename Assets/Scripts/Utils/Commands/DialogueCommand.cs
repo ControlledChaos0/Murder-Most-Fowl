@@ -45,6 +45,12 @@ public class DialogueCommand : Command
 
     protected override bool IsCompletedInternal()
     {
+        //bool run = DialogueHelper.Instance.DialogueRunner.IsDialogueRunning;
+        //if (run)
+        //{
+        //    Debug.Log("DIALOGUE COMMAND FINISHED");
+        //}
+        //return DialogueHelper.Instance.DialogueRunner.IsDialogueRunning;
         return true;
     }
 
