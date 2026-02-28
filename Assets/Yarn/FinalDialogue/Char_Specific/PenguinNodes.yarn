@@ -602,7 +602,7 @@ title: TrueEnding
 ---
 Athena: Another week, another case done.#rc:#lc:#bg:EndingAlone
 Athena: All the evidence feels satisfied.
-Morgana: You're still looking at the case files?
+Morgana: You're still looking at the case files?#bg:EndingMorgana
 Athena: It was definitely one of my most interesting cases to date.
 Morgana: Lucky me got to be involved.
 Athena: I feel lucky you were.
@@ -621,7 +621,7 @@ Athena: ALright, let's get at it.
 
 title: GoodEndingSkipper
 ---
-: ... #bg:DarkHidden
+: ... #bg:DarkHidden#rc:#lc:
 : A few days later.#bg:DarkHidden
 Athena: <i>That damn penguin...</i>#bg:Jail#rc:
 Athena: <i>I can't believe it was him all along.</i>
@@ -669,7 +669,7 @@ Athena: I'm never wrong.
 
 title: BadEndingGander
 ---
-: ... #bg:DarkHidden
+: ... #bg:DarkHidden#rc:#lc:
 : A few days later.#bg:DarkHidden
 Chase: Would you care to explain to me why I am behind bars?#lc:Owl#bg:Jail
 Athena: Care to explain why you murdered Mallard?
@@ -708,7 +708,7 @@ Chase: The only person the judge will be hearing from is my lawyer.
 
 title: BadEndingPeacock
 ---
-: ... #bg:DarkHidden
+: ... #bg:DarkHidden#rc:#lc:
 : A few days later.#bg:DarkHidden
 Melissa: Surely there's been some mistake.#lc:Owl#bg:Jail
 Athena: I don't believe there has.
@@ -744,7 +744,7 @@ Athena: Tell that to the judge.
 
 title: BadEndingNoir
 ---
-: ... #bg:DarkHidden
+: ... #bg:DarkHidden#rc:#lc:
 : A few days later.#bg:DarkHidden
 <<if $FixedRelationship>>
 Morgana: Athena? Why?#lc:Owl#bg:Jail
@@ -804,7 +804,7 @@ Athena: ...
 Athena: Wait a minute. 
 Athena: I must be missing something...
 Athena: Aha! It couldn't have bee-
-???: 
+???: #bg:Murder
 Athena: Who's there?
 ???: 
 Athena: Wait. Wait please, no.

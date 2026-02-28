@@ -9,6 +9,7 @@ public class CreditsScroll : MonoBehaviour
     public float startY = -841;
     public float endY = 1961;
     private RectTransform scrollWindow;
+    private bool loading = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,15 +25,18 @@ public class CreditsScroll : MonoBehaviour
             scrollWindow.anchoredPosition += new Vector2(0, scrollSpeed * Time.deltaTime);
         } else
         {
-            SceneManager sceneManager = FindFirstObjectByType<SceneManager>();
-            sceneManager.LoadSceneAndSwapTransition("Main Menu");
+            if (!loading)
+            {
+                StartCoroutine(EndCredits());
+                loading = true;
+            }
         }
     }
 
-    // public IEnumerator EndCredits()
-    // {
-    //     yield return new WaitForSeconds(endWait);
-    //     SceneManager sceneManager = FindFirstObjectByType<SceneManager>();
-    //     sceneManager.LoadSceneAndSwapTransition("Main Menu");
-    // }
+    public IEnumerator EndCredits()
+    {
+        yield return new WaitForSeconds(endWait);
+        SceneManager sceneManager = FindFirstObjectByType<SceneManager>();
+        sceneManager.LoadSceneAndSwapTransition("Main Menu");
+    }
 }
