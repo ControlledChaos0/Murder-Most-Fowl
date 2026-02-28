@@ -1,7 +1,7 @@
 title: PeacockIntroduction
 tags: lc:Owl rc:
 ---
-Athena: <i>Melissa Miss Peacock. Never thought I'd get to meet her in person.</i>#s:Peacock#el:Surprised
+Athena: <i>Melissa "Miss" Peacock. Never thought I'd get to meet her in person.</i>#s:Peacock#el:Surprised
 Athena: <i>I've been listening to her music since the beginning of her career.</i>
 Athena: <i>Oh my gosh and her new single, “Birds of a Feather”, is soooo good.</i>#el:Happy
 Athena: Good morning Miss Peacock.#el:Neutral
@@ -62,7 +62,7 @@ Melissa: Now, what would you like to ask?#el:Neutral
 	Athena: What did you two drink?
 	Melissa: She made me a Blue Lagoon, but I don't believe she actually had any alcohol.
 	Athena: ...#el:Sad
-	Melissa: We chatted for a while until I went off to bed. I don't remember exactly when, but I remember I woke up in the morning around 7:55 with a nasty hangover.#el:Neutral
+	Melissa: We chatted for a while until I went off to bed. I don't remember exactly when, but I remember I woke up in the morning around 8 with a nasty hangover.#el:Neutral
 	<<jump PeacockQuestions1>>
 -> What are your thoughts about Mallard?
 	Melissa: He. Ugh. You see..
@@ -76,7 +76,7 @@ Melissa: Now, what would you like to ask?#el:Neutral
 	Melissa: I don't know much, but I believe it has something to do with Gander's disdain for Mallard's business practices.
 	Melissa: I hear he blames Mallard for the current state of his company...
 	Melissa: I don't blame him to be honest.
-	Melissa: Mallard has a way with <color=\#f3db82>spending more than he has...</color>
+	Melissa: Mallard has a way of <color=\#f3db82>spending more than he has...</color>
 	Athena: What of the other passengers?
 	Melissa: Well the bellboy has always given me strange vibes. There's just something.. off about him.
 	Athena: That's hardly evidence.
@@ -166,7 +166,7 @@ Melissa: Is there anything else, dear?#el:Neutral
 		Melissa: I don't recall. No.
 		<<jump PeacockQuestions1>>
 	-> What did you do after waking up?
-		Melissa: I looked around my room for 10 minutes for antacid. When I couldn't find one, I left to ask Morgana for one.
+		Melissa: I looked around my room for a bit for antacid. When I couldn't find one, I left to ask Morgana for one.
 		Melissa: To my surprise I found her in front of the parlor door. 
 		Melissa: I asked about entering the parlor, but the poor thing said she lost her keys in her room. I admit I may have been a bit loud. I think I woke up Mr. Gander.
 		Athena: I see. What happened after?

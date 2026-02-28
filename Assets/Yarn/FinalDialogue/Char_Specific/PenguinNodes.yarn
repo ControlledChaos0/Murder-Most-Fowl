@@ -612,7 +612,7 @@ Morgana: What's the next case on your radar?
 Athena: I got a call from dispatch that there's been a murder on 1332 Agatha Drive.
 Athena: You ready to head out?
 Morgana: Absolutely. Ready for my first case.
-Athena: ALright, let's get at it.
+Athena: Alright, let's get at it.
 <<RollCredits>>
 :
 :
@@ -866,7 +866,7 @@ title: ChaseDebrief
 tags: c:Owl:Parrot
 ---
 Athena: Chase Gander is a man who needs little introduction.
-Athena: World renound businessman, Co-Owner of the lucrative Gander & Mallard Co.
+Athena: World-renowned businessman, Co-Owner of the lucrative Gander & Mallard Co.
 Athena: I was a little surprised to find him outside of a fancy private car.
 Athena: He could probably afford to book the whole train for himself...
 <<jump CharacterDebrief>>

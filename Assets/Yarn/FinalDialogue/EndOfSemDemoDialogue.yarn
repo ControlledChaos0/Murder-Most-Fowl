@@ -41,7 +41,7 @@ Athena: ... what was that?#el:Surprised #bg:Dark
 : Got Evidence <color=\#94e9e4>Crash</color>
 <<CreateClue ClueBoardCanvas Crash>>
 ???: clop clop clop#bg:DarkHidden
-Athena: Who's up this late at night making such a ruckus.#el:Intense#bg:Dark
+Athena: Who's up this late at night making such a ruckus?#el:Intense#bg:Dark
 Athena: Luckily *cough* for them I'm too sick to do anything about it.#el:Sad
 Athena: I'm already up. Perhaps I'll just read a book for a bit.
 Athena: ...
@@ -76,7 +76,7 @@ Skipper: I don't want to mess with the scene until the police arrive.
 Athena: Say, bellboy, if I can prove to you this “suicide” was in fact a murder, will you let me investigate further?
 Skipper: I suppose… If this was a murder it would help to have a detective on the case.#e:Neutral
 Athena: It's a deal.
-Athena: Before I begin. Could I ask, what is the victim's name?
+Athena: Before I begin... could I ask, what is the victim's name?
 Skipper: Mallard. <color=\#f3db82>Seaton Mallard.</color>
 Athena: Thank you. I ensure you I'll get to the bottom of this.
 <<ChangeRightCharacter>>
@@ -183,7 +183,7 @@ Athena: <i>... but why?</i>
 title: PocketKnife
 tags: c:Owl:
 ---
-Athena: <i>Ah a knife.</i>
+Athena: <i>Ah, a knife.</i>
 Athena: <i>Quite a nice pocket knife as well.</i>
 Athena: <i>...?</i>#el:Surprised
 Athena: What's this <color=\#f3db82>strange white powder</color> on the knife?
@@ -277,7 +277,7 @@ Athena: <i>Oh dear what is this? <color=\#f3db82>A briefcase</color>?</i>#el:Sur
 Athena: Morgana, do you have a briefcase?#el:Neutral
 Morgana: No? Why?
 Athena: There's a whole briefcase shoved in here.
-Morgana: That's the first I'm seeing of it.
+Morgana: That's the first I've seen it.
 Athena: How could it have gotten there?
 Morgana: The only other people that know about my hiding spot are <color=\#f3db82>Mallard and Melissa</color>.
 Morgana: Melissa went to bed around the same time I did though...
