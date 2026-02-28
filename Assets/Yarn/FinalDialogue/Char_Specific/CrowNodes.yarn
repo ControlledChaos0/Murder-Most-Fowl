@@ -139,15 +139,14 @@ color: green
 	Morgana: I may not like him, but that doesn't mean I would kill him.#e:Sad
 	<<jump CrowQuestions>>
 -> <color=\#f3db82>Can you tell me anything about the other passengers?</color> <<if $FixedRelationship>>
-    <<jump CrowPeople>>
+    <<jump CrowOthers>>
 -> That's all the questions I have
 	<<jump CrowIdle>>
 ===
 
-title: CrowPeople
+title: CrowOthers
 tags: c:Owl:Crow
 ---
-Morgana: Who do you want to hear about?#rc:Crow
 -> Melissa
     Morgana: We've been close friends since shortly after we broke up.#e:Sad
     Morgana: We were hanging out last night and I made her quite a few drinks.#e:Neutral
