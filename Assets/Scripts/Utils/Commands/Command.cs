@@ -21,7 +21,7 @@ public abstract class Command
     }
     
     protected abstract bool IsCompletedInternal();
-    public abstract void Stop();
+    protected abstract void StopCommand();
     protected abstract void ReadyCommand();
     protected abstract void ExecuteCommand();
 
@@ -39,5 +39,10 @@ public abstract class Command
         }
         _isStarted = true;
         ExecuteCommand();
+    }
+
+    public virtual void Stop()
+    {
+        StopCommand();
     }
 }

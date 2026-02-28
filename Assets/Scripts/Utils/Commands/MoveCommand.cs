@@ -13,7 +13,7 @@ public class MoveCommand : Command
     {
         return !PlayerController.Instance.IsMoving;
     }
-    public override void Stop()
+    protected override void StopCommand()
     {
         PlayerController.Instance.StopPlayer();
     }

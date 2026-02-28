@@ -140,7 +140,8 @@ public class PlayerController : Singleton<PlayerController>
         {
             m_Interactable = pointClick.GetComponentInParent<PlayerInteractable>();
         }
-        Ray ray = new Ray(eventData.position, CameraController.Instance.CameraTransform.forward);
+        Vector3 pos = m_Interactable != null ? m_Interactable.transform.position : eventData.position;
+        Ray ray = new Ray(pos, CameraController.Instance.CameraTransform.forward) ;
         MoveCommand moveCommand = new MoveCommand(ScreenManager.Instance.GetClosestFloorLocation(ray));
         CommandManager.Instance.Queue(moveCommand);
      }

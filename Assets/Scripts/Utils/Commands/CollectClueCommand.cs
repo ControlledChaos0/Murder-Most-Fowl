@@ -9,7 +9,7 @@ public class CollectClueCommand : PlayerInteractableCommand
 
     public CollectClueCommand(ClueObject clueObject) : base(clueObject) { }
 
-    public override void Stop()
+    protected override void StopCommand()
     {
         return;
     }

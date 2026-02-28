@@ -13,12 +13,12 @@ public class RoomChangeCommand : PlayerInteractableCommand
         return !ScreenManager.Instance.IsChangingRooms;
     }
 
-    public override void Stop()
+    protected override void StopCommand()
     {
         // TO-DO
         // Stopping in the middle seems to be bad
         // See if there's another way to prevent it
-        throw new System.NotImplementedException();
+        Debug.LogError("Room Change Attempted Stop. This is BAD. Investigate later.");
     }
 
     protected override void ExecuteCommand()

@@ -18,8 +18,22 @@ public abstract class PlayerInteractableCommand : Command
             PlayerController.Instance.Interactable = null;
         }
     }
+
+    public override void Stop()
+    {
+        if (!IsCompleted)
+        {
+            base.Stop();
+        }
+        PlayerController.Instance.Interactable = null;
+    }
     protected override void ReadyCommand()
     {
         //PlayerController.Instance.Interactable = m_Interactable;
+    }
+
+    protected override void StopCommand()
+    {
+        return;
     }
 }

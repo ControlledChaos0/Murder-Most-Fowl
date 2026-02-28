@@ -1141,6 +1141,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3215908970102780604, guid: 6351b646fa713a94c9ec15e68bc031d4, type: 3}
+      propertyPath: _currentRoom
+      value: 
+      objectReference: {fileID: 2445683071005681537}
     - target: {fileID: 6068279863832936377, guid: 6351b646fa713a94c9ec15e68bc031d4, type: 3}
       propertyPath: m_Name
       value: Door_Main_To_ChaseBed
@@ -1177,6 +1181,14 @@ PrefabInstance:
     - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: orthographic size
       value: 6.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.00017309189
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081345265859285662, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.9996538
       objectReference: {fileID: 0}
     - target: {fileID: 3530235729408648359, guid: 7e833b0c4b62c87439c8bf7b8a44b17e, type: 3}
       propertyPath: m_Name
@@ -1393,6 +1405,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3215908970102780604, guid: 6351b646fa713a94c9ec15e68bc031d4, type: 3}
+      propertyPath: _currentRoom
+      value: 
+      objectReference: {fileID: 2445683071005681537}
     - target: {fileID: 6068279863832936377, guid: 6351b646fa713a94c9ec15e68bc031d4, type: 3}
       propertyPath: m_Name
       value: Door_Main_To_MelissaBed
@@ -3680,6 +3696,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3215908970102780604, guid: 6351b646fa713a94c9ec15e68bc031d4, type: 3}
+      propertyPath: _currentRoom
+      value: 
+      objectReference: {fileID: 2445683071005681537}
     - target: {fileID: 6068279863832936377, guid: 6351b646fa713a94c9ec15e68bc031d4, type: 3}
       propertyPath: m_Name
       value: Door_Main_To_SkipperBed
@@ -6841,6 +6861,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8459840063042205999, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8711386186857943203, guid: 170bf71bf520d2942859b6a50f7c8304, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -7934,6 +7958,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3215908970102780604, guid: 6351b646fa713a94c9ec15e68bc031d4, type: 3}
+      propertyPath: _currentRoom
+      value: 
+      objectReference: {fileID: 2445683071005681537}
     - target: {fileID: 6068279863832936377, guid: 6351b646fa713a94c9ec15e68bc031d4, type: 3}
       propertyPath: m_Name
       value: Door_Main_To_MorganaBed
@@ -8060,6 +8088,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3215908970102780604, guid: 6351b646fa713a94c9ec15e68bc031d4, type: 3}
+      propertyPath: _currentRoom
+      value: 
+      objectReference: {fileID: 2445683071005681537}
     - target: {fileID: 6068279863832936377, guid: 6351b646fa713a94c9ec15e68bc031d4, type: 3}
       propertyPath: m_Name
       value: Door_Main_To_MallardBed

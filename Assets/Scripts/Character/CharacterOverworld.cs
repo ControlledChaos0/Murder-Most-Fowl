@@ -56,6 +56,6 @@ public class CharacterOverworld : PlayerInteractable,
     }
 
     protected override void OnPointerClick() {
-        CommandManager.Instance.Queue(new DialogueCommand(this));
+        CommandManager.Instance.Queue(new CharacterDialogueCommand(this));
     }
 }

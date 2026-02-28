@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class DialogueCommand : PlayerInteractableCommand
+public class CharacterDialogueCommand : PlayerInteractableCommand
 {
     protected CharacterOverworld Character
     {
         get => m_Interactable as CharacterOverworld;
     }
 
-    public DialogueCommand(CharacterOverworld character) : base(character) { }
+    public CharacterDialogueCommand(CharacterOverworld character) : base(character) { }
 
-    public override void Stop()
+    protected override void StopCommand()
     {
         return;
     }
@@ -22,5 +22,34 @@ public class DialogueCommand : PlayerInteractableCommand
     protected override bool IsCompletedInternal()
     {
         return true;
+    }
+}
+
+public class DialogueCommand : Command
+{
+    private string m_Node;
+    public DialogueCommand(string node)
+    {
+        m_Node = node;
+    }
+
+    protected override void StopCommand()
+    {
+        return;
+    }
+
+    protected override void ExecuteCommand()
+    {
+        DialogueHelper.Instance.DialogueRunner.StartDialogue(m_Node);
+    }
+
+    protected override bool IsCompletedInternal()
+    {
+        return true;
+    }
+
+    protected override void ReadyCommand()
+    {
+        return;
     }
 }
