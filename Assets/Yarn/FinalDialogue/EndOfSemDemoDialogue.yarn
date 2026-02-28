@@ -346,3 +346,12 @@ Athena: <i>A lawsuit?</i>
 Athena: ...
 Athena: <i>Gander is being sued by Mallard for wrongful termination...</i>
 ===
+
+title: CrackCorn
+tags: c:Owl:
+---
+Athena: <i>Oh dear! This is highly illegal.</i>
+Athena: <i>Why would Skipper have this?</i>
+: Got Evidence <color=\#94e9e4>Crack Corn Baggie</color>
+<<CreateClue ClueBoardCanvas CrackCorn>>
+===
