@@ -297,23 +297,16 @@ Skipper: I think you have a good case, Ms..?
 Athena: Athena. Athena Nox.
 <<set $Tutorial to false>>
 <<set_character_idle_node Penguin PenguinConversation>>
-<<CreateClue ClueBoardCanvas AttorneyLetter>>
-<<CreateClue ClueBoardCanvas Gloves>>
 <<CreateClue ClueBoardCanvas PeacockReed>>
-<<CreateClue ClueBoardCanvas DuckReed>>
 <<CreateClue ClueBoardCanvas LoveLetter>>
-<<CreateClue ClueBoardCanvas MaidenPhoto>>
-<<CreateClue ClueBoardCanvas LoversPhoto>>
 <<CreateClue ClueBoardCanvas FightersPhoto>>
 <<CreateClue ClueBoardCanvas CrackCorn>>
 <<CreateClue ClueBoardCanvas Newspaper>>
-<<CreateClue ClueBoardCanvas Id>>
 <<CreateClue ClueBoardCanvas Note>>
 <<CreateClue ClueBoardCanvas BettingSlip>>
 <<ChangeRightCharacter>>
 <<ChangeLeftCharacter>>
 :<color=\#94e9e4>For the purposes of this demo, not all clues in the overworld are able to be obtained.</color>
-:<color=\#94e9e4>In the final version these clues will be found in the bedrooms of the characters, which is currently inaccessibe.</color>
 :<color=\#94e9e4>These unobtainable clues have been added to your inventory, so you can still enjoy the full story!</color>
 :<color=\#94e9e4>Feel free to play around with them and test them all out!</color>
 :<color=\#94e9e4>Anyways~ Back to the game</color>
