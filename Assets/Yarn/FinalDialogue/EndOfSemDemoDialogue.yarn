@@ -28,6 +28,8 @@ tags: lc: rc:
 <<declare $TurnedInPeacock = false>>
 <<declare $TurnedInPenguin = false>>
 <<declare $LoveLetterDelivered = false>>
+<<declare $HasKey = false>>
+<<declare $Permission = false>>
 <<set $HasShards = false>>
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
@@ -168,6 +170,9 @@ tags: c:Owl:
 ---
 Athena: <i>A key?</i>
 Athena: <i>Why would Mallard have a key in his pocket?</i>
+Athena: <i>This looks like a staff key.</i>
+Athena: <i><color=\#f3db82>I should show this to Skipper.</color> He may let me use it.</i>
+<<set $HasKey to true>>
 : Got Evidence <color=\#94e9e4>Key</color>
 ===
 
@@ -267,8 +272,9 @@ Athena: <i>I guess he needed to take the edge off a bit...</i>#el:Neutral
 title: Id
 tags: c:Owl:
 ---
-Athena: <i>Why is Melissa's Id just laying around.</i>
-Athena: <i>I guess it doesn't hurt to have more intel on someone.</i>#el:Happy
+Athena: <i>... an ID.</i>
+Athena: <i>The floor is not a great place to store those...</i>
+Athena: <i>Oh well, I guess it doesn't hurt to have more intel on someone.</i>#el:Happy
 : Got Evidence <color=\#94e9e4>Melissa's Id</color>
 ===
 
@@ -361,4 +367,17 @@ title: AthenasRoom
 tags: c:Owl:
 ---
 Athena: No need to search my own room.
+===
+
+title: NoKey
+tags: c:Owl:
+---
+<<if $HasKey>>
+	Athena: <i>I found a key, but I shouldn't investigate private rooms without permission.</i>
+	Athena: <i>Judges don't like evidence gained that way...</i>
+<<else>>
+	Athena: <i>I don't have access to the other passenger rooms.</i>
+	Athena: <i>Maybe I can find a key and ask Skipper to use it...</i>
+<<endif>>
+
 ===

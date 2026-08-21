@@ -53,6 +53,9 @@ public class State
     public bool TurnedInPeacock = false;
     public bool TurnedInPenguin = false;
     public bool LoveLetterDelivered = false;
+    public bool HasKey = false;
+    public bool Permission = false;
+
     [Header("Inventory")] 
     public List<string> DiscoveredClues = new();
 

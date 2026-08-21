@@ -25,7 +25,14 @@ public class RoomTeleport : PlayerInteractable
     // Update is called once per frame
     protected override void OnPointerClick()
     {
-        CommandManager.Instance.Queue(new RoomChangeCommand(this));
+        if (GameManager.State.Permission)
+        {
+            CommandManager.Instance.Queue(new RoomChangeCommand(this));
+        } else
+        {
+            DialogueHelper.Instance.DialogueRunner.StartDialogue("NoKey");
+        }
+        
     }
 
     public void Teleport()

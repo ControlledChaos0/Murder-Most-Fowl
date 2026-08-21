@@ -137,8 +137,8 @@ Athena: Tell me about...
 	Athena: What did you hear?#el:Neutral
 	Skipper: I heard phrases such as <color=\#f3db82>"...RUINING PEOPLE'S LIVES"..</color>#e:Neutral
 	Skipper: and <color=\#f3db82>"...MONEY OR YOU'RE CLUCKING DEAD"</color>.
-	Athena: Coming from Melissa? I find that kind of hard to believe.#el:Intense
-	Skipper: It's hard for me to believe too, but I remember what I heard.
+	Athena: Wow, that's intense.#el:Intense
+	Skipper: It was indeed.
 	Athena: Perhaps I should <color=\#f3db82>ask Melissa</color> about this...
 	<<set $PeacockArgument to true>>
 	Skipper: Would you like to know about anyone else?#el:Neutral
@@ -317,6 +317,8 @@ Skipper: ...
 Skipper: Why don't you take the key for a bit? You can use it to search the rest of the car. #e:Neutral
 Skipper: I <color=\#f3db82>have a spare key</color>, so I don't need it for now.
 <<CreateClue ClueBoardCanvas PenguinKey>>
+Athena: <i>Good... I can search the rooms now.</i>
+<<set $Permission to true>>
 Skipper: Oh also! Here take this cargo manifest.
 Skipper: It may be useful in your investigation.
 <<CreateClue  ClueBoardCanvas CargoManifest>>
