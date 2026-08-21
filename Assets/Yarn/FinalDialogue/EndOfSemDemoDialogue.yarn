@@ -32,6 +32,7 @@ tags: lc: rc:
 <<set $PresentedShards = false>>
 <<set $Tutorial = true>>
 <<declare $CrowRelationship = 0.0>>
+<<jump Skip>>
 WARNING: This game contains graphic depictions of suicide.#bg:DarkHidden
 WARNING: If this may be triggering to you, please play no further.
 Athena: <i>*cough cough*</i> Ugh I can't sleep.#bg:Dark
@@ -354,4 +355,10 @@ Athena: <i>Oh dear! This is highly illegal.</i>
 Athena: <i>Why would Skipper have this?</i>
 : Got Evidence <color=\#94e9e4>Crack Corn Baggie</color>
 <<CreateClue ClueBoardCanvas CrackCorn>>
+===
+
+title: AthenasRoom
+tags: c:Owl:
+---
+Athena: No need to search my own room.
 ===

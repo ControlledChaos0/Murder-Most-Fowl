@@ -462,7 +462,8 @@ Skipper: Do you have any more questions?
 Athena: No. I think that's all I need.
 <<set $PenguinCaught = true>>
 <<else>>
-	<<jump PenguinDismissal>>
+	Skipper: Hm? Oh that isn't mine.#e:Nervous
+	Athena: <i>Why does he look so nervous?</i>
 <<endif>>
 ===
 

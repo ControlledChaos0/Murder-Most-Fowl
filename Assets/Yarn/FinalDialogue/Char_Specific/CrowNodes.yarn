@@ -51,12 +51,16 @@ position: -553,-63
     Morgana: Not a chance.#e:Angry
 <<endif>>
 -> I have a few questions for you.
-	<<jump CrowQuestions>>
+    <<if $FixedRelationship>>
+        <<jump CrowQuestionsHappy>>
+    <<else>>
+	    <<jump CrowQuestions>>
+    <<endif>>
 -> This is serious, Morgana.<<if not $FixedRelationship>>
 	Athena: This is serious, Morgana. Someone is dead.#el:Intense
 	Morgana: Oh cluck off.#e:Angry
 	Morgana: I thought WE were serious.#el:Neutral
--> Can we talk?<<if not $Tutorial and not $FixedRelationship>>
+-> <color=\#f3db82>Can we talk?</color><<if not $Tutorial and not $FixedRelationship>>
     <<set $AskingCrow = true>>
     Morgana: What on earth should we talk about?#e:Angry
     Athena: About us.
@@ -80,61 +84,73 @@ Morgana: ... #e:Sad
 Morgana: Just leave.
 ===
 
+title: CrowQuestionsHappy
+---
+-> <color=\#f3db82>Where were you last night.</color>#e:Neutral#el:Neutral
+    Morgana: ...#e:Sad
+    Athena: It's ok. You can tell me.
+    Morgana: Just, you believe I didn't do it, right?#e:Neutral
+    Athena: Of course.
+    Morgana: Well I was at the bar last night, as usual.
+    Morgana: Mallard came up an ordered a drink from me.
+    Morgana: He started <color=\#f3db82>complaining about Mr. Gander</color> of all people.
+    Morgana: If I'm being honest, I tuned most of it out.
+    Morgana: I didn't care much for his complaining.#e:Angry
+    Morgana: Anyways...#e:Neutral
+    Morgana: He soon stepped away to smoke a cigarette.
+    Morgana: Melissa came in, and told Mallard to cluck off.
+    Morgana: Mallard made a weird face though... <color=\#f3db82>as if he figured something out.</color>#e:Sad
+    Morgana: Melissa sat down with me, and Mallard made some distance. #e:Neutral
+    Morgana: Skipper soon came in for his break and began chatting with Mallard.
+    Morgana: I'm not sure if this is relevant, but I saw <color=\#f3db82>Mallard take Skipper's coat</color> for him.
+    Morgana: He walked past the bar to leave the room, and I overheard him mumbling...
+    Morgana: <color=\#f3db82>"Mark my words. This is the day I get even."</color>
+    Morgana: Shortly after Melissa and I left to go to sleep, I heard Gander in the hall.
+    Morgana: I think he was <color=\#f3db82>headed to Melissa's room</color>.
+    Morgana: I...#e:Sad
+    Morgana: I'm sorry.
+    Morgana: I should have told you sooner.
+    Athena: It's alright. I understand.
+    Morgana: ...
+    Athena: Is that all to your testimony?
+    Morgana: I-
+    Morgana: Uh yes.
+    <<set $MorganaTestimony to true>>
+	<<jump CrowQuestionsHappy>>
+-> <color=\#f3db82>How do you feel about Mallard?</color>
+    Morgana: He and I uh...#e:Embarrassed
+    Morgana: Had a bit of a rebound relationship. #e:Sad#el:Sad
+    Morgana: It didn't last long though. #e:Neutral
+	<<jump CrowQuestionsHappy>>
+-> Do you know if anyone would want to kill him?
+	Morgana: I may not like him, but that doesn't mean I would kill him.#e:Sad
+	<<jump CrowQuestionsHappy>>
+-> <color=\#f3db82>Can you tell me anything about the other passengers?</color> <<if $FixedRelationship>>
+    <<jump CrowPeople>>
+-> That's all the questions I have
+	<<jump CrowIdle>>
+===
+
 title: CrowQuestions
 position: -616,-357
 color: green
 ---
 -> Where were you last night.#e:Neutral#el:Neutral
-    <<if $FixedRelationship>>
-        Morgana: ...#e:Sad
-        Athena: It's ok. You can tell me.
-        Morgana: Just, you believe I didn't do it, right?#e:Neutral
-        Athena: Of course.
-        Morgana: Well I was at the bar last night, as usual.
-        Morgana: Mallard came up an ordered a drink from me.
-        Morgana: He started <color=\#f3db82>complaining about Mr. Gander</color> of all people.
-        Morgana: If I'm being honest, I tuned most of it out.
-        Morgana: I didn't care much for his complaining.#e:Angry
-        Morgana: Anyways...#e:Neutral
-        Morgana: He soon stepped away to smoke a cigarette.
-        Morgana: Melissa came in, and told Mallard to cluck off.
-        Morgana: Mallard made a weird face though... <color=\#f3db82>as if he figured something out.</color>#e:Sad
-        Morgana: Melissa sat down with me, and Mallard made some distance. #e:Neutral
-        Morgana: Skipper soon came in for his break and began chatting with Mallard.
-        Morgana: I'm not sure if this is relevant, but I saw <color=\#f3db82>Mallard take Skipper's coat</color> for him.
-        Morgana: He walked past the bar to leave the room, and I overheard him mumbling...
-        Morgana: <color=\#f3db82>"Mark my words. This is the day I get even."</color>
-        Morgana: Shortly after Melissa and I left to go to sleep, I heard Gander in the hall.
-        Morgana: I think he was <color=\#f3db82>headed to Melissa's room</color>.
-        Morgana: I...#e:Sad
-        Morgana: I'm sorry.
-        Morgana: I should have told you sooner.
-        Athena: It's alright. I understand.
-        Morgana: ...
-        Athena: Is that all to your testimony?
-        Morgana: I-
-        Morgana: Uh yes.
-        <<set $MorganaTestimony to true>>
-    <<else>>
-        Morgana: Wouldn't you like to know.#e:Angry
-        Athena: I would actually.
-        Morgana: ...#e:Neutral
-        Morgana: I was drinking with Melissa.
-        Athena: And what about the morning.
-        Morgana: I woke up.
-        Morgana: Forgot my keys.
-        Morgana: Found my keys.
-        Morgana: That all?
-    <<endif>>
+    Morgana: Wouldn't you like to know.#e:Angry
+    Athena: I would actually.
+    Morgana: ...#e:Neutral
+    Morgana: I was drinking with Melissa.
+    Athena: And what about the morning.
+    Morgana: I woke up.
+    Morgana: Forgot my keys.
+    Morgana: Found my keys.
+    Morgana: That all?
 	<<jump CrowQuestions>>
 -> How do you feel about Mallard?
-    <<if $FixedRelationship>>
-        Morgana: He and I uh...#e:Embarrassed
-        Morgana: Had a bit of a rebound relationship. #e:Sad#el:Sad
-        Morgana: It didn't last long though. #e:Neutral
-    <<else>>
-        Morgana: Didn't like him. Don't like him.#e:Angry
-    <<endif>>
+    Morgana: He and I uh...#e:Embarrassed
+    Morgana: Had a bit of a rebound relationship. #e:Sad#el:Sad
+    Morgana: It didn't last long though. #e:Neutral
+    Morgana: Didn't like him. Don't like him.#e:Angry
 	<<jump CrowQuestions>>
 -> Do you know if anyone would want to kill him?
 	Morgana: I may not like him, but that doesn't mean I would kill him.#e:Sad
@@ -168,7 +184,7 @@ Morgana: Who do you want to hear about?
     Morgana: The bellboy? I don't know much about him.
     Morgana: I believe <color=\#f3db82>Melissa and Skipper were talking</color> though.
     <<jump CrowPeople>>
--> Nevermind
+-> Nevermind#s:Crow
     <<jump CrowQuestions>>
 ===
 

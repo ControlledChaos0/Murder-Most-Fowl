@@ -136,7 +136,7 @@ Chase: Who do you wish to hear about?#s:Goose#el:Neutral
 	Chase: He stutters too much.
 	Chase: what is he so nervous about?
 	<<jump GoosePeople>>
--> Nevermind
+-> Nevermind#s:Goose
 	<<jump GooseQuestions>>
 ===
 
@@ -203,7 +203,7 @@ Chase: ...
 Chase: Yes. She was.
 Athena: What happened?
 Chase: The Avian Flu pandemic <color=\#f3db82>of '20</color>
-Chase: The disease used to me much more potent than it is now.
+Chase: The disease used to be much more potent than it is now.
 Chase: ...
 Chase: If only I could go back to that <color=\#f3db82>March</color>.
 Chase: There are so many things I would've done differently.
