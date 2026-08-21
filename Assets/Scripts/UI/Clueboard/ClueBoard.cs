@@ -52,38 +52,37 @@ public class ClueBoard : Singleton<ClueBoard>,
             e = -_zoomSpeed;
         }
 
-        DynamicZoom(eventData, e);
         ClampBoard();
     }
 
-    private void DynamicZoom(PointerEventData eventData, float zoom)
-    {
+    // private void DynamicZoom(PointerEventData eventData, float zoom)
+    // {
 
-        Vector2 newCenter = _boardCenter + _boardTransform.anchoredPosition;
-        float scale = _boardTransform.localScale.x;
-        Vector2 offset = eventData.position - newCenter;
-        Vector2 pivot = offset;
-        pivot.x *= 1.0f / _boardTransform.sizeDelta.x;
-        pivot.y *= 1.0f / _boardTransform.sizeDelta.y;
+    //     Vector2 newCenter = _boardCenter + _boardTransform.anchoredPosition;
+    //     float scale = _boardTransform.localScale.x;
+    //     Vector2 offset = eventData.position - newCenter;
+    //     Vector2 pivot = offset;
+    //     pivot.x *= 1.0f / _boardTransform.sizeDelta.x;
+    //     pivot.y *= 1.0f / _boardTransform.sizeDelta.y;
 
-        // Debug.Log(offset);
+    //     // Debug.Log(offset);
 
-        Vector3 tempScale = _boardTransform.localScale + (Vector3.one * zoom);
-        if (tempScale.x > _zoomOutLimit && tempScale.x < _zoomInLimit)
-        {
-            _boardTransform.pivot += pivot;
-            _boardTransform.anchoredPosition += (offset * scale);
-        }
-        if (tempScale.x < _zoomOutLimit)
-        {
-            tempScale = Vector3.one * _zoomOutLimit;
-        }
-        if (tempScale.x > _zoomInLimit)
-        {
-            tempScale = Vector3.one * _zoomInLimit;
-        }
-        _boardTransform.localScale = tempScale;
-    }
+    //     Vector3 tempScale = _boardTransform.localScale + (Vector3.one * zoom);
+    //     if (tempScale.x > _zoomOutLimit && tempScale.x < _zoomInLimit)
+    //     {
+    //         _boardTransform.pivot += pivot;
+    //         _boardTransform.anchoredPosition += (offset * scale);
+    //     }
+    //     if (tempScale.x < _zoomOutLimit)
+    //     {
+    //         tempScale = Vector3.one * _zoomOutLimit;
+    //     }
+    //     if (tempScale.x > _zoomInLimit)
+    //     {
+    //         tempScale = Vector3.one * _zoomInLimit;
+    //     }
+    //     _boardTransform.localScale = tempScale;
+    // }
 
     private void ClampBoard()
     {
