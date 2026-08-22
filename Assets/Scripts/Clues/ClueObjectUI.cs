@@ -24,6 +24,8 @@ namespace Clues
         private bool _onBoard;
         private bool _inBin;
 
+        private bool _combinable;
+
         private Vector2 _offset;
         private Vector2 _menuOffset;
         private Vector3 _worldOffset;
@@ -59,6 +61,25 @@ namespace Clues
         {
             _clue = ClueManager.GetClueFromID(clueID);
             _image.sprite = _clue.Icon;
+            _combinable = GameManager.ClueManager.DeductionDatabase.isCombinable(_clue);
+
+            if (!_combinable)
+            {
+                GetComponentInChildren<Button>().gameObject.SetActive(false);
+            }
+        }
+
+        public void SetCombine()
+        {
+            ClueBoardManager clueBoardManager = FindFirstObjectByType<ClueBoardManager>();
+
+            if (clueBoardManager == null)
+            {
+                Debug.LogError("Could not find ClueBoardManager in scene.");
+            } else
+            {
+                clueBoardManager.SetCombinationTarget(_clue);
+            }
         }
 
         public void OnBeginDrag(PointerEventData eventData)

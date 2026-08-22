@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusToStop: 1.6801199
-  _clueID: SootyGloves
+  _clueID: Gloves
   _node: SootyGloves
   _disappearOnClick: 1
   _disabledInTutorial: 0

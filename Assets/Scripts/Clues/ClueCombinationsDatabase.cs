@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class ClueCombinationDatabase : ScriptableObject
 {
     [SerializeField]
-    private Deduction[] deductions;
+    public Deduction[] deductions;
 
     public Dictionary<Hash128, Clue> DeductDict { get; private set; } = new();
 
@@ -39,6 +39,17 @@ public class ClueCombinationDatabase : ScriptableObject
         }
     }
 
+    public bool isCombinable(Clue clue)
+    {
+        foreach(Deduction deduction in deductions)
+        {
+            if (deduction.clue1.Equals(clue) || deduction.clue2.Equals(clue))
+                return true;
+        }
+
+        return false;
+    }
+
     public void GenerateDictionary()
     {
         OnValidate();
@@ -51,4 +62,5 @@ public class Deduction
     public Clue clue1;
     public Clue clue2;
     public Clue deduction;
+    public bool used;
 }

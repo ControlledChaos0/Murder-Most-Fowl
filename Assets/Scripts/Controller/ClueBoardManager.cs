@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Clues;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.LowLevel;
@@ -107,6 +108,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
     private bool _activated;
     //private bool _scrollEnabled;
     private bool _canPresent;
+    private Clue _combinationClue;
 
     private string _correctEvidence;
     private string _incorrectNode;
@@ -241,6 +243,28 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
         {
             SelectedClue?.OnDeselect(pointerEvent);
         }
+    }
+
+    public void SetCombinationTarget(Clue clue)
+    {
+        if (_combinationClue == null)
+        {
+            _combinationClue = clue;
+        } else
+        {
+            foreach(Deduction deduction in GameManager.ClueManager.DeductionDatabase.deductions)
+            {
+                if ((deduction.clue1.Equals(clue) && deduction.clue2.Equals(_combinationClue)
+                    || deduction.clue1.Equals(_combinationClue) && deduction.clue2.Equals(clue)) && !deduction.used)
+                {
+                    InstantiateClue(deduction.deduction.ClueID);
+                    deduction.used = true;
+                    break;
+                }
+            }
+            _combinationClue = null;
+        }
+        
     }
 
     public void SetSelectedString(PointerEventData pointerEvent)
