@@ -109,6 +109,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
     //private bool _scrollEnabled;
     private bool _canPresent;
     private Clue _combinationClue;
+    private Button _combinationClueButton;
 
     private string _correctEvidence;
     private string _incorrectNode;
@@ -245,24 +246,33 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
         }
     }
 
-    public void SetCombinationTarget(Clue clue)
+    public void SetCombinationTarget(Clue clue, Button button)
     {
+        Debug.Log(clue.ClueID);
         if (_combinationClue == null)
         {
+            Debug.Log("null");
+            _combinationClueButton = button;
             _combinationClue = clue;
         } else
         {
+            Debug.Log(_combinationClue.ClueID);
             foreach(Deduction deduction in GameManager.ClueManager.DeductionDatabase.deductions)
             {
-                if ((deduction.clue1.Equals(clue) && deduction.clue2.Equals(_combinationClue)
-                    || deduction.clue1.Equals(_combinationClue) && deduction.clue2.Equals(clue)) && !deduction.used)
+                if (deduction.clue1.Equals(clue) && deduction.clue2.Equals(_combinationClue)
+                    || deduction.clue1.Equals(_combinationClue) && deduction.clue2.Equals(clue))
                 {
                     InstantiateClue(deduction.deduction.ClueID);
-                    deduction.used = true;
+                    if (button != null)
+                        button.gameObject.SetActive(false);
+                    if (_combinationClueButton != null)
+                        _combinationClueButton.gameObject.SetActive(false);
                     break;
                 }
             }
+            EventSystem.current.SetSelectedGameObject(null);
             _combinationClue = null;
+            _combinationClueButton = null;
         }
         
     }

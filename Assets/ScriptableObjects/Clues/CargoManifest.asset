@@ -15,8 +15,7 @@ MonoBehaviour:
   m_clueID: CargoManifest
   m_name: Cargo Manifest
   m_clarificationInfo: 
-  m_description: A manifest detailing registered luggage on the train. The manifest
-    has luggage from Melissa, Gander, Athena, Morgana, and Mallard.
+  m_description: A manifest detailing registered luggage on the train.
   m_icon: {fileID: 8176632288665185867, guid: 571df24994b847641a6eb60f5453dd9b, type: 3}
-  m_viewable: 0
-  _viewSprite: {fileID: 0}
+  m_viewable: 1
+  _viewSprite: {fileID: 3971821993290099062, guid: 102669e2ee941134abb7b6ea42a38fbc, type: 3}

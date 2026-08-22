@@ -78,7 +78,8 @@ namespace Clues
                 Debug.LogError("Could not find ClueBoardManager in scene.");
             } else
             {
-                clueBoardManager.SetCombinationTarget(_clue);
+
+                clueBoardManager.SetCombinationTarget(_clue, GetComponentInChildren<Button>());
             }
         }
 

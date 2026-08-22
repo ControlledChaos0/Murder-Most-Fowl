@@ -62,5 +62,4 @@ public class Deduction
     public Clue clue1;
     public Clue clue2;
     public Clue deduction;
-    public bool used;
 }
