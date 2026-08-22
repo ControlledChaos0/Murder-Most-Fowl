@@ -319,8 +319,7 @@ Melissa: Wait...
 Melissa: Is there no briefcase on the manifest?
 Athena: It would appear he does not.
 Melissa: I clearly remember moving <color=\#f3db82>a heavy briefcase off of my bag</color>.
-<<CreateClue ClueBoardCanvas MissingBriefcase>>
-: Got Evidence <color=\#94e9e4>Missing Briefcase</color>#el:Neutral
+Athena: Strange... <color=\#f3db82>Perhaps I can find this briefcase somewhere...</color>
 ===
 
 title: PeacockCrash

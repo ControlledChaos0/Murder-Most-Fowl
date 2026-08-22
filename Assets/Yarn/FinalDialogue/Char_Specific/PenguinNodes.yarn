@@ -371,64 +371,11 @@ position: 718,-177
 ---
 Athena: Are you sure nothing is missing?#el:Intense#e:Neutral
 Skipper: I don't believe so.
-Athena: Melissa remembers a quite heavy briefcase in the cargo hold...
-Athena: However, his bag is absent in the manifest.
-Skipper: ...#e:Angry
-Skipper: Perhaps I missed something.#e:Happy
-Skipper: People routinely store things in the back without telling me. #e:Neutral
-Skipper: They try to get around the luggage prices...
-===
-
-title: PenguinCrackCorn
-position: 725,-302
----
-<<if $PenguinDrugs>>
-Athena: I know this was yours.
-Athena: With the intel, and the baggie, it's too much to ignore.
-Skipper: Okay, fine. It's mine, but I'm not selling anything. I swear.
-Athena: <i>I need to find the <color=\#f3db82>final piece of evidence against him</color>.</i>
-<<set $PenguinBust to true>>
-<<else>>
-Skipper: I found it in the cargo hold, and picked it up.#el:Neutral#e:Neutral
-Skipper: I wasn't trying to pry, I swear.
-Skipper: However, I couldn't leave such an illegal drug laying out in the cargo hold.#e:Sad
-Skipper: I had to remove it.#e:Neutral
-<<endif>>
-===
-
-title: PenguinCrowEx
-position: 911,-183
----
-Skipper: She and the victim used to date, yes.#el:Neutral#e:Neutral
-Skipper: She talks about you way more though.
-Athena: She does? #el:Surprised
-Skipper: I think she wishes <color=\#f3db82>you'd apologize about that letter</color>.#e:Sad
-Skipper: Quite a cruel way to cut someone off, isn't it?
-Athena: ...#el:Sad
-===
-
-title: PenguinNewspaper
-position: 920,-413
----
-Skipper: They were inseperable <color=\#f3db82>partners in crime</color>- er I mean business.#el:Neutral
-===
-
-title: PenguinPenguinKey
-position: 722,-63
----
-Skipper: Those are my keys.#el:Neutral
-Skipper: I lend them to you for your investigation.
-Skipper: Do not abuse this power.
-===
-
-title: PenguinBriefcase
-position: 920,-305
----
-<<if $PenguinBust>>
-Athena: <i>This briefcase has to be his.</i>#el:Intense
-Athena: Is this yours.
-Skipper: I-
-Skipper: No.
+Athena: What about this briefcase?
+Skipper: ...#e:Nervous
+Athena: I find it hard to believe somebody could smuggle something onto this train without the bellboy being aware.
+Athena: Isn't it your responsibility to ensure all luggage is accounted for coming on?
+Skipper: It's not mine!
 Athena: Don't mess with me. I know it's yours.
 Skipper: It's mine, ok. But the drugs aren't! I don't know where that came from!#e:Angry
 Athena: I didn't <color=\#f3db82>tell you about the contents</color>.
@@ -463,10 +410,47 @@ Skipper: I didn't do anything.#e:Neutral
 Skipper: Do you have any more questions?
 Athena: No. I think that's all I need.
 <<set $PenguinCaught = true>>
-<<else>>
-	Skipper: Hm? Oh that isn't mine.#e:Nervous
-	Athena: <i>Why does he look so nervous?</i>
-<<endif>>
+===
+
+title: PenguinCrackCorn
+position: 725,-302
+---
+Skipper: I found it in the cargo hold, and picked it up.#el:Neutral#e:Nervous
+Skipper: I wasn't trying to pry, I swear.
+Skipper: However, I couldn't leave such an illegal drug laying out in the cargo hold.#e:Sad
+Skipper: I had to remove it.#e:Neutral
+===
+
+title: PenguinCrowEx
+position: 911,-183
+---
+Skipper: She and the victim used to date, yes.#el:Neutral#e:Neutral
+Skipper: She talks about you way more though.
+Athena: She does? #el:Surprised
+Skipper: I think she wishes <color=\#f3db82>you'd apologize about that letter</color>.#e:Sad
+Skipper: Quite a cruel way to cut someone off, isn't it?
+Athena: ...#el:Sad
+===
+
+title: PenguinNewspaper
+position: 920,-413
+---
+Skipper: They were inseperable <color=\#f3db82>partners in crime</color>- er I mean business.#el:Neutral
+===
+
+title: PenguinPenguinKey
+position: 722,-63
+---
+Skipper: Those are my keys.#el:Neutral
+Skipper: I lend them to you for your investigation.
+Skipper: Do not abuse this power.
+===
+
+title: PenguinBriefcase
+position: 920,-305
+---
+Skipper: Hm? Oh that isn't mine.#e:Nervous
+Athena: <i>Why does he look so nervous?</i>
 ===
 
 title: EndingDialogue
