@@ -30,8 +30,10 @@ tags: c:Owl:Peacock
 ---
 Melissa: How can I help you, dear?#el:Neutral
 -> Could I get your autograph?
-	Melissa: Oh! Uh...
-	Melissa: Perhaps now isn't the time?
+	Melissa: Oh! Sure!
+	: Got Evidence <color=\#94e9e4>Autograph</color>
+	<<CreateClue ClueBoardCanvas Autograph>>
+
 -> <color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Nothing now
@@ -44,8 +46,9 @@ Melissa: How can I help you, dear?#s:Peacock#el:Neutral
 -> I have a few questions for you.
 	<<jump PeacockQuestions0>>
 -> Could I get your autograph?
-	Melissa: Oh! Uh...
-	Melissa: I'm terribly sorry, but perhaps now isn't the time?
+	Melissa: Oh! Sure!
+	: Got Evidence <color=\#94e9e4>Autograph</color>
+	<<CreateClue ClueBoardCanvas Autograph>>
 -> <color=\#94e9e4>Present</color>
 	<<PresentEvidence>>
 -> Nothing now
@@ -269,31 +272,7 @@ Melissa: Oh hahaha. I don't even try to hide it, darling.
 Melissa: I didn't even change my coloring.
 Melissa: Perhaps they need to revoke your detective license.
 Athena: So you were a boxer?
-Melissa: Yes, back in the day. 
-<<if not $CockfightingArena>>
-	<<jump PeacockFightingArena>>
-<<endif>>
-===
-
-title:PeacockFightingArena
----
-Melissa: I actually ran that place.
-Melissa: They called me Thorn. Sharp as an arrow and impossible to get rid of, hah.
-Melissa: Though I started to realize I didn't want that life.
-Melissa: I found a passion for singing and discovered I wanted to be the rose, not the thorn.
-Melissa: Still, I find it a little hard to escape that old arena sometimes.
-Melissa: When you run a gig that so many people rely on, you can't just up and leave.
-Melissa: Now I just manage it from afar.
-Melissa: I know this kind of fighting is illegal, but we have a really great community.
-Melissa: I would hate for anything to happen to it.
-Melissa: ...
-Melissa: I know you're a detective darling and you'll be going to the police with information.
-Melissa: I just ask, please don't report this? 
-Athena: I'll keep your secret.
-Athena: <i>I'll have to decide later. I need her to trust me for now.</i>#el:Intense
-<<set $CockfightingArena = true>>
-Melissa: Oh thank you dear. I really appreciate it.
-Melissa: I'll admit, there's <color=\#f3db82>more I wasn't telling you</color>. I'll answer any questions you have.
+Melissa: Yes... back in the day. 
 ===
 
 title: PeacockLovers
@@ -335,12 +314,15 @@ Melissa: Morgana's cocktails are simply exquisite.
 title: PeacockBettingSlip
 ---
 Athena: Have you seen this slip before?
-Melissa: Yes this is from <color=\#f3db82>an underground fighting arena</color>.
-Melissa: Mr. Gander comes to view fights often, but he doesn't bet as much as <color=\#f3db82>the duck</color>.
-Melissa: Oh Gander, did you not read the part that says to burn after bout?
-Melissa: Anyways...
 <<if not $CockfightingArena>>
-	<<jump PeacockFightingArena>>
+	Melissa: ...
+	Melissa: Not familiar.
+	Athena: <i>That's strangely dismissive for her...</i>
+<<else>>
+	Melissa: Yes this is from <color=\#f3db82>the underground fighting arena</color>.
+	Melissa: Mr. Gander comes to view fights often, but he doesn't bet as much as <color=\#f3db82>the duck</color>.
+	Melissa: Oh Gander, did you not read the part that says to burn after bout?
+	Melissa: Anyways...
 <<endif>>
 ===
 
@@ -357,4 +339,27 @@ Athena: What can you tell me about her?
 Melissa: She's <color=\#f3db82>Mr. Gander's late wife</color>.
 Melissa: Poor thing, he hasn't been the same since.
 Melissa: I think she was the only one melting his cold demeanor.
+===
+
+title: PeacockFightingRing
+---
+Melissa: ...
+Melissa: I suppose you caught me, heh.
+Melissa: I actually ran that place.
+Melissa: They called me Thorn. Sharp as an arrow and impossible to get rid of, hah.
+Melissa: Though I started to realize I didn't want that life.
+Melissa: I found a passion for singing and discovered I wanted to be the rose, not the thorn.
+Melissa: Still, I find it a little hard to escape that old arena sometimes.
+Melissa: When you run a gig that so many people rely on, you can't just up and leave.
+Melissa: Now I just manage it from afar.
+Melissa: I know this kind of fighting is illegal, but we have a really great community.
+Melissa: I would hate for anything to happen to it.
+Melissa: ...
+Melissa: I know you're a detective darling and you'll be going to the police with information.
+Melissa: I just ask, please don't report this? 
+Athena: I'll keep your secret.
+Athena: <i>I'll have to decide later. I need her to trust me for now.</i>#el:Intense
+<<set $CockfightingArena = true>>
+Melissa: Oh thank you dear. I really appreciate it.
+Melissa: I'll admit, there's <color=\#f3db82>more I wasn't telling you</color>. I'll answer any questions you have.
 ===

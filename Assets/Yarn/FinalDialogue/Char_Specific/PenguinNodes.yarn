@@ -311,15 +311,19 @@ position: 730,184
 ---
 Skipper: Oh! That's my key! Where did you find it?#e:Angry
 Athena: I found them in the victim's pocket...
-: Got Evidence <color=\#94e9e4>Skipper's Key</color>
 Skipper: Oh. I had a feeling he was the one who took them...#e:Sad
 Skipper: ...
 Skipper: Why don't you take the key for a bit? You can use it to search the rest of the car. #e:Neutral
 Skipper: I <color=\#f3db82>have a spare key</color>, so I don't need it for now.
+: Got Evidence <color=\#94e9e4>Skipper's Key</color>
 <<CreateClue ClueBoardCanvas PenguinKey>>
 Athena: <i>Good... I can search the rooms now.</i>
 <<set $Permission to true>>
-Skipper: Oh also! Here take this cargo manifest.
+Skipper: I labeled this map for you to help with the investigation.
+<<CreateClue ClueBoardCanvas Map>>
+: Got Evidence <color=\#94e9e4>Map</color>
+Athena: <i>Aww those doodles are so cute.</i>#el:Happy
+Skipper: Oh also! Here take this cargo manifest.#el:Neutral
 Skipper: It may be useful in your investigation.
 <<CreateClue  ClueBoardCanvas CargoManifest>>
 : Got Evidence <color=\#94e9e4>Cargo Manifest</color>#el:Neutral
@@ -441,9 +445,8 @@ Skipper: They were inseperable <color=\#f3db82>partners in crime</color>- er I m
 title: PenguinPenguinKey
 position: 722,-63
 ---
-Skipper: Those are my keys.#el:Neutral
-Skipper: I lend them to you for your investigation.
-Skipper: Do not abuse this power.
+Skipper: Those are my keys!#el:Neutral
+Skipper: Feel free to check out the suspects' rooms.
 ===
 
 title: PenguinBriefcase

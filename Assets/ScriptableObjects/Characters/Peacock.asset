@@ -42,3 +42,5 @@ MonoBehaviour:
     nodeResponse: PeacockMelissaKey
   - clueID: MaidenPhoto
     nodeResponse: PeacockMaidenPhoto
+  - clueID: FightingRing
+    nodeResponse: PeacockFightingRing

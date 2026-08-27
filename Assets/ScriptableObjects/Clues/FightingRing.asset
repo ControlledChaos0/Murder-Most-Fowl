@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772023b7c8de8994ab95ae2125e5c562, type: 3}
+  m_Name: FightingRing
+  m_EditorClassIdentifier: 
+  m_clueID: FightingRing
+  m_name: FightingRing
+  m_clarificationInfo: 
+  m_description: Miss Peacock signed a Chase's betting sheet from a cock fighting
+    arena. Could she be an authority figure in an illegal ring?
+  m_icon: {fileID: 8827078708206887880, guid: 2222478b54c70c541a1db710a22fbe36, type: 3}
+  m_viewable: 0
+  _viewSprite: {fileID: 0}

@@ -17,6 +17,6 @@ MonoBehaviour:
   m_clarificationInfo: 
   m_description: An autograph from the one and only Melissa "Miss" Peacock. I can't
     believe I got one!
-  m_icon: {fileID: 0}
+  m_icon: {fileID: -2764527459310951932, guid: f4f2dac7dbc7fc743a1e95a0164aad57, type: 3}
   m_viewable: 1
-  _viewSprite: {fileID: 2377333857553480836, guid: 0934efac344dedb46bf016192db36ab7, type: 3}
+  _viewSprite: {fileID: -598534175757732303, guid: ef0199933ad45974b93304ff84656793, type: 3}
