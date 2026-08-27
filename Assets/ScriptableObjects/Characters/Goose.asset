@@ -48,3 +48,5 @@ MonoBehaviour:
     nodeResponse: GooseBlackFeathers
   - clueID: BettingSlip
     nodeResponse: GooseBettingSlip
+  - clueID: CrackCorn
+    nodeResponse: GooseCrackCorn

@@ -10,7 +10,7 @@ namespace Clues
 {
     public class ClueObjectUI : MonoBehaviour, 
         IDragHandler, IBeginDragHandler, IEndDragHandler,
-        IScrollHandler, IPointerDownHandler, IPointerUpHandler,
+         IPointerDownHandler, IPointerUpHandler,
         IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] private Image _image;
@@ -106,7 +106,7 @@ namespace Clues
 
             if (!_inBin && (_offset.x > (width / 2 - margin) * 0.6f || _offset.y > (height / 2 - margin) * 0.6f || _offset.x < (-width / 2 + margin) * 0.6f || _offset.y < (-height / 2 + margin) * 0.6f))
             {
-                _scaling = true;
+                //_scaling = true;
                 _initialScale = _image.transform.localScale;
             }
             else
@@ -188,32 +188,32 @@ namespace Clues
             _scaling = false;
         }
 
-        public void OnScroll(PointerEventData eventData)
-        {
-            if (!_onBoard)
-            {
-                return;
-            }
+        // public void OnScroll(PointerEventData eventData)
+        // {
+        //     if (!_onBoard)
+        //     {
+        //         return;
+        //     }
 
-            if (_mouseDown)
-            {
-                GameObject image = _image.gameObject;
-                // Increases and decreases size of sprite
-                var w = Input.mouseScrollDelta.y;
-                if (w > 0 && _sizeMax > image.transform.localScale.x) {
-                    image.transform.localScale += _scaleChange;
-                } else if (w < 0 && _sizeMin < image.transform.localScale.x) {
-                    image.transform.localScale -= _scaleChange;
-                }
+        //     if (_mouseDown)
+        //     {
+        //         GameObject image = _image.gameObject;
+        //         // Increases and decreases size of sprite
+        //         var w = Input.mouseScrollDelta.y;
+        //         if (w > 0 && _sizeMax > image.transform.localScale.x) {
+        //             image.transform.localScale += _scaleChange;
+        //         } else if (w < 0 && _sizeMin < image.transform.localScale.x) {
+        //             image.transform.localScale -= _scaleChange;
+        //         }
                 
-                Vector2 cornerPos = image.transform.Find("Corner").transform.position;
-                _menu.transform.position = cornerPos - _menuOffset;
-            }
-            else
-            {
-                ClueBoard.Instance.OnScroll(eventData);
-            }
-        }
+        //         Vector2 cornerPos = image.transform.Find("Corner").transform.position;
+        //         _menu.transform.position = cornerPos - _menuOffset;
+        //     }
+        //     else
+        //     {
+        //         ClueBoard.Instance.OnScroll(eventData);
+        //     }
+        // }
 
         public void OnPointerDown(PointerEventData eventData)
         {

@@ -14,6 +14,7 @@ public class StickyNote : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     private bool _mouseDown;
     private bool _new;
     private bool _isFocused;
+    private Vector3 _startPos;
     
     private readonly float _sizeMin = .5f;
     private readonly float _sizeMax = 2.5f;
@@ -23,6 +24,7 @@ public class StickyNote : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     {
         _new = true;
         _isFocused = false;
+        _startPos = transform.position;
     }
     void Update()
     {
@@ -34,7 +36,8 @@ public class StickyNote : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
             ClueBoardManager.Instance.ToggleLock = inputField.isFocused;
         }
 
-        _isFocused = inputField.isFocused;
+        _isFocused = inputField.isFocused && ClueBoardManager.Instance.InClueboard;
+            
     }
 
     void OnDestroy()

@@ -114,7 +114,6 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
     private string _correctEvidence;
     private string _incorrectNode;
 
-
     private readonly Vector2 DEFAULT_PIVOT = new(0.5f, 0.5f);
     private bool _spawnable;
 
@@ -181,6 +180,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
 
     private void OpenClueBoard()
     {
+        _clueBoard.gameObject.SetActive(true);
         _activated = true;
         _toggleButton.OpenClueBoard();
         _animator.Play("Reveal");
@@ -188,6 +188,7 @@ public class ClueBoardManager : Singleton<ClueBoardManager>
 
     private void CloseClueBoard()
     {
+        _clueBoard.gameObject.SetActive(false);
         SelectedClue?.OnDeselect(null);
         SelectedString?.OnDeselect(null);
         _activated = false;
